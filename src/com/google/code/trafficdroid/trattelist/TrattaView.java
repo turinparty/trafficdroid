@@ -1,9 +1,10 @@
-package cx.ath.venator.trafficdroid.trattelist;
+package com.google.code.trafficdroid.trattelist;
+
+import com.google.code.trafficdroid.data.Tratta;
 
 import android.content.Context;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import cx.ath.venator.trafficdroid.data.Tratta;
 
 public class TrattaView extends LinearLayout
 {

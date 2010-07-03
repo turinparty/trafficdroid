@@ -1,14 +1,17 @@
-package cx.ath.venator.trafficdroid;
+package com.google.code.trafficdroid;
 
 import java.util.List;
+
+import com.google.code.trafficdroid.data.Tratta;
+import com.google.code.trafficdroid.trattelist.TrattaListAdapter;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.ListView;
-import cx.ath.venator.trafficdroid.data.Tratta;
-import cx.ath.venator.trafficdroid.trattelist.TrattaListAdapter;
+import com.google.code.trafficdroid.R;
 
 public class ParserActivity extends Activity
 {

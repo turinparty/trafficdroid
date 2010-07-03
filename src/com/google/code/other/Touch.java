@@ -6,7 +6,11 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/eband3 for more book information.
 ***/
-package cx.ath.venator.trafficdroid;
+package com.google.code.other;
+
+import com.google.code.trafficdroid.R;
+import com.google.code.trafficdroid.R.id;
+import com.google.code.trafficdroid.R.layout;
 
 import android.app.Activity;
 import android.graphics.Matrix;

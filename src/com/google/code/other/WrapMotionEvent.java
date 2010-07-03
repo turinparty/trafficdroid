@@ -8,7 +8,7 @@
 ***/
 
 
-package cx.ath.venator.trafficdroid;
+package com.google.code.other;
 
 import android.view.MotionEvent;
 

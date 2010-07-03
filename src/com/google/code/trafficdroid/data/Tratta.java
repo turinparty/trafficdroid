@@ -1,4 +1,4 @@
-package cx.ath.venator.trafficdroid.data;
+package com.google.code.trafficdroid.data;
 
 public class Tratta implements Comparable<Tratta>
 {

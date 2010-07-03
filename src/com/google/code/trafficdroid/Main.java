@@ -1,10 +1,12 @@
-package cx.ath.venator.trafficdroid;
+package com.google.code.trafficdroid;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import com.google.code.trafficdroid.R;
 
 import android.app.Activity;
 import android.app.AlertDialog;

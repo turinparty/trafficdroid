@@ -1,4 +1,4 @@
-package cx.ath.venator.trafficdroid;
+package com.google.code.trafficdroid;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,7 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-import cx.ath.venator.trafficdroid.data.Tratta;
+import com.google.code.trafficdroid.data.Tratta;
+
 
 public class Parser
 {
