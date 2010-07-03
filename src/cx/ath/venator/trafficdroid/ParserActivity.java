@@ -14,7 +14,7 @@ public class ParserActivity extends Activity
 {
 //	private String PROTO_URL = "http://traffico.octotelematics.com/dyn/#CITY#.gif?ts=1";
 //	private List<Tratta> tratte = new ArrayList<Tratta>();
-	
+	//
 	private ListView tratteListView;
 	
 	@Override
