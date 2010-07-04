@@ -31,11 +31,7 @@ public class Parser {
 			throw new CoreException(CoreException.DaoException, e.getMessage());
 		}
 		for (int i = 0; i < divsA.getLength(); i++) {
-			try {
-				id = divsA.item(i).getAttributes().getNamedItem(ID);
-			} catch (NullPointerException e) {
-				id = null;
-			}
+			id = divsA.item(i).getAttributes().getNamedItem(ID);
 			if (id != null && id.getNodeValue().equalsIgnoreCase(SECTION)) {
 				divsB = divsA.item(i).getChildNodes();
 				for (int y = 0; y < divsB.getLength(); y++) {

@@ -1,6 +1,6 @@
 package com.google.code.trafficdroid.dto;
 
-public class ZoneDTO implements Comparable<ZoneDTO> {
+public class ZoneDTO {
 	private String name;
 	private String speedLeft;
 	private String speedRight;
@@ -47,8 +47,7 @@ public class ZoneDTO implements Comparable<ZoneDTO> {
 		this.catRight = catRight;
 	}
 
-	public int compareTo(ZoneDTO arg0) {
-		// TODO Auto-generated method stub
-		return 0;
+	public String toString() {
+		return getName() + ": " + getSpeedLeft() + " (" + getCatLeft() + "), " + getSpeedRight() + " (" + getCatRight() + ")";
 	}
 }
