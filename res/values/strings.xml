@@ -3,4 +3,8 @@
     <string name="app_name">TrafficDroid</string>
     <string name="cities_prompt">Scegli un\'autostrada</string>
     <string name="copyright">Copyright (C) OctoTelematics S.p.a.</string>
+    <string name="pleaswait">Attendere</string>
+    <string name="downloading">Download...</string>
+    <string name="errordownloading">Errore nel download</string>
+    <string name="errore">Errore</string>
 </resources>

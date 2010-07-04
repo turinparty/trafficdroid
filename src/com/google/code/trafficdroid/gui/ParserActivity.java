@@ -7,7 +7,6 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -21,9 +20,6 @@ import com.google.code.trafficdroid.core.TrattaListAdapter;
 import com.google.code.trafficdroid.dto.ZoneDTO;
 
 public class ParserActivity extends Activity {
-	// private String PROTO_URL =
-	// "http://traffico.octotelematics.com/dyn/#CITY#.gif?ts=1";
-	// private List<Tratta> tratte = new ArrayList<Tratta>();
 	private ListView tratteListView;
 	
 	private static final int[] autostradeNumeri = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
@@ -39,7 +35,6 @@ public class ParserActivity extends Activity {
 		setContentView(R.layout.tratte);
 		tratteListView = (ListView) findViewById(R.id.trattelist);
 		
-		
 		final Spinner s = (Spinner) findViewById(R.id.spinner);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.autostrade, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -51,22 +46,16 @@ public class ParserActivity extends Activity {
 			public void onClick(View v)
 			{
 				int selected = s.getSelectedItemPosition();
-				Log.e("TRATTA", "numerello = " + autostradeNumeri[selected]);
 				new TratteDownloader().execute(autostradeNumeri[selected]);
 			}
 		});
-		
-		
-		
-		
-		
 	}
 
 	private class TratteDownloader extends AsyncTask<Integer, Void, List<ZoneDTO>> {
 		private ProgressDialog dialog;
 
 		protected void onPreExecute() {
-			dialog = ProgressDialog.show(ParserActivity.this, "Please wait", "Downloading tratte...", true);
+			dialog = ProgressDialog.show(ParserActivity.this, getResources().getText(R.string.pleaswait), getResources().getText(R.string.downloading), true);
 		}
 
 		protected List<ZoneDTO> doInBackground(Integer... params) {
@@ -81,7 +70,7 @@ public class ParserActivity extends Activity {
 		protected void onPostExecute(List<ZoneDTO> tratte) {
 			dialog.dismiss();
 			if (tratte == null) {
-				new AlertDialog.Builder(ParserActivity.this).setTitle("Error").setMessage("Error downloading image").setPositiveButton("OK", null).show();
+				new AlertDialog.Builder(ParserActivity.this).setTitle(getResources().getText(R.string.errore)).setMessage(getResources().getText(R.string.errordownloading)).setPositiveButton("OK", null).show();
 			} else {
 				TrattaListAdapter tla = new TrattaListAdapter(ParserActivity.this);
 				tla.setListItems(tratte);
