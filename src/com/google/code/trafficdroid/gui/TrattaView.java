@@ -1,43 +1,79 @@
 package com.google.code.trafficdroid.gui;
 
-import com.google.code.trafficdroid.dto.ZoneDTO;
-
 import android.content.Context;
+import android.graphics.Typeface;
+import android.view.Gravity;
 import android.widget.LinearLayout;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
-public class TrattaView extends LinearLayout {
-	private TextView trattaTextView;
-	private TextView velocitaSxTextView;
-	private TextView velocitaDxTextView;
+import com.google.code.trafficdroid.dto.ZoneDTO;
 
-	public TrattaView(Context context, ZoneDTO tratta) {
+public class TrattaView extends LinearLayout
+{
+	private TextView trattaTextView;
+	
+	private TextView velocitaSxTextView;
+	
+	private TextView velocitaDxTextView;
+	
+	public TrattaView(Context context, ZoneDTO tratta)
+	{
 		super(context);
 		this.setOrientation(VERTICAL);
 		trattaTextView = new TextView(context);
-		trattaTextView.setText(tratta.getName());
-		/* Now the text (after the icon) */
-		addView(trattaTextView, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-		LinearLayout lay = new LinearLayout(context);
-		lay.setOrientation(HORIZONTAL);
 		velocitaSxTextView = new TextView(context);
-		velocitaSxTextView.setText(tratta.getSpeedLeft());
-		lay.addView(velocitaSxTextView, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 		velocitaDxTextView = new TextView(context);
-		velocitaDxTextView.setText(tratta.getSpeedRight());
-		lay.addView(velocitaDxTextView, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+		setZona(tratta);
+		
+		trattaTextView.setTypeface(null, Typeface.BOLD);
+		trattaTextView.setGravity(Gravity.CENTER);
+		addView(trattaTextView, new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+		
+		TableLayout lay = new TableLayout(context);
+		lay.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+		lay.setStretchAllColumns(true);
+		
+		TableRow riga = new TableRow(context);
+		
+		velocitaSxTextView.setGravity(Gravity.CENTER);
+		
+		velocitaDxTextView.setGravity(Gravity.CENTER);
+		
+		riga.addView(velocitaSxTextView);
+		riga.addView(velocitaDxTextView);
+		
+		lay.addView(riga);
+		
 		addView(lay, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 	}
-
-	public void setTratta(String tratta) {
-		trattaTextView.setText(tratta);
-	}
-
-	public void setVelocitaSx(String velocitaSx) {
-		velocitaSxTextView.setText(velocitaSx);
-	}
-
-	public void setVelocitaDx(String velocitaDx) {
-		velocitaDxTextView.setText(velocitaDx);
+	
+	public void setZona(ZoneDTO zona)
+	{
+		trattaTextView.setText(zona.getName());
+		
+		if (zona.getCatLeft() < 4)
+		{
+			velocitaSxTextView.setText(">> " + zona.getSpeedLeft() + " <<");
+			velocitaSxTextView.setTypeface(null, Typeface.BOLD_ITALIC);
+		}
+		else
+		{
+			velocitaSxTextView.setText(zona.getSpeedLeft());
+			velocitaSxTextView.setTypeface(null, Typeface.NORMAL);
+		}
+		
+		if (zona.getCatRight() < 4)
+		{
+			velocitaDxTextView.setText(">> " + zona.getSpeedRight() + " <<");
+			velocitaDxTextView.setTypeface(null, Typeface.BOLD_ITALIC);
+		}
+		else
+		{
+			velocitaDxTextView.setText(zona.getSpeedRight());
+			velocitaDxTextView.setTypeface(null, Typeface.NORMAL);
+		}
+		
 	}
 }

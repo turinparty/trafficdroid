@@ -59,9 +59,7 @@ public class TrattaListAdapter extends BaseAdapter {
 			// Reuse/Overwrite the View passed
 			// We are assuming(!) that it is castable!
 			btv = (TrattaView) convertView;
-			btv.setTratta(mItems.get(position).getName());
-			btv.setVelocitaSx(mItems.get(position).getSpeedLeft());
-			btv.setVelocitaDx(mItems.get(position).getSpeedRight());
+			btv.setZona(mItems.get(position));
 		}
 		return btv;
 	}
