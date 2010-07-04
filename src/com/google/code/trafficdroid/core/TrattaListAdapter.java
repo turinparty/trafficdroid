@@ -14,7 +14,6 @@ import android.widget.BaseAdapter;
 public class TrattaListAdapter extends BaseAdapter {
 	/** Remember our context so we can use it when constructing views. */
 	private Context mContext;
-
 	private List<Tratta> mItems = new ArrayList<Tratta>();
 
 	public TrattaListAdapter(Context context) {

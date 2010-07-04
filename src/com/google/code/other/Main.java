@@ -34,19 +34,16 @@ public class Main extends Activity // implements OnTouchListener
 	// These matrices will be used to move and zoom image
 	Matrix matrix = new Matrix();
 	Matrix savedMatrix = new Matrix();
-
 	// We can be in one of these 3 states
 	static final int NONE = 0;
 	static final int DRAG = 1;
 	static final int ZOOM = 2;
 	int mode = NONE;
-
 	// Remember some things for zooming
 	PointF start = new PointF();
 	PointF mid = new PointF();
 	float oldDist = 1f;
 	// ===
-
 	private ImageView imView;
 	private String PROTO_URL = "http://traffico.octotelematics.com/dyn/#CITY#.gif?ts=1";
 
@@ -62,12 +59,10 @@ public class Main extends Activity // implements OnTouchListener
 		});
 		imView = (ImageView) findViewById(R.id.img);
 		// imView.setOnTouchListener(this);
-
 		Spinner autostrade = (Spinner) findViewById(R.id.cities);
 		ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.autostrade, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		autostrade.setAdapter(adapter);
-
 	}
 
 	// private void refreshImageView()
@@ -90,7 +85,6 @@ public class Main extends Activity // implements OnTouchListener
 	// e.printStackTrace();
 	// }
 	// }
-
 	// @Override
 	// public boolean onTouch(View v, MotionEvent rawEvent) {
 	// WrapMotionEvent event = WrapMotionEvent.wrap(rawEvent);
@@ -191,7 +185,6 @@ public class Main extends Activity // implements OnTouchListener
 	// point.set(x / 2, y / 2);
 	// }
 	//
-
 	private class ImageDownloader extends AsyncTask<String, Void, Bitmap> {
 		private ProgressDialog dialog;
 

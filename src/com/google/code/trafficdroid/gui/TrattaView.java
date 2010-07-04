@@ -13,24 +13,19 @@ public class TrattaView extends LinearLayout {
 
 	public TrattaView(Context context, Tratta tratta) {
 		super(context);
-
 		this.setOrientation(VERTICAL);
-
 		trattaTextView = new TextView(context);
 		trattaTextView.setText(tratta.getTratta());
 		/* Now the text (after the icon) */
 		addView(trattaTextView, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-
 		LinearLayout lay = new LinearLayout(context);
 		lay.setOrientation(HORIZONTAL);
 		velocitaSxTextView = new TextView(context);
 		velocitaSxTextView.setText(tratta.getVelocitaSx());
 		lay.addView(velocitaSxTextView, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-
 		velocitaDxTextView = new TextView(context);
 		velocitaDxTextView.setText(tratta.getVelocitaDx());
 		lay.addView(velocitaDxTextView, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-
 		addView(lay, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 	}
 
@@ -45,5 +40,4 @@ public class TrattaView extends LinearLayout {
 	public void setVelocitaDx(String velocitaDx) {
 		velocitaDxTextView.setText(velocitaDx);
 	}
-
 }

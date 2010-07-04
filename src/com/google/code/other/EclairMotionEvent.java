@@ -11,7 +11,6 @@ package com.google.code.other;
 import android.view.MotionEvent;
 
 public class EclairMotionEvent extends WrapMotionEvent {
-
 	protected EclairMotionEvent(MotionEvent event) {
 		super(event);
 	}

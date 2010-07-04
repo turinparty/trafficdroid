@@ -26,34 +26,28 @@ public class ParserActivity extends Activity {
 	// private String PROTO_URL =
 	// "http://traffico.octotelematics.com/dyn/#CITY#.gif?ts=1";
 	// private List<Tratta> tratte = new ArrayList<Tratta>();
-
 	private ListView tratteListView;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tratte);
-
 		tratteListView = (ListView) findViewById(R.id.trattelist);
-
 		new TratteDownloader().execute(1);
-
 	}
 
 	private static String streamToString(InputStream ists) throws java.io.IOException {
 		StringBuilder sb = new StringBuilder();
-        String line;
-
-        try {
-            BufferedReader r1 = new BufferedReader(new InputStreamReader(ists));
-            while ((line = r1.readLine()) != null) {
-                sb.append(line).append("\n");
-            }
-        } finally {
-            ists.close();
-        }
-        return sb.toString();
-
+		String line;
+		try {
+			BufferedReader r1 = new BufferedReader(new InputStreamReader(ists));
+			while ((line = r1.readLine()) != null) {
+				sb.append(line).append("\n");
+			}
+		} finally {
+			ists.close();
+		}
+		return sb.toString();
 	}
 
 	private class TratteDownloader extends AsyncTask<Integer, Void, List<Tratta>> {

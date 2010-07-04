@@ -38,7 +38,6 @@ public class Tratta implements Comparable<Tratta> {
 		this.velocitaDx = velocitaDx;
 	}
 
-	@Override
 	public int compareTo(Tratta another) {
 		return 0;
 	}

@@ -26,13 +26,11 @@ public class Touch extends Activity implements OnTouchListener {
 	// These matrices will be used to move and zoom image
 	Matrix matrix = new Matrix();
 	Matrix savedMatrix = new Matrix();
-
 	// We can be in one of these 3 states
 	static final int NONE = 0;
 	static final int DRAG = 1;
 	static final int ZOOM = 2;
 	int mode = NONE;
-
 	// Remember some things for zooming
 	PointF start = new PointF();
 	PointF mid = new PointF();
@@ -44,22 +42,18 @@ public class Touch extends Activity implements OnTouchListener {
 		setContentView(R.layout.main);
 		ImageView view = (ImageView) findViewById(R.id.img);
 		view.setOnTouchListener(this);
-
 		// ...
 		// Work around a Cupcake bug
 		matrix.setTranslate(1f, 1f);
 		view.setImageMatrix(matrix);
 	}
 
-	@Override
 	public boolean onTouch(View v, MotionEvent rawEvent) {
 		WrapMotionEvent event = WrapMotionEvent.wrap(rawEvent);
 		// ...
 		ImageView view = (ImageView) v;
-
 		// Dump touch event to log
 		dumpEvent(event);
-
 		// Handle touch events here...
 		switch (event.getAction() & MotionEvent.ACTION_MASK) {
 		case MotionEvent.ACTION_DOWN:
@@ -99,7 +93,6 @@ public class Touch extends Activity implements OnTouchListener {
 			}
 			break;
 		}
-
 		view.setImageMatrix(matrix);
 		return true; // indicate event was handled
 	}
