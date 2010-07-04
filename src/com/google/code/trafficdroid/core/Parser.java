@@ -1,15 +1,15 @@
 package com.google.code.trafficdroid.core;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import com.google.code.trafficdroid.dto.Zone;
+import com.google.code.trafficdroid.dao.ContentDAO;
+import com.google.code.trafficdroid.dto.ZoneDTO;
+import com.google.code.trafficdroid.exception.CoreException;
+import com.google.code.trafficdroid.exception.DaoException;
 
 public class Parser {
 	private static final String DIV = "div";
@@ -20,12 +20,16 @@ public class Parser {
 	private static NodeList divsB;
 	private static NodeList trs;
 	private static Node id;
-	private static List<Zone> zones;
-	private static Zone zone;
+	private static List<ZoneDTO> zones;
+	private static ZoneDTO zone;
 
-	public static List<Zone> parse(InputStream is) throws Exception {
-		zones = new ArrayList<Zone>();
-		divsA = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is).getDocumentElement().getElementsByTagName(DIV);
+	public static List<ZoneDTO> parse(int mapId) throws CoreException {
+		zones = new ArrayList<ZoneDTO>();
+		try {
+			divsA = ContentDAO.getContent(mapId).getDocumentElement().getElementsByTagName(DIV);
+		} catch (DaoException e) {
+			throw new CoreException(CoreException.DaoException, e.getMessage());
+		}
 		for (int i = 0; i < divsA.getLength(); i++) {
 			try {
 				id = divsA.item(i).getAttributes().getNamedItem(ID);
@@ -38,7 +42,7 @@ public class Parser {
 					if (divsB.item(y).getAttributes().getNamedItem(ID).getNodeValue().equalsIgnoreCase(ROADBOX)) {
 						trs = divsB.item(y).getFirstChild().getChildNodes();
 						for (int z = 0; z < trs.getLength() - 1; z += 2) {
-							zone = new Zone();
+							zone = new ZoneDTO();
 							zone.setName(trs.item(z).getChildNodes().item(1).getChildNodes().item(2).getFirstChild().getNodeValue());
 							zone.setSpeedLeft(trs.item(z + 1).getChildNodes().item(0).getFirstChild().getNodeValue());
 							zone.setCatLeft(Integer.parseInt(trs.item(z + 1).getChildNodes().item(1).getAttributes().getNamedItem("class").getNodeValue().substring(2, 3)));

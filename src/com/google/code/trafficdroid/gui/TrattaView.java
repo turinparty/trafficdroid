@@ -1,6 +1,6 @@
 package com.google.code.trafficdroid.gui;
 
-import com.google.code.trafficdroid.dto.Zone;
+import com.google.code.trafficdroid.dto.ZoneDTO;
 
 import android.content.Context;
 import android.widget.LinearLayout;
@@ -11,7 +11,7 @@ public class TrattaView extends LinearLayout {
 	private TextView velocitaSxTextView;
 	private TextView velocitaDxTextView;
 
-	public TrattaView(Context context, Zone tratta) {
+	public TrattaView(Context context, ZoneDTO tratta) {
 		super(context);
 		this.setOrientation(VERTICAL);
 		trattaTextView = new TextView(context);

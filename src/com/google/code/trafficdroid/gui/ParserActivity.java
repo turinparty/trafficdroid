@@ -1,7 +1,5 @@
 package com.google.code.trafficdroid.gui;
 
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.List;
 
 import android.app.Activity;
@@ -14,7 +12,7 @@ import android.widget.ListView;
 import com.google.code.trafficdroid.R;
 import com.google.code.trafficdroid.core.Parser;
 import com.google.code.trafficdroid.core.TrattaListAdapter;
-import com.google.code.trafficdroid.dto.Zone;
+import com.google.code.trafficdroid.dto.ZoneDTO;
 
 public class ParserActivity extends Activity {
 	// private String PROTO_URL =
@@ -30,25 +28,23 @@ public class ParserActivity extends Activity {
 		new TratteDownloader().execute(1);
 	}
 
-	private class TratteDownloader extends AsyncTask<Integer, Void, List<Zone>> {
+	private class TratteDownloader extends AsyncTask<Integer, Void, List<ZoneDTO>> {
 		private ProgressDialog dialog;
 
 		protected void onPreExecute() {
 			dialog = ProgressDialog.show(ParserActivity.this, "Please wait", "Downloading tratte...", true);
 		}
 
-		protected List<Zone> doInBackground(Integer... params) {
+		protected List<ZoneDTO> doInBackground(Integer... params) {
 			try {
-				URL u = new URL("http://traffico.octotelematics.com/dyn/" + params[0] + ".html?ts=1");
-				URLConnection uc = u.openConnection();
-				return Parser.parse(uc.getInputStream());
+				return Parser.parse(1);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			return null;
 		}
 
-		protected void onPostExecute(List<Zone> tratte) {
+		protected void onPostExecute(List<ZoneDTO> tratte) {
 			dialog.dismiss();
 			if (tratte == null) {
 				new AlertDialog.Builder(ParserActivity.this).setTitle("Error").setMessage("Error downloading image").setPositiveButton("OK", null).show();

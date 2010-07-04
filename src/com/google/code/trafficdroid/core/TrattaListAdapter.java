@@ -3,7 +3,7 @@ package com.google.code.trafficdroid.core;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.code.trafficdroid.dto.Zone;
+import com.google.code.trafficdroid.dto.ZoneDTO;
 import com.google.code.trafficdroid.gui.TrattaView;
 
 import android.content.Context;
@@ -14,17 +14,17 @@ import android.widget.BaseAdapter;
 public class TrattaListAdapter extends BaseAdapter {
 	/** Remember our context so we can use it when constructing views. */
 	private Context mContext;
-	private List<Zone> mItems = new ArrayList<Zone>();
+	private List<ZoneDTO> mItems = new ArrayList<ZoneDTO>();
 
 	public TrattaListAdapter(Context context) {
 		mContext = context;
 	}
 
-	public void addItem(Zone it) {
+	public void addItem(ZoneDTO it) {
 		mItems.add(it);
 	}
 
-	public void setListItems(List<Zone> lit) {
+	public void setListItems(List<ZoneDTO> lit) {
 		mItems = lit;
 	}
 
