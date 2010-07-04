@@ -21,30 +21,19 @@ import com.google.code.trafficdroid.dto.ZoneDTO;
 
 public class ParserActivity extends Activity {
 	private ListView tratteListView;
-	
-	private static final int[] autostradeNumeri = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-		11, 121, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22,
-		23, 24, 241, 25, 26, 27, 28, 29, 30, 31, 32, 50,
-		51, 52, 55, 90, 91, 101, 102, 143, 103, 302, 303,
-		501, 701, 111, 131, 142, 141, 144, 161, 181, 211,
-		261, 262, 263, 291, 552, 551, 553, 56, 301};
+	private static final int[] autostradeNumeri = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 121, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 241, 25, 26, 27, 28, 29, 30, 31, 32, 50, 51, 52, 55, 90, 91, 101, 102, 143, 103, 302, 303, 501, 701, 111, 131, 142, 141, 144, 161, 181, 211, 261, 262, 263, 291, 552, 551, 553, 56, 301 };
 
-	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tratte);
 		tratteListView = (ListView) findViewById(R.id.trattelist);
-		
 		final Spinner s = (Spinner) findViewById(R.id.spinner);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.autostrade, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		s.setAdapter(adapter);
-		
 		Button okBtn = (Button) findViewById(R.id.okbtn);
-		okBtn.setOnClickListener(new OnClickListener()
-		{
-			public void onClick(View v)
-			{
+		okBtn.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
 				int selected = s.getSelectedItemPosition();
 				new TratteDownloader().execute(autostradeNumeri[selected]);
 			}
