@@ -1,4 +1,9 @@
-package com.google.code.trafficdroid.gui;
+package it.localhost.trafficdroid.gui;
+
+import it.localhost.trafficdroid.core.Parser;
+import it.localhost.trafficdroid.core.TrattaListAdapter;
+import it.localhost.trafficdroid.dto.ZoneDTO;
+import it.localhost.trafficdroid.exception.CoreException;
 
 import java.util.List;
 
@@ -14,11 +19,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 
-import com.google.code.trafficdroid.R;
-import com.google.code.trafficdroid.core.Parser;
-import com.google.code.trafficdroid.core.TrattaListAdapter;
-import com.google.code.trafficdroid.dto.ZoneDTO;
-import com.google.code.trafficdroid.exception.CoreException;
+import it.localhost.trafficdroid.R;
 
 public class ParserActivity extends Activity {
 	private ListView tratteListView;

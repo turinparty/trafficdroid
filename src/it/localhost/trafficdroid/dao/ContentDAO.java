@@ -1,4 +1,6 @@
-package com.google.code.trafficdroid.dao;
+package it.localhost.trafficdroid.dao;
+
+import it.localhost.trafficdroid.exception.DaoException;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -12,7 +14,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-import com.google.code.trafficdroid.exception.DaoException;
 
 public class ContentDAO {
 	public static final String url = "http://traffico.octotelematics.com/dyn/";

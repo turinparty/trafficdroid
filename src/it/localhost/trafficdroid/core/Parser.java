@@ -1,4 +1,9 @@
-package com.google.code.trafficdroid.core;
+package it.localhost.trafficdroid.core;
+
+import it.localhost.trafficdroid.dao.ContentDAO;
+import it.localhost.trafficdroid.dto.ZoneDTO;
+import it.localhost.trafficdroid.exception.CoreException;
+import it.localhost.trafficdroid.exception.DaoException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,10 +11,6 @@ import java.util.List;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import com.google.code.trafficdroid.dao.ContentDAO;
-import com.google.code.trafficdroid.dto.ZoneDTO;
-import com.google.code.trafficdroid.exception.CoreException;
-import com.google.code.trafficdroid.exception.DaoException;
 
 public class Parser {
 	private static final String DIV = "div";

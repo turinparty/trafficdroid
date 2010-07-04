@@ -1,5 +1,6 @@
-package com.google.code.trafficdroid.gui;
+package it.localhost.trafficdroid.gui;
 
+import it.localhost.trafficdroid.dto.ZoneDTO;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.view.Gravity;
@@ -8,7 +9,6 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.google.code.trafficdroid.dto.ZoneDTO;
 
 public class TrattaView extends LinearLayout {
 	private TextView trattaTextView;

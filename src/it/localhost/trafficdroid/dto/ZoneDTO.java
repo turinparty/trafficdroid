@@ -1,4 +1,4 @@
-package com.google.code.trafficdroid.dto;
+package it.localhost.trafficdroid.dto;
 
 public class ZoneDTO {
 	private String name;

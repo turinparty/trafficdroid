@@ -1,10 +1,11 @@
-package com.google.code.trafficdroid.core;
+package it.localhost.trafficdroid.core;
+
+import it.localhost.trafficdroid.dto.ZoneDTO;
+import it.localhost.trafficdroid.gui.TrattaView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.code.trafficdroid.dto.ZoneDTO;
-import com.google.code.trafficdroid.gui.TrattaView;
 
 import android.content.Context;
 import android.view.View;
