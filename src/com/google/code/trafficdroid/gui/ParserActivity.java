@@ -18,6 +18,7 @@ import com.google.code.trafficdroid.R;
 import com.google.code.trafficdroid.core.Parser;
 import com.google.code.trafficdroid.core.TrattaListAdapter;
 import com.google.code.trafficdroid.dto.ZoneDTO;
+import com.google.code.trafficdroid.exception.CoreException;
 
 public class ParserActivity extends Activity {
 	private ListView tratteListView;
@@ -50,7 +51,7 @@ public class ParserActivity extends Activity {
 		protected List<ZoneDTO> doInBackground(Integer... params) {
 			try {
 				return Parser.parse(params[0]);
-			} catch (Exception e) {
+			} catch (CoreException e) {
 				e.printStackTrace();
 			}
 			return null;
