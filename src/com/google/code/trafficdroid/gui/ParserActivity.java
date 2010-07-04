@@ -18,6 +18,7 @@ import android.widget.ListView;
 
 import com.google.code.trafficdroid.R;
 import com.google.code.trafficdroid.core.Parser;
+import com.google.code.trafficdroid.core.ParserOld;
 import com.google.code.trafficdroid.core.TrattaListAdapter;
 import com.google.code.trafficdroid.dto.Tratta;
 
@@ -66,11 +67,8 @@ public class ParserActivity extends Activity {
 			try {
 				URL u = new URL("http://traffico.octotelematics.com/dyn/" + params[0] + ".html?ts=1");
 				URLConnection uc = u.openConnection();
-				String string = streamToString(uc.getInputStream());
-				return Parser.parse(string);
-			} catch (MalformedURLException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
+				return Parser.parse(uc.getInputStream());
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			return null;
