@@ -4,44 +4,52 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import android.util.Log;
-
-import com.google.code.trafficdroid.dto.Tratta;
+import com.google.code.trafficdroid.dto.Zone;
 
 public class Parser {
-	public static List<Tratta> parse(InputStream is) throws Exception {
-		Log.e("", "start");
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		List<Tratta> tratte = new ArrayList<Tratta>();
-		DocumentBuilder builder = factory.newDocumentBuilder();
-		Document dom = builder.parse(is);
-		Element body = dom.getDocumentElement();
-		NodeList divsA = body.getElementsByTagName("div");
+	private static final String DIV = "div";
+	private static final String ID = "id";
+	private static final String SECTION = "section";
+	private static final String ROADBOX = "roadbox";
+	private static NodeList divsA;
+	private static NodeList divsB;
+	private static NodeList trs;
+	private static Node id;
+	private static List<Zone> zones;
+	private static Zone zone;
+
+	public static List<Zone> parse(InputStream is) throws Exception {
+		zones = new ArrayList<Zone>();
+		divsA = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is).getDocumentElement().getElementsByTagName(DIV);
 		for (int i = 0; i < divsA.getLength(); i++) {
-			if (divsA.item(i).getAttributes().getNamedItem("id").getNodeValue().equalsIgnoreCase("section")) {
-				NodeList divsB = divsA.item(i).getChildNodes();
+			try {
+				id = divsA.item(i).getAttributes().getNamedItem(ID);
+			} catch (NullPointerException e) {
+				id = null;
+			}
+			if (id != null && id.getNodeValue().equalsIgnoreCase(SECTION)) {
+				divsB = divsA.item(i).getChildNodes();
 				for (int y = 0; y < divsB.getLength(); y++) {
-					if (divsB.item(y).getAttributes().getNamedItem("id").getNodeValue().equalsIgnoreCase("roadbox")) {
-						Node table = divsB.item(y).getFirstChild();
-						NodeList tr = table.getChildNodes();
-						for (int z = 0; z < tr.getLength(); z++) {
-							Log.e("", "" + tr.item(z).getNodeName());
+					if (divsB.item(y).getAttributes().getNamedItem(ID).getNodeValue().equalsIgnoreCase(ROADBOX)) {
+						trs = divsB.item(y).getFirstChild().getChildNodes();
+						for (int z = 0; z < trs.getLength() - 1; z += 2) {
+							zone = new Zone();
+							zone.setName(trs.item(z).getChildNodes().item(1).getChildNodes().item(2).getFirstChild().getNodeValue());
+							zone.setSpeedLeft(trs.item(z + 1).getChildNodes().item(0).getFirstChild().getNodeValue());
+							zone.setCatLeft(Integer.parseInt(trs.item(z + 1).getChildNodes().item(1).getAttributes().getNamedItem("class").getNodeValue().substring(2, 3)));
+							zone.setCatRight(Integer.parseInt(trs.item(z + 1).getChildNodes().item(2).getAttributes().getNamedItem("class").getNodeValue().substring(2, 3)));
+							zone.setSpeedRight(trs.item(z + 1).getChildNodes().item(3).getFirstChild().getNodeValue());
+							zones.add(zone);
 						}
 					}
 				}
 			}
 		}
-		Log.e("", "end");
-		return null;
+		return zones;
 	}
 }

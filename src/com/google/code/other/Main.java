@@ -6,11 +6,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import com.google.code.trafficdroid.R;
-import com.google.code.trafficdroid.R.array;
-import com.google.code.trafficdroid.R.id;
-import com.google.code.trafficdroid.R.layout;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -27,10 +22,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import com.google.code.trafficdroid.R;
+
 public class Main extends Activity // implements OnTouchListener
 {
 	// ===
-	private static final String TAG = "Touch";
+	// private static final String TAG = "Touch";
 	// These matrices will be used to move and zoom image
 	Matrix matrix = new Matrix();
 	Matrix savedMatrix = new Matrix();
@@ -60,7 +57,7 @@ public class Main extends Activity // implements OnTouchListener
 		imView = (ImageView) findViewById(R.id.img);
 		// imView.setOnTouchListener(this);
 		Spinner autostrade = (Spinner) findViewById(R.id.cities);
-		ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.autostrade, android.R.layout.simple_spinner_item);
+		ArrayAdapter<?> adapter = ArrayAdapter.createFromResource(this, R.array.autostrade, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		autostrade.setAdapter(adapter);
 	}

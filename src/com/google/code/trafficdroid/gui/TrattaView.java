@@ -1,6 +1,6 @@
 package com.google.code.trafficdroid.gui;
 
-import com.google.code.trafficdroid.dto.Tratta;
+import com.google.code.trafficdroid.dto.Zone;
 
 import android.content.Context;
 import android.widget.LinearLayout;
@@ -11,20 +11,20 @@ public class TrattaView extends LinearLayout {
 	private TextView velocitaSxTextView;
 	private TextView velocitaDxTextView;
 
-	public TrattaView(Context context, Tratta tratta) {
+	public TrattaView(Context context, Zone tratta) {
 		super(context);
 		this.setOrientation(VERTICAL);
 		trattaTextView = new TextView(context);
-		trattaTextView.setText(tratta.getTratta());
+		trattaTextView.setText(tratta.getName());
 		/* Now the text (after the icon) */
 		addView(trattaTextView, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 		LinearLayout lay = new LinearLayout(context);
 		lay.setOrientation(HORIZONTAL);
 		velocitaSxTextView = new TextView(context);
-		velocitaSxTextView.setText(tratta.getVelocitaSx());
+		velocitaSxTextView.setText(tratta.getSpeedLeft());
 		lay.addView(velocitaSxTextView, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 		velocitaDxTextView = new TextView(context);
-		velocitaDxTextView.setText(tratta.getVelocitaDx());
+		velocitaDxTextView.setText(tratta.getSpeedRight());
 		lay.addView(velocitaDxTextView, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 		addView(lay, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 	}

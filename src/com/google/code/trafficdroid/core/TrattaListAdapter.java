@@ -3,7 +3,7 @@ package com.google.code.trafficdroid.core;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.code.trafficdroid.dto.Tratta;
+import com.google.code.trafficdroid.dto.Zone;
 import com.google.code.trafficdroid.gui.TrattaView;
 
 import android.content.Context;
@@ -14,17 +14,17 @@ import android.widget.BaseAdapter;
 public class TrattaListAdapter extends BaseAdapter {
 	/** Remember our context so we can use it when constructing views. */
 	private Context mContext;
-	private List<Tratta> mItems = new ArrayList<Tratta>();
+	private List<Zone> mItems = new ArrayList<Zone>();
 
 	public TrattaListAdapter(Context context) {
 		mContext = context;
 	}
 
-	public void addItem(Tratta it) {
+	public void addItem(Zone it) {
 		mItems.add(it);
 	}
 
-	public void setListItems(List<Tratta> lit) {
+	public void setListItems(List<Zone> lit) {
 		mItems = lit;
 	}
 
@@ -59,9 +59,9 @@ public class TrattaListAdapter extends BaseAdapter {
 			// Reuse/Overwrite the View passed
 			// We are assuming(!) that it is castable!
 			btv = (TrattaView) convertView;
-			btv.setTratta(mItems.get(position).getTratta());
-			btv.setVelocitaSx(mItems.get(position).getVelocitaSx());
-			btv.setVelocitaDx(mItems.get(position).getVelocitaDx());
+			btv.setTratta(mItems.get(position).getName());
+			btv.setVelocitaSx(mItems.get(position).getSpeedLeft());
+			btv.setVelocitaDx(mItems.get(position).getSpeedRight());
 		}
 		return btv;
 	}

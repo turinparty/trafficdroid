@@ -1,17 +1,10 @@
 package com.google.code.trafficdroid.core;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-import com.google.code.trafficdroid.dto.Tratta;
+import com.google.code.trafficdroid.dto.Zone;
 
 public class ParserOld {
 	// String[] numeri = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
@@ -85,13 +78,13 @@ public class ParserOld {
 	// "A56 Tangenziale di Napoli",
 	// "RA4 S.S. Ionica 106"
 	// };
-	public static List<Tratta> parse(String string) {
+	public static List<Zone> parse(String string) {
 		String[] LetterValues = { "?", "<10", "10-30", "30-50", "50-70", "70-90", ">90" };
 		boolean esci = false;
 		int SegmentsCount = 1;
 		int pos = 0;
 		Vector<String> SegmentValues = new Vector<String>();
-		List<Tratta> res = new ArrayList<Tratta>();
+		List<Zone> res = new ArrayList<Zone>();
 		while (esci == false) {
 			String marker = "tipU" + SegmentsCount;
 			pos = string.indexOf(marker, pos) + 1;
@@ -113,16 +106,16 @@ public class ParserOld {
 			// ********* Left value ***********
 			// Get value for LEFT column:
 			int ArrayIndex = Integer.parseInt(string.substring(InizioVelSin, InizioVelSin + 1));
-			Tratta tr = new Tratta();
+			Zone tr = new Zone();
 			String beginning = index + " " + SegmentValues.get(index - 1);
-			tr.setTratta(beginning);
+			tr.setName(beginning);
 			String Letter = LetterValues[ArrayIndex];
-			tr.setVelocitaSx(Letter);
+			tr.setSpeedLeft(Letter);
 			// ********* Right value ***********
 			// Get value for RIGHT column:
 			ArrayIndex = Integer.parseInt(string.substring(InizioVelDes, InizioVelDes + 1));
 			Letter = LetterValues[ArrayIndex];
-			tr.setVelocitaDx(Letter);
+			tr.setSpeedRight(Letter);
 			res.add(tr);
 		} // end for
 		return res;
