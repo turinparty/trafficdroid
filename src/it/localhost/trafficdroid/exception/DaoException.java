@@ -8,18 +8,13 @@ public class DaoException extends Exception {
 	public static final int MalformedURLException = 4;
 	private static final long serialVersionUID = 1L;
 	private int key;
-	private String msg;
 
 	public DaoException(int key, String msg) {
+		super(msg);
 		this.key = key;
-		this.msg = msg;
 	}
 
 	public int getKey() {
 		return key;
-	}
-
-	public String getMsg() {
-		return msg;
 	}
 }

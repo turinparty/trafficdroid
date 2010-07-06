@@ -11,7 +11,6 @@ import java.util.List;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-
 public class Parser {
 	private static final String DIV = "div";
 	private static final String ID = "id";
@@ -24,10 +23,12 @@ public class Parser {
 	private static List<ZoneDTO> zones;
 	private static ZoneDTO zone;
 
-	public static List<ZoneDTO> parse(int mapId) throws CoreException {
+	public static List<ZoneDTO> parse(int mapId, String url) throws CoreException {
 		zones = new ArrayList<ZoneDTO>();
+		if (url.equals(""))
+			throw new CoreException(CoreException.EmptyUrlException, "Richiesto indirizzo fonte dati");
 		try {
-			divsA = ContentDAO.getContent(mapId).getDocumentElement().getElementsByTagName(DIV);
+			divsA = ContentDAO.getContent(mapId, url).getDocumentElement().getElementsByTagName(DIV);
 		} catch (DaoException e) {
 			throw new CoreException(CoreException.DaoException, e.getMessage());
 		}

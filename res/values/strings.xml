@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TrafficDroid</string>
-    <string name="cities_prompt">Scegli un\'autostrada</string>
-    <string name="copyright">Copyright (C) OctoTelematics S.p.a.</string>
-    <string name="pleaswait">Attendere</string>
-    <string name="downloading">Download...</string>
-    <string name="errordownloading">Errore nel download</string>
-    <string name="errore">Errore</string>
-    <string name="settings">Impostazioni</string>
-    <string name="legal_prompt">Sei in possesso dei diritti di utilizzo di questa fonte dati?</string>
+	<string name="app_name">TrafficDroid</string>
+	<string name="cities_prompt">Scegli una strada</string>
+	<string name="pleaswait">Attendere</string>
+	<string name="downloading">Download...</string>
+	<string name="errordownloading">Errore nel download</string>
+	<string name="errore">Errore</string>
+	<string name="settings">Impostazioni</string>
+	<string name="ok">OK</string>
+	<string name="urlRequest">URL sorgente dati</string>
+	<string name="urlInfo">Es: traffico.provider.com</string>
+	<string name="legal_prompt">Sei in possesso dei diritti di utilizzo di questa fonte dati?</string>
 </resources>

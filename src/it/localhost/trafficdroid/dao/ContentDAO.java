@@ -14,17 +14,11 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-
 public class ContentDAO {
-//	public static String url = "http://traffico.octotelematics.com/dyn/";
-	public static String url;
-	public static String endurl = "/dyn/";
-	public static final String page = ".html?ts=1";
-
-	public static Document getContent(int mapId) throws DaoException {
+	public static Document getContent(int mapId, String url) throws DaoException {
 		Document content = null;
 		try {
-			URL u = new URL(url + endurl + mapId + page);
+			URL u = new URL("http://" + url + "/dyn/" + mapId + ".html?ts=1");
 			URLConnection uc = u.openConnection();
 			content = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(uc.getInputStream());
 		} catch (MalformedURLException e) {

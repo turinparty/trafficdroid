@@ -9,7 +9,6 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-
 public class TrattaView extends LinearLayout {
 	private TextView trattaTextView;
 	private TextView velocitaSxTextView;
@@ -22,7 +21,7 @@ public class TrattaView extends LinearLayout {
 		velocitaSxTextView = new TextView(context);
 		velocitaDxTextView = new TextView(context);
 		setZona(tratta);
-		trattaTextView.setTypeface(null, Typeface.BOLD);
+		trattaTextView.setTypeface(null, Typeface.BOLD_ITALIC);
 		trattaTextView.setGravity(Gravity.CENTER);
 		addView(trattaTextView, new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
 		TableLayout lay = new TableLayout(context);
@@ -39,19 +38,55 @@ public class TrattaView extends LinearLayout {
 
 	public void setZona(ZoneDTO zona) {
 		trattaTextView.setText(zona.getName());
-		if (zona.getCatLeft() < 4) {
+		if (zona.getCatLeft() == 1) {
 			velocitaSxTextView.setText(">> " + zona.getSpeedLeft() + " <<");
-			velocitaSxTextView.setTypeface(null, Typeface.BOLD_ITALIC);
-		} else {
+			velocitaSxTextView.setTextColor(0xffb00000);
+			velocitaSxTextView.setTypeface(null, Typeface.BOLD);
+		} else if (zona.getCatLeft() == 2) {
 			velocitaSxTextView.setText(zona.getSpeedLeft());
+			velocitaSxTextView.setTextColor(0xffff0000);
 			velocitaSxTextView.setTypeface(null, Typeface.NORMAL);
+		} else if (zona.getCatLeft() == 3) {
+			velocitaSxTextView.setText(zona.getSpeedLeft());
+			velocitaSxTextView.setTextColor(0xffff7f00);
+			velocitaSxTextView.setTypeface(null, Typeface.NORMAL);
+		} else if (zona.getCatLeft() == 4) {
+			velocitaSxTextView.setText(zona.getSpeedLeft());
+			velocitaSxTextView.setTextColor(0xffffff00);
+			velocitaSxTextView.setTypeface(null, Typeface.NORMAL);
+		} else if (zona.getCatLeft() == 5) {
+			velocitaSxTextView.setText(zona.getSpeedLeft());
+			velocitaSxTextView.setTextColor(0xff00ff00);
+			velocitaSxTextView.setTypeface(null, Typeface.NORMAL);
+		} else if (zona.getCatLeft() == 6) {
+			velocitaSxTextView.setText(zona.getSpeedLeft());
+			velocitaSxTextView.setTextColor(0xff008000);
+			velocitaSxTextView.setTypeface(null, Typeface.ITALIC);
 		}
-		if (zona.getCatRight() < 4) {
+		if (zona.getCatRight() == 1) {
 			velocitaDxTextView.setText(">> " + zona.getSpeedRight() + " <<");
-			velocitaDxTextView.setTypeface(null, Typeface.BOLD_ITALIC);
-		} else {
+			velocitaDxTextView.setTextColor(0xffb00000);
+			velocitaDxTextView.setTypeface(null, Typeface.BOLD);
+		} else if (zona.getCatRight() == 2) {
 			velocitaDxTextView.setText(zona.getSpeedRight());
+			velocitaDxTextView.setTextColor(0xffff0000);
 			velocitaDxTextView.setTypeface(null, Typeface.NORMAL);
+		} else if (zona.getCatRight() == 3) {
+			velocitaDxTextView.setText(zona.getSpeedRight());
+			velocitaDxTextView.setTextColor(0xffff7f00);
+			velocitaDxTextView.setTypeface(null, Typeface.NORMAL);
+		} else if (zona.getCatRight() == 4) {
+			velocitaDxTextView.setText(zona.getSpeedRight());
+			velocitaDxTextView.setTextColor(0xffffff00);
+			velocitaDxTextView.setTypeface(null, Typeface.NORMAL);
+		} else if (zona.getCatRight() == 5) {
+			velocitaDxTextView.setText(zona.getSpeedRight());
+			velocitaDxTextView.setTextColor(0xff00ff00);
+			velocitaDxTextView.setTypeface(null, Typeface.NORMAL);
+		} else if (zona.getCatRight() == 6) {
+			velocitaDxTextView.setText(zona.getSpeedRight());
+			velocitaDxTextView.setTextColor(0xff008000);
+			velocitaDxTextView.setTypeface(null, Typeface.ITALIC);
 		}
 	}
 }
