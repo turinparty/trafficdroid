@@ -1,5 +1,6 @@
 package it.localhost.trafficdroid.dao;
 
+import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.exception.DaoException;
 
 import java.io.IOException;
@@ -18,7 +19,7 @@ public class ContentDAO {
 	public static Document getContent(int mapId, String url) throws DaoException {
 		Document content = null;
 		try {
-			URL u = new URL("http://" + url + "/dyn/" + mapId + ".html?ts=1");
+			URL u = new URL(Const.http + url + Const.dyn + mapId + Const.html);
 			URLConnection uc = u.openConnection();
 			content = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(uc.getInputStream());
 		} catch (MalformedURLException e) {

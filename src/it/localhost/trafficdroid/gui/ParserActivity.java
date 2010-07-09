@@ -1,5 +1,6 @@
 package it.localhost.trafficdroid.gui;
 
+import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.core.Parser;
 import it.localhost.trafficdroid.core.TrattaListAdapter;
 import it.localhost.trafficdroid.dto.ZoneDTO;
@@ -12,6 +13,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -29,8 +31,6 @@ import it.localhost.trafficdroid.R;
 
 public class ParserActivity extends Activity {
 	private ListView tratteListView;
-	private static final int[] autostradeNumeri = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 121, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 241, 25, 26, 27, 28, 29, 30, 31, 32, 50, 51, 52, 55, 90, 91, 101, 102, 143, 103, 302, 303, 501, 701, 111, 131, 142, 141, 144, 161, 181, 211, 261, 262, 263, 291, 552, 551, 553, 56, 301 };
-	private final int MENU_SETTINGS = 1;
 	private SharedPreferences settings;
 
 	public void onCreate(Bundle savedInstanceState) {
@@ -38,21 +38,25 @@ public class ParserActivity extends Activity {
 		settings = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 		setContentView(R.layout.main);
 		tratteListView = (ListView) findViewById(R.id.trattelist);
-		final Spinner s = (Spinner) findViewById(R.id.spinner);
+		final Spinner spinner = (Spinner) findViewById(R.id.spinner);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.autostrade, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		s.setAdapter(adapter);
+		spinner.setAdapter(adapter);
+		spinner.setSelection(settings.getInt(Const.spinnerDefaultPosition, 0));
 		Button okBtn = (Button) findViewById(R.id.okbtn);
 		okBtn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				new TratteDownloader().execute(autostradeNumeri[s.getSelectedItemPosition()]);
+				Editor editor = settings.edit();
+				editor.putInt(Const.spinnerDefaultPosition, spinner.getSelectedItemPosition());
+				editor.commit();
+				new TratteDownloader().execute(Const.autostradeNumeri[spinner.getSelectedItemPosition()]);
 			}
 		});
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
-		MenuItem m1 = menu.add(0, MENU_SETTINGS, Menu.NONE, R.string.settings);
+		MenuItem m1 = menu.add(0, Const.MENU_SETTINGS, Menu.NONE, R.string.settings);
 		m1.setIcon(android.R.drawable.ic_menu_preferences);
 		m1.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			public boolean onMenuItemClick(MenuItem _menuItem) {
@@ -73,12 +77,12 @@ public class ParserActivity extends Activity {
 		}
 
 		protected List<ZoneDTO> doInBackground(Integer... params) {
-			String url = settings.getString(TDPreferenceActivity.KEY_URL, "");
+			String url = settings.getString(Const.KEY_URL, Const.emptyString);
 			List<ZoneDTO> output = null;
 			try {
 				output = Parser.parse(params[0], url);
 			} catch (CoreException e) {
-				error = e.getKey() + ": " + e.getMessage();
+				error = e.getKey() + Const.keyMsgExSeparator + e.getMessage();
 			}
 			return output;
 		}
@@ -86,7 +90,7 @@ public class ParserActivity extends Activity {
 		protected void onPostExecute(List<ZoneDTO> tratte) {
 			dialog.dismiss();
 			if (error != null)
-				new AlertDialog.Builder(ParserActivity.this).setTitle(getResources().getText(R.string.errore)).setMessage(error).setPositiveButton("OK", null).show();
+				new AlertDialog.Builder(ParserActivity.this).setTitle(getResources().getText(R.string.errore)).setMessage(error).setPositiveButton(Const.ok, null).show();
 			else {
 				TrattaListAdapter tla = new TrattaListAdapter(ParserActivity.this);
 				tla.setListItems(tratte);
