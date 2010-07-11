@@ -5,28 +5,23 @@ public class StreetDTO {
 	private boolean active;
 	private int code;
 
-	public String getName() {
-		return name;
+	public StreetDTO(String name, boolean active, int code) {
+		super();
+		this.name = name;
+		this.active = active;
+		this.code = code;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public String getName() {
+		return name;
 	}
 
 	public boolean isActive() {
 		return active;
 	}
 
-	public void setActive(boolean active) {
-		this.active = active;
-	}
-
 	public int getCode() {
 		return code;
-	}
-
-	public void setCode(int code) {
-		this.code = code;
 	}
 
 	@Override
