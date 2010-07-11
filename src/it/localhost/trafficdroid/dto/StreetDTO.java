@@ -28,4 +28,9 @@ public class StreetDTO {
 	public void setCode(int code) {
 		this.code = code;
 	}
+
+	@Override
+	public String toString() {
+		return name;
+	}
 }

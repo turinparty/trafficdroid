@@ -1,8 +1,10 @@
 package it.localhost.trafficdroid.gui;
 
+import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.core.Parser;
-import it.localhost.trafficdroid.core.TrattaListAdapter;
+import it.localhost.trafficdroid.dao.StreetDAO;
+import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
 import it.localhost.trafficdroid.exception.CoreException;
 
@@ -27,8 +29,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 
-import it.localhost.trafficdroid.R;
-
 public class ParserActivity extends Activity {
 	private ListView tratteListView;
 	private SharedPreferences settings;
@@ -39,7 +39,7 @@ public class ParserActivity extends Activity {
 		setContentView(R.layout.main);
 		tratteListView = (ListView) findViewById(R.id.trattelist);
 		final Spinner spinner = (Spinner) findViewById(R.id.spinner);
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.streets, android.R.layout.simple_spinner_item);
+		final ArrayAdapter<StreetDTO> adapter = new ArrayAdapter<StreetDTO>(this, android.R.layout.simple_spinner_item, StreetDAO.get());
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(adapter);
 		spinner.setSelection(settings.getInt(getResources().getText(R.string.spinnerDefaultPosizion).toString(), 0));
@@ -49,7 +49,7 @@ public class ParserActivity extends Activity {
 				Editor editor = settings.edit();
 				editor.putInt(getResources().getText(R.string.spinnerDefaultPosizion).toString(), spinner.getSelectedItemPosition());
 				editor.commit();
-				new TratteDownloader().execute(Const.streetCode[spinner.getSelectedItemPosition()]);
+				new TratteDownloader().execute(adapter.getItem(spinner.getSelectedItemPosition()).getCode());
 			}
 		});
 	}

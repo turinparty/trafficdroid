@@ -1,7 +1,6 @@
-package it.localhost.trafficdroid.core;
+package it.localhost.trafficdroid.gui;
 
 import it.localhost.trafficdroid.dto.ZoneDTO;
-import it.localhost.trafficdroid.gui.TrattaView;
 
 import java.util.ArrayList;
 import java.util.List;
