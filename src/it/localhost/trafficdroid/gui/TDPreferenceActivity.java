@@ -8,15 +8,16 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
 
 public class TDPreferenceActivity extends PreferenceActivity {
+	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		PreferenceScreen preferenceScreen = getPreferenceManager().createPreferenceScreen(this);
-		EditTextPreference editTextPref = new EditTextPreference(this);
-		editTextPref.setKey(Const.KEY_URL);
-		editTextPref.setTitle(R.string.urlRequest);
-		editTextPref.setSummary(R.string.urlInfo);
-		editTextPref.setDialogTitle(R.string.urlRequest);
-		preferenceScreen.addPreference(editTextPref);
+		EditTextPreference urlRequestPref = new EditTextPreference(this);
+		urlRequestPref.setKey(Const.KEY_URL);
+		urlRequestPref.setTitle(R.string.urlRequest);
+		urlRequestPref.setSummary(R.string.urlInfo);
+		urlRequestPref.setDialogTitle(R.string.urlRequest);
+		preferenceScreen.addPreference(urlRequestPref);
 		setPreferenceScreen(preferenceScreen);
 	}
 }

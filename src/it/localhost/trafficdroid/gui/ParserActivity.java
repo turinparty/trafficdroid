@@ -42,21 +42,21 @@ public class ParserActivity extends Activity {
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.autostrade, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(adapter);
-		spinner.setSelection(settings.getInt(Const.spinnerDefaultPosition, 0));
+		spinner.setSelection(settings.getInt(Const.spinnerDefaultPosizion, 0));
 		Button okBtn = (Button) findViewById(R.id.okbtn);
 		okBtn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Editor editor = settings.edit();
-				editor.putInt(Const.spinnerDefaultPosition, spinner.getSelectedItemPosition());
+				editor.putInt(Const.spinnerDefaultPosizion, spinner.getSelectedItemPosition());
 				editor.commit();
-				new TratteDownloader().execute(Const.autostradeNumeri[spinner.getSelectedItemPosition()]);
+				new TratteDownloader().execute(Const.streetCode[spinner.getSelectedItemPosition()]);
 			}
 		});
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
-		MenuItem m1 = menu.add(0, Const.MENU_SETTINGS, Menu.NONE, R.string.settings);
+		MenuItem m1 = menu.add(0, Const.menuSettings, Menu.NONE, R.string.settings);
 		m1.setIcon(android.R.drawable.ic_menu_preferences);
 		m1.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			public boolean onMenuItemClick(MenuItem _menuItem) {
@@ -82,7 +82,7 @@ public class ParserActivity extends Activity {
 			try {
 				output = Parser.parse(params[0], url);
 			} catch (CoreException e) {
-				error = e.getKey() + Const.keyMsgExSeparator + e.getMessage();
+				error = e.getKey() + ": " + e.getMessage();
 			}
 			return output;
 		}
