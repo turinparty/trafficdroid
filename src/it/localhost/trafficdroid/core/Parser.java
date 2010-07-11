@@ -1,7 +1,7 @@
 package it.localhost.trafficdroid.core;
 
 import it.localhost.trafficdroid.common.Const;
-import it.localhost.trafficdroid.dao.ContentDAO;
+import it.localhost.trafficdroid.dao.TrafficDAO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
 import it.localhost.trafficdroid.exception.CoreException;
 import it.localhost.trafficdroid.exception.DaoException;
@@ -25,7 +25,7 @@ public class Parser {
 		if (url.equals(Const.emptyString))
 			throw new CoreException(CoreException.EmptyUrlException, Const.msgMissingUrl);
 		try {
-			divsA = ContentDAO.getContent(mapId, url).getDocumentElement().getElementsByTagName(Const.codeDiv);
+			divsA = TrafficDAO.get(mapId, url).getDocumentElement().getElementsByTagName(Const.codeDiv);
 		} catch (DaoException e) {
 			throw new CoreException(CoreException.DaoException, e.getMessage());
 		}

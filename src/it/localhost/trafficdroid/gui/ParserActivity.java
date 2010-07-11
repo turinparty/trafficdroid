@@ -39,15 +39,15 @@ public class ParserActivity extends Activity {
 		setContentView(R.layout.main);
 		tratteListView = (ListView) findViewById(R.id.trattelist);
 		final Spinner spinner = (Spinner) findViewById(R.id.spinner);
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.autostrade, android.R.layout.simple_spinner_item);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.streets, android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(adapter);
-		spinner.setSelection(settings.getInt(Const.spinnerDefaultPosizion, 0));
+		spinner.setSelection(settings.getInt(getResources().getText(R.string.spinnerDefaultPosizion).toString(), 0));
 		Button okBtn = (Button) findViewById(R.id.okbtn);
 		okBtn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Editor editor = settings.edit();
-				editor.putInt(Const.spinnerDefaultPosizion, spinner.getSelectedItemPosition());
+				editor.putInt(getResources().getText(R.string.spinnerDefaultPosizion).toString(), spinner.getSelectedItemPosition());
 				editor.commit();
 				new TratteDownloader().execute(Const.streetCode[spinner.getSelectedItemPosition()]);
 			}
@@ -77,7 +77,7 @@ public class ParserActivity extends Activity {
 		}
 
 		protected List<ZoneDTO> doInBackground(Integer... params) {
-			String url = settings.getString(Const.KEY_URL, Const.emptyString);
+			String url = settings.getString(getResources().getText(R.string.urlKey).toString(), Const.emptyString);
 			List<ZoneDTO> output = null;
 			try {
 				output = Parser.parse(params[0], url);
@@ -90,7 +90,7 @@ public class ParserActivity extends Activity {
 		protected void onPostExecute(List<ZoneDTO> tratte) {
 			dialog.dismiss();
 			if (error != null)
-				new AlertDialog.Builder(ParserActivity.this).setTitle(getResources().getText(R.string.errore)).setMessage(error).setPositiveButton(Const.ok, null).show();
+				new AlertDialog.Builder(ParserActivity.this).setTitle(getResources().getText(R.string.errore)).setMessage(error).setPositiveButton(getResources().getText(R.string.ok), null).show();
 			else {
 				TrattaListAdapter tla = new TrattaListAdapter(ParserActivity.this);
 				tla.setListItems(tratte);

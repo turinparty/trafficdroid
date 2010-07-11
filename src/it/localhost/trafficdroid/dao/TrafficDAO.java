@@ -15,13 +15,12 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-public class ContentDAO {
-	public static Document getContent(int mapId, String url) throws DaoException {
-		Document content = null;
+public class TrafficDAO {
+	public static Document get(int mapId, String url) throws DaoException {
 		try {
 			URL u = new URL(Const.http + url + Const.dyn + mapId + Const.html);
 			URLConnection uc = u.openConnection();
-			content = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(uc.getInputStream());
+			return DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(uc.getInputStream());
 		} catch (MalformedURLException e) {
 			throw new DaoException(DaoException.MalformedURLException, e.getMessage());
 		} catch (SAXException e) {
@@ -33,6 +32,5 @@ public class ContentDAO {
 		} catch (FactoryConfigurationError e) {
 			throw new DaoException(DaoException.FactoryConfigurationError, e.getMessage());
 		}
-		return content;
 	}
 }
