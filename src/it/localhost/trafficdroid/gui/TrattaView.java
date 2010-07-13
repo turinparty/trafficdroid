@@ -28,19 +28,19 @@ public class TrattaView extends LinearLayout {
 		TableLayout lay = new TableLayout(context);
 		lay.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
 		lay.setStretchAllColumns(true);
-		TableRow riga = new TableRow(context);
+		TableRow row = new TableRow(context);
 		velocitaSxTextView.setGravity(Gravity.CENTER);
 		velocitaDxTextView.setGravity(Gravity.CENTER);
-		riga.addView(velocitaSxTextView);
-		riga.addView(velocitaDxTextView);
-		lay.addView(riga);
+		row.addView(velocitaSxTextView);
+		row.addView(velocitaDxTextView);
+		lay.addView(row);
 		addView(lay, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 	}
 
 	public void setZona(ZoneDTO zona) {
 		trattaTextView.setText(zona.getName());
 		if (zona.getCatLeft() == 1) {
-			velocitaSxTextView.setText(">> " + zona.getSpeedLeft() + " <<");
+			velocitaSxTextView.setText("<< " + zona.getSpeedLeft() + " >>");
 			velocitaSxTextView.setTextColor(Const.colorCat1);
 			velocitaSxTextView.setTypeface(null, Typeface.BOLD);
 		} else if (zona.getCatLeft() == 2) {

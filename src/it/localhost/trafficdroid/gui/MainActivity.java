@@ -15,7 +15,6 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -29,38 +28,44 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 
-public class ParserActivity extends Activity {
+public class MainActivity extends Activity {
 	private ListView tratteListView;
 	private SharedPreferences settings;
+	private Spinner spinner;
+	private ArrayAdapter<StreetDTO> adapter;
+	private Button okBtn;
 
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		settings = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 		setContentView(R.layout.main);
+		settings = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 		tratteListView = (ListView) findViewById(R.id.trattelist);
-		final Spinner spinner = (Spinner) findViewById(R.id.spinner);
-		final ArrayAdapter<StreetDTO> adapter = new ArrayAdapter<StreetDTO>(this, android.R.layout.simple_spinner_item, StreetDAO.get());
+		spinner = (Spinner) findViewById(R.id.spinner);
+		okBtn = (Button) findViewById(R.id.okbtn);
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		adapter = new ArrayAdapter<StreetDTO>(this, android.R.layout.simple_spinner_item, StreetDAO.getAllEnabled(settings));
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(adapter);
-		spinner.setSelection(settings.getInt(getResources().getText(R.string.spinnerDefaultPosizion).toString(), 0));
-		Button okBtn = (Button) findViewById(R.id.okbtn);
 		okBtn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Editor editor = settings.edit();
-				editor.putInt(getResources().getText(R.string.spinnerDefaultPosizion).toString(), spinner.getSelectedItemPosition());
-				editor.commit();
 				new TratteDownloader().execute(adapter.getItem(spinner.getSelectedItemPosition()).getCode());
 			}
 		});
 	}
 
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
 		MenuItem m1 = menu.add(0, Const.menuSettings, Menu.NONE, R.string.settings);
 		m1.setIcon(android.R.drawable.ic_menu_preferences);
 		m1.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			public boolean onMenuItemClick(MenuItem _menuItem) {
-				startActivity(new Intent(ParserActivity.this, TDPreferenceActivity.class));
+				startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
 				return true;
 			}
 		});
@@ -71,11 +76,13 @@ public class ParserActivity extends Activity {
 		private ProgressDialog dialog;
 		private String error;
 
+		@Override
 		protected void onPreExecute() {
 			error = null;
-			dialog = ProgressDialog.show(ParserActivity.this, getResources().getText(R.string.pleaswait), getResources().getText(R.string.downloading), true);
+			dialog = ProgressDialog.show(MainActivity.this, getResources().getText(R.string.pleaswait), getResources().getText(R.string.downloading), true);
 		}
 
+		@Override
 		protected List<ZoneDTO> doInBackground(Integer... params) {
 			String url = settings.getString(getResources().getText(R.string.urlKey).toString(), Const.emptyString);
 			List<ZoneDTO> output = null;
@@ -87,12 +94,13 @@ public class ParserActivity extends Activity {
 			return output;
 		}
 
+		@Override
 		protected void onPostExecute(List<ZoneDTO> tratte) {
 			dialog.dismiss();
 			if (error != null)
-				new AlertDialog.Builder(ParserActivity.this).setTitle(getResources().getText(R.string.errore)).setMessage(error).setPositiveButton(getResources().getText(R.string.ok), null).show();
+				new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.errore)).setMessage(error).setPositiveButton(getResources().getText(R.string.ok), null).show();
 			else {
-				TrattaListAdapter tla = new TrattaListAdapter(ParserActivity.this);
+				TrattaListAdapter tla = new TrattaListAdapter(MainActivity.this);
 				tla.setListItems(tratte);
 				tratteListView.setAdapter(tla);
 			}

@@ -18,4 +18,6 @@ public class Const {
 	public static final String codeRoadbox = "roadbox";
 	public static final String codeClass = "class";
 	public static final String msgMissingUrl = "Richiesta sorgente dati";
+	
+	
 }
