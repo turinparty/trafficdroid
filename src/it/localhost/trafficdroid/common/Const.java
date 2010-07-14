@@ -14,10 +14,11 @@ public class Const {
 	public static final String html = ".html?ts=1";
 	public static final String codeDiv = "div";
 	public static final String codeId = "id";
+	public static final String codeTable = "table";
 	public static final String codeSection = "section";
 	public static final String codeRoadbox = "roadbox";
 	public static final String codeClass = "class";
 	public static final String msgMissingUrl = "Richiesta sorgente dati";
-	
+	public static final String streetRequired = "Richiesta almeno una strada";
 	
 }

@@ -9,26 +9,32 @@ import it.localhost.trafficdroid.exception.DaoException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class Parser {
-	private static NodeList divsA;
-	private static NodeList divsB;
-	private static NodeList trs;
-	private static Node id;
-	private static List<ZoneDTO> zones;
-	private static ZoneDTO zone;
+	private Element document;
+	private NodeList divsA;
+	private NodeList divsB;
+	private NodeList trs;
+	private Node id;
+	private List<ZoneDTO> zones;
+	private ZoneDTO zone;
 
-	public static List<ZoneDTO> parse(int mapId, String url) throws CoreException {
+	public Parser(int mapId, String url) throws CoreException {
 		zones = new ArrayList<ZoneDTO>();
 		if (url.equals(Const.emptyString))
 			throw new CoreException(CoreException.EmptyUrlException, Const.msgMissingUrl);
 		try {
-			divsA = TrafficDAO.get(mapId, url).getDocumentElement().getElementsByTagName(Const.codeDiv);
+			document = TrafficDAO.get(mapId, url).getDocumentElement();
 		} catch (DaoException e) {
 			throw new CoreException(CoreException.DaoException, e.getMessage());
 		}
+	}
+
+	public List<ZoneDTO> getZones() {
+		divsA = document.getElementsByTagName(Const.codeDiv);
 		for (int i = 0; i < divsA.getLength(); i++) {
 			id = divsA.item(i).getAttributes().getNamedItem(Const.codeId);
 			if (id != null && id.getNodeValue().equalsIgnoreCase(Const.codeSection)) {
@@ -50,5 +56,13 @@ public class Parser {
 			}
 		}
 		return zones;
+	}
+
+	public List<String> getDirections() {
+		ArrayList<String> directions = new ArrayList<String>();
+		NodeList nodesDirections = document.getElementsByTagName(Const.codeTable).item(2).getChildNodes();
+		directions.add(nodesDirections.item(0).getChildNodes().item(0).getFirstChild().getNodeValue());
+		directions.add(nodesDirections.item(1).getChildNodes().item(0).getFirstChild().getNodeValue());
+		return directions;
 	}
 }

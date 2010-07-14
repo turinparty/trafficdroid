@@ -1,26 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">TrafficDroid</string>
-	<string name="cities_prompt">Scegli una strada</string>
-	<string name="pleaswait">Attendere</string>
-	<string name="downloading">Download...</string>
-	<string name="errordownloading">Errore nel download</string>
-	<string name="errore">Errore</string>
-	<string name="settings">Impostazioni</string>
-	<string name="ok">OK</string>
-	<string name="urlTitle">URL data source</string>
-	<string name="urlSummary">Verifica di averne i diritti</string>
 	<string name="urlDefaultValue">traffico.mioprovider.com</string>
 	<string name="urlKey">urlRequest</string>
-	<string name="spinnerDefaultPosizion">SPINNER_DEFAULT_POSITION</string>
-	<string name="emptyString"></string>
-	<string name="http">http://</string>
-	<string name="dyn">/dyn/</string>
-	<string name="html">.html?ts=1</string>
-	<string name="codeDiv">div</string>
-	<string name="codeId">id</string>
-	<string name="codeSection">section</string>
-	<string name="codeRoadbox">roadbox</string>
-	<string name="codeClass">class</string>
-	<string name="msgMissingUrl">Richiesto indirizzo fonte dati</string>
+	<string name="app_name">TrafficDroid</string>
+	<string name="cities_prompt">Scegli una strada</string>
+	<string name="urlSummary">Verifica di averne i diritti</string>
+	<string name="ok">OK</string>
+	<string name="urlTitle">URL data source</string>
+	<string name="pleaswait">Attendere</string>
+	<string name="downloading">Download...</string>
+	<string name="error">Errore</string>
+	<string name="settings">Impostazioni</string>
 </resources>
