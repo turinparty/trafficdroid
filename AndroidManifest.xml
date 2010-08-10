@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="it.localhost.trafficdroid" android:versionCode="5"
-	android:versionName="0.3.1">
+	package="it.localhost.trafficdroid" android:versionCode="6"
+	android:versionName="0.4">
 	<uses-sdk android:minSdkVersion="4" />
 	<supports-screens androidmallScreens="true"
 		android:normalScreens="true" android:largeScreens="true" />
