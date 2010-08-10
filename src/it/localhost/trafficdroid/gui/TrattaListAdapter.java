@@ -11,27 +11,27 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 public class TrattaListAdapter extends BaseAdapter {
-	private Context mContext;
-	private List<ZoneDTO> mItems = new ArrayList<ZoneDTO>();
+	private Context context;
+	private List<ZoneDTO> zonesDTO = new ArrayList<ZoneDTO>();
 
 	public TrattaListAdapter(Context context) {
-		mContext = context;
+		this.context = context;
 	}
 
 	public void addItem(ZoneDTO it) {
-		mItems.add(it);
+		zonesDTO.add(it);
 	}
 
 	public void setListItems(List<ZoneDTO> lit) {
-		mItems = lit;
+		zonesDTO = lit;
 	}
 
 	public int getCount() {
-		return mItems.size();
+		return zonesDTO.size();
 	}
 
 	public Object getItem(int position) {
-		return mItems.get(position);
+		return zonesDTO.get(position);
 	}
 
 	public boolean areAllItemsSelectable() {
@@ -45,10 +45,10 @@ public class TrattaListAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		TrattaView btv;
 		if (convertView == null) {
-			btv = new TrattaView(mContext, mItems.get(position));
+			btv = new TrattaView(context, zonesDTO.get(position));
 		} else {
 			btv = (TrattaView) convertView;
-			btv.setZona(mItems.get(position));
+			btv.setZona(zonesDTO.get(position));
 		}
 		return btv;
 	}

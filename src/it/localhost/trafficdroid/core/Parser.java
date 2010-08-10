@@ -24,8 +24,6 @@ public class Parser {
 
 	public Parser(int mapId, String url) throws CoreException {
 		zones = new ArrayList<ZoneDTO>();
-		if (url.equals(Const.emptyString))
-			throw new CoreException(CoreException.EmptyUrlException, Const.msgMissingUrl);
 		try {
 			document = TrafficDAO.get(mapId, url).getDocumentElement();
 		} catch (DaoException e) {

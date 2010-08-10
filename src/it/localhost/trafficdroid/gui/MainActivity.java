@@ -22,49 +22,59 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
-import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-	private ListView tratteListView;
-	private TextView leftListView;
-	private TextView rightListView;
-	private SharedPreferences settings;
+	private ListView listView;
+	private TextView leftTextView;
+	private TextView rightTextView;
+	private SharedPreferences sharedPreferences;
 	private Spinner spinner;
-	private ArrayAdapter<StreetDTO> adapter;
-	private TrattaListAdapter tla;
-	private Button okBtn;
+	private ArrayAdapter<StreetDTO> arrayAdapter;
+	private TrattaListAdapter trattaListAdapter;
+	private OnItemSelectedListener onItemSelectedListener;
+	private String url;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		settings = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-		leftListView = (TextView) findViewById(R.id.left);
-		rightListView = (TextView) findViewById(R.id.right);
-		tratteListView = (ListView) findViewById(R.id.trattelist);
+		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+		leftTextView = (TextView) findViewById(R.id.left);
+		rightTextView = (TextView) findViewById(R.id.right);
+		listView = (ListView) findViewById(R.id.trattelist);
 		spinner = (Spinner) findViewById(R.id.spinner);
-		okBtn = (Button) findViewById(R.id.okbtn);
+		onItemSelectedListener = new OnItemSelectedListener() {
+			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+				new TratteDownloader().execute(arrayAdapter.getItem(spinner.getSelectedItemPosition()).getCode());
+			}
+
+			public void onNothingSelected(AdapterView<?> arg0) {
+			}
+		};
 	}
 
 	@Override
 	public void onResume() {
 		super.onResume();
-		adapter = new ArrayAdapter<StreetDTO>(this, android.R.layout.simple_spinner_item, StreetDAO.getAllEnabled(settings));
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spinner.setAdapter(adapter);
-		okBtn.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				if (adapter.getCount() > 0)
-					new TratteDownloader().execute(adapter.getItem(spinner.getSelectedItemPosition()).getCode());
-				else
-					new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.error)).setMessage(Const.streetRequired).setPositiveButton(getResources().getText(R.string.ok), null).show();
-			}
-		});
+		arrayAdapter = new ArrayAdapter<StreetDTO>(this, android.R.layout.simple_spinner_item, StreetDAO.getAllEnabled(sharedPreferences));
+		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinner.setAdapter(arrayAdapter);
+		url = sharedPreferences.getString(getResources().getText(R.string.urlKey).toString(), Const.emptyString);
+		if (url.equalsIgnoreCase(getResources().getText(R.string.urlDefaultValue).toString()) || url.equalsIgnoreCase(Const.emptyString)) {
+			spinner.setOnItemSelectedListener(null);
+			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.warning)).setPositiveButton(getResources().getText(R.string.ok), null).setMessage(getResources().getText(R.string.noProvider)).show();
+		} else if (arrayAdapter.getCount() == 0) {
+			spinner.setOnItemSelectedListener(null);
+			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.warning)).setPositiveButton(getResources().getText(R.string.ok), null).setMessage(getResources().getText(R.string.noStreets)).show();
+		} else
+			spinner.setOnItemSelectedListener(onItemSelectedListener);
+			
 	}
 
 	@Override
@@ -94,10 +104,8 @@ public class MainActivity extends Activity {
 
 		@Override
 		protected List<ZoneDTO> doInBackground(Integer... params) {
-			String url = settings.getString(getResources().getText(R.string.urlKey).toString(), Const.emptyString);
-			Parser parser;
 			try {
-				parser = new Parser(params[0], url);
+				Parser parser = new Parser(params[0], url);
 				directions = parser.getDirections();
 				return parser.getZones();
 			} catch (CoreException e) {
@@ -112,11 +120,11 @@ public class MainActivity extends Activity {
 			if (error != null)
 				new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.error)).setMessage(error).setPositiveButton(getResources().getText(R.string.ok), null).show();
 			else {
-				tla = new TrattaListAdapter(MainActivity.this);
-				tla.setListItems(tratte);
-				tratteListView.setAdapter(tla);
-				leftListView.setText(directions.get(0));
-				rightListView.setText(directions.get(1));
+				trattaListAdapter = new TrattaListAdapter(MainActivity.this);
+				trattaListAdapter.setListItems(tratte);
+				listView.setAdapter(trattaListAdapter);
+				leftTextView.setText(directions.get(0));
+				rightTextView.setText(directions.get(1));
 			}
 		}
 	}

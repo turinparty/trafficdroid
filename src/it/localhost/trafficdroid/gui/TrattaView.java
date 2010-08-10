@@ -11,83 +11,98 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 public class TrattaView extends LinearLayout {
-	private TextView trattaTextView;
-	private TextView velocitaSxTextView;
-	private TextView velocitaDxTextView;
+	private TableLayout tableLayout;
+	private TableRow tableRow;
+	private TextView centerTextView;
+	private TextView leftTextView;
+	private TextView rightTextView;
 
 	public TrattaView(Context context, ZoneDTO tratta) {
 		super(context);
 		this.setOrientation(VERTICAL);
-		trattaTextView = new TextView(context);
-		velocitaSxTextView = new TextView(context);
-		velocitaDxTextView = new TextView(context);
+		centerTextView = new TextView(context);
+		leftTextView = new TextView(context);
+		rightTextView = new TextView(context);
+		tableRow = new TableRow(context);
+		tableLayout = new TableLayout(context);
+		centerTextView.setTypeface(null, Typeface.BOLD_ITALIC);
+		centerTextView.setGravity(Gravity.CENTER);
+		leftTextView.setGravity(Gravity.CENTER);
+		rightTextView.setGravity(Gravity.CENTER);
+		tableRow.addView(leftTextView);
+		tableRow.addView(rightTextView);
+		tableLayout.setStretchAllColumns(true);
+		tableLayout.addView(tableRow);
+		addView(centerTextView, new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+		addView(tableLayout, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 		setZona(tratta);
-		trattaTextView.setTypeface(null, Typeface.BOLD_ITALIC);
-		trattaTextView.setGravity(Gravity.CENTER);
-		addView(trattaTextView, new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-		TableLayout lay = new TableLayout(context);
-		lay.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-		lay.setStretchAllColumns(true);
-		TableRow row = new TableRow(context);
-		velocitaSxTextView.setGravity(Gravity.CENTER);
-		velocitaDxTextView.setGravity(Gravity.CENTER);
-		row.addView(velocitaSxTextView);
-		row.addView(velocitaDxTextView);
-		lay.addView(row);
-		addView(lay, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 	}
 
 	public void setZona(ZoneDTO zona) {
-		trattaTextView.setText(zona.getName());
-		if (zona.getCatLeft() == 1) {
-			velocitaSxTextView.setText("<< " + zona.getSpeedLeft() + " >>");
-			velocitaSxTextView.setTextColor(Const.colorCat1);
-			velocitaSxTextView.setTypeface(null, Typeface.BOLD);
-		} else if (zona.getCatLeft() == 2) {
-			velocitaSxTextView.setText(zona.getSpeedLeft());
-			velocitaSxTextView.setTextColor(Const.colorCat2);
-			velocitaSxTextView.setTypeface(null, Typeface.NORMAL);
-		} else if (zona.getCatLeft() == 3) {
-			velocitaSxTextView.setText(zona.getSpeedLeft());
-			velocitaSxTextView.setTextColor(Const.colorCat3);
-			velocitaSxTextView.setTypeface(null, Typeface.NORMAL);
-		} else if (zona.getCatLeft() == 4) {
-			velocitaSxTextView.setText(zona.getSpeedLeft());
-			velocitaSxTextView.setTextColor(Const.colorCat4);
-			velocitaSxTextView.setTypeface(null, Typeface.NORMAL);
-		} else if (zona.getCatLeft() == 5) {
-			velocitaSxTextView.setText(zona.getSpeedLeft());
-			velocitaSxTextView.setTextColor(Const.colorCat5);
-			velocitaSxTextView.setTypeface(null, Typeface.NORMAL);
-		} else if (zona.getCatLeft() == 6) {
-			velocitaSxTextView.setText(zona.getSpeedLeft());
-			velocitaSxTextView.setTextColor(Const.colorCat6);
-			velocitaSxTextView.setTypeface(null, Typeface.ITALIC);
+		centerTextView.setText(zona.getName());
+		switch (zona.getCatLeft()) {
+		case 1:
+			leftTextView.setText("<< " + zona.getSpeedLeft() + " >>");
+			leftTextView.setTextColor(Const.colorCat1);
+			leftTextView.setTypeface(null, Typeface.BOLD);
+			break;
+		case 2:
+			leftTextView.setText(zona.getSpeedLeft());
+			leftTextView.setTextColor(Const.colorCat2);
+			leftTextView.setTypeface(null, Typeface.NORMAL);
+			break;
+		case 3:
+			leftTextView.setText(zona.getSpeedLeft());
+			leftTextView.setTextColor(Const.colorCat3);
+			leftTextView.setTypeface(null, Typeface.NORMAL);
+			break;
+		case 4:
+			leftTextView.setText(zona.getSpeedLeft());
+			leftTextView.setTextColor(Const.colorCat4);
+			leftTextView.setTypeface(null, Typeface.NORMAL);
+			break;
+		case 5:
+			leftTextView.setText(zona.getSpeedLeft());
+			leftTextView.setTextColor(Const.colorCat5);
+			leftTextView.setTypeface(null, Typeface.NORMAL);
+			break;
+		case 6:
+			leftTextView.setText(zona.getSpeedLeft());
+			leftTextView.setTextColor(Const.colorCat6);
+			leftTextView.setTypeface(null, Typeface.ITALIC);
+			break;
 		}
-		if (zona.getCatRight() == 1) {
-			velocitaDxTextView.setText(">> " + zona.getSpeedRight() + " <<");
-			velocitaDxTextView.setTextColor(Const.colorCat1);
-			velocitaDxTextView.setTypeface(null, Typeface.BOLD);
-		} else if (zona.getCatRight() == 2) {
-			velocitaDxTextView.setText(zona.getSpeedRight());
-			velocitaDxTextView.setTextColor(Const.colorCat2);
-			velocitaDxTextView.setTypeface(null, Typeface.NORMAL);
-		} else if (zona.getCatRight() == 3) {
-			velocitaDxTextView.setText(zona.getSpeedRight());
-			velocitaDxTextView.setTextColor(Const.colorCat3);
-			velocitaDxTextView.setTypeface(null, Typeface.NORMAL);
-		} else if (zona.getCatRight() == 4) {
-			velocitaDxTextView.setText(zona.getSpeedRight());
-			velocitaDxTextView.setTextColor(Const.colorCat4);
-			velocitaDxTextView.setTypeface(null, Typeface.NORMAL);
-		} else if (zona.getCatRight() == 5) {
-			velocitaDxTextView.setText(zona.getSpeedRight());
-			velocitaDxTextView.setTextColor(Const.colorCat5);
-			velocitaDxTextView.setTypeface(null, Typeface.NORMAL);
-		} else if (zona.getCatRight() == 6) {
-			velocitaDxTextView.setText(zona.getSpeedRight());
-			velocitaDxTextView.setTextColor(Const.colorCat6);
-			velocitaDxTextView.setTypeface(null, Typeface.ITALIC);
+		switch (zona.getCatRight()) {
+		case 1:
+			rightTextView.setText(">> " + zona.getSpeedRight() + " <<");
+			rightTextView.setTextColor(Const.colorCat1);
+			rightTextView.setTypeface(null, Typeface.BOLD);
+			break;
+		case 2:
+			rightTextView.setText(zona.getSpeedRight());
+			rightTextView.setTextColor(Const.colorCat2);
+			rightTextView.setTypeface(null, Typeface.NORMAL);
+			break;
+		case 3:
+			rightTextView.setText(zona.getSpeedRight());
+			rightTextView.setTextColor(Const.colorCat3);
+			rightTextView.setTypeface(null, Typeface.NORMAL);
+			break;
+		case 4:
+			rightTextView.setText(zona.getSpeedRight());
+			rightTextView.setTextColor(Const.colorCat4);
+			rightTextView.setTypeface(null, Typeface.NORMAL);
+			break;
+		case 5:
+			rightTextView.setText(zona.getSpeedRight());
+			rightTextView.setTextColor(Const.colorCat5);
+			rightTextView.setTypeface(null, Typeface.NORMAL);
+			break;
+		case 6:
+			rightTextView.setText(zona.getSpeedRight());
+			rightTextView.setTextColor(Const.colorCat6);
+			rightTextView.setTypeface(null, Typeface.ITALIC);
+			break;
 		}
 	}
 }

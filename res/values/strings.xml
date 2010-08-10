@@ -2,13 +2,16 @@
 <resources>
 	<string name="urlDefaultValue">traffico.mioprovider.com</string>
 	<string name="urlKey">urlRequest</string>
-	<string name="app_name">TrafficDroid</string>
-	<string name="cities_prompt">Scegli una strada</string>
+	<string name="urlTitle">URL provider</string>
 	<string name="urlSummary">Verifica di averne i diritti</string>
+	<string name="app_name">TrafficDroid</string>
+	<string name="cities_prompt">Seleziona una strada</string>
 	<string name="ok">OK</string>
-	<string name="urlTitle">URL data source</string>
 	<string name="pleaswait">Attendere</string>
 	<string name="downloading">Download...</string>
 	<string name="error">Errore</string>
+	<string name="warning">Attenzione</string>
 	<string name="settings">Impostazioni</string>
+	<string name="noProvider">Per un corretto funzionamento è necessario inserire un provider (Menu > Impostazioni > URL provider). Cercare su internet per trovarne uno.</string>
+	<string name="noStreets">Per un corretto funzionamento è necessario selezionare almeno una strada (Menu > Impostazioni).</string>
 </resources>

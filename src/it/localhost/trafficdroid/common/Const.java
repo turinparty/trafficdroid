@@ -18,7 +18,4 @@ public class Const {
 	public static final String codeSection = "section";
 	public static final String codeRoadbox = "roadbox";
 	public static final String codeClass = "class";
-	public static final String msgMissingUrl = "Richiesta sorgente dati";
-	public static final String streetRequired = "Richiesta almeno una strada";
-	
 }
