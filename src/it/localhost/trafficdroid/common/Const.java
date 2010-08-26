@@ -8,6 +8,7 @@ public class Const {
 	public static final int colorCat5 = 0xff47ffff;
 	public static final int colorCat6 = 0xff00ff00;
 	public static final int menuSettings = 1;
+	public static final int menuRefresh = 2;
 	public static final String emptyString = "";
 	public static final String http = "http://";
 	public static final String dyn = "/dyn/";

@@ -5,7 +5,6 @@ import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.core.Parser;
 import it.localhost.trafficdroid.dao.StreetDAO;
 import it.localhost.trafficdroid.dto.StreetDTO;
-import it.localhost.trafficdroid.dto.ZoneDTO;
 import it.localhost.trafficdroid.exception.CoreException;
 
 import java.util.List;
@@ -36,6 +35,7 @@ public class MainActivity extends Activity {
 	private SharedPreferences sharedPreferences;
 	private Spinner spinner;
 	private ArrayAdapter<StreetDTO> arrayAdapter;
+	private List<StreetDTO> allEnabledStreets;
 	private TrattaListAdapter trattaListAdapter;
 	private OnItemSelectedListener onItemSelectedListener;
 	private String url;
@@ -49,9 +49,10 @@ public class MainActivity extends Activity {
 		rightTextView = (TextView) findViewById(R.id.right);
 		listView = (ListView) findViewById(R.id.trattelist);
 		spinner = (Spinner) findViewById(R.id.spinner);
+		trattaListAdapter = new TrattaListAdapter(MainActivity.this);
 		onItemSelectedListener = new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-				new TratteDownloader().execute(arrayAdapter.getItem(spinner.getSelectedItemPosition()).getCode());
+				setView();
 			}
 
 			public void onNothingSelected(AdapterView<?> arg0) {
@@ -62,7 +63,8 @@ public class MainActivity extends Activity {
 	@Override
 	public void onResume() {
 		super.onResume();
-		arrayAdapter = new ArrayAdapter<StreetDTO>(this, android.R.layout.simple_spinner_item, StreetDAO.getAllEnabled(sharedPreferences));
+		allEnabledStreets = StreetDAO.getAllEnabled(sharedPreferences);
+		arrayAdapter = new ArrayAdapter<StreetDTO>(this, android.R.layout.simple_spinner_item, allEnabledStreets);
 		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(arrayAdapter);
 		url = sharedPreferences.getString(getResources().getText(R.string.urlKey).toString(), Const.emptyString);
@@ -74,27 +76,41 @@ public class MainActivity extends Activity {
 			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.warning)).setPositiveButton(getResources().getText(R.string.ok), null).setMessage(getResources().getText(R.string.noStreets)).show();
 		} else
 			spinner.setOnItemSelectedListener(onItemSelectedListener);
-			
+		new TratteDownloader().execute(allEnabledStreets);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
 		MenuItem m1 = menu.add(0, Const.menuSettings, Menu.NONE, R.string.settings);
+		MenuItem m2 = menu.add(0, Const.menuRefresh, Menu.NONE, R.string.refresh);
 		m1.setIcon(android.R.drawable.ic_menu_preferences);
+		m2.setIcon(android.R.drawable.ic_menu_rotate);
 		m1.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			public boolean onMenuItemClick(MenuItem _menuItem) {
 				startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
 				return true;
 			}
 		});
+		m2.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+			public boolean onMenuItemClick(MenuItem _menuItem) {
+				onResume();
+				return true;
+			}
+		});
 		return true;
 	}
 
-	private class TratteDownloader extends AsyncTask<Integer, Void, List<ZoneDTO>> {
+	private void setView() {
+		trattaListAdapter.setListItems(allEnabledStreets.get(spinner.getSelectedItemPosition()).getZones());
+		listView.setAdapter(trattaListAdapter);
+		leftTextView.setText(allEnabledStreets.get(spinner.getSelectedItemPosition()).getDirections()[0]);
+		rightTextView.setText(allEnabledStreets.get(spinner.getSelectedItemPosition()).getDirections()[1]);
+	}
+
+	private class TratteDownloader extends AsyncTask<List<StreetDTO>, Void, List<StreetDTO>> {
 		private ProgressDialog dialog;
 		private String error;
-		private List<String> directions;
 
 		@Override
 		protected void onPreExecute() {
@@ -103,11 +119,12 @@ public class MainActivity extends Activity {
 		}
 
 		@Override
-		protected List<ZoneDTO> doInBackground(Integer... params) {
+		protected List<StreetDTO> doInBackground(List<StreetDTO>... params) {
+			error = null;
 			try {
-				Parser parser = new Parser(params[0], url);
-				directions = parser.getDirections();
-				return parser.getZones();
+				for (StreetDTO elem : params[0])
+					elem = Parser.parse(elem, url);
+				return params[0];
 			} catch (CoreException e) {
 				error = e.getKey() + ": " + e.getMessage();
 				return null;
@@ -115,16 +132,13 @@ public class MainActivity extends Activity {
 		}
 
 		@Override
-		protected void onPostExecute(List<ZoneDTO> tratte) {
+		protected void onPostExecute(List<StreetDTO> tratte) {
 			dialog.dismiss();
 			if (error != null)
 				new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.error)).setMessage(error).setPositiveButton(getResources().getText(R.string.ok), null).show();
 			else {
-				trattaListAdapter = new TrattaListAdapter(MainActivity.this);
-				trattaListAdapter.setListItems(tratte);
-				listView.setAdapter(trattaListAdapter);
-				leftTextView.setText(directions.get(0));
-				rightTextView.setText(directions.get(1));
+				allEnabledStreets = tratte;
+				setView();
 			}
 		}
 	}
