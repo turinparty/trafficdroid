@@ -37,7 +37,6 @@ public class MainActivity extends Activity {
 	private ArrayAdapter<StreetDTO> arrayAdapter;
 	private List<StreetDTO> allEnabledStreets;
 	private TrattaListAdapter trattaListAdapter;
-	private OnItemSelectedListener onItemSelectedListener;
 	private String url;
 
 	@Override
@@ -49,16 +48,15 @@ public class MainActivity extends Activity {
 		rightTextView = (TextView) findViewById(R.id.right);
 		listView = (ListView) findViewById(R.id.trattelist);
 		spinner = (Spinner) findViewById(R.id.spinner);
-		spinner.setOnItemSelectedListener(onItemSelectedListener);
 		trattaListAdapter = new TrattaListAdapter(MainActivity.this);
-		onItemSelectedListener = new OnItemSelectedListener() {
+		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				setView();
 			}
 
 			public void onNothingSelected(AdapterView<?> arg0) {
 			}
-		};
+		});
 	}
 
 	@Override
@@ -95,11 +93,14 @@ public class MainActivity extends Activity {
 	}
 
 	private void setView() {
-		if (url.equalsIgnoreCase(getResources().getText(R.string.urlDefaultValue).toString()) || url.equalsIgnoreCase(Const.emptyString))
+		if (url.equalsIgnoreCase(getResources().getText(R.string.urlDefaultValue).toString()) || url.equalsIgnoreCase(Const.emptyString)) {
 			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.warning)).setPositiveButton(getResources().getText(R.string.ok), null).setMessage(getResources().getText(R.string.noProvider)).show();
-		else if (arrayAdapter.getCount() == 0)
+			System.err.println("nourl");
+		} else if (arrayAdapter.getCount() == 0) {
 			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.warning)).setPositiveButton(getResources().getText(R.string.ok), null).setMessage(getResources().getText(R.string.noStreets)).show();
-		else {
+			System.err.println("nostreet");
+		} else {
+			System.err.println("works");
 			trattaListAdapter.setListItems(allEnabledStreets.get(spinner.getSelectedItemPosition()).getZones());
 			listView.setAdapter(trattaListAdapter);
 			leftTextView.setText(allEnabledStreets.get(spinner.getSelectedItemPosition()).getDirections()[0]);
