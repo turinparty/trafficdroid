@@ -49,6 +49,7 @@ public class MainActivity extends Activity {
 		rightTextView = (TextView) findViewById(R.id.right);
 		listView = (ListView) findViewById(R.id.trattelist);
 		spinner = (Spinner) findViewById(R.id.spinner);
+		spinner.setOnItemSelectedListener(onItemSelectedListener);
 		trattaListAdapter = new TrattaListAdapter(MainActivity.this);
 		onItemSelectedListener = new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
@@ -68,15 +69,7 @@ public class MainActivity extends Activity {
 		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(arrayAdapter);
 		url = sharedPreferences.getString(getResources().getText(R.string.urlKey).toString(), Const.emptyString);
-		if (url.equalsIgnoreCase(getResources().getText(R.string.urlDefaultValue).toString()) || url.equalsIgnoreCase(Const.emptyString)) {
-			spinner.setOnItemSelectedListener(null);
-			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.warning)).setPositiveButton(getResources().getText(R.string.ok), null).setMessage(getResources().getText(R.string.noProvider)).show();
-		} else if (arrayAdapter.getCount() == 0) {
-			spinner.setOnItemSelectedListener(null);
-			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.warning)).setPositiveButton(getResources().getText(R.string.ok), null).setMessage(getResources().getText(R.string.noStreets)).show();
-		} else
-			spinner.setOnItemSelectedListener(onItemSelectedListener);
-		new TratteDownloader().execute(allEnabledStreets);
+		new DLCTask().execute(allEnabledStreets);
 	}
 
 	@Override
@@ -102,13 +95,19 @@ public class MainActivity extends Activity {
 	}
 
 	private void setView() {
-		trattaListAdapter.setListItems(allEnabledStreets.get(spinner.getSelectedItemPosition()).getZones());
-		listView.setAdapter(trattaListAdapter);
-		leftTextView.setText(allEnabledStreets.get(spinner.getSelectedItemPosition()).getDirections()[0]);
-		rightTextView.setText(allEnabledStreets.get(spinner.getSelectedItemPosition()).getDirections()[1]);
+		if (url.equalsIgnoreCase(getResources().getText(R.string.urlDefaultValue).toString()) || url.equalsIgnoreCase(Const.emptyString))
+			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.warning)).setPositiveButton(getResources().getText(R.string.ok), null).setMessage(getResources().getText(R.string.noProvider)).show();
+		else if (arrayAdapter.getCount() == 0)
+			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.warning)).setPositiveButton(getResources().getText(R.string.ok), null).setMessage(getResources().getText(R.string.noStreets)).show();
+		else {
+			trattaListAdapter.setListItems(allEnabledStreets.get(spinner.getSelectedItemPosition()).getZones());
+			listView.setAdapter(trattaListAdapter);
+			leftTextView.setText(allEnabledStreets.get(spinner.getSelectedItemPosition()).getDirections()[0]);
+			rightTextView.setText(allEnabledStreets.get(spinner.getSelectedItemPosition()).getDirections()[1]);
+		}
 	}
 
-	private class TratteDownloader extends AsyncTask<List<StreetDTO>, Void, List<StreetDTO>> {
+	private class DLCTask extends AsyncTask<List<StreetDTO>, Void, List<StreetDTO>> {
 		private ProgressDialog dialog;
 		private String error;
 
