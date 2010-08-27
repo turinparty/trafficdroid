@@ -1,4 +1,4 @@
-package it.localhost.trafficdroid.gui;
+package it.localhost.trafficdroid.gui.activity;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
@@ -6,12 +6,12 @@ import it.localhost.trafficdroid.core.Parser;
 import it.localhost.trafficdroid.dao.StreetDAO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.exception.CoreException;
+import it.localhost.trafficdroid.gui.adapter.ZoneListAdapter;
 
 import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
 	private Spinner spinner;
 	private ArrayAdapter<StreetDTO> arrayAdapter;
 	private List<StreetDTO> allEnabledStreets;
-	private TrattaListAdapter trattaListAdapter;
+	private ZoneListAdapter trattaListAdapter;
 	private String url;
 
 	@Override
@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
 		rightTextView = (TextView) findViewById(R.id.right);
 		listView = (ListView) findViewById(R.id.trattelist);
 		spinner = (Spinner) findViewById(R.id.spinner);
-		trattaListAdapter = new TrattaListAdapter(MainActivity.this);
+		trattaListAdapter = new ZoneListAdapter(MainActivity.this);
 		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				setView();
@@ -63,11 +63,11 @@ public class MainActivity extends Activity {
 	public void onResume() {
 		super.onResume();
 		allEnabledStreets = StreetDAO.getAllEnabled(sharedPreferences);
+		new DLCTask().execute(allEnabledStreets);
 		arrayAdapter = new ArrayAdapter<StreetDTO>(this, android.R.layout.simple_spinner_item, allEnabledStreets);
 		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(arrayAdapter);
 		url = sharedPreferences.getString(getResources().getText(R.string.urlKey).toString(), Const.emptyString);
-		new DLCTask().execute(allEnabledStreets);
 	}
 
 	@Override
@@ -95,12 +95,9 @@ public class MainActivity extends Activity {
 	private void setView() {
 		if (url.equalsIgnoreCase(getResources().getText(R.string.urlDefaultValue).toString()) || url.equalsIgnoreCase(Const.emptyString)) {
 			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.warning)).setPositiveButton(getResources().getText(R.string.ok), null).setMessage(getResources().getText(R.string.noProvider)).show();
-			System.err.println("nourl");
 		} else if (arrayAdapter.getCount() == 0) {
 			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.warning)).setPositiveButton(getResources().getText(R.string.ok), null).setMessage(getResources().getText(R.string.noStreets)).show();
-			System.err.println("nostreet");
 		} else {
-			System.err.println("works");
 			trattaListAdapter.setListItems(allEnabledStreets.get(spinner.getSelectedItemPosition()).getZones());
 			listView.setAdapter(trattaListAdapter);
 			leftTextView.setText(allEnabledStreets.get(spinner.getSelectedItemPosition()).getDirections()[0]);
@@ -109,13 +106,11 @@ public class MainActivity extends Activity {
 	}
 
 	private class DLCTask extends AsyncTask<List<StreetDTO>, Void, List<StreetDTO>> {
-		private ProgressDialog dialog;
 		private String error;
 
 		@Override
 		protected void onPreExecute() {
 			error = null;
-			dialog = ProgressDialog.show(MainActivity.this, getResources().getText(R.string.pleaswait), getResources().getText(R.string.downloading), true);
 		}
 
 		@Override
@@ -133,7 +128,6 @@ public class MainActivity extends Activity {
 
 		@Override
 		protected void onPostExecute(List<StreetDTO> tratte) {
-			dialog.dismiss();
 			if (error != null)
 				new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.error)).setMessage(error).setPositiveButton(getResources().getText(R.string.ok), null).show();
 			else {

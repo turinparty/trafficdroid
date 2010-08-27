@@ -1,6 +1,7 @@
-package it.localhost.trafficdroid.gui;
+package it.localhost.trafficdroid.gui.adapter;
 
 import it.localhost.trafficdroid.dto.ZoneDTO;
+import it.localhost.trafficdroid.gui.layout.ZoneLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-public class TrattaListAdapter extends BaseAdapter {
+public class ZoneListAdapter extends BaseAdapter {
 	private Context context;
 	private List<ZoneDTO> zonesDTO = new ArrayList<ZoneDTO>();
 
-	public TrattaListAdapter(Context context) {
+	public ZoneListAdapter(Context context) {
 		this.context = context;
 	}
 
@@ -43,11 +44,11 @@ public class TrattaListAdapter extends BaseAdapter {
 	}
 
 	public View getView(int position, View convertView, ViewGroup parent) {
-		TrattaView btv;
+		ZoneLayout btv;
 		if (convertView == null) {
-			btv = new TrattaView(context, zonesDTO.get(position));
+			btv = new ZoneLayout(context, zonesDTO.get(position));
 		} else {
-			btv = (TrattaView) convertView;
+			btv = (ZoneLayout) convertView;
 			btv.setZona(zonesDTO.get(position));
 		}
 		return btv;

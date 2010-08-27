@@ -1,4 +1,4 @@
-package it.localhost.trafficdroid.gui;
+package it.localhost.trafficdroid.gui.layout;
 
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.dto.ZoneDTO;
@@ -10,14 +10,14 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-public class TrattaView extends LinearLayout {
+public class ZoneLayout extends LinearLayout {
 	private TableLayout tableLayout;
 	private TableRow tableRow;
 	private TextView centerTextView;
 	private TextView leftTextView;
 	private TextView rightTextView;
 
-	public TrattaView(Context context, ZoneDTO tratta) {
+	public ZoneLayout(Context context, ZoneDTO tratta) {
 		super(context);
 		this.setOrientation(VERTICAL);
 		centerTextView = new TextView(context);

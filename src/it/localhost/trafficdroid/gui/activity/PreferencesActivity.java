@@ -1,4 +1,4 @@
-package it.localhost.trafficdroid.gui;
+package it.localhost.trafficdroid.gui.activity;
 
 import it.localhost.trafficdroid.R;
 import android.os.Bundle;
