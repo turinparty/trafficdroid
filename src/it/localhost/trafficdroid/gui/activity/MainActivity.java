@@ -2,17 +2,20 @@ package it.localhost.trafficdroid.gui.activity;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
+import it.localhost.trafficdroid.core.Parser;
 import it.localhost.trafficdroid.dao.StreetDAO;
+import it.localhost.trafficdroid.dto.DLCTaskDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
+import it.localhost.trafficdroid.exception.CoreException;
 import it.localhost.trafficdroid.gui.adapter.ZoneListAdapter;
-import it.localhost.trafficdroid.gui.task.DLCTask;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.Menu;
@@ -33,7 +36,7 @@ public class MainActivity extends Activity {
 	private SharedPreferences sharedPreferences;
 	private Spinner spinner;
 	private ArrayAdapter<StreetDTO> arrayAdapter;
-	private List<StreetDTO> allEnabledStreets;
+	private ArrayList<StreetDTO> streets;
 	private ZoneListAdapter trattaListAdapter;
 	private String url;
 
@@ -47,6 +50,7 @@ public class MainActivity extends Activity {
 		listView = (ListView) findViewById(R.id.trattelist);
 		spinner = (Spinner) findViewById(R.id.spinner);
 		trattaListAdapter = new ZoneListAdapter(MainActivity.this);
+		
 		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				setView();
@@ -60,12 +64,12 @@ public class MainActivity extends Activity {
 	@Override
 	public void onResume() {
 		super.onResume();
-		allEnabledStreets = StreetDAO.getAllEnabled(sharedPreferences);
-		new DLCTask().execute(allEnabledStreets);
-		arrayAdapter = new ArrayAdapter<StreetDTO>(this, android.R.layout.simple_spinner_item, allEnabledStreets);
+		streets = StreetDAO.getAllEnabled(sharedPreferences);
+		url = sharedPreferences.getString(getResources().getText(R.string.urlKey).toString(), Const.emptyString);
+		new DLCTask().execute(new DLCTaskDTO(streets, url));
+		arrayAdapter = new ArrayAdapter<StreetDTO>(this, android.R.layout.simple_spinner_item, streets);
 		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(arrayAdapter);
-		url = sharedPreferences.getString(getResources().getText(R.string.urlKey).toString(), Const.emptyString);
 	}
 
 	@Override
@@ -96,12 +100,36 @@ public class MainActivity extends Activity {
 		} else if (arrayAdapter.getCount() == 0) {
 			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.warning)).setPositiveButton(getResources().getText(R.string.ok), null).setMessage(getResources().getText(R.string.noStreets)).show();
 		} else {
-			trattaListAdapter.setListItems(allEnabledStreets.get(spinner.getSelectedItemPosition()).getZones());
+			trattaListAdapter.setListItems(streets.get(spinner.getSelectedItemPosition()).getZones());
 			listView.setAdapter(trattaListAdapter);
-			leftTextView.setText(allEnabledStreets.get(spinner.getSelectedItemPosition()).getDirections()[0]);
-			rightTextView.setText(allEnabledStreets.get(spinner.getSelectedItemPosition()).getDirections()[1]);
+			leftTextView.setText(streets.get(spinner.getSelectedItemPosition()).getDirections()[0]);
+			rightTextView.setText(streets.get(spinner.getSelectedItemPosition()).getDirections()[1]);
 		}
 	}
 
-	
+	private class DLCTask extends AsyncTask<DLCTaskDTO, Void, DLCTaskDTO> {
+		private String error;
+
+		@Override
+		protected DLCTaskDTO doInBackground(DLCTaskDTO... streets) {
+			try {
+				for (StreetDTO elem : streets[0].getStreets())
+					elem = Parser.parse(elem, streets[0].getUrl());
+				error = null;
+				return streets[0];
+			} catch (CoreException e) {
+				error = e.getKey() + ": " + e.getMessage();
+				return null;
+			}
+		}
+
+		@Override
+		protected void onPostExecute(DLCTaskDTO streets) {
+			if (error != null)
+				new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.error)).setMessage(error).setPositiveButton(getResources().getText(R.string.ok), null).show();
+			else {
+				setView();
+			}
+		}
+	}
 }
