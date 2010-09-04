@@ -9,7 +9,7 @@ import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.exception.CoreException;
 import it.localhost.trafficdroid.gui.adapter.ZoneListAdapter;
 
-import java.util.ArrayList;
+import java.util.Calendar;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -33,12 +33,14 @@ public class MainActivity extends Activity {
 	private ListView listView;
 	private TextView leftTextView;
 	private TextView rightTextView;
+	private TextView centerTextView;
 	private SharedPreferences sharedPreferences;
 	private Spinner spinner;
 	private ArrayAdapter<StreetDTO> arrayAdapter;
-	private ArrayList<StreetDTO> streets;
+	//private ArrayList<StreetDTO> streets;
 	private ZoneListAdapter trattaListAdapter;
-	private String url;
+	//private String url;
+	private DLCTaskDTO dlctask;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -47,10 +49,10 @@ public class MainActivity extends Activity {
 		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 		leftTextView = (TextView) findViewById(R.id.left);
 		rightTextView = (TextView) findViewById(R.id.right);
+		centerTextView = (TextView) findViewById(R.id.center);
 		listView = (ListView) findViewById(R.id.trattelist);
 		spinner = (Spinner) findViewById(R.id.spinner);
 		trattaListAdapter = new ZoneListAdapter(MainActivity.this);
-		
 		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				setView();
@@ -64,10 +66,9 @@ public class MainActivity extends Activity {
 	@Override
 	public void onResume() {
 		super.onResume();
-		streets = StreetDAO.getAllEnabled(sharedPreferences);
-		url = sharedPreferences.getString(getResources().getText(R.string.urlKey).toString(), Const.emptyString);
-		new DLCTask().execute(new DLCTaskDTO(streets, url));
-		arrayAdapter = new ArrayAdapter<StreetDTO>(this, android.R.layout.simple_spinner_item, streets);
+		dlctask = new DLCTaskDTO(StreetDAO.getAllEnabled(sharedPreferences), sharedPreferences.getString(getResources().getText(R.string.urlKey).toString(), Const.emptyString));
+		new DLCTask().execute(dlctask);
+		arrayAdapter = new ArrayAdapter<StreetDTO>(this, android.R.layout.simple_spinner_item, dlctask.getStreets());
 		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(arrayAdapter);
 	}
@@ -95,15 +96,17 @@ public class MainActivity extends Activity {
 	}
 
 	private void setView() {
-		if (url.equalsIgnoreCase(getResources().getText(R.string.urlDefaultValue).toString()) || url.equalsIgnoreCase(Const.emptyString)) {
+		if (dlctask.getUrl().equalsIgnoreCase(getResources().getText(R.string.urlDefaultValue).toString()) || dlctask.getUrl().equalsIgnoreCase(Const.emptyString)) {
 			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.warning)).setPositiveButton(getResources().getText(R.string.ok), null).setMessage(getResources().getText(R.string.noProvider)).show();
 		} else if (arrayAdapter.getCount() == 0) {
 			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.warning)).setPositiveButton(getResources().getText(R.string.ok), null).setMessage(getResources().getText(R.string.noStreets)).show();
 		} else {
-			trattaListAdapter.setListItems(streets.get(spinner.getSelectedItemPosition()).getZones());
+			trattaListAdapter.setListItems(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getZones());
 			listView.setAdapter(trattaListAdapter);
-			leftTextView.setText(streets.get(spinner.getSelectedItemPosition()).getDirections()[0]);
-			rightTextView.setText(streets.get(spinner.getSelectedItemPosition()).getDirections()[1]);
+			leftTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirections()[0]);
+			rightTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirections()[1]);
+			if (dlctask.getNow() != null)
+				centerTextView.setText(dlctask.getNow().get(Calendar.HOUR_OF_DAY)+":"+dlctask.getNow().get(Calendar.MINUTE)+":"+dlctask.getNow().get(Calendar.SECOND));
 		}
 	}
 
@@ -111,12 +114,13 @@ public class MainActivity extends Activity {
 		private String error;
 
 		@Override
-		protected DLCTaskDTO doInBackground(DLCTaskDTO... streets) {
+		protected DLCTaskDTO doInBackground(DLCTaskDTO... param) {
 			try {
-				for (StreetDTO elem : streets[0].getStreets())
-					elem = Parser.parse(elem, streets[0].getUrl());
+				for (StreetDTO elem : param[0].getStreets())
+					elem = Parser.parse(elem, param[0].getUrl());
+				param[0].setNow(Calendar.getInstance());
 				error = null;
-				return streets[0];
+				return param[0];
 			} catch (CoreException e) {
 				error = e.getKey() + ": " + e.getMessage();
 				return null;
