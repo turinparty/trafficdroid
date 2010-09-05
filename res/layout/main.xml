@@ -1,25 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
 	android:orientation="vertical">
 	<TableLayout android:layout_width="fill_parent"
 		android:layout_height="wrap_content" android:stretchColumns="*">
-		<TableRow android:layout_width="fill_parent"
-			android:layout_height="wrap_content">
-			<TextView android:id="@+id/left" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:gravity="center" />
-			<TextView android:id="@+id/center" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:gravity="center" />
-			<TextView android:id="@+id/right" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:gravity="center" />
+		<TableRow>
+			<TextView android:id="@+id/left" android:gravity="center" />
+			<TextView android:id="@+id/center" android:gravity="center"
+				android:typeface="monospace" />
+			<TextView android:id="@+id/right" android:gravity="center" />
 		</TableRow>
 	</TableLayout>
-	<ListView android:id="@+id/trattelist" android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:layout_weight="1" />
-	<LinearLayout android:layout_width="fill_parent"
-		android:layout_height="wrap_content">
-		<Spinner android:id="@+id/spinner" android:layout_width="fill_parent"
-			android:layout_height="wrap_content" android:layout_weight="1"
-			android:prompt="@string/cities_prompt" />
-	</LinearLayout>
+	<ListView android:id="@+id/zonelist" android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:layout_weight="1" />
+	<Spinner android:id="@+id/spinner" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:prompt="@string/cities_prompt" />
 </LinearLayout>

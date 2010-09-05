@@ -44,13 +44,13 @@ public class ZoneListAdapter extends BaseAdapter {
 	}
 
 	public View getView(int position, View convertView, ViewGroup parent) {
-		ZoneLayout btv;
+		ZoneLayout zoneLayout;
 		if (convertView == null) {
-			btv = new ZoneLayout(context, zonesDTO.get(position));
+			zoneLayout = new ZoneLayout(context, zonesDTO.get(position));
 		} else {
-			btv = (ZoneLayout) convertView;
-			btv.setZona(zonesDTO.get(position));
+			zoneLayout = (ZoneLayout) convertView;
+			zoneLayout.setZona(zonesDTO.get(position));
 		}
-		return btv;
+		return zoneLayout;
 	}
 }

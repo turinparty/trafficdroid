@@ -25,7 +25,7 @@ public class ZoneLayout extends LinearLayout {
 		rightTextView = new TextView(context);
 		tableRow = new TableRow(context);
 		tableLayout = new TableLayout(context);
-		centerTextView.setTypeface(null, Typeface.BOLD_ITALIC);
+		centerTextView.setTypeface(Typeface.DEFAULT_BOLD);
 		centerTextView.setGravity(Gravity.CENTER);
 		leftTextView.setGravity(Gravity.CENTER);
 		rightTextView.setGravity(Gravity.CENTER);
@@ -33,75 +33,57 @@ public class ZoneLayout extends LinearLayout {
 		tableRow.addView(rightTextView);
 		tableLayout.setStretchAllColumns(true);
 		tableLayout.addView(tableRow);
-		addView(centerTextView, new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-		addView(tableLayout, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+		addView(centerTextView);
+		addView(tableLayout);
 		setZona(tratta);
 	}
 
 	public void setZona(ZoneDTO zona) {
 		centerTextView.setText(zona.getName());
+		leftTextView.setText(zona.getSpeedLeft());
+		rightTextView.setText(zona.getSpeedRight());
+		leftTextView.setTypeface(Typeface.DEFAULT);
+		rightTextView.setTypeface(Typeface.DEFAULT);
 		switch (zona.getCatLeft()) {
 		case 1:
-			leftTextView.setText("<< " + zona.getSpeedLeft() + " >>");
 			leftTextView.setTextColor(Const.colorCat1);
-			leftTextView.setTypeface(null, Typeface.BOLD);
+			leftTextView.setTypeface(Typeface.DEFAULT_BOLD);
 			break;
 		case 2:
-			leftTextView.setText(zona.getSpeedLeft());
 			leftTextView.setTextColor(Const.colorCat2);
-			leftTextView.setTypeface(null, Typeface.NORMAL);
 			break;
 		case 3:
-			leftTextView.setText(zona.getSpeedLeft());
 			leftTextView.setTextColor(Const.colorCat3);
-			leftTextView.setTypeface(null, Typeface.NORMAL);
 			break;
 		case 4:
-			leftTextView.setText(zona.getSpeedLeft());
 			leftTextView.setTextColor(Const.colorCat4);
-			leftTextView.setTypeface(null, Typeface.NORMAL);
 			break;
 		case 5:
-			leftTextView.setText(zona.getSpeedLeft());
 			leftTextView.setTextColor(Const.colorCat5);
-			leftTextView.setTypeface(null, Typeface.NORMAL);
 			break;
 		case 6:
-			leftTextView.setText(zona.getSpeedLeft());
 			leftTextView.setTextColor(Const.colorCat6);
-			leftTextView.setTypeface(null, Typeface.ITALIC);
 			break;
 		}
 		switch (zona.getCatRight()) {
 		case 1:
-			rightTextView.setText(">> " + zona.getSpeedRight() + " <<");
 			rightTextView.setTextColor(Const.colorCat1);
-			rightTextView.setTypeface(null, Typeface.BOLD);
+			rightTextView.setTypeface(Typeface.DEFAULT_BOLD);
 			break;
 		case 2:
-			rightTextView.setText(zona.getSpeedRight());
 			rightTextView.setTextColor(Const.colorCat2);
-			rightTextView.setTypeface(null, Typeface.NORMAL);
 			break;
 		case 3:
-			rightTextView.setText(zona.getSpeedRight());
 			rightTextView.setTextColor(Const.colorCat3);
-			rightTextView.setTypeface(null, Typeface.NORMAL);
 			break;
 		case 4:
-			rightTextView.setText(zona.getSpeedRight());
 			rightTextView.setTextColor(Const.colorCat4);
-			rightTextView.setTypeface(null, Typeface.NORMAL);
 			break;
 		case 5:
-			rightTextView.setText(zona.getSpeedRight());
 			rightTextView.setTextColor(Const.colorCat5);
-			rightTextView.setTypeface(null, Typeface.NORMAL);
 			break;
 		case 6:
-			rightTextView.setText(zona.getSpeedRight());
 			rightTextView.setTextColor(Const.colorCat6);
-			rightTextView.setTypeface(null, Typeface.ITALIC);
 			break;
 		}
 	}

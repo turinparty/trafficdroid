@@ -30,16 +30,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-	private ListView listView;
+	private ListView zoneView;
 	private TextView leftTextView;
 	private TextView rightTextView;
 	private TextView centerTextView;
 	private SharedPreferences sharedPreferences;
 	private Spinner spinner;
 	private ArrayAdapter<StreetDTO> arrayAdapter;
-	//private ArrayList<StreetDTO> streets;
-	private ZoneListAdapter trattaListAdapter;
-	//private String url;
+	private ZoneListAdapter zoneListAdapter;
 	private DLCTaskDTO dlctask;
 
 	@Override
@@ -50,9 +48,9 @@ public class MainActivity extends Activity {
 		leftTextView = (TextView) findViewById(R.id.left);
 		rightTextView = (TextView) findViewById(R.id.right);
 		centerTextView = (TextView) findViewById(R.id.center);
-		listView = (ListView) findViewById(R.id.trattelist);
+		zoneView = (ListView) findViewById(R.id.zonelist);
 		spinner = (Spinner) findViewById(R.id.spinner);
-		trattaListAdapter = new ZoneListAdapter(MainActivity.this);
+		zoneListAdapter = new ZoneListAdapter(MainActivity.this);
 		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				setView();
@@ -101,12 +99,12 @@ public class MainActivity extends Activity {
 		} else if (arrayAdapter.getCount() == 0) {
 			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.warning)).setPositiveButton(getResources().getText(R.string.ok), null).setMessage(getResources().getText(R.string.noStreets)).show();
 		} else {
-			trattaListAdapter.setListItems(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getZones());
-			listView.setAdapter(trattaListAdapter);
+			zoneListAdapter.setListItems(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getZones());
+			zoneView.setAdapter(zoneListAdapter);
 			leftTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirections()[0]);
 			rightTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirections()[1]);
 			if (dlctask.getNow() != null)
-				centerTextView.setText(dlctask.getNow().get(Calendar.HOUR_OF_DAY)+":"+dlctask.getNow().get(Calendar.MINUTE)+":"+dlctask.getNow().get(Calendar.SECOND));
+				centerTextView.setText(dlctask.getNow().get(Calendar.HOUR_OF_DAY) + ":" + dlctask.getNow().get(Calendar.MINUTE) + ":" + dlctask.getNow().get(Calendar.SECOND));
 		}
 	}
 
@@ -119,9 +117,9 @@ public class MainActivity extends Activity {
 				for (StreetDTO elem : param[0].getStreets())
 					elem = Parser.parse(elem, param[0].getUrl());
 				param[0].setNow(Calendar.getInstance());
-				error = null;
 				return param[0];
 			} catch (CoreException e) {
+				param[0].setNow(null);
 				error = e.getKey() + ": " + e.getMessage();
 				return null;
 			}
@@ -129,7 +127,7 @@ public class MainActivity extends Activity {
 
 		@Override
 		protected void onPostExecute(DLCTaskDTO streets) {
-			if (error != null)
+			if (streets == null)
 				new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.error)).setMessage(error).setPositiveButton(getResources().getText(R.string.ok), null).show();
 			else {
 				setView();
