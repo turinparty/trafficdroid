@@ -41,16 +41,18 @@ public class Parser {
 							zone.setName(trZone.item(z).getChildNodes().item(1).getChildNodes().item(2).getFirstChild().getNodeValue());
 							zone.setCatLeft(Integer.parseInt(trZone.item(z + 1).getChildNodes().item(1).getAttributes().getNamedItem(Const.codeClass).getNodeValue().substring(2, 3)));
 							zone.setSpeedLeft(trZone.item(z + 1).getChildNodes().item(0).getFirstChild().getNodeValue());
+							zone.setCatRight(Integer.parseInt(trZone.item(z + 1).getChildNodes().item(2).getAttributes().getNamedItem(Const.codeClass).getNodeValue().substring(2, 3)));
+							zone.setSpeedRight(trZone.item(z + 1).getChildNodes().item(3).getFirstChild().getNodeValue());
+							/*
 							if (zone.getCatLeft() == 6)
 								zone.setSpeedLeft(zone.getSpeedLeft().substring(6, zone.getSpeedLeft().length() - 5) + "+");
 							else
 								zone.setSpeedLeft(zone.getSpeedLeft().substring(0, zone.getSpeedLeft().length() - 5));
-							zone.setCatRight(Integer.parseInt(trZone.item(z + 1).getChildNodes().item(2).getAttributes().getNamedItem(Const.codeClass).getNodeValue().substring(2, 3)));
-							zone.setSpeedRight(trZone.item(z + 1).getChildNodes().item(3).getFirstChild().getNodeValue());
 							if (zone.getCatRight() == 6)
 								zone.setSpeedRight(zone.getSpeedRight().substring(6, zone.getSpeedRight().length() - 5) + "+");
 							else
 								zone.setSpeedRight(zone.getSpeedRight().substring(0, zone.getSpeedRight().length() - 5));
+							*/
 							street.addZone(zone);
 						}
 					}

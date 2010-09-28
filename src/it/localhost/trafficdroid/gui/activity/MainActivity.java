@@ -9,7 +9,7 @@ import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.exception.CoreException;
 import it.localhost.trafficdroid.gui.adapter.ZoneListAdapter;
 
-import java.util.Calendar;
+import java.util.Date;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -18,6 +18,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuItem.OnMenuItemClickListener;
@@ -104,7 +105,7 @@ public class MainActivity extends Activity {
 			leftTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirections()[0]);
 			rightTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirections()[1]);
 			if (dlctask.getNow() != null)
-				centerTextView.setText(dlctask.getNow().get(Calendar.HOUR_OF_DAY) + ":" + dlctask.getNow().get(Calendar.MINUTE) + ":" + dlctask.getNow().get(Calendar.SECOND));
+				centerTextView.setText(DateFormat.getTimeFormat(getApplicationContext()).format(dlctask.getNow()));
 		}
 	}
 
@@ -116,7 +117,7 @@ public class MainActivity extends Activity {
 			try {
 				for (StreetDTO elem : param[0].getStreets())
 					elem = Parser.parse(elem, param[0].getUrl());
-				param[0].setNow(Calendar.getInstance());
+				param[0].setNow(new Date());
 				return param[0];
 			} catch (CoreException e) {
 				param[0].setNow(null);
