@@ -1,0 +1,391 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<div id="tipU1" class="tipU">Palermo - SUD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipD1" class="tipD">Palermo - NORD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU2" class="tipU">Capac - SUD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipD2" class="tipD">Capac - NORD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU3" class="tipU">Carini - SUD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipD3" class="tipD">Carini - NORD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU4" class="tipU">Cinisi - Carin - SUD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipD4" class="tipD">Cinisi - Carin - NORD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU5" class="tipU">Cinis - SUD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipD5" class="tipD">Cinis - NORD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU6" class="tipU">Terrasini - SUD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipD6" class="tipD">Terrasini - NORD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU7" class="tipU">Montelepre - Giardinello - SUD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipD7" class="tipD">Montelepre - Giardinello - NORD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU8" class="tipU">Partinico - Trappeto - SUD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipD8" class="tipD">Partinico - Trappeto - NORD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU9" class="tipU">Balestrate - SUD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipD9" class="tipD">Balestrate - NORD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU10" class="tipU">Alcamo - SUD - <b>- km/h</b>
+</div>
+<div id="tipD10" class="tipD">Alcamo - NORD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU11" class="tipU">Castellammare del Golfo - SUD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipD11" class="tipD">Castellammare del Golfo - NORD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU12" class="tipU">Diramazione A29 - SUD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipD12" class="tipD">Diramazione A29 - NORD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU13" class="tipU">Gallitello - SUD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipD13" class="tipD">Gallitello - NORD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU14" class="tipU">Salem - SUD - <b>- km/h</b>
+</div>
+<div id="tipD14" class="tipD">Salem - NORD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU15" class="tipU">S.Ninfa - Partanna - SUD - <b>- km/h</b>
+</div>
+<div id="tipD15" class="tipD">S.Ninfa - Partanna - NORD - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU16" class="tipU">Castelvetrano - SUD - <b>- km/h</b>
+</div>
+<div id="tipD16" class="tipD">Castelvetrano - NORD - <b>- km/h</b>
+</div>
+<div id="tipU17" class="tipU">Campobello di Mazara - SUD - <b>- km/h</b>
+</div>
+<div id="tipD17" class="tipD">Campobello di Mazara - NORD - <b>- km/h</b>
+</div>
+<br/>
+<table border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="50%" height="25px" align="left">
+<span style="white-space:nowrap;">Palermo</span>
+</td>
+<td width="50%" height="25px" align="right">
+<span style="white-space:nowrap;">Mazara del Vallo</span>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td align="right">SUD</td>
+<td id="BL1" class="ls6" onclick="hp(1,'L');" onmouseout="popUp(event,'tipU1')" onmouseover="popUp(event,'tipU1')"/>
+<td id="BL2" class="ls6" onclick="hp(2,'L');" onmouseout="popUp(event,'tipU2')" onmouseover="popUp(event,'tipU2')"/>
+<td id="BL3" class="ls6" onclick="hp(3,'L');" onmouseout="popUp(event,'tipU3')" onmouseover="popUp(event,'tipU3')"/>
+<td id="BL4" class="ls6" onclick="hp(4,'L');" onmouseout="popUp(event,'tipU4')" onmouseover="popUp(event,'tipU4')"/>
+<td id="BL5" class="ls6" onclick="hp(5,'L');" onmouseout="popUp(event,'tipU5')" onmouseover="popUp(event,'tipU5')"/>
+<td id="BL6" class="ls6" onclick="hp(6,'L');" onmouseout="popUp(event,'tipU6')" onmouseover="popUp(event,'tipU6')"/>
+<td id="BL7" class="ls6" onclick="hp(7,'L');" onmouseout="popUp(event,'tipU7')" onmouseover="popUp(event,'tipU7')"/>
+<td id="BL8" class="ls6" onclick="hp(8,'L');" onmouseout="popUp(event,'tipU8')" onmouseover="popUp(event,'tipU8')"/>
+<td id="BL9" class="ls6" onclick="hp(9,'L');" onmouseout="popUp(event,'tipU9')" onmouseover="popUp(event,'tipU9')"/>
+<td id="BL10" class="ls0" onclick="hp(10,'L');" onmouseout="popUp(event,'tipU10')" onmouseover="popUp(event,'tipU10')"/>
+<td id="BL11" class="ls6" onclick="hp(11,'L');" onmouseout="popUp(event,'tipU11')" onmouseover="popUp(event,'tipU11')"/>
+<td id="BL12" class="ls6" onclick="hp(12,'L');" onmouseout="popUp(event,'tipU12')" onmouseover="popUp(event,'tipU12')"/>
+<td id="BL13" class="ls6" onclick="hp(13,'L');" onmouseout="popUp(event,'tipU13')" onmouseover="popUp(event,'tipU13')"/>
+<td id="BL14" class="ls0" onclick="hp(14,'L');" onmouseout="popUp(event,'tipU14')" onmouseover="popUp(event,'tipU14')"/>
+<td id="BL15" class="ls0" onclick="hp(15,'L');" onmouseout="popUp(event,'tipU15')" onmouseover="popUp(event,'tipU15')"/>
+<td id="BL16" class="ls0" onclick="hp(16,'L');" onmouseout="popUp(event,'tipU16')" onmouseover="popUp(event,'tipU16')"/>
+<td id="BL17" class="ls0" onclick="hp(17,'L');" onmouseout="popUp(event,'tipU17')" onmouseover="popUp(event,'tipU17')"/>
+<td align="left">SUD</td>
+</tr>
+<tr>
+<td align="right">NORD</td>
+<td id="BR1" class="rs6" onclick="hp(1,'R');" onmouseout="popUp(event,'tipD1')" onmouseover="popUp(event,'tipD1')"/>
+<td id="BR2" class="rs6" onclick="hp(2,'R');" onmouseout="popUp(event,'tipD2')" onmouseover="popUp(event,'tipD2')"/>
+<td id="BR3" class="rs6" onclick="hp(3,'R');" onmouseout="popUp(event,'tipD3')" onmouseover="popUp(event,'tipD3')"/>
+<td id="BR4" class="rs6" onclick="hp(4,'R');" onmouseout="popUp(event,'tipD4')" onmouseover="popUp(event,'tipD4')"/>
+<td id="BR5" class="rs6" onclick="hp(5,'R');" onmouseout="popUp(event,'tipD5')" onmouseover="popUp(event,'tipD5')"/>
+<td id="BR6" class="rs6" onclick="hp(6,'R');" onmouseout="popUp(event,'tipD6')" onmouseover="popUp(event,'tipD6')"/>
+<td id="BR7" class="rs6" onclick="hp(7,'R');" onmouseout="popUp(event,'tipD7')" onmouseover="popUp(event,'tipD7')"/>
+<td id="BR8" class="rs6" onclick="hp(8,'R');" onmouseout="popUp(event,'tipD8')" onmouseover="popUp(event,'tipD8')"/>
+<td id="BR9" class="rs6" onclick="hp(9,'R');" onmouseout="popUp(event,'tipD9')" onmouseover="popUp(event,'tipD9')"/>
+<td id="BR10" class="rs6" onclick="hp(10,'R');" onmouseout="popUp(event,'tipD10')" onmouseover="popUp(event,'tipD10')"/>
+<td id="BR11" class="rs6" onclick="hp(11,'R');" onmouseout="popUp(event,'tipD11')" onmouseover="popUp(event,'tipD11')"/>
+<td id="BR12" class="rs6" onclick="hp(12,'R');" onmouseout="popUp(event,'tipD12')" onmouseover="popUp(event,'tipD12')"/>
+<td id="BR13" class="rs6" onclick="hp(13,'R');" onmouseout="popUp(event,'tipD13')" onmouseover="popUp(event,'tipD13')"/>
+<td id="BR14" class="rs6" onclick="hp(14,'R');" onmouseout="popUp(event,'tipD14')" onmouseover="popUp(event,'tipD14')"/>
+<td id="BR15" class="rs6" onclick="hp(15,'R');" onmouseout="popUp(event,'tipD15')" onmouseover="popUp(event,'tipD15')"/>
+<td id="BR16" class="rs0" onclick="hp(16,'R');" onmouseout="popUp(event,'tipD16')" onmouseover="popUp(event,'tipD16')"/>
+<td id="BR17" class="rs0" onclick="hp(17,'R');" onmouseout="popUp(event,'tipD17')" onmouseover="popUp(event,'tipD17')"/>
+<td align="left">NORD</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br/>
+<div id="section">
+<div id="roadsizer" onclick="setSize();">.</div>
+<div id="roadbox">
+<table border="0" align="center" cellpadding="0" cellspacing="0" class="hw">
+<tr>
+<td class="km">0 Km</td>
+<td colspan="2" align="center" class="bstart" id="E1" title="">
+<a name="AL1" id="AL1"/>
+<a name="AR1" id="AR1"/>
+<span>Palermo</span>
+</td>
+</tr>
+<tr id="C1">
+<td id="LD1" class="kmh" onclick="hp(1,'L',true);">Oltre 90 km/h</td>
+<td class="lx6" id="L1" onclick="hp(1,'L',true);"/>
+<td class="rx6" id="R1" onclick="hp(1,'R',true);"/>
+<td id="RD1" class="kmh" onclick="hp(1,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">5 Km</td>
+<td colspan="2" align="center" class="exit" id="E2" title="">
+<a name="AL2" id="AL2"/>
+<a name="AR2" id="AR2"/>
+<span>Capac</span>
+</td>
+</tr>
+<tr id="C2">
+<td id="LD2" class="kmh" onclick="hp(2,'L',true);">Oltre 90 km/h</td>
+<td class="lx6" id="L2" onclick="hp(2,'L',true);"/>
+<td class="rx6" id="R2" onclick="hp(2,'R',true);"/>
+<td id="RD2" class="kmh" onclick="hp(2,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">8 Km</td>
+<td colspan="2" align="center" class="exit" id="E3" title="">
+<a name="AL3" id="AL3"/>
+<a name="AR3" id="AR3"/>
+<span>Carini</span>
+</td>
+</tr>
+<tr id="C3">
+<td id="LD3" class="kmh" onclick="hp(3,'L',true);">Oltre 90 km/h</td>
+<td class="lx6" id="L3" onclick="hp(3,'L',true);"/>
+<td class="rx6" id="R3" onclick="hp(3,'R',true);"/>
+<td id="RD3" class="kmh" onclick="hp(3,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">15 Km</td>
+<td colspan="2" align="center" class="exit" id="E4" title="">
+<a name="AL4" id="AL4"/>
+<a name="AR4" id="AR4"/>
+<span>Cinisi - Carin</span>
+</td>
+</tr>
+<tr id="C4">
+<td id="LD4" class="kmh" onclick="hp(4,'L',true);">Oltre 90 km/h</td>
+<td class="lx6" id="L4" onclick="hp(4,'L',true);"/>
+<td class="rx6" id="R4" onclick="hp(4,'R',true);"/>
+<td id="RD4" class="kmh" onclick="hp(4,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">16 Km</td>
+<td colspan="2" align="center" class="exit" id="E5" title="">
+<a name="AL5" id="AL5"/>
+<a name="AR5" id="AR5"/>
+<span>Cinis</span>
+</td>
+</tr>
+<tr id="C5">
+<td id="LD5" class="kmh" onclick="hp(5,'L',true);">Oltre 90 km/h</td>
+<td class="lx6" id="L5" onclick="hp(5,'L',true);"/>
+<td class="rx6" id="R5" onclick="hp(5,'R',true);"/>
+<td id="RD5" class="kmh" onclick="hp(5,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">23 Km</td>
+<td colspan="2" align="center" class="exit" id="E6" title="">
+<a name="AL6" id="AL6"/>
+<a name="AR6" id="AR6"/>
+<span>Terrasini</span>
+</td>
+</tr>
+<tr id="C6">
+<td id="LD6" class="kmh" onclick="hp(6,'L',true);">Oltre 90 km/h</td>
+<td class="lx6" id="L6" onclick="hp(6,'L',true);"/>
+<td class="rx6" id="R6" onclick="hp(6,'R',true);"/>
+<td id="RD6" class="kmh" onclick="hp(6,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">30 Km</td>
+<td colspan="2" align="center" class="exit" id="E7" title="">
+<a name="AL7" id="AL7"/>
+<a name="AR7" id="AR7"/>
+<span>Montelepre - Giardinello</span>
+</td>
+</tr>
+<tr id="C7">
+<td id="LD7" class="kmh" onclick="hp(7,'L',true);">Oltre 90 km/h</td>
+<td class="lx6" id="L7" onclick="hp(7,'L',true);"/>
+<td class="rx6" id="R7" onclick="hp(7,'R',true);"/>
+<td id="RD7" class="kmh" onclick="hp(7,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">32 Km</td>
+<td colspan="2" align="center" class="exit" id="E8" title="">
+<a name="AL8" id="AL8"/>
+<a name="AR8" id="AR8"/>
+<span>Partinico - Trappeto</span>
+</td>
+</tr>
+<tr id="C8">
+<td id="LD8" class="kmh" onclick="hp(8,'L',true);">Oltre 90 km/h</td>
+<td class="lx6" id="L8" onclick="hp(8,'L',true);"/>
+<td class="rx6" id="R8" onclick="hp(8,'R',true);"/>
+<td id="RD8" class="kmh" onclick="hp(8,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">41 Km</td>
+<td colspan="2" align="center" class="exit" id="E9" title="">
+<a name="AL9" id="AL9"/>
+<a name="AR9" id="AR9"/>
+<span>Balestrate</span>
+</td>
+</tr>
+<tr id="C9">
+<td id="LD9" class="kmh" onclick="hp(9,'L',true);">Oltre 90 km/h</td>
+<td class="lx6" id="L9" onclick="hp(9,'L',true);"/>
+<td class="rx6" id="R9" onclick="hp(9,'R',true);"/>
+<td id="RD9" class="kmh" onclick="hp(9,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">47 Km</td>
+<td colspan="2" align="center" class="exit" id="E10" title="">
+<a name="AL10" id="AL10"/>
+<a name="AR10" id="AR10"/>
+<span>Alcamo</span>
+</td>
+</tr>
+<tr id="C10">
+<td id="LD10" class="kmh" onclick="hp(10,'L',true);">- km/h</td>
+<td class="lx0" id="L10" onclick="hp(10,'L',true);"/>
+<td class="rx6" id="R10" onclick="hp(10,'R',true);"/>
+<td id="RD10" class="kmh" onclick="hp(10,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">49 Km</td>
+<td colspan="2" align="center" class="exit" id="E11" title="">
+<a name="AL11" id="AL11"/>
+<a name="AR11" id="AR11"/>
+<span>Castellammare del Golfo</span>
+</td>
+</tr>
+<tr id="C11">
+<td id="LD11" class="kmh" onclick="hp(11,'L',true);">Oltre 90 km/h</td>
+<td class="lx6" id="L11" onclick="hp(11,'L',true);"/>
+<td class="rx6" id="R11" onclick="hp(11,'R',true);"/>
+<td id="RD11" class="kmh" onclick="hp(11,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">54 Km</td>
+<td colspan="2" align="center" class="exit" id="E12" title="">
+<a name="AL12" id="AL12"/>
+<a name="AR12" id="AR12"/>
+<span>Diramazione A29</span>
+</td>
+</tr>
+<tr id="C12">
+<td id="LD12" class="kmh" onclick="hp(12,'L',true);">Oltre 90 km/h</td>
+<td class="lx6" id="L12" onclick="hp(12,'L',true);"/>
+<td class="rx6" id="R12" onclick="hp(12,'R',true);"/>
+<td id="RD12" class="kmh" onclick="hp(12,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">67 Km</td>
+<td colspan="2" align="center" class="exit" id="E13" title="">
+<a name="AL13" id="AL13"/>
+<a name="AR13" id="AR13"/>
+<span>Gallitello</span>
+</td>
+</tr>
+<tr id="C13">
+<td id="LD13" class="kmh" onclick="hp(13,'L',true);">Oltre 90 km/h</td>
+<td class="lx6" id="L13" onclick="hp(13,'L',true);"/>
+<td class="rx6" id="R13" onclick="hp(13,'R',true);"/>
+<td id="RD13" class="kmh" onclick="hp(13,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">78 Km</td>
+<td colspan="2" align="center" class="exit" id="E14" title="">
+<a name="AL14" id="AL14"/>
+<a name="AR14" id="AR14"/>
+<span>Salem</span>
+</td>
+</tr>
+<tr id="C14">
+<td id="LD14" class="kmh" onclick="hp(14,'L',true);">- km/h</td>
+<td class="lx0" id="L14" onclick="hp(14,'L',true);"/>
+<td class="rx6" id="R14" onclick="hp(14,'R',true);"/>
+<td id="RD14" class="kmh" onclick="hp(14,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">86 Km</td>
+<td colspan="2" align="center" class="exit" id="E15" title="">
+<a name="AL15" id="AL15"/>
+<a name="AR15" id="AR15"/>
+<span>S.Ninfa - Partanna</span>
+</td>
+</tr>
+<tr id="C15">
+<td id="LD15" class="kmh" onclick="hp(15,'L',true);">- km/h</td>
+<td class="lx0" id="L15" onclick="hp(15,'L',true);"/>
+<td class="rx6" id="R15" onclick="hp(15,'R',true);"/>
+<td id="RD15" class="kmh" onclick="hp(15,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">95 Km</td>
+<td colspan="2" align="center" class="exit" id="E16" title="">
+<a name="AL16" id="AL16"/>
+<a name="AR16" id="AR16"/>
+<span>Castelvetrano</span>
+</td>
+</tr>
+<tr id="C16">
+<td id="LD16" class="kmh" onclick="hp(16,'L',true);">- km/h</td>
+<td class="lx0" id="L16" onclick="hp(16,'L',true);"/>
+<td class="rx0" id="R16" onclick="hp(16,'R',true);"/>
+<td id="RD16" class="kmh" onclick="hp(16,'R',true);">- km/h</td>
+</tr>
+<tr>
+<td class="km">99 Km</td>
+<td colspan="2" align="center" class="exit" id="E17" title="">
+<a name="AL17" id="AL17"/>
+<a name="AR17" id="AR17"/>
+<span>Campobello di Mazara</span>
+</td>
+</tr>
+<tr id="C17">
+<td id="LD17" class="kmh" onclick="hp(17,'L',true);">- km/h</td>
+<td class="lx0" id="L17" onclick="hp(17,'L',true);"/>
+<td class="rx0" id="R17" onclick="hp(17,'R',true);"/>
+<td id="RD17" class="kmh" onclick="hp(17,'R',true);">- km/h</td>
+</tr>
+<tr>
+<td class="km">116 Km</td>
+<td colspan="2" align="center" class="bend" id="E18" title="">
+<a name="AL18" id="AL18"/>
+<a name="AR18" id="AR18"/>
+<span>Mazara del Vallo</span>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div align="center">©Copyright OctoTelematics S.p.a. - tutti i diritti riservati</div>
+</html>

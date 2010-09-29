@@ -4,133 +4,385 @@
 		android:defaultValue="@string/urlDefaultValue" android:title="@string/urlTitle"
 		android:key="@string/urlKey" />
 	<PreferenceCategory android:title="Prefered Streets">
-		<CheckBoxPreference android:title="A1 Milano-Napoli"
-			android:defaultValue="false" android:key="s1" />
-		<CheckBoxPreference android:title="A3 Napoli-Salerno"
-			android:defaultValue="false" android:key="s2" />
-		<CheckBoxPreference android:title="A3 Salerno-Reggio Calabria"
-			android:defaultValue="false" android:key="s3" />
-		<CheckBoxPreference android:title="A4 Torino-Trieste"
-			android:defaultValue="false" android:key="s4" />
-		<CheckBoxPreference android:title="A5 Torino-Aosta"
-			android:defaultValue="false" android:key="s5" />
-		<CheckBoxPreference android:title="A6 Torino-Savona"
-			android:defaultValue="false" android:key="s6" />
-		<CheckBoxPreference android:title="A7 Milano-Genova"
-			android:defaultValue="false" android:key="s7" />
-		<CheckBoxPreference android:title="A8 Autostrada dei Laghi"
-			android:defaultValue="false" android:key="s8" />
-		<CheckBoxPreference android:title="A9 Lainate-Como-Chiasso"
-			android:defaultValue="false" android:key="s9" />
-		<CheckBoxPreference android:title="A10 Genova-Ventimiglia"
-			android:defaultValue="false" android:key="s10" />
-		<CheckBoxPreference android:title="A11 Firenze-Pisa"
-			android:defaultValue="false" android:key="s11" />
-		<CheckBoxPreference android:title="A12 Genova-Rosignano"
-			android:defaultValue="false" android:key="s121" />
-		<CheckBoxPreference android:title="A12 Roma-Civitavecchia"
-			android:defaultValue="false" android:key="s12" />
-		<CheckBoxPreference android:title="A13 Bologna-Padova"
-			android:defaultValue="false" android:key="s13" />
-		<CheckBoxPreference android:title="A14 Bologna-Taranto"
-			android:defaultValue="false" android:key="s14" />
-		<CheckBoxPreference android:title="A15 Parma-La Spezia"
-			android:defaultValue="false" android:key="s15" />
-		<CheckBoxPreference android:title="A16 Napoli-Canosa"
-			android:defaultValue="false" android:key="s16" />
-		<CheckBoxPreference android:title="A18 Messina-Catania"
-			android:defaultValue="false" android:key="s18" />
-		<CheckBoxPreference android:title="A19 Palermo-Catania"
-			android:defaultValue="false" android:key="s19" />
-		<CheckBoxPreference android:title="A20 Messina-Palermo"
-			android:defaultValue="false" android:key="s20" />
-		<CheckBoxPreference android:title="A21 Torino-Brescia"
-			android:defaultValue="false" android:key="s21" />
-		<CheckBoxPreference android:title="A22 Brennero-Modena"
-			android:defaultValue="false" android:key="s22" />
-		<CheckBoxPreference android:title="A23 Palmanova-Tarvisio"
-			android:defaultValue="false" android:key="s23" />
-		<CheckBoxPreference android:title="A24 Roma-Teramo"
-			android:defaultValue="false" android:key="s24" />
-		<CheckBoxPreference android:title="A24 A24 interna GRA"
-			android:defaultValue="false" android:key="s241" />
-		<CheckBoxPreference android:title="A25 Torano-Pescara"
-			android:defaultValue="false" android:key="s25" />
-		<CheckBoxPreference android:title="A26 Genova-Gravellona Toce"
-			android:defaultValue="false" android:key="s26" />
-		<CheckBoxPreference android:title="A27 Venezia-Belluno"
-			android:defaultValue="false" android:key="s27" />
-		<CheckBoxPreference android:title="A28 Portogruaro-Pordenone"
-			android:defaultValue="false" android:key="s28" />
-		<CheckBoxPreference android:title="A29 Palermo-Mazzara del vallo"
-			android:defaultValue="false" android:key="s29" />
-		<CheckBoxPreference android:title="A30 Caserta-Salerno"
-			android:defaultValue="false" android:key="s30" />
-		<CheckBoxPreference android:title="A31 Vicenza-Thiene"
-			android:defaultValue="false" android:key="s31" />
-		<CheckBoxPreference android:title="A32 Torino-Bardonecchia"
-			android:defaultValue="false" android:key="s32" />
-		<CheckBoxPreference android:title="A50 Tangenziale Ovest"
-			android:defaultValue="false" android:key="s50" />
-		<CheckBoxPreference android:title="A51 Tangenziale Est"
-			android:defaultValue="false" android:key="s51" />
-		<CheckBoxPreference android:title="A52 Tangenziale Nord"
-			android:defaultValue="false" android:key="s52" />
-		<CheckBoxPreference android:title="A55 Tangenziale di Torino"
-			android:defaultValue="false" android:key="s55" />
-		<CheckBoxPreference android:title="A90 Grande Raccordo Anulare"
-			android:defaultValue="false" android:key="s90" />
-		<CheckBoxPreference android:title="A91 Autostrada Fiumicino-Roma"
-			android:defaultValue="false" android:key="s91" />
-		<CheckBoxPreference android:title="A1dir Dir. A1 Roma Nord"
-			android:defaultValue="false" android:key="s101" />
-		<CheckBoxPreference android:title="A1dir Dir. A1 Roma Sud"
-			android:defaultValue="false" android:key="s102" />
-		<CheckBoxPreference android:title="A1R Rac. A1 Bettole-Perugia"
-			android:defaultValue="false" android:key="s143" />
-		<CheckBoxPreference android:title="A1R Rac. A1 Firenze-Siena"
-			android:defaultValue="false" android:key="s103" />
-		<CheckBoxPreference android:title="A3R Rac. A3 Avellino-Salerno"
-			android:defaultValue="false" android:key="s302" />
-		<CheckBoxPreference android:title="A3R Rac. A3 Sicignano-Potenza"
-			android:defaultValue="false" android:key="s303" />
-		<CheckBoxPreference android:title="A5dir Dir. A5/A4 Ivrea"
-			android:defaultValue="false" android:key="s501" />
-		<CheckBoxPreference android:title="A7R Rac. A7 Bereguardo-Pavia"
-			android:defaultValue="false" android:key="s701" />
-		<CheckBoxPreference android:title="A11R Rac. A11/A12 Viareggio-Lucca"
-			android:defaultValue="false" android:key="s111" />
-		<CheckBoxPreference android:title="A13R Rac. A13 Ferrara-P. Garibaldi"
-			android:defaultValue="false" android:key="s131" />
-		<CheckBoxPreference android:title="A14dir Dir. A14 Ravenna"
-			android:defaultValue="false" android:key="s142" />
-		<CheckBoxPreference android:title="A14R A14 Bologna-Casalecchio"
-			android:defaultValue="false" android:key="s141" />
-		<CheckBoxPreference android:title="A14R Rac. A14 Ascoli Piceno"
-			android:defaultValue="false" android:key="s144" />
-		<CheckBoxPreference android:title="A16R Rac. A16 Benevento"
-			android:defaultValue="false" android:key="s161" />
-		<CheckBoxPreference android:title="A18T Tangenziale di Catania"
-			android:defaultValue="false" android:key="s181" />
-		<CheckBoxPreference android:title="A21R Rac. A21/A1 Cortemaggiore"
-			android:defaultValue="false" android:key="s211" />
-		<CheckBoxPreference android:title="A26dir A26/A4 Stroppiana-Santhia"
-			android:defaultValue="false" android:key="s261" />
-		<CheckBoxPreference android:title="A26dir Dir. A26/A8 Cattico-Gallarate"
-			android:defaultValue="false" android:key="s262" />
-		<CheckBoxPreference android:title="A26dir Dir. A26/A7 Predosa"
-			android:defaultValue="false" android:key="s263" />
-		<CheckBoxPreference android:title="A29Dir Dir. A29 Alcamo-Trapani"
-			android:defaultValue="false" android:key="s291" />
-		<CheckBoxPreference android:title="A55Dir Dir. A55 Pinerolo"
-			android:defaultValue="false" android:key="s552" />
-		<CheckBoxPreference android:title="A55R Rac. A55 Torino-Caselle"
-			android:defaultValue="false" android:key="s551" />
-		<CheckBoxPreference android:title="A55T Tangenziale di Torino Sud"
-			android:defaultValue="false" android:key="s553" />
-		<CheckBoxPreference android:title="A56 Tangenziale di Napoli"
-			android:defaultValue="false" android:key="s56" />
-		<CheckBoxPreference android:title="RA4 S.S. Ionica 106"
-			android:defaultValue="false" android:key="s301" />
+		<PreferenceScreen android:title="@string/s1">
+			<CheckBoxPreference android:title="@string/s1"
+				android:key="@string/s1" android:summary="@string/selectStreet" />
+			<CheckBoxPreference android:title="S.Donato Milanese"
+				android:key="S.Donato Milanese" />
+			<CheckBoxPreference android:title="Tangenziale Est"
+				android:key="Tangenziale Est" />
+			<CheckBoxPreference android:title="S.Giuliano Milanese"
+				android:key="S.Giuliano Milanese" />
+			<CheckBoxPreference android:title="Tangenziale Ovest"
+				android:key="Tangenziale Ovest" />
+			<CheckBoxPreference android:title="Melegnano - Binasco"
+				android:key="Melegnano - Binasco" />
+			<CheckBoxPreference android:title="Lodi"
+				android:key="Lodi" />
+			<CheckBoxPreference android:title="Casalpusterlengo"
+				android:key="Casalpusterlengo" />
+			<CheckBoxPreference android:title="Piacenza Nord"
+				android:key="Piacenza Nord" />
+			<CheckBoxPreference android:title="Piacenza Sud / Allaccio A21"
+				android:key="Piacenza Sud / Allaccio A21" />
+			<CheckBoxPreference android:title="Raccordo A21"
+				android:key="Raccordo A21" />
+			<CheckBoxPreference android:title="Fidenza - Salsomaggiore T."
+				android:key="Fidenza - Salsomaggiore T." />
+			<CheckBoxPreference android:title="Allaccio A15"
+				android:key="Allaccio A15" />
+			<CheckBoxPreference android:title="Parma"
+				android:key="Parma" />
+			<CheckBoxPreference android:title="Reggio Emilia"
+				android:key="Reggio Emilia" />
+			<CheckBoxPreference android:title="Allaccio A22"
+				android:key="Allaccio A22" />
+			<CheckBoxPreference android:title="Modena Nord"
+				android:key="Modena Nord" />
+			<CheckBoxPreference android:title="Modena Sud"
+				android:key="Modena Sud" />
+			<CheckBoxPreference android:title="Allaccio A14"
+				android:key="Allaccio A14" />
+			<CheckBoxPreference android:title="Raccordo A14"
+				android:key="Raccordo A14" />
+			<CheckBoxPreference android:title="Sasso Marconi"
+				android:key="Sasso Marconi" />
+			<CheckBoxPreference android:title="Rioveggio"
+				android:key="Rioveggio" />
+			<CheckBoxPreference android:title="Pian del Voglio"
+				android:key="Pian del Voglio" />
+			<CheckBoxPreference android:title="Roncobilaccio"
+				android:key="Roncobilaccio" />
+			<CheckBoxPreference android:title="Barberino di Mugello"
+				android:key="Barberino di Mugello" />
+			<CheckBoxPreference android:title="Prato - Calenzano"
+				android:key="Prato - Calenzano" />
+			<CheckBoxPreference android:title="Allaccio A11- Firenze Nord"
+				android:key="Allaccio A11- Firenze Nord" />
+			<CheckBoxPreference android:title="Firenze Signa"
+				android:key="Firenze Signa" />
+			<CheckBoxPreference android:title="Firenze Certosa - Raccordo Firenze-Siena"
+				android:key="Firenze Certosa - Raccordo Firenze-Siena" />
+			<CheckBoxPreference android:title="Firenze Sud"
+				android:key="Firenze Sud" />
+			<CheckBoxPreference android:title="Incisa"
+				android:key="Incisa" />
+			<CheckBoxPreference android:title="Valdarno"
+				android:key="Valdarno" />
+			<CheckBoxPreference android:title="Arezzo"
+				android:key="Arezzo" />
+			<CheckBoxPreference android:title="Monte S.Savino"
+				android:key="Monte S.Savino" />
+			<CheckBoxPreference android:title="Val di Chiana - Raccordo Betolle-Perugia"
+				android:key="Val di Chiana - Raccordo Betolle-Perugia" />
+			<CheckBoxPreference android:title="Chiusi - Chianciano Terme"
+				android:key="Chiusi - Chianciano Terme" />
+			<CheckBoxPreference android:title="Fabro"
+				android:key="Fabro" />
+			<CheckBoxPreference android:title="Orvieto"
+				android:key="Orvieto" />
+			<CheckBoxPreference android:title="Attigliano"
+				android:key="Attigliano" />
+			<CheckBoxPreference android:title="Orte"
+				android:key="Orte" />
+			<CheckBoxPreference android:title="Magliano Sabina"
+				android:key="Magliano Sabina" />
+			<CheckBoxPreference android:title="Ponzano Romano - Soratte"
+				android:key="Ponzano Romano - Soratte" />
+			<CheckBoxPreference android:title="Diramazione Roma-Nord"
+				android:key="Diramazione Roma-Nord" />
+			<CheckBoxPreference android:title="Allaccio A24"
+				android:key="Allaccio A24" />
+			<CheckBoxPreference android:title="Diramazione Roma-Sud"
+				android:key="Diramazione Roma-Sud" />
+			<CheckBoxPreference android:title="Valmontone"
+				android:key="Valmontone" />
+			<CheckBoxPreference android:title="Colleferro"
+				android:key="Colleferro" />
+			<CheckBoxPreference android:title="Anagni - Fiuggi"
+				android:key="Anagni - Fiuggi" />
+			<CheckBoxPreference android:title="Frosinone"
+				android:key="Frosinone" />
+			<CheckBoxPreference android:title="Ceprano"
+				android:key="Ceprano" />
+			<CheckBoxPreference android:title="Pontecorvo"
+				android:key="Pontecorvo" />
+			<CheckBoxPreference android:title="Cassino"
+				android:key="Cassino" />
+			<CheckBoxPreference android:title="S.Vittore"
+				android:key="S.Vittore" />
+			<CheckBoxPreference android:title="Caianello"
+				android:key="Caianello" />
+			<CheckBoxPreference android:title="Capua"
+				android:key="Capua" />
+			<CheckBoxPreference android:title="Caserta Nord"
+				android:key="Caserta Nord" />
+			<CheckBoxPreference android:title="Allaccio A30"
+				android:key="Allaccio A30" />
+			<CheckBoxPreference android:title="Caserta Sud"
+				android:key="Caserta Sud" />
+			<CheckBoxPreference android:title="Pomigliano - Villa Literno"
+				android:key="Pomigliano - Villa Literno" />
+			<CheckBoxPreference android:title="Napoli - Asse Mediano"
+				android:key="Napoli - Asse Mediano" />
+			<CheckBoxPreference android:title="Allaccio A16"
+				android:key="Allaccio A16" />
+			<CheckBoxPreference android:title="Tangenziale di Napoli"
+				android:key="Tangenziale di Napoli" />
+			<CheckBoxPreference android:title="Allaccio A3"
+				android:key="Allaccio A3" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s2">
+			<CheckBoxPreference android:title="@string/s2"
+				android:key="@string/s2" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s3">
+			<CheckBoxPreference android:title="@string/s3"
+				android:key="@string/s3" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s4">
+			<CheckBoxPreference android:title="@string/s4"
+				android:key="@string/s4" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s5">
+			<CheckBoxPreference android:title="@string/s5"
+				android:key="@string/s5" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s6">
+			<CheckBoxPreference android:title="@string/s6"
+				android:key="@string/s6" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s7">
+			<CheckBoxPreference android:title="@string/s7"
+				android:key="@string/s7" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s8">
+			<CheckBoxPreference android:title="@string/s8"
+				android:key="@string/s8" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s9">
+			<CheckBoxPreference android:title="@string/s9"
+				android:key="@string/s9" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s10">
+			<CheckBoxPreference android:title="@string/s10"
+				android:key="@string/s10" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s11">
+			<CheckBoxPreference android:title="@string/s11"
+				android:key="@string/s11" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s121">
+			<CheckBoxPreference android:title="@string/s121"
+				android:key="@string/s121" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s12">
+			<CheckBoxPreference android:title="@string/s12"
+				android:key="@string/s12" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s13">
+			<CheckBoxPreference android:title="@string/s13"
+				android:key="@string/s13" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s14">
+			<CheckBoxPreference android:title="@string/s14"
+				android:key="@string/s14" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s15">
+			<CheckBoxPreference android:title="@string/s15"
+				android:key="@string/s15" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s16">
+			<CheckBoxPreference android:title="@string/s16"
+				android:key="@string/s16" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s18">
+			<CheckBoxPreference android:title="@string/s18"
+				android:key="@string/s18" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s19">
+			<CheckBoxPreference android:title="@string/s19"
+				android:key="@string/s19" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s20">
+			<CheckBoxPreference android:title="@string/s20"
+				android:key="@string/s20" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s21">
+			<CheckBoxPreference android:title="@string/s21"
+				android:key="@string/s21" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s22">
+			<CheckBoxPreference android:title="@string/s22"
+				android:key="@string/s22" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s23">
+			<CheckBoxPreference android:title="@string/s23"
+				android:key="@string/s23" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s24">
+			<CheckBoxPreference android:title="@string/s24"
+				android:key="@string/s24" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s241">
+			<CheckBoxPreference android:title="@string/s241"
+				android:key="@string/s241" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s25">
+			<CheckBoxPreference android:title="@string/s25"
+				android:key="@string/s25" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s26">
+			<CheckBoxPreference android:title="@string/s26"
+				android:key="@string/s26" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s27">
+			<CheckBoxPreference android:title="@string/s27"
+				android:key="@string/s27" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s28">
+			<CheckBoxPreference android:title="@string/s28"
+				android:key="@string/s28" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s29">
+			<CheckBoxPreference android:title="@string/s29"
+				android:key="@string/s29" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s30">
+			<CheckBoxPreference android:title="@string/s30"
+				android:key="@string/s30" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s31">
+			<CheckBoxPreference android:title="@string/s31"
+				android:key="@string/s31" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s32">
+			<CheckBoxPreference android:title="@string/s32"
+				android:key="@string/s32" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s50">
+			<CheckBoxPreference android:title="@string/s50"
+				android:key="@string/s50" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s51">
+			<CheckBoxPreference android:title="@string/s51"
+				android:key="@string/s51" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s52">
+			<CheckBoxPreference android:title="@string/s52"
+				android:key="@string/s52" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s55">
+			<CheckBoxPreference android:title="@string/s55"
+				android:key="@string/s55" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s90">
+			<CheckBoxPreference android:title="@string/s90"
+				android:key="@string/s90" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s91">
+			<CheckBoxPreference android:title="@string/s91"
+				android:key="@string/s91" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s101">
+			<CheckBoxPreference android:title="@string/s101"
+				android:key="@string/s101" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s102">
+			<CheckBoxPreference android:title="@string/s102"
+				android:key="@string/s102" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s143">
+			<CheckBoxPreference android:title="@string/s143"
+				android:key="@string/s143" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s103">
+			<CheckBoxPreference android:title="@string/s103"
+				android:key="@string/s103" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s302">
+			<CheckBoxPreference android:title="@string/s302"
+				android:key="@string/s302" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s303">
+			<CheckBoxPreference android:title="@string/s303"
+				android:key="@string/s303" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s501">
+			<CheckBoxPreference android:title="@string/s501"
+				android:key="@string/s501" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s701">
+			<CheckBoxPreference android:title="@string/s701"
+				android:key="@string/s701" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s111">
+			<CheckBoxPreference android:title="@string/s111"
+				android:key="@string/s111" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s131">
+			<CheckBoxPreference android:title="@string/s131"
+				android:key="@string/s131" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s142">
+			<CheckBoxPreference android:title="@string/s142"
+				android:key="@string/s142" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s141">
+			<CheckBoxPreference android:title="@string/s141"
+				android:key="@string/s141" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s144">
+			<CheckBoxPreference android:title="@string/s144"
+				android:key="@string/s144" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s161">
+			<CheckBoxPreference android:title="@string/s161"
+				android:key="@string/s161" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s181">
+			<CheckBoxPreference android:title="@string/s181"
+				android:key="@string/s181" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s211">
+			<CheckBoxPreference android:title="@string/s211"
+				android:key="@string/s211" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s261">
+			<CheckBoxPreference android:title="@string/s261"
+				android:key="@string/s261" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s262">
+			<CheckBoxPreference android:title="@string/s262"
+				android:key="@string/s262" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s263">
+			<CheckBoxPreference android:title="@string/s263"
+				android:key="@string/s263" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s291">
+			<CheckBoxPreference android:title="@string/s291"
+				android:key="@string/s291" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s552">
+			<CheckBoxPreference android:title="@string/s552"
+				android:key="@string/s552" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s551">
+			<CheckBoxPreference android:title="@string/s551"
+				android:key="@string/s551" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s553">
+			<CheckBoxPreference android:title="@string/s553"
+				android:key="@string/s553" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s56">
+			<CheckBoxPreference android:title="@string/s56"
+				android:key="@string/s56" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s301">
+			<CheckBoxPreference android:title="@string/s301"
+				android:key="@string/s301" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
 	</PreferenceCategory>
 </PreferenceScreen>

@@ -15,4 +15,5 @@
 	<string name="refresh">Aggiorna</string>
 	<string name="noProvider">Per un corretto funzionamento è necessario inserire un provider (Menu > Impostazioni > URL provider). Cercare su internet per trovarne uno.</string>
 	<string name="noStreets">Per un corretto funzionamento è necessario selezionare almeno una strada (Menu > Impostazioni).</string>
+	<string name="selectStreet">Select the whole road</string>
 </resources>

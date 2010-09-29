@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<div id="tipU1" class="tipU">Fiumicino - EST - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipD1" class="tipD">Fiumicino - OVEST - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU2" class="tipU">A12 Civitavecchia - EST - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipD2" class="tipD">A12 Civitavecchia - OVEST - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU3" class="tipU">Roma G.R.A. - EST - <b>89 km/h</b>
+</div>
+<div id="tipD3" class="tipD">Roma G.R.A. - OVEST - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipU4" class="tipU">Magliana - EST - <b>Oltre 90 km/h</b>
+</div>
+<div id="tipD4" class="tipD">Magliana - OVEST - <b>Oltre 90 km/h</b>
+</div>
+<br/>
+<table border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="50%" height="25px" align="left">
+<span style="white-space:nowrap;">Fiumicino</span>
+</td>
+<td width="50%" height="25px" align="right">
+<span style="white-space:nowrap;">Roma</span>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center">
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td align="right">EST</td>
+<td id="BL1" class="ls6" onclick="hp(1,'L');" onmouseout="popUp(event,'tipU1')" onmouseover="popUp(event,'tipU1')"/>
+<td id="BL2" class="ls6" onclick="hp(2,'L');" onmouseout="popUp(event,'tipU2')" onmouseover="popUp(event,'tipU2')"/>
+<td id="BL3" class="ls5" onclick="hp(3,'L');" onmouseout="popUp(event,'tipU3')" onmouseover="popUp(event,'tipU3')"/>
+<td id="BL4" class="ls6" onclick="hp(4,'L');" onmouseout="popUp(event,'tipU4')" onmouseover="popUp(event,'tipU4')"/>
+<td align="left">EST</td>
+</tr>
+<tr>
+<td align="right">OVEST</td>
+<td id="BR1" class="rs6" onclick="hp(1,'R');" onmouseout="popUp(event,'tipD1')" onmouseover="popUp(event,'tipD1')"/>
+<td id="BR2" class="rs6" onclick="hp(2,'R');" onmouseout="popUp(event,'tipD2')" onmouseover="popUp(event,'tipD2')"/>
+<td id="BR3" class="rs6" onclick="hp(3,'R');" onmouseout="popUp(event,'tipD3')" onmouseover="popUp(event,'tipD3')"/>
+<td id="BR4" class="rs6" onclick="hp(4,'R');" onmouseout="popUp(event,'tipD4')" onmouseover="popUp(event,'tipD4')"/>
+<td align="left">OVEST</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br/>
+<div id="section">
+<div id="roadsizer" onclick="setSize();">.</div>
+<div id="roadbox">
+<table border="0" align="center" cellpadding="0" cellspacing="0" class="hw">
+<tr>
+<td class="km">0 Km</td>
+<td colspan="2" align="center" class="bstart" id="E1" title="">
+<a name="AL1" id="AL1"/>
+<a name="AR1" id="AR1"/>
+<span>Fiumicino</span>
+</td>
+</tr>
+<tr id="C1">
+<td id="LD1" class="kmh" onclick="hp(1,'L',true);">Oltre 90 km/h</td>
+<td class="lx6" id="L1" onclick="hp(1,'L',true);"/>
+<td class="rx6" id="R1" onclick="hp(1,'R',true);"/>
+<td id="RD1" class="kmh" onclick="hp(1,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">4.8 Km</td>
+<td colspan="2" align="center" class="exit" id="E2" title="">
+<a name="AL2" id="AL2"/>
+<a name="AR2" id="AR2"/>
+<span>A12 Civitavecchia</span>
+</td>
+</tr>
+<tr id="C2">
+<td id="LD2" class="kmh" onclick="hp(2,'L',true);">Oltre 90 km/h</td>
+<td class="lx6" id="L2" onclick="hp(2,'L',true);"/>
+<td class="rx6" id="R2" onclick="hp(2,'R',true);"/>
+<td id="RD2" class="kmh" onclick="hp(2,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">11.8 Km</td>
+<td colspan="2" align="center" class="exit" id="E3" title="">
+<a name="AL3" id="AL3"/>
+<a name="AR3" id="AR3"/>
+<span>Roma G.R.A.</span>
+</td>
+</tr>
+<tr id="C3">
+<td id="LD3" class="kmh" onclick="hp(3,'L',true);">89 km/h</td>
+<td class="lx5" id="L3" onclick="hp(3,'L',true);"/>
+<td class="rx6" id="R3" onclick="hp(3,'R',true);"/>
+<td id="RD3" class="kmh" onclick="hp(3,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">13.9 Km</td>
+<td colspan="2" align="center" class="exit" id="E4" title="">
+<a name="AL4" id="AL4"/>
+<a name="AR4" id="AR4"/>
+<span>Magliana</span>
+</td>
+</tr>
+<tr id="C4">
+<td id="LD4" class="kmh" onclick="hp(4,'L',true);">Oltre 90 km/h</td>
+<td class="lx6" id="L4" onclick="hp(4,'L',true);"/>
+<td class="rx6" id="R4" onclick="hp(4,'R',true);"/>
+<td id="RD4" class="kmh" onclick="hp(4,'R',true);">Oltre 90 km/h</td>
+</tr>
+<tr>
+<td class="km">18 Km</td>
+<td colspan="2" align="center" class="bend" id="E5" title="">
+<a name="AL5" id="AL5"/>
+<a name="AR5" id="AR5"/>
+<span>Roma</span>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div align="center">©Copyright OctoTelematics S.p.a. - tutti i diritti riservati</div>
+</html>
