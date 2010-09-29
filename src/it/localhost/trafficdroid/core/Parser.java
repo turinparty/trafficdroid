@@ -37,8 +37,7 @@ public class Parser {
 					if (divsZoneB.item(y).getAttributes().getNamedItem(Const.codeId).getNodeValue().equalsIgnoreCase(Const.codeRoadbox)) {
 						trZone = divsZoneB.item(y).getFirstChild().getChildNodes();
 						for (int z = 0; z < trZone.getLength() - 1; z += 2) {
-							zone = new ZoneDTO();
-							zone.setName(trZone.item(z).getChildNodes().item(1).getChildNodes().item(2).getFirstChild().getNodeValue());
+							zone = new ZoneDTO(trZone.item(z).getChildNodes().item(1).getChildNodes().item(2).getFirstChild().getNodeValue());
 							zone.setCatLeft(Integer.parseInt(trZone.item(z + 1).getChildNodes().item(1).getAttributes().getNamedItem(Const.codeClass).getNodeValue().substring(2, 3)));
 							zone.setSpeedLeft(trZone.item(z + 1).getChildNodes().item(0).getFirstChild().getNodeValue());
 							zone.setCatRight(Integer.parseInt(trZone.item(z + 1).getChildNodes().item(2).getAttributes().getNamedItem(Const.codeClass).getNodeValue().substring(2, 3)));

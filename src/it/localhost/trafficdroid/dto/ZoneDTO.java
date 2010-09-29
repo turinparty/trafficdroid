@@ -7,12 +7,13 @@ public class ZoneDTO {
 	private int catLeft;
 	private int catRight;
 
-	public String getName() {
-		return name;
+	public ZoneDTO(String name) {
+		super();
+		this.name = name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public String getName() {
+		return name;
 	}
 
 	public String getSpeedLeft() {
