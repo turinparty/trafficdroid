@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="s131">A13R Rac. A13 Ferrara-P. Garibaldi</string>
+	<string name="s131z1">Allaccio A13</string>
+	<string name="s131z2">Ferrara Sud</string>
+	<string name="s131z3">Ferrara</string>
+	<string name="s131z4">Cona</string>
+	<string name="s131z5">Gualdo</string>
+	<string name="s131z6">Masi S. Giacomo-Torello</string>
+	<string name="s131z7">Rovereto</string>
+	<string name="s131z8">Migliarino-Portomaggiore</string>
+	<string name="s131z9">Ostellato</string>
+	<string name="s131z10">Corte Centrale</string>
+	<string name="s131z11">Comacchio-Lagosanto</string>
+	<string name="s131z12">Porto Garibaldi</string>
+</resources>

@@ -132,61 +132,65 @@
 			<CheckBoxPreference android:title="Allaccio A3"
 				android:key="Allaccio A3" />
 		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s2">
-			<CheckBoxPreference android:title="@string/s2"
-				android:key="@string/s2" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s3">
-			<CheckBoxPreference android:title="@string/s3"
-				android:key="@string/s3" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s4">
-			<CheckBoxPreference android:title="@string/s4"
-				android:key="@string/s4" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s5">
-			<CheckBoxPreference android:title="@string/s5"
-				android:key="@string/s5" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s6">
-			<CheckBoxPreference android:title="@string/s6"
-				android:key="@string/s6" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s7">
-			<CheckBoxPreference android:title="@string/s7"
-				android:key="@string/s7" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s8">
-			<CheckBoxPreference android:title="@string/s8"
-				android:key="@string/s8" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s9">
-			<CheckBoxPreference android:title="@string/s9"
-				android:key="@string/s9" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/s10">
 			<CheckBoxPreference android:title="@string/s10"
 				android:key="@string/s10" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s101">
+			<CheckBoxPreference android:title="@string/s101"
+				android:key="@string/s101" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s102">
+			<CheckBoxPreference android:title="@string/s102"
+				android:key="@string/s102" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s103">
+			<CheckBoxPreference android:title="@string/s103"
+				android:key="@string/s103" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/s11">
 			<CheckBoxPreference android:title="@string/s11"
 				android:key="@string/s11" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s121">
-			<CheckBoxPreference android:title="@string/s121"
-				android:key="@string/s121" android:summary="@string/selectStreet" />
+		<PreferenceScreen android:title="@string/s111">
+			<CheckBoxPreference android:title="@string/s111"
+				android:key="@string/s111" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/s12">
 			<CheckBoxPreference android:title="@string/s12"
 				android:key="@string/s12" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s121">
+			<CheckBoxPreference android:title="@string/s121"
+				android:key="@string/s121" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/s13">
 			<CheckBoxPreference android:title="@string/s13"
 				android:key="@string/s13" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s131">
+			<CheckBoxPreference android:title="@string/s131"
+				android:key="@string/s131" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/s14">
 			<CheckBoxPreference android:title="@string/s14"
 				android:key="@string/s14" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s141">
+			<CheckBoxPreference android:title="@string/s141"
+				android:key="@string/s141" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s142">
+			<CheckBoxPreference android:title="@string/s142"
+				android:key="@string/s142" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s143">
+			<CheckBoxPreference android:title="@string/s143"
+				android:key="@string/s143" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s144">
+			<CheckBoxPreference android:title="@string/s144"
+				android:key="@string/s144" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/s15">
 			<CheckBoxPreference android:title="@string/s15"
@@ -196,13 +200,25 @@
 			<CheckBoxPreference android:title="@string/s16"
 				android:key="@string/s16" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s161">
+			<CheckBoxPreference android:title="@string/s161"
+				android:key="@string/s161" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/s18">
 			<CheckBoxPreference android:title="@string/s18"
 				android:key="@string/s18" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s181">
+			<CheckBoxPreference android:title="@string/s181"
+				android:key="@string/s181" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/s19">
 			<CheckBoxPreference android:title="@string/s19"
 				android:key="@string/s19" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s2">
+			<CheckBoxPreference android:title="@string/s2"
+				android:key="@string/s2" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/s20">
 			<CheckBoxPreference android:title="@string/s20"
@@ -211,6 +227,10 @@
 		<PreferenceScreen android:title="@string/s21">
 			<CheckBoxPreference android:title="@string/s21"
 				android:key="@string/s21" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s211">
+			<CheckBoxPreference android:title="@string/s211"
+				android:key="@string/s211" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/s22">
 			<CheckBoxPreference android:title="@string/s22"
@@ -236,6 +256,18 @@
 			<CheckBoxPreference android:title="@string/s26"
 				android:key="@string/s26" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s261">
+			<CheckBoxPreference android:title="@string/s261"
+				android:key="@string/s261" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s262">
+			<CheckBoxPreference android:title="@string/s262"
+				android:key="@string/s262" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s263">
+			<CheckBoxPreference android:title="@string/s263"
+				android:key="@string/s263" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/s27">
 			<CheckBoxPreference android:title="@string/s27"
 				android:key="@string/s27" android:summary="@string/selectStreet" />
@@ -248,9 +280,29 @@
 			<CheckBoxPreference android:title="@string/s29"
 				android:key="@string/s29" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s291">
+			<CheckBoxPreference android:title="@string/s291"
+				android:key="@string/s291" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s3">
+			<CheckBoxPreference android:title="@string/s3"
+				android:key="@string/s3" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/s30">
 			<CheckBoxPreference android:title="@string/s30"
 				android:key="@string/s30" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s301">
+			<CheckBoxPreference android:title="@string/s301"
+				android:key="@string/s301" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s302">
+			<CheckBoxPreference android:title="@string/s302"
+				android:key="@string/s302" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s303">
+			<CheckBoxPreference android:title="@string/s303"
+				android:key="@string/s303" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/s31">
 			<CheckBoxPreference android:title="@string/s31"
@@ -260,9 +312,21 @@
 			<CheckBoxPreference android:title="@string/s32"
 				android:key="@string/s32" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s4">
+			<CheckBoxPreference android:title="@string/s4"
+				android:key="@string/s4" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s5">
+			<CheckBoxPreference android:title="@string/s5"
+				android:key="@string/s5" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/s50">
 			<CheckBoxPreference android:title="@string/s50"
 				android:key="@string/s50" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s501">
+			<CheckBoxPreference android:title="@string/s501"
+				android:key="@string/s501" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/s51">
 			<CheckBoxPreference android:title="@string/s51"
@@ -276,101 +340,13 @@
 			<CheckBoxPreference android:title="@string/s55"
 				android:key="@string/s55" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s90">
-			<CheckBoxPreference android:title="@string/s90"
-				android:key="@string/s90" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s91">
-			<CheckBoxPreference android:title="@string/s91"
-				android:key="@string/s91" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s101">
-			<CheckBoxPreference android:title="@string/s101"
-				android:key="@string/s101" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s102">
-			<CheckBoxPreference android:title="@string/s102"
-				android:key="@string/s102" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s143">
-			<CheckBoxPreference android:title="@string/s143"
-				android:key="@string/s143" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s103">
-			<CheckBoxPreference android:title="@string/s103"
-				android:key="@string/s103" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s302">
-			<CheckBoxPreference android:title="@string/s302"
-				android:key="@string/s302" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s303">
-			<CheckBoxPreference android:title="@string/s303"
-				android:key="@string/s303" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s501">
-			<CheckBoxPreference android:title="@string/s501"
-				android:key="@string/s501" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s701">
-			<CheckBoxPreference android:title="@string/s701"
-				android:key="@string/s701" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s111">
-			<CheckBoxPreference android:title="@string/s111"
-				android:key="@string/s111" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s131">
-			<CheckBoxPreference android:title="@string/s131"
-				android:key="@string/s131" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s142">
-			<CheckBoxPreference android:title="@string/s142"
-				android:key="@string/s142" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s141">
-			<CheckBoxPreference android:title="@string/s141"
-				android:key="@string/s141" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s144">
-			<CheckBoxPreference android:title="@string/s144"
-				android:key="@string/s144" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s161">
-			<CheckBoxPreference android:title="@string/s161"
-				android:key="@string/s161" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s181">
-			<CheckBoxPreference android:title="@string/s181"
-				android:key="@string/s181" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s211">
-			<CheckBoxPreference android:title="@string/s211"
-				android:key="@string/s211" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s261">
-			<CheckBoxPreference android:title="@string/s261"
-				android:key="@string/s261" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s262">
-			<CheckBoxPreference android:title="@string/s262"
-				android:key="@string/s262" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s263">
-			<CheckBoxPreference android:title="@string/s263"
-				android:key="@string/s263" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s291">
-			<CheckBoxPreference android:title="@string/s291"
-				android:key="@string/s291" android:summary="@string/selectStreet" />
+		<PreferenceScreen android:title="@string/s551">
+			<CheckBoxPreference android:title="@string/s551"
+				android:key="@string/s551" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/s552">
 			<CheckBoxPreference android:title="@string/s552"
 				android:key="@string/s552" android:summary="@string/selectStreet" />
-		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s551">
-			<CheckBoxPreference android:title="@string/s551"
-				android:key="@string/s551" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
 		<PreferenceScreen android:title="@string/s553">
 			<CheckBoxPreference android:title="@string/s553"
@@ -380,9 +356,33 @@
 			<CheckBoxPreference android:title="@string/s56"
 				android:key="@string/s56" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
-		<PreferenceScreen android:title="@string/s301">
-			<CheckBoxPreference android:title="@string/s301"
-				android:key="@string/s301" android:summary="@string/selectStreet" />
+		<PreferenceScreen android:title="@string/s6">
+			<CheckBoxPreference android:title="@string/s6"
+				android:key="@string/s6" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s7">
+			<CheckBoxPreference android:title="@string/s7"
+				android:key="@string/s7" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s701">
+			<CheckBoxPreference android:title="@string/s701"
+				android:key="@string/s701" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s8">
+			<CheckBoxPreference android:title="@string/s8"
+				android:key="@string/s8" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s9">
+			<CheckBoxPreference android:title="@string/s9"
+				android:key="@string/s9" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s90">
+			<CheckBoxPreference android:title="@string/s90"
+				android:key="@string/s90" android:summary="@string/selectStreet" />
+		</PreferenceScreen>
+		<PreferenceScreen android:title="@string/s91">
+			<CheckBoxPreference android:title="@string/s91"
+				android:key="@string/s91" android:summary="@string/selectStreet" />
 		</PreferenceScreen>
 	</PreferenceCategory>
 </PreferenceScreen>

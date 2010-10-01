@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
 	@Override
 	public void onResume() {
 		super.onResume();
-		dlctask = new DLCTaskDTO(StreetDAO.getAllEnabled(sharedPreferences), sharedPreferences.getString(getResources().getText(R.string.urlKey).toString(), Const.emptyString));
+		dlctask = new DLCTaskDTO(StreetDAO.getAllEnabled(sharedPreferences, getResources()), sharedPreferences.getString(getResources().getString(R.string.urlKey), Const.emptyString));
 		new DLCTask().execute(dlctask);
 		arrayAdapter = new ArrayAdapter<StreetDTO>(this, android.R.layout.simple_spinner_item, dlctask.getStreets());
 		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -95,10 +95,10 @@ public class MainActivity extends Activity {
 	}
 
 	private void setView() {
-		if (dlctask.getUrl().equalsIgnoreCase(getResources().getText(R.string.urlDefaultValue).toString()) || dlctask.getUrl().equalsIgnoreCase(Const.emptyString)) {
-			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.warning)).setPositiveButton(getResources().getText(R.string.ok), null).setMessage(getResources().getText(R.string.noProvider)).show();
+		if (dlctask.getUrl().equalsIgnoreCase(getResources().getString(R.string.urlDefaultValue)) || dlctask.getUrl().equalsIgnoreCase(Const.emptyString)) {
+			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.noProvider)).show();
 		} else if (arrayAdapter.getCount() == 0) {
-			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.warning)).setPositiveButton(getResources().getText(R.string.ok), null).setMessage(getResources().getText(R.string.noStreets)).show();
+			new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.noStreets)).show();
 		} else {
 			zoneListAdapter.setListItems(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getZones());
 			zoneView.setAdapter(zoneListAdapter);
@@ -129,7 +129,7 @@ public class MainActivity extends Activity {
 		@Override
 		protected void onPostExecute(DLCTaskDTO streets) {
 			if (streets == null)
-				new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getText(R.string.error)).setMessage(error).setPositiveButton(getResources().getText(R.string.ok), null).show();
+				new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getString(R.string.error)).setMessage(error).setPositiveButton(getResources().getString(R.string.ok), null).show();
 			else {
 				setView();
 			}

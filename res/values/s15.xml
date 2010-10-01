@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="s15">A15 Parma-La Spezia</string>
+	<string name="s15z1">Allaccio A1</string>
+	<string name="s15z2">Parma Ovest</string>
+	<string name="s15z3">Fornovo</string>
+	<string name="s15z4">Borgotaro</string>
+	<string name="s15z5">Berceto</string>
+	<string name="s15z6">Pontremoli</string>
+	<string name="s15z7">Aulla</string>
+	<string name="s15z8">Allaccio A12</string>
+</resources>

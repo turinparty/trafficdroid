@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="s13">A13 Bologna-Padova</string>
+	<string name="s13z1">Allaccio A4</string>
+	<string name="s13z2">Padova Zona Industriale</string>
+	<string name="s13z3">Padova Sud</string>
+	<string name="s13z4">Terme Euganee</string>
+	<string name="s13z5">Monselice</string>
+	<string name="s13z6">Boara</string>
+	<string name="s13z7">Rovigo</string>
+	<string name="s13z8">Occhiobello</string>
+	<string name="s13z9">Ferrara Nord</string>
+	<string name="s13z10">Raccordo A13 P.to Garibaldi</string>
+	<string name="s13z11">Altedo</string>
+	<string name="s13z12">Bologna Interporto</string>
+	<string name="s13z13">Tangenziale Nord / Allaccio A14 / Bologna Arcoveggio</string>
+</resources>

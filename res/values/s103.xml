@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="s103">A1R Rac. A1 Firenze-Siena</string>
+	<string name="s103z1">Allaccio A1</string>
+	<string name="s103z2">S.Casciano Nord</string>
+	<string name="s103z3">S.Casciano Sud</string>
+	<string name="s103z4">Bargino</string>
+	<string name="s103z5">Tavarnelle</string>
+	<string name="s103z6">S.Donato</string>
+	<string name="s103z7">Poggibonsi Nord</string>
+	<string name="s103z8">Poggibonsi</string>
+	<string name="s103z9">Colle di Val d`Elsa Nord</string>
+	<string name="s103z10">Colle di Val d`Elsa Sud</string>
+	<string name="s103z11">Monteriggioni</string>
+	<string name="s103z12">Badesse</string>
+	<string name="s103z13">Siena</string>
+</resources>
