@@ -29,20 +29,24 @@ public class StreetDTO {
 		return zones;
 	}
 
-	public void setZones(List<ZoneDTO> zones) {
-		this.zones = zones;
-	}
-
 	public void addZone(ZoneDTO zone) {
 		zones.add(zone);
 	}
 
-	public String[] getDirections() {
-		return directions;
+	public String getDirectionOne() {
+		return directions[0];
 	}
 
-	public void setDirections(String[] directions) {
-		this.directions = directions;
+	public String getDirectionTwo() {
+		return directions[1];
+	}
+
+	public void setDirectionOne(String direction) {
+		this.directions[0] = direction;
+	}
+
+	public void setDirectionTwo(String direction) {
+		this.directions[1] = direction;
 	}
 
 	@Override

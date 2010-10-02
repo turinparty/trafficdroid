@@ -2,6 +2,7 @@ package it.localhost.trafficdroid.dao;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.dto.StreetDTO;
+import it.localhost.trafficdroid.dto.ZoneDTO;
 
 import java.util.ArrayList;
 
@@ -13,8 +14,135 @@ public class StreetDAO {
 
 	public static ArrayList<StreetDTO> getAllEnabled(SharedPreferences settings, Resources resources) {
 		streets = new ArrayList<StreetDTO>();
-		if (settings.getBoolean(resources.getString(R.string.s1), false))
-			streets.add(new StreetDTO(resources.getString(R.string.s1), 1));
+		StreetDTO street;
+		street = new StreetDTO(resources.getString(R.string.s1), 1);
+		boolean allStreet = settings.getBoolean(resources.getString(R.string.s1z1), false);
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z1), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z1)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z2), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z2)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z3), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z3)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z4), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z4)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z5), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z5)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z6), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z6)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z7), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z7)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z8), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z8)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z9), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z9)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z10), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z10)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z11), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z11)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z12), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z12)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z13), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z13)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z14), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z14)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z15), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z15)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z16), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z16)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z17), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z17)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z18), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z18)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z19), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z19)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z20), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z20)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z21), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z21)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z22), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z22)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z23), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z23)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z24), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z24)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z25), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z25)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z26), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z26)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z27), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z27)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z28), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z28)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z29), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z29)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z30), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z30)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z31), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z31)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z32), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z32)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z33), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z33)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z34), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z34)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z35), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z35)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z36), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z36)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z37), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z37)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z38), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z38)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z39), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z39)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z40), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z40)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z41), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z41)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z42), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z42)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z43), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z43)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z44), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z44)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z45), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z45)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z46), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z46)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z47), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z47)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z48), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z48)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z49), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z49)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z50), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z50)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z51), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z51)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z52), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z52)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z53), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z53)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z54), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z54)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z55), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z55)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z56), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z56)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z57), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z57)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z58), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z58)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z59), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z59)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z60), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z60)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z61), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z61)));
+		if (allStreet || settings.getBoolean(resources.getString(R.string.s1z62), false))
+			street.addZone(new ZoneDTO(resources.getString(R.string.s1z62)));
+		if (street.getZones().size() > 0)
+			streets.add(street);
 		if (settings.getBoolean(resources.getString(R.string.s2), false))
 			streets.add(new StreetDTO(resources.getString(R.string.s2), 2));
 		if (settings.getBoolean(resources.getString(R.string.s3), false))
