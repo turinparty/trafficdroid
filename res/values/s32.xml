@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s32">A32 Torino-Bardonecchia</string>
+	<string name="s32z1">Bardonecchia</string>
+	<string name="s32z2">Savoulx</string>
+	<string name="s32z3">Oulx Ovest</string>
+	<string name="s32z4">Oulx Est</string>
+	<string name="s32z5">Salbertrand</string>
+	<string name="s32z6">Venaus</string>
+	<string name="s32z7">Susa Autoporto</string>
+	<string name="s32z8">Chianocco</string>
+	<string name="s32z9">Borgogne</string>
+	<string name="s32z10">Almese</string>
+	<string name="s32z11">Avigliana</string>
+	<string name="s32z12">Rivoli</string>
+	<string name="s32z13">Allaccio A55</string>
 </resources>

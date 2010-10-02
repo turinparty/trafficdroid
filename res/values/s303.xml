@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s303">A3R Rac. A3 Sicignano-Potenza</string>
+	<string name="s303z1">Allaccio A3/Sicignano</string>
+	<string name="s303z2">Buccino</string>
+	<string name="s303z3">Balvano</string>
+	<string name="s303z4">Picerno</string>
+	<string name="s303z5">Tito</string>
+	<string name="s303z6">Potenza Ovest</string>
+	<string name="s303z7">Potenza Centro</string>
+	<string name="s303z8">Potenza Est</string>
 </resources>

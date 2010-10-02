@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s29">A29 Palermo-Mazzara del vallo</string>
+	<string name="s29z1">Palermo</string>
+	<string name="s29z2">Capac</string>
+	<string name="s29z3">Carini</string>
+	<string name="s29z4">Cinisi - Carin</string>
+	<string name="s29z5">Cinis</string>
+	<string name="s29z6">Terrasini</string>
+	<string name="s29z7">Montelepre - Giardinello</string>
+	<string name="s29z8">Partinico - Trappeto</string>
+	<string name="s29z9">Balestrate</string>
+	<string name="s29z10">Alcamo</string>
+	<string name="s29z11">Castellammare del Golfo</string>
+	<string name="s29z12">Diramazione A29</string>
+	<string name="s29z13">Gallitello</string>
+	<string name="s29z14">Salem</string>
+	<string name="s29z15">S.Ninfa - Partanna</string>
+	<string name="s29z16">Castelvetrano</string>
+	<string name="s29z17">Campobello di Mazara</string>
+	<string name="s29z18">Mazara del Vallo</string>
 </resources>

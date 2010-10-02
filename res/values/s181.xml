@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s181">A18T Tangenziale di Catania</string>
+	<string name="s181z1">Allaccio A18/Catania Centro</string>
+	<string name="s181z2">Gravina</string>
+	<string name="s181z3">San Giovanni Galermo</string>
+	<string name="s181z4">Misterbianco</string>
+	<string name="s181z5">San Giorgio</string>
+	<string name="s181z6">Allacio A19</string>
 </resources>

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s263">A26dir Dir. A26/A7 Predosa</string>
+	<string name="s263z1">Allaccio A26</string>
+	<string name="s263z2">Novi Ligure</string>
+	<string name="s263z3">Allaccio A7</string>
 </resources>

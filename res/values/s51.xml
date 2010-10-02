@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s51">A51 Tangenziale Est</string>
+	<string name="s51z1">Carnate/Usmate velate Sud</string>
+	<string name="s51z2">22: Vimercate Nord</string>
+	<string name="s51z3">21: Vimercate Centro/Ospedale</string>
+	<string name="s51z4">19/20: Vimercate Sud/Arcore</string>
+	<string name="s51z5">18: Burago</string>
+	<string name="s51z6">17: Concorezzo</string>
+	<string name="s51z7">15/16: Agrate Brianza/Monza</string>
+	<string name="s51z8">Autostrada A4</string>
+	<string name="s51z9">14: Carugate</string>
+	<string name="s51z10">13: Cernusco/Brugherio</string>
+	<string name="s51z11">12: Cologno Monzese Nord</string>
+	<string name="s51z12">11: Cologno Monzese Sud</string>
+	<string name="s51z13">Autostrada A52</string>
+	<string name="s51z14">9/10: via Padova/via Palmanova</string>
+	<string name="s51z15">8: Lambrate</string>
+	<string name="s51z16">7: via Rubattino</string>
+	<string name="s51z17">6: Linate/Milano viale Forlanini</string>
+	<string name="s51z18">5: C.A.M.M.</string>
+	<string name="s51z19">4:via Mecenate</string>
+	<string name="s51z20">3:Paullo</string>
+	<string name="s51z21">1-2: SS9 Emilia via Rogoreto</string>
 </resources>

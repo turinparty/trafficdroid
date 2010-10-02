@@ -1,4 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s21">A21 Torino-Brescia</string>
+	<string name="s21z1">Tangenziale Sud</string>
+	<string name="s21z2">Villanova</string>
+	<string name="s21z3">Asti Ovest</string>
+	<string name="s21z4">Asti Est</string>
+	<string name="s21z5">Felizzano - Quattordio</string>
+	<string name="s21z6">Allaccio A26</string>
+	<string name="s21z7">Alessandria Ovest</string>
+	<string name="s21z8">Alessandria Est</string>
+	<string name="s21z9">Allaccio A7</string>
+	<string name="s21z10">Voghera</string>
+	<string name="s21z11">Casteggio - Casatisma</string>
+	<string name="s21z12">Broni - Stradella</string>
+	<string name="s21z13">Castel S.Giovanni</string>
+	<string name="s21z14">Piacenza Ovest</string>
+	<string name="s21z15">Piacenza Est /Allaccio A1</string>
+	<string name="s21z16">Caorso</string>
+	<string name="s21z17">Raccordo A21</string>
+	<string name="s21z18">Castelvetro</string>
+	<string name="s21z19">Cremona</string>
+	<string name="s21z20">Pontevico - Robecco</string>
+	<string name="s21z21">Manerbio</string>
+	<string name="s21z22">Brescia Centro / Allaccio A4</string>
 </resources>

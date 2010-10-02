@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s50">A50 Tangenziale Ovest</string>
+	<string name="s50z1">Autostrada A8</string>
+	<string name="s50z2">1:SS33 del Sempione</string>
+	<string name="s50z3">Autostrada A4</string>
+	<string name="s50z4">2:SS11 Novara/Milano Gallaratese</string>
+	<string name="s50z5">3: Settimo Milanese/Fiera di Milano</string>
+	<string name="s50z6">4: Baggio/Cusago</string>
+	<string name="s50z7">5: SS494 Nuova Vigevanese</string>
+	<string name="s50z8">6: SP59 Vecchia Vigevanese</string>
+	<string name="s50z9">Autostrada A7</string>
+	<string name="s50z10">7: Pavia-Milano Ticinese</string>
+	<string name="s50z11">8: Val Tidone-Milano Vigentina</string>
+	<string name="s50z12">Autostrada A1</string>
 </resources>

@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<string name="s2">A3 Napoli-Salerno</string>
+	<string name="s2">A3 Napoli-Salerno</string>
+	<string name="s2z1">Napoli</string>
+	<string name="s2z2">S. Giovanni a Teduccio</string>
+	<string name="s2z3">Allaccio A1</string>
+	<string name="s2z4">S. Giorgio a Cremano</string>
+	<string name="s2z5">Portici - Bellavista</string>
+	<string name="s2z6">Ercolano</string>
+	<string name="s2z7">Torre del Greco</string>
+	<string name="s2z8">Torre Annunziata Nord</string>
+	<string name="s2z9">Torre Annunziata</string>
+	<string name="s2z10">Pompei</string>
+	<string name="s2z11">Castellammare di Stabia</string>
+	<string name="s2z12">Scafati - Pompei</string>
+	<string name="s2z13">Angri</string>
+	<string name="s2z14">Nocera - Pagani</string>
+	<string name="s2z15">Cava dei Tirreni</string>
+	<string name="s2z16">Vietri sul mare</string>
+	<string name="s2z17">Salerno</string>
 </resources>

@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s24">A24 Roma-Teramo</string>
+	<string name="s24z1">Roma G.R.A.</string>
+	<string name="s24z2">Lunghezza</string>
+	<string name="s24z3">Allaccio A1</string>
+	<string name="s24z4">Tivoli</string>
+	<string name="s24z5">Castel Madama</string>
+	<string name="s24z6">Vicovaro - Mandela</string>
+	<string name="s24z7">Carsoli - Oricola</string>
+	<string name="s24z8">Tagliacozzo</string>
+	<string name="s24z9">Allaccio A25</string>
+	<string name="s24z10">Valle del Salto</string>
+	<string name="s24z11">Tornimparte</string>
+	<string name="s24z12">L`Aquila Ovest</string>
+	<string name="s24z13">L`Aquila Est</string>
+	<string name="s24z14">Assergi</string>
+	<string name="s24z15">Colledara - S.Gabriele</string>
+	<string name="s24z16">Basciano</string>
+	<string name="s24z17">Val Vomano</string>
+	<string name="s24z18">Teramo</string>
 </resources>

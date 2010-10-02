@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s211">A21R Rac. A21/A1 Cortemaggiore</string>
+	<string name="s211z1">Allaccio A21</string>
+	<string name="s211z2">Cortemaggiore</string>
+	<string name="s211z3">Fiorenzuola/Allaccio A1</string>
 </resources>

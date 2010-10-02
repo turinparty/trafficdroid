@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s553">A55T Tangenziale di Torino Sud</string>
+	<string name="s553z1">Corso Trieste</string>
+	<string name="s553z2">San Paolo</string>
+	<string name="s553z3">Allaccio A55</string>
 </resources>

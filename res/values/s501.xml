@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s501">A5dir Dir. A5/A4 Ivrea</string>
+	<string name="s501z1">Allaccio A5</string>
+	<string name="s501z2">Albiano</string>
+	<string name="s501z3">Allaccio A4/Diramazione A26</string>
 </resources>

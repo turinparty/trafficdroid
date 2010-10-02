@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s301">RA4 S.S. Ionica 106</string>
+	<string name="s301z1">Reggio di Calabria Centro</string>
+	<string name="s301z2">Reggio di Calabria Nord</string>
+	<string name="s301z3">Reggio di Calabria Calopinace</string>
+	<string name="s301z4">Reggio di Calabria Arangea</string>
 </resources>

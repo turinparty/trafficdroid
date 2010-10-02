@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s56">A56 Tangenziale di Napoli</string>
+	<string name="s56z1">14: Lago d\'Averno</string>
+	<string name="s56z2">13: Cuma/Pozzuoli</string>
+	<string name="s56z3">12: via Campana</string>
+	<string name="s56z4">11: Agnano</string>
+	<string name="s56z5">10: Fuorigrotta</string>
+	<string name="s56z6">9: Vomero</string>
+	<string name="s56z7">8: Camaldoli</string>
+	<string name="s56z8">6/7: Arenella</string>
+	<string name="s56z9">5: Capodimonte</string>
+	<string name="s56z10">2/3/4: Secondigliano Doganella</string>
+	<string name="s56z11">Allaccio A1</string>
 </resources>

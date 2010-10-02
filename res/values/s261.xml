@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s261">A26dir A26/A4 Stroppiana-Santhia</string>
+	<string name="s261z1">Allaccio A4/Diramazione A5-A4</string>
+	<string name="s261z2">Vercelli Ovest</string>
+	<string name="s261z3">Allaccio A26</string>
 </resources>

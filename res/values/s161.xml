@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s161">A16R Rac. A16 Benevento</string>
+	<string name="s161z1">Benevento Ovest</string>
+	<string name="s161z2">Benevento Centro</string>
+	<string name="s161z3">Benevento Sud</string>
+	<string name="s161z4">San Giorgio del Sannio</string>
+	<string name="s161z5">Allaccio A16</string>
 </resources>

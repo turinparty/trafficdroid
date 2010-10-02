@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s16">A16 Napoli-Canosa</string>
+	<string name="s16z1">Allaccio A1</string>
+	<string name="s16z2">Pomigliano d`Arco</string>
+	<string name="s16z3">Allaccio A30</string>
+	<string name="s16z4">Baiano</string>
+	<string name="s16z5">Avellino Ovest</string>
+	<string name="s16z6">Avellino Est</string>
+	<string name="s16z7">Benevento</string>
+	<string name="s16z8">Grottaminarda</string>
+	<string name="s16z9">Vallata</string>
+	<string name="s16z10">Lacedonia</string>
+	<string name="s16z11">Candela</string>
+	<string name="s16z12">Cerignola Ovest</string>
+	<string name="s16z13">Allaccio A14</string>
 </resources>

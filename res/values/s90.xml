@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<string name="s90">A90 Grande Raccordo Anulare</string>
+	<string name="s90">A90 Grande Raccordo Anulare</string>
+	<string name="s90z1">Aurelia</string>
+	<string name="s90z2">Boccea</string>
+	<string name="s90z3">Cassia</string>
+	<string name="s90z4">Cassia Bis</string>
+	<string name="s90z5">Flaminia</string>
+	<string name="s90z6">Salaria</string>
+	<string name="s90z7">A1-Firenze</string>
+	<string name="s90z8">Nomentana</string>
+	<string name="s90z9">C. Del Latte</string>
+	<string name="s90z10">Tiburtina</string>
+	<string name="s90z11">A24 Roma-L\'Aquila</string>
+	<string name="s90z12">La Rustica</string>
+	<string name="s90z13">Prenestina</string>
+	<string name="s90z14">Casilina</string>
+	<string name="s90z15">A1-Napoli /Romanina</string>
+	<string name="s90z16">Tuscolana/Anagnina</string>
+	<string name="s90z17">Appia</string>
+	<string name="s90z18">Ardeatina</string>
+	<string name="s90z19">Laurentina</string>
+	<string name="s90z20">Pontina</string>
+	<string name="s90z21">Ostiense</string>
+	<string name="s90z22">Roma-Fiumicino</string>
+	<string name="s90z23">Pisana</string>
+	<string name="s90z24">Pescaccio</string>
+	<string name="s90z25">Aurelia</string>
 </resources>

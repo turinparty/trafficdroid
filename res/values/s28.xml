@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s28">A28 Portogruaro-Pordenone</string>
+	<string name="s28z1">Sacile Ovest</string>
+	<string name="s28z2">Sacile Est</string>
+	<string name="s28z3">Fontanafredda</string>
+	<string name="s28z4">Porcia</string>
+	<string name="s28z5">Pordenone Sud</string>
+	<string name="s28z6">Pordenone</string>
+	<string name="s28z7">Cimpello</string>
+	<string name="s28z8">Azzano Decimo</string>
+	<string name="s28z9">Villotta</string>
+	<string name="s28z10">Sesto al Reghena</string>
+	<string name="s28z11">Allaccio A4/Portogruaro</string>
 </resources>

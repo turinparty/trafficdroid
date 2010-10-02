@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="s9">A9 Lainate-Como-Chiasso</string>
+	<string name="s9z1">Chiasso</string>
+	<string name="s9z2">Como Nord</string>
+	<string name="s9z3">Como M. Olimpino</string>
+	<string name="s9z4">Como Sud</string>
+	<string name="s9z5">Fino Mornasco</string>
+	<string name="s9z6">Lomazzo</string>
+	<string name="s9z7">Turate</string>
+	<string name="s9z8">Saronno</string>
+	<string name="s9z9">Origgio</string>
+	<string name="s9z10">Allaccio A8</string>
 </resources>
