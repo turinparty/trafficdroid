@@ -22,6 +22,7 @@ public class Parser {
 	private static int zoneCounter = 0;
 
 	public static StreetDTO parse(StreetDTO street, String url) throws CoreException {
+		zoneCounter = 0;
 		try {
 			document = TrafficDAO.get(street.getCode(), url).getDocumentElement();
 		} catch (DaoException e) {
