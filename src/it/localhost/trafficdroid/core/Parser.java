@@ -38,7 +38,7 @@ public class Parser {
 				for (int y = 0; y < divsZoneB.getLength(); y++) {
 					if (divsZoneB.item(y).getAttributes().getNamedItem(Const.codeId).getNodeValue().equalsIgnoreCase(Const.codeRoadbox)) {
 						trZone = divsZoneB.item(y).getFirstChild().getChildNodes();
-						for (int z = 0; z < trZone.getLength() - 1 && zoneCounter <= street.getZones().size(); z += 2) {
+						for (int z = 0; z < trZone.getLength() - 1 && zoneCounter < street.getZones().size(); z += 2) {
 							zone = street.getZones().get(zoneCounter);
 							System.err.println(trZone.item(z).getChildNodes().item(1).getChildNodes().item(2).getFirstChild().getNodeValue().trim() + "|" + zone.getName());
 							if (trZone.item(z).getChildNodes().item(1).getChildNodes().item(2).getFirstChild().getNodeValue().trim().equalsIgnoreCase(zone.getName())) {
