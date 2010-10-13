@@ -29,8 +29,8 @@ public class Parser {
 			throw new CoreException(CoreException.DaoException, e.getMessage());
 		}
 		trDirection = document.getElementsByTagName(Const.codeTable).item(2).getChildNodes();
-		street.setDirectionOne(trDirection.item(0).getChildNodes().item(0).getFirstChild().getNodeValue());
-		street.setDirectionTwo(trDirection.item(1).getChildNodes().item(0).getFirstChild().getNodeValue());
+		street.setDirectionLeft(trDirection.item(0).getChildNodes().item(0).getFirstChild().getNodeValue());
+		street.setDirectionRight(trDirection.item(1).getChildNodes().item(0).getFirstChild().getNodeValue());
 		divsZoneA = document.getElementsByTagName(Const.codeDiv);
 		for (int i = 0; i < divsZoneA.getLength(); i++) {
 			idZone = divsZoneA.item(i).getAttributes().getNamedItem(Const.codeId);
@@ -41,7 +41,6 @@ public class Parser {
 						trZone = divsZoneB.item(y).getFirstChild().getChildNodes();
 						for (int z = 0; z < trZone.getLength() - 1 && zoneCounter < street.getZones().size(); z += 2) {
 							zone = street.getZones().get(zoneCounter);
-							System.err.println(trZone.item(z).getChildNodes().item(1).getChildNodes().item(2).getFirstChild().getNodeValue().trim() + "|" + zone.getName());
 							if (trZone.item(z).getChildNodes().item(1).getChildNodes().item(2).getFirstChild().getNodeValue().trim().equalsIgnoreCase(zone.getName())) {
 								zone.setCatLeft(Integer.parseInt(trZone.item(z + 1).getChildNodes().item(1).getAttributes().getNamedItem(Const.codeClass).getNodeValue().substring(2, 3)));
 								zone.setSpeedLeft(trZone.item(z + 1).getChildNodes().item(0).getFirstChild().getNodeValue());

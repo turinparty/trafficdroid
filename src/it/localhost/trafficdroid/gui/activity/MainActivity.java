@@ -102,8 +102,8 @@ public class MainActivity extends Activity {
 		} else {
 			zoneListAdapter.setListItems(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getZones());
 			zoneView.setAdapter(zoneListAdapter);
-			leftTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionOne());
-			rightTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionTwo());
+			leftTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionLeft());
+			rightTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionRight());
 			if (dlctask.getNow() != null)
 				centerTextView.setText(DateFormat.getTimeFormat(getApplicationContext()).format(dlctask.getNow()));
 		}

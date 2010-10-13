@@ -1,19 +1,34 @@
 package it.localhost.trafficdroid.dto;
 
 public class ZoneDTO {
+	private int id;
+	private String key;
 	private String name;
 	private String speedLeft;
 	private String speedRight;
 	private int catLeft;
 	private int catRight;
 
-	public ZoneDTO(String name) {
+	public ZoneDTO(int id, String key) {
 		super();
+		this.id = id;
+		this.key = key;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setName(String name) {
 		this.name = name;
 	}
 
 	public String getName() {
 		return name;
+	}
+
+	public String getKey() {
+		return key;
 	}
 
 	public String getSpeedLeft() {
@@ -46,9 +61,5 @@ public class ZoneDTO {
 
 	public void setCatRight(int catRight) {
 		this.catRight = catRight;
-	}
-
-	public String toString() {
-		return getName() + ": " + getSpeedLeft() + " (" + getCatLeft() + "), " + getSpeedRight() + " (" + getCatRight() + ")";
 	}
 }
