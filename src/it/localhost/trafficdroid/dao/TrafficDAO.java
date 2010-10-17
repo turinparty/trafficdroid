@@ -4,9 +4,9 @@ import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.exception.DaoException;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.FactoryConfigurationError;
@@ -19,8 +19,8 @@ public class TrafficDAO {
 	public static Document get(int mapId, String url) throws DaoException {
 		try {
 			URL u = new URL(Const.http + url + Const.dyn + mapId + Const.html);
-			URLConnection uc = u.openConnection();
-			return DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(uc.getInputStream());
+			InputStream is = u.openConnection().getInputStream();
+			return DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
 		} catch (MalformedURLException e) {
 			throw new DaoException(DaoException.MalformedURLException, e.getMessage());
 		} catch (SAXException e) {

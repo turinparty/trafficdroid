@@ -9,10 +9,19 @@ import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.exception.CoreException;
 import it.localhost.trafficdroid.gui.adapter.ZoneListAdapter;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OptionalDataException;
+import java.io.StreamCorruptedException;
 import java.util.Date;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -67,6 +76,28 @@ public class MainActivity extends Activity {
 		super.onResume();
 		dlctask = new DLCTaskDTO(StreetDAO.getAllEnabled(sharedPreferences, getResources()), sharedPreferences.getString(getResources().getString(R.string.urlKey), Const.emptyString));
 		new DLCTask().execute(dlctask);
+		try {
+			FileInputStream fis = openFileInput("cacca");
+			ObjectInputStream in = new ObjectInputStream(fis);
+			dlctask = (DLCTaskDTO) in.readObject();
+			in.close();
+			fis.close();
+		} catch (StreamCorruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (OptionalDataException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		arrayAdapter = new ArrayAdapter<StreetDTO>(this, android.R.layout.simple_spinner_item, dlctask.getStreets());
 		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(arrayAdapter);
@@ -118,10 +149,20 @@ public class MainActivity extends Activity {
 				for (StreetDTO elem : param[0].getStreets())
 					elem = Parser.parse(elem, param[0].getUrl());
 				param[0].setNow(new Date());
+				FileOutputStream fos = openFileOutput("cacca", Context.MODE_PRIVATE);
+				ObjectOutputStream out = new ObjectOutputStream(fos);
+				out.writeObject(param[0]);
+				out.close();
+				fos.close();
 				return param[0];
 			} catch (CoreException e) {
 				param[0].setNow(null);
 				error = e.getKey() + ": " + e.getMessage();
+				e.printStackTrace();
+				return null;
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 				return null;
 			}
 		}
