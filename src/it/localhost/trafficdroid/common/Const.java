@@ -19,5 +19,5 @@ public class Const {
 	public static final String codeSection = "section";
 	public static final String codeRoadbox = "roadbox";
 	public static final String codeClass = "class";
-	public static final String tdData = "tdData";
+	public static final String tdData = "trafficData";
 }
