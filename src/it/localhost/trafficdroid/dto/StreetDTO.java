@@ -1,11 +1,9 @@
 package it.localhost.trafficdroid.dto;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StreetDTO implements Serializable {
-	private static final long serialVersionUID = 1L;
+public class StreetDTO {
 	private String name;
 	private int code;
 	private int id;

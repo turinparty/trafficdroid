@@ -4,12 +4,13 @@ import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.core.Parser;
 import it.localhost.trafficdroid.dao.StreetDAO;
-import it.localhost.trafficdroid.dao.TrafficDAO;
 import it.localhost.trafficdroid.dto.DLCTaskDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.exception.CoreException;
-import it.localhost.trafficdroid.exception.DaoException;
 import it.localhost.trafficdroid.gui.adapter.ZoneListAdapter;
+
+import java.util.Date;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -66,12 +67,6 @@ public class MainActivity extends Activity {
 		super.onResume();
 		dlctask = new DLCTaskDTO(StreetDAO.getAllEnabled(sharedPreferences, getResources()), sharedPreferences.getString(getResources().getString(R.string.urlKey), Const.emptyString));
 		new DLCTask().execute(dlctask);
-		try {
-			dlctask = TrafficDAO.retrieveData(getApplicationContext());
-		} catch (DaoException e) {
-			System.err.println(e.getKey() + ": " + e.getMessage());
-			e.printStackTrace();
-		}
 		arrayAdapter = new ArrayAdapter<StreetDTO>(this, android.R.layout.simple_spinner_item, dlctask.getStreets());
 		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(arrayAdapter);
@@ -109,10 +104,8 @@ public class MainActivity extends Activity {
 			zoneView.setAdapter(zoneListAdapter);
 			leftTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionLeft());
 			rightTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionRight());
-			if (dlctask.getTrafficTime() != null)
-				centerTextView.setText(DateFormat.getTimeFormat(getApplicationContext()).format(dlctask.getTrafficTime()));
-			else
-				centerTextView.setText(Const.emptyString);
+			if (dlctask.getNow() != null)
+				centerTextView.setText(DateFormat.getTimeFormat(getApplicationContext()).format(dlctask.getNow()));
 		}
 	}
 
@@ -122,23 +115,20 @@ public class MainActivity extends Activity {
 		@Override
 		protected DLCTaskDTO doInBackground(DLCTaskDTO... param) {
 			try {
-				Parser.parse(param[0]);
-				TrafficDAO.storeData(param[0], getApplicationContext());
+				for (StreetDTO elem : param[0].getStreets())
+					elem = Parser.parse(elem, param[0].getUrl());
+				param[0].setNow(new Date());
+				return param[0];
 			} catch (CoreException e) {
-				param[0].setTrafficTime(null);
+				param[0].setNow(null);
 				error = e.getKey() + ": " + e.getMessage();
-				e.printStackTrace();
-			} catch (DaoException e) {
-				param[0].setTrafficTime(null);
-				error = e.getKey() + ": " + e.getMessage();
-				e.printStackTrace();
+				return null;
 			}
-			return param[0];
 		}
 
 		@Override
-		protected void onPostExecute(DLCTaskDTO param) {
-			if (param == null)
+		protected void onPostExecute(DLCTaskDTO streets) {
+			if (streets == null)
 				new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getString(R.string.error)).setMessage(error).setPositiveButton(getResources().getString(R.string.ok), null).show();
 			else {
 				setView();

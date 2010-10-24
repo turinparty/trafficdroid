@@ -1,9 +1,6 @@
 package it.localhost.trafficdroid.dto;
 
-import java.io.Serializable;
-
-public class ZoneDTO implements Serializable {
-	private static final long serialVersionUID = 1L;
+public class ZoneDTO {
 	private int id;
 	private String key;
 	private String name;
