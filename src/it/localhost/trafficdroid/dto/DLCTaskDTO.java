@@ -1,12 +1,14 @@
 package it.localhost.trafficdroid.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class DLCTaskDTO {
+public class DLCTaskDTO implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private List<StreetDTO> streets;
 	private String url;
-	private Date now;
+	private Date trafficTime;
 
 	public DLCTaskDTO(List<StreetDTO> streets, String url) {
 		super();
@@ -14,12 +16,12 @@ public class DLCTaskDTO {
 		this.url = url;
 	}
 
-	public Date getNow() {
-		return now;
+	public Date getTrafficTime() {
+		return trafficTime;
 	}
 
-	public void setNow(Date now) {
-		this.now = now;
+	public void setTrafficTime(Date trafficTime) {
+		this.trafficTime = trafficTime;
 	}
 
 	public List<StreetDTO> getStreets() {
