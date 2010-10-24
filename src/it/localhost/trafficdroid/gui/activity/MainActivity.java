@@ -127,8 +127,8 @@ public class MainActivity extends Activity {
 		}
 
 		@Override
-		protected void onPostExecute(DLCTaskDTO streets) {
-			if (streets == null)
+		protected void onPostExecute(DLCTaskDTO param) {
+			if (param == null)
 				new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getString(R.string.error)).setMessage(error).setPositiveButton(getResources().getString(R.string.ok), null).show();
 			else {
 				setView();

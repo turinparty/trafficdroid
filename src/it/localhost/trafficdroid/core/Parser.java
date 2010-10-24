@@ -19,12 +19,12 @@ public class Parser {
 	private static NodeList trZone;
 	private static Node idZone;
 	private static ZoneDTO zone;
-	private static int zoneCounter = 0;
+	private static int zoneCounter;
 
 	public static StreetDTO parse(StreetDTO street, String url) throws CoreException {
 		zoneCounter = 0;
 		try {
-			document = TrafficDAO.get(street.getCode(), url).getDocumentElement();
+			document = TrafficDAO.getData(street.getCode(), url).getDocumentElement();
 		} catch (DaoException e) {
 			throw new CoreException(CoreException.DaoException, e.getMessage());
 		}
