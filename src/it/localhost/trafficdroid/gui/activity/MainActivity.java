@@ -43,13 +43,13 @@ public class MainActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 		leftTextView = (TextView) findViewById(R.id.left);
 		rightTextView = (TextView) findViewById(R.id.right);
 		centerTextView = (TextView) findViewById(R.id.center);
 		zoneView = (ListView) findViewById(R.id.zonelist);
 		spinner = (Spinner) findViewById(R.id.spinner);
-		zoneListAdapter = new ZoneListAdapter(getApplicationContext());
+		zoneListAdapter = new ZoneListAdapter(this);
 		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				renderData();
@@ -64,10 +64,10 @@ public class MainActivity extends Activity {
 	public void onResume() {
 		super.onResume();
 		dlctask = new DLCTaskDTO(StreetDAO.getAllEnabled(sharedPreferences, getResources()), sharedPreferences.getString(getResources().getString(R.string.urlKey), Const.emptyString));
-		arrayAdapter = new ArrayAdapter<StreetDTO>(getApplicationContext(), android.R.layout.simple_spinner_item, dlctask.getStreets());
+		arrayAdapter = new ArrayAdapter<StreetDTO>(this, android.R.layout.simple_spinner_item, dlctask.getStreets());
 		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(arrayAdapter);
-		new DLCTask().execute(dlctask);
+		executeTask();
 	}
 
 	@Override
@@ -85,26 +85,30 @@ public class MainActivity extends Activity {
 		});
 		m2.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			public boolean onMenuItemClick(MenuItem _menuItem) {
-				new DLCTask().execute(dlctask);
+				executeTask();
 				return true;
 			}
 		});
 		return true;
 	}
 
-	private void renderData() {
+	private void executeTask() {
 		if (dlctask.getUrl().equalsIgnoreCase(getResources().getString(R.string.urlDefaultValue)) || dlctask.getUrl().equalsIgnoreCase(Const.emptyString)) {
-			new AlertDialog.Builder(getApplicationContext()).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.noProvider)).show();
+			new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.noProvider)).show();
 		} else if (arrayAdapter.getCount() == 0) {
-			new AlertDialog.Builder(getApplicationContext()).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.noStreets)).show();
+			new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.noStreets)).show();
 		} else {
-			zoneListAdapter.setListItems(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getZones());
-			zoneView.setAdapter(zoneListAdapter);
-			leftTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionLeft());
-			rightTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionRight());
-			if (dlctask.getTrafficTime() != null)
-				centerTextView.setText(DateFormat.getTimeFormat(getApplicationContext()).format(dlctask.getTrafficTime()));
+			new DLCTask().execute(dlctask);
 		}
+	}
+
+	private void renderData() {
+		zoneListAdapter.setListItems(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getZones());
+		zoneView.setAdapter(zoneListAdapter);
+		leftTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionLeft());
+		rightTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionRight());
+		if (dlctask.getTrafficTime() != null)
+			centerTextView.setText(DateFormat.getTimeFormat(this).format(dlctask.getTrafficTime()));
 	}
 
 	private class DLCTask extends AsyncTask<DLCTaskDTO, Void, String> {
@@ -112,7 +116,7 @@ public class MainActivity extends Activity {
 		protected String doInBackground(DLCTaskDTO... param) {
 			try {
 				Parser.parse(param[0]);
-				TrafficDAO.storeData(param[0], getApplicationContext());
+				TrafficDAO.storeData(param[0], MainActivity.this);
 			} catch (TdException e) {
 				e.printStackTrace();
 				return e.getKey() + ": " + e.getMessage();
@@ -132,7 +136,7 @@ public class MainActivity extends Activity {
 				}
 			}
 			if (param != null)
-				new AlertDialog.Builder(getApplicationContext()).setTitle(getResources().getString(R.string.error)).setMessage(param).setPositiveButton(getResources().getString(R.string.ok), null).show();
+				new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getString(R.string.error)).setMessage(param).setPositiveButton(getResources().getString(R.string.ok), null).show();
 		}
 	}
 }
