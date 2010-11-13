@@ -16,5 +16,6 @@
 			</intent-filter>
 		</activity>
 		<activity android:name=".gui.activity.PreferencesActivity" />
+		<service android:name=".core.UpdateService" />
 	</application>
 </manifest>
