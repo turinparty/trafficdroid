@@ -20,4 +20,7 @@ public class Const {
 	public static final String codeRoadbox = "roadbox";
 	public static final String codeClass = "class";
 	public static final String tdData = "trafficData";
+	public static final String DO_UPDATE = "it.localhost.trafficdroid.DO_UPDATE";
+	public static final String DATA_READY = "it.localhost.trafficdroid.DATA_READY";
+	public static final String INIT_DLCTASK = "it.localhost.trafficdroid.UPDATE_DLCTASK";
 }

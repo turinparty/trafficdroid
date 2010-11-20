@@ -32,7 +32,7 @@ public class StreetDAO {
 		return streets;
 	}
 
-	public static void createAllStreets() {
+	private static void createAllStreets() {
 		streets = new ArrayList<StreetDTO>();
 		streets.add(new StreetDTO(R.string.s1, 1));
 		streets.add(new StreetDTO(R.string.s10, 10));

@@ -18,4 +18,21 @@
 	<string name="selectStreet">Seleziona l\'intera strada</string>
 	<string name="sniper">Seleziona le singole zone</string>
 	<string name="mappedSreet">Strade preferite</string>
+	<string name="trafficTitle">Traffico</string>
+	<string name="trafficSummary">Indicare la velocità di cui interessa l\'avviso</string>
+	<string name="trafficKey">trafficKey</string>
+	<array name="trafficLabel">
+		<item>Fino a 10 Km/h</item>
+		<item>Fino a 30 Km/h</item>
+		<item>Fino a 50 Km/h</item>
+		<item>Fino a 70 Km/h</item>
+		<item>Fino a 90 Km/h</item>
+	</array>
+	<array name="trafficValue">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+	</array>
 </resources>

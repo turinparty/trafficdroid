@@ -1,6 +1,8 @@
 package it.localhost.trafficdroid.gui.activity;
 
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.common.Const;
+import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
@@ -9,5 +11,11 @@ public class PreferencesActivity extends PreferenceActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.layout.preferences);
+	}
+
+	@Override
+	protected void onStop() {
+		super.onStop();
+		sendBroadcast(new Intent(Const.INIT_DLCTASK));
 	}
 }

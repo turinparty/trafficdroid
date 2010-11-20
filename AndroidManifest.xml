@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	package="it.localhost.trafficdroid" android:versionCode="14"
 	android:versionName="0.6.2 fat sniper">
-	<uses-sdk android:minSdkVersion="3" />
+	<uses-sdk android:minSdkVersion="5" />
 	<supports-screens android:largeScreens="true"
 		android:normalScreens="true" android:smallScreens="true"
 		android:anyDensity="true" />
@@ -17,5 +17,10 @@
 		</activity>
 		<activity android:name=".gui.activity.PreferencesActivity" />
 		<service android:name=".core.UpdateService" />
+		<receiver android:name=".common.StartupBroadcastReceiver">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+			</intent-filter>
+		</receiver>
 	</application>
 </manifest>

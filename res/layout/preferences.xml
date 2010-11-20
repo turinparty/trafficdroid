@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-	<EditTextPreference android:summary="@string/urlSummary"
-		android:defaultValue="@string/urlDefaultValue" android:title="@string/urlTitle"
-		android:key="@string/urlKey" />
+	<EditTextPreference android:title="@string/urlTitle"
+		android:summary="@string/urlSummary" android:key="@string/urlKey"
+		android:defaultValue="@string/urlDefaultValue" />
+	<ListPreference android:title="@string/trafficTitle"
+		android:summary="@string/trafficSummary" android:key="@string/trafficKey"
+		android:entries="@array/trafficLabel" android:entryValues="@array/trafficValue" />
 	<PreferenceCategory android:title="@string/mappedSreet">
 		<PreferenceScreen android:title="@string/s1">
 			<CheckBoxPreference android:title="@string/s1"
