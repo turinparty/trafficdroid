@@ -7,8 +7,10 @@ import it.localhost.trafficdroid.core.UpdateService;
 import it.localhost.trafficdroid.dto.DLCTaskDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.gui.ZoneListAdapter;
+
+import java.text.SimpleDateFormat;
+
 import android.app.Activity;
-import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -17,12 +19,12 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -33,8 +35,6 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
 	private UpdateService appService = null;
 	private Intent intentService;
-	private PendingIntent mAlarmSender;
-	private Intent doUpdateIntent = new Intent(Const.DO_UPDATE);
 	private DLCTaskDTO dlctask;
 	private ListView zoneView;
 	private TextView leftTextView;
@@ -48,6 +48,7 @@ public class MainActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		Log.w("ACT", "onCreate");
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
 		leftTextView = (TextView) findViewById(R.id.left);
 		rightTextView = (TextView) findViewById(R.id.right);
@@ -57,7 +58,6 @@ public class MainActivity extends Activity {
 		zoneListAdapter = new ZoneListAdapter(this);
 		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-				// TODO Auto-generated method stub
 				viewStreet();
 			}
 
@@ -65,8 +65,7 @@ public class MainActivity extends Activity {
 			}
 		});
 		intentService = new Intent(this, UpdateService.class);
-		//	startService(intentService);
-		mAlarmSender = PendingIntent.getBroadcast(getApplicationContext(), 0, doUpdateIntent, 0);
+		startService(intentService);
 	}
 
 	@Override
@@ -80,6 +79,7 @@ public class MainActivity extends Activity {
 	public void onResume() {
 		Log.w("ACT", "onResume");
 		super.onResume();
+		setProgressBarIndeterminateVisibility(true);
 		if (appService != null)
 			refreshgui();
 		//TODO gestire url nulla e no strade selezionate
@@ -107,6 +107,7 @@ public class MainActivity extends Activity {
 		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(arrayAdapter);
 		viewStreet();
+		setProgressBarIndeterminateVisibility(false);
 	}
 
 	public void viewStreet() {
@@ -114,8 +115,12 @@ public class MainActivity extends Activity {
 		zoneView.setAdapter(zoneListAdapter);
 		leftTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionLeft());
 		rightTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionRight());
-		if (dlctask.getTrafficTime() != null)
-			centerTextView.setText(DateFormat.getTimeFormat(this).format(dlctask.getTrafficTime()));
+		if (dlctask.getTrafficTime() != null) {
+			//XXX per test
+			//centerTextView.setText(DateFormat.getTimeFormat(this).format(dlctask.getTrafficTime()));
+	        SimpleDateFormat sdf = new SimpleDateFormat("H:mm:ss");
+	        centerTextView.setText(sdf.format(dlctask.getTrafficTime()));
+		}
 	}
 
 	private BroadcastReceiver onDataReady = new BroadcastReceiver() {
@@ -126,6 +131,7 @@ public class MainActivity extends Activity {
 	private ServiceConnection onService = new ServiceConnection() {
 		public void onServiceConnected(ComponentName className, IBinder rawBinder) {
 			appService = ((LocalBinder) rawBinder).getService();
+			refreshgui();
 			Log.w("ACT", "service connected");
 		}
 
@@ -150,6 +156,7 @@ public class MainActivity extends Activity {
 		});
 		m2.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			public boolean onMenuItemClick(MenuItem _menuItem) {
+				setProgressBarIndeterminateVisibility(true);
 				appService.updateDlcTask();
 				return true;
 			}
@@ -165,41 +172,4 @@ public class MainActivity extends Activity {
 //		} else {
 //			new DLCTask().execute(dlctask);
 //		}
-//	}
-//	@Override
-//	public boolean onCreateOptionsMenu(Menu menu) {
-//		menu.add(Menu.NONE, REFRESH_ID, Menu.NONE, "Refresh")
-//				.setIcon(android.R.drawable.ic_menu_rotate);
-//		
-//		menu.add(Menu.NONE, CLOSE_ID, Menu.NONE, "Exit")
-//			.setIcon(android.R.drawable.ic_menu_close_clear_cancel);
-//		
-//		menu.add(Menu.NONE, START_AUTOUPDATE_ID, Menu.NONE, "Start autoupdate")
-//			.setIcon(android.R.drawable.ic_menu_close_clear_cancel);
-//		
-//		menu.add(Menu.NONE, STOP_AUTOUPDATE_ID, Menu.NONE, "Stop autoupdate")
-//		.setIcon(android.R.drawable.ic_menu_close_clear_cancel);
-//
-//		return(super.onCreateOptionsMenu(menu));
-//	}
-//
-//	@Override
-//	public boolean onOptionsItemSelected(MenuItem item) {
-//		if (item.getItemId() == REFRESH_ID) {
-//			appService.update();
-//		}
-//		else if (item.getItemId() == CLOSE_ID) {
-//			finish();
-//		}
-//		else if (item.getItemId() == START_AUTOUPDATE_ID) {
-//			AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
-//            am.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), UPDATE_INTERVAL_SECONDS * 1000, mAlarmSender);
-//            Toast.makeText(this, "Autoupdate started", Toast.LENGTH_LONG).show();
-//		}
-//		else if (item.getItemId() == STOP_AUTOUPDATE_ID) {
-//			AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
-//            am.cancel(mAlarmSender);
-//            Toast.makeText(this, "Autoupdate stopped", Toast.LENGTH_LONG).show();
-//		}
-//		return true;
 //	}

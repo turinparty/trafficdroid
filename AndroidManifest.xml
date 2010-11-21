@@ -22,5 +22,16 @@
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
 			</intent-filter>
 		</receiver>
+		
+		<!-- FOR TESTING ONLY -->
+		<activity android:name=".gui.activity.ServiceActivity"
+			android:label="TD service">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		
+		
 	</application>
 </manifest>

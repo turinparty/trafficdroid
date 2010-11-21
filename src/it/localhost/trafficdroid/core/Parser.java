@@ -24,6 +24,7 @@ public class Parser {
 	private static int zoneCounter;
 
 	public static DLCTaskDTO parse(DLCTaskDTO dto) throws TdException {
+		dto.resetCongestedZones();
 		for (StreetDTO street : dto.getStreets()) {
 			zoneCounter = 0;
 			document = TrafficDAO.getData(street.getCode(), dto.getUrl()).getDocumentElement();

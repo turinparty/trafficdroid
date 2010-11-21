@@ -39,6 +39,11 @@ public class DLCTaskDTO {
 		else
 			return "";
 	}
+	
+	public void resetCongestedZones()
+	{
+		congestedZones.setLength(0);
+	}
 
 	public void addCongestedZone(String zone) {
 		congestedZones.append(zone);

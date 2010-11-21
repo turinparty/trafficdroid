@@ -6,6 +6,9 @@
 	<ListPreference android:title="@string/trafficTitle"
 		android:summary="@string/trafficSummary" android:key="@string/trafficKey"
 		android:entries="@array/trafficLabel" android:entryValues="@array/trafficValue" />
+	<ListPreference android:title="@string/updateIntervalTitle"
+		android:summary="@string/updateIntervalSummary" android:key="@string/updateIntervalKey"
+		android:entries="@array/updateIntervalLabel" android:entryValues="@array/updateIntervalValue" />
 	<PreferenceCategory android:title="@string/mappedSreet">
 		<PreferenceScreen android:title="@string/s1">
 			<CheckBoxPreference android:title="@string/s1"
