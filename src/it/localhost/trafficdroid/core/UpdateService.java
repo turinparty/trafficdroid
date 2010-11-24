@@ -77,7 +77,7 @@ public class UpdateService extends Service {
 	}
 
 	private void showNotification() {
-		Notification notification = new Notification(R.drawable.icon, Const.tickerText, System.currentTimeMillis());
+		Notification notification = new Notification(R.drawable.notif_icon, Const.tickerText, System.currentTimeMillis());
 		notification.flags |= Notification.FLAG_AUTO_CANCEL;
 		notification.setLatestEventInfo(getApplicationContext(), Const.notificationTitle, dlcTaskDto.getCongestedZones(), PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), PendingIntent.FLAG_UPDATE_CURRENT));
 		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(Const.NOTIFICATION_ID, notification);

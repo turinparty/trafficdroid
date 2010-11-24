@@ -31,7 +31,7 @@ public class Const {
 	public static final Intent doUpdateIntent = new Intent(Const.DO_UPDATE);
 	public static final Intent prefExitIntent = new Intent(Const.PREF_EXIT);
 	public static final String updateInterval = "1800";
-	public static final String tickerText = "Traffico individuato";
-	public static final String notificationTitle = "Ingorgo in tratte selezionate";
+	public static final String tickerText = "Traffico rilevato";
+	public static final String notificationTitle = "Traffico in tratte selezionate";
 	public static final String CongestionThreshold = "1";
 }
