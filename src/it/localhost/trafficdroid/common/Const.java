@@ -1,5 +1,7 @@
 package it.localhost.trafficdroid.common;
 
+import android.content.Intent;
+
 public class Const {
 	public static final int colorCat1 = 0xffff0000;
 	public static final int colorCat2 = 0xffff0000;
@@ -9,6 +11,7 @@ public class Const {
 	public static final int colorCat6 = 0xff00ff00;
 	public static final int menuSettings = 1;
 	public static final int menuRefresh = 2;
+	public static final int NOTIFICATION_ID = 1;
 	public static final String emptyString = "";
 	public static final String http = "http://";
 	public static final String dyn = "/dyn/";
@@ -19,8 +22,16 @@ public class Const {
 	public static final String codeSection = "section";
 	public static final String codeRoadbox = "roadbox";
 	public static final String codeClass = "class";
-	public static final String tdData = "trafficData";
+	public static final String BEGIN_UPDATE = "it.localhost.trafficdroid.BEGIN_UPDATE";
+	public static final String END_UPDATE = "it.localhost.trafficdroid.END_UPDATE";
 	public static final String DO_UPDATE = "it.localhost.trafficdroid.DO_UPDATE";
-	public static final String DATA_READY = "it.localhost.trafficdroid.DATA_READY";
-	public static final String INIT_DLCTASK = "it.localhost.trafficdroid.UPDATE_DLCTASK";
+	public static final String PREF_EXIT = "it.localhost.trafficdroid.PREF_EXIT";
+	public static final Intent beginUpdateIntent = new Intent(Const.BEGIN_UPDATE);
+	public static final Intent endUpdateIntent = new Intent(Const.END_UPDATE);
+	public static final Intent doUpdateIntent = new Intent(Const.DO_UPDATE);
+	public static final Intent prefExitIntent = new Intent(Const.PREF_EXIT);
+	public static final String updateInterval = "1800";
+	public static final String tickerText = "Traffico individuato";
+	public static final String notificationTitle = "Ingorgo in tratte selezionate";
+	public static final String CongestionThreshold = "1";
 }

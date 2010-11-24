@@ -1,5 +1,7 @@
 package it.localhost.trafficdroid.dto;
 
+import it.localhost.trafficdroid.common.Const;
+
 import java.util.Date;
 import java.util.List;
 
@@ -37,7 +39,7 @@ public class DLCTaskDTO {
 		if (congestedZones.length() > 0)
 			return congestedZones.substring(0, congestedZones.length() - 2);
 		else
-			return "";
+			return Const.emptyString;
 	}
 	
 	public void resetCongestedZones()

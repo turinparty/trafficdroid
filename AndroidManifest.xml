@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="it.localhost.trafficdroid" android:versionCode="14"
-	android:versionName="0.6.2 fat sniper">
-	<uses-sdk android:minSdkVersion="5" />
+	package="it.localhost.trafficdroid" android:versionCode="15"
+	android:versionName="0.7.0 chiaroveggenza">
+	<uses-sdk android:minSdkVersion="3" />
 	<supports-screens android:largeScreens="true"
 		android:normalScreens="true" android:smallScreens="true"
 		android:anyDensity="true" />
@@ -22,16 +22,5 @@
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
 			</intent-filter>
 		</receiver>
-		
-		<!-- FOR TESTING ONLY -->
-		<activity android:name=".gui.activity.ServiceActivity"
-			android:label="TD service">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
-				<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-		</activity>
-		
-		
 	</application>
 </manifest>

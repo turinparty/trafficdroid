@@ -66,13 +66,3 @@ public class Parser {
 		return dto;
 	}
 }
-/*
-	if (zone.getCatLeft() == 6)
-		zone.setSpeedLeft(zone.getSpeedLeft().substring(6, zone.getSpeedLeft().length() - 5) + "+");
-	else
-		zone.setSpeedLeft(zone.getSpeedLeft().substring(0, zone.getSpeedLeft().length() - 5));
-	if (zone.getCatRight() == 6)
-		zone.setSpeedRight(zone.getSpeedRight().substring(6, zone.getSpeedRight().length() - 5) + "+");
-	else
-		zone.setSpeedRight(zone.getSpeedRight().substring(0, zone.getSpeedRight().length() - 5));
- */

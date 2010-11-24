@@ -7,19 +7,19 @@ import it.localhost.trafficdroid.core.UpdateService;
 import it.localhost.trafficdroid.dto.DLCTaskDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.gui.ZoneListAdapter;
-
-import java.text.SimpleDateFormat;
-
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.util.Log;
+import android.preference.PreferenceManager;
+import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuItem.OnMenuItemClickListener;
@@ -43,13 +43,34 @@ public class MainActivity extends Activity {
 	private Spinner spinner;
 	private ArrayAdapter<StreetDTO> arrayAdapter;
 	private ZoneListAdapter zoneListAdapter;
+	private SharedPreferences sharedPreferences;
+	private BroadcastReceiver receiver = new BroadcastReceiver() {
+		public void onReceive(Context context, Intent intent) {
+			if (intent.getAction().equals(Const.BEGIN_UPDATE)) {
+				setProgressBarIndeterminateVisibility(true);
+			} else if (intent.getAction().equals(Const.END_UPDATE)) {
+				setProgressBarIndeterminateVisibility(false);
+				refreshgui(); // nuovi dati da visualizzare
+			}
+		}
+	};
+	private ServiceConnection onService = new ServiceConnection() {
+		public void onServiceConnected(ComponentName className, IBinder rawBinder) {
+			appService = ((LocalBinder) rawBinder).getService();
+			refreshgui(); // visualizzazione dati primo avvio
+		}
+
+		public void onServiceDisconnected(ComponentName className) {
+			appService = null;
+		}
+	};
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		Log.w("ACT", "onCreate");
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
+		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 		leftTextView = (TextView) findViewById(R.id.left);
 		rightTextView = (TextView) findViewById(R.id.right);
 		centerTextView = (TextView) findViewById(R.id.center);
@@ -70,76 +91,64 @@ public class MainActivity extends Activity {
 
 	@Override
 	protected void onStart() {
-		Log.w("ACT", "onStart");
 		super.onStart();
 		bindService(intentService, onService, BIND_AUTO_CREATE);
 	}
 
 	@Override
 	public void onResume() {
-		Log.w("ACT", "onResume");
 		super.onResume();
-		setProgressBarIndeterminateVisibility(true);
-		if (appService != null)
-			refreshgui();
-		//TODO gestire url nulla e no strade selezionate
-		registerReceiver(onDataReady, new IntentFilter(Const.DATA_READY));
+		String url = sharedPreferences.getString(getResources().getString(R.string.urlKey), Const.emptyString);
+		if (url.equals(Const.emptyString) || url.equals(getResources().getString(R.string.urlDefaultValue)))
+			new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.badConf)).show();
+		refreshgui(); // visualizzazione ultimi dati con applicazione in background
+		IntentFilter intentFilter = new IntentFilter();
+		intentFilter.addAction(Const.END_UPDATE);
+		intentFilter.addAction(Const.BEGIN_UPDATE);
+		registerReceiver(receiver, intentFilter);
 	}
 
 	@Override
 	public void onPause() {
-		Log.w("ACT", "onPause");
 		super.onPause();
-		unregisterReceiver(onDataReady);
+		unregisterReceiver(receiver);
 	}
 
 	@Override
 	protected void onStop() {
-		Log.w("ACT", "onStop");
 		super.onStop();
 		unbindService(onService);
 	}
 
 	private void refreshgui() {
-		Log.w("ACT", "refreshGUI");
-		dlctask = appService.getData();
-		arrayAdapter = new ArrayAdapter<StreetDTO>(MainActivity.this, android.R.layout.simple_spinner_item, dlctask.getStreets());
-		arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spinner.setAdapter(arrayAdapter);
-		viewStreet();
-		setProgressBarIndeterminateVisibility(false);
+		if (appService != null) {
+			dlctask = appService.getData();
+			if (dlctask != null) {
+				arrayAdapter = new ArrayAdapter<StreetDTO>(MainActivity.this, android.R.layout.simple_spinner_item, dlctask.getStreets());
+				arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+				spinner.setAdapter(arrayAdapter);
+				viewStreet();
+			}
+		}
 	}
 
 	public void viewStreet() {
-		zoneListAdapter.setListItems(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getZones());
-		zoneView.setAdapter(zoneListAdapter);
-		leftTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionLeft());
-		rightTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionRight());
-		if (dlctask.getTrafficTime() != null) {
-			//XXX per test
-			//centerTextView.setText(DateFormat.getTimeFormat(this).format(dlctask.getTrafficTime()));
-	        SimpleDateFormat sdf = new SimpleDateFormat("H:mm:ss");
-	        centerTextView.setText(sdf.format(dlctask.getTrafficTime()));
+		if (dlctask.getStreets().size() > 0) {
+			zoneListAdapter.setListItems(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getZones());
+			zoneView.setAdapter(zoneListAdapter);
+			leftTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionLeft());
+			rightTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionRight());
+			if (dlctask.getTrafficTime() != null) {
+				centerTextView.setText(DateFormat.getTimeFormat(this).format(dlctask.getTrafficTime()));
+				//centerTextView.setText(new SimpleDateFormat("H:mm:ss").format(dlctask.getTrafficTime()));
+			}
+		} else {
+			zoneView.setAdapter(null);
+			leftTextView.setText(null);
+			rightTextView.setText(null);
+			centerTextView.setText(null);
 		}
 	}
-
-	private BroadcastReceiver onDataReady = new BroadcastReceiver() {
-		public void onReceive(Context context, Intent intent) {
-			refreshgui();
-		}
-	};
-	private ServiceConnection onService = new ServiceConnection() {
-		public void onServiceConnected(ComponentName className, IBinder rawBinder) {
-			appService = ((LocalBinder) rawBinder).getService();
-			refreshgui();
-			Log.w("ACT", "service connected");
-		}
-
-		public void onServiceDisconnected(ComponentName className) {
-			appService = null;
-			Log.w("ACT", "service disconnected");
-		}
-	};
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -156,7 +165,6 @@ public class MainActivity extends Activity {
 		});
 		m2.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			public boolean onMenuItemClick(MenuItem _menuItem) {
-				setProgressBarIndeterminateVisibility(true);
 				appService.updateDlcTask();
 				return true;
 			}
@@ -164,12 +172,3 @@ public class MainActivity extends Activity {
 		return true;
 	}
 }
-//	private void executeTask() {
-//		if (dlctask.getUrl().equalsIgnoreCase(getResources().getString(R.string.urlDefaultValue)) || dlctask.getUrl().equalsIgnoreCase(Const.emptyString)) {
-//			new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.noProvider)).show();
-//		} else if (arrayAdapter.getCount() == 0) {
-//			new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.noStreets)).show();
-//		} else {
-//			new DLCTask().execute(dlctask);
-//		}
-//	}

@@ -2,7 +2,6 @@ package it.localhost.trafficdroid.gui.activity;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
-import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
@@ -16,6 +15,6 @@ public class PreferencesActivity extends PreferenceActivity {
 	@Override
 	protected void onStop() {
 		super.onStop();
-		sendBroadcast(new Intent(Const.INIT_DLCTASK));
+		sendBroadcast(Const.prefExitIntent);
 	}
 }

@@ -13,18 +13,14 @@
 	<string name="warning">Attenzione</string>
 	<string name="settings">Impostazioni</string>
 	<string name="refresh">Aggiorna</string>
-	<string name="noProvider">Per un corretto funzionamento è necessario inserire il provider (Menu > Impostazioni > URL provider). Cercare su internet per trovarne uno.</string>
-	<string name="noStreets">Per un corretto funzionamento è necessario selezionare almeno una strada (Menu > Impostazioni).</string>
+	<string name="badConf">Per un corretto funzionamento è necessario inserire il provider e almeno una strada. Cercare su internet per trovarne uno.</string>
 	<string name="selectStreet">Seleziona l\'intera strada</string>
 	<string name="sniper">Seleziona le singole zone</string>
 	<string name="mappedSreet">Strade preferite</string>
 	<string name="trafficTitle">Traffico</string>
 	<string name="trafficSummary">Indicare la velocità di cui interessa l\'avviso</string>
 	<string name="trafficKey">trafficKey</string>
-	
 	<string name="updateIntervalTitle">Intervallo di aggiornamento</string>
 	<string name="updateIntervalSummary"></string>
 	<string name="updateIntervalKey">updateIntervalKey</string>
-	
-	
 </resources>
