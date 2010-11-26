@@ -3,14 +3,16 @@
 	<EditTextPreference android:title="@string/urlTitle"
 		android:summary="@string/urlSummary" android:key="@string/urlKey"
 		android:defaultValue="@string/urlDefaultValue" />
-	<ListPreference android:title="@string/trafficTitle"
-		android:defaultValue="1" android:summary="@string/trafficSummary"
-		android:key="@string/trafficKey" android:entries="@array/trafficLabel"
-		android:entryValues="@array/trafficValue" />
-	<ListPreference android:title="@string/updateIntervalTitle"
-		android:defaultValue="1800" android:summary="@string/updateIntervalSummary"
-		android:key="@string/updateIntervalKey" android:entries="@array/updateIntervalLabel"
-		android:entryValues="@array/updateIntervalValue" />
+	<PreferenceCategory android:title="@string/notificationCategory">
+		<ListPreference android:title="@string/trafficTitle"
+			android:defaultValue="1" android:summary="@string/trafficSummary"
+			android:key="@string/trafficKey" android:entries="@array/trafficLabel"
+			android:entryValues="@array/trafficValue" />
+		<ListPreference android:title="@string/updateIntervalTitle"
+			android:defaultValue="1800" android:summary="@string/updateIntervalSummary"
+			android:key="@string/updateIntervalKey" android:entries="@array/updateIntervalLabel"
+			android:entryValues="@array/updateIntervalValue" />
+	</PreferenceCategory>
 	<PreferenceCategory android:title="@string/mappedSreet">
 		<PreferenceScreen android:title="@string/s1">
 			<CheckBoxPreference android:title="@string/s1"

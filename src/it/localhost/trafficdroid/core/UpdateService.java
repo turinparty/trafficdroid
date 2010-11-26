@@ -70,16 +70,16 @@ public class UpdateService extends Service {
 	private void scheduleService() {
 		PendingIntent mAlarmSender = PendingIntent.getBroadcast(getApplicationContext(), 0, Const.doUpdateIntent, 0);
 		AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
-		int updateInterval = Integer.parseInt(sharedPreferences.getString(getResources().getString(R.string.updateIntervalKey), Const.updateInterval));
+		int updateInterval = Integer.parseInt(sharedPreferences.getString(getResources().getString(R.string.updateIntervalKey), Const.defaultUpdateInterval));
 		am.cancel(mAlarmSender);
 		if (updateInterval > 0)
 			am.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 1000 * updateInterval, mAlarmSender);
 	}
 
 	private void showNotification() {
-		Notification notification = new Notification(R.drawable.notif_icon, Const.tickerText, System.currentTimeMillis());
+		Notification notification = new Notification(R.drawable.notif_icon, getResources().getString(R.string.tickerText), System.currentTimeMillis());
 		notification.flags |= Notification.FLAG_AUTO_CANCEL;
-		notification.setLatestEventInfo(getApplicationContext(), Const.notificationTitle, dlcTaskDto.getCongestedZones(), PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), PendingIntent.FLAG_UPDATE_CURRENT));
+		notification.setLatestEventInfo(getApplicationContext(), getResources().getString(R.string.notificationTitle), dlcTaskDto.getCongestedZones(), PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), PendingIntent.FLAG_UPDATE_CURRENT));
 		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(Const.NOTIFICATION_ID, notification);
 	}
 
