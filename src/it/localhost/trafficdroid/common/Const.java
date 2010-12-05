@@ -3,12 +3,7 @@ package it.localhost.trafficdroid.common;
 import android.content.Intent;
 
 public class Const {
-	public static final int colorCat1 = 0xffff0000;
-	public static final int colorCat2 = 0xffff0000;
-	public static final int colorCat3 = 0xffff8000;
-	public static final int colorCat4 = 0xffffff00;
-	public static final int colorCat5 = 0xff47ffff;
-	public static final int colorCat6 = 0xff00ff00;
+	public static final int[] colorCat = new int[] {0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
 	public static final int menuSettings = 1;
 	public static final int menuRefresh = 2;
 	public static final int NOTIFICATION_ID = 1;
@@ -32,4 +27,5 @@ public class Const {
 	public static final Intent prefExitIntent = new Intent(Const.PREF_EXIT);
 	public static final String defaultUpdateInterval = "1800";
 	public static final String defaultCongestionThreshold = "1";
+	public static final String tdData = "trafficData";
 }

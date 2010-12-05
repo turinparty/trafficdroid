@@ -1,11 +1,15 @@
 package it.localhost.trafficdroid.gui.activity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.LocalBinder;
 import it.localhost.trafficdroid.core.UpdateService;
 import it.localhost.trafficdroid.dto.DLCTaskDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
+import it.localhost.trafficdroid.dto.ZoneDTO;
 import it.localhost.trafficdroid.gui.ZoneListAdapter;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -76,7 +80,7 @@ public class MainActivity extends Activity {
 		centerTextView = (TextView) findViewById(R.id.center);
 		zoneView = (ListView) findViewById(R.id.zonelist);
 		spinner = (Spinner) findViewById(R.id.spinner);
-		zoneListAdapter = new ZoneListAdapter(this);
+		
 		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				viewStreet();
@@ -134,7 +138,8 @@ public class MainActivity extends Activity {
 
 	public void viewStreet() {
 		if (dlctask.getStreets().size() > 0) {
-			zoneListAdapter.setListItems(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getZones());
+			zoneListAdapter = new ZoneListAdapter(this, dlctask.getStreets().get(spinner.getSelectedItemPosition()).getZones());
+
 			zoneView.setAdapter(zoneListAdapter);
 			leftTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionLeft());
 			rightTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionRight());
