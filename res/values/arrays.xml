@@ -16,7 +16,6 @@
 	</string-array>
 	<string-array name="updateIntervalLabel">
 		<item>Mai</item>
-		<item>15 s</item>
 		<item>5 minuti</item>
 		<item>10 minuti</item>
 		<item>15 minuti</item>
@@ -27,7 +26,6 @@
 	</string-array>
 	<string-array name="updateIntervalValue">
 		<item>0</item>
-		<item>15</item>
 		<item>300</item>
 		<item>600</item>
 		<item>900</item>

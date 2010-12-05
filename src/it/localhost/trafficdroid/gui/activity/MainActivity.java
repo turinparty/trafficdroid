@@ -16,18 +16,18 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
+import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
 import android.view.Window;
-import android.view.MenuItem.OnMenuItemClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemSelectedListener;
 
 public class MainActivity extends Activity {
 	private DLCTaskDTO dlctask;
@@ -44,7 +44,7 @@ public class MainActivity extends Activity {
 				setProgressBarIndeterminateVisibility(true);
 			} else if (intent.getAction().equals(Const.END_UPDATE)) {
 				setProgressBarIndeterminateVisibility(false);
-				refreshgui(); // nuovi dati da visualizzare
+				refreshgui();
 			}
 		}
 	};
@@ -52,7 +52,6 @@ public class MainActivity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		Log.e("ACT", "onCreate");
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
@@ -62,7 +61,6 @@ public class MainActivity extends Activity {
 		centerTextView = (TextView) findViewById(R.id.center);
 		zoneView = (ListView) findViewById(R.id.zonelist);
 		spinner = (Spinner) findViewById(R.id.spinner);
-
 		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				viewStreet();
@@ -78,12 +76,10 @@ public class MainActivity extends Activity {
 
 	@Override
 	public void onResume() {
-		Log.e("ACT", "onResume");
 		super.onResume();
 		String url = sharedPreferences.getString(getResources().getString(R.string.urlKey), Const.emptyString);
 		if (url.equals(Const.emptyString) || url.equals(getResources().getString(R.string.urlDefaultValue)))
-			new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null)
-					.setMessage(getResources().getString(R.string.badConf)).show();
+			new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.badConf)).show();
 		else
 			refreshgui();
 		registerReceiver(receiver, intentFilter);
@@ -96,7 +92,6 @@ public class MainActivity extends Activity {
 	}
 
 	private void refreshgui() {
-		Log.e("ACT", "refreshgui");
 		try {
 			dlctask = TrafficDAO.retrieveData(this);
 			arrayAdapter = new ArrayAdapter<StreetDTO>(MainActivity.this, android.R.layout.simple_spinner_item, dlctask.getStreets());
@@ -107,16 +102,15 @@ public class MainActivity extends Activity {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void viewStreet() {
 		if (dlctask.getStreets().size() > 0) {
 			zoneView.setAdapter(new ZoneListAdapter(this, dlctask.getStreets().get(spinner.getSelectedItemPosition()).getZones()));
 			leftTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionLeft());
 			rightTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionRight());
-			if (dlctask.getTrafficTime() != null) {
-				// centerTextView.setText(DateFormat.getTimeFormat(this).format(dlctask.getTrafficTime()));
-				centerTextView.setText(new java.text.SimpleDateFormat("H:mm:ss").format(dlctask.getTrafficTime()));
-			}
+			if (dlctask.getTrafficTime() != null)
+				centerTextView.setText(DateFormat.getTimeFormat(this).format(dlctask.getTrafficTime()));
+			//centerTextView.setText(new java.text.SimpleDateFormat("H:mm:ss").format(dlctask.getTrafficTime()));
 		} else {
 			zoneView.setAdapter(null);
 			leftTextView.setText(null);
@@ -124,8 +118,7 @@ public class MainActivity extends Activity {
 			centerTextView.setText(null);
 		}
 	}
-	
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
