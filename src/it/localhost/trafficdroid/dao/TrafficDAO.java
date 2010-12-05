@@ -24,6 +24,7 @@ import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 import android.content.Context;
+import android.util.Log;
 
 public class TrafficDAO {
 	public static Document getData(int mapId, String url) throws TdException {
@@ -47,11 +48,13 @@ public class TrafficDAO {
 	public static void storeData(DLCTaskDTO dto, Context ctx) throws TdException {
 		FileOutputStream fos;
 		try {
+			long mil = System.currentTimeMillis();
 			fos = ctx.openFileOutput(Const.tdData, Context.MODE_PRIVATE);
 			ObjectOutputStream out = new ObjectOutputStream(fos);
 			out.writeObject(dto);
 			out.close();
 			fos.close();
+			Log.e("storeData", "serialization took " + (System.currentTimeMillis()-mil));
 		} catch (FileNotFoundException e) {
 			throw new TdException(TdException.FileNotFoundException, e.getMessage());
 		} catch (IOException e) {
@@ -62,11 +65,13 @@ public class TrafficDAO {
 	public static DLCTaskDTO retrieveData(Context ctx) throws TdException {
 		DLCTaskDTO dlctask = null;
 		try {
+			long mil = System.currentTimeMillis();
 			FileInputStream fis = ctx.openFileInput(Const.tdData);
 			ObjectInputStream in = new ObjectInputStream(fis);
 			dlctask = (DLCTaskDTO) in.readObject();
 			in.close();
 			fis.close();
+			Log.e("retrieveData", "deserialization took " + (System.currentTimeMillis()-mil));
 		} catch (StreamCorruptedException e) {
 			throw new TdException(TdException.StreamCorruptedException, e.getMessage());
 		} catch (OptionalDataException e) {

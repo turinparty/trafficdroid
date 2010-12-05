@@ -20,6 +20,8 @@
 		<receiver android:name=".common.StartupBroadcastReceiver">
 			<intent-filter>
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
+				<action android:name="it.localhost.trafficdroid.DO_UPDATE" />
+				<action android:name="it.localhost.trafficdroid.PREF_EXIT" />
 			</intent-filter>
 		</receiver>
 	</application>

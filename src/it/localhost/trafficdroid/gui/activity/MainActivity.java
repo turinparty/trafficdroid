@@ -1,44 +1,35 @@
 package it.localhost.trafficdroid.gui.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
-import it.localhost.trafficdroid.common.LocalBinder;
-import it.localhost.trafficdroid.core.UpdateService;
+import it.localhost.trafficdroid.common.TdException;
+import it.localhost.trafficdroid.dao.TrafficDAO;
 import it.localhost.trafficdroid.dto.DLCTaskDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
-import it.localhost.trafficdroid.dto.ZoneDTO;
 import it.localhost.trafficdroid.gui.ZoneListAdapter;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.preference.PreferenceManager;
-import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
 import android.view.Window;
+import android.view.MenuItem.OnMenuItemClickListener;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemSelectedListener;
 
 public class MainActivity extends Activity {
-	private UpdateService appService = null;
-	private Intent intentService;
 	private DLCTaskDTO dlctask;
 	private ListView zoneView;
 	private TextView leftTextView;
@@ -46,7 +37,6 @@ public class MainActivity extends Activity {
 	private TextView centerTextView;
 	private Spinner spinner;
 	private ArrayAdapter<StreetDTO> arrayAdapter;
-	private ZoneListAdapter zoneListAdapter;
 	private SharedPreferences sharedPreferences;
 	private BroadcastReceiver receiver = new BroadcastReceiver() {
 		public void onReceive(Context context, Intent intent) {
@@ -58,19 +48,11 @@ public class MainActivity extends Activity {
 			}
 		}
 	};
-	private ServiceConnection onService = new ServiceConnection() {
-		public void onServiceConnected(ComponentName className, IBinder rawBinder) {
-			appService = ((LocalBinder) rawBinder).getService();
-			refreshgui(); // visualizzazione dati primo avvio
-		}
-
-		public void onServiceDisconnected(ComponentName className) {
-			appService = null;
-		}
-	};
+	private IntentFilter intentFilter;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		Log.e("ACT", "onCreate");
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
@@ -80,7 +62,7 @@ public class MainActivity extends Activity {
 		centerTextView = (TextView) findViewById(R.id.center);
 		zoneView = (ListView) findViewById(R.id.zonelist);
 		spinner = (Spinner) findViewById(R.id.spinner);
-		
+
 		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				viewStreet();
@@ -89,26 +71,21 @@ public class MainActivity extends Activity {
 			public void onNothingSelected(AdapterView<?> arg0) {
 			}
 		});
-		intentService = new Intent(this, UpdateService.class);
-		startService(intentService);
-	}
-
-	@Override
-	protected void onStart() {
-		super.onStart();
-		bindService(intentService, onService, BIND_AUTO_CREATE);
+		intentFilter = new IntentFilter();
+		intentFilter.addAction(Const.BEGIN_UPDATE);
+		intentFilter.addAction(Const.END_UPDATE);
 	}
 
 	@Override
 	public void onResume() {
+		Log.e("ACT", "onResume");
 		super.onResume();
 		String url = sharedPreferences.getString(getResources().getString(R.string.urlKey), Const.emptyString);
 		if (url.equals(Const.emptyString) || url.equals(getResources().getString(R.string.urlDefaultValue)))
-			new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.badConf)).show();
-		refreshgui(); // visualizzazione ultimi dati con applicazione in background
-		IntentFilter intentFilter = new IntentFilter();
-		intentFilter.addAction(Const.END_UPDATE);
-		intentFilter.addAction(Const.BEGIN_UPDATE);
+			new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null)
+					.setMessage(getResources().getString(R.string.badConf)).show();
+		else
+			refreshgui();
 		registerReceiver(receiver, intentFilter);
 	}
 
@@ -118,34 +95,27 @@ public class MainActivity extends Activity {
 		unregisterReceiver(receiver);
 	}
 
-	@Override
-	protected void onStop() {
-		super.onStop();
-		unbindService(onService);
-	}
-
 	private void refreshgui() {
-		if (appService != null) {
-			dlctask = appService.getData();
-			if (dlctask != null) {
-				arrayAdapter = new ArrayAdapter<StreetDTO>(MainActivity.this, android.R.layout.simple_spinner_item, dlctask.getStreets());
-				arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-				spinner.setAdapter(arrayAdapter);
-				viewStreet();
-			}
+		Log.e("ACT", "refreshgui");
+		try {
+			dlctask = TrafficDAO.retrieveData(this);
+			arrayAdapter = new ArrayAdapter<StreetDTO>(MainActivity.this, android.R.layout.simple_spinner_item, dlctask.getStreets());
+			arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+			spinner.setAdapter(arrayAdapter);
+			viewStreet();
+		} catch (TdException e) {
+			e.printStackTrace();
 		}
 	}
-
+	
 	public void viewStreet() {
 		if (dlctask.getStreets().size() > 0) {
-			zoneListAdapter = new ZoneListAdapter(this, dlctask.getStreets().get(spinner.getSelectedItemPosition()).getZones());
-
-			zoneView.setAdapter(zoneListAdapter);
+			zoneView.setAdapter(new ZoneListAdapter(this, dlctask.getStreets().get(spinner.getSelectedItemPosition()).getZones()));
 			leftTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionLeft());
 			rightTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionRight());
 			if (dlctask.getTrafficTime() != null) {
-				centerTextView.setText(DateFormat.getTimeFormat(this).format(dlctask.getTrafficTime()));
-				//centerTextView.setText(new SimpleDateFormat("H:mm:ss").format(dlctask.getTrafficTime()));
+				// centerTextView.setText(DateFormat.getTimeFormat(this).format(dlctask.getTrafficTime()));
+				centerTextView.setText(new java.text.SimpleDateFormat("H:mm:ss").format(dlctask.getTrafficTime()));
 			}
 		} else {
 			zoneView.setAdapter(null);
@@ -154,7 +124,8 @@ public class MainActivity extends Activity {
 			centerTextView.setText(null);
 		}
 	}
-
+	
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
@@ -170,7 +141,7 @@ public class MainActivity extends Activity {
 		});
 		m2.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			public boolean onMenuItemClick(MenuItem _menuItem) {
-				appService.updateDlcTask();
+				sendBroadcast(Const.doUpdateIntent);
 				return true;
 			}
 		});
