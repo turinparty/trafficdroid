@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="it.localhost.trafficdroid" android:versionCode="16"
-	android:versionName="0.7.1 chiaroveggenza">
+	package="it.localhost.trafficdroid" android:versionCode="17"
+	android:versionName="0.7.2 chiaroveggenza">
 	<uses-sdk android:minSdkVersion="3" />
 	<supports-screens android:anyDensity="true"
 		android:xlargeScreens="true" android:largeScreens="true"
