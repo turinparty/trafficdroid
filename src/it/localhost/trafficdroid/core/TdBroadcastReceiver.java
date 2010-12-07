@@ -14,9 +14,7 @@ import android.preference.PreferenceManager;
 public class TdBroadcastReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		System.err.println(intent.getAction());
 		if (intent.getAction().equals("android.intent.action.BOOT_COMPLETED") || intent.getAction().equals(Const.scheduleService)) {
-			
 			PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, Const.doUpdateIntent, 0);
 			AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 			SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -25,10 +23,7 @@ public class TdBroadcastReceiver extends BroadcastReceiver {
 				int notificationTimeValue = Integer.parseInt(sharedPreferences.getString(context.getResources().getString(R.string.notificationTimeKey), Const.notificationTimeKeyDefault));
 				alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 1000 * notificationTimeValue, pendingIntent);
 			}
-		} else if (intent.getAction().equals(Const.doUpdate)) {
-			Intent doUpdateIntent = new Intent(context, UpdateService.class);
-		//	doUpdateIntent.setAction(intent.getAction());
-			context.startService(doUpdateIntent);
-		}
+		} else if (intent.getAction().equals(Const.doUpdate))
+			context.startService(new Intent(context, UpdateService.class));
 	}
 }

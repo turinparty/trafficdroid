@@ -99,7 +99,8 @@ public class MainActivity extends Activity {
 			spinner.setAdapter(arrayAdapter);
 			viewStreet();
 		} catch (TdException e) {
-			e.printStackTrace();
+			if (e.getKey() != TdException.FileNotFoundException)
+				e.printStackTrace();
 		}
 	}
 

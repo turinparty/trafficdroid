@@ -18,7 +18,11 @@ public class TdException extends Exception {
 		this.key = key;
 	}
 
-	public String getKey() {
+	public int getKey() {
+		return key;
+	}
+
+	public String getName() {
 		switch (key) {
 		case SAXException:
 			return "SAXException";

@@ -15,8 +15,6 @@ import android.content.Context;
 import android.content.Intent;
 
 public class UpdateService extends IntentService {
-	private DLCTaskDTO dlcTaskDto = null;
-
 	public UpdateService() {
 		super(Const.tdData);
 	}
@@ -25,8 +23,7 @@ public class UpdateService extends IntentService {
 	protected void onHandleIntent(Intent intent) {
 		sendBroadcast(Const.beginUpdateIntent);
 		try {
-			if (dlcTaskDto == null)
-				dlcTaskDto = DlcTaskDAO.get(this);
+			DLCTaskDTO dlcTaskDto = DlcTaskDAO.get(this);
 			Parser.parse(dlcTaskDto);
 			TrafficDAO.storeData(dlcTaskDto, this);
 			if (!dlcTaskDto.getCongestedZones().equals(Const.emptyString)) {
@@ -38,7 +35,7 @@ public class UpdateService extends IntentService {
 			} else
 				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
 		} catch (TdException e) {
-			// e.printStackTrace();
+			//TODO come le gestiamo le eccezioni?
 		}
 		sendBroadcast(Const.endUpdateIntent);
 	}
