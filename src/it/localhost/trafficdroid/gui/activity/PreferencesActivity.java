@@ -15,6 +15,6 @@ public class PreferencesActivity extends PreferenceActivity {
 	@Override
 	protected void onStop() {
 		super.onStop();
-		sendBroadcast(Const.prefExitIntent);
+		sendBroadcast(Const.scheduleServiceIntent);
 	}
 }

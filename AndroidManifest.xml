@@ -18,11 +18,11 @@
 		</activity>
 		<activity android:name=".gui.activity.PreferencesActivity" />
 		<service android:name=".core.UpdateService" />
-		<receiver android:name=".common.StartupBroadcastReceiver">
+		<receiver android:name=".core.TdBroadcastReceiver">
 			<intent-filter>
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
 				<action android:name="it.localhost.trafficdroid.DO_UPDATE" />
-				<action android:name="it.localhost.trafficdroid.PREF_EXIT" />
+				<action android:name="it.localhost.trafficdroid.SCHEDULE_SERVICE" />
 			</intent-filter>
 		</receiver>
 	</application>

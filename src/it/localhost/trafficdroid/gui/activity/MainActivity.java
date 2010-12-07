@@ -40,9 +40,9 @@ public class MainActivity extends Activity {
 	private SharedPreferences sharedPreferences;
 	private BroadcastReceiver receiver = new BroadcastReceiver() {
 		public void onReceive(Context context, Intent intent) {
-			if (intent.getAction().equals(Const.BEGIN_UPDATE)) {
+			if (intent.getAction().equals(Const.beginUpdate)) {
 				setProgressBarIndeterminateVisibility(true);
-			} else if (intent.getAction().equals(Const.END_UPDATE)) {
+			} else if (intent.getAction().equals(Const.endUpdate)) {
 				setProgressBarIndeterminateVisibility(false);
 				refreshgui();
 			}
@@ -70,8 +70,8 @@ public class MainActivity extends Activity {
 			}
 		});
 		intentFilter = new IntentFilter();
-		intentFilter.addAction(Const.BEGIN_UPDATE);
-		intentFilter.addAction(Const.END_UPDATE);
+		intentFilter.addAction(Const.beginUpdate);
+		intentFilter.addAction(Const.endUpdate);
 	}
 
 	@Override

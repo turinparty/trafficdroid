@@ -14,12 +14,17 @@
 	<string name="selectStreet">Seleziona l\'intera strada</string>
 	<string name="sniper">Seleziona le singole zone</string>
 	<string name="mappedSreet">Strade preferite</string>
-	<string name="trafficTitle">Traffico</string>
-	<string name="trafficSummary">Indicare la velocità sotto la quale ricevere l\'avviso</string>
-	<string name="trafficKey">trafficKey</string>
-	<string name="updateIntervalTitle">Intervallo di aggiornamento</string>
-	<string name="updateIntervalSummary"></string>
-	<string name="updateIntervalKey">updateIntervalKey</string>
+
+	<string name="notificationEnablerTitle">Notifica traffico</string>
+	<string name="notificationEnablerKey">notificationEnablerKey</string>
+	<string name="notificationEnablerSummary">Avvisa nel caso in cui venga rilevata una coda</string>
+	<string name="notificationSpeedTitle">Velocità limite</string>
+	<string name="notificationSpeedKey">notificationSpeedKey</string>
+	<string name="notificationSpeedSummary">Indica la velocità considerata di coda</string>
+	<string name="notificationTimeTitle">Intervallo di aggiornamento</string>
+	<string name="notificationTimeKey">notificationTimeKey</string>
+	<string name="notificationTimeSummary">Ogni quanto tempo aggiornare i dati</string>
+
 	<string name="tickerText">Traffico rilevato</string>
 	<string name="notificationTitle">Traffico nelle seguenti tratte</string>
 	<string name="notificationCategory">Opzioni per la notifica</string>
