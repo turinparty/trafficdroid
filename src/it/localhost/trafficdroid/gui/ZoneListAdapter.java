@@ -15,26 +15,23 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 public class ZoneListAdapter extends ArrayAdapter<ZoneDTO> {
-	private List<ZoneDTO> zonesDto;
-	private LayoutInflater inflater;
-	private TextView centerTextView;
-	private TextView leftTextView;
-	private TextView rightTextView;
-	private ZoneDTO zona;
+	private List<ZoneDTO> zones;
+	private LayoutInflater layoutInflater;
 
-	public ZoneListAdapter(Context context, List<ZoneDTO> zonesDto) {
-		super(context, R.layout.zone, zonesDto);
-		this.zonesDto = zonesDto;
-		this.inflater = LayoutInflater.from(context);
+	public ZoneListAdapter(Context context, List<ZoneDTO> zones) {
+		super(context, R.layout.zone, zones);
+		this.zones = zones;
+		this.layoutInflater = LayoutInflater.from(context);
 	}
 
+	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		if (convertView == null)
-			convertView = inflater.inflate(R.layout.zone, parent, false);
-		zona = zonesDto.get(position);
-		centerTextView = (TextView) convertView.findViewById(R.id.zoneName);
-		leftTextView = (TextView) convertView.findViewById(R.id.speedLeft);
-		rightTextView = (TextView) convertView.findViewById(R.id.speedRight);
+			convertView = layoutInflater.inflate(R.layout.zone, parent, false);
+		ZoneDTO zona = zones.get(position);
+		TextView centerTextView = (TextView) convertView.findViewById(R.id.zoneName);
+		TextView leftTextView = (TextView) convertView.findViewById(R.id.speedLeft);
+		TextView rightTextView = (TextView) convertView.findViewById(R.id.speedRight);
 		centerTextView.setText(zona.getName());
 		leftTextView.setText(zona.getSpeedLeft());
 		rightTextView.setText(zona.getSpeedRight());

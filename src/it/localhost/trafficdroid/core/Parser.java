@@ -14,33 +14,24 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class Parser {
-	private static Element document;
-	private static NodeList trDirection;
-	private static NodeList divsZoneA;
-	private static NodeList divsZoneB;
-	private static NodeList trZone;
-	private static Node idZone;
-	private static ZoneDTO zone;
-	private static int zoneCounter;
-
 	public static DLCTaskDTO parse(DLCTaskDTO dto) throws TdException {
 		dto.resetCongestedZones();
 		for (StreetDTO street : dto.getStreets()) {
-			zoneCounter = 0;
-			document = TrafficDAO.getData(street.getCode(), dto.getUrl()).getDocumentElement();
-			trDirection = document.getElementsByTagName(Const.codeTable).item(2).getChildNodes();
+			int zoneCounter = 0;
+			Element document = TrafficDAO.getData(street.getCode(), dto.getUrl()).getDocumentElement();
+			NodeList trDirection = document.getElementsByTagName(Const.codeTable).item(2).getChildNodes();
 			street.setDirectionLeft(trDirection.item(0).getChildNodes().item(0).getFirstChild().getNodeValue());
 			street.setDirectionRight(trDirection.item(1).getChildNodes().item(0).getFirstChild().getNodeValue());
-			divsZoneA = document.getElementsByTagName(Const.codeDiv);
+			NodeList divsZoneA = document.getElementsByTagName(Const.codeDiv);
 			for (int i = 0; i < divsZoneA.getLength(); i++) {
-				idZone = divsZoneA.item(i).getAttributes().getNamedItem(Const.codeId);
+				Node idZone = divsZoneA.item(i).getAttributes().getNamedItem(Const.codeId);
 				if (idZone != null && idZone.getNodeValue().equalsIgnoreCase(Const.codeSection)) {
-					divsZoneB = divsZoneA.item(i).getChildNodes();
+					NodeList divsZoneB = divsZoneA.item(i).getChildNodes();
 					for (int y = 0; y < divsZoneB.getLength(); y++) {
 						if (divsZoneB.item(y).getAttributes().getNamedItem(Const.codeId).getNodeValue().equalsIgnoreCase(Const.codeRoadbox)) {
-							trZone = divsZoneB.item(y).getFirstChild().getChildNodes();
+							NodeList trZone = divsZoneB.item(y).getFirstChild().getChildNodes();
 							for (int z = 0; z < trZone.getLength() - 1 && zoneCounter < street.getZones().size(); z += 2) {
-								zone = street.getZones().get(zoneCounter);
+								ZoneDTO zone = street.getZones().get(zoneCounter);
 								if (trZone.item(z).getChildNodes().item(1).getChildNodes().item(2).getFirstChild().getNodeValue().trim().equalsIgnoreCase(zone.getName())) {
 									zone.setCatLeft(Integer.parseInt(trZone.item(z + 1).getChildNodes().item(1).getAttributes().getNamedItem(Const.codeClass).getNodeValue().substring(2, 3)));
 									zone.setSpeedLeft(trZone.item(z + 1).getChildNodes().item(0).getFirstChild().getNodeValue());

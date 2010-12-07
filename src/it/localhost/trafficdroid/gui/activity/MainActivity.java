@@ -13,7 +13,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.format.DateFormat;
@@ -37,7 +36,7 @@ public class MainActivity extends Activity {
 	private TextView centerTextView;
 	private Spinner spinner;
 	private ArrayAdapter<StreetDTO> arrayAdapter;
-	private SharedPreferences sharedPreferences;
+	private IntentFilter intentFilter;
 	private BroadcastReceiver receiver = new BroadcastReceiver() {
 		public void onReceive(Context context, Intent intent) {
 			if (intent.getAction().equals(Const.beginUpdate)) {
@@ -48,14 +47,12 @@ public class MainActivity extends Activity {
 			}
 		}
 	};
-	private IntentFilter intentFilter;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
-		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 		leftTextView = (TextView) findViewById(R.id.left);
 		rightTextView = (TextView) findViewById(R.id.right);
 		centerTextView = (TextView) findViewById(R.id.center);
@@ -77,7 +74,7 @@ public class MainActivity extends Activity {
 	@Override
 	public void onResume() {
 		super.onResume();
-		String url = sharedPreferences.getString(getResources().getString(R.string.urlKey), Const.emptyString);
+		String url = PreferenceManager.getDefaultSharedPreferences(this).getString(getResources().getString(R.string.urlKey), Const.emptyString);
 		if (url.equals(Const.emptyString) || url.equals(getResources().getString(R.string.urlDefaultValue)))
 			new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.badConf)).show();
 		else
@@ -89,6 +86,28 @@ public class MainActivity extends Activity {
 	public void onPause() {
 		super.onPause();
 		unregisterReceiver(receiver);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		super.onCreateOptionsMenu(menu);
+		MenuItem m1 = menu.add(0, Const.menuSettings, Menu.NONE, R.string.settings);
+		MenuItem m2 = menu.add(0, Const.menuRefresh, Menu.NONE, R.string.refresh);
+		m1.setIcon(android.R.drawable.ic_menu_preferences);
+		m2.setIcon(android.R.drawable.ic_menu_rotate);
+		m1.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+			public boolean onMenuItemClick(MenuItem _menuItem) {
+				startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
+				return true;
+			}
+		});
+		m2.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+			public boolean onMenuItemClick(MenuItem _menuItem) {
+				sendBroadcast(Const.doUpdateIntent);
+				return true;
+			}
+		});
+		return true;
 	}
 
 	private void refreshgui() {
@@ -118,27 +137,5 @@ public class MainActivity extends Activity {
 			rightTextView.setText(null);
 			centerTextView.setText(null);
 		}
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		super.onCreateOptionsMenu(menu);
-		MenuItem m1 = menu.add(0, Const.menuSettings, Menu.NONE, R.string.settings);
-		MenuItem m2 = menu.add(0, Const.menuRefresh, Menu.NONE, R.string.refresh);
-		m1.setIcon(android.R.drawable.ic_menu_preferences);
-		m2.setIcon(android.R.drawable.ic_menu_rotate);
-		m1.setOnMenuItemClickListener(new OnMenuItemClickListener() {
-			public boolean onMenuItemClick(MenuItem _menuItem) {
-				startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
-				return true;
-			}
-		});
-		m2.setOnMenuItemClickListener(new OnMenuItemClickListener() {
-			public boolean onMenuItemClick(MenuItem _menuItem) {
-				sendBroadcast(Const.doUpdateIntent);
-				return true;
-			}
-		});
-		return true;
 	}
 }
