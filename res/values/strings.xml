@@ -7,13 +7,10 @@
 	<string name="urlSummary">Verifica di averne i diritti</string>
 	<string name="cities_prompt">Scegli una strada</string>
 	<string name="ok">OK</string>
-	<string name="pleaswait">Attendere</string>
-	<string name="downloading">Download...</string>
-	<string name="error">Errore</string>
 	<string name="warning">Attenzione</string>
 	<string name="settings">Impostazioni</string>
 	<string name="refresh">Aggiorna</string>
-	<string name="badConf">Per un corretto funzionamento è necessario inserire il provider e almeno una strada. Cercare su internet per trovarne uno.</string>
+	<string name="badConf">TrafficDroid ha bisogno di un provider per i dati e almeno una strada da visualizzare, inseriscile su impostazioni. Il sito contiene maggiori informazioni.</string>
 	<string name="selectStreet">Seleziona l\'intera strada</string>
 	<string name="sniper">Seleziona le singole zone</string>
 	<string name="mappedSreet">Strade preferite</string>
