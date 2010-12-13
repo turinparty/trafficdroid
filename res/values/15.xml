@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones15Id">
+		<item>s15z1</item>
+		<item>s15z2</item>
+		<item>s15z3</item>
+		<item>s15z4</item>
+		<item>s15z5</item>
+		<item>s15z6</item>
+		<item>s15z7</item>
+		<item>s15z8</item>
+	</string-array>
+	<string-array name="zones15Name">
+		<item>Allaccio A1</item>
+		<item>Parma Ovest</item>
+		<item>Fornovo</item>
+		<item>Borgotaro</item>
+		<item>Berceto</item>
+		<item>Pontremoli</item>
+		<item>Aulla</item>
+		<item>Allaccio A12</item>
+	</string-array>
+</resources>

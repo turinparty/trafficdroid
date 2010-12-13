@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones10Id">
+		<item>s10z1</item>
+		<item>s10z2</item>
+		<item>s10z3</item>
+		<item>s10z4</item>
+		<item>s10z5</item>
+		<item>s10z6</item>
+		<item>s10z7</item>
+		<item>s10z8</item>
+		<item>s10z9</item>
+		<item>s10z10</item>
+		<item>s10z11</item>
+		<item>s10z12</item>
+		<item>s10z13</item>
+		<item>s10z14</item>
+		<item>s10z15</item>
+		<item>s10z16</item>
+		<item>s10z17</item>
+		<item>s10z18</item>
+		<item>s10z19</item>
+		<item>s10z20</item>
+		<item>s10z21</item>
+		<item>s10z22</item>
+		<item>s10z23</item>
+		<item>s10z24</item>
+	</string-array>
+	<string-array name="zones10Name">
+		<item>Inizio</item>
+		<item>Ventimiglia</item>
+		<item>Bordighera</item>
+		<item>San Remo Ovest</item>
+		<item>Arma di Taggia</item>
+		<item>Imperia Ovest</item>
+		<item>Imperia Est</item>
+		<item>S.Bartolomeo al Mare</item>
+		<item>Andora</item>
+		<item>Albenga</item>
+		<item>Pietra Ligure</item>
+		<item>Finale Ligure</item>
+		<item>Orco Feglino</item>
+		<item>Spotorno</item>
+		<item>Allaccio A6 / Savona - Vado</item>
+		<item>Albisola</item>
+		<item>Celle Ligure</item>
+		<item>Varazze</item>
+		<item>Arenzano</item>
+		<item>Allaccio A26</item>
+		<item>Genova - Voltri</item>
+		<item>Genova - Pegli</item>
+		<item>Genova Aereoporto</item>
+		<item>Allaccio A7</item>
+	</string-array>
+</resources>

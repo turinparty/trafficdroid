@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones501Id">
+		<item>s501z1</item>
+		<item>s501z2</item>
+		<item>s501z3</item>
+	</string-array>
+	<string-array name="zones501Name">
+		<item>Allaccio A5</item>
+		<item>Albiano</item>
+		<item>Allaccio A4/Diramazione A26</item>
+	</string-array>
+</resources>

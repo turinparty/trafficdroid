@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones5Id">
+		<item>s5z1</item>
+		<item>s5z2</item>
+		<item>s5z3</item>
+		<item>s5z4</item>
+		<item>s5z5</item>
+		<item>s5z6</item>
+		<item>s5z7</item>
+		<item>s5z8</item>
+		<item>s5z9</item>
+		<item>s5z10</item>
+		<item>s5z11</item>
+		<item>s5z12</item>
+		<item>s5z13</item>
+		<item>s5z14</item>
+	</string-array>
+	<string-array name="zones5Name">
+		<item>Morgex</item>
+		<item>Aosta Ovest</item>
+		<item>Aosta</item>
+		<item>Nus</item>
+		<item>S.Vincent-Chatillon</item>
+		<item>Verres</item>
+		<item>Point St. Martin</item>
+		<item>Quincinetto</item>
+		<item>Ivrea</item>
+		<item>Diramazione A5</item>
+		<item>Scarmagno</item>
+		<item>S.Giorgio Canavese</item>
+		<item>Volpiano</item>
+		<item>Allaccio A4</item>
+	</string-array>
+</resources>

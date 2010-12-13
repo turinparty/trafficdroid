@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones143Id">
+		<item>s143z1</item>
+		<item>s143z2</item>
+		<item>s143z3</item>
+		<item>s143z4</item>
+		<item>s143z5</item>
+		<item>s143z6</item>
+		<item>s143z7</item>
+		<item>s143z8</item>
+		<item>s143z9</item>
+		<item>s143z10</item>
+		<item>s143z11</item>
+		<item>s143z12</item>
+		<item>s143z13</item>
+		<item>s143z14</item>
+		<item>s143z15</item>
+		<item>s143z16</item>
+		<item>s143z17</item>
+	</string-array>
+	<string-array name="zones143Name">
+		<item>Allaccio A1/Bettole</item>
+		<item>Foiano</item>
+		<item>Cortona</item>
+		<item>Pietraia</item>
+		<item>Castiglione del Lago</item>
+		<item>Tuoro</item>
+		<item>Passignano Ovest</item>
+		<item>Passignano Est</item>
+		<item>Torricella</item>
+		<item>Magione</item>
+		<item>Corciano</item>
+		<item>Perugia Ferro di Cavallo</item>
+		<item>Perugia Madonna Alta</item>
+		<item>Perugia S. Faustino</item>
+		<item>Perugia Prepo</item>
+		<item>Perugia Piscille</item>
+		<item>Ponte S. Giovanni</item>
+	</string-array>
+</resources>

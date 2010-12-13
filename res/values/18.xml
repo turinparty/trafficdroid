@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones18Id">
+		<item>s18z1</item>
+		<item>s18z2</item>
+		<item>s18z3</item>
+		<item>s18z4</item>
+		<item>s18z5</item>
+		<item>s18z6</item>
+		<item>s18z7</item>
+		<item>s18z8</item>
+	</string-array>
+	<string-array name="zones18Name">
+		<item>Tremestieri-Messina</item>
+		<item>Roccalumera</item>
+		<item>Taormina</item>
+		<item>Giardini Naxos</item>
+		<item>Fiumefreddo</item>
+		<item>Giarre</item>
+		<item>Acireale</item>
+		<item>Catania - S.Gregorio</item>
+	</string-array>
+</resources>

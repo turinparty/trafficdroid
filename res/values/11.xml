@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones11Id">
+		<item>s11z1</item>
+		<item>s11z2</item>
+		<item>s11z3</item>
+		<item>s11z4</item>
+		<item>s11z5</item>
+		<item>s11z6</item>
+		<item>s11z7</item>
+		<item>s11z8</item>
+		<item>s11z9</item>
+		<item>s11z10</item>
+		<item>s11z11</item>
+		<item>s11z12</item>
+	</string-array>
+	<string-array name="zones11Name">
+		<item>Allaccio A12</item>
+		<item>Lucca/Raccordo A11</item>
+		<item>Capannori</item>
+		<item>Altopascio</item>
+		<item>Chiesina Uzzanese</item>
+		<item>Montecatini Terme</item>
+		<item>Pistoia</item>
+		<item>Prato Ovest</item>
+		<item>Prato Est</item>
+		<item>Allaccio A1</item>
+		<item>Firenze S. Cristina</item>
+		<item>Firenze Viale Glori</item>
+	</string-array>
+</resources>

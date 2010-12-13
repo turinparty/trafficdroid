@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones55Id">
+		<item>s55z1</item>
+		<item>s55z2</item>
+		<item>s55z3</item>
+		<item>s55z4</item>
+		<item>s55z5</item>
+		<item>s55z6</item>
+		<item>s55z7</item>
+		<item>s55z8</item>
+		<item>s55z9</item>
+		<item>s55z10</item>
+		<item>s55z11</item>
+		<item>s55z12</item>
+		<item>s55z13</item>
+		<item>s55z14</item>
+		<item>s55z15</item>
+		<item>s55z16</item>
+	</string-array>
+	<string-array name="zones55Name">
+		<item>Allaccio A21</item>
+		<item>Vado\'</item>
+		<item>Allaccio A6</item>
+		<item>Statale 20</item>
+		<item>Debouche\'</item>
+		<item>Stupinigi</item>
+		<item>Drosso</item>
+		<item>Sito</item>
+		<item>Allamano</item>
+		<item>Allaccio A32</item>
+		<item>Statale 24</item>
+		<item>Regina Margherita</item>
+		<item>Venaria</item>
+		<item>Borgaro</item>
+		<item>Caselle</item>
+		<item>Allaccio A5</item>
+	</string-array>
+</resources>

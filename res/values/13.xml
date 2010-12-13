@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones13Id">
+		<item>s13z1</item>
+		<item>s13z2</item>
+		<item>s13z3</item>
+		<item>s13z4</item>
+		<item>s13z5</item>
+		<item>s13z6</item>
+		<item>s13z7</item>
+		<item>s13z8</item>
+		<item>s13z9</item>
+		<item>s13z10</item>
+		<item>s13z11</item>
+		<item>s13z12</item>
+		<item>s13z13</item>
+	</string-array>
+	<string-array name="zones13Name">
+		<item>Allaccio A4</item>
+		<item>Padova Zona Industriale</item>
+		<item>Padova Sud</item>
+		<item>Terme Euganee</item>
+		<item>Monselice</item>
+		<item>Boara</item>
+		<item>Rovigo</item>
+		<item>Occhiobello</item>
+		<item>Ferrara Nord</item>
+		<item>Raccordo A13 P.to Garibaldi</item>
+		<item>Altedo</item>
+		<item>Bologna Interporto</item>
+		<item>Tangenziale Nord / Allaccio A14 / Bologna Arcoveggio</item>
+	</string-array>
+</resources>

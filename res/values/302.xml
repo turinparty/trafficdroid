@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones302Id">
+		<item>s302z1</item>
+		<item>s302z2</item>
+		<item>s302z3</item>
+		<item>s302z4</item>
+		<item>s302z5</item>
+		<item>s302z6</item>
+		<item>s302z7</item>
+		<item>s302z8</item>
+		<item>s302z9</item>
+		<item>s302z10</item>
+	</string-array>
+	<string-array name="zones302Name">
+		<item>Avellino</item>
+		<item>Serino</item>
+		<item>Solofra</item>
+		<item>Torchiati</item>
+		<item>Montoro</item>
+		<item>Fisciano - Mercato S.Severino</item>
+		<item>Allaccio A30</item>
+		<item>Lancusi</item>
+		<item>Baronissi</item>
+		<item>Allaccio A3</item>
+	</string-array>
+</resources>

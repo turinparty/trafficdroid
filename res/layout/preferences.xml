@@ -16,6 +16,7 @@
 			android:entries="@array/updateIntervalLabel" android:entryValues="@array/updateIntervalValue"
 			android:defaultValue="1800" />
 	</PreferenceCategory>
+	<!-- 
 	<PreferenceCategory android:title="@string/mappedSreet">
 		<PreferenceScreen android:title="@string/s1">
 			<CheckBoxPreference android:title="@string/s1"
@@ -2208,4 +2209,5 @@
 			</PreferenceCategory>
 		</PreferenceScreen>
 	</PreferenceCategory>
+	 -->
 </PreferenceScreen>

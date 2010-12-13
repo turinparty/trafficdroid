@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones161Id">
+		<item>s161z1</item>
+		<item>s161z2</item>
+		<item>s161z3</item>
+		<item>s161z4</item>
+		<item>s161z5</item>
+	</string-array>
+	<string-array name="zones161Name">
+		<item>Benevento Ovest</item>
+		<item>Benevento Centro</item>
+		<item>Benevento Sud</item>
+		<item>San Giorgio del Sannio</item>
+		<item>Allaccio A16</item>
+	</string-array>
+</resources>

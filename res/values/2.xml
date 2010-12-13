@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones2Id">
+		<item>s2z1</item>
+		<item>s2z2</item>
+		<item>s2z3</item>
+		<item>s2z4</item>
+		<item>s2z5</item>
+		<item>s2z6</item>
+		<item>s2z7</item>
+		<item>s2z8</item>
+		<item>s2z9</item>
+		<item>s2z10</item>
+		<item>s2z11</item>
+		<item>s2z12</item>
+		<item>s2z13</item>
+		<item>s2z14</item>
+		<item>s2z15</item>
+		<item>s2z16</item>
+		<item>s2z17</item>
+	</string-array>
+	<string-array name="zones2Name">
+		<item>Napoli</item>
+		<item>S. Giovanni a Teduccio</item>
+		<item>Allaccio A1</item>
+		<item>S. Giorgio a Cremano</item>
+		<item>Portici - Bellavista</item>
+		<item>Ercolano</item>
+		<item>Torre del Greco</item>
+		<item>Torre Annunziata Nord</item>
+		<item>Torre Annunziata</item>
+		<item>Pompei</item>
+		<item>Castellammare di Stabia</item>
+		<item>Scafati - Pompei</item>
+		<item>Angri</item>
+		<item>Nocera - Pagani</item>
+		<item>Cava dei Tirreni</item>
+		<item>Vietri sul mare</item>
+		<item>Salerno</item>
+	</string-array>
+</resources>

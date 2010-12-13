@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones22Id">
+		<item>s22z1</item>
+		<item>s22z2</item>
+		<item>s22z3</item>
+		<item>s22z4</item>
+		<item>s22z5</item>
+		<item>s22z6</item>
+		<item>s22z7</item>
+		<item>s22z8</item>
+		<item>s22z9</item>
+		<item>s22z10</item>
+		<item>s22z11</item>
+		<item>s22z12</item>
+		<item>s22z13</item>
+		<item>s22z14</item>
+		<item>s22z15</item>
+		<item>s22z16</item>
+		<item>s22z17</item>
+		<item>s22z18</item>
+		<item>s22z19</item>
+		<item>s22z20</item>
+		<item>s22z21</item>
+		<item>s22z22</item>
+		<item>s22z23</item>
+		<item>s22z24</item>
+		<item>s22z25</item>
+		<item>s22z26</item>
+	</string-array>
+	<string-array name="zones22Name">
+		<item>Barriera</item>
+		<item>Terme di Brennero</item>
+		<item>Ponticolo</item>
+		<item>Vipiteno</item>
+		<item>Bressanone</item>
+		<item>Chiusa</item>
+		<item>Bolzano Nord</item>
+		<item>Bolzano Sud</item>
+		<item>Egna - Ora</item>
+		<item>S.Michele - Mezzocorona</item>
+		<item>Trento Nord</item>
+		<item>Trento</item>
+		<item>Rovereto Nord</item>
+		<item>Rovereto S. - Lago di Garda N</item>
+		<item>Ala - Avio</item>
+		<item>Verona Nord</item>
+		<item>Affi - Lago di Garda Sud</item>
+		<item>Allaccio A4</item>
+		<item>Nogarole Rocca</item>
+		<item>Mantova Nord</item>
+		<item>Mantova Sud</item>
+		<item>Pegognaga</item>
+		<item>Reggiolo - Rolo</item>
+		<item>Carpi</item>
+		<item>Modena - Campogalliano</item>
+		<item>Allaccio A1</item>
+	</string-array>
+</resources>

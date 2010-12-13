@@ -18,7 +18,7 @@ public class Parser {
 		dto.resetCongestedZones();
 		for (StreetDTO street : dto.getStreets()) {
 			int zoneCounter = 0;
-			Element document = TrafficDAO.getData(street.getCode(), dto.getUrl()).getDocumentElement();
+			Element document = TrafficDAO.getData(street.getId(), dto.getUrl()).getDocumentElement();
 			NodeList trDirection = document.getElementsByTagName(Const.codeTable).item(2).getChildNodes();
 			street.setDirectionLeft(trDirection.item(0).getChildNodes().item(0).getFirstChild().getNodeValue());
 			street.setDirectionRight(trDirection.item(1).getChildNodes().item(0).getFirstChild().getNodeValue());

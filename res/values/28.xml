@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones28Id">
+		<item>s28z1</item>
+		<item>s28z2</item>
+		<item>s28z3</item>
+		<item>s28z4</item>
+		<item>s28z5</item>
+		<item>s28z6</item>
+		<item>s28z7</item>
+		<item>s28z8</item>
+		<item>s28z9</item>
+		<item>s28z10</item>
+		<item>s28z11</item>
+	</string-array>
+	<string-array name="zones28Name">
+		<item>Sacile Ovest</item>
+		<item>Sacile Est</item>
+		<item>Fontanafredda</item>
+		<item>Porcia</item>
+		<item>Pordenone Sud</item>
+		<item>Pordenone</item>
+		<item>Cimpello</item>
+		<item>Azzano Decimo</item>
+		<item>Villotta</item>
+		<item>Sesto al Reghena</item>
+		<item>Allaccio A4/Portogruaro</item>
+	</string-array>
+</resources>

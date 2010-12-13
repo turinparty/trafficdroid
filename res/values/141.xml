@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones141Id">
+		<item>s141z1</item>
+		<item>s141z2</item>
+		<item>s141z3</item>
+	</string-array>
+	<string-array name="zones141Name">
+		<item>Allaccio A1</item>
+		<item>Casalechio di Reno</item>
+		<item>Allaccio A14</item>
+	</string-array>
+</resources>

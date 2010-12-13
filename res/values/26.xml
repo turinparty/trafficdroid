@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones26Id">
+		<item>s26z1</item>
+		<item>s26z2</item>
+		<item>s26z3</item>
+		<item>s26z4</item>
+		<item>s26z5</item>
+		<item>s26z6</item>
+		<item>s26z7</item>
+		<item>s26z8</item>
+		<item>s26z9</item>
+		<item>s26z10</item>
+		<item>s26z11</item>
+		<item>s26z12</item>
+		<item>s26z13</item>
+		<item>s26z14</item>
+		<item>s26z15</item>
+		<item>s26z16</item>
+		<item>s26z17</item>
+		<item>s26z18</item>
+	</string-array>
+	<string-array name="zones26Name">
+		<item>Gravellona Toce</item>
+		<item>Baveno - Stresa</item>
+		<item>Carpugnino</item>
+		<item>Meina</item>
+		<item>Arona</item>
+		<item>Diramazione A8</item>
+		<item>Borgomanero</item>
+		<item>Ghemme - Romagnano Sesia</item>
+		<item>Allaccio A4</item>
+		<item>Vercelli Est</item>
+		<item>Casale Monferrato Nord / Diramazione A26</item>
+		<item>Casale Monferrato Sud</item>
+		<item>Allaccio A21</item>
+		<item>Alessandria Sud</item>
+		<item>Diramazione A26 Predosa</item>
+		<item>Ovada</item>
+		<item>Masone</item>
+		<item>Genova - Voltri / Allaccio A10</item>
+	</string-array>
+</resources>

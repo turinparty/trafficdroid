@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones20Id">
+		<item>s20z1</item>
+		<item>s20z2</item>
+		<item>s20z3</item>
+		<item>s20z4</item>
+		<item>s20z5</item>
+		<item>s20z6</item>
+		<item>s20z7</item>
+		<item>s20z8</item>
+		<item>s20z9</item>
+		<item>s20z10</item>
+		<item>s20z11</item>
+		<item>s20z12</item>
+		<item>s20z13</item>
+		<item>s20z14</item>
+		<item>s20z15</item>
+		<item>s20z16</item>
+		<item>s20z17</item>
+		<item>s20z18</item>
+		<item>s20z19</item>
+	</string-array>
+	<string-array name="zones20Name">
+		<item>Allaccio A19</item>
+		<item>Cefalu Ovest</item>
+		<item>Cefalu Est</item>
+		<item>Castelbuono</item>
+		<item>Furiano</item>
+		<item>S.Agata di Militello</item>
+		<item>Rocca di Capri Leone</item>
+		<item>Brolo</item>
+		<item>Patti</item>
+		<item>Falcone</item>
+		<item>Barcellona</item>
+		<item>Milazzo</item>
+		<item>Rometta</item>
+		<item>Messina Nord - Villafranca</item>
+		<item>Messina - Boccetta</item>
+		<item>Messina - Centro</item>
+		<item>Messina - Gazzi</item>
+		<item>Messina - S.Filippo</item>
+		<item>Messina Sud - Tremestieri</item>
+	</string-array>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones552Id">
+		<item>s552z1</item>
+		<item>s552z2</item>
+		<item>s552z3</item>
+		<item>s552z4</item>
+		<item>s552z5</item>
+		<item>s552z6</item>
+	</string-array>
+	<string-array name="zones552Name">
+		<item>None</item>
+		<item>Volvera</item>
+		<item>Gerbole di Volvera</item>
+		<item>Candiolo</item>
+		<item>Orbassano</item>
+		<item>Allaccio A55</item>
+	</string-array>
+</resources>

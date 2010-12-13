@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones8Id">
+		<item>s8z1</item>
+		<item>s8z2</item>
+		<item>s8z3</item>
+		<item>s8z4</item>
+		<item>s8z5</item>
+		<item>s8z6</item>
+		<item>s8z7</item>
+		<item>s8z8</item>
+		<item>s8z9</item>
+		<item>s8z10</item>
+		<item>s8z11</item>
+		<item>s8z12</item>
+		<item>s8z13</item>
+	</string-array>
+	<string-array name="zones8Name">
+		<item>Lago di Varese-Gazzada</item>
+		<item>Castronno</item>
+		<item>Solbiate Arno</item>
+		<item>Cavaria</item>
+		<item>Diramazione A8</item>
+		<item>Gallarate</item>
+		<item>Busto Arsizio</item>
+		<item>Castellanza</item>
+		<item>Legnano</item>
+		<item>Allaccio A9</item>
+		<item>Lainate</item>
+		<item>Arese/Tangenziale Ovest</item>
+		<item>Allaccio A4</item>
+	</string-array>
+</resources>

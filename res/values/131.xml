@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones131Id">
+		<item>s131z1</item>
+		<item>s131z2</item>
+		<item>s131z3</item>
+		<item>s131z4</item>
+		<item>s131z5</item>
+		<item>s131z6</item>
+		<item>s131z7</item>
+		<item>s131z8</item>
+		<item>s131z9</item>
+		<item>s131z10</item>
+		<item>s131z11</item>
+		<item>s131z12</item>
+	</string-array>
+	<string-array name="zones131Name">
+		<item>Allaccio A13</item>
+		<item>Ferrara Sud</item>
+		<item>Ferrara</item>
+		<item>Cona</item>
+		<item>Gualdo</item>
+		<item>Masi S. Giacomo-Torello</item>
+		<item>Rovereto</item>
+		<item>Migliarino-Portomaggiore</item>
+		<item>Ostellato</item>
+		<item>Corte Centrale</item>
+		<item>Comacchio-Lagosanto</item>
+		<item>Porto Garibaldi</item>
+	</string-array>
+</resources>

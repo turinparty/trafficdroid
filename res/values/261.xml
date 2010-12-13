@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones261Id">
+		<item>s261z1</item>
+		<item>s261z2</item>
+		<item>s261z3</item>
+	</string-array>
+	<string-array name="zones261Name">
+		<item>Allaccio A4/Diramazione A5-A4</item>
+		<item>Vercelli Ovest</item>
+		<item>Allaccio A26</item>
+	</string-array>
+</resources>

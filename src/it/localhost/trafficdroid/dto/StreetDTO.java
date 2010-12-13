@@ -7,15 +7,13 @@ import java.util.List;
 public class StreetDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String name;
-	private int code;
 	private int id;
 	private List<ZoneDTO> zones;
 	private String[] directions;
 
-	public StreetDTO(int id, int code) {
+	public StreetDTO(int id) {
 		super();
 		this.id = id;
-		this.code = code;
 		zones = new ArrayList<ZoneDTO>();
 		directions = new String[2];
 	}
@@ -28,16 +26,8 @@ public class StreetDTO implements Serializable {
 		return name;
 	}
 
-	public int getCode() {
-		return code;
-	}
-
 	public int getId() {
 		return id;
-	}
-
-	public String getKey() {
-		return "s" + code;
 	}
 
 	public List<ZoneDTO> getZones() {

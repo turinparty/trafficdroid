@@ -4,34 +4,19 @@ import java.io.Serializable;
 
 public class ZoneDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int id;
-	private String key;
 	private String name;
 	private String speedLeft;
 	private String speedRight;
 	private int catLeft;
 	private int catRight;
 
-	public ZoneDTO(int id, String key) {
+	public ZoneDTO(String name) {
 		super();
-		this.id = id;
-		this.key = key;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setName(String name) {
 		this.name = name;
 	}
 
 	public String getName() {
 		return name;
-	}
-
-	public String getKey() {
-		return key;
 	}
 
 	public String getSpeedLeft() {

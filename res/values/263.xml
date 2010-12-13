@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones263Id">
+		<item>s263z1</item>
+		<item>s263z2</item>
+		<item>s263z3</item>
+	</string-array>
+	<string-array name="zones263Name">
+		<item>Allaccio A26</item>
+		<item>Novi Ligure</item>
+		<item>Allaccio A7</item>
+	</string-array>
+</resources>

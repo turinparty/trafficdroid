@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones90Id">
+		<item>s90z1</item>
+		<item>s90z2</item>
+		<item>s90z3</item>
+		<item>s90z4</item>
+		<item>s90z5</item>
+		<item>s90z6</item>
+		<item>s90z7</item>
+		<item>s90z8</item>
+		<item>s90z9</item>
+		<item>s90z10</item>
+		<item>s90z11</item>
+		<item>s90z12</item>
+		<item>s90z13</item>
+		<item>s90z14</item>
+		<item>s90z15</item>
+		<item>s90z16</item>
+		<item>s90z17</item>
+		<item>s90z18</item>
+		<item>s90z19</item>
+		<item>s90z20</item>
+		<item>s90z21</item>
+		<item>s90z22</item>
+		<item>s90z23</item>
+		<item>s90z24</item>
+		<item>s90z25</item>
+	</string-array>
+	<string-array name="zones90Name">
+		<item>Aurelia</item>
+		<item>Boccea</item>
+		<item>Cassia</item>
+		<item>Cassia Bis</item>
+		<item>Flaminia</item>
+		<item>Salaria</item>
+		<item>A1-Firenze</item>
+		<item>Nomentana</item>
+		<item>C. Del Latte</item>
+		<item>Tiburtina</item>
+		<item>A24 Roma-L\'Aquila</item>
+		<item>La Rustica</item>
+		<item>Prenestina</item>
+		<item>Casilina</item>
+		<item>A1-Napoli /Romanina</item>
+		<item>Tuscolana/Anagnina</item>
+		<item>Appia</item>
+		<item>Ardeatina</item>
+		<item>Laurentina</item>
+		<item>Pontina</item>
+		<item>Ostiense</item>
+		<item>Roma-Fiumicino</item>
+		<item>Pisana</item>
+		<item>Pescaccio</item>
+		<item>Aurelia</item>
+	</string-array>
+</resources>

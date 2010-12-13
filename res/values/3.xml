@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones3Id">
+		<item>s3z1</item>
+		<item>s3z2</item>
+		<item>s3z3</item>
+		<item>s3z4</item>
+		<item>s3z5</item>
+		<item>s3z6</item>
+		<item>s3z7</item>
+		<item>s3z8</item>
+		<item>s3z9</item>
+		<item>s3z10</item>
+		<item>s3z11</item>
+		<item>s3z12</item>
+		<item>s3z13</item>
+		<item>s3z14</item>
+		<item>s3z15</item>
+		<item>s3z16</item>
+		<item>s3z17</item>
+		<item>s3z18</item>
+		<item>s3z19</item>
+		<item>s3z20</item>
+		<item>s3z21</item>
+		<item>s3z22</item>
+		<item>s3z23</item>
+		<item>s3z24</item>
+		<item>s3z25</item>
+		<item>s3z26</item>
+		<item>s3z27</item>
+		<item>s3z28</item>
+		<item>s3z29</item>
+		<item>s3z30</item>
+		<item>s3z31</item>
+		<item>s3z32</item>
+		<item>s3z33</item>
+		<item>s3z34</item>
+		<item>s3z35</item>
+		<item>s3z36</item>
+		<item>s3z37</item>
+		<item>s3z38</item>
+		<item>s3z39</item>
+		<item>s3z40</item>
+		<item>s3z41</item>
+		<item>s3z42</item>
+		<item>s3z43</item>
+		<item>s3z44</item>
+		<item>s3z45</item>
+		<item>s3z46</item>
+		<item>s3z47</item>
+		<item>s3z48</item>
+		<item>s3z49</item>
+		<item>s3z50</item>
+	</string-array>
+	<string-array name="zones3Name">
+		<item>Salerno</item>
+		<item>Salerno - Fratte/Raccordo Avellino - Salerno</item>
+		<item>Pontecagnano</item>
+		<item>Battipaglia</item>
+		<item>Eboli</item>
+		<item>Campagna</item>
+		<item>Contursi</item>
+		<item>Raccordo Sicignano - Potenza</item>
+		<item>Petina</item>
+		<item>Polla</item>
+		<item>Atena Lucana</item>
+		<item>Sala Consilina</item>
+		<item>Buonabitacolo - Padula</item>
+		<item>Maratea - Lagonegro Nord</item>
+		<item>Lagonegro Sud</item>
+		<item>Lauria Nord</item>
+		<item>Lauria Sud</item>
+		<item>Laino Borgo</item>
+		<item>Mormanno </item>
+		<item>Campo Tenese</item>
+		<item>Morano C - Castrovillari</item>
+		<item>Frascineto - Castrovillari</item>
+		<item>Sibari</item>
+		<item>Altomonte</item>
+		<item>Spezzano Albanese Terme</item>
+		<item>Tarsia</item>
+		<item>Torano</item>
+		<item>Rose - Montalto Uffugo</item>
+		<item>Cosenza Nord</item>
+		<item>Cosenza</item>
+		<item>Rogliano - Grimaldi</item>
+		<item>Altilia - Grimaldi</item>
+		<item>S.Mango d`Aquino</item>
+		<item>Falerna</item>
+		<item>Catanzaro - Lamezia Terme</item>
+		<item>Pizzo</item>
+		<item>S.Onofrio - Vibo Valentia</item>
+		<item>Serre</item>
+		<item>Mileto</item>
+		<item>Rosarno</item>
+		<item>Gioia Tauro</item>
+		<item>Palmi</item>
+		<item>S.Elia</item>
+		<item>Bagnara Calabra</item>
+		<item>Scilla</item>
+		<item>S.Trada</item>
+		<item>Villa S.Giovanni</item>
+		<item>Gallico</item>
+		<item>Reggio Calabria (porto)</item>
+		<item>Reggio Calabria</item>
+	</string-array>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones101Id">
+		<item>s101z1</item>
+		<item>s101z2</item>
+		<item>s101z3</item>
+		<item>s101z4</item>
+	</string-array>
+	<string-array name="zones101Name">
+		<item>Allaccio A1</item>
+		<item>Fiano Romano</item>
+		<item>Settebagni</item>
+		<item>Roma G.R.A.</item>
+	</string-array>
+</resources>

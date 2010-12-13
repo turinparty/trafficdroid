@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones111Id">
+		<item>s111z1</item>
+		<item>s111z2</item>
+		<item>s111z3</item>
+		<item>s111z4</item>
+		<item>s111z5</item>
+	</string-array>
+	<string-array name="zones111Name">
+		<item>Allaccio A12</item>
+		<item>Viareggio-Camaiore</item>
+		<item>Massarossa</item>
+		<item>Lucca-S.Donato</item>
+		<item>Allaccio A11</item>
+	</string-array>
+</resources>

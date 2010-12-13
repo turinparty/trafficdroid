@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones56Id">
+		<item>s56z1</item>
+		<item>s56z2</item>
+		<item>s56z3</item>
+		<item>s56z4</item>
+		<item>s56z5</item>
+		<item>s56z6</item>
+		<item>s56z7</item>
+		<item>s56z8</item>
+		<item>s56z9</item>
+		<item>s56z10</item>
+		<item>s56z11</item>
+	</string-array>
+	<string-array name="zones56Name">
+		<item>14: Lago d\'Averno</item>
+		<item>13: Cuma/Pozzuoli</item>
+		<item>12: via Campana</item>
+		<item>11: Agnano</item>
+		<item>10: Fuorigrotta</item>
+		<item>9: Vomero</item>
+		<item>8: Camaldoli</item>
+		<item>6/7: Arenella</item>
+		<item>5: Capodimonte</item>
+		<item>2/3/4: Secondigliano Doganella</item>
+		<item>Allaccio A1</item>
+	</string-array>
+</resources>

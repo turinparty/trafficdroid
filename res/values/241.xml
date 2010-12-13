@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones241Id">
+		<item>s241z1</item>
+		<item>s241z2</item>
+		<item>s241z3</item>
+		<item>s241z4</item>
+		<item>s241z5</item>
+	</string-array>
+	<string-array name="zones241Name">
+		<item>Tangenziale</item>
+		<item>Portonaccio</item>
+		<item>Via dei fiorentini</item>
+		<item>Via Palmiro Togliatti</item>
+		<item>Roma G.R.A.</item>
+	</string-array>
+</resources>

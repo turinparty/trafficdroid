@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones29Id">
+		<item>s29z1</item>
+		<item>s29z2</item>
+		<item>s29z3</item>
+		<item>s29z4</item>
+		<item>s29z5</item>
+		<item>s29z6</item>
+		<item>s29z7</item>
+		<item>s29z8</item>
+		<item>s29z9</item>
+		<item>s29z10</item>
+		<item>s29z11</item>
+		<item>s29z12</item>
+		<item>s29z13</item>
+		<item>s29z14</item>
+		<item>s29z15</item>
+		<item>s29z16</item>
+		<item>s29z17</item>
+		<item>s29z18</item>
+	</string-array>
+	<string-array name="zones29Name">
+		<item>Palermo</item>
+		<item>Capac</item>
+		<item>Carini</item>
+		<item>Cinisi - Carin</item>
+		<item>Cinis</item>
+		<item>Terrasini</item>
+		<item>Montelepre - Giardinello</item>
+		<item>Partinico - Trappeto</item>
+		<item>Balestrate</item>
+		<item>Alcamo</item>
+		<item>Castellammare del Golfo</item>
+		<item>Diramazione A29</item>
+		<item>Gallitello</item>
+		<item>Salem</item>
+		<item>S.Ninfa - Partanna</item>
+		<item>Castelvetrano</item>
+		<item>Campobello di Mazara</item>
+		<item>Mazara del Vallo</item>
+	</string-array>
+</resources>

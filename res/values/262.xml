@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones262Id">
+		<item>s262z1</item>
+		<item>s262z2</item>
+		<item>s262z3</item>
+		<item>s262z4</item>
+		<item>s262z5</item>
+		<item>s262z6</item>
+	</string-array>
+	<string-array name="zones262Name">
+		<item>Allaccio A26</item>
+		<item>Bivio Gattico</item>
+		<item>Casaletto Ticino</item>
+		<item>Sesto Calende</item>
+		<item>Besanate</item>
+		<item>Allaccio A8/Gallarate</item>
+	</string-array>
+</resources>

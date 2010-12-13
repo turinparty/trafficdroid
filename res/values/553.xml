@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones553Id">
+		<item>s553z1</item>
+		<item>s553z2</item>
+		<item>s553z3</item>
+	</string-array>
+	<string-array name="zones553Name">
+		<item>Corso Trieste</item>
+		<item>San Paolo</item>
+		<item>Allaccio A55</item>
+	</string-array>
+</resources>

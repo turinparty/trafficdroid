@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones25Id">
+		<item>s25z1</item>
+		<item>s25z2</item>
+		<item>s25z3</item>
+		<item>s25z4</item>
+		<item>s25z5</item>
+		<item>s25z6</item>
+		<item>s25z7</item>
+		<item>s25z8</item>
+		<item>s25z9</item>
+		<item>s25z10</item>
+		<item>s25z11</item>
+		<item>s25z12</item>
+		<item>s25z13</item>
+	</string-array>
+	<string-array name="zones25Name">
+		<item>Allaccio A24</item>
+		<item>Magliano de Marsi</item>
+		<item>Avezzano</item>
+		<item>Celano</item>
+		<item>Pescina</item>
+		<item>Cocullo</item>
+		<item>Pratola Peligna</item>
+		<item>Bussi</item>
+		<item>Casauria</item>
+		<item>Scafa - Alanno</item>
+		<item>Chieti</item>
+		<item>Pescara - Villanova</item>
+		<item>Allaccio A14</item>
+	</string-array>
+</resources>

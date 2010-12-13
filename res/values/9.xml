@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones9Id">
+		<item>s9z1</item>
+		<item>s9z2</item>
+		<item>s9z3</item>
+		<item>s9z4</item>
+		<item>s9z5</item>
+		<item>s9z6</item>
+		<item>s9z7</item>
+		<item>s9z8</item>
+		<item>s9z9</item>
+		<item>s9z10</item>
+	</string-array>
+	<string-array name="zones9Name">
+		<item>Chiasso</item>
+		<item>Como Nord</item>
+		<item>Como M. Olimpino</item>
+		<item>Como Sud</item>
+		<item>Fino Mornasco</item>
+		<item>Lomazzo</item>
+		<item>Turate</item>
+		<item>Saronno</item>
+		<item>Origgio</item>
+		<item>Allaccio A8</item>
+	</string-array>
+</resources>

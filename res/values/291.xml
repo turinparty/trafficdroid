@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones291Id">
+		<item>s291z1</item>
+		<item>s291z2</item>
+		<item>s291z3</item>
+		<item>s291z4</item>
+		<item>s291z5</item>
+		<item>s291z6</item>
+		<item>s291z7</item>
+		<item>s291z8</item>
+	</string-array>
+	<string-array name="zones291Name">
+		<item>Birgi</item>
+		<item>Marausa</item>
+		<item>Marsala</item>
+		<item>Trapani</item>
+		<item>Dattilo</item>
+		<item>Fulgatore</item>
+		<item>Segesta</item>
+		<item>Allaccio A29</item>
+	</string-array>
+</resources>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones4Id">
+		<item>s4z1</item>
+		<item>s4z2</item>
+		<item>s4z3</item>
+		<item>s4z4</item>
+		<item>s4z5</item>
+		<item>s4z6</item>
+		<item>s4z7</item>
+		<item>s4z8</item>
+		<item>s4z9</item>
+		<item>s4z10</item>
+		<item>s4z11</item>
+		<item>s4z12</item>
+		<item>s4z13</item>
+		<item>s4z14</item>
+		<item>s4z15</item>
+		<item>s4z16</item>
+		<item>s4z17</item>
+		<item>s4z18</item>
+		<item>s4z19</item>
+		<item>s4z20</item>
+		<item>s4z21</item>
+		<item>s4z22</item>
+		<item>s4z23</item>
+		<item>s4z24</item>
+		<item>s4z25</item>
+		<item>s4z26</item>
+		<item>s4z27</item>
+		<item>s4z28</item>
+		<item>s4z29</item>
+		<item>s4z30</item>
+		<item>s4z31</item>
+		<item>s4z32</item>
+		<item>s4z33</item>
+		<item>s4z34</item>
+		<item>s4z35</item>
+		<item>s4z36</item>
+		<item>s4z37</item>
+		<item>s4z38</item>
+		<item>s4z39</item>
+		<item>s4z40</item>
+		<item>s4z41</item>
+		<item>s4z42</item>
+		<item>s4z43</item>
+		<item>s4z44</item>
+		<item>s4z45</item>
+		<item>s4z46</item>
+		<item>s4z47</item>
+		<item>s4z48</item>
+		<item>s4z49</item>
+		<item>s4z50</item>
+		<item>s4z51</item>
+		<item>s4z52</item>
+		<item>s4z53</item>
+		<item>s4z54</item>
+		<item>s4z55</item>
+		<item>s4z56</item>
+		<item>s4z57</item>
+		<item>s4z58</item>
+		<item>s4z59</item>
+		<item>s4z60</item>
+		<item>s4z61</item>
+		<item>s4z62</item>
+		<item>s4z63</item>
+		<item>s4z64</item>
+		<item>s4z65</item>
+		<item>s4z66</item>
+		<item>s4z67</item>
+		<item>s4z68</item>
+		<item>s4z69</item>
+		<item>s4z70</item>
+		<item>s4z71</item>
+		<item>s4z72</item>
+		<item>s4z73</item>
+		<item>s4z74</item>
+		<item>s4z75</item>
+		<item>s4z76</item>
+		<item>s4z77</item>
+		<item>s4z78</item>
+		<item>s4z79</item>
+		<item>s4z80</item>
+		<item>s4z81</item>
+	</string-array>
+	<string-array name="zones4Name">
+		<item>Torino</item>
+		<item>Allaccio A5</item>
+		<item>Settimo Torinese</item>
+		<item>Brandizzo</item>
+		<item>Chivasso Ovest</item>
+		<item>Chivasso</item>
+		<item>Chivasso Est</item>
+		<item>Rondissone</item>
+		<item>Cigliano</item>
+		<item>Borgo d`Ale</item>
+		<item>Diramazione A5 / Diramazione A26</item>
+		<item>Santhia</item>
+		<item>Carisio</item>
+		<item>Balocco</item>
+		<item>Greggio</item>
+		<item>Allaccio A26</item>
+		<item>Biandrate</item>
+		<item>Novara Ovest</item>
+		<item>Novara Est</item>
+		<item>Boffalora</item>
+		<item>Arluno</item>
+		<item>Rho</item>
+		<item>Tangenziale Ovest</item>
+		<item>Pero</item>
+		<item>Allaccio A8</item>
+		<item>Cormano</item>
+		<item>Sesto S.Giovanni - Viale Zara</item>
+		<item>Tangenziale Est</item>
+		<item>Agrate</item>
+		<item>Cavenago - Cambiago</item>
+		<item>Trezzo</item>
+		<item>Capriate</item>
+		<item>Dalmine</item>
+		<item>Bergamo</item>
+		<item>Seriate</item>
+		<item>Grumello - Telgate</item>
+		<item>Ponte Oglio</item>
+		<item>Palazzolo</item>
+		<item>Rovato</item>
+		<item>Ospitaletto</item>
+		<item>Brescia Ovest</item>
+		<item>Allaccio A21</item>
+		<item>Brescia Est</item>
+		<item>Desenzano</item>
+		<item>Sirmione</item>
+		<item>Peschiera del Garda</item>
+		<item>Sommacampagna</item>
+		<item>Allaccio A22</item>
+		<item>Verona Sud</item>
+		<item>Verona Est</item>
+		<item>Soave - S.Bonifacio</item>
+		<item>Montebello</item>
+		<item>Montecchio</item>
+		<item>Vicenza Ovest</item>
+		<item>Vicenza Est</item>
+		<item>Allaccio A31</item>
+		<item>Grisignano</item>
+		<item>Padova Ovest</item>
+		<item>Padova Est</item>
+		<item>Allaccio A13</item>
+		<item>Dolo - Mirano</item>
+		<item>Venezia Mestre</item>
+		<item>Miranese</item>
+		<item>Castellana</item>
+		<item>Terraglio</item>
+		<item>Allaccio A27</item>
+		<item>Marcon</item>
+		<item>Quarto d`Altino</item>
+		<item>San Dona - Noventa</item>
+		<item>Cessalto</item>
+		<item>S.Stino di Livenza</item>
+		<item>Allaccio A28 - Portogruaro</item>
+		<item>Latisana</item>
+		<item>S.Giorgio - Porpetto</item>
+		<item>Allaccio A23</item>
+		<item>Palmanova</item>
+		<item>Villesse - Gorizia</item>
+		<item>Redipuglia</item>
+		<item>Monfalcone</item>
+		<item>Duino</item>
+		<item>Sistiana</item>
+	</string-array>
+</resources>

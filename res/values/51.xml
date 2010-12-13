@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones51Id">
+		<item>s51z1</item>
+		<item>s51z2</item>
+		<item>s51z3</item>
+		<item>s51z4</item>
+		<item>s51z5</item>
+		<item>s51z6</item>
+		<item>s51z7</item>
+		<item>s51z8</item>
+		<item>s51z9</item>
+		<item>s51z10</item>
+		<item>s51z11</item>
+		<item>s51z12</item>
+		<item>s51z13</item>
+		<item>s51z14</item>
+		<item>s51z15</item>
+		<item>s51z16</item>
+		<item>s51z17</item>
+		<item>s51z18</item>
+		<item>s51z19</item>
+		<item>s51z20</item>
+		<item>s51z21</item>
+	</string-array>
+	<string-array name="zones51Name">
+		<item>Carnate/Usmate velate Sud</item>
+		<item>22: Vimercate Nord</item>
+		<item>21: Vimercate Centro/Ospedale</item>
+		<item>19/20: Vimercate Sud/Arcore</item>
+		<item>18: Burago</item>
+		<item>17: Concorezzo</item>
+		<item>15/16: Agrate Brianza/Monza</item>
+		<item>Autostrada A4</item>
+		<item>14: Carugate</item>
+		<item>13: Cernusco/Brugherio</item>
+		<item>12: Cologno Monzese Nord</item>
+		<item>11: Cologno Monzese Sud</item>
+		<item>Autostrada A52</item>
+		<item>9/10: via Padova/via Palmanova</item>
+		<item>8: Lambrate</item>
+		<item>7: via Rubattino</item>
+		<item>6: Linate/Milano viale Forlanini</item>
+		<item>5: C.A.M.M.</item>
+		<item>4:via Mecenate</item>
+		<item>3:Paullo</item>
+		<item>1-2: SS9 Emilia via Rogoreto</item>
+	</string-array>
+</resources>

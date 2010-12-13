@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones52Id">
+		<item>s52z1</item>
+		<item>s52z2</item>
+		<item>s52z3</item>
+		<item>s52z4</item>
+		<item>s52z5</item>
+		<item>s52z6</item>
+		<item>s52z7</item>
+		<item>s52z8</item>
+		<item>s52z9</item>
+	</string-array>
+	<string-array name="zones52Name">
+		<item>SS35 Como/Milano Bruzzano</item>
+		<item>Vecchia Valassina</item>
+		<item>Nova Milanese</item>
+		<item>Cinisello Balsamo Nord</item>
+		<item>Cinisello Balsamo Sud</item>
+		<item>Monza/Sesto San Giovanni</item>
+		<item>Autostrada A4</item>
+		<item>Sesto San Giovanni</item>
+		<item>Autostrada A51</item>
+	</string-array>
+</resources>

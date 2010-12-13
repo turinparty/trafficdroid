@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-	<string name="s91">A91 Autostrada Fiumicino-Roma</string>
-	<string name="s91z1">Fiumicino</string>
-	<string name="s91z2">A12 Civitavecchia</string>
-	<string name="s91z3">Roma G.R.A.</string>
-	<string name="s91z4">Magliana</string>
-	<string name="s91z5">Roma</string>
-</resources>

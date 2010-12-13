@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones7Id">
+		<item>s7z1</item>
+		<item>s7z2</item>
+		<item>s7z3</item>
+		<item>s7z4</item>
+		<item>s7z5</item>
+		<item>s7z6</item>
+		<item>s7z7</item>
+		<item>s7z8</item>
+		<item>s7z9</item>
+		<item>s7z10</item>
+		<item>s7z11</item>
+		<item>s7z12</item>
+		<item>s7z13</item>
+		<item>s7z14</item>
+		<item>s7z15</item>
+		<item>s7z16</item>
+		<item>s7z17</item>
+		<item>s7z18</item>
+	</string-array>
+	<string-array name="zones7Name">
+		<item>Allaccio A50</item>
+		<item>Binasco</item>
+		<item>Raccordo Bereguardo-Pavia </item>
+		<item>Gropello-Cairoli</item>
+		<item>Casei-Gerola</item>
+		<item>Castelnuovo Scrivia</item>
+		<item>Allaccio A21</item>
+		<item>Tortona</item>
+		<item>Diramazione A26</item>
+		<item>Serravalle Scrivia</item>
+		<item>Vignole Arquato</item>
+		<item>Isola del Cantone</item>
+		<item>Ronco Scrivia</item>
+		<item>Busalla</item>
+		<item>Genova Bolzaneto</item>
+		<item>Allaccio A12</item>
+		<item>Allaccio A10</item>
+		<item>Genova Ovest</item>
+	</string-array>
+</resources>

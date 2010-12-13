@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones144Id">
+		<item>s144z1</item>
+		<item>s144z2</item>
+		<item>s144z3</item>
+		<item>s144z4</item>
+		<item>s144z5</item>
+		<item>s144z6</item>
+		<item>s144z7</item>
+		<item>s144z8</item>
+	</string-array>
+	<string-array name="zones144Name">
+		<item>Ascoli Piceno</item>
+		<item>Marino del Tronto</item>
+		<item>Maltignano</item>
+		<item>Ancarano-Castel di Lama</item>
+		<item>Spinetoli</item>
+		<item>Monsampolo del Tronto</item>
+		<item>Monteprandone</item>
+		<item>Allaccio A14</item>
+	</string-array>
+</resources>

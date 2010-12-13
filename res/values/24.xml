@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones24Id">
+		<item>s24z1</item>
+		<item>s24z2</item>
+		<item>s24z3</item>
+		<item>s24z4</item>
+		<item>s24z5</item>
+		<item>s24z6</item>
+		<item>s24z7</item>
+		<item>s24z8</item>
+		<item>s24z9</item>
+		<item>s24z10</item>
+		<item>s24z11</item>
+		<item>s24z12</item>
+		<item>s24z13</item>
+		<item>s24z14</item>
+		<item>s24z15</item>
+		<item>s24z16</item>
+		<item>s24z17</item>
+		<item>s24z18</item>
+	</string-array>
+	<string-array name="zones24Name">
+		<item>Roma G.R.A.</item>
+		<item>Lunghezza</item>
+		<item>Allaccio A1</item>
+		<item>Tivoli</item>
+		<item>Castel Madama</item>
+		<item>Vicovaro - Mandela</item>
+		<item>Carsoli - Oricola</item>
+		<item>Tagliacozzo</item>
+		<item>Allaccio A25</item>
+		<item>Valle del Salto</item>
+		<item>Tornimparte</item>
+		<item>L`Aquila Ovest</item>
+		<item>L`Aquila Est</item>
+		<item>Assergi</item>
+		<item>Colledara - S.Gabriele</item>
+		<item>Basciano</item>
+		<item>Val Vomano</item>
+		<item>Teramo</item>
+	</string-array>
+</resources>

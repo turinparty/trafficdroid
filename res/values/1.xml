@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones1Id">
+		<item>s1z1</item>
+		<item>s1z2</item>
+		<item>s1z3</item>
+		<item>s1z4</item>
+		<item>s1z5</item>
+		<item>s1z6</item>
+		<item>s1z7</item>
+		<item>s1z8</item>
+		<item>s1z9</item>
+		<item>s1z10</item>
+		<item>s1z11</item>
+		<item>s1z12</item>
+		<item>s1z13</item>
+		<item>s1z14</item>
+		<item>s1z15</item>
+		<item>s1z16</item>
+		<item>s1z17</item>
+		<item>s1z18</item>
+		<item>s1z19</item>
+		<item>s1z20</item>
+		<item>s1z21</item>
+		<item>s1z22</item>
+		<item>s1z23</item>
+		<item>s1z24</item>
+		<item>s1z25</item>
+		<item>s1z26</item>
+		<item>s1z27</item>
+		<item>s1z28</item>
+		<item>s1z29</item>
+		<item>s1z30</item>
+		<item>s1z31</item>
+		<item>s1z32</item>
+		<item>s1z33</item>
+		<item>s1z34</item>
+		<item>s1z35</item>
+		<item>s1z36</item>
+		<item>s1z37</item>
+		<item>s1z38</item>
+		<item>s1z39</item>
+		<item>s1z40</item>
+		<item>s1z41</item>
+		<item>s1z42</item>
+		<item>s1z43</item>
+		<item>s1z44</item>
+		<item>s1z45</item>
+		<item>s1z46</item>
+		<item>s1z47</item>
+		<item>s1z48</item>
+		<item>s1z49</item>
+		<item>s1z50</item>
+		<item>s1z51</item>
+		<item>s1z52</item>
+		<item>s1z53</item>
+		<item>s1z54</item>
+		<item>s1z55</item>
+		<item>s1z56</item>
+		<item>s1z57</item>
+		<item>s1z58</item>
+		<item>s1z59</item>
+		<item>s1z60</item>
+		<item>s1z61</item>
+		<item>s1z62</item>
+	</string-array>
+	<string-array name="zones1Name">
+		<item>S.Donato Milanese</item>
+		<item>Tangenziale Est</item>
+		<item>S.Giuliano Milanese</item>
+		<item>Tangenziale Ovest</item>
+		<item>Melegnano - Binasco</item>
+		<item>Lodi</item>
+		<item>Casalpusterlengo</item>
+		<item>Piacenza Nord</item>
+		<item>Piacenza Sud / Allaccio A21</item>
+		<item>Raccordo A21</item>
+		<item>Fidenza - Salsomaggiore T.</item>
+		<item>Allaccio A15</item>
+		<item>Parma</item>
+		<item>Reggio Emilia</item>
+		<item>Allaccio A22</item>
+		<item>Modena Nord</item>
+		<item>Modena Sud</item>
+		<item>Allaccio A14</item>
+		<item>Raccordo A14</item>
+		<item>Sasso Marconi</item>
+		<item>Rioveggio</item>
+		<item>Pian del Voglio</item>
+		<item>Roncobilaccio</item>
+		<item>Barberino di Mugello</item>
+		<item>Prato - Calenzano</item>
+		<item>Allaccio A11- Firenze Nord</item>
+		<item>Firenze Signa</item>
+		<item>Firenze Certosa - Raccordo Firenze-Siena</item>
+		<item>Firenze Sud</item>
+		<item>Incisa</item>
+		<item>Valdarno</item>
+		<item>Arezzo</item>
+		<item>Monte S.Savino</item>
+		<item>Val di Chiana - Raccordo Betolle-Perugia</item>
+		<item>Chiusi - Chianciano Terme</item>
+		<item>Fabro</item>
+		<item>Orvieto</item>
+		<item>Attigliano</item>
+		<item>Orte</item>
+		<item>Magliano Sabina</item>
+		<item>Ponzano Romano - Soratte</item>
+		<item>Diramazione Roma-Nord</item>
+		<item>Allaccio A24</item>
+		<item>Diramazione Roma-Sud</item>
+		<item>Valmontone</item>
+		<item>Colleferro</item>
+		<item>Anagni - Fiuggi</item>
+		<item>Frosinone</item>
+		<item>Ceprano</item>
+		<item>Pontecorvo</item>
+		<item>Cassino</item>
+		<item>S.Vittore</item>
+		<item>Caianello</item>
+		<item>Capua</item>
+		<item>Caserta Nord</item>
+		<item>Allaccio A30</item>
+		<item>Caserta Sud</item>
+		<item>Pomigliano - Villa Literno</item>
+		<item>Napoli - Asse Mediano</item>
+		<item>Allaccio A16</item>
+		<item>Tangenziale di Napoli</item>
+		<item>Allaccio A3</item>
+	</string-array>
+</resources>

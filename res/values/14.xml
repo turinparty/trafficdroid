@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones14Id">
+		<item>s14z1</item>
+		<item>s14z2</item>
+		<item>s14z3</item>
+		<item>s14z4</item>
+		<item>s14z5</item>
+		<item>s14z6</item>
+		<item>s14z7</item>
+		<item>s14z8</item>
+		<item>s14z9</item>
+		<item>s14z10</item>
+		<item>s14z11</item>
+		<item>s14z12</item>
+		<item>s14z13</item>
+		<item>s14z14</item>
+		<item>s14z15</item>
+		<item>s14z16</item>
+		<item>s14z17</item>
+		<item>s14z18</item>
+		<item>s14z19</item>
+		<item>s14z20</item>
+		<item>s14z21</item>
+		<item>s14z22</item>
+		<item>s14z23</item>
+		<item>s14z24</item>
+		<item>s14z25</item>
+		<item>s14z26</item>
+		<item>s14z27</item>
+		<item>s14z28</item>
+		<item>s14z29</item>
+		<item>s14z30</item>
+		<item>s14z31</item>
+		<item>s14z32</item>
+		<item>s14z33</item>
+		<item>s14z34</item>
+		<item>s14z35</item>
+		<item>s14z36</item>
+		<item>s14z37</item>
+		<item>s14z38</item>
+		<item>s14z39</item>
+		<item>s14z40</item>
+		<item>s14z41</item>
+		<item>s14z42</item>
+		<item>s14z43</item>
+		<item>s14z44</item>
+		<item>s14z45</item>
+		<item>s14z46</item>
+		<item>s14z47</item>
+		<item>s14z48</item>
+		<item>s14z49</item>
+		<item>s14z50</item>
+		<item>s14z51</item>
+		<item>s14z52</item>
+		<item>s14z53</item>
+		<item>s14z54</item>
+		<item>s14z55</item>
+		<item>s14z56</item>
+		<item>s14z57</item>
+		<item>s14z58</item>
+	</string-array>
+	<string-array name="zones14Name">
+		<item>Allaccio A1</item>
+		<item>Bologna - Borgo Panigale</item>
+		<item>Raccordo A1</item>
+		<item>Allaccio A13</item>
+		<item>Bologna - S.Lazzaro</item>
+		<item>Castel S.Pietro Terme</item>
+		<item>Diramazione A14</item>
+		<item>Faenza</item>
+		<item>Forli</item>
+		<item>Cesena Nord</item>
+		<item>Cesena</item>
+		<item>Rimini Nord - Bellaria</item>
+		<item>Rimini Sud</item>
+		<item>Riccione</item>
+		<item>Cattolica - Gabicce</item>
+		<item>Pesaro - Urbino</item>
+		<item>Fano</item>
+		<item>Marotta - Mondolfo</item>
+		<item>Senigallia</item>
+		<item>Ancona Nord</item>
+		<item>Ancona Sud - Osimo</item>
+		<item>Porto Recanati - Loreto</item>
+		<item>Civitanova Marche / Raccordo A14 Tolentino</item>
+		<item>Fermo - Porto S.Giorgio</item>
+		<item>Pedaso</item>
+		<item>Grottammare</item>
+		<item>S.Benedetto del Tronto</item>
+		<item>Raccordo A14 Ascoli P</item>
+		<item>Val Vibrata</item>
+		<item>Teramo - Giulianova</item>
+		<item>Roseto</item>
+		<item>Atri - Pineto</item>
+		<item>Pescara Nord - Citta S.Angelo</item>
+		<item>Allaccio A25</item>
+		<item>Pescara Ovest - Chieti</item>
+		<item>Pescara Sud - Francavilla</item>
+		<item>Ortona</item>
+		<item>Lanciano</item>
+		<item>Val di Sangro</item>
+		<item>Casalbordino - Vasto Nord</item>
+		<item>Vasto Sud</item>
+		<item>Termoli</item>
+		<item>Poggio Imperiale - Lesina</item>
+		<item>S.Severo</item>
+		<item>Foggia</item>
+		<item>Cerignola Est</item>
+		<item>Allaccio A16</item>
+		<item>Canosa di Puglia</item>
+		<item>Andria - Barletta</item>
+		<item>Trani</item>
+		<item>Molfetta</item>
+		<item>Bitonto</item>
+		<item>Bari Nord - Modugno</item>
+		<item>Bari Sud</item>
+		<item>Acquaviva delle Fonti</item>
+		<item>Gioia del Colle</item>
+		<item>Mottola - Castellaneta</item>
+		<item>Taranto Nord</item>
+	</string-array>
+</resources>

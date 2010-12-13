@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones121Id">
+		<item>s121z1</item>
+		<item>s121z2</item>
+		<item>s121z3</item>
+		<item>s121z4</item>
+		<item>s121z5</item>
+		<item>s121z6</item>
+		<item>s121z7</item>
+		<item>s121z8</item>
+		<item>s121z9</item>
+		<item>s121z10</item>
+		<item>s121z11</item>
+		<item>s121z12</item>
+		<item>s121z13</item>
+		<item>s121z14</item>
+		<item>s121z15</item>
+		<item>s121z16</item>
+		<item>s121z17</item>
+		<item>s121z18</item>
+		<item>s121z19</item>
+		<item>s121z20</item>
+		<item>s121z21</item>
+		<item>s121z22</item>
+	</string-array>
+	<string-array name="zones121Name">
+		<item>Allaccio A7</item>
+		<item>Genova Est</item>
+		<item>Genova-Nervi</item>
+		<item>Recco</item>
+		<item>Rapallo</item>
+		<item>Chiavari</item>
+		<item>Lavagna</item>
+		<item>Sestri Levante</item>
+		<item>Deiva Marina</item>
+		<item>Carrodano-Levanto</item>
+		<item>Brugnato</item>
+		<item>La Spezia/Allaccio A5</item>
+		<item>Sarzana</item>
+		<item>Carrara</item>
+		<item>Massa</item>
+		<item>Versilia</item>
+		<item>Viareggio/Raccordo A11</item>
+		<item>Allaccio A11/Pisa Centro</item>
+		<item>Pisa Sud</item>
+		<item>Livorno</item>
+		<item>Collesalvetti</item>
+		<item>Rosignano M.</item>
+	</string-array>
+</resources>
