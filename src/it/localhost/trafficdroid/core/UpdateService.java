@@ -13,6 +13,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.preference.PreferenceManager;
 
 public class UpdateService extends IntentService {
 	public UpdateService() {
@@ -26,7 +27,7 @@ public class UpdateService extends IntentService {
 			DLCTaskDTO dlcTaskDto = DlcTaskDAO.get(this);
 			Parser.parse(dlcTaskDto);
 			TrafficDAO.storeData(dlcTaskDto, this);
-			if (!dlcTaskDto.getCongestedZones().equals(Const.emptyString)) {
+			if (!dlcTaskDto.getCongestedZones().equals(Const.emptyString) && PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getResources().getString(R.string.notificationEnablerKey), true)) {
 				Notification notification = new Notification(R.drawable.notif_icon, getResources().getString(R.string.tickerText), System.currentTimeMillis());
 				notification.flags |= Notification.FLAG_AUTO_CANCEL;
 				notification.defaults |= Notification.DEFAULT_ALL;

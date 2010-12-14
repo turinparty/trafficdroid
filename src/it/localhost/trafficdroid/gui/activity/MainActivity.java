@@ -9,6 +9,7 @@ import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.gui.ZoneListAdapter;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -35,6 +36,7 @@ public class MainActivity extends Activity {
 	private TextView rightTextView;
 	private TextView centerTextView;
 	private Spinner spinner;
+	private int spinnerPosition;
 	private ArrayAdapter<StreetDTO> arrayAdapter;
 	private IntentFilter intentFilter;
 	private BroadcastReceiver receiver = new BroadcastReceiver() {
@@ -74,6 +76,7 @@ public class MainActivity extends Activity {
 	@Override
 	public void onResume() {
 		super.onResume();
+		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
 		String url = PreferenceManager.getDefaultSharedPreferences(this).getString(getResources().getString(R.string.urlKey), Const.emptyString);
 		if (url.equals(Const.emptyString) || url.equals(getResources().getString(R.string.urlDefaultValue)))
 			new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.badConf)).show();
@@ -116,6 +119,8 @@ public class MainActivity extends Activity {
 			arrayAdapter = new ArrayAdapter<StreetDTO>(MainActivity.this, android.R.layout.simple_spinner_item, dlctask.getStreets());
 			arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 			spinner.setAdapter(arrayAdapter);
+			if (spinnerPosition < dlctask.getStreets().size())
+				spinner.setSelection(spinnerPosition);
 			viewStreet();
 		} catch (TdException e) {
 			if (e.getKey() != TdException.FileNotFoundException)
@@ -125,6 +130,7 @@ public class MainActivity extends Activity {
 
 	public void viewStreet() {
 		if (dlctask.getStreets().size() > 0) {
+			spinnerPosition = spinner.getSelectedItemPosition();
 			zoneView.setAdapter(new ZoneListAdapter(this, dlctask.getStreets().get(spinner.getSelectedItemPosition()).getZones()));
 			leftTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionLeft());
 			rightTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionRight());
