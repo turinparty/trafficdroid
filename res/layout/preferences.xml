@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-	<EditTextPreference android:title="@string/urlTitle"
-		android:summary="@string/urlSummary" android:key="@string/urlKey"
-		android:defaultValue="@string/urlDefaultValue" />
+	<PreferenceCategory android:title="@string/providerCategory">
+		<EditTextPreference android:title="@string/providerTrafficTitle"
+			android:summary="@string/providerSummary" android:key="@string/providerTrafficKey"
+			android:defaultValue="@string/providerTrafficDefaultValue" />
+		<EditTextPreference android:title="@string/providerCamTitle"
+			android:summary="@string/providerSummary" android:key="@string/providerCamKey"
+			android:defaultValue="@string/providerCamDefaultValue" />
+	</PreferenceCategory>
 	<PreferenceCategory android:title="@string/notificationCategory">
 		<CheckBoxPreference android:title="@string/notificationEnablerTitle"
 			android:key="@string/notificationEnablerKey" android:summary="@string/notificationEnablerSummary"

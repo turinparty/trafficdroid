@@ -23,6 +23,7 @@ import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -55,6 +56,9 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
+		intentFilter = new IntentFilter();
+		intentFilter.addAction(Const.beginUpdate);
+		intentFilter.addAction(Const.endUpdate);
 		leftTextView = (TextView) findViewById(R.id.left);
 		rightTextView = (TextView) findViewById(R.id.right);
 		centerTextView = (TextView) findViewById(R.id.center);
@@ -68,17 +72,24 @@ public class MainActivity extends Activity {
 			public void onNothingSelected(AdapterView<?> arg0) {
 			}
 		});
-		intentFilter = new IntentFilter();
-		intentFilter.addAction(Const.beginUpdate);
-		intentFilter.addAction(Const.endUpdate);
+		zoneView.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				String zoneId = dlctask.getStreets().get(spinner.getSelectedItemPosition()).getZones().get(position).getId();
+				if (zoneId.charAt(0) == 'z') {
+					Intent intent = new Intent(MainActivity.this, WebcamActivity.class);
+					intent.putExtra(Const.camId, zoneId.substring(1));
+					startActivity(intent);
+				}
+			}
+		});
 	}
 
 	@Override
 	public void onResume() {
 		super.onResume();
 		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
-		String url = PreferenceManager.getDefaultSharedPreferences(this).getString(getResources().getString(R.string.urlKey), Const.emptyString);
-		if (url.equals(Const.emptyString) || url.equals(getResources().getString(R.string.urlDefaultValue)))
+		String url = PreferenceManager.getDefaultSharedPreferences(this).getString(getResources().getString(R.string.providerTrafficKey), Const.emptyString);
+		if (url.equals(Const.emptyString) || url.equals(getResources().getString(R.string.providerTrafficDefaultValue)))
 			new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.badConf)).show();
 		else
 			refreshgui();

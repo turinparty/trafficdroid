@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="it.localhost.trafficdroid" android:versionCode="19"
-	android:versionName="0.7.4 chiaroveggenza">
+	package="it.localhost.trafficdroid" android:versionCode="20"
+	android:versionName="0.8.0 open your eyes" android:installLocation="preferExternal">
 	<uses-sdk android:minSdkVersion="3" />
 	<supports-screens android:anyDensity="true"
 		android:xlargeScreens="true" android:largeScreens="true"
@@ -17,10 +17,12 @@
 			</intent-filter>
 		</activity>
 		<activity android:name=".gui.activity.PreferencesActivity" />
+		<activity android:name=".gui.activity.WebcamActivity" />
 		<service android:name=".core.UpdateService" />
 		<receiver android:name=".core.TdBroadcastReceiver">
 			<intent-filter>
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
+				<action android:name="android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE" />
 				<action android:name="it.localhost.trafficdroid.DO_UPDATE" />
 				<action android:name="it.localhost.trafficdroid.SCHEDULE_SERVICE" />
 			</intent-filter>

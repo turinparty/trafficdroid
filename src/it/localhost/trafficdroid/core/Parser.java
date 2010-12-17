@@ -42,9 +42,9 @@ public class Parser {
 									if (congestionLeft && congestionRight)
 										dto.addCongestedZone(zone.getName());
 									else if (congestionLeft)
-										dto.addCongestedZone(zone.getName() + " (" + street.getDirectionLeft() + ")");
+										dto.addCongestedZone(zone.getName() + Const.openRound + street.getDirectionLeft() + Const.closeRound);
 									else if (congestionRight)
-										dto.addCongestedZone(zone.getName() + " (" + street.getDirectionRight() + ")");
+										dto.addCongestedZone(zone.getName() + Const.openRound + street.getDirectionRight() + Const.closeRound);
 									zoneCounter++;
 								}
 							}

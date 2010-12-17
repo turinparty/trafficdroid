@@ -13,8 +13,8 @@ public class DlcTaskDAO {
 	public static DLCTaskDTO get(Context context) throws TdException {
 		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
 		Resources resources = context.getResources();
-		String url = sharedPreferences.getString(resources.getString(R.string.urlKey), Const.emptyString);
-		if (!url.equals(Const.emptyString) && !url.equals(resources.getString(R.string.urlDefaultValue))) {
+		String url = sharedPreferences.getString(resources.getString(R.string.providerTrafficKey), Const.emptyString);
+		if (!url.equals(Const.emptyString) && !url.equals(resources.getString(R.string.providerTrafficKey))) {
 			DLCTaskDTO dlcTaskDto = new DLCTaskDTO(StreetDAO.getAllEnabled(sharedPreferences, resources), url);
 			dlcTaskDto.setCongestionThreshold(Integer.parseInt(sharedPreferences.getString(resources.getString(R.string.notificationSpeedKey), Const.notificationSpeedKeyDefault)));
 			return dlcTaskDto;

@@ -13,14 +13,19 @@ public class StreetDAO {
 	public static ArrayList<StreetDTO> getAllEnabled(SharedPreferences settings, Resources resources) {
 		ArrayList<StreetDTO> streets = new ArrayList<StreetDTO>();
 		StreetDTO street;
-		for (int i = 0; i < resources.getIntArray(Const.streetsResId[0]).length; i++) {
-			street = new StreetDTO(resources.getIntArray(Const.streetsResId[0])[i]);
+		int[] streetsId = resources.getIntArray(Const.streetsRes[0]);
+		String[] streetsName = resources.getStringArray(Const.streetsRes[1]);
+		for (int i = 0; i < streetsId.length; i++) {
+			street = new StreetDTO(streetsId[i]);
 			boolean streetEnabled = settings.getBoolean(Integer.toString(street.getId()), false);
-			for (int j = 0; j < resources.getStringArray(Const.zonesResId()[0][i]).length; j++)
-				if (streetEnabled || settings.getBoolean(resources.getStringArray(Const.zonesResId()[0][i])[j], false))
-					street.addZone(new ZoneDTO(resources.getStringArray(Const.zonesResId()[1][i])[j]));
+			String[][] zones = new String[2][];
+			zones[0] = resources.getStringArray(Const.zonesRes()[0][i]);
+			zones[1] = resources.getStringArray(Const.zonesRes()[1][i]);
+			for (int j = 0; j < zones[0].length; j++)
+				if (streetEnabled || settings.getBoolean(zones[0][j], false))
+					street.addZone(new ZoneDTO(zones[0][j], zones[1][j]));
 			if (street.getZones().size() > 0) {
-				street.setName(resources.getStringArray(Const.streetsResId[1])[i]);
+				street.setName(streetsName[i]);
 				streets.add(street);
 			}
 		}

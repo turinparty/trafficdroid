@@ -14,7 +14,7 @@ import android.preference.PreferenceManager;
 public class TdBroadcastReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		if (intent.getAction().equals("android.intent.action.BOOT_COMPLETED") || intent.getAction().equals(Const.scheduleService)) {
+		if (intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED) || intent.getAction().equals(Const.scheduleService)||intent.getAction().equals(Intent.ACTION_EXTERNAL_APPLICATIONS_AVAILABLE)) {
 			PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, Const.doUpdateIntent, 0);
 			AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 			SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);

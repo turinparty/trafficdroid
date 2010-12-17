@@ -19,8 +19,8 @@ public class PreferencesActivity extends PreferenceActivity {
 		PreferenceCategory streetsCategory = new PreferenceCategory(this);
 		streetsCategory.setTitle(R.string.mappedSreet);
 		root.addPreference(streetsCategory);
-		int[] streetId = getResources().getIntArray(Const.streetsResId[0]);
-		String[] streetName = getResources().getStringArray(Const.streetsResId[1]);
+		int[] streetId = getResources().getIntArray(Const.streetsRes[0]);
+		String[] streetName = getResources().getStringArray(Const.streetsRes[1]);
 		for (int i = 0; i < streetId.length; i++) {
 			PreferenceScreen streetScreen = getPreferenceManager().createPreferenceScreen(this);
 			streetScreen.setTitle(streetName[i]);
@@ -34,8 +34,8 @@ public class PreferencesActivity extends PreferenceActivity {
 			zonesCategory.setTitle(R.string.sniper);
 			streetScreen.addPreference(zonesCategory);
 			String[][] zones = new String[2][];
-			zones[0] = getResources().getStringArray(Const.zonesResId()[0][i]);
-			zones[1] = getResources().getStringArray(Const.zonesResId()[1][i]);
+			zones[0] = getResources().getStringArray(Const.zonesRes()[0][i]);
+			zones[1] = getResources().getStringArray(Const.zonesRes()[1][i]);
 			for (int j = 0; j < zones[0].length; j++) {
 				CheckBoxPreference singlezone = new CheckBoxPreference(this);
 				singlezone.setKey(zones[0][j]);

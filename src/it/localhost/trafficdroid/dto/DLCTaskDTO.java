@@ -43,15 +43,14 @@ public class DLCTaskDTO implements Serializable {
 		else
 			return Const.emptyString;
 	}
-	
-	public void resetCongestedZones()
-	{
+
+	public void resetCongestedZones() {
 		congestedZones.setLength(0);
 	}
 
 	public void addCongestedZone(String zone) {
 		congestedZones.append(zone);
-		congestedZones.append("; ");
+		congestedZones.append(Const.separator);
 	}
 
 	public int getCongestionThreshold() {

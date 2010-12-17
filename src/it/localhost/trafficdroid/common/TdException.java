@@ -2,18 +2,20 @@ package it.localhost.trafficdroid.common;
 
 public class TdException extends Exception {
 	private static final long serialVersionUID = 1L;
-	public static final int SAXException = 0;
-	public static final int IOException = 1;
-	public static final int ParserConfigurationException = 2;
-	public static final int FactoryConfigurationError = 3;
-	public static final int MalformedURLException = 4;
-	public static final int FileNotFoundException = 5;
-	public static final int OptionalDataException = 6;
-	public static final int StreamCorruptedException = 7;
-	public static final int ClassNotFoundException = 8;
-	private int key;
+	public static final byte SAXException = 0;
+	public static final byte IOException = 1;
+	public static final byte ParserConfigurationException = 2;
+	public static final byte FactoryConfigurationError = 3;
+	public static final byte MalformedURLException = 4;
+	public static final byte FileNotFoundException = 5;
+	public static final byte OptionalDataException = 6;
+	public static final byte StreamCorruptedException = 7;
+	public static final byte ClassNotFoundException = 8;
+	public static final byte ClientProtocolException = 9;
+	public static final byte IndexOutOfBoundsException = 10;
+	private byte key;
 
-	public TdException(int key, String msg) {
+	public TdException(byte key, String msg) {
 		super(msg);
 		this.key = key;
 	}
@@ -42,6 +44,10 @@ public class TdException extends Exception {
 			return "StreamCorruptedException";
 		case ClassNotFoundException:
 			return "ClassNotFoundException";
+		case ClientProtocolException:
+			return "ClientProtocolException";
+		case IndexOutOfBoundsException:
+			return "IndexOutOfBoundsException";
 		default:
 			return "Unknown Exception";
 		}
