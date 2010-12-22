@@ -22,33 +22,21 @@ public class UpdateService extends IntentService {
 	@Override
 	protected void onHandleIntent(Intent intent) {
 		sendBroadcast(Const.beginUpdateIntent);
-		MainDTO dlcTaskDto = null;
 		try {
-			dlcTaskDto = MainDAO.retrieve(this);
+			MainDTO dlcTaskDto = MainDAO.create(this);
+			Parser.parse(dlcTaskDto);
+			MainDAO.store(dlcTaskDto, this);
+			if (!dlcTaskDto.getCongestedZones().equals(Const.emptyString) && PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getResources().getString(R.string.notificationEnablerKey), true)) {
+				Notification notification = new Notification(R.drawable.notif_icon, getResources().getString(R.string.tickerText), System.currentTimeMillis());
+				notification.flags |= Notification.FLAG_AUTO_CANCEL;
+				notification.defaults |= Notification.DEFAULT_ALL;
+				notification.setLatestEventInfo(getApplicationContext(), getResources().getString(R.string.notificationTitle), dlcTaskDto.getCongestedZones(), PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), PendingIntent.FLAG_UPDATE_CURRENT));
+				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(Const.notificationId, notification);
+			} else
+				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
 		} catch (TdException e) {
-			if (e.getKey() == TdException.FileNotFoundException)
-				try {
-					dlcTaskDto = MainDAO.create(this);
-				} catch (TdException e1) {
-					// TODO Auto-generated catch block
-				}
+			// TODO Auto-generated catch block
 		}
-		if (dlcTaskDto != null) {
-			try {
-				Parser.parse(dlcTaskDto);
-				MainDAO.store(dlcTaskDto, this);
-				if (!dlcTaskDto.getCongestedZones().equals(Const.emptyString) && PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getResources().getString(R.string.notificationEnablerKey), true)) {
-					Notification notification = new Notification(R.drawable.notif_icon, getResources().getString(R.string.tickerText), System.currentTimeMillis());
-					notification.flags |= Notification.FLAG_AUTO_CANCEL;
-					notification.defaults |= Notification.DEFAULT_ALL;
-					notification.setLatestEventInfo(getApplicationContext(), getResources().getString(R.string.notificationTitle), dlcTaskDto.getCongestedZones(), PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), PendingIntent.FLAG_UPDATE_CURRENT));
-					((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(Const.notificationId, notification);
-				} else
-					((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
-			} catch (TdException e) {
-				// TODO Auto-generated catch block
-			}
-			sendBroadcast(Const.endUpdateIntent);
-		}
+		sendBroadcast(Const.endUpdateIntent);
 	}
 }

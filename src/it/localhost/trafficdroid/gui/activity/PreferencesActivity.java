@@ -2,8 +2,6 @@ package it.localhost.trafficdroid.gui.activity;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
-import it.localhost.trafficdroid.common.TdException;
-import it.localhost.trafficdroid.dao.MainDAO;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.PreferenceActivity;
@@ -50,11 +48,6 @@ public class PreferencesActivity extends PreferenceActivity {
 	@Override
 	protected void onStop() {
 		super.onStop();
-		try {
-			MainDAO.store(MainDAO.create(this), this);
-		} catch (TdException e) {
-			e.printStackTrace();
-		}
 		sendBroadcast(Const.scheduleServiceIntent);
 	}
 }
