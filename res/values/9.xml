@@ -2,15 +2,15 @@
 <resources>
 	<string-array name="zones9Id">
 		<item>s9z1</item>
-		<item>s9z2</item>
-		<item>s9z3</item>
-		<item>s9z4</item>
-		<item>s9z5</item>
-		<item>s9z6</item>
+		<item>z25</item>
+		<item>z1257</item>
+		<item>z23</item>
+		<item>z20</item>
+		<item>z595</item>
 		<item>s9z7</item>
-		<item>s9z8</item>
-		<item>s9z9</item>
-		<item>s9z10</item>
+		<item>z1250</item>
+		<item>z588</item>
+		<item>z596</item>
 	</string-array>
 	<string-array name="zones9Name">
 		<item>Chiasso</item>

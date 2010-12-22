@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class DLCTaskDTO implements Serializable {
+public class MainDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private List<StreetDTO> streets;
 	private String url;
@@ -14,7 +14,7 @@ public class DLCTaskDTO implements Serializable {
 	private StringBuilder congestedZones;
 	private int congestionThreshold;
 
-	public DLCTaskDTO(List<StreetDTO> streets, String url) {
+	public MainDTO(List<StreetDTO> streets, String url) {
 		super();
 		this.streets = streets;
 		this.url = url;

@@ -3,7 +3,7 @@ package it.localhost.trafficdroid.core;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdException;
 import it.localhost.trafficdroid.dao.TrafficDAO;
-import it.localhost.trafficdroid.dto.DLCTaskDTO;
+import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
 
@@ -14,7 +14,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class Parser {
-	public static DLCTaskDTO parse(DLCTaskDTO dto) throws TdException {
+	public static MainDTO parse(MainDTO dto) throws TdException {
 		dto.resetCongestedZones();
 		for (StreetDTO street : dto.getStreets()) {
 			int zoneCounter = 0;

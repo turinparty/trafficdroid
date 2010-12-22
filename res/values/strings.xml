@@ -16,7 +16,6 @@
 	<string name="refresh">Aggiorna</string>
 	<string name="badConf">TrafficDroid ha bisogno di un provider per i dati e almeno una strada da visualizzare, inserisci queste informazioni in impostazioni. Il sito contiene maggiori informazioni.</string>
 	<string name="badWebcamConf">TrafficDroid ha bisogno di un provider per le webcam, inserisci queste informazioni in impostazioni.</string>
-	
 	<string name="selectStreet">Seleziona l\'intera strada</string>
 	<string name="sniper">Seleziona le singole zone</string>
 	<string name="mappedSreet">Strade preferite</string>

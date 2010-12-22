@@ -3,8 +3,8 @@ package it.localhost.trafficdroid.gui.activity;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdException;
-import it.localhost.trafficdroid.dao.TrafficDAO;
-import it.localhost.trafficdroid.dto.DLCTaskDTO;
+import it.localhost.trafficdroid.dao.MainDAO;
+import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.gui.ZoneListAdapter;
 import android.app.Activity;
@@ -31,7 +31,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-	private DLCTaskDTO dlctask;
+	private MainDTO dlctask;
 	private ListView zoneView;
 	private TextView leftTextView;
 	private TextView rightTextView;
@@ -105,17 +105,17 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
-		MenuItem m1 = menu.add(0, Const.menuSettings, Menu.NONE, R.string.settings);
-		MenuItem m2 = menu.add(0, Const.menuRefresh, Menu.NONE, R.string.refresh);
-		m1.setIcon(android.R.drawable.ic_menu_preferences);
-		m2.setIcon(android.R.drawable.ic_menu_rotate);
-		m1.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+		MenuItem menuSettings = menu.add(0, Const.menuSettings, Menu.NONE, R.string.settings);
+		MenuItem menuRefresh = menu.add(0, Const.menuRefresh, Menu.NONE, R.string.refresh);
+		menuSettings.setIcon(android.R.drawable.ic_menu_preferences);
+		menuRefresh.setIcon(android.R.drawable.ic_menu_rotate);
+		menuSettings.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			public boolean onMenuItemClick(MenuItem _menuItem) {
 				startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
 				return true;
 			}
 		});
-		m2.setOnMenuItemClickListener(new OnMenuItemClickListener() {
+		menuRefresh.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			public boolean onMenuItemClick(MenuItem _menuItem) {
 				sendBroadcast(Const.doUpdateIntent);
 				return true;
@@ -126,7 +126,7 @@ public class MainActivity extends Activity {
 
 	private void refreshgui() {
 		try {
-			dlctask = TrafficDAO.retrieveData(this);
+			dlctask = MainDAO.retrieve(this);
 			arrayAdapter = new ArrayAdapter<StreetDTO>(MainActivity.this, android.R.layout.simple_spinner_item, dlctask.getStreets());
 			arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 			spinner.setAdapter(arrayAdapter);

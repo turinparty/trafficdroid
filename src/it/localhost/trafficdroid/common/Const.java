@@ -13,7 +13,7 @@ public class Const {
 	public static final String closeRound = ")";
 	public static final String equal = "=";
 	public static final String separator = "; ";
-	public static final String domain ="; domain=";
+	public static final String domain = "; domain=";
 	public static final String http = "http://";
 	public static final String dyn = "/dyn/";
 	public static final String html = ".html?ts=1";

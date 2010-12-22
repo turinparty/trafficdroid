@@ -2,15 +2,15 @@
 <resources>
 	<string-array name="zones6Id">
 		<item>s6z1</item>
-		<item>s6z2</item>
-		<item>s6z3</item>
-		<item>s6z4</item>
+		<item>z744</item>
+		<item>z1954</item>
+		<item>z748</item>
 		<item>s6z5</item>
-		<item>s6z6</item>
-		<item>s6z7</item>
-		<item>s6z8</item>
-		<item>s6z9</item>
-		<item>s6z10</item>
+		<item>z750</item>
+		<item>z2131</item>
+		<item>z752</item>
+		<item>z756</item>
+		<item>z762</item>
 		<item>s6z11</item>
 	</string-array>
 	<string-array name="zones6Name">

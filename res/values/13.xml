@@ -2,8 +2,8 @@
 <resources>
 	<string-array name="zones13Id">
 		<item>s13z1</item>
-		<item>s13z2</item>
-		<item>s13z3</item>
+		<item>z362</item>
+		<item>z58</item>
 		<item>s13z4</item>
 		<item>s13z5</item>
 		<item>s13z6</item>
@@ -11,8 +11,8 @@
 		<item>s13z8</item>
 		<item>s13z9</item>
 		<item>s13z10</item>
-		<item>s13z11</item>
-		<item>s13z12</item>
+		<item>z353</item>
+		<item>z1010</item>
 		<item>s13z13</item>
 	</string-array>
 	<string-array name="zones13Name">

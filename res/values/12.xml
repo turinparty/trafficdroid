@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones12Id">
-		<item>s12z1</item>
+		<item>z463</item>
 		<item>s12z2</item>
 		<item>s12z3</item>
 		<item>s12z4</item>
 		<item>s12z5</item>
 		<item>s12z6</item>
-		<item>s12z7</item>
+		<item>z465</item>
 		<item>s12z8</item>
 	</string-array>
 	<string-array name="zones12Name">
-		<item>ALLACCIO S. S. AURELIA</item>
-		<item>CIVITAVECCHIA NORD</item>
-		<item>CIVITAVECCHIA SUD</item>
-		<item>S. SEVERA</item>
+		<item>Allaccio S. S. Aurelia</item>
+		<item>Civitavecchia Nord</item>
+		<item>Civitavecchia Sud</item>
+		<item>S. Severa</item>
 		<item>Cerveteri-Ladispoli</item>
 		<item>Torrimpietra</item>
 		<item>Maccarese-Fregene</item>
