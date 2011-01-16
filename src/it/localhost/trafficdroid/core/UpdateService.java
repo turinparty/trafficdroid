@@ -3,6 +3,7 @@ package it.localhost.trafficdroid.core;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdException;
+import it.localhost.trafficdroid.common.TdLock;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.gui.activity.MainActivity;
@@ -20,9 +21,17 @@ public class UpdateService extends IntentService {
 	}
 
 	@Override
+	public int onStartCommand(Intent intent, int flags, int startId) {
+		if (!TdLock.getLock(this).isHeld())
+			TdLock.getLock(this).acquire();
+		super.onStartCommand(intent, flags, startId);
+		return START_REDELIVER_INTENT;
+	}
+
+	@Override
 	protected void onHandleIntent(Intent intent) {
-		sendBroadcast(Const.beginUpdateIntent);
 		try {
+			sendBroadcast(Const.beginUpdateIntent);
 			MainDTO dlcTaskDto = MainDAO.create(this);
 			Parser.parse(dlcTaskDto);
 			MainDAO.store(dlcTaskDto, this);
@@ -34,9 +43,11 @@ public class UpdateService extends IntentService {
 				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(Const.notificationId, notification);
 			} else
 				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
+			sendBroadcast(Const.endUpdateIntent);
 		} catch (TdException e) {
-			// TODO Auto-generated catch block
+			// come gestiamo la cosa?
+		} finally {
+			TdLock.getLock(this).release();
 		}
-		sendBroadcast(Const.endUpdateIntent);
 	}
 }

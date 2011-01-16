@@ -15,13 +15,13 @@
 		<item>Fino a 90 Km/h</item>
 	</string-array>
 	<string-array name="notificationTimeValue">
-		<item>300</item>
-		<item>600</item>
-		<item>900</item>
-		<item>1800</item>
-		<item>3600</item>
-		<item>7200</item>
-		<item>14400</item>
+		<item>300000</item>
+		<item>600000</item>
+		<item>900000</item>
+		<item>1800000</item>
+		<item>3600000</item>
+		<item>7200000</item>
+		<item>14400000</item>
 	</string-array>
 	<string-array name="notificationTimeLabel">
 		<item>5 minuti</item>

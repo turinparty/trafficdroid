@@ -32,6 +32,7 @@ public class Const {
 	public static final String beginUpdate = "it.localhost.trafficdroid.BEGIN_UPDATE";
 	public static final String endUpdate = "it.localhost.trafficdroid.END_UPDATE";
 	public static final String scheduleService = "it.localhost.trafficdroid.SCHEDULE_SERVICE";
+	public static final String wakeLock = "it.localhost.trafficdroid.WAKELOCK";
 	public static final Intent doUpdateIntent = new Intent(Const.doUpdate);
 	public static final Intent beginUpdateIntent = new Intent(Const.beginUpdate);
 	public static final Intent endUpdateIntent = new Intent(Const.endUpdate);
