@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="it.localhost.trafficdroid" android:versionCode="23"
-	android:versionName="0.8.3 open your eyes" android:installLocation="preferExternal">
+	package="it.localhost.trafficdroid" android:versionCode="24"
+	android:versionName="0.8.4 open your eyes" android:installLocation="preferExternal">
 	<uses-sdk android:minSdkVersion="3" />
 	<supports-screens android:anyDensity="true"
 		android:xlargeScreens="true" android:largeScreens="true"

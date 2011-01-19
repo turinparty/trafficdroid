@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones121Id">
-		<item>s121z1</item>
-		<item>s121z2</item>
-		<item>s121z3</item>
-		<item>s121z4</item>
-		<item>s121z5</item>
-		<item>s121z6</item>
-		<item>s121z7</item>
-		<item>s121z8</item>
+		<item>z16</item>
+		<item>z470</item>
+		<item>z2</item>
+		<item>z11</item>
+		<item>z14</item>
+		<item>z10</item>
+		<item>z1050</item>
+		<item>z496</item>
 		<item>s121z9</item>
 		<item>s121z10</item>
 		<item>s121z11</item>
