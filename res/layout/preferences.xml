@@ -19,6 +19,6 @@
 		<ListPreference android:title="@string/notificationTimeTitle"
 			android:key="@string/notificationTimeKey" android:summary="@string/notificationTimeSummary"
 			android:entries="@array/notificationTimeLabel" android:entryValues="@array/notificationTimeValue"
-			android:defaultValue="1800" />
+			android:defaultValue="1800000" />
 	</PreferenceCategory>
 </PreferenceScreen>

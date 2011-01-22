@@ -2,20 +2,20 @@
 <resources>
 	<string-array name="zones14Id">
 		<item>s14z1</item>
-		<item>s14z2</item>
+		<item>z59</item>
 		<item>s14z3</item>
 		<item>s14z4</item>
-		<item>s14z5</item>
-		<item>s14z6</item>
-		<item>s14z7</item>
-		<item>s14z8</item>
-		<item>s14z9</item>
-		<item>s14z10</item>
-		<item>s14z11</item>
-		<item>s14z12</item>
-		<item>s14z13</item>
-		<item>s14z14</item>
-		<item>s14z15</item>
+		<item>z2044</item>
+		<item>z339</item>
+		<item>z49</item>
+		<item>z919</item>
+		<item>z342</item>
+		<item>z344</item>
+		<item>z909</item>
+		<item>z54</item>
+		<item>z61</item>
+		<item>z68</item>
+		<item>z349</item>
 		<item>s14z16</item>
 		<item>s14z17</item>
 		<item>s14z18</item>

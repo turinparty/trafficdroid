@@ -30,13 +30,9 @@ public class CookieDAO {
 		}
 		List<Cookie> cookies = httpclient.getCookieStore().getCookies();
 		httpclient.getConnectionManager().shutdown();
-		try {
-			Cookie sessionCookie = cookies.get(0);
-			CookieSyncManager.createInstance(context);
-			CookieManager.getInstance().setCookie(sessionCookie.getDomain(), sessionCookie.getName() + Const.equal + sessionCookie.getValue() + Const.domain + sessionCookie.getDomain());
-			CookieSyncManager.getInstance().sync();
-		} catch (IndexOutOfBoundsException e) {
-			throw new TdException(TdException.IndexOutOfBoundsException, e.getMessage());
-		}
+		Cookie sessionCookie = cookies.get(0);
+		CookieSyncManager.createInstance(context);
+		CookieManager.getInstance().setCookie(sessionCookie.getDomain(), sessionCookie.getName() + Const.equal + sessionCookie.getValue() + Const.domain + sessionCookie.getDomain());
+		CookieSyncManager.getInstance().sync();
 	}
 }
