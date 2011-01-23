@@ -10,17 +10,17 @@
 	<uses-permission android:name="android.permission.VIBRATE" />
 	<uses-permission android:name="android.permission.WAKE_LOCK" />
 	<application android:icon="@drawable/icon" android:label="@string/app_name">
-		<activity android:name=".gui.activity.MainActivity"
+		<activity android:name=".activity.MainActivity"
 			android:label="@string/app_name">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:name=".gui.activity.PreferencesActivity" />
-		<activity android:name=".gui.activity.WebcamActivity" />
-		<service android:name=".core.UpdateService" />
-		<receiver android:name=".core.TdBroadcastReceiver">
+		<activity android:name=".activity.PreferencesActivity" />
+		<activity android:name=".activity.WebcamActivity" />
+		<service android:name=".common.TdIntentService" />
+		<receiver android:name=".common.TdBroadcastReceiver">
 			<intent-filter>
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
 				<action android:name="android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE" />
