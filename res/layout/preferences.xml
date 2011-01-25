@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory android:title="@string/commonCategory">
+		<CheckBoxPreference android:title="@string/berserkTitle"
+			android:key="@string/berserkKey" android:summary="@string/berserkSummary"
+			android:defaultValue="false" />
+	</PreferenceCategory>
 	<PreferenceCategory android:title="@string/providerCategory">
 		<EditTextPreference android:title="@string/providerTrafficTitle"
 			android:summary="@string/providerSummary" android:key="@string/providerTrafficKey"

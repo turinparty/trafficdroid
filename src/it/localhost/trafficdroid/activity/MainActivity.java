@@ -3,11 +3,11 @@ package it.localhost.trafficdroid.activity;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdException;
-import it.localhost.trafficdroid.common.WebcamOnClickListener;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
+import it.localhost.trafficdroid.listener.WebcamOnClickListener;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.NotificationManager;
@@ -85,13 +85,16 @@ public class MainActivity extends Activity {
 	@Override
 	public void onResume() {
 		super.onResume();
+		registerReceiver(receiver, intentFilter);
 		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
 		String url = PreferenceManager.getDefaultSharedPreferences(this).getString(getResources().getString(R.string.providerTrafficKey), Const.emptyString);
 		if (url.equals(Const.emptyString) || url.equals(getResources().getString(R.string.providerTrafficDefaultValue)))
 			new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.badConf)).show();
-		else
+		else {
+			if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getResources().getString(R.string.berserkKey), false))
+				sendBroadcast(Const.doUpdateIntent);
 			refreshgui();
-		registerReceiver(receiver, intentFilter);
+		}
 	}
 
 	@Override
@@ -155,10 +158,12 @@ public class MainActivity extends Activity {
 				leftTextView.setTypeface((zoneDTO.getCatLeft() == 1) ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
 				rightTextView.setTypeface((zoneDTO.getCatRight() == 1) ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
 				speedRow.setTag(zoneDTO.getId());
-				if (zoneDTO.getId().charAt(0) == 'z') {
-					((ImageView) speedRow.findViewById(R.id.cam)).setVisibility(View.VISIBLE);
-					speedRow.setOnClickListener(webcamOnClickListener);
-				}
+				speedRow.setOnClickListener(webcamOnClickListener);
+				ImageView cam = (ImageView) speedRow.findViewById(R.id.cam);
+				if (zoneDTO.getId().charAt(0) == 'z')
+					cam.setImageResource(android.R.drawable.ic_menu_camera);
+				else
+					cam.setImageResource(android.R.drawable.ic_menu_add);
 				tableLayout.addView(nameRow);
 				tableLayout.addView(speedRow);
 			}

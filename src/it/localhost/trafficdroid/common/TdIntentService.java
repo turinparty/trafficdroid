@@ -29,14 +29,14 @@ public class TdIntentService extends IntentService {
 	protected void onHandleIntent(Intent intent) {
 		try {
 			sendBroadcast(Const.beginUpdateIntent);
-			MainDTO dlcTaskDto = MainDAO.create(this);
-			Parser.parse(dlcTaskDto);
-			MainDAO.store(dlcTaskDto, this);
-			if (!dlcTaskDto.getCongestedZones().equals(Const.emptyString) && PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getResources().getString(R.string.notificationEnablerKey), true)) {
+			MainDTO mainDto = MainDAO.create(this);
+			Parser.parse(mainDto);
+			MainDAO.store(mainDto, this);
+			if (!mainDto.getCongestedZones().equals(Const.emptyString) && PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getResources().getString(R.string.notificationEnablerKey), true)) {
 				Notification notification = new Notification(R.drawable.notif_icon, getResources().getString(R.string.tickerText), System.currentTimeMillis());
 				notification.flags |= Notification.FLAG_AUTO_CANCEL;
 				notification.defaults |= Notification.DEFAULT_ALL;
-				notification.setLatestEventInfo(getApplicationContext(), getResources().getString(R.string.notificationTitle), dlcTaskDto.getCongestedZones(), PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), PendingIntent.FLAG_UPDATE_CURRENT));
+				notification.setLatestEventInfo(getApplicationContext(), getResources().getString(R.string.notificationTitle), mainDto.getCongestedZones(), PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), PendingIntent.FLAG_UPDATE_CURRENT));
 				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(Const.notificationId, notification);
 			} else
 				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">TrafficDroid</string>
-	<string name="providerCategory">Servizi online</string>
+	<string name="providerCategory">Provider</string>
 	<string name="providerSummary">Verifica di averne i permessi</string>
 	<string name="providerTrafficTitle">Servizio dati traffico</string>
 	<string name="providerTrafficKey">providerTrafficKey</string>
@@ -9,9 +9,15 @@
 	<string name="providerCamTitle">Servizio webcam</string>
 	<string name="providerCamKey">providerCamKey</string>
 	<string name="providerCamDefaultValue">www.motostrade.it</string>
+	<string name="commonCategory">Opzioni generali</string>
+	<string name="berserkTitle">Berserk</string>
+	<string name="berserkKey">berserkKey</string>
+	<string name="berserkSummary">Aumenta il traffico dati</string>
 	<string name="cities_prompt">Scegli una strada</string>
 	<string name="ok">OK</string>
 	<string name="warning">Attenzione</string>
+	<string name="info">Informazione</string>
+	<string name="help">Questa Webcam non è ancora mappata, aiutaci a mapparla. Sul sito trovi tutte le informazioni.</string>
 	<string name="settings">Impostazioni</string>
 	<string name="refresh">Aggiorna</string>
 	<string name="badConf">TrafficDroid ha bisogno di un provider per i dati e almeno una strada da visualizzare, inserisci queste informazioni in impostazioni. Il sito contiene maggiori informazioni.</string>
@@ -30,5 +36,5 @@
 	<string name="notificationTimeSummary">Ogni quanto tempo aggiornare i dati</string>
 	<string name="tickerText">Traffico rilevato</string>
 	<string name="notificationTitle">Traffico nelle seguenti tratte</string>
-	<string name="notificationCategory">Opzioni per la notifica</string>
+	<string name="notificationCategory">Chiaroveggenza</string>
 </resources>
