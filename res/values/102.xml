@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones102Id">
-		<item>s102z1</item>
+		<item>z275</item>
 		<item>s102z2</item>
-		<item>s102z3</item>
+		<item>z121</item>
 		<item>s102z4</item>
 		<item>s102z5</item>
 	</string-array>
