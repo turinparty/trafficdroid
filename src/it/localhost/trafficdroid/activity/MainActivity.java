@@ -7,7 +7,6 @@ import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
-import it.localhost.trafficdroid.listener.WebcamOnClickListener;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.NotificationManager;
@@ -16,6 +15,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -25,6 +25,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -46,17 +47,8 @@ public class MainActivity extends Activity {
 	private int spinnerPosition;
 	private ArrayAdapter<StreetDTO> arrayAdapter;
 	private IntentFilter intentFilter;
-	private WebcamOnClickListener webcamOnClickListener;
-	private BroadcastReceiver receiver = new BroadcastReceiver() {
-		public void onReceive(Context context, Intent intent) {
-			if (intent.getAction().equals(Const.beginUpdate)) {
-				setProgressBarIndeterminateVisibility(true);
-			} else if (intent.getAction().equals(Const.endUpdate)) {
-				setProgressBarIndeterminateVisibility(false);
-				refreshgui();
-			}
-		}
-	};
+	private OnClickListener webcamOnClickListener;
+	private BroadcastReceiver receiver;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -72,7 +64,6 @@ public class MainActivity extends Activity {
 		tableLayout = (TableLayout) findViewById(R.id.zonelist);
 		spinner = (Spinner) findViewById(R.id.spinner);
 		layoutInflater = LayoutInflater.from(this);
-		webcamOnClickListener = new WebcamOnClickListener(this);
 		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				viewStreet();
@@ -81,6 +72,29 @@ public class MainActivity extends Activity {
 			public void onNothingSelected(AdapterView<?> arg0) {
 			}
 		});
+		webcamOnClickListener = new OnClickListener() {
+			public void onClick(View v) {
+				String code = (String) v.getTag();
+				if (code.charAt(0) == 'z') {
+					Intent intent = new Intent(MainActivity.this, WebcamActivity.class);
+					intent.putExtra(Const.camId, code.substring(1));
+					startActivity(intent);
+				} else {
+					Resources resources = getResources();
+					new AlertDialog.Builder(MainActivity.this).setTitle(resources.getString(R.string.info)).setPositiveButton(resources.getString(R.string.ok), null).setMessage(resources.getString(R.string.help)).show();
+				}
+			}
+		};
+		receiver = new BroadcastReceiver() {
+			public void onReceive(Context context, Intent intent) {
+				if (intent.getAction().equals(Const.beginUpdate)) {
+					setProgressBarIndeterminateVisibility(true);
+				} else if (intent.getAction().equals(Const.endUpdate)) {
+					setProgressBarIndeterminateVisibility(false);
+					refreshgui();
+				}
+			}
+		};
 	}
 
 	@Override
