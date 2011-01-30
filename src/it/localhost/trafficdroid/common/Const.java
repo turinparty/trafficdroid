@@ -8,7 +8,6 @@ public class Const {
 	public static final int menuSettings = 1;
 	public static final int menuRefresh = 2;
 	public static final int notificationId = 1;
-	public static final String emptyString = "";
 	public static final String openRound = " (";
 	public static final String closeRound = ")";
 	public static final String equal = "=";
@@ -25,8 +24,6 @@ public class Const {
 	public static final String codeSection = "section";
 	public static final String codeRoadbox = "roadbox";
 	public static final String codeClass = "class";
-	public static final String notificationTimeKeyDefault = "1800";
-	public static final String notificationSpeedKeyDefault = "1";
 	public static final String tdData = "trafficData";
 	public static final String doUpdate = "it.localhost.trafficdroid.DO_UPDATE";
 	public static final String beginUpdate = "it.localhost.trafficdroid.BEGIN_UPDATE";

@@ -19,12 +19,12 @@ public class WebcamActivity extends Activity {
 		mWebView = new WebView(this);
 		setContentView(mWebView);
 		mWebView.getSettings().setJavaScriptEnabled(true);
-		String url = PreferenceManager.getDefaultSharedPreferences(this).getString(getResources().getString(R.string.providerCamKey), Const.emptyString);
-		if (url.equals(Const.emptyString) || url.equals(getResources().getString(R.string.providerCamDefaultValue)))
-			new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.badWebcamConf)).show();
+		String url = PreferenceManager.getDefaultSharedPreferences(this).getString(getString(R.string.providerCamKey), getString(R.string.providerCamDefault));
+		if (url.equals(getString(R.string.providerCamDefault)))
+			new AlertDialog.Builder(this).setTitle(getString(R.string.warning)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.badWebcamConf)).show();
 		else {
 			try {
-				CookieDAO.setCookie(this);
+				CookieDAO.setCookie(this, url);
 			} catch (TdException e) {
 				e.printStackTrace();
 			}

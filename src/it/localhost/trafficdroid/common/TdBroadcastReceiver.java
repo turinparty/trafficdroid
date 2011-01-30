@@ -7,6 +7,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
 
@@ -18,8 +19,9 @@ public class TdBroadcastReceiver extends BroadcastReceiver {
 			AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 			SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
 			alarmManager.cancel(pendingIntent);
-			if (sharedPreferences.getBoolean(context.getResources().getString(R.string.notificationEnablerKey), true)) {
-				int notificationTimeValue = Integer.parseInt(sharedPreferences.getString(context.getResources().getString(R.string.notificationTimeKey), Const.notificationTimeKeyDefault));
+			Resources resources = context.getResources();
+			if (sharedPreferences.getBoolean(resources.getString(R.string.notificationEnablerKey), Boolean.parseBoolean(resources.getString(R.string.notificationEnablerDefault)))) {
+				int notificationTimeValue = Integer.parseInt(sharedPreferences.getString(resources.getString(R.string.notificationTimeKey), resources.getString(R.string.notificationTimeDefault)));
 				alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + notificationTimeValue, notificationTimeValue, pendingIntent);
 			}
 		} else if (intent.getAction().equals(Const.doUpdate)) {

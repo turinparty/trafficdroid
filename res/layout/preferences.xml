@@ -3,27 +3,27 @@
 	<PreferenceCategory android:title="@string/commonCategory">
 		<CheckBoxPreference android:title="@string/berserkTitle"
 			android:key="@string/berserkKey" android:summary="@string/berserkSummary"
-			android:defaultValue="false" />
+			android:defaultValue="@string/berserkDefault" />
 	</PreferenceCategory>
 	<PreferenceCategory android:title="@string/providerCategory">
 		<EditTextPreference android:title="@string/providerTrafficTitle"
 			android:summary="@string/providerSummary" android:key="@string/providerTrafficKey"
-			android:defaultValue="@string/providerTrafficDefaultValue" />
+			android:defaultValue="@string/providerTrafficDefault" />
 		<EditTextPreference android:title="@string/providerCamTitle"
 			android:summary="@string/providerSummary" android:key="@string/providerCamKey"
-			android:defaultValue="@string/providerCamDefaultValue" />
+			android:defaultValue="@string/providerCamDefault" />
 	</PreferenceCategory>
 	<PreferenceCategory android:title="@string/notificationCategory">
 		<CheckBoxPreference android:title="@string/notificationEnablerTitle"
 			android:key="@string/notificationEnablerKey" android:summary="@string/notificationEnablerSummary"
-			android:defaultValue="true" />
+			android:defaultValue="@string/notificationEnablerDefault" />
 		<ListPreference android:title="@string/notificationSpeedTitle"
 			android:key="@string/notificationSpeedKey" android:summary="@string/notificationSpeedSummary"
 			android:entries="@array/notificationSpeedLabel" android:entryValues="@array/notificationSpeedValue"
-			android:defaultValue="1" />
+			android:defaultValue="@string/notificationSpeedDefault" />
 		<ListPreference android:title="@string/notificationTimeTitle"
 			android:key="@string/notificationTimeKey" android:summary="@string/notificationTimeSummary"
 			android:entries="@array/notificationTimeLabel" android:entryValues="@array/notificationTimeValue"
-			android:defaultValue="1800000" />
+			android:defaultValue="@string/notificationTimeDefault" />
 	</PreferenceCategory>
 </PreferenceScreen>

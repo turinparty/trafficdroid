@@ -22,38 +22,34 @@ import android.content.res.Resources;
 import android.preference.PreferenceManager;
 
 public class MainDAO {
-	public static MainDTO create(Context context) throws TdException {
+	public static MainDTO create(Context context, String url) throws TdException {
 		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
 		Resources resources = context.getResources();
-		String url = sharedPreferences.getString(resources.getString(R.string.providerTrafficKey), Const.emptyString);
-		if (!url.equals(Const.emptyString) && !url.equals(resources.getString(R.string.providerTrafficKey))) {
-			ArrayList<StreetDTO> streets = new ArrayList<StreetDTO>();
-			int[] streetsId = resources.getIntArray(Const.streetsRes[0]);
-			String[] streetsName = resources.getStringArray(Const.streetsRes[1]);
-			for (int i = 0; i < streetsId.length; i++) {
-				StreetDTO street = new StreetDTO(streetsId[i]);
-				boolean streetEnabled = sharedPreferences.getBoolean(Integer.toString(street.getId()), false);
-				String[][] zones = new String[2][];
-				zones[0] = resources.getStringArray(Const.zonesRes()[0][i]);
-				zones[1] = resources.getStringArray(Const.zonesRes()[1][i]);
-				for (int j = 0; j < zones[0].length; j++)
-					if (streetEnabled || sharedPreferences.getBoolean(zones[0][j], false))
-						street.addZone(new ZoneDTO(zones[0][j], zones[1][j]));
-				if (street.getZones().size() > 0) {
-					street.setName(streetsName[i]);
-					streets.add(street);
-				}
+		ArrayList<StreetDTO> streets = new ArrayList<StreetDTO>();
+		int[] streetsId = resources.getIntArray(Const.streetsRes[0]);
+		String[] streetsName = resources.getStringArray(Const.streetsRes[1]);
+		for (int i = 0; i < streetsId.length; i++) {
+			StreetDTO street = new StreetDTO(streetsId[i]);
+			boolean streetEnabled = sharedPreferences.getBoolean(Integer.toString(street.getId()), false);
+			String[][] zones = new String[2][];
+			zones[0] = resources.getStringArray(Const.zonesRes()[0][i]);
+			zones[1] = resources.getStringArray(Const.zonesRes()[1][i]);
+			for (int j = 0; j < zones[0].length; j++)
+				if (streetEnabled || sharedPreferences.getBoolean(zones[0][j], false))
+					street.addZone(new ZoneDTO(zones[0][j], zones[1][j]));
+			if (street.getZones().size() > 0) {
+				street.setName(streetsName[i]);
+				streets.add(street);
 			}
-			MainDTO dlcTaskDto = new MainDTO(streets, url);
-			dlcTaskDto.setCongestionThreshold(Integer.parseInt(sharedPreferences.getString(resources.getString(R.string.notificationSpeedKey), Const.notificationSpeedKeyDefault)));
-			return dlcTaskDto;
-		} else
-			throw new TdException(TdException.MalformedURLException, resources.getString(R.string.badConf));
+		}
+		MainDTO dlcTaskDto = new MainDTO(streets, url);
+		dlcTaskDto.setCongestionThreshold(Integer.parseInt(sharedPreferences.getString(resources.getString(R.string.notificationSpeedKey), resources.getString(R.string.notificationSpeedDefault))));
+		return dlcTaskDto;
 	}
 
-	public static void store(MainDTO dto, Context ctx) throws TdException {
+	public static void store(MainDTO dto, Context context) throws TdException {
 		try {
-			FileOutputStream fos = ctx.openFileOutput(Const.tdData, Context.MODE_PRIVATE);
+			FileOutputStream fos = context.openFileOutput(Const.tdData, Context.MODE_PRIVATE);
 			ObjectOutputStream out = new ObjectOutputStream(fos);
 			out.writeObject(dto);
 			out.close();
@@ -65,9 +61,9 @@ public class MainDAO {
 		}
 	}
 
-	public static MainDTO retrieve(Context ctx) throws TdException {
+	public static MainDTO retrieve(Context context) throws TdException {
 		try {
-			FileInputStream fis = ctx.openFileInput(Const.tdData);
+			FileInputStream fis = context.openFileInput(Const.tdData);
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			MainDTO dlctask = (MainDTO) ois.readObject();
 			ois.close();

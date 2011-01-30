@@ -15,6 +15,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -87,11 +88,11 @@ public class MainActivity extends Activity {
 		super.onResume();
 		registerReceiver(receiver, intentFilter);
 		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
-		String url = PreferenceManager.getDefaultSharedPreferences(this).getString(getResources().getString(R.string.providerTrafficKey), Const.emptyString);
-		if (url.equals(Const.emptyString) || url.equals(getResources().getString(R.string.providerTrafficDefaultValue)))
-			new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.warning)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.badConf)).show();
+		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+		if (sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault)).equals(getString(R.string.providerTrafficDefault)))
+			new AlertDialog.Builder(this).setTitle(getString(R.string.warning)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.badConf)).show();
 		else {
-			if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getResources().getString(R.string.berserkKey), false))
+			if (sharedPreferences.getBoolean(getString(R.string.berserkKey), Boolean.parseBoolean(getString(R.string.berserkDefault))))
 				sendBroadcast(Const.doUpdateIntent);
 			refreshgui();
 		}

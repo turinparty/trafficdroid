@@ -41,7 +41,7 @@ public class MainDTO implements Serializable {
 		if (congestedZones.length() > 0)
 			return congestedZones.substring(0, congestedZones.length() - 2);
 		else
-			return Const.emptyString;
+			return null;
 	}
 
 	public void resetCongestedZones() {
