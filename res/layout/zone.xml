@@ -3,10 +3,9 @@
 	android:layout_width="fill_parent" android:layout_height="wrap_content"
 	android:background="#000000" android:layout_marginBottom="1px">
 	<TextView android:id="@+id/speedLeft" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:layout_gravity="center_horizontal">
-	</TextView>
-	<ImageView android:layout_height="20dp" android:id="@+id/cam" />
+		android:layout_height="wrap_content" android:gravity="center" />
+	<ImageView android:layout_height="20dp" android:id="@+id/cam"
+		android:gravity="center" />
 	<TextView android:id="@+id/speedRight" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:layout_gravity="center_horizontal">
-	</TextView>
+		android:layout_height="wrap_content" android:gravity="center" />
 </TableRow>
