@@ -15,7 +15,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -27,25 +26,14 @@ import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-	private MainDTO dlctask;
 	private TableLayout tableLayout;
 	private LayoutInflater layoutInflater;
-	private TextView leftTextView;
-	private TextView rightTextView;
-	private TextView centerTextView;
-	private Spinner spinner;
-	private int spinnerPosition;
-	private ArrayAdapter<StreetDTO> arrayAdapter;
 	private IntentFilter intentFilter;
 	private OnClickListener webcamOnClickListener;
 	private BroadcastReceiver receiver;
@@ -58,20 +46,8 @@ public class MainActivity extends Activity {
 		intentFilter = new IntentFilter();
 		intentFilter.addAction(Const.beginUpdate);
 		intentFilter.addAction(Const.endUpdate);
-		leftTextView = (TextView) findViewById(R.id.left);
-		rightTextView = (TextView) findViewById(R.id.right);
-		centerTextView = (TextView) findViewById(R.id.center);
 		tableLayout = (TableLayout) findViewById(R.id.zonelist);
-		spinner = (Spinner) findViewById(R.id.spinner);
 		layoutInflater = LayoutInflater.from(this);
-		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
-			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-				viewStreet();
-			}
-
-			public void onNothingSelected(AdapterView<?> arg0) {
-			}
-		});
 		webcamOnClickListener = new OnClickListener() {
 			public void onClick(View v) {
 				String code = (String) v.getTag();
@@ -79,10 +55,8 @@ public class MainActivity extends Activity {
 					Intent intent = new Intent(MainActivity.this, WebcamActivity.class);
 					intent.putExtra(Const.camId, code.substring(1));
 					startActivity(intent);
-				} else {
-					Resources resources = getResources();
-					new AlertDialog.Builder(MainActivity.this).setTitle(resources.getString(R.string.info)).setPositiveButton(resources.getString(R.string.ok), null).setMessage(resources.getString(R.string.help)).show();
-				}
+				} else
+					new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getString(R.string.info)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.help)).show();
 			}
 		};
 		receiver = new BroadcastReceiver() {
@@ -91,7 +65,7 @@ public class MainActivity extends Activity {
 					setProgressBarIndeterminateVisibility(true);
 				} else if (intent.getAction().equals(Const.endUpdate)) {
 					setProgressBarIndeterminateVisibility(false);
-					refreshgui();
+					refresh();
 				}
 			}
 		};
@@ -108,7 +82,7 @@ public class MainActivity extends Activity {
 		else {
 			if (sharedPreferences.getBoolean(getString(R.string.berserkKey), Boolean.parseBoolean(getString(R.string.berserkDefault))))
 				sendBroadcast(Const.doUpdateIntent);
-			refreshgui();
+			refresh();
 		}
 	}
 
@@ -140,57 +114,44 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-	private void refreshgui() {
+	private void refresh() {
 		try {
-			dlctask = MainDAO.retrieve(this);
-			arrayAdapter = new ArrayAdapter<StreetDTO>(MainActivity.this, android.R.layout.simple_spinner_item, dlctask.getStreets());
-			arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-			spinner.setAdapter(arrayAdapter);
-			if (spinnerPosition < dlctask.getStreets().size())
-				spinner.setSelection(spinnerPosition);
-			viewStreet();
+			MainDTO mainDTO = MainDAO.retrieve(this);
+			tableLayout.removeAllViews();
+			setTitle(getString(R.string.app_name) + " " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
+			for (StreetDTO street : mainDTO.getStreets()) {
+				TableRow streetRow = (TableRow) layoutInflater.inflate(R.layout.street, tableLayout, false);
+				((TextView) streetRow.findViewById(R.id.streetName)).setText(street.getName());
+				((TextView) streetRow.findViewById(R.id.left)).setText(street.getDirectionLeft());
+				((TextView) streetRow.findViewById(R.id.right)).setText(street.getDirectionRight());
+				tableLayout.addView(streetRow);
+				for (ZoneDTO zoneDTO : street.getZones()) {
+					TableRow zoneNameRow = (TableRow) layoutInflater.inflate(R.layout.zonename, tableLayout, false);
+					TableRow zoneSpeedRow = (TableRow) layoutInflater.inflate(R.layout.zone, tableLayout, false);
+					TextView zoneNameText = (TextView) zoneNameRow.findViewById(R.id.zoneName);
+					TextView leftZoneSpeedText = (TextView) zoneSpeedRow.findViewById(R.id.speedLeft);
+					TextView rightZoneSpeedText = (TextView) zoneSpeedRow.findViewById(R.id.speedRight);
+					zoneNameText.setText(zoneDTO.getName());
+					leftZoneSpeedText.setText(zoneDTO.getSpeedLeft());
+					rightZoneSpeedText.setText(zoneDTO.getSpeedRight());
+					leftZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatLeft()]);
+					rightZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatRight()]);
+					leftZoneSpeedText.setTypeface((zoneDTO.getCatLeft() == 1) ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
+					rightZoneSpeedText.setTypeface((zoneDTO.getCatRight() == 1) ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
+					zoneSpeedRow.setTag(zoneDTO.getId());
+					zoneSpeedRow.setOnClickListener(webcamOnClickListener);
+					ImageView cam = (ImageView) zoneSpeedRow.findViewById(R.id.cam);
+					if (zoneDTO.getId().charAt(0) == 'z')
+						cam.setImageResource(android.R.drawable.ic_menu_camera);
+					else
+						cam.setImageResource(android.R.drawable.ic_menu_add);
+					tableLayout.addView(zoneNameRow);
+					tableLayout.addView(zoneSpeedRow);
+				}
+			}
 		} catch (TdException e) {
 			if (e.getKey() != TdException.FileNotFoundException)
 				e.printStackTrace();
-		}
-	}
-
-	public void viewStreet() {
-		if (dlctask.getStreets().size() > 0) {
-			spinnerPosition = spinner.getSelectedItemPosition();
-			tableLayout.removeAllViews();
-			for (ZoneDTO zoneDTO : dlctask.getStreets().get(spinner.getSelectedItemPosition()).getZones()) {
-				TableRow nameRow = (TableRow) layoutInflater.inflate(R.layout.zonename, tableLayout, false);
-				TableRow speedRow = (TableRow) layoutInflater.inflate(R.layout.zone, tableLayout, false);
-				TextView centerTextView = (TextView) nameRow.findViewById(R.id.zoneName);
-				TextView leftTextView = (TextView) speedRow.findViewById(R.id.speedLeft);
-				TextView rightTextView = (TextView) speedRow.findViewById(R.id.speedRight);
-				centerTextView.setText(zoneDTO.getName());
-				leftTextView.setText(zoneDTO.getSpeedLeft());
-				rightTextView.setText(zoneDTO.getSpeedRight());
-				leftTextView.setTextColor(Const.colorCat[zoneDTO.getCatLeft()]);
-				rightTextView.setTextColor(Const.colorCat[zoneDTO.getCatRight()]);
-				leftTextView.setTypeface((zoneDTO.getCatLeft() == 1) ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
-				rightTextView.setTypeface((zoneDTO.getCatRight() == 1) ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
-				speedRow.setTag(zoneDTO.getId());
-				speedRow.setOnClickListener(webcamOnClickListener);
-				ImageView cam = (ImageView) speedRow.findViewById(R.id.cam);
-				if (zoneDTO.getId().charAt(0) == 'z')
-					cam.setImageResource(android.R.drawable.ic_menu_camera);
-				else
-					cam.setImageResource(android.R.drawable.ic_menu_add);
-				tableLayout.addView(nameRow);
-				tableLayout.addView(speedRow);
-			}
-			leftTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionLeft());
-			rightTextView.setText(dlctask.getStreets().get(spinner.getSelectedItemPosition()).getDirectionRight());
-			if (dlctask.getTrafficTime() != null)
-				centerTextView.setText(DateFormat.getTimeFormat(this).format(dlctask.getTrafficTime()));
-			//centerTextView.setText(new java.text.SimpleDateFormat("H:mm:ss").format(dlctask.getTrafficTime()));
-		} else {
-			leftTextView.setText(null);
-			rightTextView.setText(null);
-			centerTextView.setText(null);
 		}
 	}
 }
