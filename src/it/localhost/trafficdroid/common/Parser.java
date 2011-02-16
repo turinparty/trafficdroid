@@ -35,8 +35,8 @@ public class Parser {
 									zone.setSpeedLeft(trZone.item(z + 1).getChildNodes().item(0).getFirstChild().getNodeValue());
 									zone.setCatRight(Integer.parseInt(trZone.item(z + 1).getChildNodes().item(2).getAttributes().getNamedItem(Const.codeClass).getNodeValue().substring(2, 3)));
 									zone.setSpeedRight(trZone.item(z + 1).getChildNodes().item(3).getFirstChild().getNodeValue());
-									boolean congestionLeft = (zone.getCatLeft() > 0 && zone.getCatLeft() <= dto.getCongestionThreshold());
-									boolean congestionRight = (zone.getCatRight() > 0 && zone.getCatRight() <= dto.getCongestionThreshold());
+									boolean congestionLeft = zone.getCatLeft() > 0 && zone.getCatLeft() <= dto.getCongestionThreshold();
+									boolean congestionRight = zone.getCatRight() > 0 && zone.getCatRight() <= dto.getCongestionThreshold();
 									if (congestionLeft && congestionRight)
 										dto.addCongestedZone(zone.getName());
 									else if (congestionLeft)
