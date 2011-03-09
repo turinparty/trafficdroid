@@ -5,10 +5,10 @@
 	<string name="providerSummary">Verifica di averne i permessi</string>
 	<string name="providerTrafficTitle">Servizio dati traffico</string>
 	<string name="providerTrafficKey">providerTrafficKey</string>
-	<string name="providerTrafficDefault">traffico.noventelematics.com</string>
-	<string name="providerCamTitle">Servizio webcam</string>
-	<string name="providerCamKey">providerCamKey</string>
-	<string name="providerCamDefault">www.aereistrade.it</string>
+	<string name="providerTrafficDefault">traffico.OTTOtelematics.com</string>
+	<string name="providerCamTitle">Servizio WebCam</string>
+	<string name="providerCamKey">providerCamKeyDue</string>
+	<string name="providerCamDefault">mobile.AEREIstrade.it</string>
 	<string name="commonCategory">Opzioni generali</string>
 	<string name="berserkTitle">Berserk</string>
 	<string name="berserkKey">berserkKey</string>
