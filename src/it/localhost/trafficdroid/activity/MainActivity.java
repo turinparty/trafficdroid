@@ -1,5 +1,9 @@
 package it.localhost.trafficdroid.activity;
 
+import com.google.ads.AdRequest;
+import com.google.ads.AdSize;
+import com.google.ads.AdView;
+
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdException;
@@ -27,6 +31,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -48,6 +53,9 @@ public class MainActivity extends Activity {
 		intentFilter.addAction(Const.endUpdate);
 		tableLayout = (TableLayout) findViewById(R.id.zonelist);
 		layoutInflater = LayoutInflater.from(this);
+		AdView adView = new AdView(this, AdSize.BANNER, "a14d8f6a3c4c2f3");
+		((LinearLayout) findViewById(R.id.linearLayout)).addView(adView);
+		adView.loadAd(new AdRequest());
 		webcamOnClickListener = new OnClickListener() {
 			public void onClick(View v) {
 				String code = (String) v.getTag();
