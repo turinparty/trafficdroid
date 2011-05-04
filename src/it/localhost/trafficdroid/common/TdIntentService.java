@@ -4,6 +4,7 @@ import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
+import it.localhost.trafficdroid.parser.TrafficParser;
 import android.app.IntentService;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -34,7 +35,7 @@ public class TdIntentService extends IntentService {
 			String url = sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault));
 			if (!url.equals(getString(R.string.providerTrafficDefault))) {
 				MainDTO mainDto = MainDAO.create(this, url);
-				Parser.parse(mainDto);
+				TrafficParser.parse(mainDto);
 				MainDAO.store(mainDto, this);
 				String congestedZones = mainDto.getCongestedZones();
 				if (congestedZones != null && PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.notificationEnablerKey), Boolean.parseBoolean(getString(R.string.notificationEnablerDefault)))) {

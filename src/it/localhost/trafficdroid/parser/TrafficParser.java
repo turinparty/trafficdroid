@@ -1,5 +1,7 @@
-package it.localhost.trafficdroid.common;
+package it.localhost.trafficdroid.parser;
 
+import it.localhost.trafficdroid.common.Const;
+import it.localhost.trafficdroid.common.TdException;
 import it.localhost.trafficdroid.dao.TrafficDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
@@ -11,7 +13,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class Parser {
+public class TrafficParser {
 	public static MainDTO parse(MainDTO dto) throws TdException {
 		dto.resetCongestedZones();
 		for (StreetDTO street : dto.getStreets()) {
