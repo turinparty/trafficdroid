@@ -8,6 +8,8 @@ public class Const {
 	public static final int menuSettings = 1;
 	public static final int menuRefresh = 2;
 	public static final int notificationId = 1;
+	public static final char A = 'A';
+	public static final char z = 'z';
 	public static final String openRound = " (";
 	public static final String closeRound = ")";
 	public static final String equal = "=";
@@ -17,6 +19,7 @@ public class Const {
 	public static final String dyn = "/dyn/";
 	public static final String html = ".html?ts=1";
 	public static final String popupTelecamera = "/autostrade-mobile/popupTelecamera.do?tlc=";
+	public static final String events = "/portale/rss?rsstype=traffic";
 	public static final String cookie = "/autostrade/traffico.do";
 	public static final String codeDiv = "div";
 	public static final String codeId = "id";
@@ -35,6 +38,10 @@ public class Const {
 	public static final Intent endUpdateIntent = new Intent(Const.endUpdate);
 	public static final Intent scheduleServiceIntent = new Intent(Const.scheduleService);
 	public static final String camId = "camId";
+	public static final String stringEventi = " eventi!";
+	public static final String formatDateEventi = "yyyy-MM-dd'T'HH:mm:ss'Z'";
+	public static final String adMobId = "a14d8f6a3c4c2f3";
+	public static final String item = "item";
 	public static final int[] streetsRes = new int[] { R.array.streetsId, R.array.streetsName };
 
 	public static final int[][] zonesRes() {

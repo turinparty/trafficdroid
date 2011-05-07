@@ -9,6 +9,9 @@
 	<string name="providerCamTitle">Servizio WebCam</string>
 	<string name="providerCamKey">providerCamKeyDue</string>
 	<string name="providerCamDefault">mobile.AEREIstrade.it</string>
+	<string name="providerEventTitle">Servizio Eventi</string>
+	<string name="providerEventKey">providerEventKeyDue</string>
+	<string name="providerEventDefault">www.cciss.it</string>
 	<string name="commonCategory">Opzioni generali</string>
 	<string name="berserkTitle">Berserk</string>
 	<string name="berserkKey">berserkKey</string>

@@ -37,6 +37,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
+	private AdView adView;
 	private TableLayout tableLayout;
 	private LayoutInflater layoutInflater;
 	private IntentFilter intentFilter;
@@ -53,13 +54,12 @@ public class MainActivity extends Activity {
 		intentFilter.addAction(Const.endUpdate);
 		tableLayout = (TableLayout) findViewById(R.id.zonelist);
 		layoutInflater = LayoutInflater.from(this);
-		AdView adView = new AdView(this, AdSize.BANNER, "a14d8f6a3c4c2f3");
+		adView = new AdView(this, AdSize.BANNER, Const.adMobId);
 		((LinearLayout) findViewById(R.id.linearLayout)).addView(adView);
-		adView.loadAd(new AdRequest());
 		webcamOnClickListener = new OnClickListener() {
 			public void onClick(View v) {
 				String code = (String) v.getTag();
-				if (code.charAt(0) == 'z') {
+				if (code.charAt(0) == Const.z) {
 					Intent intent = new Intent(MainActivity.this, WebcamActivity.class);
 					intent.putExtra(Const.camId, code.substring(1));
 					startActivity(intent);
@@ -83,6 +83,7 @@ public class MainActivity extends Activity {
 	public void onResume() {
 		super.onResume();
 		registerReceiver(receiver, intentFilter);
+		adView.loadAd(new AdRequest());
 		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
 		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 		if (sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault)).equals(getString(R.string.providerTrafficDefault)))
@@ -133,6 +134,12 @@ public class MainActivity extends Activity {
 				((TextView) streetRow.findViewById(R.id.left)).setText(street.getDirectionLeft());
 				((TextView) streetRow.findViewById(R.id.right)).setText(street.getDirectionRight());
 				tableLayout.addView(streetRow);
+				if (street.getEvents().size() != 0) {
+					TableRow eventRow = (TableRow) layoutInflater.inflate(R.layout.event, tableLayout, false);
+					((ImageView) eventRow.findViewById(R.id.event)).setImageResource(android.R.drawable.stat_notify_error);
+					((TextView) eventRow.findViewById(R.id.zoneName)).setText(street.getEvents().size() + Const.stringEventi);
+					tableLayout.addView(eventRow);
+				}
 				for (ZoneDTO zoneDTO : street.getZones()) {
 					TableRow zoneNameRow = (TableRow) layoutInflater.inflate(R.layout.zonename, tableLayout, false);
 					TableRow zoneSpeedRow = (TableRow) layoutInflater.inflate(R.layout.zone, tableLayout, false);
@@ -149,7 +156,7 @@ public class MainActivity extends Activity {
 					zoneSpeedRow.setTag(zoneDTO.getId());
 					zoneSpeedRow.setOnClickListener(webcamOnClickListener);
 					ImageView cam = (ImageView) zoneSpeedRow.findViewById(R.id.cam);
-					if (zoneDTO.getId().charAt(0) == 'z')
+					if (zoneDTO.getId().charAt(0) == Const.z)
 						cam.setImageResource(android.R.drawable.ic_menu_camera);
 					else
 						cam.setImageResource(android.R.drawable.ic_menu_add);

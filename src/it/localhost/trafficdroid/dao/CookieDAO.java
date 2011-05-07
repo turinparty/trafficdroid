@@ -24,7 +24,6 @@ public class CookieDAO {
 		} catch (IOException e) {
 			throw new TdException(TdException.IOException, e.getMessage());
 		}
-	
 		Cookie sessionCookie = httpclient.getCookieStore().getCookies().get(0);
 		httpclient.getConnectionManager().shutdown();
 		CookieSyncManager.createInstance(context);

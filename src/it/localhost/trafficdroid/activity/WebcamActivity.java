@@ -18,23 +18,11 @@ public class WebcamActivity extends Activity {
 		setContentView(mWebView);
 		mWebView.getSettings().setJavaScriptEnabled(true);
 		String url = PreferenceManager.getDefaultSharedPreferences(this).getString(getString(R.string.providerCamKey), getString(R.string.providerCamDefault));
-		if (url.equals(getString(R.string.providerCamDefault)))
-			new AlertDialog.Builder(this).setTitle(getString(R.string.warning)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.badWebcamConf)).show();
-		else {
-		//	try {
-		//		CookieDAO.setCookie(this, url);
-		//	} catch (TdException e) {
-		//		e.printStackTrace();
-		//	}
+		if (!url.equals(getString(R.string.providerCamDefault)))
+			//CookieDAO.setCookie(this, url);
 			mWebView.loadUrl(Const.http + url + Const.popupTelecamera + getIntent().getStringExtra(Const.camId));
+		else {
+			new AlertDialog.Builder(this).setTitle(getString(R.string.warning)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.badWebcamConf)).show();
 		}
-	}
-
-	@Override
-	protected void onPause() {
-		super.onPause();
-		mWebView.clearHistory();
-		mWebView.clearFormData();
-		mWebView.clearCache(true);
 	}
 }

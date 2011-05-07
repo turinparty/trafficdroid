@@ -14,14 +14,13 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class TrafficParser {
-	public static MainDTO parse(MainDTO dto) throws TdException {
-		dto.resetCongestedZones();
+	public static void parse(MainDTO dto, String url) throws TdException {
 		for (StreetDTO street : dto.getStreets()) {
 			int zoneCounter = 0;
-			Element document = TrafficDAO.getData(street.getId(), dto.getUrl()).getDocumentElement();
+			Element document = TrafficDAO.getData(street.getId(), url).getDocumentElement();
 			NodeList trDirection = document.getElementsByTagName(Const.codeTable).item(2).getChildNodes();
-			street.setDirectionLeft(trDirection.item(0).getChildNodes().item(0).getFirstChild().getNodeValue());
-			street.setDirectionRight(trDirection.item(1).getChildNodes().item(0).getFirstChild().getNodeValue());
+			street.setDirectionLeft(trDirection.item(0).getChildNodes().item(0).getTextContent());
+			street.setDirectionRight(trDirection.item(1).getChildNodes().item(0).getTextContent());
 			NodeList divsZoneA = document.getElementsByTagName(Const.codeDiv);
 			for (int i = 0; i < divsZoneA.getLength(); i++) {
 				Node idZone = divsZoneA.item(i).getAttributes().getNamedItem(Const.codeId);
@@ -32,11 +31,11 @@ public class TrafficParser {
 							NodeList trZone = divsZoneB.item(y).getFirstChild().getChildNodes();
 							for (int z = 0; z < trZone.getLength() - 1 && zoneCounter < street.getZones().size(); z += 2) {
 								ZoneDTO zone = street.getZones().get(zoneCounter);
-								if (trZone.item(z).getChildNodes().item(1).getChildNodes().item(2).getFirstChild().getNodeValue().trim().equalsIgnoreCase(zone.getName())) {
+								if (trZone.item(z).getChildNodes().item(1).getChildNodes().item(2).getTextContent().trim().equalsIgnoreCase(zone.getName())) {
 									zone.setCatLeft(Integer.parseInt(trZone.item(z + 1).getChildNodes().item(1).getAttributes().getNamedItem(Const.codeClass).getNodeValue().substring(2, 3)));
-									zone.setSpeedLeft(trZone.item(z + 1).getChildNodes().item(0).getFirstChild().getNodeValue());
+									zone.setSpeedLeft(trZone.item(z + 1).getChildNodes().item(0).getTextContent());
 									zone.setCatRight(Integer.parseInt(trZone.item(z + 1).getChildNodes().item(2).getAttributes().getNamedItem(Const.codeClass).getNodeValue().substring(2, 3)));
-									zone.setSpeedRight(trZone.item(z + 1).getChildNodes().item(3).getFirstChild().getNodeValue());
+									zone.setSpeedRight(trZone.item(z + 1).getChildNodes().item(3).getTextContent());
 									boolean congestionLeft = zone.getCatLeft() > 0 && zone.getCatLeft() <= dto.getCongestionThreshold();
 									boolean congestionRight = zone.getCatRight() > 0 && zone.getCatRight() <= dto.getCongestionThreshold();
 									if (congestionLeft && congestionRight)
@@ -54,6 +53,5 @@ public class TrafficParser {
 			}
 		}
 		dto.setTrafficTime(new Date());
-		return dto;
 	}
 }

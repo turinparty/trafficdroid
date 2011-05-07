@@ -3,8 +3,9 @@
 	android:layout_width="fill_parent" android:background="#333333"
 	android:layout_height="wrap_content">
 	<TextView android:id="@+id/left" android:gravity="center" />
-	<TextView android:id="@+id/streetName" android:layout_width="wrap_content"
-		android:textStyle="bold" android:layout_height="wrap_content"
-		android:gravity="center" />
+
+		<TextView android:id="@+id/streetName" android:layout_width="wrap_content"
+			android:textStyle="bold" android:layout_height="wrap_content"
+			android:gravity="center" />
 	<TextView android:id="@+id/right" android:gravity="center" />
 </TableRow>

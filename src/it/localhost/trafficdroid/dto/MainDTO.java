@@ -3,21 +3,18 @@ package it.localhost.trafficdroid.dto;
 import it.localhost.trafficdroid.common.Const;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class MainDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private List<StreetDTO> streets;
-	private String url;
+	private List<StreetDTO> streets = null;
 	private Date trafficTime;
-	private StringBuilder congestedZones;
+	private StringBuilder congestedZones = null;
 	private int congestionThreshold;
 
-	public MainDTO(List<StreetDTO> streets, String url) {
-		super();
-		this.streets = streets;
-		this.url = url;
+	public MainDTO() {
 		congestedZones = new StringBuilder();
 	}
 
@@ -29,23 +26,21 @@ public class MainDTO implements Serializable {
 		this.trafficTime = trafficTime;
 	}
 
+	public void addStreet(StreetDTO street) {
+		if (streets == null)
+			streets = new ArrayList<StreetDTO>();
+		streets.add(street);
+	}
+
 	public List<StreetDTO> getStreets() {
 		return streets;
 	}
 
-	public String getUrl() {
-		return url;
-	}
-
 	public String getCongestedZones() {
-		if (congestedZones.length() > 0)
+		if (congestedZones != null && congestedZones.length() > 0)
 			return congestedZones.substring(0, congestedZones.length() - 2);
 		else
 			return null;
-	}
-
-	public void resetCongestedZones() {
-		congestedZones.setLength(0);
 	}
 
 	public void addCongestedZone(String zone) {
