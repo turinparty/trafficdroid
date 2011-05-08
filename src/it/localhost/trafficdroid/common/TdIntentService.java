@@ -35,22 +35,21 @@ public class TdIntentService extends IntentService {
 		String trafficUrl = sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault));
 		String eventUrl = sharedPreferences.getString(getString(R.string.providerEventKey), getString(R.string.providerEventDefault));
 		try {
-			//METTERE ! su event
-			if (!trafficUrl.equals(getString(R.string.providerTrafficDefault)) && eventUrl.equals(getString(R.string.providerEventDefault))) {
-				MainDTO mainDto = MainDAO.create(this);
+			MainDTO mainDto = MainDAO.create(this);
+			if (!trafficUrl.equals(getString(R.string.providerTrafficDefault)))
 				TrafficParser.parse(mainDto, trafficUrl);
+			if (!eventUrl.equals(getString(R.string.providerEventDefault)))
 				EventParser.parse(mainDto, eventUrl);
-				MainDAO.store(mainDto, this);
-				String congestedZones = mainDto.getCongestedZones();
-				if (congestedZones != null && PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.notificationEnablerKey), Boolean.parseBoolean(getString(R.string.notificationEnablerDefault)))) {
-					Notification notification = new Notification(R.drawable.notif_icon, getString(R.string.tickerText), System.currentTimeMillis());
-					notification.flags |= Notification.FLAG_AUTO_CANCEL;
-					notification.defaults |= Notification.DEFAULT_ALL;
-					notification.setLatestEventInfo(this, getString(R.string.notificationTitle), congestedZones, PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), PendingIntent.FLAG_UPDATE_CURRENT));
-					((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(Const.notificationId, notification);
-				} else
-					((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
-			}
+			MainDAO.store(mainDto, this);
+			String congestedZones = mainDto.getCongestedZones();
+			if (congestedZones != null && PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.chiaroveggenzaEnablerKey), Boolean.parseBoolean(getString(R.string.chiaroveggenzaEnablerDefault)))) {
+				Notification notification = new Notification(R.drawable.notif_icon, getString(R.string.notificationTicker), System.currentTimeMillis());
+				notification.flags |= Notification.FLAG_AUTO_CANCEL;
+				notification.defaults |= Notification.DEFAULT_ALL;
+				notification.setLatestEventInfo(this, getString(R.string.notificationTitle), congestedZones, PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), PendingIntent.FLAG_UPDATE_CURRENT));
+				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(Const.notificationId, notification);
+			} else
+				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
 		} catch (TdException e) {
 			// come gestiamo la cosa?
 		} finally {

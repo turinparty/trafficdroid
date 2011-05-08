@@ -9,9 +9,9 @@ import java.util.List;
 
 public class MainDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private List<StreetDTO> streets = null;
+	private List<StreetDTO> streets;
 	private Date trafficTime;
-	private StringBuilder congestedZones = null;
+	private StringBuilder congestedZones;
 	private int congestionThreshold;
 
 	public MainDTO() {

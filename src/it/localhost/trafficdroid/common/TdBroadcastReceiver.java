@@ -20,8 +20,8 @@ public class TdBroadcastReceiver extends BroadcastReceiver {
 			SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
 			alarmManager.cancel(pendingIntent);
 			Resources resources = context.getResources();
-			if (sharedPreferences.getBoolean(resources.getString(R.string.notificationEnablerKey), Boolean.parseBoolean(resources.getString(R.string.notificationEnablerDefault)))) {
-				int notificationTimeValue = Integer.parseInt(sharedPreferences.getString(resources.getString(R.string.notificationTimeKey), resources.getString(R.string.notificationTimeDefault)));
+			if (sharedPreferences.getBoolean(resources.getString(R.string.chiaroveggenzaEnablerKey), Boolean.parseBoolean(resources.getString(R.string.chiaroveggenzaEnablerDefault)))) {
+				int notificationTimeValue = Integer.parseInt(sharedPreferences.getString(resources.getString(R.string.chiaroveggenzaTimeKey), resources.getString(R.string.chiaroveggenzaTimeDefault)));
 				alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + notificationTimeValue, notificationTimeValue, pendingIntent);
 			}
 		} else if (intent.getAction().equals(Const.doUpdate)) {

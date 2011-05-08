@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-	<PreferenceCategory android:title="@string/commonCategory">
-		<CheckBoxPreference android:title="@string/berserkTitle"
-			android:key="@string/berserkKey" android:summary="@string/berserkSummary"
-			android:defaultValue="@string/berserkDefault" />
-	</PreferenceCategory>
 	<PreferenceCategory android:title="@string/providerCategory">
 		<EditTextPreference android:title="@string/providerTrafficTitle"
 			android:summary="@string/providerSummary" android:key="@string/providerTrafficKey"
@@ -16,17 +11,22 @@
 			android:summary="@string/providerSummary" android:key="@string/providerCamKey"
 			android:defaultValue="@string/providerCamDefault" />
 	</PreferenceCategory>
+	<PreferenceCategory android:title="@string/updateCategory">
+		<CheckBoxPreference android:title="@string/berserkTitle"
+			android:key="@string/berserkKey" android:summary="@string/berserkSummary"
+			android:defaultValue="@string/berserkDefault" />
+		<CheckBoxPreference android:title="@string/chiaroveggenzaEnablerTitle"
+			android:key="@string/chiaroveggenzaEnablerKey" android:summary="@string/chiaroveggenzaEnablerSummary"
+			android:defaultValue="@string/chiaroveggenzaEnablerDefault" />
+		<ListPreference android:title="@string/chiaroveggenzaTimeTitle"
+			android:key="@string/chiaroveggenzaTimeKey" android:summary="@string/chiaroveggenzaTimeSummary"
+			android:entries="@array/chiaroveggenzaTimeLabel" android:entryValues="@array/chiaroveggenzaTimeValue"
+			android:defaultValue="@string/chiaroveggenzaTimeDefault" />
+	</PreferenceCategory>
 	<PreferenceCategory android:title="@string/notificationCategory">
-		<CheckBoxPreference android:title="@string/notificationEnablerTitle"
-			android:key="@string/notificationEnablerKey" android:summary="@string/notificationEnablerSummary"
-			android:defaultValue="@string/notificationEnablerDefault" />
 		<ListPreference android:title="@string/notificationSpeedTitle"
 			android:key="@string/notificationSpeedKey" android:summary="@string/notificationSpeedSummary"
 			android:entries="@array/notificationSpeedLabel" android:entryValues="@array/notificationSpeedValue"
 			android:defaultValue="@string/notificationSpeedDefault" />
-		<ListPreference android:title="@string/notificationTimeTitle"
-			android:key="@string/notificationTimeKey" android:summary="@string/notificationTimeSummary"
-			android:entries="@array/notificationTimeLabel" android:entryValues="@array/notificationTimeValue"
-			android:defaultValue="@string/notificationTimeDefault" />
 	</PreferenceCategory>
 </PreferenceScreen>

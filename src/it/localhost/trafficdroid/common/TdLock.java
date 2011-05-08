@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.PowerManager;
 
 public class TdLock {
-	private static PowerManager.WakeLock lockStatic = null;
+	private static PowerManager.WakeLock lockStatic;
 
 	synchronized public static PowerManager.WakeLock getLock(Context context) {
 		if (lockStatic == null) {

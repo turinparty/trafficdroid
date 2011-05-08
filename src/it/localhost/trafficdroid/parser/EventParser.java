@@ -20,9 +20,11 @@ public class EventParser {
 			try {
 				NodeList item = items.item(i).getChildNodes();
 				String title = new StringTokenizer(item.item(1).getTextContent()).nextToken();
-				for (StreetDTO streetDTO : dto.getStreets())
-					if (title.charAt(0) == Const.A && Integer.parseInt(title.substring(1, title.length())) == streetDTO.getId())
-						streetDTO.addEvent(new EventDTO(item.item(3).getTextContent(), sdf.parse(item.item(7).getTextContent())));
+				StringTokenizer descST = new StringTokenizer(item.item(3).getTextContent(), "\n");
+				if (title.charAt(0) == Const.A)
+					for (StreetDTO streetDTO : dto.getStreets())
+						if (Integer.parseInt(title.substring(1, title.length())) == streetDTO.getId())
+							streetDTO.addEvent(new EventDTO(descST.nextToken(), descST.nextToken(), sdf.parse(item.item(7).getTextContent())));
 			} catch (Exception e) {
 				// Do nothing
 			}

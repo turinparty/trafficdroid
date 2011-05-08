@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="notificationSpeedValue">
+		<item>0</item>
 		<item>1</item>
 		<item>2</item>
 		<item>3</item>
@@ -8,13 +9,14 @@
 		<item>5</item>
 	</string-array>
 	<string-array name="notificationSpeedLabel">
-		<item>Fino a 10 Km/h</item>
-		<item>Fino a 30 Km/h</item>
-		<item>Fino a 50 Km/h</item>
-		<item>Fino a 70 Km/h</item>
-		<item>Fino a 90 Km/h</item>
+		<item>0 Km/h</item>
+		<item>10 Km/h</item>
+		<item>30 Km/h</item>
+		<item>50 Km/h</item>
+		<item>70 Km/h</item>
+		<item>90 Km/h</item>
 	</string-array>
-	<string-array name="notificationTimeValue">
+	<string-array name="chiaroveggenzaTimeValue">
 		<item>300000</item>
 		<item>600000</item>
 		<item>900000</item>
@@ -23,7 +25,7 @@
 		<item>7200000</item>
 		<item>14400000</item>
 	</string-array>
-	<string-array name="notificationTimeLabel">
+	<string-array name="chiaroveggenzaTimeLabel">
 		<item>5 minuti</item>
 		<item>10 minuti</item>
 		<item>15 minuti</item>

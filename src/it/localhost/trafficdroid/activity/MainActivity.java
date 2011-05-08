@@ -8,11 +8,13 @@ import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdException;
 import it.localhost.trafficdroid.dao.MainDAO;
+import it.localhost.trafficdroid.dto.EventDTO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -32,6 +34,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -42,7 +45,10 @@ public class MainActivity extends Activity {
 	private LayoutInflater layoutInflater;
 	private IntentFilter intentFilter;
 	private OnClickListener webcamOnClickListener;
+	private OnClickListener eventOnClickListener;
 	private BroadcastReceiver receiver;
+	private MainDTO mainDTO;
+	private SharedPreferences sharedPreferences;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -54,17 +60,41 @@ public class MainActivity extends Activity {
 		intentFilter.addAction(Const.endUpdate);
 		tableLayout = (TableLayout) findViewById(R.id.zonelist);
 		layoutInflater = LayoutInflater.from(this);
+		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 		adView = new AdView(this, AdSize.BANNER, Const.adMobId);
 		((LinearLayout) findViewById(R.id.linearLayout)).addView(adView);
 		webcamOnClickListener = new OnClickListener() {
 			public void onClick(View v) {
 				String code = (String) v.getTag();
-				if (code.charAt(0) == Const.z) {
+				String url = sharedPreferences.getString(getString(R.string.providerCamKey), getString(R.string.providerCamDefault));
+				if (code.charAt(0) != Const.z)
+					new AlertDialog.Builder(MainActivity.this).setTitle(getString(R.string.info)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.help)).show();
+				else if (url.equals(getString(R.string.providerCamDefault)))
+					new AlertDialog.Builder(MainActivity.this).setTitle(getString(R.string.warning)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.badWebcamConf)).show();
+				else if (code.charAt(0) == Const.z && !url.equals(getString(R.string.providerCamDefault))) {
 					Intent intent = new Intent(MainActivity.this, WebcamActivity.class);
 					intent.putExtra(Const.camId, code.substring(1));
 					startActivity(intent);
-				} else
-					new AlertDialog.Builder(MainActivity.this).setTitle(getResources().getString(R.string.info)).setPositiveButton(getResources().getString(R.string.ok), null).setMessage(getResources().getString(R.string.help)).show();
+				}
+			}
+		};
+		eventOnClickListener = new OnClickListener() {
+			public void onClick(View v) {
+				StreetDTO street = mainDTO.getStreets().get((Integer) v.getTag());
+				Dialog d = new Dialog(MainActivity.this);
+				ScrollView sv = new ScrollView(MainActivity.this);
+				LinearLayout ll = new LinearLayout(MainActivity.this);
+				d.setTitle(street.getName());
+				ll.setOrientation(LinearLayout.VERTICAL);
+				d.setContentView(sv);
+				sv.addView(ll);
+				for (EventDTO event : street.getEvents()) {
+					View eventRow = layoutInflater.inflate(R.layout.eventdialog, null);
+					((TextView) eventRow.findViewById(R.id.textEvent)).setText(event.getTitle() + " " + event.getDescription());
+					// TODO icona personalizzata in base all'evento
+					ll.addView(eventRow);
+				}
+				d.show();
 			}
 		};
 		receiver = new BroadcastReceiver() {
@@ -85,9 +115,10 @@ public class MainActivity extends Activity {
 		registerReceiver(receiver, intentFilter);
 		adView.loadAd(new AdRequest());
 		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
-		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 		if (sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault)).equals(getString(R.string.providerTrafficDefault)))
 			new AlertDialog.Builder(this).setTitle(getString(R.string.warning)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.badConf)).show();
+		else if (sharedPreferences.getString(getString(R.string.providerEventKey), getString(R.string.providerEventDefault)).equals(getString(R.string.providerEventDefault)))
+			new AlertDialog.Builder(this).setTitle(getString(R.string.warning)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.badEventConf)).show();
 		else {
 			if (sharedPreferences.getBoolean(getString(R.string.berserkKey), Boolean.parseBoolean(getString(R.string.berserkDefault))))
 				sendBroadcast(Const.doUpdateIntent);
@@ -125,10 +156,11 @@ public class MainActivity extends Activity {
 
 	private void refresh() {
 		try {
-			MainDTO mainDTO = MainDAO.retrieve(this);
+			mainDTO = MainDAO.retrieve(this);
 			tableLayout.removeAllViews();
 			setTitle(getString(R.string.app_name) + " " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
-			for (StreetDTO street : mainDTO.getStreets()) {
+			for (int i = 0; i < mainDTO.getStreets().size(); i++) {
+				StreetDTO street = mainDTO.getStreets().get(i);
 				TableRow streetRow = (TableRow) layoutInflater.inflate(R.layout.street, tableLayout, false);
 				((TextView) streetRow.findViewById(R.id.streetName)).setText(street.getName());
 				((TextView) streetRow.findViewById(R.id.left)).setText(street.getDirectionLeft());
@@ -138,6 +170,8 @@ public class MainActivity extends Activity {
 					TableRow eventRow = (TableRow) layoutInflater.inflate(R.layout.event, tableLayout, false);
 					((ImageView) eventRow.findViewById(R.id.event)).setImageResource(android.R.drawable.stat_notify_error);
 					((TextView) eventRow.findViewById(R.id.zoneName)).setText(street.getEvents().size() + Const.stringEventi);
+					eventRow.setTag(i);
+					eventRow.setOnClickListener(eventOnClickListener);
 					tableLayout.addView(eventRow);
 				}
 				for (ZoneDTO zoneDTO : street.getZones()) {
