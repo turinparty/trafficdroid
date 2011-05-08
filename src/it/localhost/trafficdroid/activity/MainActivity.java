@@ -166,7 +166,7 @@ public class MainActivity extends Activity {
 				((TextView) streetRow.findViewById(R.id.left)).setText(street.getDirectionLeft());
 				((TextView) streetRow.findViewById(R.id.right)).setText(street.getDirectionRight());
 				tableLayout.addView(streetRow);
-				if (street.getEvents().size() != 0) {
+				if (street.getEvents() != null && street.getEvents().size() != 0) {
 					TableRow eventRow = (TableRow) layoutInflater.inflate(R.layout.event, tableLayout, false);
 					((ImageView) eventRow.findViewById(R.id.event)).setImageResource(android.R.drawable.stat_notify_error);
 					((TextView) eventRow.findViewById(R.id.zoneName)).setText(street.getEvents().size() + Const.stringEventi);
