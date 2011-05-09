@@ -15,6 +15,7 @@ public class MainDTO implements Serializable {
 	private int congestionThreshold;
 
 	public MainDTO() {
+		streets = new ArrayList<StreetDTO>();
 		congestedZones = new StringBuilder();
 	}
 
@@ -27,8 +28,6 @@ public class MainDTO implements Serializable {
 	}
 
 	public void addStreet(StreetDTO street) {
-		if (streets == null)
-			streets = new ArrayList<StreetDTO>();
 		streets.add(street);
 	}
 
@@ -37,7 +36,7 @@ public class MainDTO implements Serializable {
 	}
 
 	public String getCongestedZones() {
-		if (congestedZones != null && congestedZones.length() > 0)
+		if (congestedZones.length() > 0)
 			return congestedZones.substring(0, congestedZones.length() - 2);
 		else
 			return null;
