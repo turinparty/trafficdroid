@@ -100,11 +100,8 @@ public class MainActivity extends Activity {
 		};
 		streetOnClickListener = new OnClickListener() {
 			public void onClick(View v) {
-				for (int i = (Integer) v.getTag(R.id.streetStart); i < (Integer) v.getTag(R.id.streetEnd); i++) {
-					if (tableLayout.getChildAt(i) == null)
-						System.err.println(i);
+				for (int i = (Integer) v.getTag(R.id.streetStart); i < (Integer) v.getTag(R.id.streetEnd); i++)
 					tableLayout.getChildAt(i).setVisibility(tableLayout.getChildAt(i).getVisibility() != View.VISIBLE ? View.VISIBLE : View.GONE);
-				}
 			}
 		};
 		receiver = new BroadcastReceiver() {
