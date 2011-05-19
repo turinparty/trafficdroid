@@ -9,10 +9,11 @@
 	<string name="settings">Impostazioni</string>
 	<string name="refresh">Aggiorna</string>
 	<string name="badConf">TrafficDroid ha bisogno di un provider per il traffico, inserisci questa informazione in impostazioni. Il sito contiene maggiori informazioni.</string>
-	<string name="badEventConf">TrafficDroid ha bisogno di un provider per gli eventi, inserisci questa informazione in impostazioni. Il sito contiene maggiori informazioni.</string>
+	<string name="badBadNewsConf">TrafficDroid ha bisogno di un provider per le bad news, inserisci questa informazione in impostazioni. Il sito contiene maggiori informazioni.</string>
 	<string name="badWebcamConf">TrafficDroid ha bisogno di un provider per le webcam, inserisci questa informazione in impostazioni. Il sito contiene maggiori informazioni.</string>
 	<string name="selectStreet">Seleziona l\'intera strada</string>
 	<string name="sniper">Seleziona le singole zone</string>
+	<string name="badNews"> Bad News!</string>
 	<string name="mappedSreet">Strade preferite</string>
 	<string name="providerCategory">Provider</string>
 	<string name="providerSummary">Verifica di averne i permessi</string>
@@ -22,9 +23,9 @@
 	<string name="providerCamTitle">Servizio WebCam</string>
 	<string name="providerCamKey">providerCamKeyDue</string>
 	<string name="providerCamDefault">mobile.AEREIstrade.it</string>
-	<string name="providerEventTitle">Servizio Eventi</string>
-	<string name="providerEventKey">providerEventKeyDue</string>
-	<string name="providerEventDefault">www.EEcciss.it</string>
+	<string name="providerBadNewsTitle">Servizio Bad-News</string>
+	<string name="providerBadNewsKey">providerBadNewsKey</string>
+	<string name="providerBadNewsDefault">www.EEcciss.it</string>
 	<string name="updateCategory">Aggiornamento Dati</string>
 	<string name="berserkTitle">Berserk</string>
 	<string name="berserkKey">berserkKey</string>

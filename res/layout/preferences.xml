@@ -4,9 +4,9 @@
 		<EditTextPreference android:title="@string/providerTrafficTitle"
 			android:summary="@string/providerSummary" android:key="@string/providerTrafficKey"
 			android:defaultValue="@string/providerTrafficDefault" />
-		<EditTextPreference android:title="@string/providerEventTitle"
-			android:summary="@string/providerSummary" android:key="@string/providerEventKey"
-			android:defaultValue="@string/providerEventDefault" />
+		<EditTextPreference android:title="@string/providerBadNewsTitle"
+			android:summary="@string/providerSummary" android:key="@string/providerBadNewsKey"
+			android:defaultValue="@string/providerBadNewsDefault" />
 		<EditTextPreference android:title="@string/providerCamTitle"
 			android:summary="@string/providerSummary" android:key="@string/providerCamKey"
 			android:defaultValue="@string/providerCamDefault" />

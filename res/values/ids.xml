@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<item type="id" name="BNDImage" />
+	<item type="id" name="BNDText" />
+	<item type="id" name="BNTText" />
+	<item type="id" name="mainLayout" />
+	<item type="id" name="mainTable" />
+	<item type="id" name="streetDirLeft" />
+	<item type="id" name="streetDirRight" />
+	<item type="id" name="streetName" />
+	<item type="id" name="streetEnd" />
+	<item type="id" name="streetStart" />
+	<item type="id" name="zoneSpeedLeft" />
+	<item type="id" name="zoneSpeedRight" />
+	<item type="id" name="zoneCam" />
+	<item type="id" name="zoneNameaaa" />
+</resources>

@@ -38,7 +38,6 @@ public class Const {
 	public static final Intent endUpdateIntent = new Intent(Const.endUpdate);
 	public static final Intent scheduleServiceIntent = new Intent(Const.scheduleService);
 	public static final String camId = "camId";
-	public static final String stringEventi = " eventi !";
 	public static final String formatDateEventi = "yyyy-MM-dd'T'HH:mm:ss'Z'";
 	public static final String adMobId = "a14d8f6a3c4c2f3";
 	public static final String item = "item";

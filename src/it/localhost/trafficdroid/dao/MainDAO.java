@@ -49,9 +49,9 @@ public class MainDAO {
 	public static void store(MainDTO dto, Context context) throws TdException {
 		try {
 			FileOutputStream fos = context.openFileOutput(Const.tdData, Context.MODE_PRIVATE);
-			ObjectOutputStream out = new ObjectOutputStream(fos);
-			out.writeObject(dto);
-			out.close();
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			oos.writeObject(dto);
+			oos.close();
 			fos.close();
 		} catch (FileNotFoundException e) {
 			throw new TdException(TdException.FileNotFoundException, e.getMessage());

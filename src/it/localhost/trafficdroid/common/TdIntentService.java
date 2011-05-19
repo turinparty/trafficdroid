@@ -4,7 +4,7 @@ import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
-import it.localhost.trafficdroid.parser.EventParser;
+import it.localhost.trafficdroid.parser.BadNewsParser;
 import it.localhost.trafficdroid.parser.TrafficParser;
 import android.app.IntentService;
 import android.app.Notification;
@@ -33,13 +33,13 @@ public class TdIntentService extends IntentService {
 		sendBroadcast(Const.beginUpdateIntent);
 		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 		String trafficUrl = sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault));
-		String eventUrl = sharedPreferences.getString(getString(R.string.providerEventKey), getString(R.string.providerEventDefault));
+		String eventUrl = sharedPreferences.getString(getString(R.string.providerBadNewsKey), getString(R.string.providerBadNewsDefault));
 		try {
 			MainDTO mainDto = MainDAO.create(this);
 			if (!trafficUrl.equals(getString(R.string.providerTrafficDefault)))
 				TrafficParser.parse(mainDto, trafficUrl);
-			if (!eventUrl.equals(getString(R.string.providerEventDefault)))
-				EventParser.parse(mainDto, eventUrl);
+			if (!eventUrl.equals(getString(R.string.providerBadNewsDefault)))
+				BadNewsParser.parse(mainDto, eventUrl);
 			MainDAO.store(mainDto, this);
 			String congestedZones = mainDto.getCongestedZones();
 			if (congestedZones != null && PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.chiaroveggenzaEnablerKey), Boolean.parseBoolean(getString(R.string.chiaroveggenzaEnablerDefault)))) {

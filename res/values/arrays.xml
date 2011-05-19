@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="notificationSpeedValue">
-		<item>0</item>
 		<item>1</item>
 		<item>2</item>
 		<item>3</item>
@@ -9,7 +8,6 @@
 		<item>5</item>
 	</string-array>
 	<string-array name="notificationSpeedLabel">
-		<item>0 Km/h</item>
 		<item>10 Km/h</item>
 		<item>30 Km/h</item>
 		<item>50 Km/h</item>

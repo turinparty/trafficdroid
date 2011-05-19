@@ -10,13 +10,13 @@ public class StreetDTO implements Serializable {
 	private int id;
 	private List<ZoneDTO> zones;
 	private String[] directions;
-	private List<EventDTO> events;
+	private List<BadNewsDTO> events;
 
 	public StreetDTO(int id) {
 		super();
 		this.id = id;
 		zones = new ArrayList<ZoneDTO>();
-		events = new ArrayList<EventDTO>();
+		events = new ArrayList<BadNewsDTO>();
 		directions = new String[2];
 	}
 
@@ -36,7 +36,7 @@ public class StreetDTO implements Serializable {
 		return zones;
 	}
 
-	public void addEvent(EventDTO event) {
+	public void addEvent(BadNewsDTO event) {
 		events.add(event);
 	}
 
@@ -60,7 +60,7 @@ public class StreetDTO implements Serializable {
 		this.directions[1] = direction;
 	}
 
-	public List<EventDTO> getEvents() {
+	public List<BadNewsDTO> getEvents() {
 		return events;
 	}
 

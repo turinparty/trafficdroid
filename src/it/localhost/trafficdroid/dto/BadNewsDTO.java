@@ -3,13 +3,13 @@ package it.localhost.trafficdroid.dto;
 import java.io.Serializable;
 import java.util.Date;
 
-public class EventDTO implements Serializable {
+public class BadNewsDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String title;
 	private String description;
 	private Date date;
 
-	public EventDTO(String title, String description, Date date) {
+	public BadNewsDTO(String title, String description, Date date) {
 		super();
 		this.title = title;
 		this.description = description;
