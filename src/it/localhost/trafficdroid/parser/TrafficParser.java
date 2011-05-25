@@ -7,8 +7,6 @@ import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
 
-import java.util.Date;
-
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -26,7 +24,7 @@ public class TrafficParser {
 				Node idZone = divsZoneA.item(i).getAttributes().getNamedItem(Const.codeId);
 				if (idZone != null && idZone.getNodeValue().equalsIgnoreCase(Const.codeSection)) {
 					NodeList divsZoneB = divsZoneA.item(i).getChildNodes();
-					for (int y = 0; y < divsZoneB.getLength(); y++) {
+					for (int y = 0; y < divsZoneB.getLength(); y++)
 						if (divsZoneB.item(y).getAttributes().getNamedItem(Const.codeId).getNodeValue().equalsIgnoreCase(Const.codeRoadbox)) {
 							NodeList trZone = divsZoneB.item(y).getFirstChild().getChildNodes();
 							for (int z = 0; z < trZone.getLength() - 1 && zoneCounter < street.getZones().size(); z += 2) {
@@ -48,10 +46,8 @@ public class TrafficParser {
 								}
 							}
 						}
-					}
 				}
 			}
 		}
-		dto.setTrafficTime(new Date());
 	}
 }
