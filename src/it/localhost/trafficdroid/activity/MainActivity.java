@@ -162,9 +162,17 @@ public class MainActivity extends Activity {
 	}
 
 	private void refresh() {
+		tableLayout.removeAllViews();
 		try {
 			mainDTO = MainDAO.retrieve(this);
-			tableLayout.removeAllViews();
+		} catch (TdException e) {
+			mainDTO = null;
+			if (e.getKey() == TdException.FileNotFoundException)
+				sendBroadcast(Const.doUpdateIntent);
+			else
+				e.printStackTrace();
+		}
+		if (mainDTO != null) {
 			setTitle(getString(R.string.app_name) + " " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
 			for (int i = 0; i < mainDTO.getStreets().size(); i++) {
 				StreetDTO street = mainDTO.getStreets().get(i);
@@ -207,9 +215,6 @@ public class MainActivity extends Activity {
 					tableLayout.addView(zoneSpeedRow);
 				}
 			}
-		} catch (TdException e) {
-			if (e.getKey() != TdException.FileNotFoundException)
-				e.printStackTrace();
 		}
 	}
 }
