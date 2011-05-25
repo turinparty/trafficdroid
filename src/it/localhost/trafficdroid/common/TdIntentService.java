@@ -1,5 +1,7 @@
 package it.localhost.trafficdroid.common;
 
+import java.util.Date;
+
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.dao.MainDAO;
@@ -40,6 +42,7 @@ public class TdIntentService extends IntentService {
 				TrafficParser.parse(mainDto, trafficUrl);
 			if (!eventUrl.equals(getString(R.string.providerBadNewsDefault)))
 				BadNewsParser.parse(mainDto, eventUrl);
+			mainDto.setTrafficTime(new Date());
 			MainDAO.store(mainDto, this);
 			String congestedZones = mainDto.getCongestedZones();
 			if (congestedZones != null && PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.chiaroveggenzaEnablerKey), Boolean.parseBoolean(getString(R.string.chiaroveggenzaEnablerDefault)))) {
