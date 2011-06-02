@@ -1,5 +1,7 @@
 package it.localhost.trafficdroid.activity;
 
+import java.util.GregorianCalendar;
+
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
 import android.app.Activity;
@@ -18,6 +20,7 @@ public class WebcamActivity extends Activity {
 		mWebView.getSettings().setJavaScriptEnabled(true);
 		String url = PreferenceManager.getDefaultSharedPreferences(this).getString(getString(R.string.providerCamKey), getString(R.string.providerCamDefault));
 		//CookieDAO.setCookie(this, url);
-		mWebView.loadUrl(Const.http + url + Const.popupTelecamera + getIntent().getStringExtra(Const.camId));
+		int code = Integer.parseInt(getIntent().getStringExtra(Const.camId)) + 6280 * (new GregorianCalendar().get(GregorianCalendar.DATE) + 3);
+		mWebView.loadUrl(Const.http + url + Const.popupTelecamera + code);
 	}
 }

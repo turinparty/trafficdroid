@@ -68,11 +68,11 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				String code = (String) v.getTag();
 				String url = sharedPreferences.getString(getString(R.string.providerCamKey), getString(R.string.providerCamDefault));
-				if (code.charAt(0) != Const.z)
+				if (code.charAt(0) != Const.wcm)
 					new AlertDialog.Builder(MainActivity.this).setTitle(getString(R.string.info)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.help)).show();
 				else if (url.equals(getString(R.string.providerCamDefault)))
 					new AlertDialog.Builder(MainActivity.this).setTitle(getString(R.string.warning)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.badWebcamConf)).show();
-				else if (code.charAt(0) == Const.z && !url.equals(getString(R.string.providerCamDefault))) {
+				else if (code.charAt(0) == Const.wcm && !url.equals(getString(R.string.providerCamDefault))) {
 					Intent intent = new Intent(MainActivity.this, WebcamActivity.class);
 					intent.putExtra(Const.camId, code.substring(1));
 					startActivity(intent);
@@ -183,14 +183,12 @@ public class MainActivity extends Activity {
 				tableLayout.addView(streetRow);
 				streetRow.setTag(R.id.streetStart, tableLayout.getChildCount());
 				if (street.getEvents() != null && street.getEvents().size() != 0) {
-					TableRow eventRow = (TableRow) layoutInflater.inflate(R.layout.badnewstable, tableLayout, false);
-					((TextView) eventRow.findViewById(R.id.BNTText)).setText(Integer.toString(street.getEvents().size()));
-					eventRow.setTag(i);
-					eventRow.setOnClickListener(badNewsOnClickListener);
-					tableLayout.addView(eventRow);
+					TableRow badNewsRow = (TableRow) layoutInflater.inflate(R.layout.badnewstable, tableLayout, false);
+					((TextView) badNewsRow.findViewById(R.id.BNTText)).setText(Integer.toString(street.getEvents().size()));
+					badNewsRow.setTag(i);
+					badNewsRow.setOnClickListener(badNewsOnClickListener);
+					tableLayout.addView(badNewsRow);
 				}
-				streetRow.setTag(R.id.streetEnd, tableLayout.getChildCount() + street.getZones().size() * 2);
-				streetRow.setOnClickListener(streetOnClickListener);
 				for (ZoneDTO zoneDTO : street.getZones()) {
 					TableRow zoneNameRow = (TableRow) layoutInflater.inflate(R.layout.zonefirst, tableLayout, false);
 					TableRow zoneSpeedRow = (TableRow) layoutInflater.inflate(R.layout.zonesecond, tableLayout, false);
@@ -207,13 +205,15 @@ public class MainActivity extends Activity {
 					zoneSpeedRow.setTag(zoneDTO.getId());
 					zoneSpeedRow.setOnClickListener(webcamOnClickListener);
 					ImageView cam = (ImageView) zoneSpeedRow.findViewById(R.id.zoneCam);
-					if (zoneDTO.getId().charAt(0) == Const.z)
+					if (zoneDTO.getId().charAt(0) == Const.wcm)
 						cam.setImageResource(android.R.drawable.ic_menu_camera);
 					else
 						cam.setImageResource(android.R.drawable.ic_menu_add);
 					tableLayout.addView(zoneNameRow);
 					tableLayout.addView(zoneSpeedRow);
 				}
+				streetRow.setTag(R.id.streetEnd, tableLayout.getChildCount());
+				streetRow.setOnClickListener(streetOnClickListener);
 			}
 		}
 	}

@@ -9,7 +9,7 @@ public class Const {
 	public static final int menuRefresh = 2;
 	public static final int notificationId = 1;
 	public static final char A = 'A';
-	public static final char z = 'z';
+	public static final char wcm = 'A';
 	public static final String openRound = " (";
 	public static final String closeRound = ")";
 	public static final String equal = "=";
