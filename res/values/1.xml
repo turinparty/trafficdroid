@@ -1,64 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones1Id">
-		<item>z1970</item><!-- A01 km. 000,0 Ads S.Donato-Sv. Poasco -->
-		<item>z2005</item><!-- A01 km. -0,6 All. Tang. Est -->
-		<item>z1895</item><!-- A01 km. 001,9 PMV S.Giuliano Itinere Nord -->
-		<item>z1971</item><!-- A01 km. 003,8 All. Tang. Ovest -->
-		<item>z403</item><!-- A01 km. 006,0 PMV Melegnano Itinere Sud -->
-		<item>z26</item><!-- A01 km. 22,3 Lodi -->
-		<item>z405</item><!-- A01 km. 36,1 PMV Casalpusterlengo Sud -->
-		<item>z414</item><!-- A01 km. 52,3 PMV Piacenza Nord Itinere Nord -->
-		<item>z28</item><!-- A01 km. 58,2 Piacenza Sud -->
-		<item>z408</item><!-- A01 km. 71,4 PMV Fiorenzuola Itinere Sud -->
-		<item>z1023</item><!-- A01 km. 092,5 PMV Fidenza Iti. Nord -->
-		<item>z21</item><!-- A01 km. 102,0 All. A1/A15 -->
-		<item>z29</item><!-- A01 km. 110,8 Parma -->
-		<item>z366</item><!-- A01 km. 139,0 Reggio Emilia itinere nord -->
-		<item>z64</item><!-- A01 km. 155,0 A1/A22 itinere Nord -->
-		<item>z368</item><!-- A01 km. 157,0 Modena Nord itinere sud -->
-		<item>z1038</item><!-- A01 km. 169,7 Modena Sud itinere sud -->
+		<item>A10189</item><!-- A01 km. 000,0 Ads S.Donato-Sv. Poasco -->
+		<item>A9970</item><!-- A01 km. -0,6 All. Tang. Est -->
+		<item>A10660</item><!-- A01 km. 001,9 PMV S.Giuliano Itinere Nord -->
+		<item>A10182</item><!-- A01 km. 003,8 All. Tang. Ovest -->
+		<item>A20031</item><!-- A01 km. 006,0 PMV Melegnano Itinere Sud -->
+		<item>A22398</item><!-- A01 km. 22,3 Lodi -->
+		<item>A20018</item><!-- A01 km. 36,1 PMV Casalpusterlengo Sud -->
+		<item>A19960</item><!-- A01 km. 52,3 PMV Piacenza Nord Itinere Nord -->
+		<item>A22385</item><!-- A01 km. 58,2 Piacenza Sud -->
+		<item>A19998</item><!-- A01 km. 71,4 PMV Fiorenzuola Itinere Sud -->
+		<item>A16136</item><!-- A01 km. 092,5 PMV Fidenza Iti. Nord -->
+		<item>A22430</item><!-- A01 km. 102,0 All. A1/A15 -->
+		<item>A66338</item><!-- A01 km. 110,8 Parma -->
+		<item>A20264</item><!-- A01 km. 139,0 Reggio Emilia itinere nord -->
+		<item>A22160</item><!-- A01 km. 155,0 A1/A22 itinere Nord -->
+		<item>A20250</item><!-- A01 km. 157,0 Modena Nord itinere sud -->
+		<item>A16043</item><!-- A01 km. 169,7 Modena Sud itinere sud -->
 		<item>s1z19</item><!-- A01 km. 194,0 All. A1/A14 Casalecchio itinere sud NON SI VEDE IL RACCORDO -->
-		<item>z55</item><!-- A01 km. 189,0 A1/A14 itinere nord -->
-		<item>z52</item><!-- A01 km. 207,0 Sasso Marconi itinere -->
-		<item>z190</item><!-- A01 km. 222,7 Rioveggio -->
-		<item>z383</item><!-- A01 km. 236,0 Pian Del Voglio itinere sud -->
-		<item>z187</item><!-- A01 km. 242,0 Roncobilaccio -->
-		<item>z379</item><!-- A01 km. 262,3 Barberino itinere nord -->
-		<item>z385</item><!-- A01 km. 277,0 Calenzano itinere sud -->
-		<item>z86</item><!-- A01 km. 280,0 All. A1/A11 -->
-		<item>z88</item><!-- A01 km. 285,0 Arno a Firenze itinere nord -->
-		<item>z376</item><!-- A01 km. 294,5 Firenze-Certosa itinere sud -->
-		<item>z70</item><!-- A01 km. 301,3 Firenze Sud itinere nord -->
-		<item>z73</item><!-- A01 km. 318,0 Arno a Incisa itinere nord -->
+		<item>A22215</item><!-- A01 km. 189,0 A1/A14 itinere nord -->
+		<item>A22235</item><!-- A01 km. 207,0 Sasso Marconi itinere -->
+		<item>A21369</item><!-- A01 km. 222,7 Rioveggio -->
+		<item>A20155</item><!-- A01 km. 236,0 Pian Del Voglio itinere sud -->
+		<item>A21386</item><!-- A01 km. 242,0 Roncobilaccio -->
+		<item>A20182</item><!-- A01 km. 262,3 Barberino itinere nord -->
+		<item>A64104</item><!-- A01 km. 277,0 Calenzano itinere sud -->
+		<item>A22020</item><!-- A01 km. 280,0 All. A1/A11 -->
+		<item>A22008</item><!-- A01 km. 285,0 Arno a Firenze itinere nord -->
+		<item>A20193</item><!-- A01 km. 296,5 Certosa itinere nord -->
+		<item>A22122</item><!-- A01 km. 301,3 Firenze Sud itinere nord -->
+		<item>A22102</item><!-- A01 km. 318,0 Arno a Incisa itinere nord -->
 		<item>z314</item><!-- A01 km. 318,0 Arno a Incisa itinere nord -->
-		<item>z316</item><!-- A01 km. 357,8 Arezzo itinere sud -->
-		<item>z318</item><!-- A01 km. 369,0 M.S.Savino itinere sud -->
-		<item>z319</item><!-- A01 km. 386,5 Valdichiana itinere nord -->
-		<item>z947</item><!-- A01 km. 411,6 Chiusi itinere nord -->
-		<item>z461</item><!-- A01 km. 429,1 Fabro itinere nord -->
-		<item>z445</item><!-- A01 km. 449,7 Orvieto itinere sud -->
-		<item>z1033</item><!-- A01 km. 483,7 Attigliano itinere nord -->
-		<item>z101</item><!-- A01 Km. 492,0 Orte itinere sud -->
-		<item>z102</item><!-- A01 km. 500,0 Magliano itinere nord -->
-		<item>z105</item><!-- A01 km. 516,0 Soratte itinere nord -->
-		<item>z98</item><!-- A01 km. 530 Bivio A01-Diramazione Roma Nord itinere 
-			sud -->
-		<item>z271</item><!-- A01 km. 561,0 Bivio A1-A24 itinere sud -->
-		<item>z274</item><!-- A01 km. 577,0 Bivio A01-Diramazione Roma Sud itinere 
-			sud -->
-		<item>z535</item><!-- A01 km. 586,5 Valmontone itinere nord -->
-		<item>z123</item><!-- A01 km. 593,0 Colleferro itinere sud -->
-		<item>z454</item><!-- A01 km. 605,7 Anagni itinere nord -->
-		<item>z115</item><!-- A01 km. 624,0 Frosinone itinere sud -->
-		<item>z513</item><!-- A01 km. 640,8 Ceprano itinere sud -->
-		<item>z1891</item><!-- A01 km. 661,7 Pontecorvo itinere nord -->
-		<item>z514</item><!-- A01 km. 668,5 Cassino itinere sud -->
-		<item>z133</item><!-- A01 km. 678,6 S.Vittore itinere nord -->
-		<item>z131</item><!-- A01 km. 701,1 Caianello itinere nord -->
-		<item>z519</item><!-- A01 km. 721,5 Capua itinere nord -->
-		<item>z520</item><!-- A01 km. 732,8 Caserta Nord itinere sud -->
-		<item>z134</item><!-- A01 km. 738,5 All. A01-A30 itinere sud -->
+		<item>A20577</item><!-- A01 km. 357,8 Arezzo itinere sud -->
+		<item>A20563</item><!-- A01 km. 369,0 M.S.Savino itinere sud -->
+		<item>A20557</item><!-- A01 km. 386,5 Valdichiana itinere nord -->
+		<item>A16613</item><!-- A01 km. 411,6 Chiusi itinere nord -->
+		<item>A19667</item><!-- A01 km. 429,1 Fabro itinere nord -->
+		<item>A19766</item><!-- A01 km. 449,7 Orvieto itinere sud -->
+		<item>A16074</item><!-- A01 km. 483,7 Attigliano itinere nord -->
+		<item>A21927</item><!-- A01 Km. 492,0 Orte itinere sud -->
+		<item>A21921</item><!-- A01 km. 500,0 Magliano itinere nord -->
+		<item>A21901</item><!-- A01 km. 516,0 Soratte itinere nord -->
+		<item>A21945</item><!-- A01 km. 530 Bivio A01-Diramazione Roma Nord itinere sud -->
+		<item>A20860</item><!-- A01 km. 561,0 Bivio A1-A24 itinere sud -->
+		<item>A20840</item><!-- A01 km. 577,0 Bivio A01-Diramazione Roma Sud itinere sud -->
+		<item>A19202</item><!-- A01 km. 586,5 Valmontone itinere nord -->
+		<item>A21788</item><!-- A01 km. 593,0 Colleferro itinere sud -->
+		<item>A19711</item><!-- A01 km. 605,7 Anagni itinere nord -->
+		<item>A21840</item><!-- A01 km. 624,0 Frosinone itinere sud -->
+		<item>A19339</item><!-- A01 km. 640,8 Ceprano itinere sud -->
+		<item>A10685</item><!-- A01 km. 661,7 Pontecorvo itinere nord -->
+		<item>A19332</item><!-- A01 km. 668,5 Cassino itinere sud -->
+		<item>A21727</item><!-- A01 km. 678,6 S.Vittore itinere nord -->
+		<item>A21738</item><!-- A01 km. 701,1 Caianello itinere nord -->
+		<item>A19301</item><!-- A01 km. 721,5 Capua itinere nord -->
+		<item>A19294</item><!-- A01 km. 732,8 Caserta Nord itinere sud -->
+		<item>A21720</item><!-- A01 km. 738,5 All. A01-A30 itinere sud -->
 		<item>z521</item><!-- A01 km. 742,5 Caserta Sud itinere nord -->
 		<item>z522</item><!-- A01 km. 742,5 Caserta Sud itinere sud -->
 		<item>z1909</item><!-- A01 km. 751,2 All. A01-A16 itinere sud -->

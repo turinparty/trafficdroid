@@ -3,8 +3,8 @@
 	<string-array name="zones101Id">
 		<item>s101z1</item>
 		<item>s101z2</item>
-		<item>s101z3</item>
-		<item>s101z4</item>
+		<item>A21813</item><!-- D18 km. 19,0 Settebagni -->
+		<item>A21808</item><!-- D18 km. 23,0 GRA Nord -->
 	</string-array>
 	<string-array name="zones101Name">
 		<item>Allaccio A1</item>

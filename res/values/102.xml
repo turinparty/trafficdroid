@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones102Id">
-		<item>A1993</item>
-		<item>A894</item>
-		<item>A-8883</item>
-		<item>A-2677</item>
+		<item>A20833</item>
+		<item>A19734</item>
+		<item>A9957</item>
+		<item>A16163</item>
 		<item>s102z5</item>
 	</string-array>
 	<string-array name="zones102Name">
