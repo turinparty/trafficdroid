@@ -1,14 +1,14 @@
 package it.localhost.trafficdroid.common;
 
-import java.util.Date;
-
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.parser.BadNewsParser;
 import it.localhost.trafficdroid.parser.TrafficParser;
-import android.app.IntentService;
+
+import java.util.Date;
+
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -17,21 +17,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-public class TdIntentService extends IntentService {
+import com.commonsware.cwac.wakeful.WakefulIntentService;
+
+public class TdIntentService extends WakefulIntentService {
 	public TdIntentService() {
 		super(Const.tdData);
 	}
 
 	@Override
-	public int onStartCommand(Intent intent, int flags, int startId) {
-		if (!TdLock.getLock(this).isHeld())
-			TdLock.getLock(this).acquire();
-		super.onStartCommand(intent, flags, startId);
-		return START_REDELIVER_INTENT;
-	}
-
-	@Override
-	protected void onHandleIntent(Intent intent) {
+	protected void doWakefulWork(Intent arg0) {
 		sendBroadcast(Const.beginUpdateIntent);
 		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 		String trafficUrl = sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault));
@@ -57,7 +51,6 @@ public class TdIntentService extends IntentService {
 			// come gestiamo la cosa?
 		} finally {
 			sendBroadcast(Const.endUpdateIntent);
-			TdLock.getLock(this).release();
 		}
 	}
 }

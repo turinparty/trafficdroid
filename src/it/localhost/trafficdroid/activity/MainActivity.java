@@ -185,9 +185,9 @@ public class MainActivity extends Activity {
 				((TextView) streetRow.findViewById(R.id.streetName)).setText(street.getName());
 				((TextView) streetRow.findViewById(R.id.streetDirLeft)).setText(street.getDirectionLeft());
 				((TextView) streetRow.findViewById(R.id.streetDirRight)).setText(street.getDirectionRight());
+				tableLayout.addView(streetRow);
 				streetRow.setTag(R.id.streetId, street.getId());
 				streetRow.setTag(R.id.streetStart, tableLayout.getChildCount());
-				tableLayout.addView(streetRow);
 				if (street.getBadNews() != null && street.getBadNews().size() != 0) {
 					TableRow badNewsRow = (TableRow) layoutInflater.inflate(R.layout.badnewstable, tableLayout, false);
 					((TextView) badNewsRow.findViewById(R.id.BNTText)).setText(Integer.toString(street.getBadNews().size()));
