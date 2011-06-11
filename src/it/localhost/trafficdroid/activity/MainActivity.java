@@ -89,7 +89,7 @@ public class MainActivity extends Activity {
 				ll.setOrientation(LinearLayout.VERTICAL);
 				d.setContentView(sv);
 				sv.addView(ll);
-				for (BadNewsDTO event : street.getEvents()) {
+				for (BadNewsDTO event : street.getBadNews()) {
 					View eventRow = layoutInflater.inflate(R.layout.badnewsdialog, null);
 					((TextView) eventRow.findViewById(R.id.BNDText)).setText(event.getTitle() + " " + event.getDescription());
 					// TODO icona personalizzata in base all'evento
@@ -100,8 +100,12 @@ public class MainActivity extends Activity {
 		};
 		streetOnClickListener = new OnClickListener() {
 			public void onClick(View v) {
-				for (int i = (Integer) v.getTag(R.id.streetStart); i < (Integer) v.getTag(R.id.streetEnd); i++)
-					tableLayout.getChildAt(i).setVisibility(tableLayout.getChildAt(i).getVisibility() != View.VISIBLE ? View.VISIBLE : View.GONE);
+				String streetVkey = (Integer) v.getTag(R.id.streetId) + "V";
+				boolean streetVisible = !sharedPreferences.getBoolean(streetVkey, true);
+				sharedPreferences.edit().putBoolean(streetVkey, streetVisible).commit();
+				for (int i = (Integer) v.getTag(R.id.streetStart); i < (Integer) v.getTag(R.id.streetEnd); i++) {
+					tableLayout.getChildAt(i).setVisibility(streetVisible ? View.VISIBLE : View.GONE);
+				}
 			}
 		};
 		receiver = new BroadcastReceiver() {
@@ -176,23 +180,26 @@ public class MainActivity extends Activity {
 			setTitle(getString(R.string.app_name) + " " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
 			for (int i = 0; i < mainDTO.getStreets().size(); i++) {
 				StreetDTO street = mainDTO.getStreets().get(i);
+				boolean streetVisible = sharedPreferences.getBoolean(street.getId() + "V", true);
 				TableRow streetRow = (TableRow) layoutInflater.inflate(R.layout.street, tableLayout, false);
 				((TextView) streetRow.findViewById(R.id.streetName)).setText(street.getName());
 				((TextView) streetRow.findViewById(R.id.streetDirLeft)).setText(street.getDirectionLeft());
 				((TextView) streetRow.findViewById(R.id.streetDirRight)).setText(street.getDirectionRight());
-				tableLayout.addView(streetRow);
+				streetRow.setTag(R.id.streetId, street.getId());
 				streetRow.setTag(R.id.streetStart, tableLayout.getChildCount());
-				if (street.getEvents() != null && street.getEvents().size() != 0) {
+				tableLayout.addView(streetRow);
+				if (street.getBadNews() != null && street.getBadNews().size() != 0) {
 					TableRow badNewsRow = (TableRow) layoutInflater.inflate(R.layout.badnewstable, tableLayout, false);
-					((TextView) badNewsRow.findViewById(R.id.BNTText)).setText(Integer.toString(street.getEvents().size()));
+					((TextView) badNewsRow.findViewById(R.id.BNTText)).setText(Integer.toString(street.getBadNews().size()));
 					badNewsRow.setTag(i);
 					badNewsRow.setOnClickListener(badNewsOnClickListener);
+					badNewsRow.setVisibility(streetVisible ? View.VISIBLE : View.GONE);
 					tableLayout.addView(badNewsRow);
 				}
 				for (ZoneDTO zoneDTO : street.getZones()) {
 					TableRow zoneNameRow = (TableRow) layoutInflater.inflate(R.layout.zonefirst, tableLayout, false);
 					TableRow zoneSpeedRow = (TableRow) layoutInflater.inflate(R.layout.zonesecond, tableLayout, false);
-					TextView zoneNameText = (TextView) zoneNameRow.findViewById(R.id.zoneNameaaa);
+					TextView zoneNameText = (TextView) zoneNameRow.findViewById(R.id.zoneName);
 					TextView leftZoneSpeedText = (TextView) zoneSpeedRow.findViewById(R.id.zoneSpeedLeft);
 					TextView rightZoneSpeedText = (TextView) zoneSpeedRow.findViewById(R.id.zoneSpeedRight);
 					zoneNameText.setText(zoneDTO.getName());
@@ -209,6 +216,8 @@ public class MainActivity extends Activity {
 						cam.setImageResource(android.R.drawable.ic_menu_camera);
 					else
 						cam.setImageResource(android.R.drawable.ic_menu_add);
+					zoneNameRow.setVisibility(streetVisible ? View.VISIBLE : View.GONE);
+					zoneSpeedRow.setVisibility(streetVisible ? View.VISIBLE : View.GONE);
 					tableLayout.addView(zoneNameRow);
 					tableLayout.addView(zoneSpeedRow);
 				}

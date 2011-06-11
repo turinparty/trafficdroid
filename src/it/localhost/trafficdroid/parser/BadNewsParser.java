@@ -24,7 +24,7 @@ public class BadNewsParser {
 				if (title.charAt(0) == Const.A)
 					for (StreetDTO streetDTO : dto.getStreets())
 						if (Integer.parseInt(title.substring(1, title.length())) == streetDTO.getId())
-							streetDTO.addEvent(new BadNewsDTO(descST.nextToken(), descST.nextToken(), sdf.parse(item.item(7).getTextContent())));
+							streetDTO.addBadNews(new BadNewsDTO(descST.nextToken(), descST.nextToken(), sdf.parse(item.item(7).getTextContent())));
 			} catch (Exception e) {
 				// Do nothing
 			}
