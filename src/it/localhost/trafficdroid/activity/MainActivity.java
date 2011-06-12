@@ -1,9 +1,5 @@
 package it.localhost.trafficdroid.activity;
 
-import com.google.ads.AdRequest;
-import com.google.ads.AdSize;
-import com.google.ads.AdView;
-
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdException;
@@ -40,7 +36,6 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-	private AdView adView;
 	private TableLayout tableLayout;
 	private LayoutInflater layoutInflater;
 	private IntentFilter intentFilter;
@@ -62,8 +57,6 @@ public class MainActivity extends Activity {
 		tableLayout = (TableLayout) findViewById(R.id.mainTable);
 		layoutInflater = LayoutInflater.from(this);
 		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-		adView = new AdView(this, AdSize.BANNER, Const.adMobId);
-		((LinearLayout) findViewById(R.id.mainLayout)).addView(adView);
 		webcamOnClickListener = new OnClickListener() {
 			public void onClick(View v) {
 				String code = (String) v.getTag();
@@ -124,7 +117,6 @@ public class MainActivity extends Activity {
 	public void onResume() {
 		super.onResume();
 		registerReceiver(receiver, intentFilter);
-		adView.loadAd(new AdRequest());
 		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
 		if (sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault)).equals(getString(R.string.providerTrafficDefault)))
 			new AlertDialog.Builder(this).setTitle(getString(R.string.warning)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.badConf)).show();
