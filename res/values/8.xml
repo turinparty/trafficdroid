@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones8Id">
-		<item>s8z1</item>
-		<item>z1787</item>
-		<item>z1788</item>
-		<item>z586</item>
-		<item>s8z5</item>
-		<item>z597</item>
-		<item>z585</item>
-		<item>s8z8</item>
-		<item>z584</item>
-		<item>s8z10</item>
-		<item>s8z11</item>
-		<item>s8z12</item>
-		<item>s8z13</item>
+		<item>A17725</item><!-- A08 km. 41,9 Gazzada itinere sud -->
+		<item>A11339</item><!-- A08 km. 39,4 Castronno itinere nord -->
+		<item>A11332</item><!-- A08 km. 34,7 Solbiate itinere nord -->
+		<item>A18882</item><!-- A08 km. 35,1 Cavaria itinere sud -->
+		<item>A18888</item><!-- A08 km. 30,2 A8/A26 itinere nord -->
+		<item>A17593</item><!-- D08 km. 2,5 Gallarate Ovest entrata -->
+		<item>A18875</item><!-- A08 km. 25,6 Busto Arsizio itinere sud -->
+		<item>A18913</item><!-- A08 km. 20,8 Busto Arsizio itinere nord -->
+		<item>A18893</item><!-- A08 km. 13,5 Legnano itinere nord -->
+		<item>A18899</item><!-- A08 km. 8,9 A08/A09 itinere nord -->
+		<item>A22341</item><!-- A08 km. 7,6 Villoresi itinere sud -->
+		<item>A18861</item><!-- A08 km. 7,0 Villoresi itinere sud -->
+		<item>A22296</item><!-- A08 km. 5,6 Milano Nord itinere nord -->
 	</string-array>
 	<string-array name="zones8Name">
 		<item>Lago di Varese-Gazzada</item>
