@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones7Id">
-		<item>s7z1</item>
-		<item>s7z2</item>
-		<item>s7z3</item>
-		<item>s7z4</item>
-		<item>s7z5</item>
-		<item>s7z6</item>
-		<item>s7z7</item>
-		<item>s7z8</item>
-		<item>z534</item>
-		<item>s7z10</item>
-		<item>z13</item>
-		<item>z1055</item>
-		<item>s7z13</item>
-		<item>z19</item>
-		<item>z17</item>
-		<item>z16</item>
-		<item>z9</item>
-		<item>z1791</item>
+		<item>s7z1</item><!-- null -->
+		<item>s7z2</item><!-- null -->
+		<item>s7z3</item><!-- null -->
+		<item>s7z4</item><!-- null -->
+		<item>s7z5</item><!-- null -->
+		<item>s7z6</item><!-- null -->
+		<item>s7z7</item><!-- null -->
+		<item>s7z8</item><!-- null -->
+		<item>A19207</item><!-- A07 km. 68,8 All.A7 A26 W itinere sud -->
+		<item>A22480</item><!-- A07 km. 88,0 Vignole itinere nord -->
+		<item>A19527</item><!-- A07 km. 89,9 Vignole Borbera itinere nord -->
+		<item>A15935</item><!-- A07 km. 104,8 Isola del Cantone itinere nord -->
+		<item>A19547</item><!-- A07 km. 109,5 Busalla itinere sud -->
+		<item>A22442</item><!-- A07 km. 111,0 Busalla itinere sud -->
+		<item>A22453</item><!-- A07 km. 126,0 GE-Bolzaneto itinere sud -->
+		<item>A19472</item><!-- A12 km. 1,9 A12/A7 itinere ovest -->
+		<item>A22505</item><!-- A10 km. 0,0 Polcevera itinere est -->
+		<item>A19472</item><!-- A12 km. 1,9 A12/A7 itinere ovest -->
 	</string-array>
 	<string-array name="zones7Name">
 		<item>Allaccio A50</item>

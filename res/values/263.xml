@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones263Id">
-		<item>s263z1</item>
-		<item>s263z2</item>
-		<item>s263z3</item>
+		<item>A11414</item><!-- A26 km. 73,8 Gall.Olimpia itinere sud -->
+		<item>A19421</item><!-- D26 km. 1,4 D26/A26 itinere ovest -->
+		<item>A19428</item><!-- A26 km. 44,5 All.A26/D26 itinere nord -->
 	</string-array>
 	<string-array name="zones263Name">
 		<item>Allaccio A26</item>

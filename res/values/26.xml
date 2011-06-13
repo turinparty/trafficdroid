@@ -5,20 +5,20 @@
 		<item>s26z2</item>
 		<item>s26z3</item>
 		<item>s26z4</item>
-		<item>s26z5</item>
-		<item>s26z6</item>
-		<item>s26z7</item>
-		<item>s26z8</item>
-		<item>z507</item>
-		<item>s26z10</item>
-		<item>s26z11</item>
-		<item>s26z12</item>
-		<item>z501</item>
-		<item>z502</item>
-		<item>z499</item>
-		<item>z738</item>
-		<item>z497</item>
-		<item>z5</item>
+		<item>A19359</item><!-- A26 km. 166,4 Arona itinere sud -->
+		<item>A11421</item><!-- A26 km. 157,9 A26/D8 itinere nord -->
+		<item>A19370</item><!-- A26 km. 151,1 Borgomanero itinere nord -->
+		<item>A11427</item><!-- A26 km. 143,0 Romagnano itinere nord -->
+		<item>A19383</item><!-- A26 km. 130,6 A26/A4 itinere sud -->
+		<item>A19376</item><!-- A26 km. 127,7 A26/A4 itinere nord -->
+		<item>A14873</item><!-- A26 km. 101,2 Allacc. A26-D36 itinere nord -->
+		<item>A14873</item><!-- A26 km. 101,2 Allacc. A26-D36 itinere nord -->
+		<item>A11414</item><!-- A26 km. 73,8 Gall.Olimpia itinere sud -->
+		<item>A19408</item><!-- A26 km. 57,1 Alessandria Sud itinere nord -->
+		<item>A19428</item><!-- A26 km. 44,5 All.A26/D26 itinere nord -->
+		<item>A17927</item><!-- A26 km. 29,8 Ovada itinere sud -->
+		<item>A19440</item><!-- A26 km. 7,3 Masone itinere nord -->
+		<item>A22523</item><!-- A26 km. 0,250 Bivio A26S/A10E itinere est -->
 	</string-array>
 	<string-array name="zones26Name">
 		<item>Gravellona Toce</item>

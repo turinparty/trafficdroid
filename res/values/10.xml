@@ -15,16 +15,16 @@
 		<item>s10z12</item>
 		<item>s10z13</item>
 		<item>s10z14</item>
-		<item>z1053</item>
-		<item>z489</item>
-		<item>z1793</item>
-		<item>z487</item>
-		<item>z1</item>
-		<item>z6</item>
-		<item>z2475</item>
-		<item>z1792</item>
-		<item>z473</item>
-		<item>z9</item>
+		<item>A15948</item><!-- A10 km. 42,8 Savona itinere ovest -->
+		<item>A22485</item><!-- A10 km. 37,0 Albisola itinere ovest -->
+		<item>A11302</item><!-- A10 km. 31,7 Celle Ligure itinere ovest -->
+		<item>A19495</item><!-- A10 km. 28,8 Varazze itinere est -->
+		<item>A22556</item><!-- A10 km. 20,0 Arenzano itinere est -->
+		<item>A22523</item><!-- A26 km. 0,250 Bivio A26S/A10E itinere est -->
+		<item>A7017</item><!-- A10 km. 10,1 GE-Voltri itinere ovest -->
+		<item>A11308</item><!-- A10 km. 5,3 Pegli itinere ovest -->
+		<item>A22518</item><!-- A10 km. 6,0 GE-Pegli itinere est -->
+		<item>A11314</item><!-- A07 km. 130,0 All.A7/A10 itinere sud -->
 	</string-array>
 	<string-array name="zones10Name">
 		<item>Inizio</item>
