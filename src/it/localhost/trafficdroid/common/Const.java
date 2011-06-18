@@ -40,6 +40,7 @@ public class Const {
 	public static final String camId = "camId";
 	public static final String formatDateEventi = "yyyy-MM-dd'T'HH:mm:ss'Z'";
 	public static final String adMobId = "a14d8f6a3c4c2f3";
+	public static final String anlyticsId = "UA-12243941-5";
 	public static final String item = "item";
 	public static final int[] streetsRes = new int[] { R.array.streetsId, R.array.streetsName };
 

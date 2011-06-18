@@ -35,6 +35,8 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.google.android.apps.analytics.GoogleAnalyticsTracker;
+
 public class MainActivity extends Activity {
 	private TableLayout tableLayout;
 	private LayoutInflater layoutInflater;
@@ -45,10 +47,14 @@ public class MainActivity extends Activity {
 	private BroadcastReceiver receiver;
 	private MainDTO mainDTO;
 	private SharedPreferences sharedPreferences;
+	private GoogleAnalyticsTracker tracker;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		tracker = GoogleAnalyticsTracker.getInstance();
+		tracker.start(Const.anlyticsId, this);
+		tracker.trackPageView(this.getClass().getName());
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
 		intentFilter = new IntentFilter();
@@ -132,7 +138,14 @@ public class MainActivity extends Activity {
 	@Override
 	public void onPause() {
 		super.onPause();
+		tracker.dispatch();
 		unregisterReceiver(receiver);
+	}
+
+	@Override
+	protected void onStop() {
+		super.onStop();
+		tracker.stop();
 	}
 
 	@Override

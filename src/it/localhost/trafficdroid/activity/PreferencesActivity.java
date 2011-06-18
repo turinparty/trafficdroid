@@ -9,10 +9,17 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 
+import com.google.android.apps.analytics.GoogleAnalyticsTracker;
+
 public class PreferencesActivity extends PreferenceActivity {
+	private GoogleAnalyticsTracker tracker;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		tracker = GoogleAnalyticsTracker.getInstance();
+		tracker.start(Const.anlyticsId, this);
+		tracker.trackPageView(this.getClass().getName());
 		PreferenceManager.setDefaultValues(this, R.layout.preferences, false);
 		addPreferencesFromResource(R.layout.preferences);
 		PreferenceScreen root = getPreferenceScreen();
@@ -46,8 +53,15 @@ public class PreferencesActivity extends PreferenceActivity {
 	}
 
 	@Override
+	public void onPause() {
+		super.onPause();
+		tracker.dispatch();
+	}
+
+	@Override
 	protected void onStop() {
 		super.onStop();
+		tracker.stop();
 		sendBroadcast(Const.scheduleServiceIntent);
 	}
 }
