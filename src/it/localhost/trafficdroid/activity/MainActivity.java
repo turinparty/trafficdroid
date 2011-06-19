@@ -54,7 +54,6 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		tracker = GoogleAnalyticsTracker.getInstance();
 		tracker.start(Const.anlyticsId, this);
-		tracker.trackPageView(this.getClass().getName());
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
 		intentFilter = new IntentFilter();
@@ -122,6 +121,7 @@ public class MainActivity extends Activity {
 	@Override
 	public void onResume() {
 		super.onResume();
+		tracker.trackPageView(this.getClass().getName());
 		registerReceiver(receiver, intentFilter);
 		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
 		if (sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault)).equals(getString(R.string.providerTrafficDefault)))

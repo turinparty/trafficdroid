@@ -21,7 +21,6 @@ public class WebcamActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		tracker = GoogleAnalyticsTracker.getInstance();
 		tracker.start(Const.anlyticsId, this);
-		tracker.trackPageView(this.getClass().getName());
 		mWebView = new WebView(this);
 		setContentView(mWebView);
 		mWebView.getSettings().setJavaScriptEnabled(true);
@@ -29,6 +28,12 @@ public class WebcamActivity extends Activity {
 		//CookieDAO.setCookie(this, url);
 		int code = Integer.parseInt(getIntent().getStringExtra(Const.camId)) + 6280 * (new GregorianCalendar().get(GregorianCalendar.DATE));
 		mWebView.loadUrl(Const.http + url + Const.popupTelecamera + code);
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		tracker.trackPageView(this.getClass().getName());
 	}
 
 	@Override

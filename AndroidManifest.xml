@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="it.localhost.trafficdroid" android:versionCode="49"
-	android:versionName="0.14.0 big brother"
+	package="it.localhost.trafficdroid" android:versionCode="50"
+	android:versionName="0.14.1 big brother"
 	android:installLocation="preferExternal">
 	<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="10" />
 	<supports-screens android:anyDensity="true"

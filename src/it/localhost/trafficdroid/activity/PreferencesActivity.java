@@ -19,7 +19,6 @@ public class PreferencesActivity extends PreferenceActivity {
 		super.onCreate(savedInstanceState);
 		tracker = GoogleAnalyticsTracker.getInstance();
 		tracker.start(Const.anlyticsId, this);
-		tracker.trackPageView(this.getClass().getName());
 		PreferenceManager.setDefaultValues(this, R.layout.preferences, false);
 		addPreferencesFromResource(R.layout.preferences);
 		PreferenceScreen root = getPreferenceScreen();
@@ -50,6 +49,12 @@ public class PreferencesActivity extends PreferenceActivity {
 				zonesCategory.addPreference(singlezone);
 			}
 		}
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		tracker.trackPageView(this.getClass().getName());
 	}
 
 	@Override
