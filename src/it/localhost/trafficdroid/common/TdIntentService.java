@@ -25,7 +25,7 @@ public class TdIntentService extends WakefulIntentService {
 	}
 
 	@Override
-	protected void doWakefulWork(Intent arg0) {
+	public void doWakefulWork(Intent arg0) {
 		sendBroadcast(Const.beginUpdateIntent);
 		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 		String trafficUrl = sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault));

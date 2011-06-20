@@ -13,6 +13,7 @@
 	<string name="badWebcamConf">TrafficDroid ha bisogno di un provider per le webcam, inserisci questa informazione in impostazioni. Il sito contiene maggiori informazioni.</string>
 	<string name="selectStreet">Seleziona l\'intera strada</string>
 	<string name="sniper">Seleziona le singole zone</string>
+	<string name="diramation">Diramazioni</string>
 	<string name="badNews"> Bad News!</string>
 	<string name="mappedSreet">Strade preferite</string>
 	<string name="providerCategory">Provider</string>

@@ -15,44 +15,69 @@ public class PreferencesActivity extends PreferenceActivity {
 	private GoogleAnalyticsTracker tracker;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		tracker = GoogleAnalyticsTracker.getInstance();
 		tracker.start(Const.anlyticsId, this);
 		PreferenceManager.setDefaultValues(this, R.layout.preferences, false);
 		addPreferencesFromResource(R.layout.preferences);
-		PreferenceScreen root = getPreferenceScreen();
-		PreferenceCategory streetsCategory = new PreferenceCategory(this);
-		streetsCategory.setTitle(R.string.mappedSreet);
-		root.addPreference(streetsCategory);
 		int[] streetId = getResources().getIntArray(Const.streetsRes[0]);
 		String[] streetName = getResources().getStringArray(Const.streetsRes[1]);
-		for (int i = 0; i < streetId.length; i++) {
-			PreferenceScreen streetScreen = getPreferenceManager().createPreferenceScreen(this);
-			streetScreen.setTitle(streetName[i]);
-			streetsCategory.addPreference(streetScreen);
-			CheckBoxPreference streetCheck = new CheckBoxPreference(this);
-			streetCheck.setKey(Integer.toString(streetId[i]));
-			streetCheck.setTitle(streetName[i]);
-			streetCheck.setSummary(R.string.selectStreet);
-			streetScreen.addPreference(streetCheck);
-			PreferenceCategory zonesCategory = new PreferenceCategory(this);
-			zonesCategory.setTitle(R.string.sniper);
-			streetScreen.addPreference(zonesCategory);
-			String[][] zones = new String[2][];
-			zones[0] = getResources().getStringArray(Const.zonesRes()[0][i]);
-			zones[1] = getResources().getStringArray(Const.zonesRes()[1][i]);
-			for (int j = 0; j < zones[0].length; j++) {
-				CheckBoxPreference singlezone = new CheckBoxPreference(this);
-				singlezone.setKey(zones[0][j]);
-				singlezone.setTitle(zones[1][j]);
-				zonesCategory.addPreference(singlezone);
+		int[] streetFather = getResources().getIntArray(Const.streetsRes[2]);
+		PreferenceScreen root = getPreferenceScreen();
+		PreferenceCategory streetsCategory = new PreferenceCategory(this);
+		root.addPreference(streetsCategory);
+		streetsCategory.setTitle(R.string.mappedSreet);
+		for (int i = 0; i < streetId.length; i++)
+			if (streetFather[i] == 0) {
+				PreferenceScreen streetScreen = getStreetScreen(streetId[i], streetName[i]);
+				streetsCategory.addPreference(streetScreen);
+				PreferenceCategory subStreetCategory = new PreferenceCategory(this);
+				streetScreen.addPreference(subStreetCategory);
+				subStreetCategory.setTitle(R.string.diramation);
+				boolean alone = true;
+				for (int j = 0; j < streetFather.length; j++)
+					if (streetFather[j] == streetId[i]) {
+						PreferenceScreen subStreetScreen = getStreetScreen(streetId[j], streetName[j]);
+						subStreetCategory.addPreference(subStreetScreen);
+						PreferenceCategory subZonesCategory = new PreferenceCategory(this);
+						subStreetScreen.addPreference(subZonesCategory);
+						setZonesCategory(subZonesCategory, streetId[j]);
+						alone = false;
+					}
+				if (alone)
+					streetScreen.removePreference(subStreetCategory);
+				PreferenceCategory zonesCategory = new PreferenceCategory(this);
+				streetScreen.addPreference(zonesCategory);
+				setZonesCategory(zonesCategory, streetId[i]);
 			}
+	}
+
+	private PreferenceScreen getStreetScreen(int streetId, String streetName) {
+		PreferenceScreen streetScreen = getPreferenceManager().createPreferenceScreen(this);
+		streetScreen.setTitle(streetName);
+		CheckBoxPreference streetCheck = new CheckBoxPreference(this);
+		streetCheck.setKey(Integer.toString(streetId));
+		streetCheck.setTitle(streetName);
+		streetCheck.setSummary(R.string.selectStreet);
+		streetScreen.addPreference(streetCheck);
+		return streetScreen;
+	}
+
+	private void setZonesCategory(PreferenceCategory zonesCategory, int streetId) {
+		zonesCategory.setTitle(R.string.sniper);
+		String[] zonesId = getResources().getStringArray(Const.zonesRes(streetId));
+		String[] zonesName = getResources().getStringArray(Const.zonesRes(0 - streetId));
+		for (int k = 0; k < zonesId.length; k++) {
+			CheckBoxPreference singlezone = new CheckBoxPreference(this);
+			singlezone.setKey(zonesId[k]);
+			singlezone.setTitle(zonesName[k]);
+			zonesCategory.addPreference(singlezone);
 		}
 	}
 
 	@Override
-	protected void onResume() {
+	public void onResume() {
 		super.onResume();
 		tracker.trackPageView(this.getClass().getName());
 	}
@@ -64,7 +89,7 @@ public class PreferencesActivity extends PreferenceActivity {
 	}
 
 	@Override
-	protected void onStop() {
+	public void onStop() {
 		super.onStop();
 		tracker.stop();
 		sendBroadcast(Const.scheduleServiceIntent);

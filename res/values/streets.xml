@@ -13,6 +13,7 @@
 		<item>10</item>
 		<item>11</item>
 		<item>12</item>
+		<item>121</item>
 		<item>13</item>
 		<item>14</item>
 		<item>15</item>
@@ -43,7 +44,6 @@
 		<item>102</item>
 		<item>103</item>
 		<item>111</item>
-		<item>121</item>
 		<item>131</item>
 		<item>141</item>
 		<item>142</item>
@@ -79,6 +79,7 @@
 		<item>A10 Genova-Ventimiglia</item>
 		<item>A11 Firenze-Pisa</item>
 		<item>A12 Roma-Civitavecchia</item>
+		<item>A12 Genova-Rosignano</item>
 		<item>A13 Bologna-Padova</item>
 		<item>A14 Bologna-Taranto</item>
 		<item>A15 Parma-La Spezia</item>
@@ -109,7 +110,6 @@
 		<item>A1dir Dir. A1 Roma Sud</item>
 		<item>A1R Rac. A1 Firenze-Siena</item>
 		<item>A11R Rac. A11/A12 Viareggio-Lucca</item>
-		<item>A12 Genova-Rosignano</item>
 		<item>A13R Rac. A13 Ferrara-P. Garibaldi</item>
 		<item>A14R A14 Bologna-Casalecchio</item>
 		<item>A14dir Dir. A14 Ravenna</item>
@@ -132,4 +132,70 @@
 		<item>A55T Tangenziale di Torino Sud</item>
 		<item>A7R Rac. A7 Bereguardo-Pavia</item>
 	</string-array>
+	<integer-array name="streetsFather">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>1</item>
+		<item>1</item>
+		<item>1</item>
+		<item>11</item>
+		<item>13</item>
+		<item>14</item>
+		<item>14</item>
+		<item>1</item>
+		<item>14</item>
+		<item>16</item>
+		<item>18</item>
+		<item>21</item>
+		<item>24</item>
+		<item>26</item>
+		<item>26</item>
+		<item>26</item>
+		<item>29</item>
+		<item>3</item>
+		<item>3</item>
+		<item>3</item>
+		<item>5</item>
+		<item>55</item>
+		<item>55</item>
+		<item>55</item>
+		<item>7</item>
+	</integer-array>
 </resources>

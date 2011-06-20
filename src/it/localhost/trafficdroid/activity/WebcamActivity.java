@@ -31,7 +31,7 @@ public class WebcamActivity extends Activity {
 	}
 
 	@Override
-	protected void onResume() {
+	public void onResume() {
 		super.onResume();
 		tracker.trackPageView(this.getClass().getName());
 	}
@@ -43,7 +43,7 @@ public class WebcamActivity extends Activity {
 	}
 
 	@Override
-	protected void onStop() {
+	public void onStop() {
 		super.onStop();
 		tracker.stop();
 	}
