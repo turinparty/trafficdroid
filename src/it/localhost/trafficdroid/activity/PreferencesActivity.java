@@ -66,8 +66,8 @@ public class PreferencesActivity extends PreferenceActivity {
 
 	private void setZonesCategory(PreferenceCategory zonesCategory, int streetId) {
 		zonesCategory.setTitle(R.string.sniper);
-		String[] zonesId = getResources().getStringArray(Const.zonesRes(streetId));
-		String[] zonesName = getResources().getStringArray(Const.zonesRes(0 - streetId));
+		String[] zonesId = getResources().getStringArray(Const.zonesRes.get(streetId));
+		String[] zonesName = getResources().getStringArray(Const.zonesRes.get(0 - streetId));
 		for (int k = 0; k < zonesId.length; k++) {
 			CheckBoxPreference singlezone = new CheckBoxPreference(this);
 			singlezone.setKey(zonesId[k]);

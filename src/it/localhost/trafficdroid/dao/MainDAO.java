@@ -33,8 +33,8 @@ public class MainDAO {
 			StreetDTO street = new StreetDTO(streetsId[i]);
 			boolean streetEnabled = sharedPreferences.getBoolean(Integer.toString(street.getId()), false);
 			String[][] zones = new String[2][];
-			zones[0] = resources.getStringArray(Const.zonesRes(streetsId[i]));
-			zones[1] = resources.getStringArray(Const.zonesRes(0 - streetsId[i]));
+			zones[0] = resources.getStringArray(Const.zonesRes.get((streetsId[i])));
+			zones[1] = resources.getStringArray(Const.zonesRes.get(0 - streetsId[i]));
 			for (int j = 0; j < zones[0].length; j++)
 				if (streetEnabled || sharedPreferences.getBoolean(zones[0][j], false))
 					street.addZone(new ZoneDTO(zones[0][j], zones[1][j]));
