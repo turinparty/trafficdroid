@@ -21,9 +21,9 @@ public class PreferencesActivity extends PreferenceActivity {
 		tracker.start(Const.anlyticsId, this);
 		PreferenceManager.setDefaultValues(this, R.layout.preferences, false);
 		addPreferencesFromResource(R.layout.preferences);
-		int[] streetId = getResources().getIntArray(Const.streetsRes[0]);
-		String[] streetName = getResources().getStringArray(Const.streetsRes[1]);
-		int[] streetFather = getResources().getIntArray(Const.streetsRes[2]);
+		int[] streetId = getResources().getIntArray(R.array.streetsId);
+		String[] streetName = getResources().getStringArray(R.array.streetsName);
+		int[] streetFather = getResources().getIntArray(R.array.streetsFather);
 		PreferenceScreen root = getPreferenceScreen();
 		PreferenceCategory streetsCategory = new PreferenceCategory(this);
 		root.addPreference(streetsCategory);

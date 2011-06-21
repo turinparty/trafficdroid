@@ -43,7 +43,6 @@ public class Const {
 	public static final String adMobId = "a14d8f6a3c4c2f3";
 	public static final String anlyticsId = "UA-12243941-5";
 	public static final String item = "item";
-	public static final int[] streetsRes = new int[] { R.array.streetsId, R.array.streetsName, R.array.streetsFather };
 	public static final SparseIntArray zonesRes = new SparseIntArray(128) {
 		{
 			put(1, R.array.zones1Id);
@@ -176,5 +175,4 @@ public class Const {
 			put(-701, R.array.zones701Name);
 		}
 	};
-	//	return get(key);
 }
