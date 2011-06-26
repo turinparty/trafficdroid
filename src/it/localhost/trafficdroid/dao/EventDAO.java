@@ -5,7 +5,6 @@ import it.localhost.trafficdroid.common.TdException;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.FactoryConfigurationError;
@@ -17,7 +16,7 @@ import org.xml.sax.SAXException;
 public class EventDAO {
 	public static Document getData(String url) throws TdException {
 		try {
-			return DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new URL(Const.http + url + Const.events).openConnection().getInputStream());
+			return DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(Const.http + url + Const.events);
 		} catch (MalformedURLException e) {
 			throw new TdException(TdException.MalformedURLException, e.getMessage());
 		} catch (SAXException e) {
