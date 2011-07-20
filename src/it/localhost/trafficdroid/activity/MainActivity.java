@@ -67,12 +67,12 @@ public class MainActivity extends Activity {
 				String code = (String) v.getTag();
 				String url = sharedPreferences.getString(getString(R.string.providerCamKey), getString(R.string.providerCamDefault));
 				if (code.charAt(0) != Const.wcm) {
-					tracker.trackEvent("Webcam", "Request", code, 0);
+					tracker.trackEvent(Const.eventCatWebcam, Const.eventActionRequest, code, 0);
 					new AlertDialog.Builder(MainActivity.this).setTitle(getString(R.string.info)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.help)).show();
 				} else if (url.equals(getString(R.string.providerCamDefault)))
 					new AlertDialog.Builder(MainActivity.this).setTitle(getString(R.string.warning)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.badWebcamConf)).show();
 				else if (code.charAt(0) == Const.wcm && !url.equals(getString(R.string.providerCamDefault))) {
-					tracker.trackEvent("Webcam", "Open", code, 0);
+					tracker.trackEvent(Const.eventCatWebcam, Const.eventActionOpen, code, 0);
 					Intent intent = new Intent(MainActivity.this, WebcamActivity.class);
 					intent.putExtra(Const.camId, code.substring(1));
 					startActivity(intent);
