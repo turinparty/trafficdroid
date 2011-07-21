@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones11Id">
-		<item>s11z1</item>
-		<item>z1933</item>
-		<item>z75</item>
-		<item>z92</item>
-		<item>z87</item>
-		<item>z2097</item>
-		<item>z95</item>
-		<item>z96</item>
-		<item>z90</item>
+		<item>A10421</item>
+		<item>A20042</item>
+		<item>A22090</item>
+		<item>A21982</item>
+		<item>A22014</item>
+		<item>A20069</item>
+		<item>A21965</item>
+		<item>A21959</item>
+		<item>A21997</item>
 		<item>s11z10</item>
 		<item>s11z11</item>
 		<item>s11z12</item>
