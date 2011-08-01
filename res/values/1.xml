@@ -57,11 +57,11 @@
 		<item>A19301</item><!-- A01 km. 721,5 Capua itinere nord -->
 		<item>A19294</item><!-- A01 km. 732,8 Caserta Nord itinere sud -->
 		<item>A21720</item><!-- A01 km. 738,5 All. A01-A30 itinere sud -->
-		<item>z521</item><!-- A01 km. 742,5 Caserta Sud itinere nord -->
-		<item>z522</item><!-- A01 km. 742,5 Caserta Sud itinere sud -->
-		<item>z1909</item><!-- A01 km. 751,2 All. A01-A16 itinere sud -->
-		<item>z523</item><!-- A01 km. 752,8 All. A01-A16 itinere nord -->
-		<item>z126</item><!-- A01 km. 754,0 All. Capodichino itinere nord -->
+		<item>A19289</item><!-- A01 km. 742,5 Caserta Sud itinere nord -->
+		<item>A25563</item><!-- A01 km. 742,5 Caserta Sud itinere sud -->
+		<item>A19278</item><!-- A01 km. 751,2 All. A01-A16 itinere sud -->
+		<item>A9159</item><!-- A01 km. 752,8 All. A01-A16 itinere nord -->
+		<item>A28050</item><!-- A01 km. 754,0 All. Capodichino itinere nord -->
 		<item>z2134</item><!-- A01 km. 755,0 Masseria Est itinere nord -->
 	</string-array>
 	<string-array name="zones1Name">
