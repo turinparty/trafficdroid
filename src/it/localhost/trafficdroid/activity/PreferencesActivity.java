@@ -18,7 +18,7 @@ public class PreferencesActivity extends PreferenceActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		tracker = GoogleAnalyticsTracker.getInstance();
-		tracker.start(Const.anlyticsId, this);
+		tracker.startNewSession(Const.anlyticsId, this);
 		PreferenceManager.setDefaultValues(this, R.layout.preferences, false);
 		addPreferencesFromResource(R.layout.preferences);
 		int[] streetId = getResources().getIntArray(R.array.streetsId);
@@ -91,7 +91,7 @@ public class PreferencesActivity extends PreferenceActivity {
 	@Override
 	public void onStop() {
 		super.onStop();
-		tracker.stop();
+		tracker.stopSession();
 		sendBroadcast(Const.scheduleServiceIntent);
 	}
 }

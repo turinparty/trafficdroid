@@ -20,7 +20,7 @@ public class WebcamActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		tracker = GoogleAnalyticsTracker.getInstance();
-		tracker.start(Const.anlyticsId, this);
+		tracker.startNewSession(Const.anlyticsId, this);
 		mWebView = new WebView(this);
 		setContentView(mWebView);
 		mWebView.getSettings().setJavaScriptEnabled(true);
@@ -45,6 +45,6 @@ public class WebcamActivity extends Activity {
 	@Override
 	public void onStop() {
 		super.onStop();
-		tracker.stop();
+		tracker.stopSession();
 	}
 }

@@ -24,7 +24,6 @@ import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -53,7 +52,7 @@ public class MainActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		tracker = GoogleAnalyticsTracker.getInstance();
-		tracker.start(Const.anlyticsId, this);
+		tracker.startNewSession(Const.anlyticsId, this);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
 		intentFilter = new IntentFilter();
@@ -147,29 +146,27 @@ public class MainActivity extends Activity {
 	@Override
 	public void onStop() {
 		super.onStop();
-		tracker.stop();
+		tracker.stopSession();
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		super.onCreateOptionsMenu(menu);
-		MenuItem menuSettings = menu.add(0, Const.menuSettings, Menu.NONE, R.string.settings);
-		MenuItem menuRefresh = menu.add(0, Const.menuRefresh, Menu.NONE, R.string.refresh);
-		menuSettings.setIcon(android.R.drawable.ic_menu_preferences);
-		menuRefresh.setIcon(android.R.drawable.ic_menu_rotate);
-		menuSettings.setOnMenuItemClickListener(new OnMenuItemClickListener() {
-			public boolean onMenuItemClick(MenuItem _menuItem) {
-				startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
-				return true;
-			}
-		});
-		menuRefresh.setOnMenuItemClickListener(new OnMenuItemClickListener() {
-			public boolean onMenuItemClick(MenuItem _menuItem) {
-				sendBroadcast(Const.doUpdateIntent);
-				return true;
-			}
-		});
+		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.menusettings:
+			startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
+			return true;
+		case R.id.menurefresh:
+			sendBroadcast(Const.doUpdateIntent);
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
 
 	private void refresh() {

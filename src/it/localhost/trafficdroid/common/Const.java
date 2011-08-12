@@ -6,8 +6,6 @@ import android.util.SparseIntArray;
 
 public class Const {
 	public static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
-	public static final int menuSettings = 1;
-	public static final int menuRefresh = 2;
 	public static final int notificationId = 1;
 	public static final char A = 'A';
 	public static final char wcm = 'A';

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="it.localhost.trafficdroid" android:versionCode="55"
-	android:versionName="0.15.4 tree streets" android:installLocation="preferExternal">
+	package="it.localhost.trafficdroid" android:versionCode="56"
+	android:versionName="0.15.5 tree streets" android:installLocation="preferExternal">
 	<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="10" />
 	<supports-screens android:anyDensity="true"
 		android:xlargeScreens="true" android:largeScreens="true"
