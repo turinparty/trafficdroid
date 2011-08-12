@@ -129,11 +129,9 @@ public class MainActivity extends Activity {
 			new AlertDialog.Builder(this).setTitle(getString(R.string.warning)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.badConf)).show();
 		else if (sharedPreferences.getString(getString(R.string.providerBadNewsKey), getString(R.string.providerBadNewsDefault)).equals(getString(R.string.providerBadNewsDefault)))
 			new AlertDialog.Builder(this).setTitle(getString(R.string.warning)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.badBadNewsConf)).show();
-		else {
-			if (sharedPreferences.getBoolean(getString(R.string.berserkKey), Boolean.parseBoolean(getString(R.string.berserkDefault))))
-				sendBroadcast(Const.doUpdateIntent);
-			refresh();
-		}
+		else if (sharedPreferences.getBoolean(getString(R.string.berserkKey), Boolean.parseBoolean(getString(R.string.berserkDefault))))
+			sendBroadcast(Const.doUpdateIntent);
+		refresh();
 	}
 
 	@Override
@@ -170,18 +168,13 @@ public class MainActivity extends Activity {
 	}
 
 	private void refresh() {
-		tableLayout.removeAllViews();
 		try {
+			tableLayout.removeAllViews();
 			mainDTO = MainDAO.retrieve(this);
-		} catch (TdException e) {
-			mainDTO = null;
-			if (e.getKey() == TdException.FileNotFoundException)
-				sendBroadcast(Const.doUpdateIntent);
+			if (mainDTO.getTrafficTime() != null)
+				setTitle(getString(R.string.app_name) + " " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
 			else
-				e.printStackTrace();
-		}
-		if (mainDTO != null) {
-			setTitle(getString(R.string.app_name) + " " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
+				setTitle(getString(R.string.app_name) + " " + getString(R.string.error));
 			for (int i = 0; i < mainDTO.getStreets().size(); i++) {
 				StreetDTO street = mainDTO.getStreets().get(i);
 				boolean streetVisible = sharedPreferences.getBoolean(street.getId() + "V", true);
@@ -228,6 +221,11 @@ public class MainActivity extends Activity {
 				streetRow.setTag(R.id.streetEnd, tableLayout.getChildCount());
 				streetRow.setOnClickListener(streetOnClickListener);
 			}
+		} catch (TdException e) {
+			if (e.getKey() == TdException.FileNotFoundException)
+				sendBroadcast(Const.doUpdateIntent);
+			else
+				e.printStackTrace();
 		}
 	}
 }

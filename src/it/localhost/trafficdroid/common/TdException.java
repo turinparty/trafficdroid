@@ -13,6 +13,7 @@ public class TdException extends Exception {
 	public static final byte ClassNotFoundException = 8;
 	public static final byte ClientProtocolException = 9;
 	public static final byte IndexOutOfBoundsException = 10;
+	public static final byte ParsingException = 11;
 	private byte key;
 
 	public TdException(byte key, String msg) {
@@ -20,7 +21,7 @@ public class TdException extends Exception {
 		this.key = key;
 	}
 
-	public int getKey() {
+	public byte getKey() {
 		return key;
 	}
 
@@ -48,6 +49,8 @@ public class TdException extends Exception {
 			return "ClientProtocolException";
 		case IndexOutOfBoundsException:
 			return "IndexOutOfBoundsException";
+		case ParsingException:
+			return "ParsingException";
 		default:
 			return "Unknown Exception";
 		}

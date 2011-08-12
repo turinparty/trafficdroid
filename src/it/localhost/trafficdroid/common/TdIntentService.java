@@ -6,9 +6,6 @@ import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.parser.BadNewsParser;
 import it.localhost.trafficdroid.parser.TrafficParser;
-
-import java.util.Date;
-
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -36,7 +33,6 @@ public class TdIntentService extends WakefulIntentService {
 				TrafficParser.parse(mainDto, trafficUrl);
 			if (!eventUrl.equals(getString(R.string.providerBadNewsDefault)))
 				BadNewsParser.parse(mainDto, eventUrl);
-			mainDto.setTrafficTime(new Date());
 			MainDAO.store(mainDto, this);
 			String congestedZones = mainDto.getCongestedZones();
 			if (congestedZones != null && PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.chiaroveggenzaEnablerKey), Boolean.parseBoolean(getString(R.string.chiaroveggenzaEnablerDefault)))) {
