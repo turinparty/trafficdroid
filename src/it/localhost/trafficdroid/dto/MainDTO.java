@@ -11,7 +11,6 @@ public class MainDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private List<StreetDTO> streets;
 	private Date trafficTime;
-	private Date badNewsTime;
 	private StringBuilder congestedZones;
 	private int congestionThreshold;
 
@@ -26,14 +25,6 @@ public class MainDTO implements Serializable {
 
 	public void setTrafficTime(Date trafficTime) {
 		this.trafficTime = trafficTime;
-	}
-
-	public Date getBadNewsTime() {
-		return badNewsTime;
-	}
-
-	public void setBadNewsTime(Date badNewsTime) {
-		this.badNewsTime = badNewsTime;
 	}
 
 	public void addStreet(StreetDTO street) {

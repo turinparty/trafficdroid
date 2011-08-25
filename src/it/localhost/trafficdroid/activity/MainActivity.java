@@ -169,57 +169,60 @@ public class MainActivity extends Activity {
 		try {
 			tableLayout.removeAllViews();
 			mainDTO = MainDAO.retrieve(this);
-			if (mainDTO.getTrafficTime() != null && mainDTO.getBadNewsTime() != null)
+			if (sharedPreferences.getBoolean(Const.exceptionCheck, false)) {
+				String msg = sharedPreferences.getString(Const.exceptionName, null) + ": " + sharedPreferences.getString(Const.exceptionMsg, null);
+				new AlertDialog.Builder(this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(msg).show();
+				setTitle(msg);
+			} else {
 				setTitle(getString(R.string.app_name) + ": " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
-			else
-				setTitle(R.string.error);
-			for (int i = 0; i < mainDTO.getStreets().size(); i++) {
-				StreetDTO street = mainDTO.getStreets().get(i);
-				boolean streetVisible = sharedPreferences.getBoolean(street.getId() + "V", true);
-				TableRow streetRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_street, tableLayout, false);
-				((TextView) streetRow.findViewById(R.id.streetName)).setText(street.getName());
-				((TextView) streetRow.findViewById(R.id.streetDirLeft)).setText(street.getDirectionLeft());
-				((TextView) streetRow.findViewById(R.id.streetDirRight)).setText(street.getDirectionRight());
-				tableLayout.addView(streetRow);
-				streetRow.setTag(R.id.streetId, street.getId());
-				streetRow.setTag(R.id.streetStart, tableLayout.getChildCount());
-				if (sharedPreferences.getBoolean(getString(R.string.badNewsKey), Boolean.parseBoolean(getString(R.string.badNewsDefault))) && street.getBadNews().size() != 0) {
-					TableRow badNewsRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_badnews, tableLayout, false);
-					((TextView) badNewsRow.findViewById(R.id.BNTNumber)).setText(Integer.toString(street.getBadNews().size()));
-					badNewsRow.setTag(i);
-					badNewsRow.setOnClickListener(badNewsOnClickListener);
-					badNewsRow.setVisibility(streetVisible ? View.VISIBLE : View.GONE);
-					tableLayout.addView(badNewsRow);
+				for (int i = 0; i < mainDTO.getStreets().size(); i++) {
+					StreetDTO street = mainDTO.getStreets().get(i);
+					boolean streetVisible = sharedPreferences.getBoolean(street.getId() + "V", true);
+					TableRow streetRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_street, tableLayout, false);
+					((TextView) streetRow.findViewById(R.id.streetName)).setText(street.getName());
+					((TextView) streetRow.findViewById(R.id.streetDirLeft)).setText(street.getDirectionLeft());
+					((TextView) streetRow.findViewById(R.id.streetDirRight)).setText(street.getDirectionRight());
+					tableLayout.addView(streetRow);
+					streetRow.setTag(R.id.streetId, street.getId());
+					streetRow.setTag(R.id.streetStart, tableLayout.getChildCount());
+					if (sharedPreferences.getBoolean(getString(R.string.badNewsKey), Boolean.parseBoolean(getString(R.string.badNewsDefault))) && street.getBadNews().size() != 0) {
+						TableRow badNewsRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_badnews, tableLayout, false);
+						((TextView) badNewsRow.findViewById(R.id.BNTNumber)).setText(Integer.toString(street.getBadNews().size()));
+						badNewsRow.setTag(i);
+						badNewsRow.setOnClickListener(badNewsOnClickListener);
+						badNewsRow.setVisibility(streetVisible ? View.VISIBLE : View.GONE);
+						tableLayout.addView(badNewsRow);
+					}
+					for (ZoneDTO zoneDTO : street.getZones()) {
+						TableRow zoneNameRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_zonefirst, tableLayout, false);
+						TableRow zoneSpeedRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_zonesecond, tableLayout, false);
+						TextView zoneNameText = (TextView) zoneNameRow.findViewById(R.id.zoneName);
+						TextView leftZoneSpeedText = (TextView) zoneSpeedRow.findViewById(R.id.zoneSpeedLeft);
+						TextView rightZoneSpeedText = (TextView) zoneSpeedRow.findViewById(R.id.zoneSpeedRight);
+						zoneNameText.setText(zoneDTO.getName());
+						leftZoneSpeedText.setText(zoneDTO.getSpeedLeft());
+						rightZoneSpeedText.setText(zoneDTO.getSpeedRight());
+						leftZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatLeft()]);
+						rightZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatRight()]);
+						leftZoneSpeedText.setTypeface(zoneDTO.getCatLeft() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
+						rightZoneSpeedText.setTypeface(zoneDTO.getCatRight() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
+						zoneSpeedRow.setTag(zoneDTO.getId());
+						zoneSpeedRow.setOnClickListener(webcamOnClickListener);
+						ImageView cam = (ImageView) zoneSpeedRow.findViewById(R.id.zoneCam);
+						if (zoneDTO.getId().charAt(0) == Const.webcamTrue)
+							cam.setImageResource(android.R.drawable.ic_menu_camera);
+						else if (zoneDTO.getId().charAt(0) == Const.webcamNone)
+							cam.setImageResource(android.R.drawable.ic_menu_close_clear_cancel);
+						else
+							cam.setImageResource(android.R.drawable.ic_menu_add);
+						zoneNameRow.setVisibility(streetVisible ? View.VISIBLE : View.GONE);
+						zoneSpeedRow.setVisibility(streetVisible ? View.VISIBLE : View.GONE);
+						tableLayout.addView(zoneNameRow);
+						tableLayout.addView(zoneSpeedRow);
+					}
+					streetRow.setTag(R.id.streetEnd, tableLayout.getChildCount());
+					streetRow.setOnClickListener(streetOnClickListener);
 				}
-				for (ZoneDTO zoneDTO : street.getZones()) {
-					TableRow zoneNameRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_zonefirst, tableLayout, false);
-					TableRow zoneSpeedRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_zonesecond, tableLayout, false);
-					TextView zoneNameText = (TextView) zoneNameRow.findViewById(R.id.zoneName);
-					TextView leftZoneSpeedText = (TextView) zoneSpeedRow.findViewById(R.id.zoneSpeedLeft);
-					TextView rightZoneSpeedText = (TextView) zoneSpeedRow.findViewById(R.id.zoneSpeedRight);
-					zoneNameText.setText(zoneDTO.getName());
-					leftZoneSpeedText.setText(zoneDTO.getSpeedLeft());
-					rightZoneSpeedText.setText(zoneDTO.getSpeedRight());
-					leftZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatLeft()]);
-					rightZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatRight()]);
-					leftZoneSpeedText.setTypeface(zoneDTO.getCatLeft() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
-					rightZoneSpeedText.setTypeface(zoneDTO.getCatRight() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
-					zoneSpeedRow.setTag(zoneDTO.getId());
-					zoneSpeedRow.setOnClickListener(webcamOnClickListener);
-					ImageView cam = (ImageView) zoneSpeedRow.findViewById(R.id.zoneCam);
-					if (zoneDTO.getId().charAt(0) == Const.webcamTrue)
-						cam.setImageResource(android.R.drawable.ic_menu_camera);
-					else if (zoneDTO.getId().charAt(0) == Const.webcamNone)
-						cam.setImageResource(android.R.drawable.ic_menu_close_clear_cancel);
-					else
-						cam.setImageResource(android.R.drawable.ic_menu_add);
-					zoneNameRow.setVisibility(streetVisible ? View.VISIBLE : View.GONE);
-					zoneSpeedRow.setVisibility(streetVisible ? View.VISIBLE : View.GONE);
-					tableLayout.addView(zoneNameRow);
-					tableLayout.addView(zoneSpeedRow);
-				}
-				streetRow.setTag(R.id.streetEnd, tableLayout.getChildCount());
-				streetRow.setOnClickListener(streetOnClickListener);
 			}
 		} catch (TdException e) {
 			if (e.getKey() == TdException.FileNotFoundException)

@@ -3,7 +3,7 @@
 	<string name="app_name">TrafficDroid</string>
 	<string name="cities_prompt">Scegli una strada</string>
 	<string name="ok">OK</string>
-	<string name="error">TrafficDroid: ERROR!</string>
+	<string name="error">Errore</string>
 	<string name="warning">Attenzione</string>
 	<string name="info">Informazione</string>
 	<string name="webcamAdd">Questa Webcam non è ancora mappata, aiutaci a mapparla. Sul sito trovi tutte le informazioni. Richiesta di mappatura inoltrata.</string>

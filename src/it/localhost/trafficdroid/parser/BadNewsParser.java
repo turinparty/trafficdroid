@@ -8,7 +8,6 @@ import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.StringTokenizer;
 
 import org.w3c.dom.NodeList;
@@ -22,17 +21,14 @@ public class BadNewsParser {
 				NodeList item = items.item(i).getChildNodes();
 				String street = new StringTokenizer(item.item(1).getTextContent()).nextToken();
 				StringTokenizer descST = new StringTokenizer(item.item(3).getTextContent(), "\n");
-				if (street.charAt(0) == Const.charAutostrade) 
+				if (street.charAt(0) == Const.charAutostrade)
 					for (StreetDTO streetDTO : dto.getStreets())
 						if (Integer.parseInt(street.substring(1, street.length())) == streetDTO.getId())
 							streetDTO.addBadNews(new BadNewsDTO(descST.nextToken(), descST.nextToken(), sdf.parse(item.item(7).getTextContent())));
 			}
-			dto.setBadNewsTime(new Date());
 		} catch (TdException e) {
-			dto.setBadNewsTime(null);
 			throw new TdException(e.getKey(), e.getMessage());
 		} catch (Exception e) {
-			dto.setBadNewsTime(null);
 			throw new TdException(TdException.ParsingException, e.getMessage());
 		}
 	}

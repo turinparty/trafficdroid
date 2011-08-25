@@ -7,8 +7,6 @@ import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
 
-import java.util.Date;
-
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -52,12 +50,9 @@ public class TrafficParser {
 					}
 				}
 			}
-			dto.setTrafficTime(new Date());
 		} catch (TdException e) {
-			dto.setTrafficTime(null);
 			throw new TdException(e.getKey(), e.getMessage());
 		} catch (Exception e) {
-			dto.setTrafficTime(null);
 			throw new TdException(TdException.ParsingException, e.getMessage());
 		}
 	}

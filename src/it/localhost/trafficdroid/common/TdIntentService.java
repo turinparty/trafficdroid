@@ -1,5 +1,7 @@
 package it.localhost.trafficdroid.common;
 
+import java.util.Date;
+
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.dao.MainDAO;
@@ -25,10 +27,12 @@ public class TdIntentService extends WakefulIntentService {
 	public void doWakefulWork(Intent arg0) {
 		sendBroadcast(Const.beginUpdateIntent);
 		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+		SharedPreferences.Editor editor = sharedPreferences.edit();
 		try {
 			MainDTO mainDto = MainDAO.create(this);
 			TrafficParser.parse(mainDto, sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault)));
 			BadNewsParser.parse(mainDto, sharedPreferences.getString(getString(R.string.providerBadNewsKey), getString(R.string.providerBadNewsDefault)));
+			mainDto.setTrafficTime(new Date());
 			MainDAO.store(mainDto, this);
 			String congestedZones = mainDto.getCongestedZones();
 			if (congestedZones != null && PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.chiaroveggenzaEnablerKey), Boolean.parseBoolean(getString(R.string.chiaroveggenzaEnablerDefault)))) {
@@ -39,9 +43,13 @@ public class TdIntentService extends WakefulIntentService {
 				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(Const.notificationId, notification);
 			} else
 				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
+			editor.putBoolean(Const.exceptionCheck, false);
 		} catch (TdException e) {
-			// come gestiamo la cosa?
+			editor.putBoolean(Const.exceptionCheck, true);
+			editor.putString(Const.exceptionName, e.getName());
+			editor.putString(Const.exceptionMsg, e.getMessage());
 		} finally {
+			editor.commit();
 			sendBroadcast(Const.endUpdateIntent);
 		}
 	}
