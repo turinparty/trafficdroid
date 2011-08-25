@@ -23,7 +23,10 @@
 			android:entries="@array/chiaroveggenzaTimeLabel" android:entryValues="@array/chiaroveggenzaTimeValue"
 			android:defaultValue="@string/chiaroveggenzaTimeDefault" />
 	</PreferenceCategory>
-	<PreferenceCategory android:title="@string/notificationCategory">
+	<PreferenceCategory android:title="@string/guiCategory">
+		<CheckBoxPreference android:title="@string/badNewsTitle"
+			android:key="@string/badNewsKey" android:summary="@string/badNewsSummary"
+			android:defaultValue="@string/badNewsDefault" />
 		<ListPreference android:title="@string/notificationSpeedTitle"
 			android:key="@string/notificationSpeedKey" android:summary="@string/notificationSpeedSummary"
 			android:entries="@array/notificationSpeedLabel" android:entryValues="@array/notificationSpeedValue"

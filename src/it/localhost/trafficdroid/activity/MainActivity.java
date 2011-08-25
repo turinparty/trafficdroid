@@ -80,14 +80,14 @@ public class MainActivity extends Activity {
 		};
 		badNewsOnClickListener = new OnClickListener() {
 			public void onClick(View v) {
-				StreetDTO street = mainDTO.getStreets().get((Integer) v.getTag());
 				Dialog d = new Dialog(MainActivity.this);
 				ScrollView sv = new ScrollView(MainActivity.this);
 				LinearLayout ll = new LinearLayout(MainActivity.this);
-				d.setTitle(street.getName());
 				ll.setOrientation(LinearLayout.VERTICAL);
 				d.setContentView(sv);
 				sv.addView(ll);
+				StreetDTO street = mainDTO.getStreets().get((Integer) v.getTag());
+				d.setTitle(street.getName());
 				for (BadNewsDTO event : street.getBadNews()) {
 					View eventRow = layoutInflater.inflate(R.layout.linearlayout_badnews, null);
 					((TextView) eventRow.findViewById(R.id.BNDText)).setText(event.getTitle() + " " + event.getDescription());
@@ -169,10 +169,10 @@ public class MainActivity extends Activity {
 		try {
 			tableLayout.removeAllViews();
 			mainDTO = MainDAO.retrieve(this);
-			if (mainDTO.getTrafficTime() != null)
-				setTitle(getString(R.string.app_name) + " " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
+			if (mainDTO.getTrafficTime() != null && mainDTO.getBadNewsTime() != null)
+				setTitle(getString(R.string.app_name) + ": " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
 			else
-				setTitle(R.string.app_name);
+				setTitle(R.string.error);
 			for (int i = 0; i < mainDTO.getStreets().size(); i++) {
 				StreetDTO street = mainDTO.getStreets().get(i);
 				boolean streetVisible = sharedPreferences.getBoolean(street.getId() + "V", true);
@@ -183,9 +183,9 @@ public class MainActivity extends Activity {
 				tableLayout.addView(streetRow);
 				streetRow.setTag(R.id.streetId, street.getId());
 				streetRow.setTag(R.id.streetStart, tableLayout.getChildCount());
-				if (street.getBadNews() != null && street.getBadNews().size() != 0) {
+				if (sharedPreferences.getBoolean(getString(R.string.badNewsKey), Boolean.parseBoolean(getString(R.string.badNewsDefault))) && street.getBadNews().size() != 0) {
 					TableRow badNewsRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_badnews, tableLayout, false);
-					((TextView) badNewsRow.findViewById(R.id.BNTText)).setText(Integer.toString(street.getBadNews().size()));
+					((TextView) badNewsRow.findViewById(R.id.BNTNumber)).setText(Integer.toString(street.getBadNews().size()));
 					badNewsRow.setTag(i);
 					badNewsRow.setOnClickListener(badNewsOnClickListener);
 					badNewsRow.setVisibility(streetVisible ? View.VISIBLE : View.GONE);
@@ -221,9 +221,6 @@ public class MainActivity extends Activity {
 				streetRow.setTag(R.id.streetEnd, tableLayout.getChildCount());
 				streetRow.setOnClickListener(streetOnClickListener);
 			}
-			TableRow badNewsRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_badnews, tableLayout, false);
-			((TextView) badNewsRow.findViewById(R.id.BNTText)).setText(Integer.toString(mainDTO.getOtherBadNews().size()));
-			tableLayout.addView(badNewsRow);
 		} catch (TdException e) {
 			if (e.getKey() == TdException.FileNotFoundException)
 				sendBroadcast(Const.doUpdateIntent);

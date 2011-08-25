@@ -25,14 +25,10 @@ public class TdIntentService extends WakefulIntentService {
 	public void doWakefulWork(Intent arg0) {
 		sendBroadcast(Const.beginUpdateIntent);
 		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-		String trafficUrl = sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault));
-		String eventUrl = sharedPreferences.getString(getString(R.string.providerBadNewsKey), getString(R.string.providerBadNewsDefault));
 		try {
 			MainDTO mainDto = MainDAO.create(this);
-			if (!trafficUrl.equals(getString(R.string.providerTrafficDefault)))
-				TrafficParser.parse(mainDto, trafficUrl);
-			if (!eventUrl.equals(getString(R.string.providerBadNewsDefault)))
-				BadNewsParser.parse(mainDto, eventUrl);
+			TrafficParser.parse(mainDto, sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault)));
+			BadNewsParser.parse(mainDto, sharedPreferences.getString(getString(R.string.providerBadNewsKey), getString(R.string.providerBadNewsDefault)));
 			MainDAO.store(mainDto, this);
 			String congestedZones = mainDto.getCongestedZones();
 			if (congestedZones != null && PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.chiaroveggenzaEnablerKey), Boolean.parseBoolean(getString(R.string.chiaroveggenzaEnablerDefault)))) {

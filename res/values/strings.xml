@@ -3,6 +3,7 @@
 	<string name="app_name">TrafficDroid</string>
 	<string name="cities_prompt">Scegli una strada</string>
 	<string name="ok">OK</string>
+	<string name="error">TrafficDroid: ERROR!</string>
 	<string name="warning">Attenzione</string>
 	<string name="info">Informazione</string>
 	<string name="webcamAdd">Questa Webcam non è ancora mappata, aiutaci a mapparla. Sul sito trovi tutte le informazioni. Richiesta di mappatura inoltrata.</string>
@@ -13,7 +14,7 @@
 	<string name="selectStreet">Seleziona l\'intera strada</string>
 	<string name="sniper">Seleziona le singole zone</string>
 	<string name="diramation">Diramazioni</string>
-	<string name="badNews"> Bad News!</string>
+	<string name="badNews">Bad-News: </string>
 	<string name="mappedSreet">Strade preferite</string>
 	<string name="providerCategory">Provider</string>
 	<string name="providerSummary">Verifica di averne i permessi</string>
@@ -39,11 +40,15 @@
 	<string name="chiaroveggenzaTimeKey">notificationTimeKey</string>
 	<string name="chiaroveggenzaTimeSummary">Ogni quanto tempo aggiornare i dati</string>
 	<string name="chiaroveggenzaTimeDefault">1800000</string>
-	<string name="notificationCategory">Notifiche</string>
+	<string name="guiCategory">Interfaccia utente</string>
 	<string name="notificationTitle">Traffico nelle seguenti tratte</string>
 	<string name="notificationTicker">Traffico rilevato</string>
 	<string name="notificationSpeedTitle">Notifica fino a...</string>
 	<string name="notificationSpeedKey">notificationSpeedKey</string>
 	<string name="notificationSpeedSummary">Velocità massima per creare la notifica</string>
 	<string name="notificationSpeedDefault">1</string>
+	<string name="badNewsTitle">Bad-News</string>
+	<string name="badNewsKey">badNewsKey</string>
+	<string name="badNewsSummary">Visualizza le Bad-News delle strade sezionate</string>
+	<string name="badNewsDefault">true</string>
 </resources>

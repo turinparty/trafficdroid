@@ -54,8 +54,10 @@ public class TrafficParser {
 			}
 			dto.setTrafficTime(new Date());
 		} catch (TdException e) {
+			dto.setTrafficTime(null);
 			throw new TdException(e.getKey(), e.getMessage());
 		} catch (Exception e) {
+			dto.setTrafficTime(null);
 			throw new TdException(TdException.ParsingException, e.getMessage());
 		}
 	}

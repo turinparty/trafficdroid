@@ -2,7 +2,7 @@
 <resources>
 	<item type="id" name="BNDImage" />
 	<item type="id" name="BNDText" />
-	<item type="id" name="BNTText" />
+	<item type="id" name="BNTNumber" />
 	<item type="id" name="mainLayout" />
 	<item type="id" name="mainTable" />
 	<item type="id" name="streetDirLeft" />
