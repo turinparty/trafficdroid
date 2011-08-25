@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones161Id">
-		<item>s161z1</item>
-		<item>s161z2</item>
-		<item>s161z3</item>
-		<item>s161z4</item>
-		<item>s161z5</item>
+		<item>Hs161z1</item>
+		<item>Hs161z2</item>
+		<item>Hs161z3</item>
+		<item>Hs161z4</item>
+		<item>Hs161z5</item>
 	</string-array>
 	<string-array name="zones161Name">
 		<item>Benevento Ovest</item>

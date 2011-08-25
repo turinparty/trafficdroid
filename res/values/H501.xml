@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones501Id">
-		<item>s501z1</item>
-		<item>s501z2</item>
-		<item>s501z3</item>
+		<item>Hs501z1</item>
+		<item>Hs501z2</item>
+		<item>Hs501z3</item>
 	</string-array>
 	<string-array name="zones501Name">
 		<item>Allaccio A5</item>

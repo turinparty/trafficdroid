@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones91Id">
-		<item>s91z1</item>
-		<item>s91z2</item>
-		<item>s91z3</item>
-		<item>s91z4</item>
-		<item>s91z5</item>
+		<item>Hs91z1</item>
+		<item>Hs91z2</item>
+		<item>Hs91z3</item>
+		<item>Hs91z4</item>
+		<item>Hs91z5</item>
 	</string-array>
 	<string-array name="zones91Name">
 		<item>Fiumicino</item>

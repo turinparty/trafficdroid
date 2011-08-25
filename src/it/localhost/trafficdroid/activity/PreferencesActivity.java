@@ -19,8 +19,8 @@ public class PreferencesActivity extends PreferenceActivity {
 		super.onCreate(savedInstanceState);
 		tracker = GoogleAnalyticsTracker.getInstance();
 		tracker.startNewSession(Const.anlyticsId, this);
-		PreferenceManager.setDefaultValues(this, R.layout.preferences, false);
-		addPreferencesFromResource(R.layout.preferences);
+		PreferenceManager.setDefaultValues(this, R.layout.preferencescreen, false);
+		addPreferencesFromResource(R.layout.preferencescreen);
 		int[] streetId = getResources().getIntArray(R.array.streetsId);
 		String[] streetName = getResources().getStringArray(R.array.streetsName);
 		int[] streetFather = getResources().getIntArray(R.array.streetsFather);

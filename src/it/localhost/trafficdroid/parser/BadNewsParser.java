@@ -22,10 +22,17 @@ public class BadNewsParser {
 				NodeList item = items.item(i).getChildNodes();
 				String title = new StringTokenizer(item.item(1).getTextContent()).nextToken();
 				StringTokenizer descST = new StringTokenizer(item.item(3).getTextContent(), "\n");
-				if (title.charAt(0) == Const.A)
+				if (title.charAt(0) == Const.charAutostrade) {
+					boolean found = false;
 					for (StreetDTO streetDTO : dto.getStreets())
-						if (Integer.parseInt(title.substring(1, title.length())) == streetDTO.getId())
+						if (Integer.parseInt(title.substring(1, title.length())) == streetDTO.getId()) {
 							streetDTO.addBadNews(new BadNewsDTO(descST.nextToken(), descST.nextToken(), sdf.parse(item.item(7).getTextContent())));
+							found = true;
+						}
+					if (!found)
+						dto.addOtherBadNews(new BadNewsDTO(descST.nextToken(), descST.nextToken(), sdf.parse(item.item(7).getTextContent())));
+				} else
+					dto.addOtherBadNews(new BadNewsDTO(descST.nextToken(), descST.nextToken(), sdf.parse(item.item(7).getTextContent())));
 			}
 			dto.setTrafficTime(new Date());
 		} catch (TdException e) {

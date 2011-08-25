@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones103Id">
-		<item>s103z1</item>
-		<item>s103z2</item>
-		<item>s103z3</item>
-		<item>s103z4</item>
-		<item>s103z5</item>
-		<item>s103z6</item>
-		<item>s103z7</item>
-		<item>s103z8</item>
-		<item>s103z9</item>
-		<item>s103z10</item>
-		<item>s103z11</item>
-		<item>s103z12</item>
-		<item>s103z13</item>
+		<item>Hs103z1</item>
+		<item>Hs103z2</item>
+		<item>Hs103z3</item>
+		<item>Hs103z4</item>
+		<item>Hs103z5</item>
+		<item>Hs103z6</item>
+		<item>Hs103z7</item>
+		<item>Hs103z8</item>
+		<item>Hs103z9</item>
+		<item>Hs103z10</item>
+		<item>Hs103z11</item>
+		<item>Hs103z12</item>
+		<item>Hs103z13</item>
 	</string-array>
 	<string-array name="zones103Name">
 		<item>Allaccio A1</item>

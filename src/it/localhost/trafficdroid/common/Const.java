@@ -7,8 +7,9 @@ import android.util.SparseIntArray;
 public class Const {
 	public static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
 	public static final int notificationId = 1;
-	public static final char A = 'A';
-	public static final char wcm = 'A';
+	public static final char charAutostrade = 'A';
+	public static final char webcamTrue = 'A';
+	public static final char webcamNone = 'H';
 	public static final String openRound = " (";
 	public static final String closeRound = ")";
 	public static final String equal = "=";
@@ -44,6 +45,7 @@ public class Const {
 	public static final String eventCatWebcam = "Webcam";
 	public static final String eventActionRequest = "Request";
 	public static final String eventActionOpen = "Open";
+	public static final String eventActionNone = "None";
 	public static final SparseIntArray zonesRes = new SparseIntArray(128) {
 		{
 			put(1, R.array.zones1Id);

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones51Id">
-		<item>s51z1</item>
-		<item>s51z2</item>
-		<item>s51z3</item>
-		<item>s51z4</item>
-		<item>s51z5</item>
-		<item>s51z6</item>
-		<item>s51z7</item>
-		<item>s51z8</item>
-		<item>s51z9</item>
-		<item>s51z10</item>
-		<item>s51z11</item>
-		<item>s51z12</item>
-		<item>s51z13</item>
-		<item>s51z14</item>
-		<item>s51z15</item>
-		<item>s51z16</item>
-		<item>s51z17</item>
-		<item>s51z18</item>
-		<item>s51z19</item>
-		<item>s51z20</item>
-		<item>s51z21</item>
+		<item>Hs51z1</item>
+		<item>Hs51z2</item>
+		<item>Hs51z3</item>
+		<item>Hs51z4</item>
+		<item>Hs51z5</item>
+		<item>Hs51z6</item>
+		<item>Hs51z7</item>
+		<item>Hs51z8</item>
+		<item>Hs51z9</item>
+		<item>Hs51z10</item>
+		<item>Hs51z11</item>
+		<item>Hs51z12</item>
+		<item>Hs51z13</item>
+		<item>Hs51z14</item>
+		<item>Hs51z15</item>
+		<item>Hs51z16</item>
+		<item>Hs51z17</item>
+		<item>Hs51z18</item>
+		<item>Hs51z19</item>
+		<item>Hs51z20</item>
+		<item>Hs51z21</item>
 	</string-array>
 	<string-array name="zones51Name">
 		<item>Carnate/Usmate velate Sud</item>

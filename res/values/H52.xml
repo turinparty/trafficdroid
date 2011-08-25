@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones52Id">
-		<item>s52z1</item>
-		<item>s52z2</item>
-		<item>s52z3</item>
-		<item>s52z4</item>
-		<item>s52z5</item>
-		<item>s52z6</item>
-		<item>s52z7</item>
-		<item>s52z8</item>
-		<item>s52z9</item>
+		<item>Hs52z1</item>
+		<item>Hs52z2</item>
+		<item>Hs52z3</item>
+		<item>Hs52z4</item>
+		<item>Hs52z5</item>
+		<item>Hs52z6</item>
+		<item>Hs52z7</item>
+		<item>Hs52z8</item>
+		<item>Hs52z9</item>
 	</string-array>
 	<string-array name="zones52Name">
 		<item>SS35 Como/Milano Bruzzano</item>

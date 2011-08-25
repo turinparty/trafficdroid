@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones302Id">
-		<item>s302z1</item>
-		<item>s302z2</item>
-		<item>s302z3</item>
-		<item>s302z4</item>
-		<item>s302z5</item>
-		<item>s302z6</item>
-		<item>s302z7</item>
-		<item>s302z8</item>
-		<item>s302z9</item>
-		<item>s302z10</item>
+		<item>Hs302z1</item>
+		<item>Hs302z2</item>
+		<item>Hs302z3</item>
+		<item>Hs302z4</item>
+		<item>Hs302z5</item>
+		<item>Hs302z6</item>
+		<item>Hs302z7</item>
+		<item>Hs302z8</item>
+		<item>Hs302z9</item>
+		<item>Hs302z10</item>
 	</string-array>
 	<string-array name="zones302Name">
 		<item>Avellino</item>

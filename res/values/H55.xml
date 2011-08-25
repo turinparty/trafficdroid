@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones55Id">
-		<item>s55z1</item>
-		<item>s55z2</item>
-		<item>s55z3</item>
-		<item>s55z4</item>
-		<item>s55z5</item>
-		<item>s55z6</item>
-		<item>s55z7</item>
-		<item>s55z8</item>
-		<item>s55z9</item>
-		<item>s55z10</item>
-		<item>s55z11</item>
-		<item>s55z12</item>
-		<item>s55z13</item>
-		<item>s55z14</item>
-		<item>s55z15</item>
-		<item>s55z16</item>
+		<item>Hs55z1</item>
+		<item>Hs55z2</item>
+		<item>Hs55z3</item>
+		<item>Hs55z4</item>
+		<item>Hs55z5</item>
+		<item>Hs55z6</item>
+		<item>Hs55z7</item>
+		<item>Hs55z8</item>
+		<item>Hs55z9</item>
+		<item>Hs55z10</item>
+		<item>Hs55z11</item>
+		<item>Hs55z12</item>
+		<item>Hs55z13</item>
+		<item>Hs55z14</item>
+		<item>Hs55z15</item>
+		<item>Hs55z16</item>
 	</string-array>
 	<string-array name="zones55Name">
 		<item>Allaccio A21</item>

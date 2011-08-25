@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones551Id">
-		<item>s551z1</item>
-		<item>s551z2</item>
-		<item>s551z3</item>
-		<item>s551z4</item>
+		<item>Hs551z1</item>
+		<item>Hs551z2</item>
+		<item>Hs551z3</item>
+		<item>Hs551z4</item>
 	</string-array>
 	<string-array name="zones551Name">
 		<item>Caselle</item>

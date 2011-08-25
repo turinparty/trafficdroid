@@ -54,7 +54,7 @@ public class MainActivity extends Activity {
 		tracker = GoogleAnalyticsTracker.getInstance();
 		tracker.startNewSession(Const.anlyticsId, this);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-		setContentView(R.layout.main);
+		setContentView(R.layout.linearlayout_main);
 		intentFilter = new IntentFilter();
 		intentFilter.addAction(Const.beginUpdate);
 		intentFilter.addAction(Const.endUpdate);
@@ -64,17 +64,17 @@ public class MainActivity extends Activity {
 		webcamOnClickListener = new OnClickListener() {
 			public void onClick(View v) {
 				String code = (String) v.getTag();
-				String url = sharedPreferences.getString(getString(R.string.providerCamKey), getString(R.string.providerCamDefault));
-				if (code.charAt(0) != Const.wcm) {
-					tracker.trackEvent(Const.eventCatWebcam, Const.eventActionRequest, code, 0);
-					new AlertDialog.Builder(MainActivity.this).setTitle(getString(R.string.info)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.help)).show();
-				} else if (url.equals(getString(R.string.providerCamDefault)))
-					new AlertDialog.Builder(MainActivity.this).setTitle(getString(R.string.warning)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.badWebcamConf)).show();
-				else if (code.charAt(0) == Const.wcm && !url.equals(getString(R.string.providerCamDefault))) {
+				if (code.charAt(0) == Const.webcamNone) {
+					tracker.trackEvent(Const.eventCatWebcam, Const.eventActionNone, code, 0);
+					new AlertDialog.Builder(MainActivity.this).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamNone).show();
+				} else if (code.charAt(0) == Const.webcamTrue) {
 					tracker.trackEvent(Const.eventCatWebcam, Const.eventActionOpen, code, 0);
 					Intent intent = new Intent(MainActivity.this, WebcamActivity.class);
 					intent.putExtra(Const.camId, code.substring(1));
 					startActivity(intent);
+				} else {
+					tracker.trackEvent(Const.eventCatWebcam, Const.eventActionRequest, code, 0);
+					new AlertDialog.Builder(MainActivity.this).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamAdd).show();
 				}
 			}
 		};
@@ -89,7 +89,7 @@ public class MainActivity extends Activity {
 				d.setContentView(sv);
 				sv.addView(ll);
 				for (BadNewsDTO event : street.getBadNews()) {
-					View eventRow = layoutInflater.inflate(R.layout.badnewsdialog, null);
+					View eventRow = layoutInflater.inflate(R.layout.linearlayout_badnews, null);
 					((TextView) eventRow.findViewById(R.id.BNDText)).setText(event.getTitle() + " " + event.getDescription());
 					// TODO icona personalizzata in base all'evento
 					ll.addView(eventRow);
@@ -126,9 +126,7 @@ public class MainActivity extends Activity {
 		registerReceiver(receiver, intentFilter);
 		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
 		if (sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault)).equals(getString(R.string.providerTrafficDefault)))
-			new AlertDialog.Builder(this).setTitle(getString(R.string.warning)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.badConf)).show();
-		else if (sharedPreferences.getString(getString(R.string.providerBadNewsKey), getString(R.string.providerBadNewsDefault)).equals(getString(R.string.providerBadNewsDefault)))
-			new AlertDialog.Builder(this).setTitle(getString(R.string.warning)).setPositiveButton(getString(R.string.ok), null).setMessage(getString(R.string.badBadNewsConf)).show();
+			new AlertDialog.Builder(this).setTitle(R.string.warning).setPositiveButton(R.string.ok, null).setMessage(R.string.badConf).show();
 		else if (sharedPreferences.getBoolean(getString(R.string.berserkKey), Boolean.parseBoolean(getString(R.string.berserkDefault))))
 			sendBroadcast(Const.doUpdateIntent);
 		refresh();
@@ -174,11 +172,11 @@ public class MainActivity extends Activity {
 			if (mainDTO.getTrafficTime() != null)
 				setTitle(getString(R.string.app_name) + " " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
 			else
-				setTitle(getString(R.string.app_name) + " " + getString(R.string.error));
+				setTitle(R.string.app_name);
 			for (int i = 0; i < mainDTO.getStreets().size(); i++) {
 				StreetDTO street = mainDTO.getStreets().get(i);
 				boolean streetVisible = sharedPreferences.getBoolean(street.getId() + "V", true);
-				TableRow streetRow = (TableRow) layoutInflater.inflate(R.layout.street, tableLayout, false);
+				TableRow streetRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_street, tableLayout, false);
 				((TextView) streetRow.findViewById(R.id.streetName)).setText(street.getName());
 				((TextView) streetRow.findViewById(R.id.streetDirLeft)).setText(street.getDirectionLeft());
 				((TextView) streetRow.findViewById(R.id.streetDirRight)).setText(street.getDirectionRight());
@@ -186,7 +184,7 @@ public class MainActivity extends Activity {
 				streetRow.setTag(R.id.streetId, street.getId());
 				streetRow.setTag(R.id.streetStart, tableLayout.getChildCount());
 				if (street.getBadNews() != null && street.getBadNews().size() != 0) {
-					TableRow badNewsRow = (TableRow) layoutInflater.inflate(R.layout.badnewstable, tableLayout, false);
+					TableRow badNewsRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_badnews, tableLayout, false);
 					((TextView) badNewsRow.findViewById(R.id.BNTText)).setText(Integer.toString(street.getBadNews().size()));
 					badNewsRow.setTag(i);
 					badNewsRow.setOnClickListener(badNewsOnClickListener);
@@ -194,8 +192,8 @@ public class MainActivity extends Activity {
 					tableLayout.addView(badNewsRow);
 				}
 				for (ZoneDTO zoneDTO : street.getZones()) {
-					TableRow zoneNameRow = (TableRow) layoutInflater.inflate(R.layout.zonefirst, tableLayout, false);
-					TableRow zoneSpeedRow = (TableRow) layoutInflater.inflate(R.layout.zonesecond, tableLayout, false);
+					TableRow zoneNameRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_zonefirst, tableLayout, false);
+					TableRow zoneSpeedRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_zonesecond, tableLayout, false);
 					TextView zoneNameText = (TextView) zoneNameRow.findViewById(R.id.zoneName);
 					TextView leftZoneSpeedText = (TextView) zoneSpeedRow.findViewById(R.id.zoneSpeedLeft);
 					TextView rightZoneSpeedText = (TextView) zoneSpeedRow.findViewById(R.id.zoneSpeedRight);
@@ -209,8 +207,10 @@ public class MainActivity extends Activity {
 					zoneSpeedRow.setTag(zoneDTO.getId());
 					zoneSpeedRow.setOnClickListener(webcamOnClickListener);
 					ImageView cam = (ImageView) zoneSpeedRow.findViewById(R.id.zoneCam);
-					if (zoneDTO.getId().charAt(0) == Const.wcm)
+					if (zoneDTO.getId().charAt(0) == Const.webcamTrue)
 						cam.setImageResource(android.R.drawable.ic_menu_camera);
+					else if (zoneDTO.getId().charAt(0) == Const.webcamNone)
+						cam.setImageResource(android.R.drawable.ic_menu_close_clear_cancel);
 					else
 						cam.setImageResource(android.R.drawable.ic_menu_add);
 					zoneNameRow.setVisibility(streetVisible ? View.VISIBLE : View.GONE);
@@ -221,6 +221,9 @@ public class MainActivity extends Activity {
 				streetRow.setTag(R.id.streetEnd, tableLayout.getChildCount());
 				streetRow.setOnClickListener(streetOnClickListener);
 			}
+			TableRow badNewsRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_badnews, tableLayout, false);
+			((TextView) badNewsRow.findViewById(R.id.BNTText)).setText(Integer.toString(mainDTO.getOtherBadNews().size()));
+			tableLayout.addView(badNewsRow);
 		} catch (TdException e) {
 			if (e.getKey() == TdException.FileNotFoundException)
 				sendBroadcast(Const.doUpdateIntent);

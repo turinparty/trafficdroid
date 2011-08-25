@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones56Id">
-		<item>s56z1</item>
-		<item>s56z2</item>
-		<item>s56z3</item>
-		<item>s56z4</item>
-		<item>s56z5</item>
-		<item>z1157</item>
-		<item>s56z7</item>
-		<item>s56z8</item>
-		<item>s56z9</item>
-		<item>s56z10</item>
-		<item>z1570</item>
+		<item>Hs56z1</item>
+		<item>Hs56z2</item>
+		<item>Hs56z3</item>
+		<item>Hs56z4</item>
+		<item>Hs56z5</item>
+		<item>Hs56z6</item>
+		<item>Hs56z7</item>
+		<item>Hs56z8</item>
+		<item>Hs56z9</item>
+		<item>Hs56z10</item>
+		<item>Hs56z11</item>
 	</string-array>
 	<string-array name="zones56Name">
 		<item>14: Lago d\'Averno</item>

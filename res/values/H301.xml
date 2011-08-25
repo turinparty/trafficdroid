@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones301Id">
-		<item>s301z1</item>
-		<item>s301z2</item>
-		<item>s301z3</item>
-		<item>s301z4</item>
+		<item>Hs301z1</item>
+		<item>Hs301z2</item>
+		<item>Hs301z3</item>
+		<item>Hs301z4</item>
 	</string-array>
 	<string-array name="zones301Name">
 		<item>Reggio di Calabria Centro</item>

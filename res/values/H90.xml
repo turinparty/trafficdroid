@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones90Id">
-		<item>s90z1</item>
-		<item>s90z2</item>
-		<item>s90z3</item>
-		<item>s90z4</item>
-		<item>s90z5</item>
-		<item>s90z6</item>
-		<item>s90z7</item>
-		<item>s90z8</item>
-		<item>s90z9</item>
-		<item>s90z10</item>
-		<item>s90z11</item>
-		<item>s90z12</item>
-		<item>s90z13</item>
-		<item>s90z14</item>
-		<item>s90z15</item>
-		<item>s90z16</item>
-		<item>s90z17</item>
-		<item>s90z18</item>
-		<item>s90z19</item>
-		<item>s90z20</item>
-		<item>s90z21</item>
-		<item>s90z22</item>
-		<item>s90z23</item>
-		<item>s90z24</item>
-		<item>s90z25</item>
+		<item>Hs90z1</item>
+		<item>Hs90z2</item>
+		<item>Hs90z3</item>
+		<item>Hs90z4</item>
+		<item>Hs90z5</item>
+		<item>Hs90z6</item>
+		<item>Hs90z7</item>
+		<item>Hs90z8</item>
+		<item>Hs90z9</item>
+		<item>Hs90z10</item>
+		<item>Hs90z11</item>
+		<item>Hs90z12</item>
+		<item>Hs90z13</item>
+		<item>Hs90z14</item>
+		<item>Hs90z15</item>
+		<item>Hs90z16</item>
+		<item>Hs90z17</item>
+		<item>Hs90z18</item>
+		<item>Hs90z19</item>
+		<item>Hs90z20</item>
+		<item>Hs90z21</item>
+		<item>Hs90z22</item>
+		<item>Hs90z23</item>
+		<item>Hs90z24</item>
+		<item>Hs90z25</item>
 	</string-array>
 	<string-array name="zones90Name">
 		<item>Aurelia</item>

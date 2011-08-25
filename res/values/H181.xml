@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones181Id">
-		<item>s181z1</item>
-		<item>s181z2</item>
-		<item>s181z3</item>
-		<item>s181z4</item>
-		<item>s181z5</item>
-		<item>s181z6</item>
+		<item>Hs181z1</item>
+		<item>Hs181z2</item>
+		<item>Hs181z3</item>
+		<item>Hs181z4</item>
+		<item>Hs181z5</item>
+		<item>Hs181z6</item>
 	</string-array>
 	<string-array name="zones181Name">
 		<item>Allaccio A18/Catania Centro</item>

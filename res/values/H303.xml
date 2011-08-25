@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones303Id">
-		<item>s303z1</item>
-		<item>s303z2</item>
-		<item>s303z3</item>
-		<item>s303z4</item>
-		<item>s303z5</item>
-		<item>s303z6</item>
-		<item>s303z7</item>
-		<item>s303z8</item>
+		<item>Hs303z1</item>
+		<item>Hs303z2</item>
+		<item>Hs303z3</item>
+		<item>Hs303z4</item>
+		<item>Hs303z5</item>
+		<item>Hs303z6</item>
+		<item>Hs303z7</item>
+		<item>Hs303z8</item>
 	</string-array>
 	<string-array name="zones303Name">
 		<item>Allaccio A3/Sicignano</item>

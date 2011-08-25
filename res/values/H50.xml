@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones50Id">
-		<item>s50z1</item>
-		<item>s50z2</item>
-		<item>s50z3</item>
-		<item>s50z4</item>
-		<item>s50z5</item>
-		<item>s50z6</item>
-		<item>s50z7</item>
-		<item>s50z8</item>
-		<item>s50z9</item>
-		<item>s50z10</item>
-		<item>s50z11</item>
-		<item>s50z12</item>
+		<item>Hs50z1</item>
+		<item>Hs50z2</item>
+		<item>Hs50z3</item>
+		<item>Hs50z4</item>
+		<item>Hs50z5</item>
+		<item>Hs50z6</item>
+		<item>Hs50z7</item>
+		<item>Hs50z8</item>
+		<item>Hs50z9</item>
+		<item>Hs50z10</item>
+		<item>Hs50z11</item>
+		<item>Hs50z12</item>
 	</string-array>
 	<string-array name="zones50Name">
 		<item>Autostrada A8</item>
