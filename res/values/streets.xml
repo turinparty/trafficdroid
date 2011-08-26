@@ -5,7 +5,7 @@
 		<item>101</item>
 		<item>102</item>
 		<item>103</item>
-		<item>142</item>
+		<item>143</item>
 		<item>2</item>
 		<item>3</item>
 		<item>301</item>
@@ -13,7 +13,6 @@
 		<item>303</item>
 		<item>4</item>
 		<item>5</item>
-		<item>501</item>
 		<item>6</item>
 		<item>7</item>
 		<item>701</item>
@@ -28,9 +27,10 @@
 		<item>131</item>
 		<item>14</item>
 		<item>141</item>
-		<item>143</item>
+		<item>142</item>
 		<item>144</item>
 		<item>15</item>
+		<item>501</item>
 		<item>16</item>
 		<item>161</item>
 		<item>18</item>
@@ -79,7 +79,6 @@
 		<item>A3R Rac. A3 Sicignano-Potenza</item>
 		<item>A4 Torino-Trieste</item>
 		<item>A5 Torino-Aosta</item>
-		<item>A5dir Dir. A5/A4 Ivrea</item>
 		<item>A6 Torino-Savona</item>
 		<item>A7 Milano-Genova</item>
 		<item>A7R Rac. A7 Bereguardo-Pavia</item>
@@ -97,6 +96,7 @@
 		<item>A14dir Dir. A14 Ravenna</item>
 		<item>A14R Rac. A14 Ascoli Piceno</item>
 		<item>A15 Parma-La Spezia</item>
+		<item>A5dir Dir. A5/A4 Ivrea</item>
 		<item>A16 Napoli-Canosa</item>
 		<item>A16R Rac. A16 Benevento</item>
 		<item>A18 Messina-Catania</item>
@@ -145,7 +145,6 @@
 		<item>3</item>
 		<item>0</item>
 		<item>0</item>
-		<item>5</item>
 		<item>0</item>
 		<item>0</item>
 		<item>7</item>
@@ -156,15 +155,16 @@
 		<item>11</item>
 		<item>0</item>
 		<item>0</item>
+		<item>0</item>
 		<item>13</item>
 		<item>0</item>
 		<item>14</item>
 		<item>14</item>
 		<item>14</item>
 		<item>0</item>
+		<item>5</item>
 		<item>0</item>
 		<item>16</item>
-		<item>0</item>
 		<item>0</item>
 		<item>18</item>
 		<item>0</item>
