@@ -10,6 +10,9 @@
 		<EditTextPreference android:title="@string/providerCamTitle"
 			android:summary="@string/providerSummary" android:key="@string/providerCamKey"
 			android:defaultValue="@string/providerCamDefault" />
+		<EditTextPreference android:title="@string/providerFuelTitle"
+			android:summary="@string/providerSummary" android:key="@string/providerFuelKey"
+			android:defaultValue="@string/providerFuelDefault" />
 	</PreferenceCategory>
 	<PreferenceCategory android:title="@string/updateCategory">
 		<CheckBoxPreference android:title="@string/berserkTitle"

@@ -20,6 +20,7 @@ public class Const {
 	public static final String html = ".html?ts=1";
 	public static final String popupTelecamera = "/autostrade-mobile/popupTelecamera.do?tlc=";
 	public static final String events = "/portale/rss?rsstype=traffic";
+	public static final String fuel = "/public/tabellanazionale/tabellaNazionale.php";
 	public static final String cookie = "/autostrade/traffico.do";
 	public static final String codeDiv = "div";
 	public static final String codeId = "id";

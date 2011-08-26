@@ -17,4 +17,5 @@
 	<item type="id" name="zoneName" />
 	<item type="id" name="menusettings" />
 	<item type="id" name="menurefresh" />
+	<item type="id" name="menufuel" />
 </resources>

@@ -160,6 +160,8 @@ public class MainActivity extends Activity {
 		case R.id.menurefresh:
 			sendBroadcast(Const.doUpdateIntent);
 			return true;
+		case R.id.menufuel:
+			startActivity(new Intent(MainActivity.this, FuelActivity.class));
 		default:
 			return super.onOptionsItemSelected(item);
 		}
