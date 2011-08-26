@@ -19,7 +19,7 @@ public class BadNewsParser {
 			NodeList items = EventDAO.getData(url).getDocumentElement().getElementsByTagName(Const.item);
 			for (int i = 0; i < items.getLength(); i++) {
 				NodeList item = items.item(i).getChildNodes();
-				String street = new StringTokenizer(item.item(1).getTextContent()).nextToken();
+				String street = new StringTokenizer(item.item(1).getTextContent(), " -").nextToken();
 				StringTokenizer descST = new StringTokenizer(item.item(3).getTextContent(), "\n");
 				if (street.charAt(0) == Const.charAutostrade)
 					for (StreetDTO streetDTO : dto.getStreets())
