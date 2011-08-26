@@ -6,8 +6,8 @@ public class ZoneDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String id;
 	private String name;
-	private String speedLeft;
-	private String speedRight;
+	private int speedLeft;
+	private int speedRight;
 	private int catLeft;
 	private int catRight;
 
@@ -25,19 +25,19 @@ public class ZoneDTO implements Serializable {
 		return name;
 	}
 
-	public String getSpeedLeft() {
+	public int getSpeedLeft() {
 		return speedLeft;
 	}
 
-	public void setSpeedLeft(String speedLeft) {
+	public void setSpeedLeft(int speedLeft) {
 		this.speedLeft = speedLeft;
 	}
 
-	public String getSpeedRight() {
+	public int getSpeedRight() {
 		return speedRight;
 	}
 
-	public void setSpeedRight(String speedRight) {
+	public void setSpeedRight(int speedRight) {
 		this.speedRight = speedRight;
 	}
 

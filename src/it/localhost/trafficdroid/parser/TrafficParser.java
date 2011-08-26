@@ -32,9 +32,17 @@ public class TrafficParser {
 									ZoneDTO zone = street.getZones().get(zoneCounter);
 									if (trZone.item(z).getChildNodes().item(1).getChildNodes().item(2).getTextContent().trim().equalsIgnoreCase(zone.getName())) {
 										zone.setCatLeft(Integer.parseInt(trZone.item(z + 1).getChildNodes().item(1).getAttributes().getNamedItem(Const.codeClass).getNodeValue().substring(2, 3)));
-										zone.setSpeedLeft(trZone.item(z + 1).getChildNodes().item(0).getTextContent());
+										String speedLeft = trZone.item(z + 1).getChildNodes().item(0).getTextContent();
 										zone.setCatRight(Integer.parseInt(trZone.item(z + 1).getChildNodes().item(2).getAttributes().getNamedItem(Const.codeClass).getNodeValue().substring(2, 3)));
-										zone.setSpeedRight(trZone.item(z + 1).getChildNodes().item(3).getTextContent());
+										String speedRight = trZone.item(z + 1).getChildNodes().item(3).getTextContent();
+										if (zone.getCatLeft() == 6)
+											zone.setSpeedLeft(Integer.parseInt(speedLeft.substring(6, speedLeft.length() - 5)));
+										else
+											zone.setSpeedLeft(Integer.parseInt(speedLeft.substring(0, speedLeft.length() - 5)));
+										if (zone.getCatRight() == 6)
+											zone.setSpeedRight(Integer.parseInt(speedRight.substring(6, speedRight.length() - 5)));
+										else
+											zone.setSpeedRight(Integer.parseInt(speedRight.substring(0, speedRight.length() - 5)));
 										boolean congestionLeft = zone.getCatLeft() > 0 && zone.getCatLeft() <= dto.getCongestionThreshold();
 										boolean congestionRight = zone.getCatRight() > 0 && zone.getCatRight() <= dto.getCongestionThreshold();
 										if (congestionLeft && congestionRight)
