@@ -202,8 +202,10 @@ public class MainActivity extends Activity {
 						TextView leftZoneSpeedText = (TextView) zoneSpeedRow.findViewById(R.id.zoneSpeedLeft);
 						TextView rightZoneSpeedText = (TextView) zoneSpeedRow.findViewById(R.id.zoneSpeedRight);
 						zoneNameText.setText(zoneDTO.getName());
-						leftZoneSpeedText.setText(Integer.toString(zoneDTO.getSpeedLeft()));
-						rightZoneSpeedText.setText(Integer.toString(zoneDTO.getSpeedRight()));
+						if (zoneDTO.getSpeedLeft() != 0)
+							leftZoneSpeedText.setText(Integer.toString(zoneDTO.getSpeedLeft()));
+						if (zoneDTO.getSpeedRight() != 0)
+							rightZoneSpeedText.setText(Integer.toString(zoneDTO.getSpeedRight()));
 						leftZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatLeft()]);
 						rightZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatRight()]);
 						leftZoneSpeedText.setTypeface(zoneDTO.getCatLeft() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
