@@ -176,7 +176,8 @@ public class MainActivity extends Activity {
 				new AlertDialog.Builder(this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(msg).show();
 				setTitle(msg);
 			} else {
-				setTitle(getString(R.string.app_name) + ": " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
+				if (mainDTO.getTrafficTime() != null)
+					setTitle(getString(R.string.app_name) + ": " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
 				for (int i = 0; i < mainDTO.getStreets().size(); i++) {
 					StreetDTO street = mainDTO.getStreets().get(i);
 					boolean streetVisible = sharedPreferences.getBoolean(street.getId() + "V", true);
