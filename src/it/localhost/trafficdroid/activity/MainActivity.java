@@ -171,7 +171,7 @@ public class MainActivity extends Activity {
 	private void refresh() {
 		try {
 			tableLayout.removeAllViews();
-			mainDTO = MainDAO.retrieve(this);
+			mainDTO = MainDAO.retrieve(getApplicationContext());
 			if (sharedPreferences.getBoolean(Const.exceptionCheck, false)) {
 				String msg = sharedPreferences.getString(Const.exceptionName, null) + ": " + sharedPreferences.getString(Const.exceptionMsg, null);
 				new AlertDialog.Builder(this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(msg).show();
@@ -203,11 +203,21 @@ public class MainActivity extends Activity {
 						TextView zoneNameText = (TextView) zoneNameRow.findViewById(R.id.zoneName);
 						TextView leftZoneSpeedText = (TextView) zoneSpeedRow.findViewById(R.id.zoneSpeedLeft);
 						TextView rightZoneSpeedText = (TextView) zoneSpeedRow.findViewById(R.id.zoneSpeedRight);
+						ImageView trendLeftText = (ImageView) zoneSpeedRow.findViewById(R.id.trendLeft);
+						ImageView trendRightText = (ImageView) zoneSpeedRow.findViewById(R.id.trendRight);
 						zoneNameText.setText(zoneDTO.getName());
+						if (zoneDTO.getTrendLeft() != 0)
+							trendLeftText.setImageResource(zoneDTO.getTrendLeft());
+						if (zoneDTO.getTrendRight() != 0)
+							trendRightText.setImageResource(zoneDTO.getTrendRight());
 						if (zoneDTO.getSpeedLeft() != 0)
 							leftZoneSpeedText.setText(Byte.toString(zoneDTO.getSpeedLeft()));
+						else
+							leftZoneSpeedText.setText("-");
 						if (zoneDTO.getSpeedRight() != 0)
 							rightZoneSpeedText.setText(Byte.toString(zoneDTO.getSpeedRight()));
+						else
+							rightZoneSpeedText.setText("-");
 						leftZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatLeft()]);
 						rightZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatRight()]);
 						leftZoneSpeedText.setTypeface(zoneDTO.getCatLeft() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);

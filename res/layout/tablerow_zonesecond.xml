@@ -3,10 +3,14 @@
 	android:layout_width="fill_parent" android:layout_height="wrap_content"
 	android:background="#000000" android:layout_marginBottom="1px">
 	<TextView android:id="@id/zoneSpeedLeft" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:gravity="center" />
+		android:layout_height="wrap_content" android:layout_gravity="center" />
+	<ImageView android:layout_height="20dp" android:id="@id/trendLeft"
+		android:layout_gravity="center" />
 	<ImageView android:layout_height="20dp" android:id="@id/zoneCam"
-		android:gravity="center" />
+		android:layout_gravity="center" />
+	<ImageView android:layout_height="20dp" android:id="@id/trendRight"
+		android:layout_gravity="center" />
 	<TextView android:id="@id/zoneSpeedRight"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:gravity="center" />
+		android:layout_gravity="center" />
 </TableRow>

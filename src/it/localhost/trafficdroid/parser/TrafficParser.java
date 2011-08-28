@@ -37,10 +37,14 @@ public class TrafficParser {
 										String speedRight = trZone.item(z + 1).getChildNodes().item(3).getTextContent();
 										if (zone.getCatLeft() == 6)
 											zone.setSpeedLeft(Byte.parseByte(speedLeft.substring(6, speedLeft.length() - 5)));
+										else if (zone.getCatLeft() == 0)
+											zone.setSpeedLeft((byte) 0);
 										else
 											zone.setSpeedLeft(Byte.parseByte(speedLeft.substring(0, speedLeft.length() - 5)));
 										if (zone.getCatRight() == 6)
 											zone.setSpeedRight(Byte.parseByte(speedRight.substring(6, speedRight.length() - 5)));
+										else if (zone.getCatRight() == 0)
+											zone.setSpeedRight((byte) 0);
 										else
 											zone.setSpeedRight(Byte.parseByte(speedRight.substring(0, speedRight.length() - 5)));
 										boolean congestionLeft = zone.getCatLeft() > 0 && zone.getCatLeft() <= dto.getCongestionThreshold();

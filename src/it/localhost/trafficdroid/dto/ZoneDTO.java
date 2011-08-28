@@ -10,6 +10,8 @@ public class ZoneDTO implements Serializable {
 	private byte speedRight;
 	private byte catLeft;
 	private byte catRight;
+	private int trendLeft;
+	private int trendRight;
 
 	public ZoneDTO(String id, String name) {
 		this.id = id;
@@ -54,5 +56,21 @@ public class ZoneDTO implements Serializable {
 
 	public void setCatRight(byte catRight) {
 		this.catRight = catRight;
+	}
+
+	public int getTrendLeft() {
+		return trendLeft;
+	}
+
+	public void setTrendLeft(int trendLeft) {
+		this.trendLeft = trendLeft;
+	}
+
+	public int getTrendRight() {
+		return trendRight;
+	}
+
+	public void setTrendRight(int trendRight) {
+		this.trendRight = trendRight;
 	}
 }

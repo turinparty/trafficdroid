@@ -51,6 +51,7 @@ public class Const {
 	public static final String exceptionCheck = "exceptionCheck";
 	public static final String exceptionName = "exceptionName";
 	public static final String exceptionMsg = "exceptionMsg";
+	public static final String prefCountKey = "prefCountKey";
 	public static final SparseIntArray zonesRes = new SparseIntArray(128) {
 		{
 			put(1, R.array.zones1Id);

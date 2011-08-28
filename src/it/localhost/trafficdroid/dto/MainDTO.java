@@ -13,6 +13,7 @@ public class MainDTO implements Serializable {
 	private Date trafficTime;
 	private StringBuilder congestedZones;
 	private byte congestionThreshold;
+	private int prefCount;
 
 	public MainDTO() {
 		streets = new ArrayList<StreetDTO>();
@@ -53,5 +54,13 @@ public class MainDTO implements Serializable {
 
 	public void setCongestionThreshold(byte congestionThreshold) {
 		this.congestionThreshold = congestionThreshold;
+	}
+
+	public int getPrefCount() {
+		return prefCount;
+	}
+
+	public void setPrefCount(int prefCount) {
+		this.prefCount = prefCount;
 	}
 }

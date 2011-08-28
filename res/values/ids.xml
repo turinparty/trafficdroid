@@ -18,4 +18,6 @@
 	<item type="id" name="menusettings" />
 	<item type="id" name="menurefresh" />
 	<item type="id" name="menufuel" />
+	<item type="id" name="trendLeft" />
+	<item type="id" name="trendRight" />
 </resources>
