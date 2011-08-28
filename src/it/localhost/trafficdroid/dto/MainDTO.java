@@ -12,7 +12,7 @@ public class MainDTO implements Serializable {
 	private List<StreetDTO> streets;
 	private Date trafficTime;
 	private StringBuilder congestedZones;
-	private int congestionThreshold;
+	private byte congestionThreshold;
 
 	public MainDTO() {
 		streets = new ArrayList<StreetDTO>();
@@ -47,11 +47,11 @@ public class MainDTO implements Serializable {
 		congestedZones.append(Const.separator);
 	}
 
-	public int getCongestionThreshold() {
+	public byte getCongestionThreshold() {
 		return congestionThreshold;
 	}
 
-	public void setCongestionThreshold(int congestionThreshold) {
+	public void setCongestionThreshold(byte congestionThreshold) {
 		this.congestionThreshold = congestionThreshold;
 	}
 }

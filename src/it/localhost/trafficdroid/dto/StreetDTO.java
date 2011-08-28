@@ -13,7 +13,6 @@ public class StreetDTO implements Serializable {
 	private List<BadNewsDTO> badNews;
 
 	public StreetDTO(int id) {
-		super();
 		this.id = id;
 		zones = new ArrayList<ZoneDTO>();
 		badNews = new ArrayList<BadNewsDTO>();

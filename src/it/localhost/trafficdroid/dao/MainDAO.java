@@ -26,7 +26,7 @@ public class MainDAO {
 		MainDTO mainDto = new MainDTO();
 		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ctx);
 		Resources resources = ctx.getResources();
-		mainDto.setCongestionThreshold(Integer.parseInt(sharedPreferences.getString(resources.getString(R.string.notificationSpeedKey), resources.getString(R.string.notificationSpeedDefault))));
+		mainDto.setCongestionThreshold(Byte.parseByte(sharedPreferences.getString(resources.getString(R.string.notificationSpeedKey), resources.getString(R.string.notificationSpeedDefault))));
 		int[] streetsId = resources.getIntArray(R.array.streetsId);
 		String[] streetsName = resources.getStringArray(R.array.streetsName);
 		for (int i = 0; i < streetsId.length; i++) {

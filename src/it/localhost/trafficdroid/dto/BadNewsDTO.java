@@ -10,7 +10,6 @@ public class BadNewsDTO implements Serializable {
 	private Date date;
 
 	public BadNewsDTO(String title, String description, Date date) {
-		super();
 		this.title = title;
 		this.description = description;
 		this.date = date;
