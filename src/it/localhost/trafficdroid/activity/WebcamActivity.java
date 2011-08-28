@@ -24,7 +24,7 @@ public class WebcamActivity extends Activity {
 		mWebView = new WebView(this);
 		setContentView(mWebView);
 		mWebView.getSettings().setJavaScriptEnabled(true);
-		String url = PreferenceManager.getDefaultSharedPreferences(this).getString(getString(R.string.providerCamKey), getString(R.string.providerCamDefault));
+		String url = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString(getString(R.string.providerCamKey), getString(R.string.providerCamDefault));
 		//CookieDAO.setCookie(this, url);
 		int code = Integer.parseInt(getIntent().getStringExtra(Const.camId)) + 6280 * (new GregorianCalendar().get(GregorianCalendar.DATE));
 		mWebView.loadUrl(Const.http + url + Const.popupTelecamera + code);

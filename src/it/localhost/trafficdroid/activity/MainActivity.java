@@ -50,6 +50,8 @@ public class MainActivity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+		setTheme(Const.themes[Integer.parseInt(sharedPreferences.getString(getString(R.string.themeKey), getString(R.string.themeDefault)))]);
 		super.onCreate(savedInstanceState);
 		tracker = GoogleAnalyticsTracker.getInstance();
 		tracker.startNewSession(Const.anlyticsId, this);
@@ -60,7 +62,6 @@ public class MainActivity extends Activity {
 		intentFilter.addAction(Const.endUpdate);
 		tableLayout = (TableLayout) findViewById(R.id.mainTable);
 		layoutInflater = LayoutInflater.from(this);
-		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 		webcamOnClickListener = new OnClickListener() {
 			public void onClick(View v) {
 				String code = (String) v.getTag();

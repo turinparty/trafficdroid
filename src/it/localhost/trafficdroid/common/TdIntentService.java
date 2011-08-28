@@ -26,16 +26,16 @@ public class TdIntentService extends WakefulIntentService {
 	@Override
 	public void doWakefulWork(Intent arg0) {
 		sendBroadcast(Const.beginUpdateIntent);
-		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 		SharedPreferences.Editor editor = sharedPreferences.edit();
 		try {
-			MainDTO mainDto = MainDAO.create(this);
+			MainDTO mainDto = MainDAO.create(getApplicationContext());
 			TrafficParser.parse(mainDto, sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault)));
 			BadNewsParser.parse(mainDto, sharedPreferences.getString(getString(R.string.providerBadNewsKey), getString(R.string.providerBadNewsDefault)));
 			mainDto.setTrafficTime(new Date());
 			MainDAO.store(mainDto, this);
 			String congestedZones = mainDto.getCongestedZones();
-			if (congestedZones != null && PreferenceManager.getDefaultSharedPreferences(this).getBoolean(getString(R.string.chiaroveggenzaEnablerKey), Boolean.parseBoolean(getString(R.string.chiaroveggenzaEnablerDefault)))) {
+			if (congestedZones != null && sharedPreferences.getBoolean(getString(R.string.chiaroveggenzaEnablerKey), Boolean.parseBoolean(getString(R.string.chiaroveggenzaEnablerDefault)))) {
 				Notification notification = new Notification(R.drawable.notif_icon, getString(R.string.notificationTicker), System.currentTimeMillis());
 				notification.flags |= Notification.FLAG_AUTO_CANCEL;
 				notification.defaults |= Notification.DEFAULT_ALL;

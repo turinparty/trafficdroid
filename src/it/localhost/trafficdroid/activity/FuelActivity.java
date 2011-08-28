@@ -20,7 +20,7 @@ public class FuelActivity extends Activity {
 		tracker.startNewSession(Const.anlyticsId, this);
 		mWebView = new WebView(this);
 		setContentView(mWebView);
-		String url = PreferenceManager.getDefaultSharedPreferences(this).getString(getString(R.string.providerFuelKey), getString(R.string.providerFuelDefault));
+		String url = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString(getString(R.string.providerFuelKey), getString(R.string.providerFuelDefault));
 		mWebView.loadUrl(Const.http + url + Const.fuel);
 	}
 

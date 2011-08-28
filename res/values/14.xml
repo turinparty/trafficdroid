@@ -2,8 +2,8 @@
 <resources>
 	<string-array name="zones14Id">
 		<item>A6969</item><!-- R01 Km.1,1 Borgo Panigale dir sx -->
-		<item>A22191</item><!-- A14 km. 4,8 Borgo Panigale itiner sud -->
-		<item>A22191</item><!-- A14 km. 4,8 Borgo Panigale itiner sud -->
+		<item>A20451</item><!-- A14 km. 4,8 Borgo Panigale itiner sud -->
+		<item>A20444</item><!-- A14 km. 4,8 Borgo Panigale itiner sud -->
 		<item>A22203</item><!-- A14 km. 9 Bivio A14-Raccordo Casalecchio itinere sud -->
 		<item>A9726</item><!-- A14 km. 21,8 SH44 Nord -->
 		<item>A20432</item><!-- A14 km. 36,0 Castel S.Pietro itinere sud -->

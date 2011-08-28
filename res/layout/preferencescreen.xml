@@ -27,6 +27,10 @@
 			android:defaultValue="@string/chiaroveggenzaTimeDefault" />
 	</PreferenceCategory>
 	<PreferenceCategory android:title="@string/guiCategory">
+		<ListPreference android:title="@string/themeTitle"
+			android:key="@string/themeKey" android:summary="@string/themeSummary"
+			android:entries="@array/themeLabel" android:entryValues="@array/themeValue"
+			android:defaultValue="@string/themeDefault" />
 		<CheckBoxPreference android:title="@string/badNewsTitle"
 			android:key="@string/badNewsKey" android:summary="@string/badNewsSummary"
 			android:defaultValue="@string/badNewsDefault" />
