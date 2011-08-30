@@ -13,7 +13,6 @@
 		<item>Hs103z10</item>
 		<item>Hs103z11</item>
 		<item>Hs103z12</item>
-		<item>Hs103z13</item>
 	</string-array>
 	<string-array name="zones103Name">
 		<item>Allaccio A1</item>
@@ -28,6 +27,5 @@
 		<item>Colle di Val d`Elsa Sud</item>
 		<item>Monteriggioni</item>
 		<item>Badesse</item>
-		<item>Siena</item>
 	</string-array>
 </resources>

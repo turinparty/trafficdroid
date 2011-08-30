@@ -11,7 +11,6 @@
 		<item>Hs56z8</item>
 		<item>Hs56z9</item>
 		<item>Hs56z10</item>
-		<item>Hs56z11</item>
 	</string-array>
 	<string-array name="zones56Name">
 		<item>14: Lago d\'Averno</item>
@@ -24,6 +23,5 @@
 		<item>6/7: Arenella</item>
 		<item>5: Capodimonte</item>
 		<item>2/3/4: Secondigliano Doganella</item>
-		<item>Allaccio A1</item>
 	</string-array>
 </resources>

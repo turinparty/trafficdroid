@@ -5,13 +5,11 @@
 		<item>Hs91z2</item>
 		<item>Hs91z3</item>
 		<item>Hs91z4</item>
-		<item>Hs91z5</item>
 	</string-array>
 	<string-array name="zones91Name">
 		<item>Fiumicino</item>
 		<item>A12 Civitavecchia</item>
 		<item>Roma G.R.A.</item>
 		<item>Magliana</item>
-		<item>Roma</item>
 	</string-array>
 </resources>

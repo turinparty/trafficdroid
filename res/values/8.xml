@@ -13,7 +13,6 @@
 		<item>A18899</item><!-- A08 km. 8,9 A08/A09 itinere nord -->
 		<item>A22341</item><!-- A08 km. 7,6 Villoresi itinere sud -->
 		<item>A18861</item><!-- A08 km. 7,0 Villoresi itinere sud -->
-		<item>A22296</item><!-- A08 km. 5,6 Milano Nord itinere nord -->
 	</string-array>
 	<string-array name="zones8Name">
 		<item>Lago di Varese-Gazzada</item>
@@ -28,6 +27,5 @@
 		<item>Allaccio A9</item>
 		<item>Lainate</item>
 		<item>Arese/Tangenziale Ovest</item>
-		<item>Allaccio A4</item>
 	</string-array>
 </resources>

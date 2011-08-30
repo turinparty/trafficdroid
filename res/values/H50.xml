@@ -12,7 +12,6 @@
 		<item>Hs50z9</item>
 		<item>Hs50z10</item>
 		<item>Hs50z11</item>
-		<item>Hs50z12</item>
 	</string-array>
 	<string-array name="zones50Name">
 		<item>Autostrada A8</item>
@@ -26,6 +25,5 @@
 		<item>Autostrada A7</item>
 		<item>7: Pavia-Milano Ticinese</item>
 		<item>8: Val Tidone-Milano Vigentina</item>
-		<item>Autostrada A1</item>
 	</string-array>
 </resources>

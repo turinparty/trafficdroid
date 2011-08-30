@@ -18,7 +18,6 @@
 		<item>A22453</item><!-- A07 km. 126,0 GE-Bolzaneto itinere sud -->
 		<item>A19472</item><!-- A12 km. 1,9 A12/A7 itinere ovest -->
 		<item>A22505</item><!-- A10 km. 0,0 Polcevera itinere est -->
-		<item>A19472</item><!-- A12 km. 1,9 A12/A7 itinere ovest -->
 	</string-array>
 	<string-array name="zones7Name">
 		<item>Allaccio A50</item>
@@ -38,6 +37,5 @@
 		<item>Genova Bolzaneto</item>
 		<item>Allaccio A12</item>
 		<item>Allaccio A10</item>
-		<item>Genova Ovest</item>
 	</string-array>
 </resources>

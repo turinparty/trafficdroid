@@ -21,7 +21,6 @@
 		<item>Hs51z18</item>
 		<item>Hs51z19</item>
 		<item>Hs51z20</item>
-		<item>Hs51z21</item>
 	</string-array>
 	<string-array name="zones51Name">
 		<item>Carnate/Usmate velate Sud</item>
@@ -44,6 +43,5 @@
 		<item>5: C.A.M.M.</item>
 		<item>4:via Mecenate</item>
 		<item>3:Paullo</item>
-		<item>1-2: SS9 Emilia via Rogoreto</item>
 	</string-array>
 </resources>

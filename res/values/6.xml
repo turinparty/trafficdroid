@@ -11,7 +11,6 @@
 		<item>z752</item>
 		<item>z756</item>
 		<item>z762</item>
-		<item>s6z11</item>
 	</string-array>
 	<string-array name="zones6Name">
 		<item>Allaccio A55</item>
@@ -24,6 +23,5 @@
 		<item>Ceva</item>
 		<item>Millesimo</item>
 		<item>Altare</item>
-		<item>Allaccio A10/Savona</item>
 	</string-array>
 </resources>

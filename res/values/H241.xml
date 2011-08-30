@@ -5,13 +5,11 @@
 		<item>Hs241z2</item>
 		<item>Hs241z3</item>
 		<item>Hs241z4</item>
-		<item>Hs241z5</item>
 	</string-array>
 	<string-array name="zones241Name">
 		<item>Tangenziale</item>
 		<item>Portonaccio</item>
 		<item>Via dei fiorentini</item>
 		<item>Via Palmiro Togliatti</item>
-		<item>Roma G.R.A.</item>
 	</string-array>
 </resources>

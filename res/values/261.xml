@@ -3,11 +3,9 @@
 	<string-array name="zones261Id">
 		<item>19383</item><!-- A26 km. 130,6 A26/A4 itinere sud -->
 		<item>A19390</item><!-- D36 km. 8,6 Vercelli Ovest itinere Est -->
-		<item>A14873</item><!-- A26 km. 101,2 Allacc. A26-D36 itinere nord -->
 	</string-array>
 	<string-array name="zones261Name">
 		<item>Allaccio A4/Diramazione A5-A4</item>
 		<item>Vercelli Ovest</item>
-		<item>Allaccio A26</item>
 	</string-array>
 </resources>

@@ -13,7 +13,6 @@
 		<item>s16z10</item>
 		<item>s16z11</item>
 		<item>s16z12</item>
-		<item>s16z13</item>
 	</string-array>
 	<string-array name="zones16Name">
 		<item>Allaccio A1</item>
@@ -28,6 +27,5 @@
 		<item>Lacedonia</item>
 		<item>Candela</item>
 		<item>Cerignola Ovest</item>
-		<item>Allaccio A14</item>
 	</string-array>
 </resources>

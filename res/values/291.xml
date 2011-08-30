@@ -8,7 +8,6 @@
 		<item>s291z5</item>
 		<item>s291z6</item>
 		<item>s291z7</item>
-		<item>s291z8</item>
 	</string-array>
 	<string-array name="zones291Name">
 		<item>Birgi</item>
@@ -18,6 +17,5 @@
 		<item>Dattilo</item>
 		<item>Fulgatore</item>
 		<item>Segesta</item>
-		<item>Allaccio A29</item>
 	</string-array>
 </resources>

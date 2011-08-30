@@ -6,7 +6,6 @@
 		<item>Hs181z3</item>
 		<item>Hs181z4</item>
 		<item>Hs181z5</item>
-		<item>Hs181z6</item>
 	</string-array>
 	<string-array name="zones181Name">
 		<item>Allaccio A18/Catania Centro</item>
@@ -14,6 +13,5 @@
 		<item>San Giovanni Galermo</item>
 		<item>Misterbianco</item>
 		<item>San Giorgio</item>
-		<item>Allacio A19</item>
 	</string-array>
 </resources>

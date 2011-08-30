@@ -12,7 +12,6 @@
 		<item>s131z9</item>
 		<item>s131z10</item>
 		<item>s131z11</item>
-		<item>s131z12</item>
 	</string-array>
 	<string-array name="zones131Name">
 		<item>Allaccio A13</item>
@@ -26,6 +25,5 @@
 		<item>Ostellato</item>
 		<item>Corte Centrale</item>
 		<item>Comacchio-Lagosanto</item>
-		<item>Porto Garibaldi</item>
 	</string-array>
 </resources>

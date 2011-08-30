@@ -54,16 +54,14 @@
 		<item>A19327</item><!-- A01 km. 671,3 Cassino itinere nord -->
 		<item>A21727</item><!-- A01 km. 678,6 S.Vittore itinere nord -->
 		<item>A21738</item><!-- A01 km. 701,1 Caianello itinere nord -->
-		
-		<item>A19301</item><!-- A01 km. 721,5 Capua itinere nord -->	<!-- 	720	 -->
-		<item>A19294</item><!-- A01 km. 732,8 Caserta Nord itinere sud -->	<!-- 	734	 -->
-		<item>A21720</item><!-- A01 km. 738,5 All. A01-A30 itinere sud -->	<!-- 	739	 -->
-		<item>A19289</item><!-- A01 km. 742,5 Caserta Sud itinere nord -->	<!-- 	741	 -->
-		<item>A25563</item><!-- A01 km. 742,5 Caserta Sud itinere sud -->	<!-- 	743	 -->
-		<item>A19278</item><!-- A01 km. 751,2 All. A01-A16 itinere sud -->	<!-- 	749	 -->
-		<item>A9159</item><!-- A01 km. 752,8 All. A01-A16 itinere nord -->	<!-- 	753	 -->
-		<item>A28050</item><!-- A01 km. 754,0 All. Capodichino itinere nord -->	<!-- 	755	 -->
-		<item>z2134</item><!-- A01 km. 755,0 Masseria Est itinere nord -->	<!-- 	761	 -->
+		<item>A19301</item><!-- A01 km. 721,5 Capua itinere nord -->
+		<item>A19294</item><!-- A01 km. 732,8 Caserta Nord itinere sud -->
+		<item>A21720</item><!-- A01 km. 738,5 All. A01-A30 itinere sud -->
+		<item>A19289</item><!-- A01 km. 742,5 Caserta Sud itinere nord -->
+		<item>A25563</item><!-- A01 km. 742,5 Caserta Sud itinere sud -->
+		<item>A19278</item><!-- A01 km. 751,2 All. A01-A16 itinere sud -->
+		<item>A9159</item><!-- A01 km. 752,8 All. A01-A16 itinere nord -->
+		<item>A28050</item><!-- A01 km. 754,0 All. Capodichino itinere nord -->
 	</string-array>
 	<string-array name="zones1Name">
 		<item>S.Donato Milanese</item>
@@ -127,6 +125,5 @@
 		<item>Napoli - Asse Mediano</item>
 		<item>Allaccio A16</item>
 		<item>Tangenziale di Napoli</item>
-		<item>Allaccio A3</item>
 	</string-array>
 </resources>

@@ -8,7 +8,6 @@
 		<item>s15z5</item>
 		<item>s15z6</item>
 		<item>s15z7</item>
-		<item>s15z8</item>
 	</string-array>
 	<string-array name="zones15Name">
 		<item>Allaccio A1</item>
@@ -18,6 +17,5 @@
 		<item>Berceto</item>
 		<item>Pontremoli</item>
 		<item>Aulla</item>
-		<item>Allaccio A12</item>
 	</string-array>
 </resources>

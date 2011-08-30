@@ -2,9 +2,11 @@
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent" android:background="#333333"
 	android:layout_height="wrap_content">
-	<TextView android:id="@id/streetDirLeft" android:layout_gravity="center" />
+	<TextView android:id="@id/streetDirLeft"
+		android:layout_gravity="center" />
 	<TextView android:id="@id/streetName" android:layout_width="wrap_content"
 		android:textStyle="bold" android:layout_height="wrap_content"
 		android:layout_gravity="center" android:layout_span="3" />
-	<TextView android:id="@id/streetDirRight" android:layout_gravity="center" />
+	<TextView android:id="@id/streetDirRight"
+		android:layout_gravity="center" />
 </TableRow>

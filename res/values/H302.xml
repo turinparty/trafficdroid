@@ -10,7 +10,6 @@
 		<item>Hs302z7</item>
 		<item>Hs302z8</item>
 		<item>Hs302z9</item>
-		<item>Hs302z10</item>
 	</string-array>
 	<string-array name="zones302Name">
 		<item>Avellino</item>
@@ -22,6 +21,5 @@
 		<item>Allaccio A30</item>
 		<item>Lancusi</item>
 		<item>Baronissi</item>
-		<item>Allaccio A3</item>
 	</string-array>
 </resources>

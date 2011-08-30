@@ -6,7 +6,6 @@
 		<item>A19365</item><!-- D08 km. 16,9 Castelletto T. itinere ovest -->
 		<item>A14679</item><!-- A08 km. 12,1 Diram. Gallarate Gattico Vergiate (Va) -->
 		<item>A18806</item><!-- D08 km. 8,1 Besnate itinere sud -->
-		<item>A18875</item><!-- A08 km. 25,6 Busto Arsizio itinere sud -->
 	</string-array>
 	<string-array name="zones262Name">
 		<item>Allaccio A26</item>
@@ -14,6 +13,5 @@
 		<item>Casaletto Ticino</item>
 		<item>Sesto Calende</item>
 		<item>Besanate</item>
-		<item>Allaccio A8/Gallarate</item>
 	</string-array>
 </resources>

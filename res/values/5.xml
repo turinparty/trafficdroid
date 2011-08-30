@@ -14,7 +14,6 @@
 		<item>s5z11</item>
 		<item>s5z12</item>
 		<item>s5z13</item>
-		<item>s5z14</item>
 	</string-array>
 	<string-array name="zones5Name">
 		<item>Morgex</item>
@@ -30,6 +29,5 @@
 		<item>Scarmagno</item>
 		<item>S.Giorgio Canavese</item>
 		<item>Volpiano</item>
-		<item>Allaccio A4</item>
 	</string-array>
 </resources>

@@ -4,12 +4,10 @@
 		<item>Hs301z1</item>
 		<item>Hs301z2</item>
 		<item>Hs301z3</item>
-		<item>Hs301z4</item>
 	</string-array>
 	<string-array name="zones301Name">
 		<item>Reggio di Calabria Centro</item>
 		<item>Reggio di Calabria Nord</item>
 		<item>Reggio di Calabria Calopinace</item>
-		<item>Reggio di Calabria Arangea</item>
 	</string-array>
 </resources>

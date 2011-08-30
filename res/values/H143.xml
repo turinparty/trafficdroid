@@ -17,7 +17,6 @@
 		<item>Hs143z14</item>
 		<item>Hs143z15</item>
 		<item>Hs143z16</item>
-		<item>Hs143z17</item>
 	</string-array>
 	<string-array name="zones143Name">
 		<item>Allaccio A1/Bettole</item>
@@ -36,6 +35,5 @@
 		<item>Perugia S. Faustino</item>
 		<item>Perugia Prepo</item>
 		<item>Perugia Piscille</item>
-		<item>Ponte S. Giovanni</item>
 	</string-array>
 </resources>

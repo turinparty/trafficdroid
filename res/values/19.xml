@@ -22,7 +22,6 @@
 		<item>s19z19</item>
 		<item>s19z20</item>
 		<item>s19z21</item>
-		<item>s19z22</item>
 	</string-array>
 	<string-array name="zones19Name">
 		<item>Palermo</item>
@@ -46,6 +45,5 @@
 		<item>Catenanuova</item>
 		<item>Sferro - Gerbini</item>
 		<item>Motta S.Anastasia</item>
-		<item>Catania Sud</item>
 	</string-array>
 </resources>

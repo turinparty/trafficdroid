@@ -22,7 +22,6 @@
 		<item>s121z19</item>
 		<item>z209</item>
 		<item>z208</item>
-		<item>z1901</item>
 	</string-array>
 	<string-array name="zones121Name">
 		<item>Allaccio A7</item>
@@ -46,6 +45,5 @@
 		<item>Pisa Sud</item>
 		<item>Livorno</item>
 		<item>Collesalvetti</item>
-		<item>Rosignano M.</item>
 	</string-array>
 </resources>

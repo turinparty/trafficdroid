@@ -81,7 +81,6 @@
 		<item>s4z78</item>
 		<item>s4z79</item>
 		<item>s4z80</item>
-		<item>s4z81</item>
 	</string-array>
 	<string-array name="zones4Name">
 		<item>Torino</item>
@@ -164,6 +163,5 @@
 		<item>Redipuglia</item>
 		<item>Monfalcone</item>
 		<item>Duino</item>
-		<item>Sistiana</item>
 	</string-array>
 </resources>

@@ -22,7 +22,6 @@
 		<item>Hs21z19</item>
 		<item>Hs21z20</item>
 		<item>Hs21z21</item>
-		<item>Hs21z22</item>
 	</string-array>
 	<string-array name="zones21Name">
 		<item>Tangenziale Sud</item>
@@ -46,6 +45,5 @@
 		<item>Cremona</item>
 		<item>Pontevico - Robecco</item>
 		<item>Manerbio</item>
-		<item>Brescia Centro / Allaccio A4</item>
 	</string-array>
 </resources>

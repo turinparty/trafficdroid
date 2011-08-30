@@ -19,7 +19,6 @@
 		<item>s20z16</item>
 		<item>s20z17</item>
 		<item>s20z18</item>
-		<item>s20z19</item>
 	</string-array>
 	<string-array name="zones20Name">
 		<item>Allaccio A19</item>
@@ -40,6 +39,5 @@
 		<item>Messina - Centro</item>
 		<item>Messina - Gazzi</item>
 		<item>Messina - S.Filippo</item>
-		<item>Messina Sud - Tremestieri</item>
 	</string-array>
 </resources>

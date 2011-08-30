@@ -11,7 +11,6 @@
 		<item>s28z8</item>
 		<item>s28z9</item>
 		<item>s28z10</item>
-		<item>s28z11</item>
 	</string-array>
 	<string-array name="zones28Name">
 		<item>Sacile Ovest</item>
@@ -24,6 +23,5 @@
 		<item>Azzano Decimo</item>
 		<item>Villotta</item>
 		<item>Sesto al Reghena</item>
-		<item>Allaccio A4/Portogruaro</item>
 	</string-array>
 </resources>

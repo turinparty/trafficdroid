@@ -13,7 +13,6 @@
 		<item>s13z10</item>
 		<item>z353</item>
 		<item>z1010</item>
-		<item>s13z13</item>
 	</string-array>
 	<string-array name="zones13Name">
 		<item>Allaccio A4</item>
@@ -28,6 +27,5 @@
 		<item>Raccordo A13 P.to Garibaldi</item>
 		<item>Altedo</item>
 		<item>Bologna Interporto</item>
-		<item>Tangenziale Nord / Allaccio A14 / Bologna Arcoveggio</item>
 	</string-array>
 </resources>

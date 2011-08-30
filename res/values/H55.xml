@@ -16,7 +16,6 @@
 		<item>Hs55z13</item>
 		<item>Hs55z14</item>
 		<item>Hs55z15</item>
-		<item>Hs55z16</item>
 	</string-array>
 	<string-array name="zones55Name">
 		<item>Allaccio A21</item>
@@ -34,6 +33,5 @@
 		<item>Venaria</item>
 		<item>Borgaro</item>
 		<item>Caselle</item>
-		<item>Allaccio A5</item>
 	</string-array>
 </resources>

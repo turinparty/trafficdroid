@@ -5,13 +5,11 @@
 		<item>s31z2</item>
 		<item>s31z3</item>
 		<item>s31z4</item>
-		<item>s31z5</item>
 	</string-array>
 	<string-array name="zones31Name">
 		<item>Piovene Rocchette</item>
 		<item>Thiene</item>
 		<item>Dueville</item>
 		<item>Vicenza Nord</item>
-		<item>Allaccio A4</item>
 	</string-array>
 </resources>

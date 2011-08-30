@@ -3,11 +3,9 @@
 	<string-array name="zones211Id">
 		<item>Hs211z1</item>
 		<item>Hs211z2</item>
-		<item>Hs211z3</item>
 	</string-array>
 	<string-array name="zones211Name">
 		<item>Allaccio A21</item>
 		<item>Cortemaggiore</item>
-		<item>Fiorenzuola/Allaccio A1</item>
 	</string-array>
 </resources>

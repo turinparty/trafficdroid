@@ -58,7 +58,6 @@
 		<item>A18995</item><!-- A14 km. 701,5 Acquaviva itinere nord -->
 		<item>A12576</item><!-- A14 km. 707,7 Gioia del Colle itinere sud -->
 		<item>A8193</item><!-- A14 km. 725,9 Mottola itinere nord -->
-		<item>A14573</item><!-- A14 km. 743,4 itinere sud -->
 	</string-array>
 	<string-array name="zones14Name">
 		<item>Allaccio A1</item>
@@ -118,6 +117,5 @@
 		<item>Acquaviva delle Fonti</item>
 		<item>Gioia del Colle</item>
 		<item>Mottola - Castellaneta</item>
-		<item>Taranto Nord</item>
 	</string-array>
 </resources>

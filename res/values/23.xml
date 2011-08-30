@@ -10,7 +10,6 @@
 		<item>s23z7</item>
 		<item>s23z8</item>
 		<item>s23z9</item>
-		<item>s23z10</item>
 	</string-array>
 	<string-array name="zones23Name">
 		<item>Inizio</item>
@@ -22,6 +21,5 @@
 		<item>Gemona-Osoppo</item>
 		<item>Udine Nord</item>
 		<item>Udine Sud</item>
-		<item>Allaccio A4</item>
 	</string-array>
 </resources>

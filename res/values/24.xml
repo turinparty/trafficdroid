@@ -18,7 +18,6 @@
 		<item>s24z15</item>
 		<item>s24z16</item>
 		<item>s24z17</item>
-		<item>s24z18</item>
 	</string-array>
 	<string-array name="zones24Name">
 		<item>Roma G.R.A.</item>
@@ -38,6 +37,5 @@
 		<item>Colledara - S.Gabriele</item>
 		<item>Basciano</item>
 		<item>Val Vomano</item>
-		<item>Teramo</item>
 	</string-array>
 </resources>

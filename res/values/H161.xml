@@ -5,13 +5,11 @@
 		<item>Hs161z2</item>
 		<item>Hs161z3</item>
 		<item>Hs161z4</item>
-		<item>Hs161z5</item>
 	</string-array>
 	<string-array name="zones161Name">
 		<item>Benevento Ovest</item>
 		<item>Benevento Centro</item>
 		<item>Benevento Sud</item>
 		<item>San Giorgio del Sannio</item>
-		<item>Allaccio A16</item>
 	</string-array>
 </resources>

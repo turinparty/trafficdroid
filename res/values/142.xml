@@ -4,12 +4,10 @@
 		<item>s142z1</item>
 		<item>s142z2</item>
 		<item>s142z3</item>
-		<item>s142z4</item>
 	</string-array>
 	<string-array name="zones142Name">
 		<item>Allaccio A14</item>
 		<item>Lugo-Cotignola</item>
 		<item>Bagnacavallo</item>
-		<item>Ravenna</item>
 	</string-array>
 </resources>

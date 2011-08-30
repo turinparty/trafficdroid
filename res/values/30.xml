@@ -7,7 +7,6 @@
 		<item>s30z4</item>
 		<item>s30z5</item>
 		<item>s30z6</item>
-		<item>s30z7</item>
 	</string-array>
 	<string-array name="zones30Name">
 		<item>Allaccio A1</item>
@@ -16,6 +15,5 @@
 		<item>Sarno</item>
 		<item>Nocera - Pagan</item>
 		<item>Castel S.Giorgio</item>
-		<item>Raccordo Avellino-Salerno</item>
 	</string-array>
 </resources>

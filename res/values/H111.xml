@@ -5,13 +5,11 @@
 		<item>Hs111z2</item>
 		<item>Hs111z3</item>
 		<item>Hs111z4</item>
-		<item>Hs111z5</item>
 	</string-array>
 	<string-array name="zones111Name">
 		<item>Allaccio A12</item>
 		<item>Viareggio-Camaiore</item>
 		<item>Massarossa</item>
 		<item>Lucca-S.Donato</item>
-		<item>Allaccio A11</item>
 	</string-array>
 </resources>

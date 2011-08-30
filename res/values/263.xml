@@ -3,11 +3,9 @@
 	<string-array name="zones263Id">
 		<item>A11414</item><!-- A26 km. 73,8 Gall.Olimpia itinere sud -->
 		<item>A19421</item><!-- D26 km. 1,4 D26/A26 itinere ovest -->
-		<item>A19428</item><!-- A26 km. 44,5 All.A26/D26 itinere nord -->
 	</string-array>
 	<string-array name="zones263Name">
 		<item>Allaccio A26</item>
 		<item>Novi Ligure</item>
-		<item>Allaccio A7</item>
 	</string-array>
 </resources>

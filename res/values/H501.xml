@@ -3,11 +3,9 @@
 	<string-array name="zones501Id">
 		<item>Hs501z1</item>
 		<item>Hs501z2</item>
-		<item>Hs501z3</item>
 	</string-array>
 	<string-array name="zones501Name">
 		<item>Allaccio A5</item>
 		<item>Albiano</item>
-		<item>Allaccio A4/Diramazione A26</item>
 	</string-array>
 </resources>

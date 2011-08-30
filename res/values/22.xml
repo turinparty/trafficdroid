@@ -26,7 +26,6 @@
 		<item>s22z23</item>
 		<item>s22z24</item>
 		<item>s22z25</item>
-		<item>s22z26</item>
 	</string-array>
 	<string-array name="zones22Name">
 		<item>Barriera</item>
@@ -54,6 +53,5 @@
 		<item>Reggiolo - Rolo</item>
 		<item>Carpi</item>
 		<item>Modena - Campogalliano</item>
-		<item>Allaccio A1</item>
 	</string-array>
 </resources>

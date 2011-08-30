@@ -24,7 +24,6 @@
 		<item>A7017</item><!-- A10 km. 10,1 GE-Voltri itinere ovest -->
 		<item>A11308</item><!-- A10 km. 5,3 Pegli itinere ovest -->
 		<item>A22518</item><!-- A10 km. 6,0 GE-Pegli itinere est -->
-		<item>A11314</item><!-- A07 km. 130,0 All.A7/A10 itinere sud -->
 	</string-array>
 	<string-array name="zones10Name">
 		<item>Inizio</item>
@@ -50,6 +49,5 @@
 		<item>Genova - Voltri</item>
 		<item>Genova - Pegli</item>
 		<item>Genova Aereoporto</item>
-		<item>Allaccio A7</item>
 	</string-array>
 </resources>

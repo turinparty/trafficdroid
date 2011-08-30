@@ -201,11 +201,13 @@ public class MainActivity extends Activity {
 						TableRow zoneNameRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_zonefirst, tableLayout, false);
 						TableRow zoneSpeedRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_zonesecond, tableLayout, false);
 						TextView zoneNameText = (TextView) zoneNameRow.findViewById(R.id.zoneName);
+						TextView zoneKmText = (TextView) zoneNameRow.findViewById(R.id.zoneKm);
 						TextView leftZoneSpeedText = (TextView) zoneSpeedRow.findViewById(R.id.zoneSpeedLeft);
 						TextView rightZoneSpeedText = (TextView) zoneSpeedRow.findViewById(R.id.zoneSpeedRight);
 						ImageView trendLeftText = (ImageView) zoneSpeedRow.findViewById(R.id.trendLeft);
 						ImageView trendRightText = (ImageView) zoneSpeedRow.findViewById(R.id.trendRight);
 						zoneNameText.setText(zoneDTO.getName());
+						zoneKmText.setText(zoneDTO.getKm());
 						if (zoneDTO.getTrendLeft() != 0)
 							trendLeftText.setImageResource(zoneDTO.getTrendLeft());
 						if (zoneDTO.getTrendRight() != 0)

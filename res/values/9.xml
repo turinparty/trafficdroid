@@ -10,7 +10,6 @@
 		<item>s9z7</item>
 		<item>z1250</item>
 		<item>z588</item>
-		<item>z596</item>
 	</string-array>
 	<string-array name="zones9Name">
 		<item>Chiasso</item>
@@ -22,6 +21,5 @@
 		<item>Turate</item>
 		<item>Saronno</item>
 		<item>Origgio</item>
-		<item>Allaccio A8</item>
 	</string-array>
 </resources>

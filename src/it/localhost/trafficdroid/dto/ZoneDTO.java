@@ -6,7 +6,7 @@ public class ZoneDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String id;
 	private String name;
-	private short km;
+	private String km;
 	private byte speedLeft;
 	private byte speedRight;
 	private byte catLeft;
@@ -75,11 +75,13 @@ public class ZoneDTO implements Serializable {
 		this.trendRight = trendRight;
 	}
 
-	public short getKm() {
+	public String getKm() {
 		return km;
 	}
 
-	public void setKm(short km) {
+	public void setKm(String km) {
 		this.km = km;
 	}
+
+
 }

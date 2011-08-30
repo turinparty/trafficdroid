@@ -8,7 +8,6 @@
 		<item>A19659</item>
 		<item>A9950</item>
 		<item>A19641</item>
-		<item>A9309</item>
 	</string-array>
 	<string-array name="zones12Name">
 		<item>Allaccio S. S. Aurelia</item>
@@ -18,6 +17,5 @@
 		<item>Cerveteri-Ladispoli</item>
 		<item>Torrimpietra</item>
 		<item>Maccarese-Fregene</item>
-		<item>Roma G.R.A.</item>
 	</string-array>
 </resources>

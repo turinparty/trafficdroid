@@ -17,7 +17,6 @@
 		<item>A21526</item>
 		<item>A21519</item>
 		<item>A21580</item>
-		<item>A21499</item>
 	</string-array>
 	<string-array name="zones2Name">
 		<item>Napoli</item>
@@ -36,6 +35,5 @@
 		<item>Nocera - Pagani</item>
 		<item>Cava dei Tirreni</item>
 		<item>Vietri sul mare</item>
-		<item>Salerno</item>
 	</string-array>
 </resources>

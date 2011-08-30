@@ -6,9 +6,8 @@
 	<ScrollView android:layout_width="fill_parent"
 		android:layout_weight="1" android:layout_height="wrap_content">
 		<TableLayout android:id="@id/mainTable"
-			 android:layout_width="fill_parent"
-			android:background="#333333" android:layout_height="wrap_content"
-			android:stretchColumns="2" />
+			android:layout_height="wrap_content" android:layout_width="fill_parent"
+			android:stretchColumns="*" android:background="#333333" />
 	</ScrollView>
 	<com.google.ads.AdView android:layout_width="wrap_content"
 		android:layout_height="wrap_content" ads:adUnitId="a14d8f6a3c4c2f3"

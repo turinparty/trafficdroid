@@ -13,7 +13,6 @@
 		<item>s25z10</item>
 		<item>s25z11</item>
 		<item>s25z12</item>
-		<item>s25z13</item>
 	</string-array>
 	<string-array name="zones25Name">
 		<item>Allaccio A24</item>
@@ -28,6 +27,5 @@
 		<item>Scafa - Alanno</item>
 		<item>Chieti</item>
 		<item>Pescara - Villanova</item>
-		<item>Allaccio A14</item>
 	</string-array>
 </resources>

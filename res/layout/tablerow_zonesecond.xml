@@ -10,7 +10,7 @@
 		android:layout_gravity="center" />
 	<ImageView android:layout_height="20dp" android:id="@id/trendRight"
 		android:layout_gravity="center" />
-	<TextView android:id="@id/zoneSpeedRight"
+	<TextView android:layout_gravity="center"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:layout_gravity="center" />
+		android:id="@id/zoneSpeedRight" />
 </TableRow>

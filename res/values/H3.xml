@@ -50,7 +50,6 @@
 		<item>Hs3z47</item>
 		<item>Hs3z48</item>
 		<item>Hs3z49</item>
-		<item>Hs3z50</item>
 	</string-array>
 	<string-array name="zones3Name">
 		<item>Salerno</item>
@@ -102,6 +101,5 @@
 		<item>Villa S.Giovanni</item>
 		<item>Gallico</item>
 		<item>Reggio Calabria (porto)</item>
-		<item>Reggio Calabria</item>
 	</string-array>
 </resources>

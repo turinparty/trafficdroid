@@ -5,13 +5,11 @@
 		<item>A19734</item>
 		<item>A9957</item>
 		<item>A16163</item>
-		<item>s102z5</item>
 	</string-array>
 	<string-array name="zones102Name">
 		<item>Roma G.R.A.</item>
 		<item>Torrenova</item>
 		<item>Monte Porzio Catone</item>
 		<item>San Cesareo</item>
-		<item>Allaccio A1</item>
 	</string-array>
 </resources>

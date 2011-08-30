@@ -12,7 +12,6 @@
 		<item>A21997</item>
 		<item>s11z10</item>
 		<item>s11z11</item>
-		<item>s11z12</item>
 	</string-array>
 	<string-array name="zones11Name">
 		<item>Allaccio A12</item>
@@ -26,6 +25,5 @@
 		<item>Prato Est</item>
 		<item>Allaccio A1</item>
 		<item>Firenze S. Cristina</item>
-		<item>Firenze Viale Glori</item>
 	</string-array>
 </resources>
