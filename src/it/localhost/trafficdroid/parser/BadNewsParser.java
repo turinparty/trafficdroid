@@ -22,14 +22,16 @@ public class BadNewsParser {
 				String street = new StringTokenizer(item.item(1).getTextContent(), " -").nextToken();
 				StringTokenizer descST = new StringTokenizer(item.item(3).getTextContent(), "\n");
 				if (street.charAt(0) == Const.charAutostrade)
-					for (StreetDTO streetDTO : dto.getStreets())
-						if (Integer.parseInt(street.substring(1, street.length())) == streetDTO.getId())
-							streetDTO.addBadNews(new BadNewsDTO(descST.nextToken(), descST.nextToken(), sdf.parse(item.item(7).getTextContent())));
+					try {
+						for (StreetDTO streetDTO : dto.getStreets())
+							if (Integer.parseInt(street.substring(1, street.length())) == streetDTO.getId())
+								streetDTO.addBadNews(new BadNewsDTO(descST.nextToken(), descST.nextToken(), sdf.parse(item.item(7).getTextContent())));
+					} catch (Exception e) {
+						// do nothing
+					}
 			}
 		} catch (TdException e) {
 			throw new TdException(e.getKey(), e.getMessage());
-		} catch (Exception e) {
-			throw new TdException(TdException.ParsingException, e.getMessage());
 		}
 	}
 }

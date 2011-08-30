@@ -1,5 +1,7 @@
 package it.localhost.trafficdroid.parser;
 
+import java.util.StringTokenizer;
+
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdException;
 import it.localhost.trafficdroid.dao.TrafficDAO;
@@ -30,6 +32,7 @@ public class TrafficParser {
 								NodeList trZone = divsZoneB.item(y).getFirstChild().getChildNodes();
 								for (int z = 0; z < trZone.getLength() - 1 && zoneCounter < street.getZones().size(); z += 2) {
 									ZoneDTO zone = street.getZones().get(zoneCounter);
+									zone.setKm(Short.parseShort(new StringTokenizer(trZone.item(z).getChildNodes().item(0).getTextContent()).nextToken()));
 									if (trZone.item(z).getChildNodes().item(1).getChildNodes().item(2).getTextContent().trim().equalsIgnoreCase(zone.getName())) {
 										zone.setCatLeft(Byte.parseByte(trZone.item(z + 1).getChildNodes().item(1).getAttributes().getNamedItem(Const.codeClass).getNodeValue().substring(2, 3)));
 										String speedLeft = trZone.item(z + 1).getChildNodes().item(0).getTextContent();
