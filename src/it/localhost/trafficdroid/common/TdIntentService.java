@@ -41,7 +41,7 @@ public class TdIntentService extends WakefulIntentService {
 			TrafficParser.parse(currDTO, sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault)));
 			BadNewsParser.parse(currDTO, sharedPreferences.getString(getString(R.string.providerBadNewsKey), getString(R.string.providerBadNewsDefault)));
 			currDTO.setTrafficTime(new Date());
-			if (pastDTO != null && currDTO.getPrefCount() == pastDTO.getPrefCount())
+			if (pastDTO != null && currDTO.getPrefCount() == pastDTO.getPrefCount() && pastDTO.getStreets().size() != 0)
 				for (int i = 0; i < currDTO.getStreets().size(); i++)
 					for (int j = 0; j < currDTO.getStreets().get(i).getZones().size(); j++) {
 						ZoneDTO pastZone = pastDTO.getStreets().get(i).getZones().get(j);
