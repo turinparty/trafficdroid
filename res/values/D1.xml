@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="zones1Id">
+		<item>A10189</item>	<!-- A01 km. 000,0 Ads S.Donato-Sv. Poasco -->
+		<item>A9970</item>	<!-- A01 km. -0,6 All. Tang. Est -->
+		<item>A10660</item>	<!-- A01 km. 001,9 PMV S.Giuliano Itinere Nord -->
+		<item>A10182</item>	<!-- A01 km. 003,8 All. Tang. Ovest -->
+		<item>A19980</item>	<!-- A01 km. 006,8 PMV Melegnano Itinere Nord -->
+		<item>A22398</item>	<!-- A01 km. 22,3 Lodi -->
+		<item>A19966</item>	<!-- A01 km. 038,9 PMV Casalpusterlengo Nord -->
+		<item>A19960</item>	<!-- A01 km. 52,3 PMV Piacenza Nord Itinere Nord -->
+		<item>A22385</item>	<!-- A01 km. 58,2 Piacenza Sud -->
+		<item>A19998</item>	<!-- A01 km. 71,4 PMV Fiorenzuola Itinere Sud -->
+		<item>A16130</item>	<!-- A01 km. 089,2 PMV Fidenza Iti.Sud -->
+		<item>A22430</item>	<!-- A01 km. 102,0 All. A1/A15 -->
+		<item>A66338</item>	<!-- A01 km. 110,8 Parma -->
+		<item>A20264</item>	<!-- A01 km. 139,0 Reggio Emilia itinere nord -->
+		<item>A22160</item>	<!-- A01 km. 155,0 A1/A22 itinere Nord -->
+		<item>A20250</item>	<!-- A01 km. 157,0 Modena Nord itinere sud -->
+		<item>A18786</item>	<!-- A01 km. 170,8 Modena Sud itinere sud -->
+		<item>A22215</item>	<!-- A01 km. 189,0 A1/A14 itinere nord -->
+		<item>A22146</item>	<!-- A01 km. 195,0 itinere nord -->
+		<item>A22235</item>	<!-- A01 km. 207,0 Sasso Marconi itinere -->
+		<item>A20175</item>	<!-- A01 km. 223,2 Rioveggio itinere nord -->
+		<item>A22041</item>	<!-- A01 km. 237,0 Crocette itinere sud -->
+		<item>A21386</item>	<!-- A01 km. 242,0 Roncobilaccio -->
+		<item>A20182</item>	<!-- A01 km. 262,3 Barberino itinere nord -->
+		<item>A64104</item>	<!-- A01 km. 277,0 Calenzano itinere sud -->
+		<item>A22020</item>	<!-- A01 km. 280,0 All. A1/A11 -->
+		<item>A10496</item>	<!-- A01 km. 288,0 Scandicci nord -->
+		<item>A9480</item>	<!-- A01 km. 295,0 Galleria Lastrone itinere sud -->
+		<item>A22122</item>	<!-- A01 km. 301,3 Firenze Sud itinere nord -->
+		<item>A20123</item>	<!-- A01 km. 319,2 Incisa itinere sud -->
+		<item>A20584</item>	<!-- A01 km. 337,1 Valdarno itinere nord -->
+		<item>A20577</item>	<!-- A01 km. 357,8 Arezzo itinere sud -->
+		<item>A16634</item>	<!-- A01 km. 373,0 M.S. Savino itinere nord -->
+		<item>A20557</item>	<!-- A01 km. 386,5 Valdichiana itinere nord -->
+		<item>A16613</item>	<!-- A01 km. 411,6 Chiusi itinere nord -->
+		<item>A19667</item>	<!-- A01 km. 429,1 Fabro itinere nord -->
+		<item>A19766</item>	<!-- A01 km. 449,7 Orvieto itinere sud -->
+		<item>A16067</item>	<!-- A01 km. 478,4 Attigliano itinere sud -->
+		<item>A21927</item>	<!-- A01 Km. 492,0 Orte itinere sud -->
+		<item>A21921</item>	<!-- A01 km. 500,0 Magliano itinere nord -->
+		<item>A21901</item>	<!-- A01 km. 516,0 Soratte itinere nord -->
+		<item>A21945</item>	<!-- A01 km. 530 Bivio A01-Diramazione Roma Nord itinere sud -->
+		<item>A20854</item>	<!-- A01 km. 562,0 Bivio A1-A24 itinere nord -->
+		<item>A20840</item>	<!-- A01 km. 577,0 Bivio A01-Diramazione Roma Sud itinere sud -->
+		<item>A19202</item>	<!-- A01 km. 586,5 Valmontone itinere nord -->
+		<item>A21788</item>	<!-- A01 km. 593,0 Colleferro itinere sud -->
+		<item>A14781</item>	<!-- A01 km. 611,0 La Macchia itinere Nord -->
+		<item>A21840</item>	<!-- A01 km. 624,0 Frosinone itinere sud -->
+		<item>A9203</item>	<!-- A01 km. 644,9 Ceprano itinere nord -->
+		<item>A10685</item>	<!-- A01 km. 661,7 Pontecorvo itinere nord -->
+		<item>A19327</item>	<!-- A01 km. 671,3 Cassino itinere nord -->
+		<item>A21727</item>	<!-- A01 km. 678,6 S.Vittore itinere nord -->
+		<item>A21738</item>	<!-- A01 km. 701,1 Caianello itinere nord -->
+		<item>A19301</item>	<!-- A01 km. 721,5 Capua itinere nord -->
+		<item>A19294</item>	<!-- A01 km. 732,8 Caserta Nord itinere sud -->
+		<item>A21720</item>	<!-- A01 km. 738,5 All. A01-A30 itinere sud -->
+		<item>A19289</item>	<!-- A01 km. 742,5 Caserta Sud itinere nord -->
+		<item>A25563</item>	<!-- A01 km. 742,5 Caserta Sud itinere sud -->
+		<item>A19278</item>	<!-- A01 km. 751,2 All. A01-A16 itinere sud -->
+		<item>A9159</item>	<!-- A01 km. 752,8 All. A01-A16 itinere nord -->
+		<item>A28050</item>	<!-- A01 km. 754,0 All. Capodichino itinere nord -->
+	</string-array>
+	<string-array name="zones1Name">
+		<item>S.Donato Milanese</item>
+		<item>Tangenziale Est</item>
+		<item>S.Giuliano Milanese</item>
+		<item>Tangenziale Ovest</item>
+		<item>Melegnano - Binasco</item>
+		<item>Lodi</item>
+		<item>Casalpusterlengo</item>
+		<item>Piacenza Nord</item>
+		<item>Piacenza Sud / Allaccio A21</item>
+		<item>Raccordo A21</item>
+		<item>Fidenza - Salsomaggiore T.</item>
+		<item>Allaccio A15</item>
+		<item>Parma</item>
+		<item>Reggio Emilia</item>
+		<item>Allaccio A22</item>
+		<item>Modena Nord</item>
+		<item>Modena Sud</item>
+		<item>Allaccio A14</item>
+		<item>Raccordo A14</item>
+		<item>Sasso Marconi</item>
+		<item>Rioveggio</item>
+		<item>Pian del Voglio</item>
+		<item>Roncobilaccio</item>
+		<item>Barberino di Mugello</item>
+		<item>Prato - Calenzano</item>
+		<item>Allaccio A11- Firenze Nord</item>
+		<item>Firenze Signa</item>
+		<item>Firenze Certosa - Raccordo Firenze-Siena</item>
+		<item>Firenze Sud</item>
+		<item>Incisa</item>
+		<item>Valdarno</item>
+		<item>Arezzo</item>
+		<item>Monte S.Savino</item>
+		<item>Val di Chiana - Raccordo Betolle-Perugia</item>
+		<item>Chiusi - Chianciano Terme</item>
+		<item>Fabro</item>
+		<item>Orvieto</item>
+		<item>Attigliano</item>
+		<item>Orte</item>
+		<item>Magliano Sabina</item>
+		<item>Ponzano Romano - Soratte</item>
+		<item>Diramazione Roma-Nord</item>
+		<item>Allaccio A24</item>
+		<item>Diramazione Roma-Sud</item>
+		<item>Valmontone</item>
+		<item>Colleferro</item>
+		<item>Anagni - Fiuggi</item>
+		<item>Frosinone</item>
+		<item>Ceprano</item>
+		<item>Pontecorvo</item>
+		<item>Cassino</item>
+		<item>S.Vittore</item>
+		<item>Caianello</item>
+		<item>Capua</item>
+		<item>Caserta Nord</item>
+		<item>Allaccio A30</item>
+		<item>Caserta Sud</item>
+		<item>Pomigliano - Villa Literno</item>
+		<item>Napoli - Asse Mediano</item>
+		<item>Allaccio A16</item>
+		<item>Tangenziale di Napoli</item>
+	</string-array>
+</resources>
