@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- A15 Parma-La Spezia -->
 <resources>
 	<string-array name="zones15Id">
-		<item>z418</item>
-		<item>s15z2</item>
-		<item>s15z3</item>
-		<item>s15z4</item>
-		<item>s15z5</item>
-		<item>s15z6</item>
-		<item>s15z7</item>
+		<item>A19936</item>	<!-- A15 km. 1,0 A15/A1 itinere nord -->
+		<item>Hs15z2</item>
+		<item>Hs15z3</item>
+		<item>Hs15z4</item>
+		<item>Hs15z5</item>
+		<item>Hs15z6</item>
+		<item>Hs15z7</item>
 	</string-array>
 	<string-array name="zones15Name">
 		<item>Allaccio A1</item>

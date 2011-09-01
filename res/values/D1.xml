@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- A1 Milano-Napoli -->
 <resources>
 	<string-array name="zones1Id">
 		<item>A10189</item>	<!-- A01 km. 000,0 Ads S.Donato-Sv. Poasco -->

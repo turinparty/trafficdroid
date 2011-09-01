@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- A1dir Dir. A1 Roma Sud -->
 <resources>
 	<string-array name="zones102Id">
-		<item>A20833</item>
-		<item>A19734</item>
-		<item>A9957</item>
-		<item>A16163</item>
+		<item>A20833</item>	<!-- D19 km. 20,0 Gra Sud -->
+		<item>A19734</item>	<!-- D19 km. 17,7 PMV Torrenova Itinere Sud -->
+		<item>A9957</item>	<!-- D19 km. 10,2 Itinere.M.Porzio -->
+		<item>A16163</item>	<!-- D19 km. 03,8 PMV S.Cesareo Nord -->
 	</string-array>
 	<string-array name="zones102Name">
 		<item>Roma G.R.A.</item>

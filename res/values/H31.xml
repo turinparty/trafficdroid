@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- A31 Vicenza-Thiene -->
 <resources>
 	<string-array name="zones31Id">
-		<item>s31z1</item>
-		<item>s31z2</item>
-		<item>s31z3</item>
-		<item>s31z4</item>
+		<item>Hs31z1</item>
+		<item>Hs31z2</item>
+		<item>Hs31z3</item>
+		<item>Hs31z4</item>
 	</string-array>
 	<string-array name="zones31Name">
 		<item>Piovene Rocchette</item>

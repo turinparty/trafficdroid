@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A12 Roma-Civitavecchia -->
+<resources>
+	<string-array name="zones12Id">
+		<item>A10002</item>	<!-- A12 km. 65,0 Svincolo Tarquinia itinere sud -->
+		<item>A19652</item>	<!-- A12 km. 53,0 Aurelia itinere sud -->
+		<item>A19646</item>	<!-- A12 km. 50,2 Aurelia itinere nord -->
+		<item>A9493</item>	<!-- A12 km. 39,5 Tirreno Est itinere nord -->
+		<item>A19659</item>	<!-- A12 km. 30,0 Cerveteri itinere sud -->
+		<item>A9950</item>	<!-- A12 km. 15,0 Torrimpietra itinere sud -->
+		<item>A19641</item>	<!-- A12 km. 09,9 Maccarese itinere nord -->
+	</string-array>
+	<string-array name="zones12Name">
+		<item>Allaccio S. S. Aurelia</item>
+		<item>Civitavecchia Nord</item>
+		<item>Civitavecchia Sud</item>
+		<item>S. Severa</item>
+		<item>Cerveteri-Ladispoli</item>
+		<item>Torrimpietra</item>
+		<item>Maccarese-Fregene</item>
+	</string-array>
+</resources>

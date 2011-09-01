@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A4 Torino-Trieste -->
+<resources>
+	<string-array name="zones4Id">
+		<item>Hs4z1</item>
+		<item>Hs4z2</item>
+		<item>Hs4z3</item>
+		<item>Hs4z4</item>
+		<item>Hs4z5</item>
+		<item>Hs4z6</item>
+		<item>Hs4z7</item>
+		<item>Hs4z8</item>
+		<item>Hs4z9</item>
+		<item>Hs4z10</item>
+		<item>Hs4z11</item>
+		<item>Hs4z12</item>
+		<item>Hs4z13</item>
+		<item>Hs4z14</item>
+		<item>Hs4z15</item>
+		<item>Hs4z16</item>
+		<item>Hs4z17</item>
+		<item>Hs4z18</item>
+		<item>Hs4z19</item>
+		<item>Hs4z20</item>
+		<item>Hs4z21</item>
+		<item>Hs4z22</item>
+		<item>Hs4z23</item>
+		<item>A8003</item>	<!-- A04 km. 124,0 Inizio Competenza -->
+		<item>A21488</item>	<!-- A04 km. 126,0 Fiorenza itinere ovest -->
+		<item>A19830</item>	<!-- A04 km. 131,0 Cormano itinere ovest -->
+		<item>A19824</item>	<!-- A04 km. 137,1 Sesto S.Giovanni itinere ovest -->
+		<item>A19917</item>	<!-- A04 km. 142,1 Tangenziale Milano Est itinere est -->
+		<item>A21474</item>	<!-- A04 km. 147 Agrate itinere ovest -->
+		<item>A21467</item>	<!-- A04 km. 151,6 Cavenago itinere ovest -->
+		<item>A19809</item>	<!-- A04 km. 158,1 Trezzo itinere ovest -->
+		<item>A19803</item>	<!-- A04 km. 161,6 Capriate itinere ovest -->
+		<item>A19798</item>	<!-- A04 km. 168,8 Dalmine itinere ovest -->
+		<item>A22311</item>	<!-- A04 km. 172,6 Bergamo itinere ovest -->
+		<item>A21461</item>	<!-- A04 km. 180,2 Seriate itinere ovest -->
+		<item>A19874</item>	<!-- A04 km. 187,2 Grumello itinere est -->
+		<item>Hs4z37</item>
+		<item>Hs4z38</item>
+		<item>Hs4z39</item>
+		<item>Hs4z40</item>
+		<item>Hs4z41</item>
+		<item>Hs4z42</item>
+		<item>Hs4z43</item>
+		<item>Hs4z44</item>
+		<item>Hs4z45</item>
+		<item>Hs4z46</item>
+		<item>Hs4z47</item>
+		<item>Hs4z48</item>
+		<item>Hs4z49</item>
+		<item>Hs4z50</item>
+		<item>Hs4z51</item>
+		<item>Hs4z52</item>
+		<item>Hs4z53</item>
+		<item>Hs4z54</item>
+		<item>Hs4z55</item>
+		<item>Hs4z56</item>
+		<item>Hs4z57</item>
+		<item>Hs4z58</item>
+		<item>Hs4z59</item>
+		<item>Hs4z60</item>
+		<item>Hs4z61</item>
+		<item>Hs4z62</item>
+		<item>Hs4z63</item>
+		<item>Hs4z64</item>
+		<item>Hs4z65</item>
+		<item>Hs4z66</item>
+		<item>Hs4z67</item>
+		<item>Hs4z68</item>
+		<item>Hs4z69</item>
+		<item>Hs4z70</item>
+		<item>Hs4z71</item>
+		<item>Hs4z72</item>
+		<item>Hs4z73</item>
+		<item>Hs4z74</item>
+		<item>Hs4z75</item>
+		<item>Hs4z76</item>
+		<item>Hs4z77</item>
+		<item>Hs4z78</item>
+		<item>Hs4z79</item>
+		<item>Hs4z80</item>
+	</string-array>
+	<string-array name="zones4Name">
+		<item>Torino</item>
+		<item>Allaccio A5</item>
+		<item>Settimo Torinese</item>
+		<item>Brandizzo</item>
+		<item>Chivasso Ovest</item>
+		<item>Chivasso</item>
+		<item>Chivasso Est</item>
+		<item>Rondissone</item>
+		<item>Cigliano</item>
+		<item>Borgo d`Ale</item>
+		<item>Diramazione A5 / Diramazione A26</item>
+		<item>Santhia</item>
+		<item>Carisio</item>
+		<item>Balocco</item>
+		<item>Greggio</item>
+		<item>Allaccio A26</item>
+		<item>Biandrate</item>
+		<item>Novara Ovest</item>
+		<item>Novara Est</item>
+		<item>Boffalora</item>
+		<item>Arluno</item>
+		<item>Rho</item>
+		<item>Tangenziale Ovest</item>
+		<item>Pero</item>
+		<item>Allaccio A8</item>
+		<item>Cormano</item>
+		<item>Sesto S.Giovanni - Viale Zara</item>
+		<item>Tangenziale Est</item>
+		<item>Agrate</item>
+		<item>Cavenago - Cambiago</item>
+		<item>Trezzo</item>
+		<item>Capriate</item>
+		<item>Dalmine</item>
+		<item>Bergamo</item>
+		<item>Seriate</item>
+		<item>Grumello - Telgate</item>
+		<item>Ponte Oglio</item>
+		<item>Palazzolo</item>
+		<item>Rovato</item>
+		<item>Ospitaletto</item>
+		<item>Brescia Ovest</item>
+		<item>Allaccio A21</item>
+		<item>Brescia Est</item>
+		<item>Desenzano</item>
+		<item>Sirmione</item>
+		<item>Peschiera del Garda</item>
+		<item>Sommacampagna</item>
+		<item>Allaccio A22</item>
+		<item>Verona Sud</item>
+		<item>Verona Est</item>
+		<item>Soave - S.Bonifacio</item>
+		<item>Montebello</item>
+		<item>Montecchio</item>
+		<item>Vicenza Ovest</item>
+		<item>Vicenza Est</item>
+		<item>Allaccio A31</item>
+		<item>Grisignano</item>
+		<item>Padova Ovest</item>
+		<item>Padova Est</item>
+		<item>Allaccio A13</item>
+		<item>Dolo - Mirano</item>
+		<item>Venezia Mestre</item>
+		<item>Miranese</item>
+		<item>Castellana</item>
+		<item>Terraglio</item>
+		<item>Allaccio A27</item>
+		<item>Marcon</item>
+		<item>Quarto d`Altino</item>
+		<item>San Dona - Noventa</item>
+		<item>Cessalto</item>
+		<item>S.Stino di Livenza</item>
+		<item>Allaccio A28 - Portogruaro</item>
+		<item>Latisana</item>
+		<item>S.Giorgio - Porpetto</item>
+		<item>Allaccio A23</item>
+		<item>Palmanova</item>
+		<item>Villesse - Gorizia</item>
+		<item>Redipuglia</item>
+		<item>Monfalcone</item>
+		<item>Duino</item>
+	</string-array>
+</resources>

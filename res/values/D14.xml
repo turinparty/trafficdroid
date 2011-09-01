@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- A14 Bologna-Taranto -->
 <resources>
 	<string-array name="zones14Id">
 		<item>A22229</item>	<!-- A14 km. 1,0 Casalecchio itinere nord -->

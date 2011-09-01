@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- A1dir Dir. A1 Roma Nord -->
 <resources>
 	<string-array name="zones101Id">
-		<item>s101z1</item>
-		<item>s101z2</item>
-		<item>A21813</item><!-- D18 km. 19,0 Settebagni -->
+		<item>Hs101z1</item>
+		<item>A21826</item>	<!-- D18 km. 04,0 Roma Nord (DT) -->
+		<item>A21813</item>	<!-- D18 km. 19,0 Settebagni -->
 	</string-array>
 	<string-array name="zones101Name">
 		<item>Allaccio A1</item>
