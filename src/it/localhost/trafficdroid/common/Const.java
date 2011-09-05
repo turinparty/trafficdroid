@@ -44,6 +44,8 @@ public class Const {
 	public static final String adMobId = "a14d8f6a3c4c2f3";
 	public static final String anlyticsId = "UA-12243941-5";
 	public static final String item = "item";
+	public static final String eventCatApp = "App";
+	public static final String eventActionVersion = "Version";
 	public static final String eventCatWebcam = "Webcam";
 	public static final String eventActionRequest = "Request";
 	public static final String eventActionOpen = "Open";

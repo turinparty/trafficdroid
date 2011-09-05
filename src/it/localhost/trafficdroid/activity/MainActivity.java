@@ -17,6 +17,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -55,6 +56,10 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		tracker = GoogleAnalyticsTracker.getInstance();
 		tracker.startNewSession(Const.anlyticsId, this);
+		try {
+			tracker.trackEvent(Const.eventCatWebcam, Const.eventActionNone, getPackageManager().getPackageInfo(getPackageName(), 0).versionName, 0);
+		} catch (NameNotFoundException e) {
+		}
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.linearlayout_main);
 		intentFilter = new IntentFilter();
