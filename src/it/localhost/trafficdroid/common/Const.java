@@ -1,5 +1,7 @@
 package it.localhost.trafficdroid.common;
 
+import java.util.GregorianCalendar;
+
 import it.localhost.trafficdroid.R;
 import android.content.Intent;
 import android.util.SparseIntArray;
@@ -19,7 +21,7 @@ public class Const {
 	public static final String http = "http://";
 	public static final String dyn = "/dyn/";
 	public static final String html = ".html?ts=1";
-	public static final String popupTelecamera = "/autostrade-mobile/popupTelecamera.do?tlc=";
+	public static final String popupTelecamera = "/autostrade-mobile/popupTelecamera.do?ua=Android%201.1&tlc=";
 	public static final String events = "/portale/rss?rsstype=traffic";
 	public static final String fuel = "/public/tabellanazionale/tabellaNazionale.php";
 	public static final String cookie = "/autostrade/traffico.do";
@@ -54,6 +56,8 @@ public class Const {
 	public static final String exceptionName = "exceptionName";
 	public static final String exceptionMsg = "exceptionMsg";
 	public static final String prefCountKey = "prefCountKey";
+	public static final String url = "url";
+	public static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);
 	public static final SparseIntArray zonesRes = new SparseIntArray(128) {
 		{
 			put(1, R.array.zones1Id);
@@ -186,4 +190,8 @@ public class Const {
 			put(-701, R.array.zones701Name);
 		}
 	};
+
+	public static int decodeCam(String code) {
+		return Integer.parseInt(code.substring(1)) + 6280 * (Const.date);
+	}
 }

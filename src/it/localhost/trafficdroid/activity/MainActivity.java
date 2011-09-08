@@ -8,7 +8,6 @@ import it.localhost.trafficdroid.dto.BadNewsDTO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.NotificationManager;
@@ -17,7 +16,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -35,9 +33,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.google.android.apps.analytics.GoogleAnalyticsTracker;
-
-public class MainActivity extends Activity {
+public class MainActivity extends AbstractActivity {
 	private TableLayout tableLayout;
 	private LayoutInflater layoutInflater;
 	private IntentFilter intentFilter;
@@ -47,19 +43,13 @@ public class MainActivity extends Activity {
 	private BroadcastReceiver receiver;
 	private MainDTO mainDTO;
 	private SharedPreferences sharedPreferences;
-	private GoogleAnalyticsTracker tracker;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 		setTheme(Const.themes[Integer.parseInt(sharedPreferences.getString(getString(R.string.themeKey), getString(R.string.themeDefault)))]);
 		super.onCreate(savedInstanceState);
-		tracker = GoogleAnalyticsTracker.getInstance();
-		tracker.startNewSession(Const.anlyticsId, this);
-		try {
-			tracker.trackEvent(Const.eventCatWebcam, Const.eventActionNone, getPackageManager().getPackageInfo(getPackageName(), 0).versionName, 0);
-		} catch (NameNotFoundException e) {
-		}
+		trackEvent(Const.eventCatApp, Const.eventActionVersion, versionName());
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.linearlayout_main);
 		intentFilter = new IntentFilter();
@@ -71,15 +61,17 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				String code = (String) v.getTag();
 				if (code.charAt(0) == Const.webcamNone) {
-					tracker.trackEvent(Const.eventCatWebcam, Const.eventActionNone, code, 0);
+					trackEvent(Const.eventCatWebcam, Const.eventActionNone, code);
 					new AlertDialog.Builder(MainActivity.this).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamNone).show();
 				} else if (code.charAt(0) == Const.webcamTrue) {
-					tracker.trackEvent(Const.eventCatWebcam, Const.eventActionOpen, code, 0);
-					Intent intent = new Intent(MainActivity.this, WebcamActivity.class);
-					intent.putExtra(Const.camId, code.substring(1));
+					trackEvent(Const.eventCatWebcam, Const.eventActionOpen, code);
+					Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+					String provider = sharedPreferences.getString(getString(R.string.providerCamKey), getString(R.string.providerCamDefault));
+					String url = Const.http + provider + Const.popupTelecamera + Const.decodeCam(code);
+					intent.putExtra(Const.url, url);
 					startActivity(intent);
 				} else {
-					tracker.trackEvent(Const.eventCatWebcam, Const.eventActionRequest, code, 0);
+					trackEvent(Const.eventCatWebcam, Const.eventActionRequest, code);
 					new AlertDialog.Builder(MainActivity.this).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamAdd).show();
 				}
 			}
@@ -128,7 +120,6 @@ public class MainActivity extends Activity {
 	@Override
 	public void onResume() {
 		super.onResume();
-		tracker.trackPageView(this.getClass().getName());
 		registerReceiver(receiver, intentFilter);
 		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
 		if (sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault)).equals(getString(R.string.providerTrafficDefault)))
@@ -141,14 +132,12 @@ public class MainActivity extends Activity {
 	@Override
 	public void onPause() {
 		super.onPause();
-		tracker.dispatch();
 		unregisterReceiver(receiver);
 	}
 
 	@Override
 	public void onStop() {
 		super.onStop();
-		tracker.stopSession();
 	}
 
 	@Override
@@ -167,7 +156,10 @@ public class MainActivity extends Activity {
 			sendBroadcast(Const.doUpdateIntent);
 			return true;
 		case R.id.menufuel:
-			startActivity(new Intent(MainActivity.this, FuelActivity.class));
+			Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+			String provider = sharedPreferences.getString(getString(R.string.providerFuelKey), getString(R.string.providerFuelDefault));
+			intent.putExtra(Const.url, Const.http + provider + Const.fuel);
+			startActivity(intent);
 		default:
 			return super.onOptionsItemSelected(item);
 		}

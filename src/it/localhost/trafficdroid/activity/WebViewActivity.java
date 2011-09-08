@@ -2,15 +2,13 @@ package it.localhost.trafficdroid.activity;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
-import android.app.Activity;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.webkit.WebView;
 
 import com.google.android.apps.analytics.GoogleAnalyticsTracker;
 
-public class FuelActivity extends Activity {
-	private WebView mWebView;
+public class WebViewActivity extends AbstractActivity {
+	private WebView webView;
 	private GoogleAnalyticsTracker tracker;
 
 	@Override
@@ -19,9 +17,9 @@ public class FuelActivity extends Activity {
 		tracker = GoogleAnalyticsTracker.getInstance();
 		tracker.startNewSession(Const.anlyticsId, this);
 		setContentView(R.layout.linearlayout_webview);
-		mWebView = (WebView) findViewById(R.id.webview);
-		String url = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString(getString(R.string.providerFuelKey), getString(R.string.providerFuelDefault));
-		mWebView.loadUrl(Const.http + url + Const.fuel);
+		webView = (WebView) findViewById(R.id.webview);
+		webView.getSettings().setJavaScriptEnabled(true);
+		webView.loadUrl(getIntent().getStringExtra(Const.url));
 	}
 
 	@Override

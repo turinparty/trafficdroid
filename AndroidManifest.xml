@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="it.localhost.trafficdroid" android:versionCode="66"
-	android:versionName="1.4.1 far far away" android:installLocation="preferExternal">
+	package="it.localhost.trafficdroid" android:versionCode="67"
+	android:versionName="1.4.2 far far away" android:installLocation="preferExternal">
 	<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="10" />
 	<supports-screens android:anyDensity="true"
 		android:xlargeScreens="true" android:largeScreens="true"
@@ -20,7 +20,7 @@
 			</intent-filter>
 		</activity>
 		<activity android:name=".activity.PreferencesActivity" />
-		<activity android:name=".activity.WebcamActivity" />
+		<activity android:name=".activity.WebViewActivity" />
 		<activity android:name=".activity.FuelActivity" />
 		<activity android:name="com.google.ads.AdActivity"
 			android:configChanges="keyboard|keyboardHidden|orientation" />
