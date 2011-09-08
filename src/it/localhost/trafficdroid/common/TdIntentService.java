@@ -30,14 +30,9 @@ public class TdIntentService extends WakefulIntentService {
 		sendBroadcast(Const.beginUpdateIntent);
 		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 		SharedPreferences.Editor editor = sharedPreferences.edit();
-		MainDTO pastDTO;
+		MainDTO pastDTO = MainDAO.retrieve(getApplicationContext());
+		MainDTO currDTO = MainDAO.create(getApplicationContext());
 		try {
-			pastDTO = MainDAO.retrieve(getApplicationContext());
-		} catch (TdException e) {
-			pastDTO = null;
-		}
-		try {
-			MainDTO currDTO = MainDAO.create(getApplicationContext());
 			TrafficParser.parse(currDTO, sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault)));
 			BadNewsParser.parse(currDTO, sharedPreferences.getString(getString(R.string.providerBadNewsKey), getString(R.string.providerBadNewsDefault)));
 			currDTO.setTrafficTime(new Date());
@@ -59,7 +54,6 @@ public class TdIntentService extends WakefulIntentService {
 						else if (pastZone.getSpeedRight() == currZone.getSpeedRight())
 							currZone.setTrendRight(0);
 					}
-			MainDAO.store(currDTO, getApplicationContext());
 			String congestedZones = currDTO.getCongestedZones();
 			if (congestedZones != null && sharedPreferences.getBoolean(getString(R.string.chiaroveggenzaEnablerKey), Boolean.parseBoolean(getString(R.string.chiaroveggenzaEnablerDefault)))) {
 				Notification notification = new Notification(R.drawable.icon, getString(R.string.notificationTicker), System.currentTimeMillis());
@@ -69,6 +63,7 @@ public class TdIntentService extends WakefulIntentService {
 				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(Const.notificationId, notification);
 			} else
 				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
+			MainDAO.store(currDTO, getApplicationContext());
 			editor.putBoolean(Const.exceptionCheck, false);
 		} catch (TdException e) {
 			editor.putBoolean(Const.exceptionCheck, true);

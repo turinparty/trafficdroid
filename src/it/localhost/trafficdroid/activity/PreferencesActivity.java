@@ -20,6 +20,7 @@ public class PreferencesActivity extends PreferenceActivity {
 		super.onCreate(savedInstanceState);
 		tracker = GoogleAnalyticsTracker.getInstance();
 		tracker.startNewSession(Const.anlyticsId, this);
+		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 		PreferenceManager.setDefaultValues(this, R.layout.preferencescreen, false);
 		addPreferencesFromResource(R.layout.preferencescreen);
 		int[] streetId = getResources().getIntArray(R.array.streetsId);
@@ -52,8 +53,7 @@ public class PreferencesActivity extends PreferenceActivity {
 				streetScreen.addPreference(zonesCategory);
 				setZonesCategory(zonesCategory, streetId[i]);
 			}
-		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-		int prefCount = sharedPreferences.getInt(Const.prefCountKey, 0)+1;
+		int prefCount = sharedPreferences.getInt(Const.prefCountKey, 0) + 1;
 		sharedPreferences.edit().putInt(Const.prefCountKey, prefCount).commit();
 	}
 

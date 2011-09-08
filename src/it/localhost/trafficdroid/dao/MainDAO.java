@@ -13,8 +13,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.OptionalDataException;
-import java.io.StreamCorruptedException;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -22,7 +20,7 @@ import android.content.res.Resources;
 import android.preference.PreferenceManager;
 
 public class MainDAO {
-	public static MainDTO create(Context ctx) throws TdException {
+	public static MainDTO create(Context ctx) {
 		MainDTO mainDto = new MainDTO();
 		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ctx);
 		Resources resources = ctx.getResources();
@@ -61,7 +59,7 @@ public class MainDAO {
 		}
 	}
 
-	public static MainDTO retrieve(Context context) throws TdException {
+	public static MainDTO retrieve(Context context) {
 		try {
 			FileInputStream fis = context.openFileInput(Const.tdData);
 			ObjectInputStream ois = new ObjectInputStream(fis);
@@ -69,16 +67,8 @@ public class MainDAO {
 			ois.close();
 			fis.close();
 			return dlctask;
-		} catch (StreamCorruptedException e) {
-			throw new TdException(TdException.StreamCorruptedException, e.getMessage());
-		} catch (OptionalDataException e) {
-			throw new TdException(TdException.OptionalDataException, e.getMessage());
-		} catch (FileNotFoundException e) {
-			throw new TdException(TdException.FileNotFoundException, e.getMessage());
-		} catch (IOException e) {
-			throw new TdException(TdException.IOException, e.getMessage());
-		} catch (ClassNotFoundException e) {
-			throw new TdException(TdException.ClassNotFoundException, e.getMessage());
+		} catch (Exception e) {
+			return null;
 		}
 	}
 }
