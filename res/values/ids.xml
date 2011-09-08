@@ -21,4 +21,5 @@
 	<item type="id" name="menufuel" />
 	<item type="id" name="trendLeft" />
 	<item type="id" name="trendRight" />
+	<item type="id" name="webview" />
 </resources>

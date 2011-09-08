@@ -21,8 +21,12 @@ public class WebcamActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		tracker = GoogleAnalyticsTracker.getInstance();
 		tracker.startNewSession(Const.anlyticsId, this);
-		mWebView = new WebView(this);
-		setContentView(mWebView);
+	//	mWebView = new WebView(this);
+	//	setContentView(mWebView);
+		setContentView(R.layout.linearlayout_webview);
+		mWebView = (WebView) findViewById(R.id.webview);
+		
+		
 		mWebView.getSettings().setJavaScriptEnabled(true);
 		String url = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString(getString(R.string.providerCamKey), getString(R.string.providerCamDefault));
 		//CookieDAO.setCookie(this, url);

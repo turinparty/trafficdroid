@@ -18,8 +18,8 @@ public class FuelActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		tracker = GoogleAnalyticsTracker.getInstance();
 		tracker.startNewSession(Const.anlyticsId, this);
-		mWebView = new WebView(this);
-		setContentView(mWebView);
+		setContentView(R.layout.linearlayout_webview);
+		mWebView = (WebView) findViewById(R.id.webview);
 		String url = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString(getString(R.string.providerFuelKey), getString(R.string.providerFuelDefault));
 		mWebView.loadUrl(Const.http + url + Const.fuel);
 	}
