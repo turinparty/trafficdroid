@@ -25,7 +25,8 @@ public class MainDAO {
 		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ctx);
 		Resources resources = ctx.getResources();
 		mainDto.setPrefCount(sharedPreferences.getInt(Const.prefCountKey, 0));
-		mainDto.setCongestionThreshold(Byte.parseByte(sharedPreferences.getString(resources.getString(R.string.notificationSpeedKey), resources.getString(R.string.notificationSpeedDefault))));
+		mainDto.setCongestionThreshold(Byte.parseByte(sharedPreferences.getString(resources.getString(R.string.notificationSpeedKey),
+				resources.getString(R.string.notificationSpeedDefault))));
 		int[] streetsId = resources.getIntArray(R.array.streetsId);
 		String[] streetsName = resources.getStringArray(R.array.streetsName);
 		for (int i = 0; i < streetsId.length; i++) {
@@ -46,29 +47,49 @@ public class MainDAO {
 	}
 
 	public static void store(MainDTO dto, Context context) throws TdException {
+		FileOutputStream fos = null;
+		ObjectOutputStream oos = null;
 		try {
-			FileOutputStream fos = context.openFileOutput(Const.tdData, Context.MODE_PRIVATE);
-			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			fos = context.openFileOutput(Const.tdData, Context.MODE_PRIVATE);
+			oos = new ObjectOutputStream(fos);
 			oos.writeObject(dto);
-			oos.close();
-			fos.close();
 		} catch (FileNotFoundException e) {
 			throw new TdException(TdException.FileNotFoundException, e.getMessage());
 		} catch (IOException e) {
 			throw new TdException(TdException.IOException, e.getMessage());
+		} finally {
+			try {
+				if (oos != null) {
+					oos.close();
+				}
+				if (fos != null) {
+					fos.close();
+				}
+			} catch (IOException e) {
+			}
 		}
 	}
 
 	public static MainDTO retrieve(Context context) {
+		FileInputStream fis = null;
+		ObjectInputStream ois = null;
 		try {
-			FileInputStream fis = context.openFileInput(Const.tdData);
-			ObjectInputStream ois = new ObjectInputStream(fis);
+			fis = context.openFileInput(Const.tdData);
+			ois = new ObjectInputStream(fis);
 			MainDTO dlctask = (MainDTO) ois.readObject();
-			ois.close();
-			fis.close();
 			return dlctask;
 		} catch (Exception e) {
 			return null;
+		} finally {
+			try {
+				if (ois != null) {
+					ois.close();
+				}
+				if (fis != null) {
+					fis.close();
+				}
+			} catch (IOException e) {
+			}
 		}
 	}
 }
