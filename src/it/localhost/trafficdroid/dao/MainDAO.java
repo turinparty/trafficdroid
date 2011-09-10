@@ -62,6 +62,9 @@ public class MainDAO {
 				if (oos != null) {
 					oos.close();
 				}
+			} catch (IOException e) {
+			}
+			try {
 				if (fos != null) {
 					fos.close();
 				}
@@ -85,6 +88,9 @@ public class MainDAO {
 				if (ois != null) {
 					ois.close();
 				}
+			} catch (IOException e) {
+			}
+			try {
 				if (fis != null) {
 					fis.close();
 				}
