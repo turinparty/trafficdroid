@@ -36,23 +36,25 @@ public class TdIntentService extends WakefulIntentService {
 			TrafficParser.parse(currDTO, sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault)));
 			BadNewsParser.parse(currDTO, sharedPreferences.getString(getString(R.string.providerBadNewsKey), getString(R.string.providerBadNewsDefault)));
 			currDTO.setTrafficTime(new Date());
-			if (pastDTO != null && currDTO.getPrefCount() == pastDTO.getPrefCount() && pastDTO.getStreets().size() != 0)
+			if (pastDTO != null && pastDTO.getStreets().size() == currDTO.getStreets().size())
 				for (int i = 0; i < currDTO.getStreets().size(); i++)
 					for (int j = 0; j < currDTO.getStreets().get(i).getZones().size(); j++) {
 						ZoneDTO pastZone = pastDTO.getStreets().get(i).getZones().get(j);
 						ZoneDTO currZone = currDTO.getStreets().get(i).getZones().get(j);
-						if (pastZone.getSpeedLeft() < currZone.getSpeedLeft())
-							currZone.setTrendLeft(R.drawable.up);
-						else if (pastZone.getSpeedLeft() > currZone.getSpeedLeft())
-							currZone.setTrendLeft(R.drawable.down);
-						else if (pastZone.getSpeedLeft() == currZone.getSpeedLeft())
-							currZone.setTrendLeft(0);
-						if (pastZone.getSpeedRight() < currZone.getSpeedRight())
-							currZone.setTrendRight(R.drawable.up);
-						else if (pastZone.getSpeedRight() > currZone.getSpeedRight())
-							currZone.setTrendRight(R.drawable.down);
-						else if (pastZone.getSpeedRight() == currZone.getSpeedRight())
-							currZone.setTrendRight(0);
+						if (pastZone.getId().equalsIgnoreCase(currZone.getId())) {
+							if (pastZone.getSpeedLeft() < currZone.getSpeedLeft())
+								currZone.setTrendLeft(R.drawable.up);
+							else if (pastZone.getSpeedLeft() > currZone.getSpeedLeft())
+								currZone.setTrendLeft(R.drawable.down);
+							else if (pastZone.getSpeedLeft() == currZone.getSpeedLeft())
+								currZone.setTrendLeft(0);
+							if (pastZone.getSpeedRight() < currZone.getSpeedRight())
+								currZone.setTrendRight(R.drawable.up);
+							else if (pastZone.getSpeedRight() > currZone.getSpeedRight())
+								currZone.setTrendRight(R.drawable.down);
+							else if (pastZone.getSpeedRight() == currZone.getSpeedRight())
+								currZone.setTrendRight(0);
+						}
 					}
 			String congestedZones = currDTO.getCongestedZones();
 			if (congestedZones != null && sharedPreferences.getBoolean(getString(R.string.chiaroveggenzaEnablerKey), Boolean.parseBoolean(getString(R.string.chiaroveggenzaEnablerDefault)))) {

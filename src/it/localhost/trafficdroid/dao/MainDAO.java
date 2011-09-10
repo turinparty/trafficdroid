@@ -24,9 +24,7 @@ public class MainDAO {
 		MainDTO mainDto = new MainDTO();
 		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ctx);
 		Resources resources = ctx.getResources();
-		mainDto.setPrefCount(sharedPreferences.getInt(Const.prefCountKey, 0));
-		mainDto.setCongestionThreshold(Byte.parseByte(sharedPreferences.getString(resources.getString(R.string.notificationSpeedKey),
-				resources.getString(R.string.notificationSpeedDefault))));
+		mainDto.setCongestionThreshold(Byte.parseByte(sharedPreferences.getString(resources.getString(R.string.notificationSpeedKey), resources.getString(R.string.notificationSpeedDefault))));
 		int[] streetsId = resources.getIntArray(R.array.streetsId);
 		String[] streetsName = resources.getStringArray(R.array.streetsName);
 		for (int i = 0; i < streetsId.length; i++) {
@@ -59,15 +57,13 @@ public class MainDAO {
 			throw new TdException(TdException.IOException, e.getMessage());
 		} finally {
 			try {
-				if (oos != null) {
+				if (oos != null)
 					oos.close();
-				}
 			} catch (IOException e) {
 			}
 			try {
-				if (fos != null) {
+				if (fos != null)
 					fos.close();
-				}
 			} catch (IOException e) {
 			}
 		}
@@ -85,15 +81,13 @@ public class MainDAO {
 			return null;
 		} finally {
 			try {
-				if (ois != null) {
+				if (ois != null)
 					ois.close();
-				}
 			} catch (IOException e) {
 			}
 			try {
-				if (fis != null) {
+				if (fis != null)
 					fis.close();
-				}
 			} catch (IOException e) {
 			}
 		}
