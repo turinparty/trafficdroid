@@ -36,7 +36,6 @@ public class MainActivity extends AbstractActivity {
 		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 		setTheme(Const.themes[Integer.parseInt(sharedPreferences.getString(getString(R.string.themeKey), getString(R.string.themeDefault)))]);
 		super.onCreate(savedInstanceState);
-		trackEvent(Const.eventCatApp, Const.eventActionVersion, versionName());
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
 		intentFilter = new IntentFilter();

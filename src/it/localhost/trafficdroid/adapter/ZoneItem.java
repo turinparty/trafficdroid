@@ -1,5 +1,7 @@
 package it.localhost.trafficdroid.adapter;
 
+import com.google.android.apps.analytics.GoogleAnalyticsTracker;
+
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.WebViewActivity;
 import it.localhost.trafficdroid.common.Const;
@@ -56,8 +58,6 @@ public class ZoneItem extends AbstractItem {
 		rightZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatRight()]);
 		leftZoneSpeedText.setTypeface(zoneDTO.getCatLeft() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
 		rightZoneSpeedText.setTypeface(zoneDTO.getCatRight() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
-		//			view.setTag(zoneDTO.getId());
-		//			view.setOnClickListener(webcamOnClickListener);
 		ImageView cam = (ImageView) view.findViewById(R.id.zoneCam);
 		if (zoneDTO.getId().charAt(0) == Const.webcamTrue)
 			cam.setImageResource(android.R.drawable.ic_menu_camera);
@@ -65,18 +65,15 @@ public class ZoneItem extends AbstractItem {
 			cam.setImageResource(android.R.drawable.ic_menu_close_clear_cancel);
 		else
 			cam.setImageResource(android.R.drawable.ic_menu_add);
-		//			view.setVisibility(streetVisible ? View.VISIBLE : View.GONE);
-		//			view.setVisibility(streetVisible ? View.VISIBLE : View.GONE);
-		
 	}
 
 	public void onClick() {
 		String code = zoneDTO.getId();
 		if (code.charAt(0) == Const.webcamNone) {
-//			trackEvent(Const.eventCatWebcam, Const.eventActionNone, code);
+			GoogleAnalyticsTracker.getInstance().trackEvent(Const.eventCatWebcam, Const.eventActionNone, code, 0);
 			new AlertDialog.Builder(context).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamNone).show();
 		} else if (code.charAt(0) == Const.webcamTrue) {
-//			trackEvent(Const.eventCatWebcam, Const.eventActionOpen, code);
+			GoogleAnalyticsTracker.getInstance().trackEvent(Const.eventCatWebcam, Const.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
 			SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
 			String provider = sharedPreferences.getString(context.getString(R.string.providerCamKey), context.getString(R.string.providerCamDefault));
@@ -84,7 +81,7 @@ public class ZoneItem extends AbstractItem {
 			intent.putExtra(Const.url, url);
 			context.startActivity(intent);
 		} else {
-//			trackEvent(Const.eventCatWebcam, Const.eventActionRequest, code);
+			GoogleAnalyticsTracker.getInstance().trackEvent(Const.eventCatWebcam, Const.eventActionRequest, code, 0);
 			new AlertDialog.Builder(context).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamAdd).show();
 		}
 	}
