@@ -30,13 +30,12 @@ public class TdIntentService extends WakefulIntentService {
 	@Override
 	public void doWakefulWork(Intent arg0) {
 		sendBroadcast(Const.beginUpdateIntent);
-		SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-		SharedPreferences.Editor editor = sharedPreferences.edit();
-		MainDTO pastDTO = MainDAO.retrieve(getApplicationContext());
-		MainDTO currDTO = MainDAO.create(getApplicationContext());
+		SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit();
+		MainDTO pastDTO = MainDAO.retrieve();
+		MainDTO currDTO = MainDAO.create();
 		try {
-			TrafficParser.parse(currDTO, sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault)));
-			BadNewsParser.parse(currDTO, sharedPreferences.getString(getString(R.string.providerBadNewsKey), getString(R.string.providerBadNewsDefault)));
+			TrafficParser.parse(currDTO, TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault));
+			BadNewsParser.parse(currDTO, TdApp.getPrefString(R.string.providerBadNewsKey, R.string.providerBadNewsDefault));
 			currDTO.setTrafficTime(new Date());
 			List<StreetDTO> pastStreets = pastDTO.getStreets();
 			List<StreetDTO> currStreets = currDTO.getStreets();
@@ -44,7 +43,7 @@ public class TdIntentService extends WakefulIntentService {
 				for (int i = 0; i < currStreets.size(); i++) {
 					List<ZoneDTO> pastZones = pastStreets.get(i).getZones();
 					List<ZoneDTO> currZones = currStreets.get(i).getZones();
-					if(pastZones.size() == currZones.size())
+					if (pastZones.size() == currZones.size())
 						for (int j = 0; j < currZones.size(); j++) {
 							ZoneDTO pastZone = pastZones.get(j);
 							ZoneDTO currZone = currZones.get(j);
@@ -65,7 +64,7 @@ public class TdIntentService extends WakefulIntentService {
 						}
 				}
 			String congestedZones = currDTO.getCongestedZones();
-			if (congestedZones != null && sharedPreferences.getBoolean(getString(R.string.chiaroveggenzaEnablerKey), Boolean.parseBoolean(getString(R.string.chiaroveggenzaEnablerDefault)))) {
+			if (congestedZones != null && TdApp.getPrefBoolean(R.string.chiaroveggenzaEnablerKey, R.string.chiaroveggenzaEnablerDefault)) {
 				Notification notification = new Notification(R.drawable.icon, getString(R.string.notificationTicker), System.currentTimeMillis());
 				notification.flags |= Notification.FLAG_AUTO_CANCEL;
 				notification.defaults |= Notification.DEFAULT_ALL;
@@ -73,7 +72,7 @@ public class TdIntentService extends WakefulIntentService {
 				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(Const.notificationId, notification);
 			} else
 				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
-			MainDAO.store(currDTO, getApplicationContext());
+			MainDAO.store(currDTO);
 			editor.putBoolean(Const.exceptionCheck, false);
 		} catch (TdException e) {
 			editor.putBoolean(Const.exceptionCheck, true);

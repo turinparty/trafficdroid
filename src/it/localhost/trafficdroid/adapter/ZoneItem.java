@@ -1,20 +1,19 @@
 package it.localhost.trafficdroid.adapter;
 
-import com.google.android.apps.analytics.GoogleAnalyticsTracker;
-
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.WebViewActivity;
 import it.localhost.trafficdroid.common.Const;
+import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dto.ZoneDTO;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Typeface;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.apps.analytics.GoogleAnalyticsTracker;
 
 public class ZoneItem extends AbstractItem {
 	public ZoneDTO zoneDTO;
@@ -75,8 +74,7 @@ public class ZoneItem extends AbstractItem {
 		} else if (code.charAt(0) == Const.webcamTrue) {
 			GoogleAnalyticsTracker.getInstance().trackEvent(Const.eventCatWebcam, Const.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
-			String provider = sharedPreferences.getString(context.getString(R.string.providerCamKey), context.getString(R.string.providerCamDefault));
+			String provider = TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault);
 			String url = Const.http + provider + Const.popupTelecamera + Const.decodeCam(code);
 			intent.putExtra(Const.url, url);
 			context.startActivity(intent);

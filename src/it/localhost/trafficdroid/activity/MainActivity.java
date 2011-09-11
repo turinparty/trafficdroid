@@ -1,11 +1,10 @@
 package it.localhost.trafficdroid.activity;
 
-import com.google.android.apps.analytics.GoogleAnalyticsTracker;
-
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.AbstractItem;
 import it.localhost.trafficdroid.adapter.ListViewAdapter;
 import it.localhost.trafficdroid.common.Const;
+import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import android.app.AlertDialog;
@@ -14,9 +13,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,17 +23,17 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.google.android.apps.analytics.GoogleAnalyticsTracker;
+
 public class MainActivity extends AbstractActivity {
 	private ListView listView;
 	private IntentFilter intentFilter;
 	private BroadcastReceiver receiver;
 	private MainDTO mainDTO;
-	private SharedPreferences sharedPreferences;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-		setTheme(Const.themes[Integer.parseInt(sharedPreferences.getString(getString(R.string.themeKey), getString(R.string.themeDefault)))]);
+		setTheme(Const.themes[Integer.parseInt(TdApp.getPrefString(R.string.themeKey, R.string.themeDefault))]);
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
@@ -77,10 +74,9 @@ public class MainActivity extends AbstractActivity {
 		super.onResume();
 		registerReceiver(receiver, intentFilter);
 		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
-		if (sharedPreferences.getString(getString(R.string.providerTrafficKey), getString(R.string.providerTrafficDefault)).equals(
-				getString(R.string.providerTrafficDefault)))
+		if (TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
 			new AlertDialog.Builder(this).setTitle(R.string.warning).setPositiveButton(R.string.ok, null).setMessage(R.string.badConf).show();
-		else if (sharedPreferences.getBoolean(getString(R.string.berserkKey), Boolean.parseBoolean(getString(R.string.berserkDefault))))
+		else if (TdApp.getPrefBoolean(R.string.berserkKey, R.string.berserkDefault))
 			sendBroadcast(Const.doUpdateIntent);
 		refresh();
 	}
@@ -113,7 +109,7 @@ public class MainActivity extends AbstractActivity {
 			return true;
 		case R.id.menufuel:
 			Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-			String provider = sharedPreferences.getString(getString(R.string.providerFuelKey), getString(R.string.providerFuelDefault));
+			String provider = TdApp.getPrefString(R.string.providerFuelKey, R.string.providerFuelDefault);
 			intent.putExtra(Const.url, Const.http + provider + Const.fuel);
 			startActivity(intent);
 			return true;
@@ -123,9 +119,9 @@ public class MainActivity extends AbstractActivity {
 	}
 
 	private void refresh() {
-		mainDTO = MainDAO.retrieve(getApplicationContext());
-		if (sharedPreferences.getBoolean(Const.exceptionCheck, false)) {
-			String msg = sharedPreferences.getString(Const.exceptionName, null) + ": " + sharedPreferences.getString(Const.exceptionMsg, null);
+		mainDTO = MainDAO.retrieve();
+		if (TdApp.getPrefBoolean(Const.exceptionCheck, false)) {
+			String msg = TdApp.getPrefString(Const.exceptionName, null) + ": " + TdApp.getPrefString(Const.exceptionMsg, null);
 			new AlertDialog.Builder(this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(msg).show();
 			setTitle(msg);
 		} else {

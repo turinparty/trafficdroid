@@ -3,12 +3,12 @@
 	android:orientation="horizontal" android:layout_height="wrap_content"
 	android:layout_width="fill_parent" android:background="#555555">
 	<ImageView android:layout_height="20dp" android:layout_width="fill_parent"
-		android:layout_weight="2" android:src="@android:drawable/stat_notify_error"
+		android:layout_weight="1" android:src="@android:drawable/stat_notify_error"
 		android:gravity="center" />
 	<TextView android:text="@string/badNews"
 		android:layout_height="wrap_content" android:layout_width="fill_parent"
 		android:layout_weight="1" android:gravity="center" />
 	<TextView android:id="@id/BNTNumber" android:gravity="center"
 		android:layout_height="wrap_content" android:layout_width="fill_parent"
-		android:textStyle="bold" android:layout_weight="2" />
+		android:textStyle="bold" android:layout_weight="1" />
 </LinearLayout>
