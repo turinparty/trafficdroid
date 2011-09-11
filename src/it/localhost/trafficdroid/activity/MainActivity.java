@@ -28,12 +28,10 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 
 public class MainActivity extends AbstractActivity {
-	private TableLayout tableLayout;
+	private LinearLayout tableLayout;
 	private LayoutInflater layoutInflater;
 	private IntentFilter intentFilter;
 	private OnClickListener webcamOnClickListener;
@@ -54,7 +52,7 @@ public class MainActivity extends AbstractActivity {
 		intentFilter = new IntentFilter();
 		intentFilter.addAction(Const.beginUpdate);
 		intentFilter.addAction(Const.endUpdate);
-		tableLayout = (TableLayout) findViewById(R.id.mainTable);
+		tableLayout = (LinearLayout) findViewById(R.id.mainTable);
 		layoutInflater = LayoutInflater.from(this);
 		webcamOnClickListener = new OnClickListener() {
 			public void onClick(View v) {
@@ -177,7 +175,7 @@ public class MainActivity extends AbstractActivity {
 			for (int i = 0; i < mainDTO.getStreets().size(); i++) {
 				StreetDTO street = mainDTO.getStreets().get(i);
 				boolean streetVisible = sharedPreferences.getBoolean(street.getId() + "V", true);
-				TableRow streetRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_street, tableLayout, false);
+				LinearLayout streetRow = (LinearLayout) layoutInflater.inflate(R.layout.tablerow_street, tableLayout, false);
 				((TextView) streetRow.findViewById(R.id.streetName)).setText(street.getName());
 				((TextView) streetRow.findViewById(R.id.streetDirLeft)).setText(street.getDirectionLeft());
 				((TextView) streetRow.findViewById(R.id.streetDirRight)).setText(street.getDirectionRight());
@@ -185,7 +183,7 @@ public class MainActivity extends AbstractActivity {
 				streetRow.setTag(R.id.streetId, street.getId());
 				streetRow.setTag(R.id.streetStart, tableLayout.getChildCount());
 				if (sharedPreferences.getBoolean(getString(R.string.badNewsKey), Boolean.parseBoolean(getString(R.string.badNewsDefault))) && street.getBadNews().size() != 0) {
-					TableRow badNewsRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_badnews, tableLayout, false);
+					LinearLayout badNewsRow = (LinearLayout) layoutInflater.inflate(R.layout.tablerow_badnews, tableLayout, false);
 					((TextView) badNewsRow.findViewById(R.id.BNTNumber)).setText(Integer.toString(street.getBadNews().size()));
 					badNewsRow.setTag(i);
 					badNewsRow.setOnClickListener(badNewsOnClickListener);
@@ -193,8 +191,8 @@ public class MainActivity extends AbstractActivity {
 					tableLayout.addView(badNewsRow);
 				}
 				for (ZoneDTO zoneDTO : street.getZones()) {
-					TableRow zoneNameRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_zonefirst, tableLayout, false);
-					TableRow zoneSpeedRow = (TableRow) layoutInflater.inflate(R.layout.tablerow_zonesecond, tableLayout, false);
+					LinearLayout zoneNameRow = (LinearLayout) layoutInflater.inflate(R.layout.tablerow_zonefirst, tableLayout, false);
+					LinearLayout zoneSpeedRow = (LinearLayout) layoutInflater.inflate(R.layout.tablerow_zonesecond, tableLayout, false);
 					TextView zoneNameText = (TextView) zoneNameRow.findViewById(R.id.zoneName);
 					TextView zoneKmText = (TextView) zoneNameRow.findViewById(R.id.zoneKm);
 					TextView leftZoneSpeedText = (TextView) zoneSpeedRow.findViewById(R.id.zoneSpeedLeft);

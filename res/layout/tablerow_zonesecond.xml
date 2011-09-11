@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
-	android:background="#000000" android:layout_marginBottom="1px">
-	<TextView android:id="@id/zoneSpeedLeft"
-		android:layout_gravity="center" />
-	<ImageView android:layout_height="20dp" android:id="@id/trendLeft"
-		android:layout_gravity="center" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal" android:layout_height="wrap_content"
+	android:layout_width="fill_parent">
+	<ImageView android:layout_height="10dp" android:id="@id/trendLeft"
+		android:layout_width="fill_parent" android:layout_gravity="center"
+		android:layout_weight="3" />
+	<TextView android:id="@id/zoneSpeedLeft" android:gravity="center"
+		android:layout_height="wrap_content" android:layout_width="fill_parent"
+		android:layout_weight="3" />
 	<ImageView android:layout_height="20dp" android:id="@id/zoneCam"
-		android:layout_gravity="center" />
-	<ImageView android:layout_height="20dp" android:id="@id/trendRight"
-		android:layout_gravity="center" />
-	<TextView android:layout_gravity="center" android:id="@id/zoneSpeedRight" />
-</TableRow>
+		android:layout_width="fill_parent" android:gravity="center"
+		android:layout_weight="1" />
+	<TextView android:gravity="center" android:id="@id/zoneSpeedRight"
+		android:layout_height="wrap_content" android:layout_width="fill_parent"
+		android:layout_weight="3" />
+	<ImageView android:layout_height="10dp" android:id="@id/trendRight"
+		android:layout_width="fill_parent" android:layout_gravity="center"
+		android:layout_weight="3" />
+</LinearLayout>

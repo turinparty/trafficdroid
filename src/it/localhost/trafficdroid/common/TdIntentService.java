@@ -42,17 +42,17 @@ public class TdIntentService extends WakefulIntentService {
 						ZoneDTO pastZone = pastDTO.getStreets().get(i).getZones().get(j);
 						ZoneDTO currZone = currDTO.getStreets().get(i).getZones().get(j);
 						if (pastZone.getId().equalsIgnoreCase(currZone.getId())) {
-							if (pastZone.getSpeedLeft() < currZone.getSpeedLeft())
+							if (currZone.getSpeedLeft() != 0 && pastZone.getSpeedLeft() < currZone.getSpeedLeft())
 								currZone.setTrendLeft(R.drawable.up);
-							else if (pastZone.getSpeedLeft() > currZone.getSpeedLeft())
+							else if (currZone.getSpeedLeft() != 0 && pastZone.getSpeedLeft() > currZone.getSpeedLeft())
 								currZone.setTrendLeft(R.drawable.down);
-							else if (pastZone.getSpeedLeft() == currZone.getSpeedLeft())
+							else
 								currZone.setTrendLeft(0);
-							if (pastZone.getSpeedRight() < currZone.getSpeedRight())
+							if (currZone.getSpeedRight() != 0 && pastZone.getSpeedRight() < currZone.getSpeedRight())
 								currZone.setTrendRight(R.drawable.up);
-							else if (pastZone.getSpeedRight() > currZone.getSpeedRight())
+							else if (currZone.getSpeedRight() != 0 && pastZone.getSpeedRight() > currZone.getSpeedRight())
 								currZone.setTrendRight(R.drawable.down);
-							else if (pastZone.getSpeedRight() == currZone.getSpeedRight())
+							else
 								currZone.setTrendRight(0);
 						}
 					}
