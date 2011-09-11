@@ -16,7 +16,7 @@ public class WebViewActivity extends AbstractActivity {
 		super.onCreate(savedInstanceState);
 		tracker = GoogleAnalyticsTracker.getInstance();
 		tracker.startNewSession(Const.anlyticsId, this);
-		setContentView(R.layout.linearlayout_webview);
+		setContentView(R.layout.webview);
 		webView = (WebView) findViewById(R.id.webview);
 		webView.getSettings().setJavaScriptEnabled(true);
 		webView.loadUrl(getIntent().getStringExtra(Const.url));

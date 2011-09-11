@@ -78,6 +78,7 @@ public class MainDAO {
 			MainDTO dlctask = (MainDTO) ois.readObject();
 			return dlctask;
 		} catch (Exception e) {
+			e.printStackTrace();
 			return null;
 		} finally {
 			try {

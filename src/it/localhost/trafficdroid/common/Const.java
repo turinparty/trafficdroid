@@ -9,6 +9,7 @@ import android.util.SparseIntArray;
 public class Const {
 	public static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
 	public static final int[] themes = new int[] { R.style.Small, R.style.Medium, R.style.Large };
+	public static final byte[] itemTypes = new byte[] { 0, 1, 2 };
 	public static final int notificationId = 1;
 	public static final char charAutostrade = 'A';
 	public static final char webcamTrue = 'A';
@@ -56,6 +57,7 @@ public class Const {
 	public static final String exceptionName = "exceptionName";
 	public static final String exceptionMsg = "exceptionMsg";
 	public static final String url = "url";
+
 	public static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);
 	public static final SparseIntArray zonesRes = new SparseIntArray(128) {
 		{

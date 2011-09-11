@@ -8,12 +8,11 @@ import android.os.Bundle;
 import com.google.android.apps.analytics.GoogleAnalyticsTracker;
 
 public abstract class AbstractActivity extends Activity {
-	private GoogleAnalyticsTracker tracker;
+	private static GoogleAnalyticsTracker tracker = GoogleAnalyticsTracker.getInstance();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		tracker = GoogleAnalyticsTracker.getInstance();
 		tracker.startNewSession(Const.anlyticsId, this);
 	}
 
