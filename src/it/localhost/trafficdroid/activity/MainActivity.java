@@ -1,5 +1,7 @@
 package it.localhost.trafficdroid.activity;
 
+import com.google.android.apps.analytics.GoogleAnalyticsTracker;
+
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.AbstractItem;
 import it.localhost.trafficdroid.adapter.ListViewAdapter;
@@ -38,6 +40,7 @@ public class MainActivity extends AbstractActivity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
+		GoogleAnalyticsTracker.getInstance().trackEvent(Const.eventCatApp, Const.eventActionVersion, versionName(), versionCode());
 		intentFilter = new IntentFilter();
 		intentFilter.addAction(Const.beginUpdate);
 		intentFilter.addAction(Const.endUpdate);
@@ -128,8 +131,7 @@ public class MainActivity extends AbstractActivity {
 		} else {
 			if (mainDTO != null && mainDTO.getTrafficTime() != null) {
 				setTitle(getString(R.string.app_name) + ": " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
-				ListViewAdapter adapter = new ListViewAdapter(this, mainDTO);
-				listView.setAdapter(adapter);
+				listView.setAdapter(new ListViewAdapter(this, mainDTO));
 			}
 		}
 	}

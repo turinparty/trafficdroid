@@ -32,13 +32,11 @@ public class BadNewsItem extends AbstractItem {
 	}
 
 	public void onClick() {
-		LayoutInflater inflater = LayoutInflater.from(context);
-		Dialog d = new Dialog(context);
-		d.setTitle(streetDTO.getName());
-		ListView listview = (ListView) inflater.inflate(R.layout.dialog_badnews, null);
-		DialogBadNewsAdapter adapter = new DialogBadNewsAdapter(context, R.layout.dialog_item_badnews, streetDTO.getBadNews());
-		listview.setAdapter(adapter);
-		d.setContentView(listview);
-		d.show();
+		Dialog dialog = new Dialog(context);
+		dialog.setTitle(streetDTO.getName());
+		ListView listview = (ListView) LayoutInflater.from(context).inflate(R.layout.dialog_badnews, null);
+		listview.setAdapter(new DialogBadNewsAdapter(context, R.layout.dialog_item_badnews, streetDTO.getBadNews()));
+		dialog.setContentView(listview);
+		dialog.show();
 	}
 }

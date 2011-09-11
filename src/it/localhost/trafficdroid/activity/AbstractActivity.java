@@ -2,6 +2,7 @@ package it.localhost.trafficdroid.activity;
 
 import it.localhost.trafficdroid.common.Const;
 import android.app.Activity;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 
 import com.google.android.apps.analytics.GoogleAnalyticsTracker;
@@ -31,5 +32,21 @@ public abstract class AbstractActivity extends Activity {
 	public void onStop() {
 		super.onStop();
 		tracker.stopSession();
+	}
+
+	public String versionName() {
+		try {
+			return getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+		} catch (NameNotFoundException e) {
+			return "NotFound";
+		}
+	}
+
+	public int versionCode() {
+		try {
+			return getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
+		} catch (NameNotFoundException e) {
+			return 0;
+		}
 	}
 }

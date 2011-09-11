@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 public class ListViewAdapter extends BaseAdapter {
-
 	private List<AbstractItem> items;
 
 	public ListViewAdapter(Context context, MainDTO mainDTO) {
@@ -24,7 +23,7 @@ public class ListViewAdapter extends BaseAdapter {
 			items.add(new StreetItem(context, streetDTO));
 			if (streetDTO.getBadNews().size() > 0)
 				items.add(new BadNewsItem(context, streetDTO));
-			for (ZoneDTO zoneDTO : streetDTO.getZones()) 
+			for (ZoneDTO zoneDTO : streetDTO.getZones())
 				items.add(new ZoneItem(context, zoneDTO));
 		}
 	}

@@ -12,7 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 public class DialogBadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
-
 	private LayoutInflater inflater;
 
 	public DialogBadNewsAdapter(Context context, int textViewResourceId, List<BadNewsDTO> objects) {
@@ -23,9 +22,8 @@ public class DialogBadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		BadNewsDTO event = getItem(position);
-		if (convertView == null) {
+		if (convertView == null)
 			convertView = inflater.inflate(R.layout.dialog_item_badnews, null);
-		}
 		((TextView) convertView.findViewById(R.id.BNDText)).setText(event.getTitle() + " " + event.getDescription());
 		return convertView;
 	}
