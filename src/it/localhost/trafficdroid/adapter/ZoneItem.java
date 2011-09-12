@@ -41,10 +41,16 @@ public class ZoneItem extends AbstractItem {
 		ImageView trendRightText = (ImageView) view.findViewById(R.id.trendRight);
 		zoneNameText.setText(zoneDTO.getName());
 		zoneKmText.setText(zoneDTO.getKm());
-		if (zoneDTO.getTrendLeft() != 0)
+		if (zoneDTO.getTrendLeft() != 0) {
 			trendLeftText.setImageResource(zoneDTO.getTrendLeft());
-		if (zoneDTO.getTrendRight() != 0)
+			trendLeftText.setVisibility(View.VISIBLE);
+		} else
+			trendLeftText.setVisibility(View.INVISIBLE);
+		if (zoneDTO.getTrendRight() != 0) {
 			trendRightText.setImageResource(zoneDTO.getTrendRight());
+			trendRightText.setVisibility(View.VISIBLE);
+		} else
+			trendRightText.setVisibility(View.INVISIBLE);
 		if (zoneDTO.getSpeedLeft() != 0)
 			leftZoneSpeedText.setText(Byte.toString(zoneDTO.getSpeedLeft()));
 		else

@@ -3,11 +3,11 @@ package it.localhost.trafficdroid.parser;
 import java.util.StringTokenizer;
 
 import it.localhost.trafficdroid.common.Const;
-import it.localhost.trafficdroid.common.TdException;
 import it.localhost.trafficdroid.dao.TrafficDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
+import it.localhost.trafficdroid.exception.TdException;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

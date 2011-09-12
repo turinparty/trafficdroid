@@ -13,10 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-public class ListViewAdapter extends BaseAdapter {
+public class MainAdapter extends BaseAdapter {
 	private List<AbstractItem> items;
 
-	public ListViewAdapter(Context context, MainDTO mainDTO) {
+	public MainAdapter(Context context, MainDTO mainDTO) {
 		items = new ArrayList<AbstractItem>();
 		List<StreetDTO> streets = mainDTO.getStreets();
 		for (StreetDTO streetDTO : streets) {

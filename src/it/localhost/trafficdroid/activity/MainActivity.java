@@ -2,7 +2,7 @@ package it.localhost.trafficdroid.activity;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.AbstractItem;
-import it.localhost.trafficdroid.adapter.ListViewAdapter;
+import it.localhost.trafficdroid.adapter.MainAdapter;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.MainDAO;
@@ -127,7 +127,7 @@ public class MainActivity extends AbstractActivity {
 		} else {
 			if (mainDTO != null && mainDTO.getTrafficTime() != null) {
 				setTitle(getString(R.string.app_name) + ": " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
-				listView.setAdapter(new ListViewAdapter(this, mainDTO));
+				listView.setAdapter(new MainAdapter(this, mainDTO));
 			}
 		}
 	}

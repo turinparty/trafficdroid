@@ -1,11 +1,11 @@
 package it.localhost.trafficdroid.parser;
 
 import it.localhost.trafficdroid.common.Const;
-import it.localhost.trafficdroid.common.TdException;
 import it.localhost.trafficdroid.dao.EventDAO;
 import it.localhost.trafficdroid.dto.BadNewsDTO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
+import it.localhost.trafficdroid.exception.TdException;
 
 import java.text.SimpleDateFormat;
 import java.util.StringTokenizer;

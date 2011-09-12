@@ -1,7 +1,7 @@
 package it.localhost.trafficdroid.dao;
 
 import it.localhost.trafficdroid.common.Const;
-import it.localhost.trafficdroid.common.TdException;
+import it.localhost.trafficdroid.exception.TdException;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

@@ -3,10 +3,10 @@ package it.localhost.trafficdroid.dao;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdApp;
-import it.localhost.trafficdroid.common.TdException;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
+import it.localhost.trafficdroid.exception.TdException;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

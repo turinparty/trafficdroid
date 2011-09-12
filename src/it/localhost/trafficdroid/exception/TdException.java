@@ -1,4 +1,4 @@
-package it.localhost.trafficdroid.common;
+package it.localhost.trafficdroid.exception;
 
 public class TdException extends Exception {
 	private static final long serialVersionUID = 1L;
