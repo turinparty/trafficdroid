@@ -54,7 +54,6 @@ public class Const {
 	public static final String eventActionOpen = "Open";
 	public static final String eventActionNone = "None";
 	public static final String exceptionCheck = "exceptionCheck";
-	public static final String exceptionName = "exceptionName";
 	public static final String exceptionMsg = "exceptionMsg";
 	public static final String url = "url";
 

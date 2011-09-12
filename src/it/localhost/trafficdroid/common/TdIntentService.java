@@ -6,7 +6,9 @@ import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
-import it.localhost.trafficdroid.exception.TdException;
+import it.localhost.trafficdroid.exception.BadConfException;
+import it.localhost.trafficdroid.exception.ConnectionException;
+import it.localhost.trafficdroid.exception.GenericException;
 import it.localhost.trafficdroid.parser.BadNewsParser;
 import it.localhost.trafficdroid.parser.TrafficParser;
 
@@ -32,13 +34,13 @@ public class TdIntentService extends WakefulIntentService {
 	public void doWakefulWork(Intent arg0) {
 		sendBroadcast(Const.beginUpdateIntent);
 		SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit();
-		MainDTO pastDTO = MainDAO.retrieve();
 		MainDTO currDTO = MainDAO.create();
 		try {
 			TrafficParser.parse(currDTO, TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault));
 			BadNewsParser.parse(currDTO, TdApp.getPrefString(R.string.providerBadNewsKey, R.string.providerBadNewsDefault));
 			currDTO.setTrafficTime(new Date());
-			if (pastDTO != null) {
+			try {
+				MainDTO pastDTO = MainDAO.retrieve();
 				List<StreetDTO> currStreets = currDTO.getStreets();
 				List<StreetDTO> pastStreets = pastDTO.getStreets();
 				if (pastStreets.size() == currStreets.size())
@@ -65,6 +67,8 @@ public class TdIntentService extends WakefulIntentService {
 								}
 							}
 					}
+			} catch (GenericException e) {
+				// Do nothing
 			}
 			String congestedZones = currDTO.getCongestedZones();
 			if (congestedZones != null && TdApp.getPrefBoolean(R.string.chiaroveggenzaEnablerKey, R.string.chiaroveggenzaEnablerDefault)) {
@@ -77,9 +81,14 @@ public class TdIntentService extends WakefulIntentService {
 				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
 			MainDAO.store(currDTO);
 			editor.putBoolean(Const.exceptionCheck, false);
-		} catch (TdException e) {
+		} catch (GenericException e) {
 			editor.putBoolean(Const.exceptionCheck, true);
-			editor.putString(Const.exceptionName, e.getName());
+			editor.putString(Const.exceptionMsg, e.getMessage());
+		} catch (BadConfException e) {
+			editor.putBoolean(Const.exceptionCheck, true);
+			editor.putString(Const.exceptionMsg, "Configurazione errata: " + e.getMessage());
+		} catch (ConnectionException e) {
+			editor.putBoolean(Const.exceptionCheck, true);
 			editor.putString(Const.exceptionMsg, e.getMessage());
 		} finally {
 			editor.commit();

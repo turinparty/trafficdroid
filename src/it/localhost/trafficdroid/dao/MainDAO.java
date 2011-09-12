@@ -6,7 +6,7 @@ import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
-import it.localhost.trafficdroid.exception.TdException;
+import it.localhost.trafficdroid.exception.GenericException;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,6 +14,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.StreamCorruptedException;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -42,7 +43,7 @@ public class MainDAO {
 		return mainDto;
 	}
 
-	public static void store(MainDTO dto) throws TdException {
+	public static void store(MainDTO dto) throws GenericException {
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 		try {
@@ -50,24 +51,26 @@ public class MainDAO {
 			oos = new ObjectOutputStream(fos);
 			oos.writeObject(dto);
 		} catch (FileNotFoundException e) {
-			throw new TdException(TdException.FileNotFoundException, e.getMessage());
+			throw new GenericException(e);
 		} catch (IOException e) {
-			throw new TdException(TdException.IOException, e.getMessage());
+			throw new GenericException(e);
 		} finally {
 			try {
 				if (oos != null)
 					oos.close();
 			} catch (IOException e) {
+				// Do nothing
 			}
 			try {
 				if (fos != null)
 					fos.close();
 			} catch (IOException e) {
+				// Do nothing
 			}
 		}
 	}
 
-	public static MainDTO retrieve() {
+	public static MainDTO retrieve() throws GenericException {
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 		try {
@@ -75,20 +78,14 @@ public class MainDAO {
 			ois = new ObjectInputStream(fis);
 			MainDTO dlctask = (MainDTO) ois.readObject();
 			return dlctask;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		} finally {
-			try {
-				if (ois != null)
-					ois.close();
-			} catch (IOException e) {
-			}
-			try {
-				if (fis != null)
-					fis.close();
-			} catch (IOException e) {
-			}
+		} catch (FileNotFoundException e) {
+			throw new GenericException(e);
+		} catch (StreamCorruptedException e) {
+			throw new GenericException(e);
+		} catch (IOException e) {
+			throw new GenericException(e);
+		} catch (ClassNotFoundException e) {
+			throw new GenericException(e);
 		}
 	}
 }

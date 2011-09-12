@@ -7,6 +7,7 @@ import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
+import it.localhost.trafficdroid.exception.GenericException;
 import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
@@ -119,16 +120,20 @@ public class MainActivity extends AbstractActivity {
 	}
 
 	private void refresh() {
-		mainDTO = MainDAO.retrieve();
-		if (TdApp.getPrefBoolean(Const.exceptionCheck, false)) {
-			String msg = TdApp.getPrefString(Const.exceptionName, null) + ": " + TdApp.getPrefString(Const.exceptionMsg, null);
+		if (!TdApp.getPrefBoolean(Const.exceptionCheck, false))
+			try {
+				mainDTO = MainDAO.retrieve();
+				if (mainDTO.getTrafficTime() != null) {
+					setTitle(getString(R.string.app_name) + ": " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
+					listView.setAdapter(new MainAdapter(this, mainDTO));
+				}
+			} catch (GenericException e) {
+				sendBroadcast(Const.doUpdateIntent);
+			}
+		else {
+			String msg = TdApp.getPrefString(Const.exceptionMsg, "Unknow Error");
 			new AlertDialog.Builder(this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(msg).show();
 			setTitle(msg);
-		} else {
-			if (mainDTO != null && mainDTO.getTrafficTime() != null) {
-				setTitle(getString(R.string.app_name) + ": " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
-				listView.setAdapter(new MainAdapter(this, mainDTO));
-			}
 		}
 	}
 }

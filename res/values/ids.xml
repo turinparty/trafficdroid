@@ -9,8 +9,6 @@
 	<item type="id" name="streetDirRight" />
 	<item type="id" name="streetName" />
 	<item type="id" name="streetId" />
-	<item type="id" name="streetEnd" />
-	<item type="id" name="streetStart" />
 	<item type="id" name="zoneSpeedLeft" />
 	<item type="id" name="zoneSpeedRight" />
 	<item type="id" name="zoneCam" />
