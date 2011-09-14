@@ -1,5 +1,6 @@
 package it.localhost.trafficdroid.common;
 
+import it.localhost.trafficdroid.R;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,6 +13,7 @@ public class TdApp extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		PreferenceManager.setDefaultValues(this, R.layout.preferencescreen, false);
 		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 		instance = this;
 	}

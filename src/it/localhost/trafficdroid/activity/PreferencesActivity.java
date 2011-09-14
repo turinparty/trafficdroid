@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
-import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 
 import com.google.android.apps.analytics.GoogleAnalyticsTracker;
@@ -19,7 +18,6 @@ public class PreferencesActivity extends PreferenceActivity {
 		super.onCreate(savedInstanceState);
 		tracker = GoogleAnalyticsTracker.getInstance();
 		tracker.startNewSession(Const.anlyticsId, this);
-		PreferenceManager.setDefaultValues(this, R.layout.preferencescreen, false);
 		addPreferencesFromResource(R.layout.preferencescreen);
 		int[] streetId = getResources().getIntArray(R.array.streetsId);
 		String[] streetName = getResources().getStringArray(R.array.streetsName);
