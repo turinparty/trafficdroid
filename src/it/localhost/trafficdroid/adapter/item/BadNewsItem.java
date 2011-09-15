@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class BadNewsItem extends AbstractItem {
+public class BadNewsItem extends AbstractChildItem {
 	private StreetDTO streetDTO;
 
 	public BadNewsItem(Context context, StreetDTO streetDTO) {
@@ -28,15 +28,22 @@ public class BadNewsItem extends AbstractItem {
 	}
 
 	public void fillView(View view) {
-		((TextView) view.findViewById(R.id.BNTNumber)).setText(Integer.toString(streetDTO.getBadNews().size()));
+		((TextView) view.findViewById(R.id.streetDirLeft)).setText(streetDTO.getDirectionLeft());
+		((TextView) view.findViewById(R.id.streetDirRight)).setText(streetDTO.getDirectionRight());
+		if (streetDTO.getBadNews().size() != 0)
+			((TextView) view.findViewById(R.id.BNTNumber)).setVisibility(View.VISIBLE);
+		else
+			((TextView) view.findViewById(R.id.BNTNumber)).setVisibility(View.INVISIBLE);
 	}
 
 	public void onClick() {
-		Dialog dialog = new Dialog(context);
-		dialog.setTitle(streetDTO.getName());
-		ListView listview = (ListView) LayoutInflater.from(context).inflate(R.layout.dialog_badnews, null);
-		listview.setAdapter(new BadNewsAdapter(context, R.layout.dialog_item_badnews, streetDTO.getBadNews()));
-		dialog.setContentView(listview);
-		dialog.show();
+		if (streetDTO.getBadNews().size() != 0) {
+			Dialog dialog = new Dialog(context);
+			dialog.setTitle(streetDTO.getName());
+			ListView listview = (ListView) LayoutInflater.from(context).inflate(R.layout.dialog_badnews, null);
+			listview.setAdapter(new BadNewsAdapter(context, R.layout.dialog_item_badnews, streetDTO.getBadNews()));
+			dialog.setContentView(listview);
+			dialog.show();
+		}
 	}
 }

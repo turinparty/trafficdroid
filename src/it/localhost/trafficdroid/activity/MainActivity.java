@@ -2,7 +2,7 @@ package it.localhost.trafficdroid.activity;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.MainAdapter;
-import it.localhost.trafficdroid.adapter.item.AbstractItem;
+import it.localhost.trafficdroid.adapter.item.AbstractChildItem;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.MainDAO;
@@ -44,7 +44,7 @@ public class MainActivity extends AbstractActivity {
 		listView = (ExpandableListView) findViewById(R.id.mainTable);
 		listView.setOnChildClickListener(new OnChildClickListener() {
 			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-				((AbstractItem) parent.getExpandableListAdapter().getChild(groupPosition, childPosition)).onClick();
+				((AbstractChildItem) parent.getExpandableListAdapter().getChild(groupPosition, childPosition)).onClick();
 				return true;
 			}
 		});
@@ -115,7 +115,6 @@ public class MainActivity extends AbstractActivity {
 				mainDTO = MainDAO.retrieve();
 				if (mainDTO.getTrafficTime() != null) {
 					setTitle(getString(R.string.app_name) + ": " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
-					//	listView.setAdapter(new MainAdapter(this, mainDTO));
 					listView.setAdapter(new MainAdapter(this, mainDTO));
 				}
 			} catch (GenericException e) {

@@ -12,11 +12,7 @@ public abstract class AbstractItem {
 
 	public abstract View inflateView();
 
-	public abstract void onClick();
-
 	public abstract void fillView(View view);
-	//	view.setTag(this);
-	
 
 	public AbstractItem(Context context) {
 		this.context = context;

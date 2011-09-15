@@ -4,7 +4,7 @@
 	android:layout_height="match_parent">
 	<LinearLayout android:orientation="horizontal"
 		android:layout_height="wrap_content" android:layout_width="fill_parent">
-		<TextView android:id="@id/zoneKm" android:layout_weight="5"
+		<TextView android:id="@id/zoneKm" android:layout_weight="4"
 			android:gravity="center" android:layout_height="wrap_content"
 			android:layout_width="fill_parent" android:textStyle="italic" />
 		<TextView android:id="@id/zoneName" android:layout_height="wrap_content"
@@ -14,18 +14,18 @@
 		android:layout_height="wrap_content" android:layout_width="fill_parent">
 		<ImageView android:layout_height="10dp" android:id="@id/trendLeft"
 			android:layout_width="fill_parent" android:layout_gravity="center"
-			android:layout_weight="3" />
+			android:layout_weight="2" />
 		<TextView android:id="@id/zoneSpeedLeft" android:gravity="center"
 			android:layout_height="wrap_content" android:layout_width="fill_parent"
-			android:layout_weight="3" />
+			android:layout_weight="2" />
 		<ImageView android:layout_height="20dp" android:id="@id/zoneCam"
 			android:layout_width="fill_parent" android:gravity="center"
 			android:layout_weight="1" />
 		<TextView android:gravity="center" android:id="@id/zoneSpeedRight"
 			android:layout_height="wrap_content" android:layout_width="fill_parent"
-			android:layout_weight="3" />
+			android:layout_weight="2" />
 		<ImageView android:layout_height="10dp" android:id="@id/trendRight"
 			android:layout_width="fill_parent" android:layout_gravity="center"
-			android:layout_weight="3" />
-	</LinearLayout>
+			android:layout_weight="2" />
+	</LinearLayout>erc
 </LinearLayout>

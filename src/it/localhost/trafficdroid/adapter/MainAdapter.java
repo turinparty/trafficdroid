@@ -28,8 +28,8 @@ public class MainAdapter extends BaseExpandableListAdapter {
 		for (StreetDTO streetDTO : streets) {
 			streetItem.add(new StreetItem(context, streetDTO));
 			ArrayList<AbstractItem> zoneItem = new ArrayList<AbstractItem>();
-			if (streetDTO.getBadNews().size() > 0)
-				zoneItem.add(new BadNewsItem(context, streetDTO));
+			zoneItem.add(new BadNewsItem(context, streetDTO));
+			//if (streetDTO.getBadNews().size() > 0)
 			for (ZoneDTO zoneDTO : streetDTO.getZones())
 				zoneItem.add(new ZoneItem(context, zoneDTO));
 			this.zoneItem.add(zoneItem);

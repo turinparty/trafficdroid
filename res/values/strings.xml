@@ -15,7 +15,7 @@
 	<string name="selectStreet">Seleziona l\'intera strada</string>
 	<string name="sniper">Seleziona le singole zone</string>
 	<string name="diramation">Diramazioni</string>
-	<string name="badNews">Bad-News: </string>
+	<string name="badNews">Visualizza Bad News</string>
 	<string name="mappedSreet">Strade preferite</string>
 	<string name="providerCategory">Provider</string>
 	<string name="providerSummary">Verifica di averne i permessi</string>

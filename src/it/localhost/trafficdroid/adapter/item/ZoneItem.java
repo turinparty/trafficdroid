@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.google.android.apps.analytics.GoogleAnalyticsTracker;
 
-public class ZoneItem extends AbstractItem {
+public class ZoneItem extends AbstractChildItem {
 	public ZoneDTO zoneDTO;
 
 	public ZoneItem(Context context, ZoneDTO zoneDTO) {
