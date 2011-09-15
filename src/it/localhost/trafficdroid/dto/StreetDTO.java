@@ -2,15 +2,14 @@ package it.localhost.trafficdroid.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 public class StreetDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String name;
 	private int id;
-	private List<ZoneDTO> zones;
+	private ArrayList<ZoneDTO> zones;
 	private String[] directions;
-	private List<BadNewsDTO> badNews;
+	private ArrayList<BadNewsDTO> badNews;
 
 	public StreetDTO(int id) {
 		this.id = id;
@@ -31,7 +30,7 @@ public class StreetDTO implements Serializable {
 		return id;
 	}
 
-	public List<ZoneDTO> getZones() {
+	public ArrayList<ZoneDTO> getZones() {
 		return zones;
 	}
 
@@ -59,7 +58,7 @@ public class StreetDTO implements Serializable {
 		this.directions[1] = direction;
 	}
 
-	public List<BadNewsDTO> getBadNews() {
+	public ArrayList<BadNewsDTO> getBadNews() {
 		return badNews;
 	}
 

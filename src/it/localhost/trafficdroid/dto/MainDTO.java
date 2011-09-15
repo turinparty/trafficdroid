@@ -5,11 +5,10 @@ import it.localhost.trafficdroid.common.Const;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class MainDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private List<StreetDTO> streets;
+	private ArrayList<StreetDTO> streets;
 	private Date trafficTime;
 	private StringBuilder congestedZones;
 	private byte congestionThreshold;
@@ -31,7 +30,7 @@ public class MainDTO implements Serializable {
 		streets.add(street);
 	}
 
-	public List<StreetDTO> getStreets() {
+	public ArrayList<StreetDTO> getStreets() {
 		return streets;
 	}
 

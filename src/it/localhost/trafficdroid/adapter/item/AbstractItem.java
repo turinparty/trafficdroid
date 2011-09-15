@@ -1,4 +1,4 @@
-package it.localhost.trafficdroid.adapter;
+package it.localhost.trafficdroid.adapter.item;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,9 +14,9 @@ public abstract class AbstractItem {
 
 	public abstract void onClick();
 
-	public void fillView(View view) {
-		view.setTag(this);
-	}
+	public abstract void fillView(View view);
+	//	view.setTag(this);
+	
 
 	public AbstractItem(Context context) {
 		this.context = context;

@@ -1,4 +1,4 @@
-package it.localhost.trafficdroid.adapter;
+package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.WebViewActivity;
@@ -32,15 +32,27 @@ public class ZoneItem extends AbstractItem {
 	}
 
 	public void fillView(View view) {
-		super.fillView(view);
 		TextView zoneNameText = (TextView) view.findViewById(R.id.zoneName);
 		TextView zoneKmText = (TextView) view.findViewById(R.id.zoneKm);
 		TextView leftZoneSpeedText = (TextView) view.findViewById(R.id.zoneSpeedLeft);
 		TextView rightZoneSpeedText = (TextView) view.findViewById(R.id.zoneSpeedRight);
 		ImageView trendLeftText = (ImageView) view.findViewById(R.id.trendLeft);
 		ImageView trendRightText = (ImageView) view.findViewById(R.id.trendRight);
+		ImageView cam = (ImageView) view.findViewById(R.id.zoneCam);
 		zoneNameText.setText(zoneDTO.getName());
 		zoneKmText.setText(zoneDTO.getKm());
+		leftZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatLeft()]);
+		rightZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatRight()]);
+		leftZoneSpeedText.setTypeface(zoneDTO.getCatLeft() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
+		rightZoneSpeedText.setTypeface(zoneDTO.getCatRight() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
+		if (zoneDTO.getSpeedLeft() != 0)
+			leftZoneSpeedText.setText(Byte.toString(zoneDTO.getSpeedLeft()));
+		else
+			leftZoneSpeedText.setText("-");
+		if (zoneDTO.getSpeedRight() != 0)
+			rightZoneSpeedText.setText(Byte.toString(zoneDTO.getSpeedRight()));
+		else
+			rightZoneSpeedText.setText("-");
 		if (zoneDTO.getTrendLeft() != 0) {
 			trendLeftText.setImageResource(zoneDTO.getTrendLeft());
 			trendLeftText.setVisibility(View.VISIBLE);
@@ -51,19 +63,6 @@ public class ZoneItem extends AbstractItem {
 			trendRightText.setVisibility(View.VISIBLE);
 		} else
 			trendRightText.setVisibility(View.INVISIBLE);
-		if (zoneDTO.getSpeedLeft() != 0)
-			leftZoneSpeedText.setText(Byte.toString(zoneDTO.getSpeedLeft()));
-		else
-			leftZoneSpeedText.setText("-");
-		if (zoneDTO.getSpeedRight() != 0)
-			rightZoneSpeedText.setText(Byte.toString(zoneDTO.getSpeedRight()));
-		else
-			rightZoneSpeedText.setText("-");
-		leftZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatLeft()]);
-		rightZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatRight()]);
-		leftZoneSpeedText.setTypeface(zoneDTO.getCatLeft() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
-		rightZoneSpeedText.setTypeface(zoneDTO.getCatRight() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
-		ImageView cam = (ImageView) view.findViewById(R.id.zoneCam);
 		if (zoneDTO.getId().charAt(0) == Const.webcamTrue)
 			cam.setImageResource(android.R.drawable.ic_menu_camera);
 		else if (zoneDTO.getId().charAt(0) == Const.webcamNone)

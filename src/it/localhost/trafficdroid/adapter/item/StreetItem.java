@@ -1,4 +1,4 @@
-package it.localhost.trafficdroid.adapter;
+package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
@@ -24,7 +24,6 @@ public class StreetItem extends AbstractItem {
 	}
 
 	public void fillView(View view) {
-		super.fillView(view);
 		((TextView) view.findViewById(R.id.streetName)).setText(streetDTO.getName());
 		((TextView) view.findViewById(R.id.streetDirLeft)).setText(streetDTO.getDirectionLeft());
 		((TextView) view.findViewById(R.id.streetDirRight)).setText(streetDTO.getDirectionRight());

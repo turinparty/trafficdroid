@@ -1,8 +1,8 @@
 package it.localhost.trafficdroid.activity;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.adapter.AbstractItem;
 import it.localhost.trafficdroid.adapter.MainAdapter;
+import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.MainDAO;
@@ -20,14 +20,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
+import android.widget.ExpandableListView;
+import android.widget.ExpandableListView.OnChildClickListener;
 
 import com.google.android.apps.analytics.GoogleAnalyticsTracker;
 
 public class MainActivity extends AbstractActivity {
-	private ListView listView;
+	private ExpandableListView listView;
 	private IntentFilter intentFilter;
 	private BroadcastReceiver receiver;
 	private MainDTO mainDTO;
@@ -42,22 +41,13 @@ public class MainActivity extends AbstractActivity {
 		intentFilter = new IntentFilter();
 		intentFilter.addAction(Const.beginUpdate);
 		intentFilter.addAction(Const.endUpdate);
-		listView = (ListView) findViewById(R.id.mainTable);
-		listView.setOnItemClickListener(new OnItemClickListener() {
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				((AbstractItem) view.getTag()).onClick();
+		listView = (ExpandableListView) findViewById(R.id.mainTable);
+		listView.setOnChildClickListener(new OnChildClickListener() {
+			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+				((AbstractItem) parent.getExpandableListAdapter().getChild(groupPosition, childPosition)).onClick();
+				return true;
 			}
 		});
-		//		streetOnClickListener = new OnClickListener() {
-		//			public void onClick(View v) {
-		//				String streetVkey = (Integer) v.getTag(R.id.streetId) + "V";
-		//				boolean streetVisible = !sharedPreferences.getBoolean(streetVkey, true);
-		//				sharedPreferences.edit().putBoolean(streetVkey, streetVisible).commit();
-		//				for (int i = (Integer) v.getTag(R.id.streetStart); i < (Integer) v.getTag(R.id.streetEnd); i++) {
-		//					tableLayout.getChildAt(i).setVisibility(streetVisible ? View.VISIBLE : View.GONE);
-		//				}
-		//			}
-		//		};
 		receiver = new BroadcastReceiver() {
 			public void onReceive(Context context, Intent intent) {
 				if (intent.getAction().equals(Const.beginUpdate)) {
@@ -125,6 +115,7 @@ public class MainActivity extends AbstractActivity {
 				mainDTO = MainDAO.retrieve();
 				if (mainDTO.getTrafficTime() != null) {
 					setTitle(getString(R.string.app_name) + ": " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
+					//	listView.setAdapter(new MainAdapter(this, mainDTO));
 					listView.setAdapter(new MainAdapter(this, mainDTO));
 				}
 			} catch (GenericException e) {

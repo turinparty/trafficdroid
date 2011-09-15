@@ -1,9 +1,10 @@
 package it.localhost.trafficdroid.adapter;
 
-import java.util.List;
-
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.dto.BadNewsDTO;
+
+import java.util.ArrayList;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,10 +12,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class DialogBadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
+public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
 	private LayoutInflater inflater;
 
-	public DialogBadNewsAdapter(Context context, int textViewResourceId, List<BadNewsDTO> objects) {
+	public BadNewsAdapter(Context context, int textViewResourceId, ArrayList<BadNewsDTO> objects) {
 		super(context, textViewResourceId, objects);
 		inflater = LayoutInflater.from(context);
 	}

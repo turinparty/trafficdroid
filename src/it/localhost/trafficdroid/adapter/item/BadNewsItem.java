@@ -1,6 +1,7 @@
-package it.localhost.trafficdroid.adapter;
+package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.adapter.BadNewsAdapter;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import android.app.Dialog;
@@ -27,7 +28,6 @@ public class BadNewsItem extends AbstractItem {
 	}
 
 	public void fillView(View view) {
-		super.fillView(view);
 		((TextView) view.findViewById(R.id.BNTNumber)).setText(Integer.toString(streetDTO.getBadNews().size()));
 	}
 
@@ -35,7 +35,7 @@ public class BadNewsItem extends AbstractItem {
 		Dialog dialog = new Dialog(context);
 		dialog.setTitle(streetDTO.getName());
 		ListView listview = (ListView) LayoutInflater.from(context).inflate(R.layout.dialog_badnews, null);
-		listview.setAdapter(new DialogBadNewsAdapter(context, R.layout.dialog_item_badnews, streetDTO.getBadNews()));
+		listview.setAdapter(new BadNewsAdapter(context, R.layout.dialog_item_badnews, streetDTO.getBadNews()));
 		dialog.setContentView(listview);
 		dialog.show();
 	}
