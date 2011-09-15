@@ -7,8 +7,7 @@
 		android:layout_weight="2" android:gravity="center" />
 	<TextView android:id="@id/BNTNumber" android:layout_height="wrap_content"
 		android:layout_width="fill_parent" android:layout_weight="1"
-		android:gravity="center" android:text="@string/badNews"
-		android:textStyle="bold" />
+		android:gravity="center" android:textStyle="bold" />
 	<TextView android:id="@id/streetDirRight"
 		android:layout_height="wrap_content" android:layout_width="fill_parent"
 		android:layout_weight="2" android:gravity="center" />

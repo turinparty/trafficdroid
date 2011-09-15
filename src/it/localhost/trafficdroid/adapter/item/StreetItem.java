@@ -1,6 +1,5 @@
 package it.localhost.trafficdroid.adapter.item;
 
-import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import android.content.Context;
@@ -20,17 +19,15 @@ public class StreetItem extends AbstractItem {
 	}
 
 	public View inflateView() {
-		return inflater.inflate(R.layout.main_item_street, null, false);
+		return inflater.inflate(android.R.layout.simple_expandable_list_item_2, null, false);
 	}
 
 	public void fillView(View view) {
-		((TextView) view.findViewById(R.id.streetName)).setText(streetDTO.getName());
+		((TextView) view.findViewById(android.R.id.text1)).setText(streetDTO.getName());
 		if (streetDTO.getBadNews().size() != 0) {
-			((TextView) view.findViewById(R.id.BNTNumber)).setText(Integer.toString(streetDTO.getBadNews().size()));
-			((TextView) view.findViewById(R.id.BNTNumber)).setVisibility(View.VISIBLE);
+			((TextView) view.findViewById(android.R.id.text2)).setText("Bad News: " + streetDTO.getBadNews().size());
+			((TextView) view.findViewById(android.R.id.text2)).setVisibility(View.VISIBLE);
 		} else
-			((TextView) view.findViewById(R.id.BNTNumber)).setVisibility(View.INVISIBLE);
+			((TextView) view.findViewById(android.R.id.text2)).setVisibility(View.GONE);
 	}
-
-
 }
