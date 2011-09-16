@@ -39,9 +39,9 @@ public class TdIntentService extends WakefulIntentService {
 			TrafficParser.parse(currDTO, TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault));
 			BadNewsParser.parse(currDTO, TdApp.getPrefString(R.string.providerBadNewsKey, R.string.providerBadNewsDefault));
 			currDTO.setTrafficTime(new Date());
+			List<StreetDTO> currStreets = currDTO.getStreets();
 			try {
 				MainDTO pastDTO = MainDAO.retrieve();
-				List<StreetDTO> currStreets = currDTO.getStreets();
 				List<StreetDTO> pastStreets = pastDTO.getStreets();
 				if (pastStreets.size() == currStreets.size())
 					for (int i = 0; i < currStreets.size(); i++) {
@@ -67,8 +67,12 @@ public class TdIntentService extends WakefulIntentService {
 								}
 							}
 					}
-			} catch (GenericException e) {
-				// Do nothing
+			} catch (Exception e) {
+				for (StreetDTO streetDTO : currStreets)
+					for (ZoneDTO zoneDTO : streetDTO.getZones()) {
+						zoneDTO.setTrendLeft(0);
+						zoneDTO.setTrendRight(0);
+					}
 			}
 			String congestedZones = currDTO.getCongestedZones();
 			if (congestedZones != null && TdApp.getPrefBoolean(R.string.chiaroveggenzaEnablerKey, R.string.chiaroveggenzaEnablerDefault)) {
