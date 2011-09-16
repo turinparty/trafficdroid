@@ -28,6 +28,6 @@ public class StreetItem extends AbstractItem {
 			((TextView) view.findViewById(android.R.id.text2)).setText("Bad News: " + streetDTO.getBadNews().size());
 			((TextView) view.findViewById(android.R.id.text2)).setVisibility(View.VISIBLE);
 		} else
-			((TextView) view.findViewById(android.R.id.text2)).setVisibility(View.GONE);
+			((TextView) view.findViewById(android.R.id.text2)).setVisibility(View.INVISIBLE);
 	}
 }
