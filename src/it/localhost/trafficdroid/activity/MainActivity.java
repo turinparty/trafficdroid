@@ -7,7 +7,6 @@ import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
-import it.localhost.trafficdroid.exception.GenericException;
 import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
@@ -117,7 +116,7 @@ public class MainActivity extends AbstractActivity {
 					setTitle(getString(R.string.app_name) + ": " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
 					listView.setAdapter(new MainAdapter(this, mainDTO));
 				}
-			} catch (GenericException e) {
+			} catch (Exception e) {
 				sendBroadcast(Const.doUpdateIntent);
 			}
 		else {
