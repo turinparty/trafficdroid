@@ -27,4 +27,17 @@
 		<item>Allaccio A1</item>
 		<item>Firenze S. Cristina</item>
 	</string-array>
+	<string-array name="zones11Autovelox">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

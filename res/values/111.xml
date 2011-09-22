@@ -12,4 +12,10 @@
 		<item>Massarossa</item>
 		<item>Lucca-S.Donato</item>
 	</string-array>
+	<string-array name="zones111Autovelox">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

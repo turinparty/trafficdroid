@@ -44,4 +44,26 @@
 		<item>4:via Mecenate</item>
 		<item>3:Paullo</item>
 	</string-array>
+	<string-array name="zones51Autovelox">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

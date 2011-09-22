@@ -29,12 +29,12 @@ public class MainDAO {
 		for (int i = 0; i < streetsId.length; i++) {
 			StreetDTO street = new StreetDTO(streetsId[i]);
 			boolean streetEnabled = TdApp.getPrefBoolean(Integer.toString(street.getId()), false);
-			String[][] zones = new String[2][];
-			zones[0] = resources.getStringArray(Const.zonesRes.get((streetsId[i])));
-			zones[1] = resources.getStringArray(Const.zonesRes.get(0 - streetsId[i]));
-			for (int j = 0; j < zones[0].length; j++)
-				if (streetEnabled || TdApp.getPrefBoolean(zones[0][j], false))
-					street.addZone(new ZoneDTO(zones[0][j], zones[1][j]));
+			String[] zonesId = resources.getStringArray(Const.zonesResId.get((streetsId[i])));
+			String[] zonesName = resources.getStringArray(Const.zonesResName.get(streetsId[i]));
+			String[] zonesAutovelox = resources.getStringArray(Const.zonesResAutovelox.get(streetsId[i]));
+			for (int j = 0; j < zonesId.length; j++)
+				if (streetEnabled || TdApp.getPrefBoolean(zonesId[j], false))
+					street.addZone(new ZoneDTO(zonesId[j], zonesName[j], zonesAutovelox[j]));
 			if (street.getZones().size() > 0) {
 				street.setName(streetsName[i]);
 				mainDto.addStreet(street);

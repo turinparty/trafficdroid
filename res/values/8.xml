@@ -29,4 +29,18 @@
 		<item>Lainate</item>
 		<item>Arese/Tangenziale Ovest</item>
 	</string-array>
+	<string-array name="zones8Autovelox">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

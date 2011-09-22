@@ -13,4 +13,10 @@
 		<item>Monte Porzio Catone</item>
 		<item>San Cesareo</item>
 	</string-array>
+	<string-array name="zones102Autovelox">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

@@ -46,4 +46,27 @@
 		<item>Pontevico - Robecco</item>
 		<item>Manerbio</item>
 	</string-array>
+	<string-array name="zones21Autovelox">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

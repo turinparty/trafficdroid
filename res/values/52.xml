@@ -20,4 +20,14 @@
 		<item>Autostrada A4</item>
 		<item>Sesto San Giovanni</item>
 	</string-array>
+	<string-array name="zones52Autovelox">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

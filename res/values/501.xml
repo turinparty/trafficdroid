@@ -8,4 +8,8 @@
 		<item>Allaccio A5</item>
 		<item>Albiano</item>
 	</string-array>
+	<string-array name="zones501Autovelox">
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

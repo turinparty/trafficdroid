@@ -27,4 +27,17 @@
 		<item>Corte Centrale</item>
 		<item>Comacchio-Lagosanto</item>
 	</string-array>
+	<string-array name="zones131Autovelox">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

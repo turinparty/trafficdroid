@@ -26,4 +26,17 @@
 		<item>7: Pavia-Milano Ticinese</item>
 		<item>8: Val Tidone-Milano Vigentina</item>
 	</string-array>
+	<string-array name="zones50Autovelox">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

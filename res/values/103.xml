@@ -28,4 +28,18 @@
 		<item>Monteriggioni</item>
 		<item>Badesse</item>
 	</string-array>
+	<string-array name="zones103Autovelox">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

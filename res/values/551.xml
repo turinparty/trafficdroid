@@ -10,4 +10,9 @@
 		<item>SS460 Ceresole</item>
 		<item>Borgaro</item>
 	</string-array>
+	<string-array name="zones551Autovelox">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

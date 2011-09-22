@@ -10,4 +10,9 @@
 		<item>Reggio di Calabria Nord</item>
 		<item>Reggio di Calabria Calopinace</item>
 	</string-array>
+	<string-array name="zones301Autovelox">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

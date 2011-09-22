@@ -8,4 +8,8 @@
 		<item>Corso Trieste</item>
 		<item>San Paolo</item>
 	</string-array>
+	<string-array name="zones553Autovelox">
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

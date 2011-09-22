@@ -39,6 +39,8 @@ public class ZoneItem extends AbstractChildItem {
 		ImageView trendLeftText = (ImageView) view.findViewById(R.id.trendLeft);
 		ImageView trendRightText = (ImageView) view.findViewById(R.id.trendRight);
 		ImageView cam = (ImageView) view.findViewById(R.id.zoneCam);
+		ImageView autoveloxLeft = (ImageView) view.findViewById(R.id.zoneAutoveloxLeft);
+		ImageView autoveloxRight = (ImageView) view.findViewById(R.id.zoneAutoveloxRight);
 		zoneNameText.setText(zoneDTO.getName());
 		zoneKmText.setText(zoneDTO.getKm());
 		leftZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatLeft()]);
@@ -69,6 +71,23 @@ public class ZoneItem extends AbstractChildItem {
 			cam.setImageResource(android.R.drawable.ic_menu_close_clear_cancel);
 		else
 			cam.setImageResource(android.R.drawable.ic_menu_add);
+		if (Const.autoveloxLeft.equalsIgnoreCase(zoneDTO.getAutovelox())) {
+			autoveloxLeft.setImageResource(R.drawable.autovelox);
+			autoveloxLeft.setVisibility(View.VISIBLE);
+			autoveloxRight.setVisibility(View.INVISIBLE);
+		} else if (Const.autoveloxRight.equalsIgnoreCase(zoneDTO.getAutovelox())) {
+			autoveloxRight.setImageResource(R.drawable.autovelox);
+			autoveloxRight.setVisibility(View.VISIBLE);
+			autoveloxLeft.setVisibility(View.INVISIBLE);
+		} else if (Const.autoveloxAll.equalsIgnoreCase(zoneDTO.getAutovelox())) {
+			autoveloxLeft.setImageResource(R.drawable.autovelox);
+			autoveloxRight.setImageResource(R.drawable.autovelox);
+			autoveloxLeft.setVisibility(View.VISIBLE);
+			autoveloxRight.setVisibility(View.VISIBLE);
+		} else {
+			autoveloxLeft.setVisibility(View.INVISIBLE);
+			autoveloxRight.setVisibility(View.INVISIBLE);
+		}
 	}
 
 	public void onClick() {

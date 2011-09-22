@@ -7,6 +7,7 @@ public class ZoneDTO implements Serializable {
 	private String id;
 	private String name;
 	private String km;
+	private String autovelox;
 	private byte speedLeft;
 	private byte speedRight;
 	private byte catLeft;
@@ -14,9 +15,10 @@ public class ZoneDTO implements Serializable {
 	private int trendLeft;
 	private int trendRight;
 
-	public ZoneDTO(String id, String name) {
+	public ZoneDTO(String id, String name, String autovelox) {
 		this.id = id;
 		this.name = name;
+		this.autovelox = autovelox;
 	}
 
 	public String getId() {
@@ -83,5 +85,7 @@ public class ZoneDTO implements Serializable {
 		this.km = km;
 	}
 
-
+	public String getAutovelox() {
+		return autovelox;
+	}
 }

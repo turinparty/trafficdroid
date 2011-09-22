@@ -19,4 +19,13 @@
 		<item>Fulgatore</item>
 		<item>Segesta</item>
 	</string-array>
+	<string-array name="zones291Autovelox">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

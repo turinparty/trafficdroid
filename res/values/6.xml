@@ -25,4 +25,16 @@
 		<item>Millesimo</item>
 		<item>Altare</item>
 	</string-array>
+	<string-array name="zones6Autovelox">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

@@ -12,6 +12,8 @@
 	<item type="id" name="zoneCam" />
 	<item type="id" name="zoneKm" />
 	<item type="id" name="zoneName" />
+	<item type="id" name="zoneAutoveloxLeft" />
+	<item type="id" name="zoneAutoveloxRight" />
 	<item type="id" name="menusettings" />
 	<item type="id" name="menurefresh" />
 	<item type="id" name="menufuel" />

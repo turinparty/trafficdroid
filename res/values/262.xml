@@ -15,4 +15,11 @@
 		<item>Sesto Calende</item>
 		<item>Besanate</item>
 	</string-array>
+	<string-array name="zones262Autovelox">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

@@ -18,4 +18,13 @@
 		<item>Monsampolo del Tronto</item>
 		<item>Monteprandone</item>
 	</string-array>
+	<string-array name="zones144Autovelox">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>

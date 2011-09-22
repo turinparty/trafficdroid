@@ -29,4 +29,18 @@
 		<item>Candela</item>
 		<item>Cerignola Ovest</item>
 	</string-array>
+	<string-array name="zones16Autovelox">
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</string-array>
 </resources>
