@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- A23 Udine-Tarvisio -->
 <resources>
 	<string-array name="zones23Id">
-		<item>s23z1</item>
-		<item>s23z2</item>
-		<item>s23z3</item>
-		<item>s23z4</item>
-		<item>s23z5</item>
-		<item>s23z6</item>
-		<item>s23z7</item>
-		<item>s23z8</item>
-		<item>s23z9</item>
+		<item>20519</item>	<!-- A23 km. 114,6 Svincoli Tarvisio Nord itinere nord -->
+		<item>17317</item>	<!-- A23 km. 108,5 Viadotto Fella X itinere sud -->
+		<item>19121</item>	<!-- A23 km. 105,5 Camporosso itinere nord -->
+		<item>20513</item>	<!-- A23 km. 101,2 itinere nord -->
+		<item>17418</item>	<!-- A23 km. 91,5 Viadotti Pontebba itinere sud -->
+		<item>19137</item>	<!-- A23 km. 61,0 Carnia itinere sud -->
+		<item>10779</item>	<!-- A23 km. 47,0 Gemona itinere sud -->
+		<item>19151</item>	<!-- A23 km. 31,0 Udine Nord itinere sud -->
+		<item>12820</item>	<!-- A23 km. 22,0 itinere sud -->
 	</string-array>
 	<string-array name="zones23Name">
 		<item>Inizio</item>

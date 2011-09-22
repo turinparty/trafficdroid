@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- A12 Genova-Rosignano Marittimo -->
 <resources>
 	<string-array name="zones121Id">
-		<item>z16</item>
-		<item>z470</item>
-		<item>z2</item>
-		<item>z11</item>
-		<item>z14</item>
-		<item>z10</item>
-		<item>z1050</item>
-		<item>z496</item>
-		<item>s121z9</item>
-		<item>s121z10</item>
-		<item>s121z11</item>
-		<item>s121z12</item>
-		<item>s121z13</item>
-		<item>s121z14</item>
-		<item>s121z15</item>
-		<item>s121z16</item>
-		<item>s121z17</item>
-		<item>s121z18</item>
-		<item>s121z19</item>
-		<item>z209</item>
-		<item>z208</item>
+		<item>A19472</item>	<!-- A12 km. 1,9 A12/A7 itinere ovest -->
+		<item>A7603</item>	<!-- A12 km. 4,2 Genova Est itinere est -->
+		<item>A19622</item>	<!-- A12 km. 11,2 GE-Nervi itinere est -->
+		<item>A22491</item>	<!-- A12 km. 23,0 Recco itinere ovest -->
+		<item>A22474</item>	<!-- A12 km. 28,0 Rapallo itinere ovest -->
+		<item>A19547</item>	<!-- A12 km. 39,000 Chiavari itinere Est -->
+		<item>A15962</item>	<!-- A12 km. 39,9 Lavagna itinere est -->
+		<item>A19446</item>	<!-- A12 km. 52,1 Sestri TR1/Salt itinere ovest -->
+		<item>Hs121z9</item>
+		<item>Hs121z10</item>
+		<item>Hs121z11</item>
+		<item>Hs121z12</item>
+		<item>Hs121z13</item>
+		<item>Hs121z14</item>
+		<item>Hs121z15</item>
+		<item>Hs121z16</item>
+		<item>Hs121z17</item>
+		<item>Hs121z18</item>
+		<item>Hs121z19</item>
+		<item>A21249</item>	<!-- A12 km. 170,2 Livorno -->
+		<item>A21255</item>	<!-- A12 km. 177,8 Collesalvetti -->
 	</string-array>
 	<string-array name="zones121Name">
 		<item>Allaccio A7</item>

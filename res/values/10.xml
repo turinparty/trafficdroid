@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- A10 Genova-Savona -->
 <resources>
 	<string-array name="zones10Id">
-		<item>s10z1</item>
-		<item>s10z2</item>
-		<item>s10z3</item>
-		<item>s10z4</item>
-		<item>s10z5</item>
-		<item>s10z6</item>
-		<item>s10z7</item>
-		<item>s10z8</item>
-		<item>s10z9</item>
-		<item>s10z10</item>
-		<item>s10z11</item>
-		<item>s10z12</item>
-		<item>s10z13</item>
-		<item>s10z14</item>
-		<item>A15948</item><!-- A10 km. 42,8 Savona itinere ovest -->
-		<item>A22485</item><!-- A10 km. 37,0 Albisola itinere ovest -->
-		<item>A11302</item><!-- A10 km. 31,7 Celle Ligure itinere ovest -->
-		<item>A19495</item><!-- A10 km. 28,8 Varazze itinere est -->
-		<item>A22556</item><!-- A10 km. 20,0 Arenzano itinere est -->
-		<item>A22523</item><!-- A26 km. 0,250 Bivio A26S/A10E itinere est -->
-		<item>A7017</item><!-- A10 km. 10,1 GE-Voltri itinere ovest -->
-		<item>A11308</item><!-- A10 km. 5,3 Pegli itinere ovest -->
-		<item>A22518</item><!-- A10 km. 6,0 GE-Pegli itinere est -->
+		<item>Hs10z1</item>
+		<item>Hs10z2</item>
+		<item>Hs10z3</item>
+		<item>Hs10z4</item>
+		<item>Hs10z5</item>
+		<item>Hs10z6</item>
+		<item>Hs10z7</item>
+		<item>Hs10z8</item>
+		<item>Hs10z9</item>
+		<item>Hs10z10</item>
+		<item>Hs10z11</item>
+		<item>Hs10z12</item>
+		<item>Hs10z13</item>
+		<item>Hs10z14</item>
+		<item>A15948</item>	<!-- A10 km. 42,8 Savona itinere ovest -->
+		<item>A22485</item>	<!-- A10 km. 37,0 Albisola itinere ovest -->
+		<item>A11302</item>	<!-- A10 km. 31,7 Celle Ligure itinere ovest -->
+		<item>A19495</item>	<!-- A10 km. 28,8 Varazze itinere est -->
+		<item>A22556</item>	<!-- A10 km. 20,0 Arenzano itinere est -->
+		<item>A22523</item>	<!-- A26 km. 0,250 Bivio A26S/A10E itinere est -->
+		<item>A7017</item>	<!-- A10 km. 10,1 GE-Voltri itinere ovest -->
+		<item>A11308</item>	<!-- A10 km. 5,3 Pegli itinere ovest -->
+		<item>A22518</item>	<!-- A10 km. 6,0 GE-Pegli itinere est -->
 	</string-array>
 	<string-array name="zones10Name">
 		<item>Inizio</item>

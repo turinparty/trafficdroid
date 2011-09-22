@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- A13 Bologna-Padova -->
 <resources>
 	<string-array name="zones13Id">
-		<item>z60</item>
-		<item>z362</item>
-		<item>z58</item>
-		<item>s13z4</item>
-		<item>s13z5</item>
-		<item>s13z6</item>
-		<item>s13z7</item>
-		<item>s13z8</item>
-		<item>s13z9</item>
-		<item>s13z10</item>
-		<item>z353</item>
-		<item>z1010</item>
+		<item>A22184</item>	<!-- A13 km. 116,7 Svincolo A04 itinere nord -->
+		<item>A16187</item>	<!-- A13 km. 111,3 Padova Zona Industriale itinere nord -->
+		<item>A22198</item>	<!-- A13 km. 101 Padova Sud itinere sud -->
+		<item>A16194</item>	<!-- A13 km. 96,0 Terme Euganee itinere sud -->
+		<item>A20294</item>	<!-- A13 km. 89,0 Monselice itinere sud -->
+		<item>A5950</item>	<!-- A13 km. 76,0 Boara itinere sud -->
+		<item>A20313</item>	<!-- A13 km. 69,0 Rovigo itinere nord -->
+		<item>A20318</item>	<!-- A13 km. 50,0 Occhiobello itinere sud -->
+		<item>A20324</item>	<!-- A13 km. 42,0 Ferrara Nord itinere sud -->
+		<item>A16206</item>	<!-- A13 km. 34,6 Ferrara Sud itinere sud -->
+		<item>A20351</item>	<!-- A13 km. 20,0 Altedo itinere nord -->
+		<item>A16211</item>	<!-- A13 km. 9,4 Interporto itinere sud -->
 	</string-array>
 	<string-array name="zones13Name">
 		<item>Allaccio A4</item>
