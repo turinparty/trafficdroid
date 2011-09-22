@@ -24,7 +24,7 @@ public class ZoneItem extends AbstractChildItem {
 	}
 
 	public int getType() {
-		return Const.itemTypes[2];
+		return Const.itemTypes[1];
 	}
 
 	public View inflateView() {
@@ -79,7 +79,8 @@ public class ZoneItem extends AbstractChildItem {
 		} else if (code.charAt(0) == Const.webcamTrue) {
 			GoogleAnalyticsTracker.getInstance().trackEvent(Const.eventCatWebcam, Const.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault) + Const.popupTelecamera + Integer.parseInt(code.substring(1)) + 6280 * (Const.date));
+			int id = Integer.parseInt(code.substring(1)) + 6280 * (Const.date);
+			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault) + Const.popupTelecamera + id);
 			context.startActivity(intent);
 		} else {
 			GoogleAnalyticsTracker.getInstance().trackEvent(Const.eventCatWebcam, Const.eventActionRequest, code, 0);

@@ -20,7 +20,7 @@ public class BadNewsItem extends AbstractChildItem {
 	}
 
 	public int getType() {
-		return Const.itemTypes[1];
+		return Const.itemTypes[0];
 	}
 
 	public View inflateView() {

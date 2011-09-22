@@ -20,8 +20,6 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 
 import com.commonsware.cwac.wakeful.WakefulIntentService;
 
@@ -33,7 +31,6 @@ public class TdIntentService extends WakefulIntentService {
 	@Override
 	public void doWakefulWork(Intent arg0) {
 		sendBroadcast(Const.beginUpdateIntent);
-		SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit();
 		MainDTO currDTO = MainDAO.create();
 		try {
 			TrafficParser.parse(currDTO, TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault));
@@ -84,18 +81,18 @@ public class TdIntentService extends WakefulIntentService {
 			} else
 				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
 			MainDAO.store(currDTO);
-			editor.putBoolean(Const.exceptionCheck, false);
+			TdApp.getEditor().putBoolean(Const.exceptionCheck, false);
 		} catch (GenericException e) {
-			editor.putBoolean(Const.exceptionCheck, true);
-			editor.putString(Const.exceptionMsg, e.getMessage());
+			TdApp.getEditor().putBoolean(Const.exceptionCheck, true);
+			TdApp.getEditor().putString(Const.exceptionMsg, e.getMessage());
 		} catch (BadConfException e) {
-			editor.putBoolean(Const.exceptionCheck, true);
-			editor.putString(Const.exceptionMsg, Const.badConf + e.getMessage());
+			TdApp.getEditor().putBoolean(Const.exceptionCheck, true);
+			TdApp.getEditor().putString(Const.exceptionMsg, Const.badConf + e.getMessage());
 		} catch (ConnectionException e) {
-			editor.putBoolean(Const.exceptionCheck, true);
-			editor.putString(Const.exceptionMsg, e.getMessage());
+			TdApp.getEditor().putBoolean(Const.exceptionCheck, true);
+			TdApp.getEditor().putString(Const.exceptionMsg, e.getMessage());
 		} finally {
-			editor.commit();
+			TdApp.getEditor().commit();
 			sendBroadcast(Const.endUpdateIntent);
 		}
 	}

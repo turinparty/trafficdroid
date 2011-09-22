@@ -8,8 +8,6 @@ public abstract class AbstractItem {
 	protected Context context;
 	protected LayoutInflater inflater;
 
-	public abstract int getType();
-
 	public abstract View inflateView();
 
 	public abstract void fillView(View view);

@@ -14,10 +14,6 @@ public class StreetItem extends AbstractItem {
 		this.streetDTO = streetDTO;
 	}
 
-	public int getType() {
-		return Const.itemTypes[0];
-	}
-
 	public View inflateView() {
 		return inflater.inflate(android.R.layout.simple_expandable_list_item_2, null, false);
 	}

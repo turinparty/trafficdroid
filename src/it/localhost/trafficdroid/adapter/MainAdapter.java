@@ -1,10 +1,12 @@
 package it.localhost.trafficdroid.adapter;
 
+import it.localhost.trafficdroid.adapter.item.AbstractChildItem;
 import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.adapter.item.BadNewsItem;
 import it.localhost.trafficdroid.adapter.item.StreetItem;
 import it.localhost.trafficdroid.adapter.item.ZoneItem;
 import it.localhost.trafficdroid.common.Const;
+import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
@@ -12,36 +14,31 @@ import it.localhost.trafficdroid.dto.ZoneDTO;
 import java.util.ArrayList;
 
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 
 public class MainAdapter extends BaseExpandableListAdapter {
-	private ArrayList<AbstractItem> streetItem;
-	private ArrayList<ArrayList<AbstractItem>> zoneItem;
-	private SharedPreferences.Editor editor;
+	private ArrayList<AbstractItem> groupItems;
+	private ArrayList<ArrayList<AbstractChildItem>> childItems;
 
 	public MainAdapter(Context context, MainDTO mainDTO) {
 		super();
-		streetItem = new ArrayList<AbstractItem>();
-		zoneItem = new ArrayList<ArrayList<AbstractItem>>();
-		editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
+		groupItems = new ArrayList<AbstractItem>();
+		childItems = new ArrayList<ArrayList<AbstractChildItem>>();
 		ArrayList<StreetDTO> streets = mainDTO.getStreets();
-		for (StreetDTO streetDTO : streets) {
-			streetItem.add(new StreetItem(context, streetDTO));
-			ArrayList<AbstractItem> zoneItem = new ArrayList<AbstractItem>();
-			zoneItem.add(new BadNewsItem(context, streetDTO));
-			//if (streetDTO.getBadNews().size() > 0)
-			for (ZoneDTO zoneDTO : streetDTO.getZones())
-				zoneItem.add(new ZoneItem(context, zoneDTO));
-			this.zoneItem.add(zoneItem);
+		for (StreetDTO street : streets) {
+			groupItems.add(new StreetItem(context, street));
+			ArrayList<AbstractChildItem> childItem = new ArrayList<AbstractChildItem>();
+			childItem.add(new BadNewsItem(context, street));
+			for (ZoneDTO zone : street.getZones())
+				childItem.add(new ZoneItem(context, zone));
+			this.childItems.add(childItem);
 		}
 	}
 
 	public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-		AbstractItem rowModel = streetItem.get(groupPosition);
+		AbstractItem rowModel = groupItems.get(groupPosition);
 		if (convertView == null)
 			convertView = rowModel.inflateView();
 		rowModel.fillView(convertView);
@@ -49,7 +46,7 @@ public class MainAdapter extends BaseExpandableListAdapter {
 	}
 
 	public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-		AbstractItem rowModel = zoneItem.get(groupPosition).get(childPosition);
+		AbstractChildItem rowModel = childItems.get(groupPosition).get(childPosition);
 		if (convertView == null)
 			convertView = rowModel.inflateView();
 		rowModel.fillView(convertView);
@@ -57,19 +54,19 @@ public class MainAdapter extends BaseExpandableListAdapter {
 	}
 
 	public Object getGroup(int groupPosition) {
-		return streetItem.get(groupPosition);
+		return groupItems.get(groupPosition);
 	}
 
 	public Object getChild(int groupPosition, int childPosition) {
-		return zoneItem.get(groupPosition).get(childPosition);
+		return childItems.get(groupPosition).get(childPosition);
 	}
 
 	public int getGroupCount() {
-		return streetItem.size();
+		return groupItems.size();
 	}
 
 	public int getChildrenCount(int groupPosition) {
-		return zoneItem.get(groupPosition).size();
+		return childItems.get(groupPosition).size();
 	}
 
 	public long getGroupId(int groupPosition) {
@@ -90,7 +87,7 @@ public class MainAdapter extends BaseExpandableListAdapter {
 
 	@Override
 	public int getChildType(int groupPosition, int childPosition) {
-		return zoneItem.get(groupPosition).get(childPosition).getType();
+		return childItems.get(groupPosition).get(childPosition).getType();
 	}
 
 	@Override
@@ -101,12 +98,12 @@ public class MainAdapter extends BaseExpandableListAdapter {
 	@Override
 	public void onGroupCollapsed(int groupPosition) {
 		super.onGroupCollapsed(groupPosition);
-		editor.putBoolean(Const.expanded + groupPosition, false).commit();
+		TdApp.getEditor().putBoolean(Const.expanded + groupPosition, false).commit();
 	}
 
 	@Override
 	public void onGroupExpanded(int groupPosition) {
 		super.onGroupExpanded(groupPosition);
-		editor.putBoolean(Const.expanded + groupPosition, true).commit();
+		TdApp.getEditor().putBoolean(Const.expanded + groupPosition, true).commit();
 	}
 }
