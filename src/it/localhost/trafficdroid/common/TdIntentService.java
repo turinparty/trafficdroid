@@ -90,7 +90,7 @@ public class TdIntentService extends WakefulIntentService {
 			editor.putString(Const.exceptionMsg, e.getMessage());
 		} catch (BadConfException e) {
 			editor.putBoolean(Const.exceptionCheck, true);
-			editor.putString(Const.exceptionMsg, "Configurazione errata: " + e.getMessage());
+			editor.putString(Const.exceptionMsg, Const.badConf + e.getMessage());
 		} catch (ConnectionException e) {
 			editor.putBoolean(Const.exceptionCheck, true);
 			editor.putString(Const.exceptionMsg, e.getMessage());

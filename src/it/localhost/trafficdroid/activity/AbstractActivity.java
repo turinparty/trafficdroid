@@ -38,7 +38,7 @@ public abstract class AbstractActivity extends Activity {
 		try {
 			return getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
 		} catch (NameNotFoundException e) {
-			return "NotFound";
+			return Const.notFound;
 		}
 	}
 

@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- A13 Diramazione per Ferrara -->
 <resources>
 	<string-array name="zones131Id">
-		<item>s131z1</item>
-		<item>s131z2</item>
-		<item>s131z3</item>
-		<item>s131z4</item>
-		<item>s131z5</item>
-		<item>s131z6</item>
-		<item>s131z7</item>
-		<item>s131z8</item>
-		<item>s131z9</item>
-		<item>s131z10</item>
-		<item>s131z11</item>
+		<item>Hs131z1</item>
+		<item>A12728</item>	<!-- D23 km. 1,9 Itinere nord -->
+		<item>Hs131z3</item>
+		<item>Hs131z4</item>
+		<item>Hs131z5</item>
+		<item>Hs131z6</item>
+		<item>Hs131z7</item>
+		<item>Hs131z8</item>
+		<item>Hs131z9</item>
+		<item>Hs131z10</item>
+		<item>Hs131z11</item>
 	</string-array>
 	<string-array name="zones131Name">
 		<item>Allaccio A13</item>

@@ -48,11 +48,11 @@ public class ZoneItem extends AbstractChildItem {
 		if (zoneDTO.getSpeedLeft() != 0)
 			leftZoneSpeedText.setText(Byte.toString(zoneDTO.getSpeedLeft()));
 		else
-			leftZoneSpeedText.setText("-");
+			leftZoneSpeedText.setText(Const.noDataSpeed);
 		if (zoneDTO.getSpeedRight() != 0)
 			rightZoneSpeedText.setText(Byte.toString(zoneDTO.getSpeedRight()));
 		else
-			rightZoneSpeedText.setText("-");
+			rightZoneSpeedText.setText(Const.noDataSpeed);
 		if (zoneDTO.getTrendLeft() != 0) {
 			trendLeftText.setImageResource(zoneDTO.getTrendLeft());
 			trendLeftText.setVisibility(View.VISIBLE);
@@ -79,9 +79,7 @@ public class ZoneItem extends AbstractChildItem {
 		} else if (code.charAt(0) == Const.webcamTrue) {
 			GoogleAnalyticsTracker.getInstance().trackEvent(Const.eventCatWebcam, Const.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			String provider = TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault);
-			String url = Const.http + provider + Const.popupTelecamera + Const.decodeCam(code);
-			intent.putExtra(Const.url, url);
+			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault) + Const.popupTelecamera + Integer.parseInt(code.substring(1)) + 6280 * (Const.date));
 			context.startActivity(intent);
 		} else {
 			GoogleAnalyticsTracker.getInstance().trackEvent(Const.eventCatWebcam, Const.eventActionRequest, code, 0);

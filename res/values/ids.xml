@@ -7,8 +7,6 @@
 	<item type="id" name="mainTable" />
 	<item type="id" name="streetDirLeft" />
 	<item type="id" name="streetDirRight" />
-	<item type="id" name="streetName" />
-	<item type="id" name="streetId" />
 	<item type="id" name="zoneSpeedLeft" />
 	<item type="id" name="zoneSpeedRight" />
 	<item type="id" name="zoneCam" />

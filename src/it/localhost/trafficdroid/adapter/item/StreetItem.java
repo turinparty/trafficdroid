@@ -25,7 +25,7 @@ public class StreetItem extends AbstractItem {
 	public void fillView(View view) {
 		((TextView) view.findViewById(android.R.id.text1)).setText(streetDTO.getName());
 		if (streetDTO.getBadNews().size() != 0) {
-			((TextView) view.findViewById(android.R.id.text2)).setText("Bad News: " + streetDTO.getBadNews().size());
+			((TextView) view.findViewById(android.R.id.text2)).setText(Const.badNews + streetDTO.getBadNews().size());
 			((TextView) view.findViewById(android.R.id.text2)).setVisibility(View.VISIBLE);
 		} else
 			((TextView) view.findViewById(android.R.id.text2)).setVisibility(View.INVISIBLE);

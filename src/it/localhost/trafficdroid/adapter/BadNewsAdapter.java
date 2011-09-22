@@ -1,6 +1,7 @@
 package it.localhost.trafficdroid.adapter;
 
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.dto.BadNewsDTO;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
 		BadNewsDTO event = getItem(position);
 		if (convertView == null)
 			convertView = inflater.inflate(R.layout.dialog_item_badnews, null);
-		((TextView) convertView.findViewById(R.id.BNDText)).setText(event.getTitle() + " " + event.getDescription());
+		((TextView) convertView.findViewById(R.id.BNDText)).setText(event.getTitle() + Const.blank + event.getDescription());
 		return convertView;
 	}
 }

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones32Id">
-		<item>s32z1</item>
-		<item>s32z2</item>
-		<item>s32z3</item>
-		<item>s32z4</item>
-		<item>s32z5</item>
-		<item>s32z6</item>
-		<item>s32z7</item>
-		<item>s32z8</item>
-		<item>s32z9</item>
-		<item>s32z10</item>
-		<item>s32z11</item>
-		<item>s32z12</item>
+		<item>Hs32z1</item>
+		<item>Hs32z2</item>
+		<item>Hs32z3</item>
+		<item>Hs32z4</item>
+		<item>Hs32z5</item>
+		<item>Hs32z6</item>
+		<item>Hs32z7</item>
+		<item>Hs32z8</item>
+		<item>Hs32z9</item>
+		<item>Hs32z10</item>
+		<item>Hs32z11</item>
+		<item>Hs32z12</item>
 	</string-array>
 	<string-array name="zones32Name">
 		<item>Bardonecchia</item>

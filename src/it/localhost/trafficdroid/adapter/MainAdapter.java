@@ -12,6 +12,8 @@ import it.localhost.trafficdroid.dto.ZoneDTO;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
@@ -19,11 +21,13 @@ import android.widget.BaseExpandableListAdapter;
 public class MainAdapter extends BaseExpandableListAdapter {
 	private ArrayList<AbstractItem> streetItem;
 	private ArrayList<ArrayList<AbstractItem>> zoneItem;
+	private SharedPreferences.Editor editor;
 
 	public MainAdapter(Context context, MainDTO mainDTO) {
 		super();
 		streetItem = new ArrayList<AbstractItem>();
 		zoneItem = new ArrayList<ArrayList<AbstractItem>>();
+		editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
 		ArrayList<StreetDTO> streets = mainDTO.getStreets();
 		for (StreetDTO streetDTO : streets) {
 			streetItem.add(new StreetItem(context, streetDTO));
@@ -92,5 +96,17 @@ public class MainAdapter extends BaseExpandableListAdapter {
 	@Override
 	public int getChildTypeCount() {
 		return Const.itemTypes.length;
+	}
+
+	@Override
+	public void onGroupCollapsed(int groupPosition) {
+		super.onGroupCollapsed(groupPosition);
+		editor.putBoolean(Const.expanded + groupPosition, false).commit();
+	}
+
+	@Override
+	public void onGroupExpanded(int groupPosition) {
+		super.onGroupExpanded(groupPosition);
+		editor.putBoolean(Const.expanded + groupPosition, true).commit();
 	}
 }

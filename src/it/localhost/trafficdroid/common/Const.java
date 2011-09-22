@@ -8,7 +8,7 @@ import android.util.SparseIntArray;
 
 public class Const {
 	public static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
-	public static final int[] themes = new int[] { R.style.Small, R.style.Medium, R.style.Large };
+	//	public static final int[] themes = new int[] { R.style.Small, R.style.Medium, R.style.Large };
 	public static final byte[] itemTypes = new byte[] { 0, 1, 2 };
 	public static final int notificationId = 1;
 	public static final char charAutostrade = 'A';
@@ -16,7 +16,6 @@ public class Const {
 	public static final char webcamNone = 'H';
 	public static final String openRound = " (";
 	public static final String closeRound = ")";
-	public static final String equal = "=";
 	public static final String separator = "; ";
 	public static final String domain = "; domain=";
 	public static final String http = "http://";
@@ -25,7 +24,6 @@ public class Const {
 	public static final String popupTelecamera = "/autostrade-mobile/popupTelecamera.do?ua=Android%201.1&tlc=";
 	public static final String events = "/portale/rss?rsstype=traffic";
 	public static final String fuel = "/public/tabellanazionale/tabellaNazionale.php";
-	public static final String cookie = "/autostrade/traffico.do";
 	public static final String codeDiv = "div";
 	public static final String codeId = "id";
 	public static final String codeTable = "table";
@@ -37,14 +35,11 @@ public class Const {
 	public static final String beginUpdate = "it.localhost.trafficdroid.BEGIN_UPDATE";
 	public static final String endUpdate = "it.localhost.trafficdroid.END_UPDATE";
 	public static final String scheduleService = "it.localhost.trafficdroid.SCHEDULE_SERVICE";
-	public static final String wakeLock = "it.localhost.trafficdroid.WAKELOCK";
 	public static final Intent doUpdateIntent = new Intent(Const.doUpdate);
 	public static final Intent beginUpdateIntent = new Intent(Const.beginUpdate);
 	public static final Intent endUpdateIntent = new Intent(Const.endUpdate);
 	public static final Intent scheduleServiceIntent = new Intent(Const.scheduleService);
-	public static final String camId = "camId";
 	public static final String formatDateEventi = "yyyy-MM-dd'T'HH:mm:ss'Z'";
-	public static final String adMobId = "a14d8f6a3c4c2f3";
 	public static final String anlyticsId = "UA-12243941-5";
 	public static final String item = "item";
 	public static final String eventCatApp = "App";
@@ -56,7 +51,15 @@ public class Const {
 	public static final String exceptionCheck = "exceptionCheck";
 	public static final String exceptionMsg = "exceptionMsg";
 	public static final String url = "url";
-
+	public static final String notFound = "NotFound";
+	public static final String blank = " ";
+	public static final String badNews = "Bad News: ";
+	public static final String badNewsDelim = "\n";
+	public static final String badNewsStreetDelim = " -";
+	public static final String expanded = "Expanded";
+	public static final String unknowError = "Unknow Error";
+	public static final String badConf = "Configurazione errata: ";
+	public static final String noDataSpeed = "-";
 	public static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);
 	public static final SparseIntArray zonesRes = new SparseIntArray(128) {
 		{
@@ -190,8 +193,4 @@ public class Const {
 			put(-701, R.array.zones701Name);
 		}
 	};
-
-	public static int decodeCam(String code) {
-		return Integer.parseInt(code.substring(1)) + 6280 * (Const.date);
-	}
 }

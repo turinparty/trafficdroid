@@ -2,11 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
 	android:id="@id/mainLayout" android:orientation="vertical"
-	android:layout_width="fill_parent" android:layout_height="fill_parent">
-	<ExpandableListView android:layout_width="fill_parent"
-		android:layout_weight="1" android:layout_height="fill_parent"
+	android:layout_width="match_parent" android:layout_height="match_parent">
+	<ExpandableListView android:layout_width="match_parent"
+		android:layout_weight="1" android:layout_height="match_parent"
 		android:id="@id/mainTable" />
-	<com.google.ads.AdView android:gravity="center"
-		android:layout_width="fill_parent" android:layout_height="wrap_content"
+	<com.google.ads.AdView android:layout_gravity="center"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		ads:adUnitId="a14d8f6a3c4c2f3" ads:adSize="BANNER" ads:loadAdOnCreate="true" />
 </LinearLayout>

@@ -113,14 +113,19 @@ public class MainActivity extends AbstractActivity {
 			try {
 				mainDTO = MainDAO.retrieve();
 				if (mainDTO.getTrafficTime() != null) {
-					setTitle(getString(R.string.app_name) + ": " + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
+					setTitle(getString(R.string.app_name) + Const.blank + DateFormat.getTimeFormat(this).format(mainDTO.getTrafficTime()));
 					listView.setAdapter(new MainAdapter(this, mainDTO));
+					for (int i = 0; i < listView.getExpandableListAdapter().getGroupCount(); i++)
+						if (TdApp.getPrefBoolean(Const.expanded + i, false))
+							listView.expandGroup(i);
+						else
+							listView.collapseGroup(i);
 				}
 			} catch (Exception e) {
 				sendBroadcast(Const.doUpdateIntent);
 			}
 		else {
-			String msg = TdApp.getPrefString(Const.exceptionMsg, "Unknow Error");
+			String msg = TdApp.getPrefString(Const.exceptionMsg, Const.unknowError);
 			new AlertDialog.Builder(this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(msg).show();
 			setTitle(msg);
 		}

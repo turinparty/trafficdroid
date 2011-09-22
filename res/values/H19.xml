@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones19Id">
-		<item>s19z1</item>
-		<item>s19z2</item>
-		<item>s19z3</item>
-		<item>s19z4</item>
-		<item>s19z5</item>
-		<item>s19z6</item>
-		<item>s19z7</item>
-		<item>s19z8</item>
-		<item>s19z9</item>
-		<item>s19z10</item>
-		<item>s19z11</item>
-		<item>s19z12</item>
-		<item>s19z13</item>
-		<item>s19z14</item>
-		<item>s19z15</item>
-		<item>s19z16</item>
-		<item>s19z17</item>
-		<item>s19z18</item>
-		<item>s19z19</item>
-		<item>s19z20</item>
-		<item>s19z21</item>
+		<item>Hs19z1</item>
+		<item>Hs19z2</item>
+		<item>Hs19z3</item>
+		<item>Hs19z4</item>
+		<item>Hs19z5</item>
+		<item>Hs19z6</item>
+		<item>Hs19z7</item>
+		<item>Hs19z8</item>
+		<item>Hs19z9</item>
+		<item>Hs19z10</item>
+		<item>Hs19z11</item>
+		<item>Hs19z12</item>
+		<item>Hs19z13</item>
+		<item>Hs19z14</item>
+		<item>Hs19z15</item>
+		<item>Hs19z16</item>
+		<item>Hs19z17</item>
+		<item>Hs19z18</item>
+		<item>Hs19z19</item>
+		<item>Hs19z20</item>
+		<item>Hs19z21</item>
 	</string-array>
 	<string-array name="zones19Name">
 		<item>Palermo</item>

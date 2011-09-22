@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string-array name="zones25Id">
-		<item>s25z1</item>
-		<item>s25z2</item>
-		<item>s25z3</item>
-		<item>s25z4</item>
-		<item>s25z5</item>
-		<item>s25z6</item>
-		<item>s25z7</item>
-		<item>s25z8</item>
-		<item>s25z9</item>
-		<item>s25z10</item>
-		<item>s25z11</item>
-		<item>s25z12</item>
+		<item>Hs25z1</item>
+		<item>Hs25z2</item>
+		<item>A5994</item>	<!-- A25 km. 087,1 Avezzano Dx -->
+		<item>Hs25z4</item>
+		<item>Hs25z5</item>
+		<item>Hs25z6</item>
+		<item>Hs25z7</item>
+		<item>Hs25z8</item>
+		<item>Hs25z9</item>
+		<item>Hs25z10</item>
+		<item>Hs25z11</item>
+		<item>Hs25z12</item>
 	</string-array>
 	<string-array name="zones25Name">
 		<item>Allaccio A24</item>
