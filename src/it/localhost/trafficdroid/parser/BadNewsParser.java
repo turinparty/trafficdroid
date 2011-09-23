@@ -9,14 +9,12 @@ import it.localhost.trafficdroid.exception.BadConfException;
 import it.localhost.trafficdroid.exception.ConnectionException;
 import it.localhost.trafficdroid.exception.GenericException;
 
-import java.text.SimpleDateFormat;
 import java.util.StringTokenizer;
 
 import org.w3c.dom.NodeList;
 
 public class BadNewsParser {
 	public static void parse(MainDTO dto, String url) throws GenericException, BadConfException, ConnectionException {
-		SimpleDateFormat sdf = new SimpleDateFormat(Const.formatDateEventi);
 		NodeList items = EventDAO.getData(url).getDocumentElement().getElementsByTagName(Const.item);
 		for (int i = 0; i < items.getLength(); i++) {
 			NodeList item = items.item(i).getChildNodes();
@@ -26,7 +24,7 @@ public class BadNewsParser {
 				try {
 					for (StreetDTO streetDTO : dto.getStreets())
 						if (Integer.parseInt(street.substring(1, street.length())) == streetDTO.getId())
-							streetDTO.addBadNews(new BadNewsDTO(descST.nextToken(), descST.nextToken(), sdf.parse(item.item(7).getTextContent())));
+							streetDTO.addBadNews(new BadNewsDTO(descST.nextToken(), descST.nextToken(), Const.sdfBnParse.parse(item.item(7).getTextContent())));
 				} catch (Exception e) {
 					// Do nothing
 				}

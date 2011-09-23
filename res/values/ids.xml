@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<item type="id" name="BNDImage" />
-	<item type="id" name="BNDText" />
-	<item type="id" name="BNTNumber" />
+	<item type="id" name="badNewsTitle" />
+	<item type="id" name="badNewsDescription" />
+	<item type="id" name="badNewsDate" />
+	<item type="id" name="badNews" />
 	<item type="id" name="mainLayout" />
 	<item type="id" name="mainTable" />
 	<item type="id" name="streetDirLeft" />

@@ -118,7 +118,22 @@
 		<item>Acquaviva delle Fonti</item>
 		<item>Gioia del Colle</item>
 		<item>Mottola - Castellaneta</item>
-	</string-array><string-array name="zones14Autovelox">
+	</string-array>
+	<string-array name="zones14Autovelox">
+		<item>0</item>
+		<item>R</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>L</item>
+		<item>R</item>
 		<item>0</item>
 		<item>0</item>
 		<item>0</item>
@@ -133,48 +148,34 @@
 		<item>0</item>
 		<item>0</item>
 		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>R</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>A</item>
+		<item>L</item>
+		<item>R</item>
+		<item>L</item>
+		<item>R</item>
 	</string-array>
 </resources>

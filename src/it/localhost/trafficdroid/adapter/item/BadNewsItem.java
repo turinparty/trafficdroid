@@ -31,10 +31,10 @@ public class BadNewsItem extends AbstractChildItem {
 		((TextView) view.findViewById(R.id.streetDirLeft)).setText(streetDTO.getDirectionLeft());
 		((TextView) view.findViewById(R.id.streetDirRight)).setText(streetDTO.getDirectionRight());
 		if (streetDTO.getBadNews().size() != 0) {
-			((TextView) view.findViewById(R.id.BNTNumber)).setText(Const.badNews + streetDTO.getBadNews().size());
-			((TextView) view.findViewById(R.id.BNTNumber)).setVisibility(View.VISIBLE);
+			((TextView) view.findViewById(R.id.badNews)).setText(Const.badNews + streetDTO.getBadNews().size());
+			((TextView) view.findViewById(R.id.badNews)).setVisibility(View.VISIBLE);
 		} else
-			((TextView) view.findViewById(R.id.BNTNumber)).setVisibility(View.INVISIBLE);
+			((TextView) view.findViewById(R.id.badNews)).setVisibility(View.INVISIBLE);
 	}
 
 	public void onClick() {

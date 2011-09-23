@@ -1,5 +1,6 @@
 package it.localhost.trafficdroid.common;
 
+import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 
 import it.localhost.trafficdroid.R;
@@ -39,7 +40,8 @@ public class Const {
 	public static final Intent beginUpdateIntent = new Intent(Const.beginUpdate);
 	public static final Intent endUpdateIntent = new Intent(Const.endUpdate);
 	public static final Intent scheduleServiceIntent = new Intent(Const.scheduleService);
-	public static final String formatDateEventi = "yyyy-MM-dd'T'HH:mm:ss'Z'";
+	public static final SimpleDateFormat sdfBnParse = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+	public static final SimpleDateFormat sdfBnFormat = new SimpleDateFormat("H:m");
 	public static final String anlyticsId = "UA-12243941-5";
 	public static final String item = "item";
 	public static final String eventCatApp = "App";
