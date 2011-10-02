@@ -5,6 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.os.StrictMode;
 import android.preference.PreferenceManager;
 
 public class TdApp extends Application {
@@ -14,6 +15,10 @@ public class TdApp extends Application {
 
 	@Override
 	public void onCreate() {
+
+		StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
+		StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
+
 		super.onCreate();
 		PreferenceManager.setDefaultValues(this, R.layout.preferencescreen, false);
 		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());

@@ -2,22 +2,18 @@ package it.localhost.trafficdroid.activity;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
+import it.localhost.trafficdroid.common.TdAnalytics;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 
-import com.google.android.apps.analytics.GoogleAnalyticsTracker;
-
 public class PreferencesActivity extends PreferenceActivity {
-	private GoogleAnalyticsTracker tracker;
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		tracker = GoogleAnalyticsTracker.getInstance();
-		tracker.startNewSession(Const.anlyticsId, this);
+		TdAnalytics.startNewSession(Const.anlyticsId);
 		addPreferencesFromResource(R.layout.preferencescreen);
 		int[] streetId = getResources().getIntArray(R.array.streetsId);
 		String[] streetName = getResources().getStringArray(R.array.streetsName);
@@ -80,19 +76,19 @@ public class PreferencesActivity extends PreferenceActivity {
 	@Override
 	public void onResume() {
 		super.onResume();
-		tracker.trackPageView(this.getClass().getName());
+		TdAnalytics.trackPageView(this.getClass().getName());
 	}
 
 	@Override
 	public void onPause() {
 		super.onPause();
-		tracker.dispatch();
+		TdAnalytics.dispatch();
 	}
 
 	@Override
 	public void onStop() {
 		super.onStop();
-		tracker.stopSession();
+		TdAnalytics.stopSession();
 		sendBroadcast(Const.scheduleServiceIntent);
 	}
 }

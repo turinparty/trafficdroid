@@ -3,6 +3,7 @@ package it.localhost.trafficdroid.adapter.item;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.WebViewActivity;
 import it.localhost.trafficdroid.common.Const;
+import it.localhost.trafficdroid.common.TdAnalytics;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dto.ZoneDTO;
 import android.app.AlertDialog;
@@ -12,8 +13,6 @@ import android.graphics.Typeface;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.google.android.apps.analytics.GoogleAnalyticsTracker;
 
 public class ZoneItem extends AbstractChildItem {
 	public ZoneDTO zoneDTO;
@@ -93,16 +92,16 @@ public class ZoneItem extends AbstractChildItem {
 	public void onClick() {
 		String code = zoneDTO.getId();
 		if (code.charAt(0) == Const.webcamNone) {
-			GoogleAnalyticsTracker.getInstance().trackEvent(Const.eventCatWebcam, Const.eventActionNone, code, 0);
+			TdAnalytics.trackEvent(Const.eventCatWebcam, Const.eventActionNone, code, 0);
 			new AlertDialog.Builder(context).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamNone).show();
 		} else if (code.charAt(0) == Const.webcamTrue) {
-			GoogleAnalyticsTracker.getInstance().trackEvent(Const.eventCatWebcam, Const.eventActionOpen, code, 0);
+			TdAnalytics.trackEvent(Const.eventCatWebcam, Const.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
 			int id = Integer.parseInt(code.substring(1)) + 6280 * (Const.date);
 			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault) + Const.popupTelecamera + id);
 			context.startActivity(intent);
 		} else {
-			GoogleAnalyticsTracker.getInstance().trackEvent(Const.eventCatWebcam, Const.eventActionRequest, code, 0);
+			TdAnalytics.trackEvent(Const.eventCatWebcam, Const.eventActionRequest, code, 0);
 			new AlertDialog.Builder(context).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamAdd).show();
 		}
 	}
