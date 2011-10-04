@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="it.localhost.trafficdroid" android:versionCode="75"
-	android:versionName="1.7.1 pirates of the caribbean" android:installLocation="preferExternal">
+	package="it.localhost.trafficdroid" android:versionCode="76"
+	android:versionName="1.7.2 pirates of the caribbean" android:installLocation="preferExternal">
 	<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="10" />
 	<supports-screens android:anyDensity="true"
 		android:xlargeScreens="true" android:largeScreens="true"
