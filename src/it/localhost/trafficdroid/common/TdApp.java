@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.os.StrictMode;
+//import android.os.StrictMode;
 import android.preference.PreferenceManager;
 
 public class TdApp extends Application {
