@@ -15,10 +15,8 @@ public class TdApp extends Application {
 
 	@Override
 	public void onCreate() {
-
-		StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
-		StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
-
+		//	StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
+		//	StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
 		super.onCreate();
 		PreferenceManager.setDefaultValues(this, R.layout.preferencescreen, false);
 		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
