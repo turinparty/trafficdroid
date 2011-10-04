@@ -29,37 +29,6 @@ public class MainActivity extends AbstractActivity {
 	private IntentFilter intentFilter;
 	private BroadcastReceiver receiver;
 
-	private class RefreshTask extends AsyncTask<Void, Void, MainDTO> {
-		private Exception e = null;
-
-		@Override
-		protected MainDTO doInBackground(Void... params) {
-			try {
-				return MainDAO.retrieve();
-			} catch (Exception e) {
-				this.e = e;
-				return null;
-			}
-		}
-
-		@Override
-		protected void onPostExecute(MainDTO mainDTO) {
-			if (e == null) {
-				if (mainDTO.getTrafficTime() != null) {
-					setTitle(getString(R.string.app_name) + Const.blank + DateFormat.getTimeFormat(MainActivity.this).format(mainDTO.getTrafficTime()));
-					listView.setAdapter(new MainAdapter(MainActivity.this, mainDTO));
-					for (int i = 0; i < listView.getExpandableListAdapter().getGroupCount(); i++)
-						if (TdApp.getPrefBoolean(Const.expanded + i, false))
-							listView.expandGroup(i);
-						else
-							listView.collapseGroup(i);
-				}
-			} else {
-				sendBroadcast(Const.doUpdateIntent);
-			}
-		}
-	}
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		//setTheme(Const.themes[Integer.parseInt(TdApp.getPrefString(R.string.themeKey, R.string.themeDefault))]);
@@ -145,6 +114,31 @@ public class MainActivity extends AbstractActivity {
 			String msg = TdApp.getPrefString(Const.exceptionMsg, Const.unknowError);
 			new AlertDialog.Builder(this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(msg).show();
 			setTitle(msg);
+		}
+	}
+
+	private class RefreshTask extends AsyncTask<Void, Void, MainDTO> {
+		@Override
+		protected MainDTO doInBackground(Void... params) {
+			try {
+				return MainDAO.retrieve();
+			} catch (Exception e) {
+				return null;
+			}
+		}
+
+		@Override
+		protected void onPostExecute(MainDTO mainDTO) {
+			if (mainDTO != null && mainDTO.getTrafficTime() != null) {
+				setTitle(getString(R.string.app_name) + Const.blank + DateFormat.getTimeFormat(MainActivity.this).format(mainDTO.getTrafficTime()));
+				listView.setAdapter(new MainAdapter(MainActivity.this, mainDTO));
+				for (int i = 0; i < listView.getExpandableListAdapter().getGroupCount(); i++)
+					if (TdApp.getPrefBoolean(Const.expanded + i, false))
+						listView.expandGroup(i);
+					else
+						listView.collapseGroup(i);
+			} else
+				sendBroadcast(Const.doUpdateIntent);
 		}
 	}
 }
