@@ -24,11 +24,15 @@ public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		BadNewsDTO event = getItem(position);
-		if (convertView == null)
+		if (convertView == null) {
 			convertView = inflater.inflate(R.layout.dialog_item_badnews, null);
-		((TextView) convertView.findViewById(R.id.badNewsDate)).setText(Const.sdfBnFormat.format(event.getDate()));
-		((TextView) convertView.findViewById(R.id.badNewsTitle)).setText(event.getTitle());
-		((TextView) convertView.findViewById(R.id.badNewsDescription)).setText(event.getDescription());
+			convertView.setTag(R.id.badNewsDate, convertView.findViewById(R.id.badNewsDate));
+			convertView.setTag(R.id.badNewsTitle, convertView.findViewById(R.id.badNewsTitle));
+			convertView.setTag(R.id.badNewsDescription, convertView.findViewById(R.id.badNewsDescription));
+		}
+		((TextView) convertView.getTag(R.id.badNewsDate)).setText(Const.sdfBnFormat.format(event.getDate()));
+		((TextView) convertView.getTag(R.id.badNewsTitle)).setText(event.getTitle());
+		((TextView) convertView.getTag(R.id.badNewsDescription)).setText(event.getDescription());
 		return convertView;
 	}
 }

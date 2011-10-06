@@ -14,19 +14,6 @@
 			android:summary="@string/providerSummary" android:key="@string/providerFuelKey"
 			android:defaultValue="@string/providerFuelDefault" />
 	</PreferenceCategory>
-	<PreferenceCategory android:title="@string/guiCategory">
-		<ListPreference android:title="@string/themeTitle"
-			android:key="@string/themeKey" android:summary="@string/themeSummary"
-			android:entries="@array/themeLabel" android:entryValues="@array/themeValue"
-			android:defaultValue="@string/themeDefault" />
-		<CheckBoxPreference android:title="@string/badNewsTitle"
-			android:key="@string/badNewsKey" android:summary="@string/badNewsSummary"
-			android:defaultValue="@string/badNewsDefault" />
-		<ListPreference android:title="@string/notificationSpeedTitle"
-			android:key="@string/notificationSpeedKey" android:summary="@string/notificationSpeedSummary"
-			android:entries="@array/notificationSpeedLabel" android:entryValues="@array/notificationSpeedValue"
-			android:defaultValue="@string/notificationSpeedDefault" />
-	</PreferenceCategory>
 	<PreferenceCategory android:title="@string/updateCategory">
 		<CheckBoxPreference android:title="@string/berserkTitle"
 			android:key="@string/berserkKey" android:summary="@string/berserkSummary"
@@ -34,6 +21,10 @@
 		<CheckBoxPreference android:title="@string/chiaroveggenzaEnablerTitle"
 			android:key="@string/chiaroveggenzaEnablerKey" android:summary="@string/chiaroveggenzaEnablerSummary"
 			android:defaultValue="@string/chiaroveggenzaEnablerDefault" />
+		<ListPreference android:title="@string/notificationSpeedTitle"
+			android:key="@string/notificationSpeedKey" android:summary="@string/notificationSpeedSummary"
+			android:entries="@array/notificationSpeedLabel" android:entryValues="@array/notificationSpeedValue"
+			android:defaultValue="@string/notificationSpeedDefault" />
 		<ListPreference android:title="@string/chiaroveggenzaTimeTitle"
 			android:key="@string/chiaroveggenzaTimeKey" android:summary="@string/chiaroveggenzaTimeSummary"
 			android:entries="@array/chiaroveggenzaTimeLabel" android:entryValues="@array/chiaroveggenzaTimeValue"

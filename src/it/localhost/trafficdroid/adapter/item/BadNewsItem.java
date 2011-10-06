@@ -24,17 +24,22 @@ public class BadNewsItem extends AbstractChildItem {
 	}
 
 	public View inflateView() {
-		return inflater.inflate(R.layout.main_item_badnews, null, false);
+		View view = inflater.inflate(R.layout.main_item_badnews, null, false);
+		view.setTag(R.id.streetDirLeft, view.findViewById(R.id.streetDirLeft));
+		view.setTag(R.id.streetDirRight, view.findViewById(R.id.streetDirRight));
+		view.setTag(R.id.badNews, view.findViewById(R.id.badNews));
+		return view;
 	}
 
 	public void fillView(View view) {
-		((TextView) view.findViewById(R.id.streetDirLeft)).setText(streetDTO.getDirectionLeft());
-		((TextView) view.findViewById(R.id.streetDirRight)).setText(streetDTO.getDirectionRight());
+		((TextView) view.getTag(R.id.streetDirLeft)).setText(streetDTO.getDirectionLeft());
+		((TextView) view.getTag(R.id.streetDirRight)).setText(streetDTO.getDirectionRight());
+		TextView badNews = (TextView) view.getTag(R.id.badNews);
 		if (streetDTO.getBadNews().size() != 0) {
-			((TextView) view.findViewById(R.id.badNews)).setText(Const.badNews + streetDTO.getBadNews().size());
-			((TextView) view.findViewById(R.id.badNews)).setVisibility(View.VISIBLE);
+			badNews.setText(Const.badNews + streetDTO.getBadNews().size());
+			badNews.setVisibility(View.VISIBLE);
 		} else
-			((TextView) view.findViewById(R.id.badNews)).setVisibility(View.INVISIBLE);
+			badNews.setVisibility(View.INVISIBLE);
 	}
 
 	public void onClick() {

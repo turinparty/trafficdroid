@@ -27,19 +27,29 @@ public class ZoneItem extends AbstractChildItem {
 	}
 
 	public View inflateView() {
-		return inflater.inflate(R.layout.main_item_zone, null, false);
+		View view = inflater.inflate(R.layout.main_item_zone, null, false);
+		view.setTag(R.id.zoneName, view.findViewById(R.id.zoneName));
+		view.setTag(R.id.zoneKm, view.findViewById(R.id.zoneKm));
+		view.setTag(R.id.zoneSpeedLeft, view.findViewById(R.id.zoneSpeedLeft));
+		view.setTag(R.id.zoneSpeedRight, view.findViewById(R.id.zoneSpeedRight));
+		view.setTag(R.id.trendLeft, view.findViewById(R.id.trendLeft));
+		view.setTag(R.id.trendRight, view.findViewById(R.id.trendRight));
+		view.setTag(R.id.zoneCam, view.findViewById(R.id.zoneCam));
+		view.setTag(R.id.zoneAutoveloxLeft, view.findViewById(R.id.zoneAutoveloxLeft));
+		view.setTag(R.id.zoneAutoveloxRight, view.findViewById(R.id.zoneAutoveloxRight));
+		return view;
 	}
 
 	public void fillView(View view) {
-		TextView zoneNameText = (TextView) view.findViewById(R.id.zoneName);
-		TextView zoneKmText = (TextView) view.findViewById(R.id.zoneKm);
-		TextView leftZoneSpeedText = (TextView) view.findViewById(R.id.zoneSpeedLeft);
-		TextView rightZoneSpeedText = (TextView) view.findViewById(R.id.zoneSpeedRight);
-		ImageView trendLeftText = (ImageView) view.findViewById(R.id.trendLeft);
-		ImageView trendRightText = (ImageView) view.findViewById(R.id.trendRight);
-		ImageView cam = (ImageView) view.findViewById(R.id.zoneCam);
-		ImageView autoveloxLeft = (ImageView) view.findViewById(R.id.zoneAutoveloxLeft);
-		ImageView autoveloxRight = (ImageView) view.findViewById(R.id.zoneAutoveloxRight);
+		TextView zoneNameText = (TextView) view.getTag(R.id.zoneName);
+		TextView zoneKmText = (TextView) view.getTag(R.id.zoneKm);
+		TextView leftZoneSpeedText = (TextView) view.getTag(R.id.zoneSpeedLeft);
+		TextView rightZoneSpeedText = (TextView) view.getTag(R.id.zoneSpeedRight);
+		ImageView trendLeftText = (ImageView) view.getTag(R.id.trendLeft);
+		ImageView trendRightText = (ImageView) view.getTag(R.id.trendRight);
+		ImageView cam = (ImageView) view.getTag(R.id.zoneCam);
+		ImageView autoveloxLeft = (ImageView) view.getTag(R.id.zoneAutoveloxLeft);
+		ImageView autoveloxRight = (ImageView) view.getTag(R.id.zoneAutoveloxRight);
 		zoneNameText.setText(zoneDTO.getName());
 		zoneKmText.setText(zoneDTO.getKm());
 		leftZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatLeft()]);

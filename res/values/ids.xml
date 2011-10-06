@@ -21,4 +21,6 @@
 	<item type="id" name="trendLeft" />
 	<item type="id" name="trendRight" />
 	<item type="id" name="webview" />
+	<item type="id" name="streetText1" />
+	<item type="id" name="streetText2" />
 </resources>
