@@ -24,10 +24,11 @@ public class StreetItem extends AbstractItem {
 
 	public void fillView(View view) {
 		((TextView) view.getTag(R.id.streetText1)).setText(streetDTO.getName());
+		TextView  streetText2 = (TextView) view.getTag(R.id.streetText2);
 		if (streetDTO.getBadNews().size() != 0) {
-			((TextView) view.getTag(R.id.streetText2)).setText(Const.badNews + streetDTO.getBadNews().size());
-			((TextView) view.getTag(R.id.streetText2)).setVisibility(View.VISIBLE);
+			streetText2.setText(Const.badNews + streetDTO.getBadNews().size());
+			streetText2.setVisibility(View.VISIBLE);
 		} else
-			((TextView) view.getTag(R.id.streetText2)).setVisibility(View.INVISIBLE);
+			streetText2.setVisibility(View.INVISIBLE);
 	}
 }
