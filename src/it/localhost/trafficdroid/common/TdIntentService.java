@@ -20,6 +20,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
 import com.commonsware.cwac.wakeful.WakefulIntentService;
 
@@ -31,8 +33,11 @@ public class TdIntentService extends WakefulIntentService {
 	@Override
 	public void doWakefulWork(Intent arg0) {
 		sendBroadcast(Const.beginUpdateIntent);
-		MainDTO currDTO = MainDAO.create();
+		NetworkInfo activeNetworkInfo = ((ConnectivityManager) TdApp.getContext().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
 		try {
+			if (activeNetworkInfo != null && !activeNetworkInfo.isConnected())
+				throw new ConnectionException(Const.disconnectedMessage);
+			MainDTO currDTO = MainDAO.create();
 			TrafficParser.parse(currDTO, TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault));
 			BadNewsParser.parse(currDTO, TdApp.getPrefString(R.string.providerBadNewsKey, R.string.providerBadNewsDefault));
 			currDTO.setTrafficTime(new Date());

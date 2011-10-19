@@ -6,4 +6,8 @@ public class ConnectionException extends Exception {
 	public ConnectionException(Throwable throwable) {
 		super(throwable);
 	}
+
+	public ConnectionException(String detailMessage) {
+		super(detailMessage);
+	}
 }

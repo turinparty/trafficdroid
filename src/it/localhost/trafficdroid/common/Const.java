@@ -67,6 +67,7 @@ public class Const {
 	public static final String autoveloxAll = "A";
 	public static final String autoveloxNone = "0";
 	public static final String autovelox = "Autovelox";
+	public static final String disconnectedMessage = "Connessione di rete inesistente";
 	public static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);
 	public static final SparseIntArray zonesResId = new SparseIntArray(64) {
 		{
