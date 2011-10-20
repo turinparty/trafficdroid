@@ -6,8 +6,8 @@
 		android:layout_weight="5" android:gravity="center">
 		<TextView android:id="@id/badNewsDate" android:layout_width="wrap_content"
 			android:layout_height="wrap_content" android:textStyle="italic" />
-		<ImageView android:layout_width="wrap_content"
-			android:layout_height="match_parent" android:src="@android:drawable/ic_dialog_alert" />
+		<ImageView android:id="@id/badNewsImage" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
 	</LinearLayout>
 	<LinearLayout android:orientation="vertical"
 		android:layout_width="match_parent" android:layout_height="wrap_content"

@@ -55,15 +55,15 @@ public class TdIntentService extends WakefulIntentService {
 								ZoneDTO currZone = currZones.get(j);
 								if (pastZone.getId().equalsIgnoreCase(currZone.getId())) {
 									if (currZone.getSpeedLeft() != 0 && pastZone.getSpeedLeft() < currZone.getSpeedLeft())
-										currZone.setTrendLeft(R.drawable.up);
+										currZone.setTrendLeft(R.drawable.speed_up);
 									else if (currZone.getSpeedLeft() != 0 && pastZone.getSpeedLeft() > currZone.getSpeedLeft())
-										currZone.setTrendLeft(R.drawable.down);
+										currZone.setTrendLeft(R.drawable.speed_down);
 									else
 										currZone.setTrendLeft(0);
 									if (currZone.getSpeedRight() != 0 && pastZone.getSpeedRight() < currZone.getSpeedRight())
-										currZone.setTrendRight(R.drawable.up);
+										currZone.setTrendRight(R.drawable.speed_up);
 									else if (currZone.getSpeedRight() != 0 && pastZone.getSpeedRight() > currZone.getSpeedRight())
-										currZone.setTrendRight(R.drawable.down);
+										currZone.setTrendRight(R.drawable.speed_down);
 									else
 										currZone.setTrendRight(0);
 								}

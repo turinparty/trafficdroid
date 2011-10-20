@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<item type="id" name="badNewsTitle" />
+	<item type="id" name="badNewsImage" />
 	<item type="id" name="badNewsDescription" />
 	<item type="id" name="badNewsDate" />
 	<item type="id" name="badNews" />

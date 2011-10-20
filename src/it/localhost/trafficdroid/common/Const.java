@@ -68,6 +68,18 @@ public class Const {
 	public static final String autoveloxNone = "0";
 	public static final String autovelox = "Autovelox";
 	public static final String disconnectedMessage = "Connessione di rete inesistente";
+	public static final String bn_acc = "incidente";
+	public static final String bn_bkd = "veicolo fermo o avaria";
+	public static final String bn_los1 = "code";
+	public static final String bn_los2 = "traffico";
+	public static final String bn_ocm = "perdita di carico";
+	public static final String bn_pra = "pioggia";
+	public static final String bn_pss = "personale su strada";
+	public static final String bn_res = "chius";
+	public static final String bn_rsr = "riduzione di carreggiata";
+	public static final String bn_sdc = "scambio di carreggiata";
+	public static final String bn_sm = "catene";
+	public static final String bn_sn = "mezzi spargisale";
 	public static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);
 	public static final SparseIntArray zonesResId = new SparseIntArray(64) {
 		{

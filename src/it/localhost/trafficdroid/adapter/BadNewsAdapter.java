@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
@@ -26,13 +27,39 @@ public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
 		BadNewsDTO event = getItem(position);
 		if (convertView == null) {
 			convertView = inflater.inflate(R.layout.dialog_item_badnews, null);
-			convertView.setTag(R.id.badNewsDate, convertView.findViewById(R.id.badNewsDate));
 			convertView.setTag(R.id.badNewsTitle, convertView.findViewById(R.id.badNewsTitle));
+			convertView.setTag(R.id.badNewsImage, convertView.findViewById(R.id.badNewsImage));
+			convertView.setTag(R.id.badNewsDate, convertView.findViewById(R.id.badNewsDate));
 			convertView.setTag(R.id.badNewsDescription, convertView.findViewById(R.id.badNewsDescription));
 		}
 		((TextView) convertView.getTag(R.id.badNewsDate)).setText(Const.sdfBnFormat.format(event.getDate()));
 		((TextView) convertView.getTag(R.id.badNewsTitle)).setText(event.getTitle());
 		((TextView) convertView.getTag(R.id.badNewsDescription)).setText(event.getDescription());
+		ImageView badNewsImage = (ImageView) convertView.getTag(R.id.badNewsImage);
+		if (event.getTitle().contains(Const.bn_acc))
+			badNewsImage.setImageResource(R.drawable.bn_acc);
+		else if (event.getTitle().contains(Const.bn_los1) || event.getTitle().contains(Const.bn_los2))
+			badNewsImage.setImageResource(R.drawable.bn_los);
+		else if (event.getTitle().contains(Const.bn_pss))
+			badNewsImage.setImageResource(R.drawable.bn_pss);
+		else if (event.getTitle().contains(Const.bn_bkd))
+			badNewsImage.setImageResource(R.drawable.bn_bkd);
+		else if (event.getTitle().contains(Const.bn_ocm))
+			badNewsImage.setImageResource(R.drawable.bn_ocm);
+		else if (event.getTitle().contains(Const.bn_pra))
+			badNewsImage.setImageResource(R.drawable.bn_pra);
+		else if (event.getTitle().contains(Const.bn_res))
+			badNewsImage.setImageResource(R.drawable.bn_res);
+		else if (event.getTitle().contains(Const.bn_sn))
+			badNewsImage.setImageResource(R.drawable.bn_sn);
+		else if (event.getTitle().contains(Const.bn_sm))
+			badNewsImage.setImageResource(R.drawable.bn_sm);
+		else if (event.getTitle().contains(Const.bn_rsr))
+			badNewsImage.setImageResource(R.drawable.bn_rsr);
+		else if (event.getTitle().contains(Const.bn_sdc))
+			badNewsImage.setImageResource(R.drawable.bn_sdc);
+		else
+			badNewsImage.setImageResource(android.R.drawable.ic_dialog_alert);
 		return convertView;
 	}
 }
