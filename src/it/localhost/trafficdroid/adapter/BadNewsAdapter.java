@@ -46,6 +46,8 @@ public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
 			badNewsImage.setImageResource(R.drawable.bn_bkd);
 		else if (event.getTitle().contains(Const.bn_ocm))
 			badNewsImage.setImageResource(R.drawable.bn_ocm);
+		else if (event.getTitle().contains(Const.bn_peo))
+			badNewsImage.setImageResource(R.drawable.bn_peo);
 		else if (event.getTitle().contains(Const.bn_pra))
 			badNewsImage.setImageResource(R.drawable.bn_pra);
 		else if (event.getTitle().contains(Const.bn_res))
@@ -58,6 +60,8 @@ public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
 			badNewsImage.setImageResource(R.drawable.bn_rsr);
 		else if (event.getTitle().contains(Const.bn_sdc))
 			badNewsImage.setImageResource(R.drawable.bn_sdc);
+		else if (event.getTitle().contains(Const.bn_spc))
+			badNewsImage.setImageResource(R.drawable.bn_spc);
 		else
 			badNewsImage.setImageResource(android.R.drawable.ic_dialog_alert);
 		return convertView;

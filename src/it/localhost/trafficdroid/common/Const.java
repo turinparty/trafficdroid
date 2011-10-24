@@ -73,6 +73,7 @@ public class Const {
 	public static final String bn_los1 = "code";
 	public static final String bn_los2 = "traffico";
 	public static final String bn_ocm = "perdita di carico";
+	public static final String bn_peo = "pedoni";
 	public static final String bn_pra = "pioggia";
 	public static final String bn_pss = "personale su strada";
 	public static final String bn_res = "chius";
@@ -80,6 +81,7 @@ public class Const {
 	public static final String bn_sdc = "scambio di carreggiata";
 	public static final String bn_sm = "catene";
 	public static final String bn_sn = "mezzi spargisale";
+	public static final String bn_spc = "controllo velocità";
 	public static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);
 	public static final SparseIntArray zonesResId = new SparseIntArray(64) {
 		{
