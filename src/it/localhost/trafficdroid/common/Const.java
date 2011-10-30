@@ -70,6 +70,7 @@ public class Const {
 	public static final String disconnectedMessage = "Connessione di rete inesistente";
 	public static final String bn_acc = "incidente";
 	public static final String bn_bkd = "veicolo fermo o avaria";
+	public static final String bn_fop = "nebbia a banchi";
 	public static final String bn_los1 = "code";
 	public static final String bn_los2 = "traffico";
 	public static final String bn_ocm = "perdita di carico";
