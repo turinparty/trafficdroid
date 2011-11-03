@@ -17,7 +17,8 @@
 	<item type="id" name="zoneAutoveloxLeft" />
 	<item type="id" name="zoneAutoveloxRight" />
 	<item type="id" name="zoneType" />
-	<item type="id" name="zonekey" />
+	<item type="id" name="itemKey" />
+	<item type="id" name="itemName" />
 	<item type="id" name="menuSettings" />
 	<item type="id" name="menuRefresh" />
 	<item type="id" name="menuFuel" />

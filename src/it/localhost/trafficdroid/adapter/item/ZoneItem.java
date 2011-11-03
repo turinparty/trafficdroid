@@ -42,7 +42,8 @@ public class ZoneItem extends AbstractChildItem {
 
 	public void fillView(View view) {
 		view.setTag(R.id.zoneType, getType());
-		view.setTag(R.id.zonekey, zoneDTO.getId());
+		view.setTag(R.id.itemKey, zoneDTO.getId());
+		view.setTag(R.id.itemName, zoneDTO.getName());
 		TextView zoneNameText = (TextView) view.getTag(R.id.zoneName);
 		TextView zoneKmText = (TextView) view.getTag(R.id.zoneKm);
 		TextView leftZoneSpeedText = (TextView) view.getTag(R.id.zoneSpeedLeft);

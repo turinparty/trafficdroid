@@ -26,7 +26,6 @@ import android.view.Window;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.ExpandableListContextMenuInfo;
 import android.widget.ExpandableListView.OnChildClickListener;
-import android.widget.TextView;
 
 public class MainActivity extends AbstractActivity {
 	private ExpandableListView listView;
@@ -109,21 +108,21 @@ public class MainActivity extends AbstractActivity {
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, v, menuInfo);
 		ExpandableListView.ExpandableListContextMenuInfo info = (ExpandableListView.ExpandableListContextMenuInfo) menuInfo;
-		if (ExpandableListView.getPackedPositionType(info.packedPosition) == ExpandableListView.PACKED_POSITION_TYPE_CHILD) {
-			View item = info.targetView;
-			if (((Integer) item.getTag(R.id.zoneType)) == Const.itemTypes[1]) {
-				getMenuInflater().inflate(R.menu.main_context, menu);
-				menu.setHeaderTitle(((TextView) item.getTag(R.id.zoneName)).getText());
-			}
+		int packedPositionType = ExpandableListView.getPackedPositionType(info.packedPosition);
+		View item = info.targetView;
+		if (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_GROUP || (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_CHILD && ((Integer) item.getTag(R.id.zoneType)) == Const.itemTypes[1])) {
+			getMenuInflater().inflate(R.menu.main_context, menu);
+			menu.setHeaderTitle((String) item.getTag(R.id.itemName));
 		}
 	}
 
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		View v = ((ExpandableListContextMenuInfo) item.getMenuInfo()).targetView;
+		System.err.println(v);
 		switch (item.getItemId()) {
 		case R.id.menuDelete:
-			TdApp.getEditor().putBoolean((String) v.getTag(R.id.zonekey), false).commit();
+			TdApp.getEditor().putBoolean((String) v.getTag(R.id.itemKey), false).commit();
 			return true;
 		default:
 			return super.onContextItemSelected(item);
