@@ -16,9 +16,12 @@
 	<item type="id" name="zoneName" />
 	<item type="id" name="zoneAutoveloxLeft" />
 	<item type="id" name="zoneAutoveloxRight" />
-	<item type="id" name="menusettings" />
-	<item type="id" name="menurefresh" />
-	<item type="id" name="menufuel" />
+	<item type="id" name="zoneType" />
+	<item type="id" name="zonekey" />
+	<item type="id" name="menuSettings" />
+	<item type="id" name="menuRefresh" />
+	<item type="id" name="menuFuel" />
+	<item type="id" name="menuDelete" />
 	<item type="id" name="trendLeft" />
 	<item type="id" name="trendRight" />
 	<item type="id" name="webview" />

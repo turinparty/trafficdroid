@@ -17,12 +17,16 @@ import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.format.DateFormat;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.ExpandableListView;
+import android.widget.ExpandableListView.ExpandableListContextMenuInfo;
 import android.widget.ExpandableListView.OnChildClickListener;
+import android.widget.TextView;
 
 public class MainActivity extends AbstractActivity {
 	private ExpandableListView listView;
@@ -31,7 +35,6 @@ public class MainActivity extends AbstractActivity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		//setTheme(Const.themes[Integer.parseInt(TdApp.getPrefString(R.string.themeKey, R.string.themeDefault))]);
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
@@ -77,26 +80,21 @@ public class MainActivity extends AbstractActivity {
 	}
 
 	@Override
-	public void onStop() {
-		super.onStop();
-	}
-
-	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.main_option, menu);
 		return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.menusettings:
+		case R.id.menuSettings:
 			startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
 			return true;
-		case R.id.menurefresh:
+		case R.id.menuRefresh:
 			sendBroadcast(Const.doUpdateIntent);
 			return true;
-		case R.id.menufuel:
+		case R.id.menuFuel:
 			Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
 			String provider = TdApp.getPrefString(R.string.providerFuelKey, R.string.providerFuelDefault);
 			intent.putExtra(Const.url, Const.http + provider + Const.fuel);
@@ -107,6 +105,31 @@ public class MainActivity extends AbstractActivity {
 		}
 	}
 
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+		super.onCreateContextMenu(menu, v, menuInfo);
+		ExpandableListView.ExpandableListContextMenuInfo info = (ExpandableListView.ExpandableListContextMenuInfo) menuInfo;
+		if (ExpandableListView.getPackedPositionType(info.packedPosition) == ExpandableListView.PACKED_POSITION_TYPE_CHILD) {
+			View item = info.targetView;
+			if (((Integer) item.getTag(R.id.zoneType)) == Const.itemTypes[1]) {
+				getMenuInflater().inflate(R.menu.main_context, menu);
+				menu.setHeaderTitle(((TextView) item.getTag(R.id.zoneName)).getText());
+			}
+		}
+	}
+
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		View v = ((ExpandableListContextMenuInfo) item.getMenuInfo()).targetView;
+		switch (item.getItemId()) {
+		case R.id.menuDelete:
+			TdApp.getEditor().putBoolean((String) v.getTag(R.id.zonekey), false).commit();
+			return true;
+		default:
+			return super.onContextItemSelected(item);
+		}
+	}
+
 	private void refresh() {
 		if (!TdApp.getPrefBoolean(Const.exceptionCheck, false)) {
 			new RefreshTask().execute((Void[]) null);
@@ -114,6 +137,7 @@ public class MainActivity extends AbstractActivity {
 			String msg = TdApp.getPrefString(Const.exceptionMsg, Const.unknowError);
 			new AlertDialog.Builder(this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(msg).show();
 			setTitle(msg);
+			TdApp.getEditor().putBoolean(Const.exceptionCheck, false).commit();
 		}
 	}
 
@@ -132,6 +156,7 @@ public class MainActivity extends AbstractActivity {
 			if (mainDTO != null && mainDTO.getTrafficTime() != null) {
 				setTitle(getString(R.string.app_name) + Const.blank + DateFormat.getTimeFormat(MainActivity.this).format(mainDTO.getTrafficTime()));
 				listView.setAdapter(new MainAdapter(MainActivity.this, mainDTO));
+				registerForContextMenu(listView);
 				for (int i = 0; i < listView.getExpandableListAdapter().getGroupCount(); i++)
 					if (TdApp.getPrefBoolean(Const.expanded + i, false))
 						listView.expandGroup(i);

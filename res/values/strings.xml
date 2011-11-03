@@ -11,6 +11,7 @@
 	<string name="settings">Impostazioni</string>
 	<string name="refresh">Aggiorna</string>
 	<string name="fuel">Carburanti</string>
+	<string name="removeZome">Rimuovi zona dai preferiti</string>
 	<string name="badConf">TrafficDroid ha bisogno di un provider per il traffico, inserisci questa informazione in impostazioni. Il sito contiene maggiori informazioni.</string>
 	<string name="selectStreet">Seleziona l\'intera strada</string>
 	<string name="sniper">Seleziona le singole zone</string>

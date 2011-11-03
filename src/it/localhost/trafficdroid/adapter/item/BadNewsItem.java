@@ -32,6 +32,7 @@ public class BadNewsItem extends AbstractChildItem {
 	}
 
 	public void fillView(View view) {
+		view.setTag(R.id.zoneType, getType());
 		((TextView) view.getTag(R.id.streetDirLeft)).setText(streetDTO.getDirectionLeft());
 		((TextView) view.getTag(R.id.streetDirRight)).setText(streetDTO.getDirectionRight());
 		TextView badNews = (TextView) view.getTag(R.id.badNews);
