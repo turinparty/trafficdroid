@@ -66,8 +66,8 @@ public class Const {
 	public static final String autoveloxAll = "A";
 	public static final String autoveloxNone = "0";
 	public static final String autovelox = "Autovelox";
-	public static final String removePrefToast = " è stato rimosso dai preferiti. Al prossimo aggiornamento non sarà piu visibile.";
-	public static final String removePrefToastUndo = " è stato aggiunto ai preferiti. Al prossimo aggiornamento rimarrà visibile.";
+	public static final String removePrefToast = " è stato rimosso dai preferiti.";
+	public static final String removePrefToastUndo = " è stato aggiunto ai preferiti.";
 	public static final String disconnectedMessage = "Connessione di rete inesistente";
 	public static final String bn_acc = "incidente";
 	public static final String bn_bkd = "veicolo fermo o avaria";
