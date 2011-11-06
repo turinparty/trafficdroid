@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- A1dir Dir. A1 Roma Nord -->
 <resources>
-	<string-array name="zones101Id">
-		<item>Hs101z1</item>
-		<item>A21826</item>	<!-- D18 km. 04,0 Roma Nord (DT) -->
-		<item>A21813</item>	<!-- D18 km. 19,0 Settebagni -->
-	</string-array>
-	<string-array name="zones101Name">
-		<item>Allaccio A1</item>
-		<item>Fiano Romano</item>
-		<item>Settebagni</item>
-	</string-array>
-	<string-array name="zones101Autovelox">
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-	</string-array>
+
+    <string-array name="zones101Id">
+        <item>Hs101z1</item>
+        <item>A21826</item> <!-- D18 km. 04,0 Roma Nord (DT) -->
+        <item>A21813</item> <!-- D18 km. 19,0 Settebagni -->
+    </string-array>
+    <string-array name="zones101Name">
+        <item>Allaccio A1</item>
+        <item>Fiano Romano</item>
+        <item>Settebagni</item>
+    </string-array>
+    <string-array name="zones101Autovelox">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

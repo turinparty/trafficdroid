@@ -1,42 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="zones50Id">
-		<item>Hs50z1</item>
-		<item>Hs50z2</item>
-		<item>Hs50z3</item>
-		<item>Hs50z4</item>
-		<item>Hs50z5</item>
-		<item>Hs50z6</item>
-		<item>Hs50z7</item>
-		<item>Hs50z8</item>
-		<item>Hs50z9</item>
-		<item>Hs50z10</item>
-		<item>Hs50z11</item>
-	</string-array>
-	<string-array name="zones50Name">
-		<item>Autostrada A8</item>
-		<item>1:SS33 del Sempione</item>
-		<item>Autostrada A4</item>
-		<item>2:SS11 Novara/Milano Gallaratese</item>
-		<item>3: Settimo Milanese/Fiera di Milano</item>
-		<item>4: Baggio/Cusago</item>
-		<item>5: SS494 Nuova Vigevanese</item>
-		<item>6: SP59 Vecchia Vigevanese</item>
-		<item>Autostrada A7</item>
-		<item>7: Pavia-Milano Ticinese</item>
-		<item>8: Val Tidone-Milano Vigentina</item>
-	</string-array>
-	<string-array name="zones50Autovelox">
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-	</string-array>
+
+    <string-array name="zones50Id">
+        <item>Hs50z1</item>
+        <item>Hs50z2</item>
+        <item>Hs50z3</item>
+        <item>Hs50z4</item>
+        <item>Hs50z5</item>
+        <item>Hs50z6</item>
+        <item>Hs50z7</item>
+        <item>Hs50z8</item>
+        <item>Hs50z9</item>
+        <item>Hs50z10</item>
+        <item>Hs50z11</item>
+    </string-array>
+    <string-array name="zones50Name">
+        <item>Autostrada A8</item>
+        <item>1:SS33 del Sempione</item>
+        <item>Autostrada A4</item>
+        <item>2:SS11 Novara/Milano Gallaratese</item>
+        <item>3: Settimo Milanese/Fiera di Milano</item>
+        <item>4: Baggio/Cusago</item>
+        <item>5: SS494 Nuova Vigevanese</item>
+        <item>6: SP59 Vecchia Vigevanese</item>
+        <item>Autostrada A7</item>
+        <item>7: Pavia-Milano Ticinese</item>
+        <item>8: Val Tidone-Milano Vigentina</item>
+    </string-array>
+    <string-array name="zones50Autovelox">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

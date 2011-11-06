@@ -1,72 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="zones21Id">
-		<item>Hs21z1</item>
-		<item>Hs21z2</item>
-		<item>Hs21z3</item>
-		<item>Hs21z4</item>
-		<item>Hs21z5</item>
-		<item>Hs21z6</item>
-		<item>Hs21z7</item>
-		<item>Hs21z8</item>
-		<item>Hs21z9</item>
-		<item>Hs21z10</item>
-		<item>Hs21z11</item>
-		<item>Hs21z12</item>
-		<item>Hs21z13</item>
-		<item>Hs21z14</item>
-		<item>Hs21z15</item>
-		<item>Hs21z16</item>
-		<item>Hs21z17</item>
-		<item>Hs21z18</item>
-		<item>Hs21z19</item>
-		<item>Hs21z20</item>
-		<item>Hs21z21</item>
-	</string-array>
-	<string-array name="zones21Name">
-		<item>Tangenziale Sud</item>
-		<item>Villanova</item>
-		<item>Asti Ovest</item>
-		<item>Asti Est</item>
-		<item>Felizzano - Quattordio</item>
-		<item>Allaccio A26</item>
-		<item>Alessandria Ovest</item>
-		<item>Alessandria Est</item>
-		<item>Allaccio A7</item>
-		<item>Voghera</item>
-		<item>Casteggio - Casatisma</item>
-		<item>Broni - Stradella</item>
-		<item>Castel S.Giovanni</item>
-		<item>Piacenza Ovest</item>
-		<item>Piacenza Est /Allaccio A1</item>
-		<item>Caorso</item>
-		<item>Raccordo A21</item>
-		<item>Castelvetro</item>
-		<item>Cremona</item>
-		<item>Pontevico - Robecco</item>
-		<item>Manerbio</item>
-	</string-array>
-	<string-array name="zones21Autovelox">
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-	</string-array>
+
+    <string-array name="zones21Id">
+        <item>Hs21z1</item>
+        <item>Hs21z2</item>
+        <item>Hs21z3</item>
+        <item>Hs21z4</item>
+        <item>Hs21z5</item>
+        <item>Hs21z6</item>
+        <item>Hs21z7</item>
+        <item>Hs21z8</item>
+        <item>Hs21z9</item>
+        <item>Hs21z10</item>
+        <item>Hs21z11</item>
+        <item>Hs21z12</item>
+        <item>Hs21z13</item>
+        <item>Hs21z14</item>
+        <item>Hs21z15</item>
+        <item>Hs21z16</item>
+        <item>Hs21z17</item>
+        <item>Hs21z18</item>
+        <item>Hs21z19</item>
+        <item>Hs21z20</item>
+        <item>Hs21z21</item>
+    </string-array>
+    <string-array name="zones21Name">
+        <item>Tangenziale Sud</item>
+        <item>Villanova</item>
+        <item>Asti Ovest</item>
+        <item>Asti Est</item>
+        <item>Felizzano - Quattordio</item>
+        <item>Allaccio A26</item>
+        <item>Alessandria Ovest</item>
+        <item>Alessandria Est</item>
+        <item>Allaccio A7</item>
+        <item>Voghera</item>
+        <item>Casteggio - Casatisma</item>
+        <item>Broni - Stradella</item>
+        <item>Castel S.Giovanni</item>
+        <item>Piacenza Ovest</item>
+        <item>Piacenza Est /Allaccio A1</item>
+        <item>Caorso</item>
+        <item>Raccordo A21</item>
+        <item>Castelvetro</item>
+        <item>Cremona</item>
+        <item>Pontevico - Robecco</item>
+        <item>Manerbio</item>
+    </string-array>
+    <string-array name="zones21Autovelox">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

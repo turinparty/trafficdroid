@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<item type="id" name="badNewsTitle" />
-	<item type="id" name="badNewsImage" />
-	<item type="id" name="badNewsDescription" />
-	<item type="id" name="badNewsDate" />
-	<item type="id" name="badNews" />
-	<item type="id" name="mainLayout" />
-	<item type="id" name="mainTable" />
-	<item type="id" name="streetDirLeft" />
-	<item type="id" name="streetDirRight" />
-	<item type="id" name="zoneSpeedLeft" />
-	<item type="id" name="zoneSpeedRight" />
-	<item type="id" name="zoneCam" />
-	<item type="id" name="zoneKm" />
-	<item type="id" name="zoneName" />
-	<item type="id" name="zoneAutoveloxLeft" />
-	<item type="id" name="zoneAutoveloxRight" />
-	<item type="id" name="zoneType" />
-	<item type="id" name="itemKey" />
-	<item type="id" name="itemName" />
-	<item type="id" name="menuSettings" />
-	<item type="id" name="menuRefresh" />
-	<item type="id" name="menuFuel" />
-	<item type="id" name="menuDelete" />
-	<item type="id" name="trendLeft" />
-	<item type="id" name="trendRight" />
-	<item type="id" name="webview" />
-	<item type="id" name="streetText1" />
-	<item type="id" name="streetText2" />
+
+    <item name="badNewsTitle" type="id"/>
+    <item name="badNewsImage" type="id"/>
+    <item name="badNewsDescription" type="id"/>
+    <item name="badNewsDate" type="id"/>
+    <item name="badNews" type="id"/>
+    <item name="mainLayout" type="id"/>
+    <item name="mainTable" type="id"/>
+    <item name="streetDirLeft" type="id"/>
+    <item name="streetDirRight" type="id"/>
+    <item name="zoneSpeedLeft" type="id"/>
+    <item name="zoneSpeedRight" type="id"/>
+    <item name="zoneCam" type="id"/>
+    <item name="zoneKm" type="id"/>
+    <item name="zoneName" type="id"/>
+    <item name="zoneAutoveloxLeft" type="id"/>
+    <item name="zoneAutoveloxRight" type="id"/>
+    <item name="zoneType" type="id"/>
+    <item name="itemKey" type="id"/>
+    <item name="itemName" type="id"/>
+    <item name="menuSettings" type="id"/>
+    <item name="menuRefresh" type="id"/>
+    <item name="menuFuel" type="id"/>
+    <item name="removePref" type="id"/>
+    <item name="trendLeft" type="id"/>
+    <item name="trendRight" type="id"/>
+    <item name="webview" type="id"/>
+    <item name="streetText1" type="id"/>
+    <item name="streetText2" type="id"/>
+
 </resources>

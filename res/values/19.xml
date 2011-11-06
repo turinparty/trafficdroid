@@ -1,72 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="zones19Id">
-		<item>Hs19z1</item>
-		<item>Hs19z2</item>
-		<item>Hs19z3</item>
-		<item>Hs19z4</item>
-		<item>Hs19z5</item>
-		<item>Hs19z6</item>
-		<item>Hs19z7</item>
-		<item>Hs19z8</item>
-		<item>Hs19z9</item>
-		<item>Hs19z10</item>
-		<item>Hs19z11</item>
-		<item>Hs19z12</item>
-		<item>Hs19z13</item>
-		<item>Hs19z14</item>
-		<item>Hs19z15</item>
-		<item>Hs19z16</item>
-		<item>Hs19z17</item>
-		<item>Hs19z18</item>
-		<item>Hs19z19</item>
-		<item>Hs19z20</item>
-		<item>Hs19z21</item>
-	</string-array>
-	<string-array name="zones19Name">
-		<item>Palermo</item>
-		<item>Villabate</item>
-		<item>Bagheria</item>
-		<item>Casteldaccia</item>
-		<item>Altavilla Milicia</item>
-		<item>Trabia</item>
-		<item>Termini Imerese</item>
-		<item>Zona Industriale</item>
-		<item>Allaccio A20</item>
-		<item>Buonfornello</item>
-		<item>Scillato</item>
-		<item>Tre Monzelli</item>
-		<item>Resuttano</item>
-		<item>Ponte Cinque Arch</item>
-		<item>Imera</item>
-		<item>Enna</item>
-		<item>Mulinello</item>
-		<item>Dittaino</item>
-		<item>Catenanuova</item>
-		<item>Sferro - Gerbini</item>
-		<item>Motta S.Anastasia</item>
-	</string-array>
-	<string-array name="zones19Autovelox">
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-	</string-array>
+
+    <string-array name="zones19Id">
+        <item>Hs19z1</item>
+        <item>Hs19z2</item>
+        <item>Hs19z3</item>
+        <item>Hs19z4</item>
+        <item>Hs19z5</item>
+        <item>Hs19z6</item>
+        <item>Hs19z7</item>
+        <item>Hs19z8</item>
+        <item>Hs19z9</item>
+        <item>Hs19z10</item>
+        <item>Hs19z11</item>
+        <item>Hs19z12</item>
+        <item>Hs19z13</item>
+        <item>Hs19z14</item>
+        <item>Hs19z15</item>
+        <item>Hs19z16</item>
+        <item>Hs19z17</item>
+        <item>Hs19z18</item>
+        <item>Hs19z19</item>
+        <item>Hs19z20</item>
+        <item>Hs19z21</item>
+    </string-array>
+    <string-array name="zones19Name">
+        <item>Palermo</item>
+        <item>Villabate</item>
+        <item>Bagheria</item>
+        <item>Casteldaccia</item>
+        <item>Altavilla Milicia</item>
+        <item>Trabia</item>
+        <item>Termini Imerese</item>
+        <item>Zona Industriale</item>
+        <item>Allaccio A20</item>
+        <item>Buonfornello</item>
+        <item>Scillato</item>
+        <item>Tre Monzelli</item>
+        <item>Resuttano</item>
+        <item>Ponte Cinque Arch</item>
+        <item>Imera</item>
+        <item>Enna</item>
+        <item>Mulinello</item>
+        <item>Dittaino</item>
+        <item>Catenanuova</item>
+        <item>Sferro - Gerbini</item>
+        <item>Motta S.Anastasia</item>
+    </string-array>
+    <string-array name="zones19Autovelox">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

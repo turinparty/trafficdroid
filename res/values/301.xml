@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="zones301Id">
-		<item>Hs301z1</item>
-		<item>Hs301z2</item>
-		<item>Hs301z3</item>
-	</string-array>
-	<string-array name="zones301Name">
-		<item>Reggio di Calabria Centro</item>
-		<item>Reggio di Calabria Nord</item>
-		<item>Reggio di Calabria Calopinace</item>
-	</string-array>
-	<string-array name="zones301Autovelox">
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-	</string-array>
+
+    <string-array name="zones301Id">
+        <item>Hs301z1</item>
+        <item>Hs301z2</item>
+        <item>Hs301z3</item>
+    </string-array>
+    <string-array name="zones301Name">
+        <item>Reggio di Calabria Centro</item>
+        <item>Reggio di Calabria Nord</item>
+        <item>Reggio di Calabria Calopinace</item>
+    </string-array>
+    <string-array name="zones301Autovelox">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

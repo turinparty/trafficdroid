@@ -9,7 +9,6 @@ import android.util.SparseIntArray;
 
 public class Const {
 	public static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
-	//	public static final int[] themes = new int[] { R.style.Small, R.style.Medium, R.style.Large };
 	public static final byte[] itemTypes = new byte[] { 0, 1 };
 	public static final int notificationId = 1;
 	public static final char charAutostrade = 'A';
@@ -67,6 +66,8 @@ public class Const {
 	public static final String autoveloxAll = "A";
 	public static final String autoveloxNone = "0";
 	public static final String autovelox = "Autovelox";
+	public static final String removePrefToast = " è stato rimosso dai preferiti. Al prossimo aggiornamento non sarà piu visibile.";
+	public static final String removePrefToastUndo = " è stato aggiunto ai preferiti. Al prossimo aggiornamento rimarrà visibile.";
 	public static final String disconnectedMessage = "Connessione di rete inesistente";
 	public static final String bn_acc = "incidente";
 	public static final String bn_bkd = "veicolo fermo o avaria";
@@ -79,10 +80,12 @@ public class Const {
 	public static final String bn_pss = "personale su strada";
 	public static final String bn_res = "chius";
 	public static final String bn_rsr = "riduzione di carreggiata";
+	public static final String bn_sab = "area di servizio";
 	public static final String bn_sdc = "scambio di carreggiata";
 	public static final String bn_sm = "catene";
 	public static final String bn_sn = "mezzi spargisale";
 	public static final String bn_spc = "controllo velocità";
+	public static final String bn_win = "vento forte";
 	public static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);
 	public static final SparseIntArray zonesResId = new SparseIntArray(64) {
 		{

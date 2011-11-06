@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="zones553Id">
-		<item>Hs553z1</item>
-		<item>Hs553z2</item>
-	</string-array>
-	<string-array name="zones553Name">
-		<item>Corso Trieste</item>
-		<item>San Paolo</item>
-	</string-array>
-	<string-array name="zones553Autovelox">
-		<item>0</item>
-		<item>0</item>
-	</string-array>
+
+    <string-array name="zones553Id">
+        <item>Hs553z1</item>
+        <item>Hs553z2</item>
+    </string-array>
+    <string-array name="zones553Name">
+        <item>Corso Trieste</item>
+        <item>San Paolo</item>
+    </string-array>
+    <string-array name="zones553Autovelox">
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

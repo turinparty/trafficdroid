@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- A14dir Dir. A14 Ravenna -->
 <resources>
-	<string-array name="zones142Id">
-		<item>A16607</item>	<!-- D14 km. 008,6 Barriera Ravenna itinere -->
-		<item>A20475</item>	<!-- D14 km. 011,0 Lugo Cotignola Itinere Nord -->
-		<item>A22247</item>	<!-- D14 km. 024,0 Ravenna ex barriera -->
-	</string-array>
-	<string-array name="zones142Name">
-		<item>Allaccio A14</item>
-		<item>Lugo-Cotignola</item>
-		<item>Bagnacavallo</item>
-	</string-array>
-	<string-array name="zones142Autovelox">
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-	</string-array>
+
+    <string-array name="zones142Id">
+        <item>A16607</item> <!-- D14 km. 008,6 Barriera Ravenna itinere -->
+        <item>A20475</item> <!-- D14 km. 011,0 Lugo Cotignola Itinere Nord -->
+        <item>A22247</item> <!-- D14 km. 024,0 Ravenna ex barriera -->
+    </string-array>
+    <string-array name="zones142Name">
+        <item>Allaccio A14</item>
+        <item>Lugo-Cotignola</item>
+        <item>Bagnacavallo</item>
+    </string-array>
+    <string-array name="zones142Autovelox">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

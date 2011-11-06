@@ -1,39 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="zones28Id">
-		<item>Hs28z1</item>
-		<item>Hs28z2</item>
-		<item>Hs28z3</item>
-		<item>Hs28z4</item>
-		<item>Hs28z5</item>
-		<item>Hs28z6</item>
-		<item>Hs28z7</item>
-		<item>Hs28z8</item>
-		<item>Hs28z9</item>
-		<item>Hs28z10</item>
-	</string-array>
-	<string-array name="zones28Name">
-		<item>Sacile Ovest</item>
-		<item>Sacile Est</item>
-		<item>Fontanafredda</item>
-		<item>Porcia</item>
-		<item>Pordenone Sud</item>
-		<item>Pordenone</item>
-		<item>Cimpello</item>
-		<item>Azzano Decimo</item>
-		<item>Villotta</item>
-		<item>Sesto al Reghena</item>
-	</string-array>
-	<string-array name="zones28Autovelox">
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-	</string-array>
+
+    <string-array name="zones28Id">
+        <item>Hs28z1</item>
+        <item>Hs28z2</item>
+        <item>Hs28z3</item>
+        <item>Hs28z4</item>
+        <item>Hs28z5</item>
+        <item>Hs28z6</item>
+        <item>Hs28z7</item>
+        <item>Hs28z8</item>
+        <item>Hs28z9</item>
+        <item>Hs28z10</item>
+    </string-array>
+    <string-array name="zones28Name">
+        <item>Sacile Ovest</item>
+        <item>Sacile Est</item>
+        <item>Fontanafredda</item>
+        <item>Porcia</item>
+        <item>Pordenone Sud</item>
+        <item>Pordenone</item>
+        <item>Cimpello</item>
+        <item>Azzano Decimo</item>
+        <item>Villotta</item>
+        <item>Sesto al Reghena</item>
+    </string-array>
+    <string-array name="zones28Autovelox">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

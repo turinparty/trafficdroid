@@ -26,6 +26,7 @@ import android.view.Window;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.ExpandableListContextMenuInfo;
 import android.widget.ExpandableListView.OnChildClickListener;
+import android.widget.Toast;
 
 public class MainActivity extends AbstractActivity {
 	private ExpandableListView listView;
@@ -107,11 +108,12 @@ public class MainActivity extends AbstractActivity {
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, v, menuInfo);
-		ExpandableListView.ExpandableListContextMenuInfo info = (ExpandableListView.ExpandableListContextMenuInfo) menuInfo;
+		ExpandableListContextMenuInfo info = (ExpandableListContextMenuInfo) menuInfo;
 		int packedPositionType = ExpandableListView.getPackedPositionType(info.packedPosition);
 		View item = info.targetView;
 		if (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_GROUP || (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_CHILD && ((Integer) item.getTag(R.id.zoneType)) == Const.itemTypes[1])) {
 			getMenuInflater().inflate(R.menu.main_context, menu);
+			menu.getItem(0).setChecked(TdApp.getPrefBoolean((String) item.getTag(R.id.itemKey), false));
 			menu.setHeaderTitle((String) item.getTag(R.id.itemName));
 		}
 	}
@@ -119,10 +121,21 @@ public class MainActivity extends AbstractActivity {
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		View v = ((ExpandableListContextMenuInfo) item.getMenuInfo()).targetView;
-		System.err.println(v);
+		String itemKey = (String) v.getTag(R.id.itemKey);
+		String itemName = (String) v.getTag(R.id.itemName);
 		switch (item.getItemId()) {
-		case R.id.menuDelete:
-			TdApp.getEditor().putBoolean((String) v.getTag(R.id.itemKey), false).commit();
+		case R.id.removePref:
+			String msg;
+			if (TdApp.getPrefBoolean(itemKey, false)) {
+				item.setChecked(false);
+				TdApp.getEditor().putBoolean(itemKey, false).commit();
+				msg = Const.removePrefToast;
+			} else {
+				item.setChecked(true);
+				TdApp.getEditor().putBoolean(itemKey, true).commit();
+				msg = Const.removePrefToastUndo;
+			}
+			Toast.makeText(TdApp.getContext(), itemName + msg, Toast.LENGTH_SHORT).show();
 			return true;
 		default:
 			return super.onContextItemSelected(item);

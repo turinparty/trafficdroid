@@ -1,46 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- A16 Napoli-Canosa -->
 <resources>
-	<string-array name="zones16Id">
-		<item>s16z1</item>
-		<item>A5222</item>	<!-- A16 km. 9,55 Pomigliano itinere ovest -->
-		<item>A19264</item>	<!-- A16 km. 20,2 Baiano itinere ovest -->
-		<item>A19257</item>	<!-- A16 km. 25,6 Baiano itinere est -->
-		<item>A6873</item>	<!-- A16 km. 40,0 Avellino itinere est -->
-		<item>A9128</item>	<!-- A16 km. 56,95 itinere est -->
-		<item>A19251</item>	<!-- A16 km. 69,9 Benevento itinere ovest -->
-		<item>A14334</item>	<!-- A16 km. 80,6 Grottaminarda itinere est -->
-		<item>s16z9</item>
-		<item>s16z10</item>
-		<item>s16z11</item>
-		<item>s16z12</item>
-	</string-array>
-	<string-array name="zones16Name">
-		<item>Allaccio A1</item>
-		<item>Pomigliano d`Arco</item>
-		<item>Allaccio A30</item>
-		<item>Baiano</item>
-		<item>Avellino Ovest</item>
-		<item>Avellino Est</item>
-		<item>Benevento</item>
-		<item>Grottaminarda</item>
-		<item>Vallata</item>
-		<item>Lacedonia</item>
-		<item>Candela</item>
-		<item>Cerignola Ovest</item>
-	</string-array>
-	<string-array name="zones16Autovelox">
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>A</item>
-		<item>L</item>
-	</string-array>
+
+    <string-array name="zones16Id">
+        <item>s16z1</item>
+        <item>A5222</item> <!-- A16 km. 9,55 Pomigliano itinere ovest -->
+        <item>A19264</item> <!-- A16 km. 20,2 Baiano itinere ovest -->
+        <item>A19257</item> <!-- A16 km. 25,6 Baiano itinere est -->
+        <item>A6873</item> <!-- A16 km. 40,0 Avellino itinere est -->
+        <item>A9128</item> <!-- A16 km. 56,95 itinere est -->
+        <item>A19251</item> <!-- A16 km. 69,9 Benevento itinere ovest -->
+        <item>A14334</item> <!-- A16 km. 80,6 Grottaminarda itinere est -->
+        <item>s16z9</item>
+        <item>s16z10</item>
+        <item>s16z11</item>
+        <item>s16z12</item>
+    </string-array>
+    <string-array name="zones16Name">
+        <item>Allaccio A1</item>
+        <item>Pomigliano d`Arco</item>
+        <item>Allaccio A30</item>
+        <item>Baiano</item>
+        <item>Avellino Ovest</item>
+        <item>Avellino Est</item>
+        <item>Benevento</item>
+        <item>Grottaminarda</item>
+        <item>Vallata</item>
+        <item>Lacedonia</item>
+        <item>Candela</item>
+        <item>Cerignola Ovest</item>
+    </string-array>
+    <string-array name="zones16Autovelox">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>A</item>
+        <item>L</item>
+    </string-array>
+
 </resources>

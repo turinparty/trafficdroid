@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="zones501Id">
-		<item>Hs501z1</item>
-		<item>Hs501z2</item>
-	</string-array>
-	<string-array name="zones501Name">
-		<item>Allaccio A5</item>
-		<item>Albiano</item>
-	</string-array>
-	<string-array name="zones501Autovelox">
-		<item>0</item>
-		<item>0</item>
-	</string-array>
+
+    <string-array name="zones501Id">
+        <item>Hs501z1</item>
+        <item>Hs501z2</item>
+    </string-array>
+    <string-array name="zones501Name">
+        <item>Allaccio A5</item>
+        <item>Albiano</item>
+    </string-array>
+    <string-array name="zones501Autovelox">
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

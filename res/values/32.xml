@@ -1,45 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="zones32Id">
-		<item>Hs32z1</item>
-		<item>Hs32z2</item>
-		<item>Hs32z3</item>
-		<item>Hs32z4</item>
-		<item>Hs32z5</item>
-		<item>Hs32z6</item>
-		<item>Hs32z7</item>
-		<item>Hs32z8</item>
-		<item>Hs32z9</item>
-		<item>Hs32z10</item>
-		<item>Hs32z11</item>
-		<item>Hs32z12</item>
-	</string-array>
-	<string-array name="zones32Name">
-		<item>Bardonecchia</item>
-		<item>Savoulx</item>
-		<item>Oulx Ovest</item>
-		<item>Oulx Est</item>
-		<item>Salbertrand</item>
-		<item>Venaus</item>
-		<item>Susa Autoporto</item>
-		<item>Chianocco</item>
-		<item>Borgogne</item>
-		<item>Almese</item>
-		<item>Avigliana</item>
-		<item>Rivoli</item>
-	</string-array>
-	<string-array name="zones32Autovelox">
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-	</string-array>
+
+    <string-array name="zones32Id">
+        <item>Hs32z1</item>
+        <item>Hs32z2</item>
+        <item>Hs32z3</item>
+        <item>Hs32z4</item>
+        <item>Hs32z5</item>
+        <item>Hs32z6</item>
+        <item>Hs32z7</item>
+        <item>Hs32z8</item>
+        <item>Hs32z9</item>
+        <item>Hs32z10</item>
+        <item>Hs32z11</item>
+        <item>Hs32z12</item>
+    </string-array>
+    <string-array name="zones32Name">
+        <item>Bardonecchia</item>
+        <item>Savoulx</item>
+        <item>Oulx Ovest</item>
+        <item>Oulx Est</item>
+        <item>Salbertrand</item>
+        <item>Venaus</item>
+        <item>Susa Autoporto</item>
+        <item>Chianocco</item>
+        <item>Borgogne</item>
+        <item>Almese</item>
+        <item>Avigliana</item>
+        <item>Rivoli</item>
+    </string-array>
+    <string-array name="zones32Autovelox">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

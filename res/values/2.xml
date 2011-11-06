@@ -1,58 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- A3 Napoli-Salerno -->
 <resources>
-	<string-array name="zones2Id">
-		<item>Hs2z1</item>
-		<item>Hs2z2</item>
-		<item>Hs2z3</item>
-		<item>Hs2z4</item>
-		<item>Hs2z5</item>
-		<item>Hs2z6</item>
-		<item>Hs2z7</item>
-		<item>Hs2z8</item>
-		<item>Hs2z9</item>
-		<item>Hs2z10</item>
-		<item>Hs2z11</item>
-		<item>Hs2z12</item>
-		<item>Hs2z13</item>
-		<item>A21526</item>	<!-- A3 km. 36,800 Nocera - TLC 26 -->
-		<item>A21519</item>	<!-- A3 km. 42,900 C. de Tirreni - TLC 31 -->
-		<item>A21580</item>	<!-- A3 Km. 48,700 nord Vietri - TLC 32 -->
-	</string-array>
-	<string-array name="zones2Name">
-		<item>Napoli</item>
-		<item>S. Giovanni a Teduccio</item>
-		<item>Allaccio A1</item>
-		<item>S. Giorgio a Cremano</item>
-		<item>Portici - Bellavista</item>
-		<item>Ercolano</item>
-		<item>Torre del Greco</item>
-		<item>Torre Annunziata Nord</item>
-		<item>Torre Annunziata</item>
-		<item>Pompei</item>
-		<item>Castellammare di Stabia</item>
-		<item>Scafati - Pompei</item>
-		<item>Angri</item>
-		<item>Nocera - Pagani</item>
-		<item>Cava dei Tirreni</item>
-		<item>Vietri sul mare</item>
-	</string-array>
-	<string-array name="zones2Autovelox">
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>A</item>
-		<item>A</item>
-		<item>A</item>
-		<item>0</item>
-		<item>A</item>
-		<item>A</item>
-	</string-array>
+
+    <string-array name="zones2Id">
+        <item>Hs2z1</item>
+        <item>Hs2z2</item>
+        <item>Hs2z3</item>
+        <item>Hs2z4</item>
+        <item>Hs2z5</item>
+        <item>Hs2z6</item>
+        <item>Hs2z7</item>
+        <item>Hs2z8</item>
+        <item>Hs2z9</item>
+        <item>Hs2z10</item>
+        <item>Hs2z11</item>
+        <item>Hs2z12</item>
+        <item>Hs2z13</item>
+        <item>A21526</item> <!-- A3 km. 36,800 Nocera - TLC 26 -->
+        <item>A21519</item> <!-- A3 km. 42,900 C. de Tirreni - TLC 31 -->
+        <item>A21580</item> <!-- A3 Km. 48,700 nord Vietri - TLC 32 -->
+    </string-array>
+    <string-array name="zones2Name">
+        <item>Napoli</item>
+        <item>S. Giovanni a Teduccio</item>
+        <item>Allaccio A1</item>
+        <item>S. Giorgio a Cremano</item>
+        <item>Portici - Bellavista</item>
+        <item>Ercolano</item>
+        <item>Torre del Greco</item>
+        <item>Torre Annunziata Nord</item>
+        <item>Torre Annunziata</item>
+        <item>Pompei</item>
+        <item>Castellammare di Stabia</item>
+        <item>Scafati - Pompei</item>
+        <item>Angri</item>
+        <item>Nocera - Pagani</item>
+        <item>Cava dei Tirreni</item>
+        <item>Vietri sul mare</item>
+    </string-array>
+    <string-array name="zones2Autovelox">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>A</item>
+        <item>A</item>
+        <item>A</item>
+        <item>0</item>
+        <item>A</item>
+        <item>A</item>
+    </string-array>
+
 </resources>

@@ -1,33 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-	<PreferenceCategory android:title="@string/providerCategory">
-		<EditTextPreference android:title="@string/providerTrafficTitle"
-			android:summary="@string/providerSummary" android:key="@string/providerTrafficKey"
-			android:defaultValue="@string/providerTrafficDefault" />
-		<EditTextPreference android:title="@string/providerBadNewsTitle"
-			android:summary="@string/providerSummary" android:key="@string/providerBadNewsKey"
-			android:defaultValue="@string/providerBadNewsDefault" />
-		<EditTextPreference android:title="@string/providerCamTitle"
-			android:summary="@string/providerSummary" android:key="@string/providerCamKey"
-			android:defaultValue="@string/providerCamDefault" />
-		<EditTextPreference android:title="@string/providerFuelTitle"
-			android:summary="@string/providerSummary" android:key="@string/providerFuelKey"
-			android:defaultValue="@string/providerFuelDefault" />
-	</PreferenceCategory>
-	<PreferenceCategory android:title="@string/updateCategory">
-		<CheckBoxPreference android:title="@string/berserkTitle"
-			android:key="@string/berserkKey" android:summary="@string/berserkSummary"
-			android:defaultValue="@string/berserkDefault" />
-		<CheckBoxPreference android:title="@string/chiaroveggenzaEnablerTitle"
-			android:key="@string/chiaroveggenzaEnablerKey" android:summary="@string/chiaroveggenzaEnablerSummary"
-			android:defaultValue="@string/chiaroveggenzaEnablerDefault" />
-		<ListPreference android:title="@string/notificationSpeedTitle"
-			android:key="@string/notificationSpeedKey" android:summary="@string/notificationSpeedSummary"
-			android:entries="@array/notificationSpeedLabel" android:entryValues="@array/notificationSpeedValue"
-			android:defaultValue="@string/notificationSpeedDefault" />
-		<ListPreference android:title="@string/chiaroveggenzaTimeTitle"
-			android:key="@string/chiaroveggenzaTimeKey" android:summary="@string/chiaroveggenzaTimeSummary"
-			android:entries="@array/chiaroveggenzaTimeLabel" android:entryValues="@array/chiaroveggenzaTimeValue"
-			android:defaultValue="@string/chiaroveggenzaTimeDefault" />
-	</PreferenceCategory>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/providerCategory" >
+
+        <EditTextPreference
+            android:defaultValue="@string/providerTrafficDefault"
+            android:key="@string/providerTrafficKey"
+            android:summary="@string/providerSummary"
+            android:title="@string/providerTrafficTitle" />
+
+        <EditTextPreference
+            android:defaultValue="@string/providerBadNewsDefault"
+            android:key="@string/providerBadNewsKey"
+            android:summary="@string/providerSummary"
+            android:title="@string/providerBadNewsTitle" />
+
+        <EditTextPreference
+            android:defaultValue="@string/providerCamDefault"
+            android:key="@string/providerCamKey"
+            android:summary="@string/providerSummary"
+            android:title="@string/providerCamTitle" />
+
+        <EditTextPreference
+            android:defaultValue="@string/providerFuelDefault"
+            android:key="@string/providerFuelKey"
+            android:summary="@string/providerSummary"
+            android:title="@string/providerFuelTitle" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/updateCategory" >
+
+        <CheckBoxPreference
+            android:defaultValue="@string/berserkDefault"
+            android:key="@string/berserkKey"
+            android:summary="@string/berserkSummary"
+            android:title="@string/berserkTitle" />
+
+        <CheckBoxPreference
+            android:defaultValue="@string/chiaroveggenzaEnablerDefault"
+            android:key="@string/chiaroveggenzaEnablerKey"
+            android:summary="@string/chiaroveggenzaEnablerSummary"
+            android:title="@string/chiaroveggenzaEnablerTitle" />
+
+        <ListPreference
+            android:defaultValue="@string/notificationSpeedDefault"
+            android:entries="@array/notificationSpeedLabel"
+            android:entryValues="@array/notificationSpeedValue"
+            android:key="@string/notificationSpeedKey"
+            android:summary="@string/notificationSpeedSummary"
+            android:title="@string/notificationSpeedTitle" />
+
+        <ListPreference
+            android:defaultValue="@string/chiaroveggenzaTimeDefault"
+            android:entries="@array/chiaroveggenzaTimeLabel"
+            android:entryValues="@array/chiaroveggenzaTimeValue"
+            android:key="@string/chiaroveggenzaTimeKey"
+            android:summary="@string/chiaroveggenzaTimeSummary"
+            android:title="@string/chiaroveggenzaTimeTitle" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

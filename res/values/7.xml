@@ -1,61 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- A7 Serravalle-Genova -->
 <resources>
-	<string-array name="zones7Id">
-		<item>Hs7z1</item>
-		<item>Hs7z2</item>
-		<item>Hs7z3</item>
-		<item>Hs7z4</item>
-		<item>Hs7z5</item>
-		<item>Hs7z6</item>
-		<item>Hs7z7</item>
-		<item>Hs7z8</item>
-		<item>A19207</item>	<!-- A07 km. 68,8 All.A7 A26 W itinere sud -->
-		<item>Hs7z10</item>
-		<item>A19533</item>	<!-- A07 km. 87,7 Vignole Borbera itinere sud -->
-		<item>A15941</item>	<!-- A07 km. 99,2 Isola del Cantone itinere sud -->
-		<item>A15935</item>	<!-- A07 km. 104,8 Isola del Cantone itinere nord -->
-		<item>A19540</item>	<!-- A07 km. 114,1 Busalla itinere nord -->
-		<item>A19560</item>	<!-- A07 km. 125,0 GE-Bolzaneto itinere sud -->
-		<item>A7224</item>	<!-- A07 km. 128,9 All. A7-A12 itinere sud -->
-		<item>A11314</item>	<!-- A07 km. 130,0 All.A7/A10 itinere sud -->
-	</string-array>
-	<string-array name="zones7Name">
-		<item>Allaccio A50</item>
-		<item>Binasco</item>
-		<item>Raccordo Bereguardo-Pavia </item>
-		<item>Gropello-Cairoli</item>
-		<item>Casei-Gerola</item>
-		<item>Castelnuovo Scrivia</item>
-		<item>Allaccio A21</item>
-		<item>Tortona</item>
-		<item>Diramazione A26</item>
-		<item>Serravalle Scrivia</item>
-		<item>Vignole Arquato</item>
-		<item>Isola del Cantone</item>
-		<item>Ronco Scrivia</item>
-		<item>Busalla</item>
-		<item>Genova Bolzaneto</item>
-		<item>Allaccio A12</item>
-		<item>Allaccio A10</item>
-	</string-array>
-	<string-array name="zones7Autovelox">
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>R</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>R</item>
-		<item>A</item>
-		<item>A</item>
-		<item>A</item>
-		<item>A</item>
-		<item>A</item>
-	</string-array>
+
+    <string-array name="zones7Id">
+        <item>Hs7z1</item>
+        <item>Hs7z2</item>
+        <item>Hs7z3</item>
+        <item>Hs7z4</item>
+        <item>Hs7z5</item>
+        <item>Hs7z6</item>
+        <item>Hs7z7</item>
+        <item>Hs7z8</item>
+        <item>A19207</item> <!-- A07 km. 68,8 All.A7 A26 W itinere sud -->
+        <item>Hs7z10</item>
+        <item>A19533</item> <!-- A07 km. 87,7 Vignole Borbera itinere sud -->
+        <item>A15941</item> <!-- A07 km. 99,2 Isola del Cantone itinere sud -->
+        <item>A15935</item> <!-- A07 km. 104,8 Isola del Cantone itinere nord -->
+        <item>A19540</item> <!-- A07 km. 114,1 Busalla itinere nord -->
+        <item>A19560</item> <!-- A07 km. 125,0 GE-Bolzaneto itinere sud -->
+        <item>A7224</item> <!-- A07 km. 128,9 All. A7-A12 itinere sud -->
+        <item>A11314</item> <!-- A07 km. 130,0 All.A7/A10 itinere sud -->
+    </string-array>
+    <string-array name="zones7Name">
+        <item>Allaccio A50</item>
+        <item>Binasco</item>
+        <item>Raccordo Bereguardo-Pavia </item>
+        <item>Gropello-Cairoli</item>
+        <item>Casei-Gerola</item>
+        <item>Castelnuovo Scrivia</item>
+        <item>Allaccio A21</item>
+        <item>Tortona</item>
+        <item>Diramazione A26</item>
+        <item>Serravalle Scrivia</item>
+        <item>Vignole Arquato</item>
+        <item>Isola del Cantone</item>
+        <item>Ronco Scrivia</item>
+        <item>Busalla</item>
+        <item>Genova Bolzaneto</item>
+        <item>Allaccio A12</item>
+        <item>Allaccio A10</item>
+    </string-array>
+    <string-array name="zones7Autovelox">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>R</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>R</item>
+        <item>A</item>
+        <item>A</item>
+        <item>A</item>
+        <item>A</item>
+        <item>A</item>
+    </string-array>
+
 </resources>

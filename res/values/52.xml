@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="zones52Id">
-		<item>Hs52z1</item>
-		<item>Hs52z2</item>
-		<item>Hs52z3</item>
-		<item>Hs52z4</item>
-		<item>Hs52z5</item>
-		<item>Hs52z6</item>
-		<item>Hs52z7</item>
-		<item>Hs52z8</item>
-	</string-array>
-	<string-array name="zones52Name">
-		<item>SS35 Como/Milano Bruzzano</item>
-		<item>Vecchia Valassina</item>
-		<item>Nova Milanese</item>
-		<item>Cinisello Balsamo Nord</item>
-		<item>Cinisello Balsamo Sud</item>
-		<item>Monza/Sesto San Giovanni</item>
-		<item>Autostrada A4</item>
-		<item>Sesto San Giovanni</item>
-	</string-array>
-	<string-array name="zones52Autovelox">
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-	</string-array>
+
+    <string-array name="zones52Id">
+        <item>Hs52z1</item>
+        <item>Hs52z2</item>
+        <item>Hs52z3</item>
+        <item>Hs52z4</item>
+        <item>Hs52z5</item>
+        <item>Hs52z6</item>
+        <item>Hs52z7</item>
+        <item>Hs52z8</item>
+    </string-array>
+    <string-array name="zones52Name">
+        <item>SS35 Como/Milano Bruzzano</item>
+        <item>Vecchia Valassina</item>
+        <item>Nova Milanese</item>
+        <item>Cinisello Balsamo Nord</item>
+        <item>Cinisello Balsamo Sud</item>
+        <item>Monza/Sesto San Giovanni</item>
+        <item>Autostrada A4</item>
+        <item>Sesto San Giovanni</item>
+    </string-array>
+    <string-array name="zones52Autovelox">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

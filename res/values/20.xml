@@ -1,63 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="zones20Id">
-		<item>Hs20z1</item>
-		<item>Hs20z2</item>
-		<item>Hs20z3</item>
-		<item>Hs20z4</item>
-		<item>Hs20z5</item>
-		<item>Hs20z6</item>
-		<item>Hs20z7</item>
-		<item>Hs20z8</item>
-		<item>Hs20z9</item>
-		<item>Hs20z10</item>
-		<item>Hs20z11</item>
-		<item>Hs20z12</item>
-		<item>Hs20z13</item>
-		<item>Hs20z14</item>
-		<item>Hs20z15</item>
-		<item>Hs20z16</item>
-		<item>Hs20z17</item>
-		<item>Hs20z18</item>
-	</string-array>
-	<string-array name="zones20Name">
-		<item>Allaccio A19</item>
-		<item>Cefalu Ovest</item>
-		<item>Cefalu Est</item>
-		<item>Castelbuono</item>
-		<item>Furiano</item>
-		<item>S.Agata di Militello</item>
-		<item>Rocca di Capri Leone</item>
-		<item>Brolo</item>
-		<item>Patti</item>
-		<item>Falcone</item>
-		<item>Barcellona</item>
-		<item>Milazzo</item>
-		<item>Rometta</item>
-		<item>Messina Nord - Villafranca</item>
-		<item>Messina - Boccetta</item>
-		<item>Messina - Centro</item>
-		<item>Messina - Gazzi</item>
-		<item>Messina - S.Filippo</item>
-	</string-array>
-	<string-array name="zones20Autovelox">
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-	</string-array>
+
+    <string-array name="zones20Id">
+        <item>Hs20z1</item>
+        <item>Hs20z2</item>
+        <item>Hs20z3</item>
+        <item>Hs20z4</item>
+        <item>Hs20z5</item>
+        <item>Hs20z6</item>
+        <item>Hs20z7</item>
+        <item>Hs20z8</item>
+        <item>Hs20z9</item>
+        <item>Hs20z10</item>
+        <item>Hs20z11</item>
+        <item>Hs20z12</item>
+        <item>Hs20z13</item>
+        <item>Hs20z14</item>
+        <item>Hs20z15</item>
+        <item>Hs20z16</item>
+        <item>Hs20z17</item>
+        <item>Hs20z18</item>
+    </string-array>
+    <string-array name="zones20Name">
+        <item>Allaccio A19</item>
+        <item>Cefalu Ovest</item>
+        <item>Cefalu Est</item>
+        <item>Castelbuono</item>
+        <item>Furiano</item>
+        <item>S.Agata di Militello</item>
+        <item>Rocca di Capri Leone</item>
+        <item>Brolo</item>
+        <item>Patti</item>
+        <item>Falcone</item>
+        <item>Barcellona</item>
+        <item>Milazzo</item>
+        <item>Rometta</item>
+        <item>Messina Nord - Villafranca</item>
+        <item>Messina - Boccetta</item>
+        <item>Messina - Centro</item>
+        <item>Messina - Gazzi</item>
+        <item>Messina - S.Filippo</item>
+    </string-array>
+    <string-array name="zones20Autovelox">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

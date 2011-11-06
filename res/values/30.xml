@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- A30 Caserta-Salerno -->
 <resources>
-	<string-array name="zones30Id">
-		<item>A19233</item>	<!-- A30 km. 1,3 All. A30-A01 itinere nord -->
-		<item>A19219</item>	<!-- A30 km. 17,2 Nola itinere sud -->
-		<item>A19226</item>	<!-- A30 km. 22,1 All. A30-A16 itinere nord -->
-		<item>A6064</item>	<!-- A30 km. 38,3 Sarno itinere nord -->
-		<item>A13072</item>	<!-- A30 km. 41,0 Nocera Pagani itinere nord -->
-		<item>A6328</item>	<!-- A30 km. 42,785 Castel S. Giorgio itinere sud -->
-	</string-array>
-	<string-array name="zones30Name">
-		<item>Allaccio A1</item>
-		<item>Nola</item>
-		<item>Allaccio A16</item>
-		<item>Sarno</item>
-		<item>Nocera - Pagan</item>
-		<item>Castel S.Giorgio</item>
-	</string-array>
-	<string-array name="zones30Autovelox">
-		<item>A</item>
-		<item>A</item>
-		<item>A</item>
-		<item>A</item>
-		<item>A</item>
-		<item>A</item>
-	</string-array>
+
+    <string-array name="zones30Id">
+        <item>A19233</item> <!-- A30 km. 1,3 All. A30-A01 itinere nord -->
+        <item>A19219</item> <!-- A30 km. 17,2 Nola itinere sud -->
+        <item>A19226</item> <!-- A30 km. 22,1 All. A30-A16 itinere nord -->
+        <item>A6064</item> <!-- A30 km. 38,3 Sarno itinere nord -->
+        <item>A13072</item> <!-- A30 km. 41,0 Nocera Pagani itinere nord -->
+        <item>A6328</item> <!-- A30 km. 42,785 Castel S. Giorgio itinere sud -->
+    </string-array>
+    <string-array name="zones30Name">
+        <item>Allaccio A1</item>
+        <item>Nola</item>
+        <item>Allaccio A16</item>
+        <item>Sarno</item>
+        <item>Nocera - Pagan</item>
+        <item>Castel S.Giorgio</item>
+    </string-array>
+    <string-array name="zones30Autovelox">
+        <item>A</item>
+        <item>A</item>
+        <item>A</item>
+        <item>A</item>
+        <item>A</item>
+        <item>A</item>
+    </string-array>
+
 </resources>

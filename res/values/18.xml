@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="zones18Id">
-		<item>Hs18z1</item>
-		<item>Hs18z2</item>
-		<item>Hs18z3</item>
-		<item>Hs18z4</item>
-		<item>Hs18z5</item>
-		<item>Hs18z6</item>
-		<item>Hs18z7</item>
-	</string-array>
-	<string-array name="zones18Name">
-		<item>Tremestieri-Messina</item>
-		<item>Roccalumera</item>
-		<item>Taormina</item>
-		<item>Giardini Naxos</item>
-		<item>Fiumefreddo</item>
-		<item>Giarre</item>
-		<item>Acireale</item>
-	</string-array>
-	<string-array name="zones18Autovelox">
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-	</string-array>
+
+    <string-array name="zones18Id">
+        <item>Hs18z1</item>
+        <item>Hs18z2</item>
+        <item>Hs18z3</item>
+        <item>Hs18z4</item>
+        <item>Hs18z5</item>
+        <item>Hs18z6</item>
+        <item>Hs18z7</item>
+    </string-array>
+    <string-array name="zones18Name">
+        <item>Tremestieri-Messina</item>
+        <item>Roccalumera</item>
+        <item>Taormina</item>
+        <item>Giardini Naxos</item>
+        <item>Fiumefreddo</item>
+        <item>Giarre</item>
+        <item>Acireale</item>
+    </string-array>
+    <string-array name="zones18Autovelox">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

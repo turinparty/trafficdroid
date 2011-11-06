@@ -60,10 +60,14 @@ public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
 			badNewsImage.setImageResource(R.drawable.bn_sm);
 		else if (event.getTitle().contains(Const.bn_rsr))
 			badNewsImage.setImageResource(R.drawable.bn_rsr);
+		else if (event.getTitle().contains(Const.bn_sab))
+			badNewsImage.setImageResource(R.drawable.bn_sab);
 		else if (event.getTitle().contains(Const.bn_sdc))
 			badNewsImage.setImageResource(R.drawable.bn_sdc);
 		else if (event.getTitle().contains(Const.bn_spc))
 			badNewsImage.setImageResource(R.drawable.bn_spc);
+		else if (event.getTitle().contains(Const.bn_win))
+			badNewsImage.setImageResource(R.drawable.bn_win);
 		else
 			badNewsImage.setImageResource(android.R.drawable.ic_dialog_alert);
 		return convertView;

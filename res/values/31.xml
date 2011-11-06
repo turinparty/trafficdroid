@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- A31 Vicenza-Thiene -->
 <resources>
-	<string-array name="zones31Id">
-		<item>Hs31z1</item>
-		<item>Hs31z2</item>
-		<item>Hs31z3</item>
-		<item>Hs31z4</item>
-	</string-array>
-	<string-array name="zones31Name">
-		<item>Piovene Rocchette</item>
-		<item>Thiene</item>
-		<item>Dueville</item>
-		<item>Vicenza Nord</item>
-	</string-array>
-	<string-array name="zones31Autovelox">
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-	</string-array>
+
+    <string-array name="zones31Id">
+        <item>Hs31z1</item>
+        <item>Hs31z2</item>
+        <item>Hs31z3</item>
+        <item>Hs31z4</item>
+    </string-array>
+    <string-array name="zones31Name">
+        <item>Piovene Rocchette</item>
+        <item>Thiene</item>
+        <item>Dueville</item>
+        <item>Vicenza Nord</item>
+    </string-array>
+    <string-array name="zones31Autovelox">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

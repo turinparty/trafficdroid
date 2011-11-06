@@ -1,43 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--  A11 Firenze-Pisa nord -->
+<!-- A11 Firenze-Pisa nord -->
 <resources>
-	<string-array name="zones11Id">
-		<item>A10421</item>	<!-- A11 km. 65,0 Lucca itinere ovest -->
-		<item>A20042</item>	<!-- A11 km. 64,8 Lucca itinere ovest -->
-		<item>A22090</item>	<!-- A11 km. 62,4 Capannori itinere est -->
-		<item>A21982</item>	<!-- A11 km. 51,0 Altopascio itinere est -->
-		<item>A22014</item>	<!-- A11 km. 46,0 Chiesina U. itinere ovest -->
-		<item>A20069</item>	<!-- A11 km. 42 Montecatini itinere est -->
-		<item>A21965</item>	<!-- A11 km. 28 Pistoia itinere ovest -->
-		<item>A21959</item>	<!-- A11 km. 17,0 Prato Ovest itinere ovest -->
-		<item>A21997</item>	<!-- A11 km. 07,0 Prato Est itinere est -->
-		<item>A22027</item>	<!-- A11 km. 02,0 Osmannoro itinere ovest -->
-		<item>A11195</item>	<!-- A11 km. 00,0 Peretola itinere ovest -->
-	</string-array>
-	<string-array name="zones11Name">
-		<item>Allaccio A12</item>
-		<item>Lucca/Raccordo A11</item>
-		<item>Capannori</item>
-		<item>Altopascio</item>
-		<item>Chiesina Uzzanese</item>
-		<item>Montecatini Terme</item>
-		<item>Pistoia</item>
-		<item>Prato Ovest</item>
-		<item>Prato Est</item>
-		<item>Allaccio A1</item>
-		<item>Firenze S. Cristina</item>
-	</string-array>
-	<string-array name="zones11Autovelox">
-		<item>0</item>
-		<item>0</item>
-		<item>R</item>
-		<item>R</item>
-		<item>0</item>
-		<item>L</item>
-		<item>A</item>
-		<item>L</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-	</string-array>
+
+    <string-array name="zones11Id">
+        <item>A10421</item> <!-- A11 km. 65,0 Lucca itinere ovest -->
+        <item>A20042</item> <!-- A11 km. 64,8 Lucca itinere ovest -->
+        <item>A22090</item> <!-- A11 km. 62,4 Capannori itinere est -->
+        <item>A21982</item> <!-- A11 km. 51,0 Altopascio itinere est -->
+        <item>A22014</item> <!-- A11 km. 46,0 Chiesina U. itinere ovest -->
+        <item>A20069</item> <!-- A11 km. 42 Montecatini itinere est -->
+        <item>A21965</item> <!-- A11 km. 28 Pistoia itinere ovest -->
+        <item>A21959</item> <!-- A11 km. 17,0 Prato Ovest itinere ovest -->
+        <item>A21997</item> <!-- A11 km. 07,0 Prato Est itinere est -->
+        <item>A22027</item> <!-- A11 km. 02,0 Osmannoro itinere ovest -->
+        <item>A11195</item> <!-- A11 km. 00,0 Peretola itinere ovest -->
+    </string-array>
+    <string-array name="zones11Name">
+        <item>Allaccio A12</item>
+        <item>Lucca/Raccordo A11</item>
+        <item>Capannori</item>
+        <item>Altopascio</item>
+        <item>Chiesina Uzzanese</item>
+        <item>Montecatini Terme</item>
+        <item>Pistoia</item>
+        <item>Prato Ovest</item>
+        <item>Prato Est</item>
+        <item>Allaccio A1</item>
+        <item>Firenze S. Cristina</item>
+    </string-array>
+    <string-array name="zones11Autovelox">
+        <item>0</item>
+        <item>0</item>
+        <item>R</item>
+        <item>R</item>
+        <item>0</item>
+        <item>L</item>
+        <item>A</item>
+        <item>L</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

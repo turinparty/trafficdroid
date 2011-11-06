@@ -1,45 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="zones25Id">
-		<item>Hs25z1</item>
-		<item>Hs25z2</item>
-		<item>A5994</item>	<!-- A25 km. 087,1 Avezzano Dx -->
-		<item>Hs25z4</item>
-		<item>Hs25z5</item>
-		<item>Hs25z6</item>
-		<item>Hs25z7</item>
-		<item>Hs25z8</item>
-		<item>Hs25z9</item>
-		<item>Hs25z10</item>
-		<item>Hs25z11</item>
-		<item>Hs25z12</item>
-	</string-array>
-	<string-array name="zones25Name">
-		<item>Allaccio A24</item>
-		<item>Magliano de Marsi</item>
-		<item>Avezzano</item>
-		<item>Celano</item>
-		<item>Pescina</item>
-		<item>Cocullo</item>
-		<item>Pratola Peligna</item>
-		<item>Bussi</item>
-		<item>Casauria</item>
-		<item>Scafa - Alanno</item>
-		<item>Chieti</item>
-		<item>Pescara - Villanova</item>
-	</string-array>
-	<string-array name="zones25Autovelox">
-		<item>0</item>
-		<item>A</item>
-		<item>A</item>
-		<item>A</item>
-		<item>A</item>
-		<item>A</item>
-		<item>A</item>
-		<item>A</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-		<item>0</item>
-	</string-array>
+
+    <string-array name="zones25Id">
+        <item>Hs25z1</item>
+        <item>Hs25z2</item>
+        <item>A5994</item> <!-- A25 km. 087,1 Avezzano Dx -->
+        <item>Hs25z4</item>
+        <item>Hs25z5</item>
+        <item>Hs25z6</item>
+        <item>Hs25z7</item>
+        <item>Hs25z8</item>
+        <item>Hs25z9</item>
+        <item>Hs25z10</item>
+        <item>Hs25z11</item>
+        <item>Hs25z12</item>
+    </string-array>
+    <string-array name="zones25Name">
+        <item>Allaccio A24</item>
+        <item>Magliano de Marsi</item>
+        <item>Avezzano</item>
+        <item>Celano</item>
+        <item>Pescina</item>
+        <item>Cocullo</item>
+        <item>Pratola Peligna</item>
+        <item>Bussi</item>
+        <item>Casauria</item>
+        <item>Scafa - Alanno</item>
+        <item>Chieti</item>
+        <item>Pescara - Villanova</item>
+    </string-array>
+    <string-array name="zones25Autovelox">
+        <item>0</item>
+        <item>A</item>
+        <item>A</item>
+        <item>A</item>
+        <item>A</item>
+        <item>A</item>
+        <item>A</item>
+        <item>A</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
+
 </resources>

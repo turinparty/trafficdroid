@@ -1,45 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="notificationSpeedValue">
-		<item>1</item>
-		<item>2</item>
-		<item>3</item>
-		<item>4</item>
-		<item>5</item>
-	</string-array>
-	<string-array name="notificationSpeedLabel">
-		<item>10 Km/h</item>
-		<item>30 Km/h</item>
-		<item>50 Km/h</item>
-		<item>70 Km/h</item>
-		<item>90 Km/h</item>
-	</string-array>
-	<string-array name="chiaroveggenzaTimeValue">
-		<item>300000</item>
-		<item>600000</item>
-		<item>900000</item>
-		<item>1800000</item>
-		<item>3600000</item>
-		<item>7200000</item>
-		<item>14400000</item>
-	</string-array>
-	<string-array name="chiaroveggenzaTimeLabel">
-		<item>5 minuti</item>
-		<item>10 minuti</item>
-		<item>15 minuti</item>
-		<item>30 minuti</item>
-		<item>1 ora</item>
-		<item>2 ore</item>
-		<item>4 ore</item>
-	</string-array>
-	<string-array name="themeValue">
-		<item>0</item>
-		<item>1</item>
-		<item>2</item>
-	</string-array>
-	<string-array name="themeLabel">
-		<item>Piccolo</item>
-		<item>Medio</item>
-		<item>Grande</item>
-	</string-array>
+
+    <string-array name="notificationSpeedValue">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="notificationSpeedLabel">
+        <item>10 Km/h</item>
+        <item>30 Km/h</item>
+        <item>50 Km/h</item>
+        <item>70 Km/h</item>
+        <item>90 Km/h</item>
+    </string-array>
+    <string-array name="chiaroveggenzaTimeValue">
+        <item>300000</item>
+        <item>600000</item>
+        <item>900000</item>
+        <item>1800000</item>
+        <item>3600000</item>
+        <item>7200000</item>
+        <item>14400000</item>
+    </string-array>
+    <string-array name="chiaroveggenzaTimeLabel">
+        <item>5 minuti</item>
+        <item>10 minuti</item>
+        <item>15 minuti</item>
+        <item>30 minuti</item>
+        <item>1 ora</item>
+        <item>2 ore</item>
+        <item>4 ore</item>
+    </string-array>
+    <string-array name="themeValue">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="themeLabel">
+        <item>Piccolo</item>
+        <item>Medio</item>
+        <item>Grande</item>
+    </string-array>
+
 </resources>
