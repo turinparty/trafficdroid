@@ -1,6 +1,8 @@
-package it.localhost.trafficdroid.common;
+package it.localhost.trafficdroid.service;
 
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.common.Const;
+import it.localhost.trafficdroid.common.TdApp;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -22,7 +24,7 @@ public class TdBroadcastReceiver extends BroadcastReceiver {
 				alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + notificationTimeValue, notificationTimeValue, pendingIntent);
 			}
 		} else if (intent.getAction().equals(Const.doUpdate)) {
-			WakefulIntentService.sendWakefulWork(context, TdIntentService.class);
+			WakefulIntentService.sendWakefulWork(context, TdService.class);
 		}
 	}
 }

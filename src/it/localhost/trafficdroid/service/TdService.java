@@ -1,7 +1,9 @@
-package it.localhost.trafficdroid.common;
+package it.localhost.trafficdroid.service;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
+import it.localhost.trafficdroid.common.Const;
+import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
@@ -25,8 +27,8 @@ import android.net.NetworkInfo;
 
 import com.commonsware.cwac.wakeful.WakefulIntentService;
 
-public class TdIntentService extends WakefulIntentService {
-	public TdIntentService() {
+public class TdService extends WakefulIntentService {
+	public TdService() {
 		super(Const.tdData);
 	}
 

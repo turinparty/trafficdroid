@@ -25,8 +25,8 @@
 		<activity android:name=".activity.FuelActivity" />
 		<activity android:name="com.google.ads.AdActivity"
 			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
-		<service android:name=".common.TdIntentService" />
-		<receiver android:name=".common.TdBroadcastReceiver">
+		<service android:name=".service.TdService" />
+		<receiver android:name=".service.TdBroadcastReceiver">
 			<intent-filter>
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
 				<action android:name="android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE" />
