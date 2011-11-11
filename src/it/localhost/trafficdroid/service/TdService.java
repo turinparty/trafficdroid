@@ -13,6 +13,7 @@ import it.localhost.trafficdroid.exception.ConnectionException;
 import it.localhost.trafficdroid.exception.GenericException;
 import it.localhost.trafficdroid.parser.BadNewsParser;
 import it.localhost.trafficdroid.parser.TrafficParser;
+import it.localhost.trafficdroid.service.wakefull.WakefulIntentService;
 
 import java.util.Date;
 import java.util.List;
@@ -24,8 +25,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-
-import com.commonsware.cwac.wakeful.WakefulIntentService;
 
 public class TdService extends WakefulIntentService {
 	public TdService() {

@@ -8,6 +8,7 @@ import it.localhost.trafficdroid.common.TdAnalytics;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
+import it.localhost.trafficdroid.service.TdListener;
 import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
@@ -32,6 +33,7 @@ public class MainActivity extends AbstractActivity {
 	private ExpandableListView listView;
 	private IntentFilter intentFilter;
 	private BroadcastReceiver receiver;
+	private TdListener tdListener;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,7 @@ public class MainActivity extends AbstractActivity {
 		intentFilter.addAction(Const.beginUpdate);
 		intentFilter.addAction(Const.endUpdate);
 		listView = (ExpandableListView) findViewById(R.id.mainTable);
+		tdListener = new TdListener();
 		listView.setOnChildClickListener(new OnChildClickListener() {
 			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 				((AbstractChildItem) parent.getExpandableListAdapter().getChild(groupPosition, childPosition)).onClick();
@@ -69,7 +72,7 @@ public class MainActivity extends AbstractActivity {
 		if (TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
 			new AlertDialog.Builder(this).setTitle(R.string.warning).setPositiveButton(R.string.ok, null).setMessage(R.string.badConf).show();
 		else if (TdApp.getPrefBoolean(R.string.berserkKey, R.string.berserkDefault))
-			sendBroadcast(Const.doUpdateIntent);
+			tdListener.sendWakefulWork(TdApp.getContext());
 		refresh();
 	}
 
@@ -92,7 +95,7 @@ public class MainActivity extends AbstractActivity {
 			startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
 			return true;
 		case R.id.menuRefresh:
-			sendBroadcast(Const.doUpdateIntent);
+			tdListener.sendWakefulWork(TdApp.getContext());
 			return true;
 		case R.id.menuFuel:
 			Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
@@ -175,7 +178,7 @@ public class MainActivity extends AbstractActivity {
 					else
 						listView.collapseGroup(i);
 			} else
-				sendBroadcast(Const.doUpdateIntent);
+				tdListener.sendWakefulWork(TdApp.getContext());
 		}
 	}
 }
