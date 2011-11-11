@@ -91,7 +91,7 @@ public class PreferencesActivity extends PreferenceActivity {
 	@Override
 	public void onStop() {
 		super.onStop();
-		TdAnalytics.stopSession();
 		WakefulIntentService.scheduleAlarms(new TdListener(), this);
+		TdAnalytics.stopSession();
 	}
 }
