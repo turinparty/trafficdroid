@@ -23,6 +23,7 @@
     <item name="menuSettings" type="id"/>
     <item name="menuRefresh" type="id"/>
     <item name="menuFuel" type="id"/>
+    <item name="menuDonate" type="id"/>
     <item name="removePref" type="id"/>
     <item name="trendLeft" type="id"/>
     <item name="trendRight" type="id"/>

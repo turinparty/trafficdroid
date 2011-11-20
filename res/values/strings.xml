@@ -12,6 +12,7 @@
     <string name="settings">Impostazioni</string>
     <string name="refresh">Aggiorna</string>
     <string name="fuel">Carburanti</string>
+    <string name="donate">Fai una donazione!</string>
     <string name="removePref">Strada preferita</string>
     <string name="badConf">TrafficDroid ha bisogno di un provider per il traffico, inserisci questa informazione in impostazioni. Il sito contiene maggiori informazioni.</string>
     <string name="selectStreet">Seleziona l\'intera strada</string>

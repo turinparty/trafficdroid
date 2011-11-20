@@ -15,6 +15,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.format.DateFormat;
@@ -99,9 +100,11 @@ public class MainActivity extends AbstractActivity {
 			return true;
 		case R.id.menuFuel:
 			Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-			String provider = TdApp.getPrefString(R.string.providerFuelKey, R.string.providerFuelDefault);
-			intent.putExtra(Const.url, Const.http + provider + Const.fuel);
+			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerFuelKey, R.string.providerFuelDefault) + Const.fuel);
 			startActivity(intent);
+			return true;
+		case R.id.menuDonate:
+			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F2QEX3LXPH776")));
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
