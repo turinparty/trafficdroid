@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     android:installLocation="preferExternal"
     package="it.localhost.trafficdroid"
-    android:versionCode="82"
-    android:versionName="1.9.0 money" >
+    android:versionCode="83"
+    android:versionName="1.9.1 money" >
 
     <uses-sdk
         android:minSdkVersion="8"

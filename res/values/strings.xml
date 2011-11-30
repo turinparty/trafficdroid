@@ -43,6 +43,10 @@
     <string name="chiaroveggenzaEnablerKey">notificationEnablerKey</string>
     <string name="chiaroveggenzaEnablerSummary">Servizio di aggiornamento in background</string>
     <string name="chiaroveggenzaEnablerDefault">true</string>
+    <string name="badnewsEnablerTitle">Bad-News</string>
+    <string name="badnewsEnablerKey">badnewsEnablerKey</string>
+    <string name="badnewsEnablerSummary">Visualizzare le Bad News</string>
+    <string name="badnewsEnablerDefault">true</string>
     <string name="chiaroveggenzaTimeTitle">Intervallo di aggiornamento</string>
     <string name="chiaroveggenzaTimeKey">notificationTimeKey</string>
     <string name="chiaroveggenzaTimeSummary">Ogni quanto tempo aggiornare i dati</string>

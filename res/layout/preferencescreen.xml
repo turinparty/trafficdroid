@@ -43,6 +43,14 @@
             android:title="@string/chiaroveggenzaEnablerTitle" />
 
         <ListPreference
+            android:defaultValue="@string/chiaroveggenzaTimeDefault"
+            android:entries="@array/chiaroveggenzaTimeLabel"
+            android:entryValues="@array/chiaroveggenzaTimeValue"
+            android:key="@string/chiaroveggenzaTimeKey"
+            android:summary="@string/chiaroveggenzaTimeSummary"
+            android:title="@string/chiaroveggenzaTimeTitle" />
+
+        <ListPreference
             android:defaultValue="@string/notificationSpeedDefault"
             android:entries="@array/notificationSpeedLabel"
             android:entryValues="@array/notificationSpeedValue"
@@ -50,13 +58,11 @@
             android:summary="@string/notificationSpeedSummary"
             android:title="@string/notificationSpeedTitle" />
 
-        <ListPreference
-            android:defaultValue="@string/chiaroveggenzaTimeDefault"
-            android:entries="@array/chiaroveggenzaTimeLabel"
-            android:entryValues="@array/chiaroveggenzaTimeValue"
-            android:key="@string/chiaroveggenzaTimeKey"
-            android:summary="@string/chiaroveggenzaTimeSummary"
-            android:title="@string/chiaroveggenzaTimeTitle" />
+       <CheckBoxPreference
+            android:defaultValue="@string/badnewsEnablerDefault"
+            android:key="@string/badnewsEnablerKey"
+            android:summary="@string/badnewsEnablerSummary"
+            android:title="@string/badnewsEnablerTitle" />
     </PreferenceCategory>
 
 </PreferenceScreen>

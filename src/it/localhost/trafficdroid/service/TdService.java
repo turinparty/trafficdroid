@@ -33,14 +33,15 @@ public class TdService extends WakefulIntentService {
 
 	@Override
 	public void doWakefulWork(Intent arg0) {
-		sendBroadcast(Const.beginUpdateIntent);
-		NetworkInfo activeNetworkInfo = ((ConnectivityManager) TdApp.getContext().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
 		try {
+			sendBroadcast(Const.beginUpdateIntent);
+			NetworkInfo activeNetworkInfo = ((ConnectivityManager) TdApp.getContext().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
 			if (activeNetworkInfo != null && !activeNetworkInfo.isConnected())
 				throw new ConnectionException(Const.disconnectedMessage);
 			MainDTO currDTO = MainDAO.create();
 			TrafficParser.parse(currDTO, TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault));
-			BadNewsParser.parse(currDTO, TdApp.getPrefString(R.string.providerBadNewsKey, R.string.providerBadNewsDefault));
+			if (TdApp.getPrefBoolean(R.string.badnewsEnablerKey, R.string.badnewsEnablerDefault))
+				BadNewsParser.parse(currDTO, TdApp.getPrefString(R.string.providerBadNewsKey, R.string.providerBadNewsDefault));
 			currDTO.setTrafficTime(new Date());
 			List<StreetDTO> currStreets = currDTO.getStreets();
 			try {
