@@ -1,5 +1,7 @@
 package it.localhost.trafficdroid.activity;
 
+import com.commonsware.cwac.wakeful.WakefulIntentService;
+
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.MainAdapter;
 import it.localhost.trafficdroid.adapter.item.AbstractChildItem;
@@ -69,6 +71,7 @@ public class MainActivity extends AbstractActivity {
 	public void onResume() {
 		super.onResume();
 		registerReceiver(receiver, intentFilter);
+		WakefulIntentService.scheduleAlarms(new TdListener(), this, false);
 		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
 		if (TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
 			new AlertDialog.Builder(this).setTitle(R.string.warning).setPositiveButton(R.string.ok, null).setMessage(R.string.badConf).show();

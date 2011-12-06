@@ -45,11 +45,15 @@
 
         <service android:name=".service.TdService" />
 
-        <receiver android:name=".service.wakefull.AlarmReceiver" >
+        <receiver android:name="com.commonsware.cwac.wakeful.AlarmReceiver" >
             <intent-filter >
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE" />
             </intent-filter>
+
+            <meta-data
+                android:name="com.commonsware.cwac.wakeful"
+                android:resource="@xml/wakeful" />
         </receiver>
     </application>
 

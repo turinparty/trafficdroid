@@ -1,11 +1,8 @@
 package it.localhost.trafficdroid.activity;
 
-
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdAnalytics;
-import it.localhost.trafficdroid.service.TdListener;
-import it.localhost.trafficdroid.service.wakefull.WakefulIntentService;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.PreferenceActivity;
@@ -91,7 +88,6 @@ public class PreferencesActivity extends PreferenceActivity {
 	@Override
 	public void onStop() {
 		super.onStop();
-		WakefulIntentService.scheduleAlarms(new TdListener(), this);
 		TdAnalytics.stopSession();
 	}
 }
