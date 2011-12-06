@@ -77,7 +77,7 @@ public class ZoneItem extends AbstractChildItem {
 			trendRightText.setVisibility(View.VISIBLE);
 		} else
 			trendRightText.setVisibility(View.INVISIBLE);
-		if (zoneDTO.getId().charAt(0) == Const.webcamTrue)
+		if (zoneDTO.getId().charAt(0) == Const.webcamTrueFirst || zoneDTO.getId().charAt(0) == Const.webcamTrueSecond)
 			cam.setImageResource(android.R.drawable.ic_menu_camera);
 		else if (zoneDTO.getId().charAt(0) == Const.webcamNone)
 			cam.setImageResource(android.R.drawable.ic_menu_close_clear_cancel);
@@ -107,11 +107,16 @@ public class ZoneItem extends AbstractChildItem {
 		if (code.charAt(0) == Const.webcamNone) {
 			TdAnalytics.trackEvent(Const.eventCatWebcam, Const.eventActionNone, code, 0);
 			new AlertDialog.Builder(context).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamNone).show();
-		} else if (code.charAt(0) == Const.webcamTrue) {
+		} else if (code.charAt(0) == Const.webcamTrueFirst) {
 			TdAnalytics.trackEvent(Const.eventCatWebcam, Const.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
 			int id = Integer.parseInt(code.substring(1)) + 6280 * (Const.date);
-			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault) + Const.popupTelecamera + id);
+			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault) + Const.webcamFirst + id);
+			context.startActivity(intent);
+		} else if (code.charAt(0) == Const.webcamTrueSecond) {
+			TdAnalytics.trackEvent(Const.eventCatWebcam, Const.eventActionOpen, code, 0);
+			Intent intent = new Intent(context, WebViewActivity.class);
+			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKeySecond, R.string.providerCamDefaultSecond) + Const.webcamSecond + code.substring(1) + Const.jpg);
 			context.startActivity(intent);
 		} else {
 			TdAnalytics.trackEvent(Const.eventCatWebcam, Const.eventActionRequest, code, 0);

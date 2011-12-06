@@ -6,6 +6,7 @@ import it.localhost.trafficdroid.exception.ConnectionException;
 import it.localhost.trafficdroid.exception.GenericException;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -20,7 +21,7 @@ public class TrafficDAO {
 			int numTries = 3;
 			while (true) {
 				try {
-					doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(Const.http + url + Const.dyn + mapId + Const.html);
+					doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(Const.http + url + Const.dyn + mapId + Const.html + Const.trafficDate.format(new Date()));
 					break;
 				} catch (SAXException e) {
 					if (--numTries == 0)

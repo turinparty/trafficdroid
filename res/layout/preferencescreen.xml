@@ -22,6 +22,12 @@
             android:title="@string/providerCamTitle" />
 
         <EditTextPreference
+            android:defaultValue="@string/providerCamDefaultSecond"
+            android:key="@string/providerCamKeySecond"
+            android:summary="@string/providerSummary"
+            android:title="@string/providerCamTitleSecond" />
+
+        <EditTextPreference
             android:defaultValue="@string/providerFuelDefault"
             android:key="@string/providerFuelKey"
             android:summary="@string/providerSummary"
@@ -29,6 +35,12 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/updateCategory" >
+
+        <CheckBoxPreference
+            android:defaultValue="@string/badnewsEnablerDefault"
+            android:key="@string/badnewsEnablerKey"
+            android:summary="@string/badnewsEnablerSummary"
+            android:title="@string/badnewsEnablerTitle" />
 
         <CheckBoxPreference
             android:defaultValue="@string/berserkDefault"
@@ -57,12 +69,6 @@
             android:key="@string/notificationSpeedKey"
             android:summary="@string/notificationSpeedSummary"
             android:title="@string/notificationSpeedTitle" />
-
-       <CheckBoxPreference
-            android:defaultValue="@string/badnewsEnablerDefault"
-            android:key="@string/badnewsEnablerKey"
-            android:summary="@string/badnewsEnablerSummary"
-            android:title="@string/badnewsEnablerTitle" />
     </PreferenceCategory>
 
 </PreferenceScreen>
