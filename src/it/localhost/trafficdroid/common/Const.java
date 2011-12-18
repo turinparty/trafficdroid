@@ -20,8 +20,8 @@ public class Const {
 	public static final String separator = "; ";
 	public static final String domain = "; domain=";
 	public static final String http = "http://";
-	public static final String dyn = "/dyn/";
-	public static final String html = ".html?ts=";
+	public static final String slash = "/";
+	public static final String xml = ".xml";
 	public static final String webcamFirst = "/autostrade-mobile/popupTelecamera.do?ua=Android%201.1&tlc=";
 	public static final String webcamSecond = "/webcam/temp-imgs/camsbig/";
 	public static final String events = "/portale/rss?rsstype=traffic";
