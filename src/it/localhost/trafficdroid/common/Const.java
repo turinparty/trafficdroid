@@ -70,6 +70,7 @@ public class Const {
 	public static final String removePrefToastUndo = " è stato aggiunto ai preferiti.";
 	public static final String disconnectedMessage = "Connessione di rete inesistente";
 	public static final String bn_acc = "incidente";
+	public static final String bn_anh = "animali";
 	public static final String bn_bkd = "veicolo fermo o avaria";
 	public static final String bn_fod = "nebbia";
 	public static final String bn_fop = "nebbia a banchi";

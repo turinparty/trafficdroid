@@ -38,6 +38,8 @@ public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
 		ImageView badNewsImage = (ImageView) convertView.getTag(R.id.badNewsImage);
 		if (event.getTitle().contains(Const.bn_acc))
 			badNewsImage.setImageResource(R.drawable.bn_acc);
+		else if (event.getTitle().contains(Const.bn_anh))
+			badNewsImage.setImageResource(R.drawable.bn_anh);
 		else if (event.getTitle().contains(Const.bn_los1) || event.getTitle().contains(Const.bn_los2))
 			badNewsImage.setImageResource(R.drawable.bn_los);
 		else if (event.getTitle().contains(Const.bn_pss))
