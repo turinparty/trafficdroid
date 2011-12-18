@@ -9,6 +9,9 @@ import it.localhost.trafficdroid.exception.BadConfException;
 import it.localhost.trafficdroid.exception.ConnectionException;
 import it.localhost.trafficdroid.exception.GenericException;
 
+import java.io.IOException;
+
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
@@ -18,10 +21,8 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 
-import android.util.Log;
-
 public class TrafficParser extends DefaultHandler {
-	private static MainDTO dto;
+
 	private static final String STARTDIR_ELEMENT = "startdir";
 	private static final String ENDDIR_ELEMENT = "enddir";
 	private static final String SECTOR_ELEMENT = "sector";
@@ -30,38 +31,48 @@ public class TrafficParser extends DefaultHandler {
 	private static final String DIRA_ELEMENT = "dirA";
 	private static final String DIRB_ELEMENT = "dirB";
 
+	private MainDTO dto;
+	private String url;
+	private StreetDTO street;
+	private int zoneCounter;
+	private StringBuilder buf;
+	private boolean inSector = false;
+	private boolean zonaGiusta = false;
+
 	private static class FineDatiException extends SAXException {
 	}
 
-	public static void parse(MainDTO dto, String url) throws GenericException, BadConfException, ConnectionException {
-		TrafficParser.dto = dto;
+	public TrafficParser(MainDTO dto, String url) {
+		this.dto = dto;
+		this.url = url;
+	}
+
+	public void parse() throws GenericException, BadConfException, ConnectionException {
 		try {
 			SAXParser saxParser = SAXParserFactory.newInstance().newSAXParser();
 			XMLReader xmlReader = saxParser.getXMLReader();
-			TrafficParser parser = new TrafficParser();
-			xmlReader.setContentHandler(parser);
+			xmlReader.setContentHandler(this);
 			for (StreetDTO street : dto.getStreets()) {
-				TrafficParser.street = street;
+				this.street = street;
 				zoneCounter = 0;
 				InputSource document = TrafficDAO.getData(street.getId(), url);
 				try {
 					xmlReader.parse(document);
 				} catch (FineDatiException e) {
-					Log.i("TD", "fine dati");
 				}
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (ParserConfigurationException e) {
+			throw new GenericException(e);
+		} catch (SAXException e) {
+			throw new ConnectionException(e);
+		} catch (IOException e) {
+			throw new ConnectionException(e);
 		}
 	}
 
-	private static StreetDTO street;
-	private static int zoneCounter;
-	private StringBuilder buf = null;
-	private boolean inSector = false;
-
 	@Override
-	public void startElement(String uri, String localName, String qName, Attributes attributes) throws FineDatiException {
+	public void startElement(String uri, String localName, String qName, Attributes attributes)
+			throws FineDatiException {
 		buf = new StringBuilder();
 		if (zoneCounter >= street.getZones().size()) {
 			throw new FineDatiException();
@@ -75,8 +86,6 @@ public class TrafficParser extends DefaultHandler {
 	public void characters(char[] ch, int start, int length) {
 		buf.append(ch, start, length);
 	}
-
-	private static boolean zonaGiusta = false;
 
 	@Override
 	public void endElement(String uri, String localName, String qName) {
@@ -106,9 +115,11 @@ public class TrafficParser extends DefaultHandler {
 				if (congestionLeft && congestionRight)
 					dto.addCongestedZone(zone.getName());
 				else if (congestionLeft)
-					dto.addCongestedZone(zone.getName() + Const.openRound + street.getDirectionLeft() + Const.closeRound);
+					dto.addCongestedZone(zone.getName() + Const.openRound + street.getDirectionLeft()
+							+ Const.closeRound);
 				else if (congestionRight)
-					dto.addCongestedZone(zone.getName() + Const.openRound + street.getDirectionRight() + Const.closeRound);
+					dto.addCongestedZone(zone.getName() + Const.openRound + street.getDirectionRight()
+							+ Const.closeRound);
 				if (zonaGiusta) {
 					zoneCounter++;
 				}
