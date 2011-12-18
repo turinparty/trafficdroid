@@ -27,7 +27,7 @@ public class TrafficParser extends DefaultHandler {
 	private int zoneCounter;
 	private StringBuilder buf;
 	private boolean inSector = false;
-	private boolean zonaGiusta = false;
+	private boolean rightZone = false;
 
 	public TrafficParser(MainDTO dto, String url) {
 		this.dto = dto;
@@ -76,10 +76,10 @@ public class TrafficParser extends DefaultHandler {
 			if (inSector) {
 				ZoneDTO zone = street.getZones().get(zoneCounter);
 				if (localName.equals(Const.LABEL_ELEMENT)) {
-					zonaGiusta = buf.toString().equalsIgnoreCase(zone.getName());
-				} else if (zonaGiusta && localName.equals(Const.KM_ELEMENT)) {
+					rightZone = buf.toString().equalsIgnoreCase(zone.getName());
+				} else if (rightZone && localName.equals(Const.KM_ELEMENT)) {
 					zone.setKm(buf.toString());
-				} else if (zonaGiusta && localName.equals(Const.DIRA_ELEMENT)) {
+				} else if (rightZone && localName.equals(Const.DIRA_ELEMENT)) {
 					try {
 						zone.setSpeedLeft(Short.parseShort(buf.toString()));
 					} catch (Exception e) {
@@ -99,7 +99,7 @@ public class TrafficParser extends DefaultHandler {
 						zone.setCatLeft((byte) 5);
 					else
 						zone.setCatLeft((byte) 6);
-				} else if (zonaGiusta && localName.equals(Const.DIRB_ELEMENT)) {
+				} else if (rightZone && localName.equals(Const.DIRB_ELEMENT)) {
 					try {
 						zone.setSpeedRight(Short.parseShort(buf.toString()));
 					} catch (Exception e) {
@@ -129,7 +129,7 @@ public class TrafficParser extends DefaultHandler {
 						dto.addCongestedZone(zone.getName() + Const.openRound + street.getDirectionLeft() + Const.closeRound);
 					else if (congestionRight)
 						dto.addCongestedZone(zone.getName() + Const.openRound + street.getDirectionRight() + Const.closeRound);
-					if (zonaGiusta)
+					if (rightZone)
 						zoneCounter++;
 				}
 			} else {

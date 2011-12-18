@@ -13,11 +13,11 @@ import org.xml.sax.InputSource;
 
 public class TrafficDAO {
 	public static InputSource getData(int mapId, String baseUrl) throws GenericException, BadConfException, ConnectionException {
-		InputSource doc = null;
+		InputSource inputSource = null;
 		int numTries = 3;
 		while (true) {
 			try {
-				doc = new InputSource(new URL(Const.http + baseUrl + Const.slash + mapId + Const.xml).openStream());
+				inputSource = new InputSource(new URL(Const.http + baseUrl + Const.slash + mapId + Const.xml).openStream());
 			} catch (MalformedURLException e) {
 				throw new BadConfException(e);
 			} catch (IOException e) {
@@ -26,6 +26,6 @@ public class TrafficDAO {
 			}
 			break;
 		}
-		return doc;
+		return inputSource;
 	}
 }
