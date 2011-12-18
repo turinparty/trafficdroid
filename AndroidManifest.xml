@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     android:installLocation="preferExternal"
     package="it.localhost.trafficdroid"
-    android:versionCode="85"
-    android:versionName="1.10.1 Two is megl che One" >
+    android:versionCode="86"
+    android:versionName="1.11.0 Giovanni 11:1-45" >
 
     <uses-sdk
         android:minSdkVersion="8"

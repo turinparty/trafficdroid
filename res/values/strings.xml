@@ -23,8 +23,8 @@
     <string name="providerCategory">Provider</string>
     <string name="providerSummary">Verifica di averne i permessi</string>
     <string name="providerTrafficTitle">Servizio Traffico</string>
-    <string name="providerTrafficKey">providerTrafficKey</string>
-    <string name="providerTrafficDefault">traffico.OTTOtelematics.com</string>
+    <string name="providerTrafficKey">providerTrafficKeyTwo</string>
+    <string name="providerTrafficDefault">iphone.OTTOtelematics.com</string>
     <string name="providerCamTitle">Servizio WebCam</string>
     <string name="providerCamTitleSecond">Servizio WebCam Secondario</string>
     <string name="providerCamKey">providerCamKeyTre</string>
@@ -56,7 +56,7 @@
     <string name="chiaroveggenzaTimeDefault">1800000</string>
     <string name="notificationTitle">Traffico nelle seguenti tratte</string>
     <string name="notificationTicker">Traffico rilevato</string>
-    <string name="notificationSpeedTitle">Notifica fino a...</string>
+    <string name="notificationSpeedTitle">Notifica fino a …</string>
     <string name="notificationSpeedKey">notificationSpeedKey</string>
     <string name="notificationSpeedSummary">Velocità massima per creare la notifica</string>
     <string name="notificationSpeedDefault">1</string>
