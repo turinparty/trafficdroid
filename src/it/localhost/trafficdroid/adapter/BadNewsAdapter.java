@@ -60,6 +60,8 @@ public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
 			badNewsImage.setImageResource(R.drawable.bn_res);
 		else if (event.getTitle().contains(Const.bn_sn))
 			badNewsImage.setImageResource(R.drawable.bn_sn);
+		else if (event.getTitle().contains(Const.bn_sne))
+			badNewsImage.setImageResource(R.drawable.bn_sne);
 		else if (event.getTitle().contains(Const.bn_sm))
 			badNewsImage.setImageResource(R.drawable.bn_sm);
 		else if (event.getTitle().contains(Const.bn_rsr))

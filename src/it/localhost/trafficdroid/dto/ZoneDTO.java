@@ -8,8 +8,8 @@ public class ZoneDTO implements Serializable {
 	private String name;
 	private String km;
 	private String autovelox;
-	private byte speedLeft;
-	private byte speedRight;
+	private short speedLeft;
+	private short speedRight;
 	private byte catLeft;
 	private byte catRight;
 	private int trendLeft;
@@ -29,19 +29,19 @@ public class ZoneDTO implements Serializable {
 		return name;
 	}
 
-	public byte getSpeedLeft() {
+	public short getSpeedLeft() {
 		return speedLeft;
 	}
 
-	public void setSpeedLeft(byte speedLeft) {
+	public void setSpeedLeft(short speedLeft) {
 		this.speedLeft = speedLeft;
 	}
 
-	public byte getSpeedRight() {
+	public short getSpeedRight() {
 		return speedRight;
 	}
 
-	public void setSpeedRight(byte speedRight) {
+	public void setSpeedRight(short speedRight) {
 		this.speedRight = speedRight;
 	}
 

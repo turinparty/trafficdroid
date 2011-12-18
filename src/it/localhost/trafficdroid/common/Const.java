@@ -10,6 +10,13 @@ import android.util.SparseIntArray;
 public class Const {
 	public static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
 	public static final byte[] itemTypes = new byte[] { 0, 1 };
+	public static final String STARTDIR_ELEMENT = "startdir";
+	public static final String ENDDIR_ELEMENT = "enddir";
+	public static final String SECTOR_ELEMENT = "sector";
+	public static final String LABEL_ELEMENT = "label";
+	public static final String KM_ELEMENT = "km";
+	public static final String DIRA_ELEMENT = "dirA";
+	public static final String DIRB_ELEMENT = "dirB";
 	public static final int notificationId = 1;
 	public static final char charAutostrade = 'A';
 	public static final char webcamTrueFirst = 'A';
@@ -86,6 +93,7 @@ public class Const {
 	public static final String bn_sdc = "scambio di carreggiata";
 	public static final String bn_sm = "catene";
 	public static final String bn_sn = "mezzi spargisale";
+	public static final String bn_sne = "neve";
 	public static final String bn_spc = "controllo velocità";
 	public static final String bn_win = "vento forte";
 	public static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);

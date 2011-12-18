@@ -60,11 +60,11 @@ public class ZoneItem extends AbstractChildItem {
 		leftZoneSpeedText.setTypeface(zoneDTO.getCatLeft() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
 		rightZoneSpeedText.setTypeface(zoneDTO.getCatRight() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
 		if (zoneDTO.getSpeedLeft() != 0)
-			leftZoneSpeedText.setText(Byte.toString(zoneDTO.getSpeedLeft()));
+			leftZoneSpeedText.setText(Short.toString(zoneDTO.getSpeedLeft()));
 		else
 			leftZoneSpeedText.setText(Const.noDataSpeed);
 		if (zoneDTO.getSpeedRight() != 0)
-			rightZoneSpeedText.setText(Byte.toString(zoneDTO.getSpeedRight()));
+			rightZoneSpeedText.setText(Short.toString(zoneDTO.getSpeedRight()));
 		else
 			rightZoneSpeedText.setText(Const.noDataSpeed);
 		if (zoneDTO.getTrendLeft() != 0) {
