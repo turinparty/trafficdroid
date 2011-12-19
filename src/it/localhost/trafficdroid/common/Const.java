@@ -8,8 +8,6 @@ import android.content.Intent;
 import android.util.SparseIntArray;
 
 public class Const {
-	public static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
-	public static final byte[] itemTypes = new byte[] { 0, 1 };
 	public static final String STARTDIR_ELEMENT = "startdir";
 	public static final String ENDDIR_ELEMENT = "enddir";
 	public static final String SECTOR_ELEMENT = "sector";
@@ -17,15 +15,9 @@ public class Const {
 	public static final String KM_ELEMENT = "km";
 	public static final String DIRA_ELEMENT = "dirA";
 	public static final String DIRB_ELEMENT = "dirB";
-	public static final int notificationId = 1;
-	public static final char charAutostrade = 'A';
-	public static final char webcamTrueFirst = 'A';
-	public static final char webcamTrueSecond = 'C';
-	public static final char webcamNone = 'H';
 	public static final String openRound = " (";
 	public static final String closeRound = ")";
 	public static final String separator = "; ";
-	public static final String domain = "; domain=";
 	public static final String http = "http://";
 	public static final String slash = "/";
 	public static final String xml = ".xml";
@@ -33,21 +25,10 @@ public class Const {
 	public static final String webcamSecond = "/webcam/temp-imgs/camsbig/";
 	public static final String events = "/portale/rss?rsstype=traffic";
 	public static final String fuel = "/public/tabellanazionale/tabellaNazionale.php";
-	public static final String codeDiv = "div";
-	public static final String codeId = "id";
-	public static final String codeTable = "table";
-	public static final String codeSection = "section";
-	public static final String codeRoadbox = "roadbox";
-	public static final String codeClass = "class";
 	public static final String tdData = "trafficData";
 	public static final String jpg = ".jpg";
 	public static final String beginUpdate = "it.localhost.trafficdroid.BEGIN_UPDATE";
 	public static final String endUpdate = "it.localhost.trafficdroid.END_UPDATE";
-	public static final Intent beginUpdateIntent = new Intent(Const.beginUpdate);
-	public static final Intent endUpdateIntent = new Intent(Const.endUpdate);
-	public static final SimpleDateFormat sdfBnParse = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-	public static final SimpleDateFormat sdfBnFormat = new SimpleDateFormat("H:m");
-	public static final SimpleDateFormat trafficDate = new SimpleDateFormat("ddMMyyHHmm");
 	public static final String anlyticsId = "UA-12243941-5";
 	public static final String item = "item";
 	public static final String eventCatApp = "App";
@@ -67,6 +48,7 @@ public class Const {
 	public static final String expanded = "Expanded";
 	public static final String unknowError = "Unknow Error";
 	public static final String badConf = "Configurazione errata: ";
+	public static final String badTrafficProvider = "Provider Traffico Errato";
 	public static final String noDataSpeed = "-";
 	public static final String autoveloxLeft = "L";
 	public static final String autoveloxRight = "R";
@@ -97,7 +79,19 @@ public class Const {
 	public static final String bn_sne = "neve";
 	public static final String bn_spc = "controllo velocità";
 	public static final String bn_win = "vento forte";
+	public static final String paypal = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F2QEX3LXPH776";
+	public static final SimpleDateFormat sdfBnParse = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+	public static final SimpleDateFormat sdfBnFormat = new SimpleDateFormat("H:m");
+	public static final Intent beginUpdateIntent = new Intent(Const.beginUpdate);
+	public static final Intent endUpdateIntent = new Intent(Const.endUpdate);
+	public static final char charAutostrade = 'A';
+	public static final char webcamTrueFirst = 'A';
+	public static final char webcamTrueSecond = 'C';
+	public static final char webcamNone = 'H';
+	public static final int notificationId = 1;
 	public static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);
+	public static final byte[] itemTypes = new byte[] { 0, 1 };
+	public static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
 	public static final SparseIntArray zonesResId = new SparseIntArray(64) {
 		{
 			put(1, R.array.zones1Id);

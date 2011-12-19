@@ -40,8 +40,7 @@ public class TdService extends WakefulIntentService {
 			if (activeNetworkInfo != null && !activeNetworkInfo.isConnected())
 				throw new ConnectionException(Const.disconnectedMessage);
 			MainDTO currDTO = MainDAO.create();
-			TrafficParser parser = new TrafficParser(currDTO, TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault));
-			parser.parse();
+			new TrafficParser(currDTO, TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault)).parse();
 			if (TdApp.getPrefBoolean(R.string.badnewsEnablerKey, R.string.badnewsEnablerDefault))
 				BadNewsParser.parse(currDTO, TdApp.getPrefString(R.string.providerBadNewsKey, R.string.providerBadNewsDefault));
 			currDTO.setTrafficTime(new Date());

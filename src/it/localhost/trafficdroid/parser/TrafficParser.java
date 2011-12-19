@@ -42,6 +42,8 @@ public class TrafficParser extends DefaultHandler {
 				this.street = street;
 				zoneCounter = 0;
 				InputSource inputSource = TrafficDAO.getData(street.getId(), url);
+				if (inputSource == null)
+					throw new BadConfException(Const.badTrafficProvider);
 				try {
 					xmlReader.parse(inputSource);
 				} catch (SAXException e) {

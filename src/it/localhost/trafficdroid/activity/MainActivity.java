@@ -107,7 +107,7 @@ public class MainActivity extends AbstractActivity {
 			startActivity(intent);
 			return true;
 		case R.id.menuDonate:
-			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F2QEX3LXPH776")));
+			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Const.paypal)));
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);

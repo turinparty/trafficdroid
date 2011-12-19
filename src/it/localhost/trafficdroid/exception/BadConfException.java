@@ -6,4 +6,8 @@ public class BadConfException extends Exception {
 	public BadConfException(Throwable throwable) {
 		super(throwable);
 	}
+
+	public BadConfException(String detailMessage) {
+		super(detailMessage);
+	}
 }
