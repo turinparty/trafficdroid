@@ -25,6 +25,7 @@ public class MainDAO {
 		Resources resources = TdApp.getContext().getResources();
 		mainDto.setCongestionThreshold(Byte.parseByte(TdApp.getPrefString(R.string.notificationSpeedKey, R.string.notificationSpeedDefault)));
 		int[] streetsId = resources.getIntArray(R.array.streetsId);
+		int[] streetsGraph = resources.getIntArray(R.array.streetsGraph);
 		String[] streetsName = resources.getStringArray(R.array.streetsName);
 		for (int i = 0; i < streetsId.length; i++) {
 			StreetDTO street = new StreetDTO(streetsId[i]);
@@ -37,6 +38,7 @@ public class MainDAO {
 					street.addZone(new ZoneDTO(zonesId[j], zonesName[j], zonesAutovelox[j]));
 			if (street.getZones().size() > 0) {
 				street.setName(streetsName[i]);
+				street.setGraph(streetsGraph[i]);
 				mainDto.addStreet(street);
 			}
 		}

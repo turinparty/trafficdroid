@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- A56 Tangenziale di Napoli -->
 <resources>
-
     <string-array name="zones56Id">
-        <item>Hs56z1</item>
-        <item>Hs56z2</item>
-        <item>Hs56z3</item>
-        <item>Hs56z4</item>
-        <item>Hs56z5</item>
-        <item>Hs56z6</item>
-        <item>Hs56z7</item>
-        <item>Hs56z8</item>
-        <item>Hs56z9</item>
-        <item>Hs56z10</item>
+        <item>A6433</item>
+        <item>A6384</item>
+        <item>A6427</item>
+        <item>A15345</item>
+        <item>A12690</item>
+        <item>A15296</item>
+        <item>A6503</item>
+        <item>A15220</item>
+        <item>A15339</item>
+        <item>A12701</item>
     </string-array>
     <string-array name="zones56Name">
         <item>14: Lago d\'Averno</item>

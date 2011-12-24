@@ -9,7 +9,7 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 
-public class PreferencesActivity extends PreferenceActivity {
+public class PreferencesActivity extends PreferenceActivity { // NO_UCD
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

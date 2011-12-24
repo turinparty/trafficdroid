@@ -7,7 +7,7 @@ public abstract class AbstractChildItem extends AbstractItem {
 
 	public abstract int getType();
 
-	public AbstractChildItem(Context context) {
+	AbstractChildItem(Context context) {
 		super(context);
 	}
 }

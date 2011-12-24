@@ -17,7 +17,12 @@ public class WebViewActivity extends AbstractActivity {
 		webView = (WebView) findViewById(R.id.webview);
 		webView.getSettings().setJavaScriptEnabled(true);
 		webView.getSettings().setBuiltInZoomControls(true);
-		webView.loadUrl(getIntent().getStringExtra(Const.url));
+		String url = getIntent().getStringExtra(Const.url);
+		String data = getIntent().getStringExtra(Const.data);
+		if (url != null)
+			webView.loadUrl(url);
+		else if (data != null)
+			webView.loadData(data, Const.html, Const.utf8);
 	}
 
 	@Override

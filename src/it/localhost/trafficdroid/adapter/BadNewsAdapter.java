@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
@@ -32,52 +31,54 @@ public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
 			convertView.setTag(R.id.badNewsDate, convertView.findViewById(R.id.badNewsDate));
 			convertView.setTag(R.id.badNewsDescription, convertView.findViewById(R.id.badNewsDescription));
 		}
-		((TextView) convertView.getTag(R.id.badNewsDate)).setText(Const.sdfBnFormat.format(event.getDate()));
 		((TextView) convertView.getTag(R.id.badNewsTitle)).setText(event.getTitle());
 		((TextView) convertView.getTag(R.id.badNewsDescription)).setText(event.getDescription());
-		ImageView badNewsImage = (ImageView) convertView.getTag(R.id.badNewsImage);
+		TextView badNewsDate = (TextView) convertView.getTag(R.id.badNewsDate);
+		badNewsDate.setText(Const.sdfBnFormat.format(event.getDate()));
+		int drawable;
 		if (event.getTitle().contains(Const.bn_acc))
-			badNewsImage.setImageResource(R.drawable.bn_acc);
+			drawable = R.drawable.bn_acc;
 		else if (event.getTitle().contains(Const.bn_anh))
-			badNewsImage.setImageResource(R.drawable.bn_anh);
+			drawable = R.drawable.bn_anh;
 		else if (event.getTitle().contains(Const.bn_los1) || event.getTitle().contains(Const.bn_los2))
-			badNewsImage.setImageResource(R.drawable.bn_los);
+			drawable = R.drawable.bn_los;
 		else if (event.getTitle().contains(Const.bn_pss))
-			badNewsImage.setImageResource(R.drawable.bn_pss);
+			drawable = R.drawable.bn_pss;
 		else if (event.getTitle().contains(Const.bn_bkd))
-			badNewsImage.setImageResource(R.drawable.bn_bkd);
+			drawable = R.drawable.bn_bkd;
 		else if (event.getTitle().contains(Const.bn_fop))
-			badNewsImage.setImageResource(R.drawable.bn_fop);
+			drawable = R.drawable.bn_fop;
 		else if (event.getTitle().contains(Const.bn_ibu))
-			badNewsImage.setImageResource(R.drawable.bn_ibu);
+			drawable = R.drawable.bn_ibu;
 		else if (event.getTitle().contains(Const.bn_fod))
-			badNewsImage.setImageResource(R.drawable.bn_fod);
+			drawable = R.drawable.bn_fod;
 		else if (event.getTitle().contains(Const.bn_ocm))
-			badNewsImage.setImageResource(R.drawable.bn_ocm);
+			drawable = R.drawable.bn_ocm;
 		else if (event.getTitle().contains(Const.bn_peo))
-			badNewsImage.setImageResource(R.drawable.bn_peo);
+			drawable = R.drawable.bn_peo;
 		else if (event.getTitle().contains(Const.bn_pra))
-			badNewsImage.setImageResource(R.drawable.bn_pra);
+			drawable = R.drawable.bn_pra;
 		else if (event.getTitle().contains(Const.bn_res))
-			badNewsImage.setImageResource(R.drawable.bn_res);
+			drawable = R.drawable.bn_res;
 		else if (event.getTitle().contains(Const.bn_sn))
-			badNewsImage.setImageResource(R.drawable.bn_sn);
+			drawable = R.drawable.bn_sn;
 		else if (event.getTitle().contains(Const.bn_sne))
-			badNewsImage.setImageResource(R.drawable.bn_sne);
+			drawable = R.drawable.bn_sne;
 		else if (event.getTitle().contains(Const.bn_sm))
-			badNewsImage.setImageResource(R.drawable.bn_sm);
+			drawable = R.drawable.bn_sm;
 		else if (event.getTitle().contains(Const.bn_rsr))
-			badNewsImage.setImageResource(R.drawable.bn_rsr);
+			drawable = R.drawable.bn_rsr;
 		else if (event.getTitle().contains(Const.bn_sab))
-			badNewsImage.setImageResource(R.drawable.bn_sab);
+			drawable = R.drawable.bn_sab;
 		else if (event.getTitle().contains(Const.bn_sdc))
-			badNewsImage.setImageResource(R.drawable.bn_sdc);
+			drawable = R.drawable.bn_sdc;
 		else if (event.getTitle().contains(Const.bn_spc))
-			badNewsImage.setImageResource(R.drawable.bn_spc);
+			drawable = R.drawable.bn_spc;
 		else if (event.getTitle().contains(Const.bn_win))
-			badNewsImage.setImageResource(R.drawable.bn_win);
+			drawable = R.drawable.bn_win;
 		else
-			badNewsImage.setImageResource(android.R.drawable.ic_dialog_alert);
+			drawable = android.R.drawable.ic_dialog_alert;
+		badNewsDate.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, drawable);
 		return convertView;
 	}
 }

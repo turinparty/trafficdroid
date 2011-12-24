@@ -27,7 +27,7 @@ import android.net.NetworkInfo;
 
 import com.commonsware.cwac.wakeful.WakefulIntentService;
 
-public class TdService extends WakefulIntentService {
+public class TdService extends WakefulIntentService { // NO_UCD
 	public TdService() {
 		super(Const.tdData);
 	}

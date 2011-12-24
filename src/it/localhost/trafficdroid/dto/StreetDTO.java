@@ -7,6 +7,7 @@ public class StreetDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String name;
 	private int id;
+	private int graph;
 	private ArrayList<ZoneDTO> zones;
 	private String[] directions;
 	private ArrayList<BadNewsDTO> badNews;
@@ -60,6 +61,14 @@ public class StreetDTO implements Serializable {
 
 	public ArrayList<BadNewsDTO> getBadNews() {
 		return badNews;
+	}
+
+	public int getGraph() {
+		return graph;
+	}
+
+	public void setGraph(int graph) {
+		this.graph = graph;
 	}
 
 	@Override

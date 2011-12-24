@@ -6,7 +6,7 @@ import android.app.Activity;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 
-public abstract class AbstractActivity extends Activity {
+abstract class AbstractActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -31,7 +31,7 @@ public abstract class AbstractActivity extends Activity {
 		TdAnalytics.stopSession();
 	}
 
-	public String versionName() {
+	String versionName() {
 		try {
 			return getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
 		} catch (NameNotFoundException e) {
@@ -39,7 +39,7 @@ public abstract class AbstractActivity extends Activity {
 		}
 	}
 
-	public int versionCode() {
+	int versionCode() {
 		try {
 			return getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
 		} catch (NameNotFoundException e) {

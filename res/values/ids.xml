@@ -30,5 +30,6 @@
     <item name="webview" type="id"/>
     <item name="streetText1" type="id"/>
     <item name="streetText2" type="id"/>
+    <item name="graph" type="id"/>
 
 </resources>

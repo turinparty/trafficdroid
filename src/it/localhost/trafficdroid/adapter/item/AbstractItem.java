@@ -12,7 +12,7 @@ public abstract class AbstractItem {
 
 	public abstract void fillView(View view);
 
-	public AbstractItem(Context context) {
+	AbstractItem(Context context) {
 		this.context = context;
 		this.inflater = LayoutInflater.from(context);
 	}

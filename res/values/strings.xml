@@ -7,6 +7,7 @@
     <string name="error">Errore</string>
     <string name="warning">Attenzione</string>
     <string name="info">Informazione</string>
+    <string name="graph">Visualizza Mappa Traffico</string>
     <string name="webcamAdd">Questa Webcam non è ancora mappata, aiutaci a mapparla. Sul sito trovi tutte le informazioni. Richiesta di mappatura inoltrata.</string>
     <string name="webcamNone">Non esistono Webcam associabili a questa tratta. Se non è vero segnalalo sul sito.</string>
     <string name="settings">Impostazioni</string>

@@ -19,8 +19,13 @@ public class Const {
 	public static final String closeRound = ")";
 	public static final String separator = "; ";
 	public static final String http = "http://";
+	public static final String html = "text/html";
+	public static final String utf8 = "UTF-8";
 	public static final String slash = "/";
+	public static final String data = "data";
 	public static final String xml = ".xml";
+	public static final String trafficGraphFirst = "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>TrafficGraph</title></head><body style=\"background-color:black\"><img src=\"";
+	public static final String trafficGraphSecond = ".gif\" alt=\"TrafficGraph\" /></body></html>";
 	public static final String webcamFirst = "/autostrade-mobile/popupTelecamera.do?ua=Android%201.1&tlc=";
 	public static final String webcamSecond = "/webcam/temp-imgs/camsbig/";
 	public static final String events = "/portale/rss?rsstype=traffic";
@@ -34,6 +39,8 @@ public class Const {
 	public static final String eventCatApp = "App";
 	public static final String eventActionVersion = "Version";
 	public static final String eventCatWebcam = "Webcam";
+	public static final String eventCatBadNews = "BadNews";
+	public static final String eventCatGraph = "Graph";
 	public static final String eventActionRequest = "Request";
 	public static final String eventActionOpen = "Open";
 	public static final String eventActionNone = "None";
@@ -81,7 +88,7 @@ public class Const {
 	public static final String bn_win = "vento forte";
 	public static final String paypal = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F2QEX3LXPH776";
 	public static final SimpleDateFormat sdfBnParse = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-	public static final SimpleDateFormat sdfBnFormat = new SimpleDateFormat("H:m");
+	public static final SimpleDateFormat sdfBnFormat = new SimpleDateFormat("HH:mm");
 	public static final Intent beginUpdateIntent = new Intent(Const.beginUpdate);
 	public static final Intent endUpdateIntent = new Intent(Const.endUpdate);
 	public static final char charAutostrade = 'A';
@@ -90,7 +97,7 @@ public class Const {
 	public static final char webcamNone = 'H';
 	public static final int notificationId = 1;
 	public static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);
-	public static final byte[] itemTypes = new byte[] { 0, 1 };
+	public static final byte[] itemTypes = new byte[] { 0, 1, 2 };
 	public static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
 	public static final SparseIntArray zonesResId = new SparseIntArray(64) {
 		{

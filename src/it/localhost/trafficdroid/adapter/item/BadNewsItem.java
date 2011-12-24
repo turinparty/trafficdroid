@@ -3,6 +3,7 @@ package it.localhost.trafficdroid.adapter.item;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.BadNewsAdapter;
 import it.localhost.trafficdroid.common.Const;
+import it.localhost.trafficdroid.common.TdAnalytics;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import android.app.Dialog;
 import android.content.Context;
@@ -45,6 +46,7 @@ public class BadNewsItem extends AbstractChildItem {
 
 	public void onClick() {
 		if (streetDTO.getBadNews().size() != 0) {
+			TdAnalytics.trackEvent(Const.eventCatBadNews, Const.eventActionOpen, streetDTO.getName(), 0);
 			Dialog dialog = new Dialog(context);
 			dialog.setTitle(streetDTO.getName());
 			ListView listview = (ListView) LayoutInflater.from(context).inflate(R.layout.dialog_badnews, null);
