@@ -107,3 +107,34 @@ public class TrafficParser extends DefaultHandler {
 		}
 	}
 }
+/*public static void parse(MainDTO dto, String url) throws GenericException, BadConfException, ConnectionException, SAXException, IOException, ParserConfigurationException {
+	for (StreetDTO street : dto.getStreets()) {
+		InputStream is = TrafficDAO.getData(street.getId(), url);
+		Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
+		Element document = doc.getDocumentElement();
+		street.setDirectionLeft(document.getElementsByTagName("startdir").item(0).getTextContent());
+		street.setDirectionRight(document.getElementsByTagName("enddir").item(0).getTextContent());
+		NodeList sectors = document.getElementsByTagName("sector");
+		int zoneCounter = 0;
+		for (int i = 0; i < sectors.getLength() - 1; i++) {
+			String label = sectors.item(i).getChildNodes().item(1).getTextContent();
+			if (zoneCounter < street.getZones().size()) {
+				ZoneDTO zone = street.getZones().get(zoneCounter);
+				if (zone.getName().equals(label)) {
+					zone.setKm(sectors.item(i).getChildNodes().item(2).getTextContent());
+					try {
+						zone.setSpeedLeft(Short.parseShort(sectors.item(i).getChildNodes().item(3).getTextContent()));
+					} catch (Exception e) {
+						zone.setSpeedLeft((short) 0);
+					}
+					try {
+						zone.setSpeedRight(Short.parseShort(sectors.item(i).getChildNodes().item(4).getTextContent()));
+					} catch (Exception e) {
+						zone.setSpeedRight((short) 0);
+					}
+					zoneCounter++;
+				}
+			}
+		}
+	}
+}*/
