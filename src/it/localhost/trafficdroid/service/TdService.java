@@ -45,39 +45,69 @@ public class TdService extends WakefulIntentService { // NO_UCD
 				BadNewsParser.parse(currDTO, TdApp.getPrefString(R.string.providerBadNewsKey, R.string.providerBadNewsDefault));
 			currDTO.setTrafficTime(new Date());
 			List<StreetDTO> currStreets = currDTO.getStreets();
-			try {
-				MainDTO pastDTO = MainDAO.retrieve();
-				List<StreetDTO> pastStreets = pastDTO.getStreets();
-				if (pastStreets.size() == currStreets.size())
-					for (int i = 0; i < currStreets.size(); i++) {
+			for (int i = 0; i < currStreets.size(); i++) {
+				List<ZoneDTO> currZones = currStreets.get(i).getZones();
+				for (int j = 0; j < currZones.size(); j++) {
+					ZoneDTO currZone = currZones.get(j);
+					if (currZone.getSpeedLeft() == 0)
+						currZone.setCatLeft((byte) 0);
+					else if (currZone.getSpeedLeft() < 11)
+						currZone.setCatLeft((byte) 1);
+					else if (currZone.getSpeedLeft() < 31)
+						currZone.setCatLeft((byte) 2);
+					else if (currZone.getSpeedLeft() < 51)
+						currZone.setCatLeft((byte) 3);
+					else if (currZone.getSpeedLeft() < 71)
+						currZone.setCatLeft((byte) 4);
+					else if (currZone.getSpeedLeft() < 91)
+						currZone.setCatLeft((byte) 5);
+					else
+						currZone.setCatLeft((byte) 6);
+					if (currZone.getSpeedRight() == 0)
+						currZone.setCatRight((byte) 0);
+					else if (currZone.getSpeedRight() < 11)
+						currZone.setCatRight((byte) 1);
+					else if (currZone.getSpeedRight() < 31)
+						currZone.setCatRight((byte) 2);
+					else if (currZone.getSpeedRight() < 51)
+						currZone.setCatRight((byte) 3);
+					else if (currZone.getSpeedRight() < 71)
+						currZone.setCatRight((byte) 4);
+					else if (currZone.getSpeedRight() < 91)
+						currZone.setCatRight((byte) 5);
+					else
+						currZone.setCatRight((byte) 6);
+					boolean congestionLeft = currZone.getCatLeft() > 0 && currZone.getCatLeft() <= currDTO.getCongestionThreshold();
+					boolean congestionRight = currZone.getCatRight() > 0 && currZone.getCatRight() <= currDTO.getCongestionThreshold();
+					if (congestionLeft && congestionRight)
+						currDTO.addCongestedZone(currZone.getName());
+					else if (congestionLeft)
+						currDTO.addCongestedZone(currZone.getName() + Const.openRound + currStreets.get(i).getDirectionLeft() + Const.closeRound);
+					else if (congestionRight)
+						currDTO.addCongestedZone(currZone.getName() + Const.openRound + currStreets.get(i).getDirectionRight() + Const.closeRound);
+					try {
+						List<StreetDTO> pastStreets = MainDAO.retrieve().getStreets();
 						List<ZoneDTO> pastZones = pastStreets.get(i).getZones();
-						List<ZoneDTO> currZones = currStreets.get(i).getZones();
-						if (pastZones.size() == currZones.size())
-							for (int j = 0; j < currZones.size(); j++) {
-								ZoneDTO pastZone = pastZones.get(j);
-								ZoneDTO currZone = currZones.get(j);
-								if (pastZone.getId().equalsIgnoreCase(currZone.getId())) {
-									if (currZone.getSpeedLeft() != 0 && pastZone.getSpeedLeft() < currZone.getSpeedLeft())
-										currZone.setTrendLeft(R.drawable.speed_up);
-									else if (currZone.getSpeedLeft() != 0 && pastZone.getSpeedLeft() > currZone.getSpeedLeft())
-										currZone.setTrendLeft(R.drawable.speed_down);
-									else
-										currZone.setTrendLeft(0);
-									if (currZone.getSpeedRight() != 0 && pastZone.getSpeedRight() < currZone.getSpeedRight())
-										currZone.setTrendRight(R.drawable.speed_up);
-									else if (currZone.getSpeedRight() != 0 && pastZone.getSpeedRight() > currZone.getSpeedRight())
-										currZone.setTrendRight(R.drawable.speed_down);
-									else
-										currZone.setTrendRight(0);
-								}
-							}
+						ZoneDTO pastZone = pastZones.get(j);
+						if (pastStreets.size() == currStreets.size() && pastZones.size() == currZones.size() && pastZone.getId().equalsIgnoreCase(currZone.getId())) {
+							if (currZone.getSpeedLeft() != 0 && pastZone.getSpeedLeft() < currZone.getSpeedLeft())
+								currZone.setTrendLeft(R.drawable.speed_up);
+							else if (currZone.getSpeedLeft() != 0 && pastZone.getSpeedLeft() > currZone.getSpeedLeft())
+								currZone.setTrendLeft(R.drawable.speed_down);
+							else
+								currZone.setTrendLeft(0);
+							if (currZone.getSpeedRight() != 0 && pastZone.getSpeedRight() < currZone.getSpeedRight())
+								currZone.setTrendRight(R.drawable.speed_up);
+							else if (currZone.getSpeedRight() != 0 && pastZone.getSpeedRight() > currZone.getSpeedRight())
+								currZone.setTrendRight(R.drawable.speed_down);
+							else
+								currZone.setTrendRight(0);
+						}
+					} catch (Exception e) {
+						currZone.setTrendLeft(0);
+						currZone.setTrendRight(0);
 					}
-			} catch (Exception e) {
-				for (StreetDTO streetDTO : currStreets)
-					for (ZoneDTO zoneDTO : streetDTO.getZones()) {
-						zoneDTO.setTrendLeft(0);
-						zoneDTO.setTrendRight(0);
-					}
+				}
 			}
 			String congestedZones = currDTO.getCongestedZones();
 			if (congestedZones != null && TdApp.getPrefBoolean(R.string.chiaroveggenzaEnablerKey, R.string.chiaroveggenzaEnablerDefault)) {

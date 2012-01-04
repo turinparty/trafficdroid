@@ -87,50 +87,14 @@ public class TrafficParser extends DefaultHandler {
 					} catch (Exception e) {
 						zone.setSpeedLeft((short) 0);
 					}
-					if (zone.getSpeedLeft() == 0)
-						zone.setCatLeft((byte) 0);
-					else if (zone.getSpeedLeft() < 11)
-						zone.setCatLeft((byte) 1);
-					else if (zone.getSpeedLeft() < 31)
-						zone.setCatLeft((byte) 2);
-					else if (zone.getSpeedLeft() < 51)
-						zone.setCatLeft((byte) 3);
-					else if (zone.getSpeedLeft() < 71)
-						zone.setCatLeft((byte) 4);
-					else if (zone.getSpeedLeft() < 91)
-						zone.setCatLeft((byte) 5);
-					else
-						zone.setCatLeft((byte) 6);
 				} else if (rightZone && localName.equals(Const.DIRB_ELEMENT)) {
 					try {
 						zone.setSpeedRight(Short.parseShort(buf.toString()));
 					} catch (Exception e) {
 						zone.setSpeedRight((short) 0);
 					}
-					if (zone.getSpeedRight() == 0)
-						zone.setCatRight((byte) 0);
-					else if (zone.getSpeedRight() < 11)
-						zone.setCatRight((byte) 1);
-					else if (zone.getSpeedRight() < 31)
-						zone.setCatRight((byte) 2);
-					else if (zone.getSpeedRight() < 51)
-						zone.setCatRight((byte) 3);
-					else if (zone.getSpeedRight() < 71)
-						zone.setCatRight((byte) 4);
-					else if (zone.getSpeedRight() < 91)
-						zone.setCatRight((byte) 5);
-					else
-						zone.setCatRight((byte) 6);
 				} else if (localName.equals(Const.SECTOR_ELEMENT)) {
 					inSector = false;
-					boolean congestionLeft = zone.getCatLeft() > 0 && zone.getCatLeft() <= dto.getCongestionThreshold();
-					boolean congestionRight = zone.getCatRight() > 0 && zone.getCatRight() <= dto.getCongestionThreshold();
-					if (congestionLeft && congestionRight)
-						dto.addCongestedZone(zone.getName());
-					else if (congestionLeft)
-						dto.addCongestedZone(zone.getName() + Const.openRound + street.getDirectionLeft() + Const.closeRound);
-					else if (congestionRight)
-						dto.addCongestedZone(zone.getName() + Const.openRound + street.getDirectionRight() + Const.closeRound);
 					if (rightZone)
 						zoneCounter++;
 				}
