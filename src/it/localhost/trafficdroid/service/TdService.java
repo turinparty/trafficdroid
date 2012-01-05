@@ -92,21 +92,25 @@ public class TdService extends WakefulIntentService { // NO_UCD
 					else if (congestionRight)
 						currDTO.addCongestedZone(currZone.getName() + Const.openRound + currStreets.get(i).getDirectionRight() + Const.closeRound);
 					if (pastStreets != null) {
-						List<ZoneDTO> pastZones = pastStreets.get(i).getZones();
-						ZoneDTO pastZone = pastZones.get(j);
-						if (pastStreets.size() == currStreets.size() && pastZones.size() == currZones.size() && pastZone.getId().equalsIgnoreCase(currZone.getId())) {
-							if (currZone.getSpeedLeft() != 0 && pastZone.getSpeedLeft() < currZone.getSpeedLeft())
-								currZone.setTrendLeft(R.drawable.speed_up);
-							else if (currZone.getSpeedLeft() != 0 && pastZone.getSpeedLeft() > currZone.getSpeedLeft())
-								currZone.setTrendLeft(R.drawable.speed_down);
-							else
-								currZone.setTrendLeft(0);
-							if (currZone.getSpeedRight() != 0 && pastZone.getSpeedRight() < currZone.getSpeedRight())
-								currZone.setTrendRight(R.drawable.speed_up);
-							else if (currZone.getSpeedRight() != 0 && pastZone.getSpeedRight() > currZone.getSpeedRight())
-								currZone.setTrendRight(R.drawable.speed_down);
-							else
-								currZone.setTrendRight(0);
+						if (pastStreets.size() == currStreets.size()) {
+							List<ZoneDTO> pastZones = pastStreets.get(i).getZones();
+							if (pastZones.size() == currZones.size()) {
+								ZoneDTO pastZone = pastZones.get(j);
+								if (pastZone.getId().equalsIgnoreCase(currZone.getId())) {
+									if (currZone.getSpeedLeft() != 0 && pastZone.getSpeedLeft() < currZone.getSpeedLeft())
+										currZone.setTrendLeft(R.drawable.speed_up);
+									else if (currZone.getSpeedLeft() != 0 && pastZone.getSpeedLeft() > currZone.getSpeedLeft())
+										currZone.setTrendLeft(R.drawable.speed_down);
+									else
+										currZone.setTrendLeft(0);
+									if (currZone.getSpeedRight() != 0 && pastZone.getSpeedRight() < currZone.getSpeedRight())
+										currZone.setTrendRight(R.drawable.speed_up);
+									else if (currZone.getSpeedRight() != 0 && pastZone.getSpeedRight() > currZone.getSpeedRight())
+										currZone.setTrendRight(R.drawable.speed_down);
+									else
+										currZone.setTrendRight(0);
+								}
+							}
 						}
 					} else {
 						currZone.setTrendLeft(0);
