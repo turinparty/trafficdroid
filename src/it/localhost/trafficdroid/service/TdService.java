@@ -34,12 +34,18 @@ public class TdService extends WakefulIntentService { // NO_UCD
 
 	@Override
 	public void doWakefulWork(Intent arg0) {
+		sendBroadcast(Const.beginUpdateIntent);
+		MainDTO currDTO = MainDAO.create();
+		List<StreetDTO> pastStreets;
 		try {
-			sendBroadcast(Const.beginUpdateIntent);
+			pastStreets = MainDAO.retrieve().getStreets();
+		} catch (GenericException e) {
+			pastStreets = null;
+		}
+		try {
 			NetworkInfo activeNetworkInfo = ((ConnectivityManager) TdApp.getContext().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
 			if (activeNetworkInfo != null && !activeNetworkInfo.isConnected())
 				throw new ConnectionException(Const.disconnectedMessage);
-			MainDTO currDTO = MainDAO.create();
 			new TrafficParser(currDTO, TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault)).parse();
 			if (TdApp.getPrefBoolean(R.string.badnewsEnablerKey, R.string.badnewsEnablerDefault))
 				BadNewsParser.parse(currDTO, TdApp.getPrefString(R.string.providerBadNewsKey, R.string.providerBadNewsDefault));
@@ -85,8 +91,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 						currDTO.addCongestedZone(currZone.getName() + Const.openRound + currStreets.get(i).getDirectionLeft() + Const.closeRound);
 					else if (congestionRight)
 						currDTO.addCongestedZone(currZone.getName() + Const.openRound + currStreets.get(i).getDirectionRight() + Const.closeRound);
-					try {
-						List<StreetDTO> pastStreets = MainDAO.retrieve().getStreets();
+					if (pastStreets != null) {
 						List<ZoneDTO> pastZones = pastStreets.get(i).getZones();
 						ZoneDTO pastZone = pastZones.get(j);
 						if (pastStreets.size() == currStreets.size() && pastZones.size() == currZones.size() && pastZone.getId().equalsIgnoreCase(currZone.getId())) {
@@ -103,7 +108,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 							else
 								currZone.setTrendRight(0);
 						}
-					} catch (Exception e) {
+					} else {
 						currZone.setTrendLeft(0);
 						currZone.setTrendRight(0);
 					}
