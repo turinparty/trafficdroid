@@ -45,8 +45,6 @@ public class TrafficParser extends DefaultHandler {
 				} catch (SAXException e) {
 				}
 			}
-		} catch (NullPointerException e) {
-			throw new BadConfException(Const.badTrafficProvider);
 		} catch (ParserConfigurationException e) {
 			throw new GenericException(e);
 		} catch (SAXException e) {

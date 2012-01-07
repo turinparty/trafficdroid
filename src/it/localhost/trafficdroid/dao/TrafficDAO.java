@@ -18,13 +18,13 @@ public class TrafficDAO {
 		while (true) {
 			try {
 				inputSource = new InputSource(new URL(Const.http + baseUrl + Const.slash + mapId + Const.xml).openStream());
+				break;
 			} catch (MalformedURLException e) {
 				throw new BadConfException(e);
 			} catch (IOException e) {
 				if (--numTries == 0)
 					throw new ConnectionException(e);
 			}
-			break;
 		}
 		return inputSource;
 	}

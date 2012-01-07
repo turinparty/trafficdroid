@@ -47,8 +47,6 @@ public class BadNewsParser extends DefaultHandler {
 				xmlReader.parse(inputSource);
 			} catch (SAXException e) {
 			}
-		} catch (NullPointerException e) {
-			throw new BadConfException(Const.badBadNewsProvider);
 		} catch (ParserConfigurationException e) {
 			throw new GenericException(e);
 		} catch (SAXException e) {
