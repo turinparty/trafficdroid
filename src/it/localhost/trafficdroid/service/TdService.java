@@ -36,11 +36,11 @@ public class TdService extends WakefulIntentService { // NO_UCD
 	public void doWakefulWork(Intent arg0) {
 		sendBroadcast(Const.beginUpdateIntent);
 		MainDTO currDTO = MainDAO.create();
-		List<StreetDTO> pastStreets;
+		MainDTO pastDTO;
 		try {
-			pastStreets = MainDAO.retrieve().getStreets();
+			pastDTO = MainDAO.retrieve();
 		} catch (GenericException e) {
-			pastStreets = null;
+			pastDTO = null;
 		}
 		try {
 			NetworkInfo activeNetworkInfo = ((ConnectivityManager) TdApp.getContext().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
@@ -50,11 +50,9 @@ public class TdService extends WakefulIntentService { // NO_UCD
 			if (TdApp.getPrefBoolean(R.string.badnewsEnablerKey, R.string.badnewsEnablerDefault))
 				new BadNewsParser(currDTO, TdApp.getPrefString(R.string.providerBadNewsKey, R.string.providerBadNewsDefault)).parse();
 			currDTO.setTrafficTime(new Date());
-			List<StreetDTO> currStreets = currDTO.getStreets();
-			for (int i = 0; i < currStreets.size(); i++) {
-				List<ZoneDTO> currZones = currStreets.get(i).getZones();
-				for (int j = 0; j < currZones.size(); j++) {
-					ZoneDTO currZone = currZones.get(j);
+			for (StreetDTO currStreet : currDTO.getStreets()) {
+				List<ZoneDTO> currZones = currStreet.getZones();
+				for (ZoneDTO currZone : currZones) {
 					if (currZone.getSpeedLeft() == 0)
 						currZone.setCatLeft((byte) 0);
 					else if (currZone.getSpeedLeft() < 11)
@@ -88,31 +86,32 @@ public class TdService extends WakefulIntentService { // NO_UCD
 					if (congestionLeft && congestionRight)
 						currDTO.addCongestedZone(currZone.getName());
 					else if (congestionLeft)
-						currDTO.addCongestedZone(currZone.getName() + Const.openRound + currStreets.get(i).getDirectionLeft() + Const.closeRound);
+						currDTO.addCongestedZone(currZone.getName() + Const.openRound + currStreet.getDirectionLeft() + Const.closeRound);
 					else if (congestionRight)
-						currDTO.addCongestedZone(currZone.getName() + Const.openRound + currStreets.get(i).getDirectionRight() + Const.closeRound);
-					if (pastStreets != null) {
-						if (pastStreets.size() == currStreets.size()) {
-							List<ZoneDTO> pastZones = pastStreets.get(i).getZones();
-							if (pastZones.size() == currZones.size()) {
-								ZoneDTO pastZone = pastZones.get(j);
-								if (pastZone.getId().equalsIgnoreCase(currZone.getId())) {
-									if (currZone.getSpeedLeft() == 0 || pastZone.getSpeedLeft() == 0)
-										currZone.setTrendLeft(0);
-									else if (pastZone.getSpeedLeft() < currZone.getSpeedLeft())
-										currZone.setTrendLeft(R.drawable.speed_up);
-									else if (pastZone.getSpeedLeft() > currZone.getSpeedLeft())
-										currZone.setTrendLeft(R.drawable.speed_down);
-									if (currZone.getSpeedRight() == 0 || pastZone.getSpeedRight() == 0)
-										currZone.setTrendRight(0);
-									else if (pastZone.getSpeedRight() < currZone.getSpeedRight())
-										currZone.setTrendRight(R.drawable.speed_up);
-									else if (pastZone.getSpeedRight() > currZone.getSpeedRight())
-										currZone.setTrendRight(R.drawable.speed_down);
-								}
+						currDTO.addCongestedZone(currZone.getName() + Const.openRound + currStreet.getDirectionRight() + Const.closeRound);
+					StreetDTO pastStreet = null;
+					ZoneDTO pastZone = null;
+					if (pastDTO != null) {
+						pastStreet = pastDTO.getStreet(currStreet.getId());
+						if (pastStreet != null) {
+							pastZone = pastStreet.getZone(currZone.getId());
+							if (pastZone != null) {
+								if (currZone.getSpeedLeft() == 0 || pastZone.getSpeedLeft() == 0)
+									currZone.setTrendLeft(0);
+								else if (pastZone.getSpeedLeft() < currZone.getSpeedLeft())
+									currZone.setTrendLeft(R.drawable.speed_up);
+								else if (pastZone.getSpeedLeft() > currZone.getSpeedLeft())
+									currZone.setTrendLeft(R.drawable.speed_down);
+								if (currZone.getSpeedRight() == 0 || pastZone.getSpeedRight() == 0)
+									currZone.setTrendRight(0);
+								else if (pastZone.getSpeedRight() < currZone.getSpeedRight())
+									currZone.setTrendRight(R.drawable.speed_up);
+								else if (pastZone.getSpeedRight() > currZone.getSpeedRight())
+									currZone.setTrendRight(R.drawable.speed_down);
 							}
 						}
-					} else {
+					}
+					if (pastZone == null) {
 						currZone.setTrendLeft(0);
 						currZone.setTrendRight(0);
 					}

@@ -57,7 +57,7 @@ public class TrafficParser extends DefaultHandler {
 	@Override
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 		buf = new StringBuilder();
-		if (zoneCounter >= street.getZones().size())
+		if (zoneCounter >= street.getZonesSize())
 			throw new SAXException();
 		if (localName.equals(Const.SECTOR_ELEMENT))
 			inSector = true;

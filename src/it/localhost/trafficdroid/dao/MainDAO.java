@@ -35,11 +35,11 @@ public class MainDAO {
 			String[] zonesAutovelox = resources.getStringArray(Const.zonesResAutovelox.get(streetsId[i]));
 			for (int j = 0; j < zonesId.length; j++)
 				if (streetEnabled || TdApp.getPrefBoolean(zonesId[j], false))
-					street.addZone(new ZoneDTO(zonesId[j], zonesName[j], zonesAutovelox[j]));
-			if (street.getZones().size() > 0) {
+					street.putZone(new ZoneDTO(zonesId[j], zonesName[j], zonesAutovelox[j]));
+			if (street.getZonesSize() > 0) {
 				street.setName(streetsName[i]);
 				street.setGraph(streetsGraph[i]);
-				mainDto.addStreet(street);
+				mainDto.putStreet(street);
 			}
 		}
 		return mainDto;

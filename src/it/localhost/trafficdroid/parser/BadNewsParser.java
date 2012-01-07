@@ -43,10 +43,7 @@ public class BadNewsParser extends DefaultHandler {
 			XMLReader xmlReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
 			xmlReader.setContentHandler(this);
 			InputSource inputSource = EventDAO.getData(url);
-			try {
-				xmlReader.parse(inputSource);
-			} catch (SAXException e) {
-			}
+			xmlReader.parse(inputSource);
 		} catch (ParserConfigurationException e) {
 			throw new GenericException(e);
 		} catch (SAXException e) {
@@ -75,28 +72,24 @@ public class BadNewsParser extends DefaultHandler {
 			if (localName.equals(Const.BADNEWS_TITLE)) {
 				String s = buf.toString();
 				badnewsDaAutostrada = (s.charAt(0) == Const.charAutostrade);
-				if (badnewsDaAutostrada) {
+				if (badnewsDaAutostrada)
 					xml_title = s;
-				}
-			} else if (badnewsDaAutostrada && localName.equals(Const.BADNEWS_DESCRIPTION)) {
+			} else if (badnewsDaAutostrada && localName.equals(Const.BADNEWS_DESCRIPTION))
 				xml_description = buf.toString();
-			} else if (badnewsDaAutostrada && localName.equals(Const.BADNEWS_PUBDATE)) {
+			else if (badnewsDaAutostrada && localName.equals(Const.BADNEWS_PUBDATE))
 				try {
 					date = Const.sdfBnParse.parse(buf.toString());
 				} catch (ParseException e) {
 					date = new Date();
 				}
-			} else if (badnewsDaAutostrada && localName.equals(Const.item)) {
-				for (StreetDTO streetDTO : dto.getStreets()) {
-					String street = new StringTokenizer(xml_title, Const.badNewsStreetDelim).nextToken();
-					String substreet = street.substring(1, street.length());
-					try {
-						if (Integer.parseInt(substreet) == streetDTO.getId()) {
-							StringTokenizer descST = new StringTokenizer(xml_description, Const.badNewsDelim);
-							streetDTO.addBadNews(new BadNewsDTO(descST.nextToken(), descST.nextToken(), date));
-						}
-					} catch (NumberFormatException e) {
+			else if (badnewsDaAutostrada && localName.equals(Const.item)) {
+				try {
+					StreetDTO streetDTO = dto.getStreet(Integer.parseInt(new StringTokenizer(xml_title, Const.badNewsStreetDelim).nextToken()));
+					if (streetDTO != null) {
+						StringTokenizer descST = new StringTokenizer(xml_description, Const.badNewsDelim);
+						streetDTO.addBadNews(new BadNewsDTO(descST.nextToken(), descST.nextToken(), date));
 					}
+				} catch (NumberFormatException e) {
 				}
 				inItem = false;
 			}

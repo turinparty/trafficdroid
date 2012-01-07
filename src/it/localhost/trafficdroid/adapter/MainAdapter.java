@@ -27,18 +27,16 @@ public class MainAdapter extends BaseExpandableListAdapter {
 		super();
 		groupItems = new ArrayList<AbstractItem>();
 		childItems = new ArrayList<ArrayList<AbstractChildItem>>();
-		ArrayList<StreetDTO> streets = mainDTO.getStreets();
-		if (streets != null)
-			for (StreetDTO street : streets) {
-				groupItems.add(new StreetItem(context, street));
-				ArrayList<AbstractChildItem> childItem = new ArrayList<AbstractChildItem>();
-				if (street.getGraph() != 0)
-					childItem.add(new GraphItem(context, street));
-				childItem.add(new BadNewsItem(context, street));
-				for (ZoneDTO zone : street.getZones())
-					childItem.add(new ZoneItem(context, zone));
-				this.childItems.add(childItem);
-			}
+		for (StreetDTO street : mainDTO.getStreets()) {
+			groupItems.add(new StreetItem(context, street));
+			ArrayList<AbstractChildItem> childItem = new ArrayList<AbstractChildItem>();
+			if (street.getGraph() != 0)
+				childItem.add(new GraphItem(context, street));
+			childItem.add(new BadNewsItem(context, street));
+			for (ZoneDTO zone : street.getZones())
+				childItem.add(new ZoneItem(context, zone));
+			this.childItems.add(childItem);
+		}
 	}
 
 	public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {

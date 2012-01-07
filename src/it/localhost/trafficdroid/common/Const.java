@@ -51,7 +51,7 @@ public class Const {
 	public static final String blank = " ";
 	public static final String badNews = "Bad News: ";
 	public static final String badNewsDelim = "\n";
-	public static final String badNewsStreetDelim = " -";
+	public static final String badNewsStreetDelim = "A -";
 	public static final String expanded = "Expanded";
 	public static final String unknowError = "Unknow Error";
 	public static final String badConf = "Configurazione errata: ";

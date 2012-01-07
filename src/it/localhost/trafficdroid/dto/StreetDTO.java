@@ -2,19 +2,20 @@ package it.localhost.trafficdroid.dto;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 public class StreetDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String name;
 	private int id;
 	private int graph;
-	private ArrayList<ZoneDTO> zones;
-	private String[] directions;
+	private LinkedHashMap<String, ZoneDTO> zones;
 	private ArrayList<BadNewsDTO> badNews;
+	private String[] directions;
 
 	public StreetDTO(int id) {
 		this.id = id;
-		zones = new ArrayList<ZoneDTO>();
+		zones = new LinkedHashMap<String, ZoneDTO>();
 		badNews = new ArrayList<BadNewsDTO>();
 		directions = new String[2];
 	}
@@ -32,15 +33,23 @@ public class StreetDTO implements Serializable {
 	}
 
 	public ArrayList<ZoneDTO> getZones() {
-		return zones;
+		return new ArrayList<ZoneDTO>(zones.values());
+	}
+
+	public ZoneDTO getZone(String key) {
+		return zones.get(key);
+	}
+
+	public int getZonesSize() {
+		return zones.size();
 	}
 
 	public void addBadNews(BadNewsDTO event) {
 		badNews.add(event);
 	}
 
-	public void addZone(ZoneDTO zone) {
-		zones.add(zone);
+	public void putZone(ZoneDTO zone) {
+		zones.put(zone.getId(), zone);
 	}
 
 	public String getDirectionLeft() {
