@@ -48,7 +48,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 				throw new ConnectionException(Const.disconnectedMessage);
 			new TrafficParser(currDTO, TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault)).parse();
 			if (TdApp.getPrefBoolean(R.string.badnewsEnablerKey, R.string.badnewsEnablerDefault))
-				BadNewsParser.parse(currDTO, TdApp.getPrefString(R.string.providerBadNewsKey, R.string.providerBadNewsDefault));
+				new BadNewsParser(currDTO, TdApp.getPrefString(R.string.providerBadNewsKey, R.string.providerBadNewsDefault)).parse();
 			currDTO.setTrafficTime(new Date());
 			List<StreetDTO> currStreets = currDTO.getStreets();
 			for (int i = 0; i < currStreets.size(); i++) {

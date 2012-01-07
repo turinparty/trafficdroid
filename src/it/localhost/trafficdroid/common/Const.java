@@ -303,4 +303,7 @@ public class Const {
 			put(701, R.array.zones701Autovelox);
 		}
 	};
+	public static final String BADNEWS_TITLE = "title";
+	public static final String BADNEWS_DESCRIPTION = "description";
+	public static final String BADNEWS_PUBDATE = "pubDate";
 }

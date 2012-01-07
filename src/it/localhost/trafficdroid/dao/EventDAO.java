@@ -6,34 +6,26 @@ import it.localhost.trafficdroid.exception.ConnectionException;
 import it.localhost.trafficdroid.exception.GenericException;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
+import org.xml.sax.InputSource;
 
 public class EventDAO {
-	public static Document getData(String url) throws GenericException, BadConfException, ConnectionException {
-		Document doc = null;
-		try {
-			int numTries = 3;
-			while (true) {
-				try {
-					doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(Const.http + url + Const.events);
-					break;
-				} catch (SAXException e) {
-					if (--numTries == 0)
-						throw new ConnectionException(e);
-				}
+	public static InputSource getData(String url) throws GenericException, BadConfException, ConnectionException {
+		InputSource inputSource = null;
+		int numTries = 3;
+		while (true) {
+			try {
+				inputSource = new InputSource(new URL(Const.http + url + Const.events).openStream());
+			} catch (MalformedURLException e) {
+				throw new BadConfException(e);
+			} catch (IOException e) {
+				if (--numTries == 0)
+					throw new ConnectionException(e);
 			}
-		} catch (IOException e) {
-			throw new BadConfException(e);
-		} catch (NullPointerException e) {
-			throw new BadConfException(e);
-		} catch (ParserConfigurationException e) {
-			throw new GenericException(e);
+			break;
 		}
-		return doc;
+		return inputSource;
 	}
 }
