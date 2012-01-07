@@ -10,6 +10,7 @@ import it.localhost.trafficdroid.exception.ConnectionException;
 import it.localhost.trafficdroid.exception.GenericException;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.StringTokenizer;
 
@@ -25,7 +26,6 @@ import org.xml.sax.helpers.DefaultHandler;
 public class BadNewsParser extends DefaultHandler {
 	private MainDTO dto;
 	private String url;
-
 	private boolean inItem;
 	private boolean badnewsDaAutostrada;
 	private StringBuilder buf;
@@ -47,6 +47,8 @@ public class BadNewsParser extends DefaultHandler {
 				xmlReader.parse(inputSource);
 			} catch (SAXException e) {
 			}
+		} catch (NullPointerException e) {
+			throw new BadConfException(Const.badBadNewsProvider);
 		} catch (ParserConfigurationException e) {
 			throw new GenericException(e);
 		} catch (SAXException e) {
@@ -83,7 +85,7 @@ public class BadNewsParser extends DefaultHandler {
 			} else if (badnewsDaAutostrada && localName.equals(Const.BADNEWS_PUBDATE)) {
 				try {
 					date = Const.sdfBnParse.parse(buf.toString());
-				} catch (Exception e) {
+				} catch (ParseException e) {
 					date = new Date();
 				}
 			} else if (badnewsDaAutostrada && localName.equals(Const.item)) {

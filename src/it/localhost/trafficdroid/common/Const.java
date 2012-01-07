@@ -56,6 +56,7 @@ public class Const {
 	public static final String unknowError = "Unknow Error";
 	public static final String badConf = "Configurazione errata: ";
 	public static final String badTrafficProvider = "Provider Traffico Errato";
+	public static final String badBadNewsProvider = "Provider Bad-News Errato";
 	public static final String noDataSpeed = "-";
 	public static final String autoveloxLeft = "L";
 	public static final String autoveloxRight = "R";

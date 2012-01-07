@@ -15,7 +15,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParserFactory;
 
 import org.xml.sax.Attributes;
-import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
@@ -41,14 +40,13 @@ public class TrafficParser extends DefaultHandler {
 			for (StreetDTO street : dto.getStreets()) {
 				this.street = street;
 				zoneCounter = 0;
-				InputSource inputSource = TrafficDAO.getData(street.getId(), url);
-				if (inputSource == null)
-					throw new BadConfException(Const.badTrafficProvider);
 				try {
-					xmlReader.parse(inputSource);
+					xmlReader.parse(TrafficDAO.getData(street.getId(), url));
 				} catch (SAXException e) {
 				}
 			}
+		} catch (NullPointerException e) {
+			throw new BadConfException(Const.badTrafficProvider);
 		} catch (ParserConfigurationException e) {
 			throw new GenericException(e);
 		} catch (SAXException e) {

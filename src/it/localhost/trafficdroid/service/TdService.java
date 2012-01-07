@@ -97,18 +97,18 @@ public class TdService extends WakefulIntentService { // NO_UCD
 							if (pastZones.size() == currZones.size()) {
 								ZoneDTO pastZone = pastZones.get(j);
 								if (pastZone.getId().equalsIgnoreCase(currZone.getId())) {
-									if (currZone.getSpeedLeft() != 0 && pastZone.getSpeedLeft() < currZone.getSpeedLeft())
-										currZone.setTrendLeft(R.drawable.speed_up);
-									else if (currZone.getSpeedLeft() != 0 && pastZone.getSpeedLeft() > currZone.getSpeedLeft())
-										currZone.setTrendLeft(R.drawable.speed_down);
-									else
+									if (currZone.getSpeedLeft() == 0 || pastZone.getSpeedLeft() == 0)
 										currZone.setTrendLeft(0);
-									if (currZone.getSpeedRight() != 0 && pastZone.getSpeedRight() < currZone.getSpeedRight())
-										currZone.setTrendRight(R.drawable.speed_up);
-									else if (currZone.getSpeedRight() != 0 && pastZone.getSpeedRight() > currZone.getSpeedRight())
-										currZone.setTrendRight(R.drawable.speed_down);
-									else
+									else if (pastZone.getSpeedLeft() < currZone.getSpeedLeft())
+										currZone.setTrendLeft(R.drawable.speed_up);
+									else if (pastZone.getSpeedLeft() > currZone.getSpeedLeft())
+										currZone.setTrendLeft(R.drawable.speed_down);
+									if (currZone.getSpeedRight() == 0 || pastZone.getSpeedRight() == 0)
 										currZone.setTrendRight(0);
+									else if (pastZone.getSpeedRight() < currZone.getSpeedRight())
+										currZone.setTrendRight(R.drawable.speed_up);
+									else if (pastZone.getSpeedRight() > currZone.getSpeedRight())
+										currZone.setTrendRight(R.drawable.speed_down);
 								}
 							}
 						}
