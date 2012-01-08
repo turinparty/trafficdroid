@@ -94,7 +94,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 					if (pastDTO != null) {
 						pastStreet = pastDTO.getStreet(currStreet.getId());
 						if (pastStreet != null) {
-							pastZone = pastStreet.getZone(currZone.getId());
+							pastZone = pastStreet.getZone(currZone.getName());
 							if (pastZone != null) {
 								if (currZone.getSpeedLeft() == 0 || pastZone.getSpeedLeft() == 0)
 									currZone.setTrendLeft(0);

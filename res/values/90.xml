@@ -26,7 +26,6 @@
         <item>Hs90z22</item>
         <item>Hs90z23</item>
         <item>Hs90z24</item>
-        <item>Hs90z25</item>
     </string-array>
     <string-array name="zones90Name">
         <item>Aurelia</item>
@@ -53,10 +52,8 @@
         <item>Roma-Fiumicino</item>
         <item>Pisana</item>
         <item>Pescaccio</item>
-        <item>Aurelia</item>
     </string-array>
     <string-array name="zones90Autovelox">
-        <item>0</item>
         <item>0</item>
         <item>0</item>
         <item>0</item>

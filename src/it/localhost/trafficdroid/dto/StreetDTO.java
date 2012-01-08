@@ -49,7 +49,7 @@ public class StreetDTO implements Serializable {
 	}
 
 	public void putZone(ZoneDTO zone) {
-		zones.put(zone.getId(), zone);
+		zones.put(zone.getName(), zone);
 	}
 
 	public String getDirectionLeft() {
