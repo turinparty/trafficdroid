@@ -69,6 +69,14 @@
             android:key="@string/notificationSpeedKey"
             android:summary="@string/notificationSpeedSummary"
             android:title="@string/notificationSpeedTitle" />
+
+        <ListPreference
+            android:defaultValue="@string/trendSpeedDefault"
+            android:entries="@array/trendSpeedLabel"
+            android:entryValues="@array/trendSpeedValue"
+            android:key="@string/trendSpeedKey"
+            android:summary="@string/trendSpeedSummary"
+            android:title="@string/trendSpeedTitle" />
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -70,10 +70,8 @@ public class BadNewsParser extends DefaultHandler {
 	public void endElement(String uri, String localName, String qName) {
 		if (buf.length() != 0 && inItem) {
 			if (localName.equals(Const.BADNEWS_TITLE)) {
-				String s = buf.toString();
-				badnewsDaAutostrada = (s.charAt(0) == Const.charAutostrade);
-				if (badnewsDaAutostrada)
-					xml_title = s;
+				xml_title = buf.toString();
+				badnewsDaAutostrada = (xml_title.charAt(0) == Const.charAutostrade);
 			} else if (badnewsDaAutostrada && localName.equals(Const.BADNEWS_DESCRIPTION))
 				xml_description = buf.toString();
 			else if (badnewsDaAutostrada && localName.equals(Const.BADNEWS_PUBDATE))
@@ -83,6 +81,7 @@ public class BadNewsParser extends DefaultHandler {
 					date = new Date();
 				}
 			else if (badnewsDaAutostrada && localName.equals(Const.item)) {
+				inItem = false;
 				try {
 					StreetDTO streetDTO = dto.getStreet(Integer.parseInt(new StringTokenizer(xml_title, Const.badNewsStreetDelim).nextToken()));
 					if (streetDTO != null) {
@@ -91,7 +90,6 @@ public class BadNewsParser extends DefaultHandler {
 					}
 				} catch (NumberFormatException e) {
 				}
-				inItem = false;
 			}
 		}
 	}

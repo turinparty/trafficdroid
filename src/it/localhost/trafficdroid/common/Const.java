@@ -15,6 +15,9 @@ public class Const {
 	public static final String KM_ELEMENT = "km";
 	public static final String DIRA_ELEMENT = "dirA";
 	public static final String DIRB_ELEMENT = "dirB";
+	public static final String BADNEWS_TITLE = "title";
+	public static final String BADNEWS_DESCRIPTION = "description";
+	public static final String BADNEWS_PUBDATE = "pubDate";
 	public static final String openRound = " (";
 	public static final String closeRound = ")";
 	public static final String separator = "; ";
@@ -69,6 +72,7 @@ public class Const {
 	public static final String bn_acc = "incidente";
 	public static final String bn_anh = "animali";
 	public static final String bn_bkd = "veicolo fermo o avaria";
+	public static final String bn_fig = "incendio";
 	public static final String bn_fod = "nebbia";
 	public static final String bn_fop = "nebbia a banchi";
 	public static final String bn_ibu = "nevischio";
@@ -304,7 +308,4 @@ public class Const {
 			put(701, R.array.zones701Autovelox);
 		}
 	};
-	public static final String BADNEWS_TITLE = "title";
-	public static final String BADNEWS_DESCRIPTION = "description";
-	public static final String BADNEWS_PUBDATE = "pubDate";
 }

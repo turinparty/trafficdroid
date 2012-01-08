@@ -96,18 +96,23 @@ public class TdService extends WakefulIntentService { // NO_UCD
 						if (pastStreet != null) {
 							pastZone = pastStreet.getZone(currZone.getName());
 							if (pastZone != null) {
+								int trendSpeed = Integer.parseInt(TdApp.getPrefString(R.string.trendSpeedKey, R.string.trendSpeedDefault));
 								if (currZone.getSpeedLeft() == 0 || pastZone.getSpeedLeft() == 0)
 									currZone.setTrendLeft(0);
-								else if (pastZone.getSpeedLeft() < currZone.getSpeedLeft())
+								else if (currZone.getSpeedLeft() - pastZone.getSpeedLeft() >= trendSpeed)
 									currZone.setTrendLeft(R.drawable.speed_up);
-								else if (pastZone.getSpeedLeft() > currZone.getSpeedLeft())
+								else if (pastZone.getSpeedLeft() - currZone.getSpeedLeft() >= trendSpeed)
 									currZone.setTrendLeft(R.drawable.speed_down);
+								else
+									currZone.setTrendLeft(0);
 								if (currZone.getSpeedRight() == 0 || pastZone.getSpeedRight() == 0)
 									currZone.setTrendRight(0);
-								else if (pastZone.getSpeedRight() < currZone.getSpeedRight())
+								else if (currZone.getSpeedRight() - pastZone.getSpeedRight() >= trendSpeed)
 									currZone.setTrendRight(R.drawable.speed_up);
-								else if (pastZone.getSpeedRight() > currZone.getSpeedRight())
+								else if (pastZone.getSpeedRight() - currZone.getSpeedRight() >= trendSpeed)
 									currZone.setTrendRight(R.drawable.speed_down);
+								else
+									currZone.setTrendRight(0);
 							}
 						}
 					}

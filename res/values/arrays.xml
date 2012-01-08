@@ -33,15 +33,21 @@
         <item>2 ore</item>
         <item>4 ore</item>
     </string-array>
-    <string-array name="themeValue">
-        <item>0</item>
+    <string-array name="trendSpeedLabel">
+        <item>1 Km/h</item>
+        <item>2 Km/h</item>
+        <item>4 Km/h</item>
+        <item>8 Km/h</item>
+        <item>16 Km/h</item>
+        <item>32 Km/h</item>
+    </string-array>
+    <string-array name="trendSpeedValue">
         <item>1</item>
         <item>2</item>
-    </string-array>
-    <string-array name="themeLabel">
-        <item>Piccolo</item>
-        <item>Medio</item>
-        <item>Grande</item>
+        <item>4</item>
+        <item>8</item>
+        <item>16</item>
+        <item>32</item>
     </string-array>
 
 </resources>

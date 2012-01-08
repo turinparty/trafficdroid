@@ -50,6 +50,8 @@ public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
 			drawable = R.drawable.bn_fop;
 		else if (event.getTitle().contains(Const.bn_ibu))
 			drawable = R.drawable.bn_ibu;
+		else if (event.getTitle().contains(Const.bn_fig))
+			drawable = R.drawable.bn_fig;
 		else if (event.getTitle().contains(Const.bn_fod))
 			drawable = R.drawable.bn_fod;
 		else if (event.getTitle().contains(Const.bn_ocm))
