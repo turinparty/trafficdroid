@@ -6,6 +6,7 @@ import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
+import it.localhost.trafficdroid.exception.BadConfException;
 import it.localhost.trafficdroid.exception.GenericException;
 
 import java.io.FileInputStream;
@@ -22,6 +23,7 @@ import android.content.res.Resources;
 public class MainDAO {
 	public static MainDTO create() {
 		MainDTO mainDto = new MainDTO();
+		mainDto.setVersionCode(TdApp.getVersionCode());
 		Resources resources = TdApp.getContext().getResources();
 		mainDto.setCongestionThreshold(Byte.parseByte(TdApp.getPrefString(R.string.notificationSpeedKey, R.string.notificationSpeedDefault)));
 		int[] streetsId = resources.getIntArray(R.array.streetsId);
@@ -72,13 +74,15 @@ public class MainDAO {
 		}
 	}
 
-	public static MainDTO retrieve() throws GenericException {
+	public static MainDTO retrieve() throws GenericException, BadConfException {
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 		try {
 			fis = TdApp.getContext().openFileInput(Const.tdData);
 			ois = new ObjectInputStream(fis);
 			MainDTO dlctask = (MainDTO) ois.readObject();
+			if (dlctask.getVersionCode() != TdApp.getVersionCode())
+				throw new BadConfException(Const.versionMismatch);
 			return dlctask;
 		} catch (FileNotFoundException e) {
 			throw new GenericException(e);

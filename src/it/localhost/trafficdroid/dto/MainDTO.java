@@ -13,6 +13,7 @@ public class MainDTO implements Serializable {
 	private Date trafficTime;
 	private StringBuilder congestedZones;
 	private byte congestionThreshold;
+	private int versionCode;
 
 	public MainDTO() {
 		streets = new LinkedHashMap<Integer, StreetDTO>();
@@ -57,5 +58,13 @@ public class MainDTO implements Serializable {
 
 	public void setCongestionThreshold(byte congestionThreshold) {
 		this.congestionThreshold = congestionThreshold;
+	}
+
+	public int getVersionCode() {
+		return versionCode;
+	}
+
+	public void setVersionCode(int versionCode) {
+		this.versionCode = versionCode;
 	}
 }

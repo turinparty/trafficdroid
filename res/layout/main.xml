@@ -9,7 +9,7 @@
     <ExpandableListView
         android:id="@id/mainTable"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dip"
         android:layout_weight="1" />
 
     <com.google.ads.AdView

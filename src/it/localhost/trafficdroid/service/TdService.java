@@ -39,7 +39,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 		MainDTO pastDTO;
 		try {
 			pastDTO = MainDAO.retrieve();
-		} catch (GenericException e) {
+		} catch (Exception e) {
 			pastDTO = null;
 		}
 		try {

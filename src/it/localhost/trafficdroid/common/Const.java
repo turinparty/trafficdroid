@@ -39,6 +39,7 @@ public class Const {
 	public static final String endUpdate = "it.localhost.trafficdroid.END_UPDATE";
 	public static final String anlyticsId = "UA-12243941-5";
 	public static final String item = "item";
+	public static final String versionMismatch = "Version Mismatch";
 	public static final String eventCatApp = "App";
 	public static final String eventActionVersion = "Version";
 	public static final String eventCatWebcam = "Webcam";

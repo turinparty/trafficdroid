@@ -43,7 +43,7 @@ public class MainActivity extends AbstractActivity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
-		TdAnalytics.trackEvent(Const.eventCatApp, Const.eventActionVersion, versionName(), versionCode());
+		TdAnalytics.trackEvent(Const.eventCatApp, Const.eventActionVersion, TdApp.getVersionName(), TdApp.getVersionCode());
 		intentFilter = new IntentFilter();
 		intentFilter.addAction(Const.beginUpdate);
 		intentFilter.addAction(Const.endUpdate);

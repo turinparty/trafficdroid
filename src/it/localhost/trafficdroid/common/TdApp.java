@@ -5,23 +5,34 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-//import android.os.StrictMode;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.preference.PreferenceManager;
 
 public class TdApp extends Application {
 	private static Context instance;
 	private static SharedPreferences sharedPreferences;
 	private static Editor editor;
+	private static String versionName;
+	private static int versionCode;
 
 	@Override
 	public void onCreate() {
-		//	StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
-		//	StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
+		//android.os.StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
+		//android.os.StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
 		super.onCreate();
 		PreferenceManager.setDefaultValues(this, R.layout.preferencescreen, false);
 		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 		editor = sharedPreferences.edit();
 		instance = this;
+		try {
+			PackageInfo pi = getPackageManager().getPackageInfo(getPackageName(), 0);
+			versionName = pi.versionName;
+			versionCode = pi.versionCode;
+		} catch (NameNotFoundException e) {
+			versionName = Const.notFound;
+			versionCode = 0;
+		}
 	}
 
 	public static Editor getEditor() {
@@ -46,5 +57,13 @@ public class TdApp extends Application {
 
 	public static boolean getPrefBoolean(int key, int def) {
 		return getPrefBoolean(getContext().getString(key), Boolean.parseBoolean(getContext().getString(def)));
+	}
+
+	public static String getVersionName() {
+		return versionName;
+	}
+
+	public static int getVersionCode() {
+		return versionCode;
 	}
 }
