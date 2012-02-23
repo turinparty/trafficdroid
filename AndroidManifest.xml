@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     android:installLocation="preferExternal"
     package="it.localhost.trafficdroid"
-    android:versionCode="90"
-    android:versionName="1.12.2 Goonies" >
+    android:versionCode="91"
+    android:versionName="1.12.3 Goonies" >
 
     <uses-sdk
         android:minSdkVersion="8"

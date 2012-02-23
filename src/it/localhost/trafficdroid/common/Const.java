@@ -90,7 +90,7 @@ public class Const {
 	public static final String bn_sne = "neve";
 	public static final String bn_spc = "controllo velocità";
 	public static final String bn_win = "vento forte";
-	public static final String paypal = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F2QEX3LXPH776";
+	public static final String donate = "market://details?id=it.localhost.donate";
 	public static final SimpleDateFormat sdfBnParse = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 	public static final SimpleDateFormat sdfBnFormat = new SimpleDateFormat("HH:mm");
 	public static final Intent beginUpdateIntent = new Intent(Const.beginUpdate);
