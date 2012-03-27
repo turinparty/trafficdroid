@@ -12,7 +12,6 @@ public class WebViewActivity extends AbstractActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		TdAnalytics.startNewSession(Const.anlyticsId);
 		setContentView(R.layout.webview);
 		webView = (WebView) findViewById(R.id.webview);
 		webView.getSettings().setJavaScriptEnabled(true);
@@ -23,23 +22,5 @@ public class WebViewActivity extends AbstractActivity {
 			webView.loadUrl(url);
 		else if (data != null)
 			webView.loadData(data, Const.html, Const.utf8);
-	}
-
-	@Override
-	public void onResume() {
-		super.onResume();
-		TdAnalytics.trackPageView(this.getClass().getName());
-	}
-
-	@Override
-	public void onPause() {
-		super.onPause();
-		TdAnalytics.dispatch();
-	}
-
-	@Override
-	public void onStop() {
-		super.onStop();
-		TdAnalytics.stopSession();
 	}
 }
