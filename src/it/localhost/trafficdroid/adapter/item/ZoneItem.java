@@ -1,5 +1,7 @@
 package it.localhost.trafficdroid.adapter.item;
 
+import java.util.GregorianCalendar;
+
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.WebViewActivity;
 import it.localhost.trafficdroid.common.Const;
@@ -15,6 +17,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ZoneItem extends AbstractChildItem {
+	private static final String webcamFirst = "/autostrade-mobile/popupTelecamera.do?ua=Android%201.1&tlc=";
+	private static final String webcamSecond = "/webcam/temp-imgs/camsbig/";
+	private static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
+	private static final String jpg = ".jpg";
+	private static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);
+	private static final String autoveloxLeftCode = "L";
+	private static final String autoveloxRightCode = "R";
+	private static final String autoveloxAllCode = "A";
+	private static final String noDataSpeed = "-";
+	private static final char webcamTrueFirst = 'A';
+	private static final char webcamTrueSecond = 'C';
+	private static final char webcamNone = 'H';
 	private ZoneDTO zoneDTO;
 
 	public ZoneItem(Context context, ZoneDTO zoneDTO) {
@@ -55,18 +69,18 @@ public class ZoneItem extends AbstractChildItem {
 		ImageView autoveloxRight = (ImageView) view.getTag(R.id.zoneAutoveloxRight);
 		zoneNameText.setText(zoneDTO.getName());
 		zoneKmText.setText(zoneDTO.getKm());
-		leftZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatLeft()]);
-		rightZoneSpeedText.setTextColor(Const.colorCat[zoneDTO.getCatRight()]);
+		leftZoneSpeedText.setTextColor(colorCat[zoneDTO.getCatLeft()]);
+		rightZoneSpeedText.setTextColor(colorCat[zoneDTO.getCatRight()]);
 		leftZoneSpeedText.setTypeface(zoneDTO.getCatLeft() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
 		rightZoneSpeedText.setTypeface(zoneDTO.getCatRight() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
 		if (zoneDTO.getSpeedLeft() != 0)
 			leftZoneSpeedText.setText(Short.toString(zoneDTO.getSpeedLeft()));
 		else
-			leftZoneSpeedText.setText(Const.noDataSpeed);
+			leftZoneSpeedText.setText(noDataSpeed);
 		if (zoneDTO.getSpeedRight() != 0)
 			rightZoneSpeedText.setText(Short.toString(zoneDTO.getSpeedRight()));
 		else
-			rightZoneSpeedText.setText(Const.noDataSpeed);
+			rightZoneSpeedText.setText(noDataSpeed);
 		if (zoneDTO.getTrendLeft() != 0) {
 			trendLeftText.setImageResource(zoneDTO.getTrendLeft());
 			trendLeftText.setVisibility(View.VISIBLE);
@@ -77,21 +91,21 @@ public class ZoneItem extends AbstractChildItem {
 			trendRightText.setVisibility(View.VISIBLE);
 		} else
 			trendRightText.setVisibility(View.INVISIBLE);
-		if (zoneDTO.getId().charAt(0) == Const.webcamTrueFirst || zoneDTO.getId().charAt(0) == Const.webcamTrueSecond)
+		if (zoneDTO.getId().charAt(0) == webcamTrueFirst || zoneDTO.getId().charAt(0) == webcamTrueSecond)
 			cam.setImageResource(android.R.drawable.ic_menu_camera);
-		else if (zoneDTO.getId().charAt(0) == Const.webcamNone)
+		else if (zoneDTO.getId().charAt(0) == webcamNone)
 			cam.setImageResource(android.R.drawable.ic_menu_close_clear_cancel);
 		else
 			cam.setImageResource(android.R.drawable.ic_menu_add);
-		if (Const.autoveloxLeft.equalsIgnoreCase(zoneDTO.getAutovelox())) {
+		if (autoveloxLeftCode.equalsIgnoreCase(zoneDTO.getAutovelox())) {
 			autoveloxLeft.setImageResource(R.drawable.autovelox);
 			autoveloxLeft.setVisibility(View.VISIBLE);
 			autoveloxRight.setVisibility(View.INVISIBLE);
-		} else if (Const.autoveloxRight.equalsIgnoreCase(zoneDTO.getAutovelox())) {
+		} else if (autoveloxRightCode.equalsIgnoreCase(zoneDTO.getAutovelox())) {
 			autoveloxRight.setImageResource(R.drawable.autovelox);
 			autoveloxRight.setVisibility(View.VISIBLE);
 			autoveloxLeft.setVisibility(View.INVISIBLE);
-		} else if (Const.autoveloxAll.equalsIgnoreCase(zoneDTO.getAutovelox())) {
+		} else if (autoveloxAllCode.equalsIgnoreCase(zoneDTO.getAutovelox())) {
 			autoveloxLeft.setImageResource(R.drawable.autovelox);
 			autoveloxRight.setImageResource(R.drawable.autovelox);
 			autoveloxLeft.setVisibility(View.VISIBLE);
@@ -104,22 +118,22 @@ public class ZoneItem extends AbstractChildItem {
 
 	public void onClick() {
 		String code = zoneDTO.getId();
-		if (code.charAt(0) == Const.webcamNone) {
-			TdAnalytics.trackEvent(Const.eventCatWebcam, Const.eventActionNone, code, 0);
+		if (code.charAt(0) == webcamNone) {
+			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionNone, code, 0);
 			new AlertDialog.Builder(context).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamNone).show();
-		} else if (code.charAt(0) == Const.webcamTrueFirst) {
-			TdAnalytics.trackEvent(Const.eventCatWebcam, Const.eventActionOpen, code, 0);
+		} else if (code.charAt(0) == webcamTrueFirst) {
+			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			int id = Integer.parseInt(code.substring(1)) + 6280 * (Const.date);
-			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault) + Const.webcamFirst + id);
+			int id = Integer.parseInt(code.substring(1)) + 6280 * (date);
+			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault) + webcamFirst + id);
 			context.startActivity(intent);
-		} else if (code.charAt(0) == Const.webcamTrueSecond) {
-			TdAnalytics.trackEvent(Const.eventCatWebcam, Const.eventActionOpen, code, 0);
+		} else if (code.charAt(0) == webcamTrueSecond) {
+			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKeySecond, R.string.providerCamDefaultSecond) + Const.webcamSecond + code.substring(1) + Const.jpg);
+			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKeySecond, R.string.providerCamDefaultSecond) + webcamSecond + code.substring(1) + jpg);
 			context.startActivity(intent);
 		} else {
-			TdAnalytics.trackEvent(Const.eventCatWebcam, Const.eventActionRequest, code, 0);
+			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionRequest, code, 0);
 			new AlertDialog.Builder(context).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamAdd).show();
 		}
 	}

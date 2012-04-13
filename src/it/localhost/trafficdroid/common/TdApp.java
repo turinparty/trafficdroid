@@ -10,6 +10,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.preference.PreferenceManager;
 
 public class TdApp extends Application {
+	private static final String notFound = "NotFound";
 	private static Context instance;
 	private static SharedPreferences sharedPreferences;
 	private static Editor editor;
@@ -30,7 +31,7 @@ public class TdApp extends Application {
 			versionName = pi.versionName;
 			versionCode = pi.versionCode;
 		} catch (NameNotFoundException e) {
-			versionName = Const.notFound;
+			versionName = notFound;
 			versionCode = 0;
 		}
 	}

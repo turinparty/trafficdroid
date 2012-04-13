@@ -21,6 +21,9 @@ import android.content.Context;
 import android.content.res.Resources;
 
 public class MainDAO {
+	public static final String tdData = "trafficData";
+	private static final String versionMismatch = "Version Mismatch";
+
 	public static MainDTO create() {
 		MainDTO mainDto = new MainDTO();
 		mainDto.setVersionCode(TdApp.getVersionCode());
@@ -51,7 +54,7 @@ public class MainDAO {
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 		try {
-			fos = TdApp.getContext().openFileOutput(Const.tdData, Context.MODE_PRIVATE);
+			fos = TdApp.getContext().openFileOutput(tdData, Context.MODE_PRIVATE);
 			oos = new ObjectOutputStream(fos);
 			oos.writeObject(dto);
 		} catch (FileNotFoundException e) {
@@ -78,11 +81,11 @@ public class MainDAO {
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 		try {
-			fis = TdApp.getContext().openFileInput(Const.tdData);
+			fis = TdApp.getContext().openFileInput(tdData);
 			ois = new ObjectInputStream(fis);
 			MainDTO dlctask = (MainDTO) ois.readObject();
 			if (dlctask.getVersionCode() != TdApp.getVersionCode())
-				throw new BadConfException(Const.versionMismatch);
+				throw new BadConfException(versionMismatch);
 			return dlctask;
 		} catch (FileNotFoundException e) {
 			throw new GenericException(e);

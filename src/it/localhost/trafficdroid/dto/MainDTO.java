@@ -1,7 +1,5 @@
 package it.localhost.trafficdroid.dto;
 
-import it.localhost.trafficdroid.common.Const;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,6 +7,7 @@ import java.util.LinkedHashMap;
 
 public class MainDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
+	private static final String separator = "; ";
 	private LinkedHashMap<Integer, StreetDTO> streets;
 	private Date trafficTime;
 	private StringBuilder congestedZones;
@@ -49,7 +48,7 @@ public class MainDTO implements Serializable {
 
 	public void addCongestedZone(String zone) {
 		congestedZones.append(zone);
-		congestedZones.append(Const.separator);
+		congestedZones.append(separator);
 	}
 
 	public byte getCongestionThreshold() {

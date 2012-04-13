@@ -10,10 +10,14 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 
 public class PreferencesActivity extends PreferenceActivity { // NO_UCD
+	private static final String autovelox = "Autovelox";
+	
+	public static final String autoveloxNone = "0";
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		TdAnalytics.startNewSession(Const.anlyticsId);
+		TdAnalytics.startNewSession();
 		addPreferencesFromResource(R.layout.preferencescreen);
 		int[] streetId = getResources().getIntArray(R.array.streetsId);
 		String[] streetName = getResources().getStringArray(R.array.streetsName);
@@ -67,8 +71,8 @@ public class PreferencesActivity extends PreferenceActivity { // NO_UCD
 			CheckBoxPreference singlezone = new CheckBoxPreference(this);
 			singlezone.setKey(zonesId[k]);
 			singlezone.setTitle(zonesName[k]);
-			if (!zonesAutovelox[k].equalsIgnoreCase(Const.autoveloxNone))
-				singlezone.setSummary(Const.autovelox);
+			if (!zonesAutovelox[k].equalsIgnoreCase(autoveloxNone))
+				singlezone.setSummary(autovelox);
 			zonesCategory.addPreference(singlezone);
 		}
 	}

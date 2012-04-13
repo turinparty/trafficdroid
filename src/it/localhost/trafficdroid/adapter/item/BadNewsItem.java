@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class BadNewsItem extends AbstractChildItem {
+	static final String badNewsLabel = "Bad News: ";
 	private StreetDTO streetDTO;
 
 	public BadNewsItem(Context context, StreetDTO streetDTO) {
@@ -38,7 +39,7 @@ public class BadNewsItem extends AbstractChildItem {
 		((TextView) view.getTag(R.id.streetDirRight)).setText(streetDTO.getDirectionRight());
 		TextView badNews = (TextView) view.getTag(R.id.badNews);
 		if (streetDTO.getBadNews().size() != 0) {
-			badNews.setText(Const.badNews + streetDTO.getBadNews().size());
+			badNews.setText(badNewsLabel + streetDTO.getBadNews().size());
 			badNews.setVisibility(View.VISIBLE);
 		} else
 			badNews.setVisibility(View.INVISIBLE);
@@ -46,7 +47,7 @@ public class BadNewsItem extends AbstractChildItem {
 
 	public void onClick() {
 		if (streetDTO.getBadNews().size() != 0) {
-			TdAnalytics.trackEvent(Const.eventCatBadNews, Const.eventActionOpen, streetDTO.getName(), 0);
+			TdAnalytics.trackEvent(TdAnalytics.eventCatBadNews, TdAnalytics.eventActionOpen, streetDTO.getName(), 0);
 			Dialog dialog = new Dialog(context);
 			dialog.setTitle(streetDTO.getName());
 			ListView listview = (ListView) LayoutInflater.from(context).inflate(R.layout.dialog_badnews, null);

@@ -28,13 +28,22 @@ import android.net.NetworkInfo;
 import com.commonsware.cwac.wakeful.WakefulIntentService;
 
 public class TdService extends WakefulIntentService { // NO_UCD
+	public static final String beginUpdate = "it.localhost.trafficdroid.BEGIN_UPDATE";
+	public static final String endUpdate = "it.localhost.trafficdroid.END_UPDATE";
+	private static final Intent beginUpdateIntent = new Intent(beginUpdate);
+	private static final Intent endUpdateIntent = new Intent(endUpdate);
+	private static final String openRound = " (";
+	private static final String closeRound = ")";
+	private static final String disconnectedMessage = "Connessione di rete inesistente";
+	private static final String badConf = "Configurazione errata: ";
+
 	public TdService() {
-		super(Const.tdData);
+		super(MainDAO.tdData);
 	}
 
 	@Override
 	public void doWakefulWork(Intent arg0) {
-		sendBroadcast(Const.beginUpdateIntent);
+		sendBroadcast(beginUpdateIntent);
 		MainDTO currDTO = MainDAO.create();
 		MainDTO pastDTO;
 		try {
@@ -45,7 +54,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 		try {
 			NetworkInfo activeNetworkInfo = ((ConnectivityManager) TdApp.getContext().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
 			if (activeNetworkInfo != null && !activeNetworkInfo.isConnected())
-				throw new ConnectionException(Const.disconnectedMessage);
+				throw new ConnectionException(disconnectedMessage);
 			new TrafficParser(currDTO, TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault)).parse();
 			if (TdApp.getPrefBoolean(R.string.badnewsEnablerKey, R.string.badnewsEnablerDefault))
 				new BadNewsParser(currDTO, TdApp.getPrefString(R.string.providerBadNewsKey, R.string.providerBadNewsDefault)).parse();
@@ -86,9 +95,9 @@ public class TdService extends WakefulIntentService { // NO_UCD
 					if (congestionLeft && congestionRight)
 						currDTO.addCongestedZone(currZone.getName());
 					else if (congestionLeft)
-						currDTO.addCongestedZone(currZone.getName() + Const.openRound + currStreet.getDirectionLeft() + Const.closeRound);
+						currDTO.addCongestedZone(currZone.getName() + openRound + currStreet.getDirectionLeft() + closeRound);
 					else if (congestionRight)
-						currDTO.addCongestedZone(currZone.getName() + Const.openRound + currStreet.getDirectionRight() + Const.closeRound);
+						currDTO.addCongestedZone(currZone.getName() + openRound + currStreet.getDirectionRight() + closeRound);
 					StreetDTO pastStreet = null;
 					ZoneDTO pastZone = null;
 					if (pastDTO != null) {
@@ -138,13 +147,13 @@ public class TdService extends WakefulIntentService { // NO_UCD
 			TdApp.getEditor().putString(Const.exceptionMsg, e.getMessage());
 		} catch (BadConfException e) {
 			TdApp.getEditor().putBoolean(Const.exceptionCheck, true);
-			TdApp.getEditor().putString(Const.exceptionMsg, Const.badConf + e.getMessage());
+			TdApp.getEditor().putString(Const.exceptionMsg, badConf + e.getMessage());
 		} catch (ConnectionException e) {
 			TdApp.getEditor().putBoolean(Const.exceptionCheck, true);
 			TdApp.getEditor().putString(Const.exceptionMsg, e.getMessage());
 		} finally {
 			TdApp.getEditor().commit();
-			sendBroadcast(Const.endUpdateIntent);
+			sendBroadcast(endUpdateIntent);
 		}
 	}
 }

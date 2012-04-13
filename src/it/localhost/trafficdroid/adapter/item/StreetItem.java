@@ -1,7 +1,6 @@
 package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import android.content.Context;
 import android.view.View;
@@ -28,7 +27,7 @@ public class StreetItem extends AbstractItem {
 		((TextView) view.getTag(R.id.streetText1)).setText(streetDTO.getName());
 		TextView streetText2 = (TextView) view.getTag(R.id.streetText2);
 		if (streetDTO.getBadNews().size() != 0) {
-			streetText2.setText(Const.badNews + streetDTO.getBadNews().size());
+			streetText2.setText(BadNewsItem.badNewsLabel + streetDTO.getBadNews().size());
 			streetText2.setVisibility(View.VISIBLE);
 		} else
 			streetText2.setVisibility(View.INVISIBLE);

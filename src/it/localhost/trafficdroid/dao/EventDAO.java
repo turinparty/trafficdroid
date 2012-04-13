@@ -12,12 +12,14 @@ import java.net.URL;
 import org.xml.sax.InputSource;
 
 public class EventDAO {
+	private static final String events = "/portale/rss?rsstype=traffic";
+
 	public static InputSource getData(String url) throws GenericException, BadConfException, ConnectionException {
 		InputSource inputSource = null;
 		int numTries = 3;
 		while (true) {
 			try {
-				inputSource = new InputSource(new URL(Const.http + url + Const.events).openStream());
+				inputSource = new InputSource(new URL(Const.http + url + events).openStream());
 				break;
 			} catch (MalformedURLException e) {
 				throw new BadConfException(e);

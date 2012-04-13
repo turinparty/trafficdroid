@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.view.View;
 
 public class GraphItem extends AbstractChildItem {
+	private static final String trafficGraphFirst = "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>TrafficGraph</title></head><body style=\"background-color:black\"><img src=\"";
+	private static final String trafficGraphSecond = ".gif\" alt=\"TrafficGraph\" /></body></html>";
 	private StreetDTO streetDTO;
 
 	public GraphItem(Context context, StreetDTO streetDTO) {
@@ -35,9 +37,9 @@ public class GraphItem extends AbstractChildItem {
 
 	@Override
 	public void onClick() {
-		TdAnalytics.trackEvent(Const.eventCatGraph, Const.eventActionOpen, streetDTO.getName(), 0);
+		TdAnalytics.trackEvent(TdAnalytics.eventCatGraph, TdAnalytics.eventActionOpen, streetDTO.getName(), 0);
 		Intent intent = new Intent(context, WebViewActivity.class);
-		intent.putExtra(Const.data, Const.trafficGraphFirst + Const.http + TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault) + Const.slash + streetDTO.getGraph() + Const.trafficGraphSecond);
+		intent.putExtra(Const.data, trafficGraphFirst + Const.http + TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault) + Const.slash + streetDTO.getGraph() + trafficGraphSecond);
 		context.startActivity(intent);
 	}
 }

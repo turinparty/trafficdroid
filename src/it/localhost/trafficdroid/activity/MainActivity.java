@@ -1,7 +1,5 @@
 package it.localhost.trafficdroid.activity;
 
-import com.commonsware.cwac.wakeful.WakefulIntentService;
-
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.MainAdapter;
 import it.localhost.trafficdroid.adapter.item.AbstractChildItem;
@@ -11,6 +9,7 @@ import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.service.TdListener;
+import it.localhost.trafficdroid.service.TdService;
 import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
@@ -32,7 +31,15 @@ import android.widget.ExpandableListView.ExpandableListContextMenuInfo;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.Toast;
 
+import com.commonsware.cwac.wakeful.WakefulIntentService;
+
 public class MainActivity extends AbstractActivity {
+	private static final String fuel = "/public/tabellanazionale/tabellaNazionale.php";
+	private static final String donate = "market://details?id=it.localhost.donate";
+	private static final String removePrefToastUndo = " è stato aggiunto ai preferiti.";
+	private static final String removePrefToast = " è stato rimosso dai preferiti.";
+	private static final String unknowError = "Unknow Error";
+	private static final String blank = " ";
 	private ExpandableListView listView;
 	private IntentFilter intentFilter;
 	private BroadcastReceiver receiver;
@@ -43,10 +50,10 @@ public class MainActivity extends AbstractActivity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
-		TdAnalytics.trackEvent(Const.eventCatApp, Const.eventActionVersion, TdApp.getVersionName(), TdApp.getVersionCode());
+		TdAnalytics.trackEvent(TdAnalytics.eventCatApp, TdAnalytics.eventActionVersion, TdApp.getVersionName(), TdApp.getVersionCode());
 		intentFilter = new IntentFilter();
-		intentFilter.addAction(Const.beginUpdate);
-		intentFilter.addAction(Const.endUpdate);
+		intentFilter.addAction(TdService.beginUpdate);
+		intentFilter.addAction(TdService.endUpdate);
 		listView = (ExpandableListView) findViewById(R.id.mainTable);
 		tdListener = new TdListener();
 		listView.setOnChildClickListener(new OnChildClickListener() {
@@ -57,9 +64,9 @@ public class MainActivity extends AbstractActivity {
 		});
 		receiver = new BroadcastReceiver() {
 			public void onReceive(Context context, Intent intent) {
-				if (intent.getAction().equals(Const.beginUpdate)) {
+				if (intent.getAction().equals(TdService.beginUpdate)) {
 					setProgressBarIndeterminateVisibility(true);
-				} else if (intent.getAction().equals(Const.endUpdate)) {
+				} else if (intent.getAction().equals(TdService.endUpdate)) {
 					setProgressBarIndeterminateVisibility(false);
 					refresh();
 				}
@@ -103,11 +110,11 @@ public class MainActivity extends AbstractActivity {
 			return true;
 		case R.id.menuFuel:
 			Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerFuelKey, R.string.providerFuelDefault) + Const.fuel);
+			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerFuelKey, R.string.providerFuelDefault) + fuel);
 			startActivity(intent);
 			return true;
 		case R.id.menuDonate:
-			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Const.donate)));
+			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(donate)));
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
@@ -138,11 +145,11 @@ public class MainActivity extends AbstractActivity {
 			if (TdApp.getPrefBoolean(itemKey, false)) {
 				item.setChecked(false);
 				TdApp.getEditor().putBoolean(itemKey, false).commit();
-				msg = Const.removePrefToast;
+				msg = removePrefToast;
 			} else {
 				item.setChecked(true);
 				TdApp.getEditor().putBoolean(itemKey, true).commit();
-				msg = Const.removePrefToastUndo;
+				msg = removePrefToastUndo;
 			}
 			Toast.makeText(TdApp.getContext(), itemName + msg, Toast.LENGTH_SHORT).show();
 			return true;
@@ -155,7 +162,7 @@ public class MainActivity extends AbstractActivity {
 		if (!TdApp.getPrefBoolean(Const.exceptionCheck, false)) {
 			new RefreshTask().execute((Void[]) null);
 		} else {
-			String msg = TdApp.getPrefString(Const.exceptionMsg, Const.unknowError);
+			String msg = TdApp.getPrefString(Const.exceptionMsg, unknowError);
 			new AlertDialog.Builder(this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(msg).show();
 			setTitle(msg);
 			TdApp.getEditor().putBoolean(Const.exceptionCheck, false).commit();
@@ -175,11 +182,11 @@ public class MainActivity extends AbstractActivity {
 		@Override
 		protected void onPostExecute(MainDTO mainDTO) {
 			if (mainDTO != null && mainDTO.getTrafficTime() != null) {
-				setTitle(getString(R.string.app_name) + Const.blank + DateFormat.getTimeFormat(MainActivity.this).format(mainDTO.getTrafficTime()));
+				setTitle(getString(R.string.app_name) + blank + DateFormat.getTimeFormat(MainActivity.this).format(mainDTO.getTrafficTime()));
 				listView.setAdapter(new MainAdapter(MainActivity.this, mainDTO));
 				registerForContextMenu(listView);
 				for (int i = 0; i < listView.getExpandableListAdapter().getGroupCount(); i++)
-					if (TdApp.getPrefBoolean(Const.expanded + i, false))
+					if (TdApp.getPrefBoolean(MainAdapter.expanded + i, false))
 						listView.expandGroup(i);
 					else
 						listView.collapseGroup(i);

@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 
 public class MainAdapter extends BaseExpandableListAdapter {
+	public static final String expanded = "Expanded";
 	private ArrayList<AbstractItem> groupItems;
 	private ArrayList<ArrayList<AbstractChildItem>> childItems;
 
@@ -100,12 +101,12 @@ public class MainAdapter extends BaseExpandableListAdapter {
 	@Override
 	public void onGroupCollapsed(int groupPosition) {
 		super.onGroupCollapsed(groupPosition);
-		TdApp.getEditor().putBoolean(Const.expanded + groupPosition, false).commit();
+		TdApp.getEditor().putBoolean(expanded + groupPosition, false).commit();
 	}
 
 	@Override
 	public void onGroupExpanded(int groupPosition) {
 		super.onGroupExpanded(groupPosition);
-		TdApp.getEditor().putBoolean(Const.expanded + groupPosition, true).commit();
+		TdApp.getEditor().putBoolean(expanded + groupPosition, true).commit();
 	}
 }

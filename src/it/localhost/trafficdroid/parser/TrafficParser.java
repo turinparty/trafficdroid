@@ -1,6 +1,5 @@
 package it.localhost.trafficdroid.parser;
 
-import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.dao.TrafficDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
@@ -20,6 +19,13 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class TrafficParser extends DefaultHandler {
+	private static final String STARTDIR_ELEMENT = "startdir";
+	private static final String ENDDIR_ELEMENT = "enddir";
+	private static final String SECTOR_ELEMENT = "sector";
+	private static final String LABEL_ELEMENT = "label";
+	private static final String KM_ELEMENT = "km";
+	private static final String DIRA_ELEMENT = "dirA";
+	private static final String DIRB_ELEMENT = "dirB";
 	private MainDTO dto;
 	private String url;
 	private StreetDTO street;
@@ -59,7 +65,7 @@ public class TrafficParser extends DefaultHandler {
 		buf = new StringBuilder();
 		if (zoneCounter == street.getZonesSize())
 			throw new SAXException();
-		if (localName.equals(Const.SECTOR_ELEMENT))
+		if (localName.equals(SECTOR_ELEMENT))
 			inSector = true;
 	}
 
@@ -72,23 +78,23 @@ public class TrafficParser extends DefaultHandler {
 	public void endElement(String uri, String localName, String qName) {
 		if (buf.length() != 0) {
 			if (inSector) {
-				if (localName.equals(Const.LABEL_ELEMENT))
+				if (localName.equals(LABEL_ELEMENT))
 					currZone = street.getZone(buf.toString());
-				else if (currZone != null && localName.equals(Const.KM_ELEMENT))
+				else if (currZone != null && localName.equals(KM_ELEMENT))
 					currZone.setKm(buf.toString());
-				else if (currZone != null && localName.equals(Const.DIRA_ELEMENT))
+				else if (currZone != null && localName.equals(DIRA_ELEMENT))
 					currZone.setSpeedLeft(buf.toString());
-				else if (currZone != null && localName.equals(Const.DIRB_ELEMENT))
+				else if (currZone != null && localName.equals(DIRB_ELEMENT))
 					currZone.setSpeedRight(buf.toString());
-				else if (localName.equals(Const.SECTOR_ELEMENT)) {
+				else if (localName.equals(SECTOR_ELEMENT)) {
 					inSector = false;
 					if (currZone != null)
 						zoneCounter++;
 				}
 			} else {
-				if (localName.equals(Const.STARTDIR_ELEMENT))
+				if (localName.equals(STARTDIR_ELEMENT))
 					street.setDirectionLeft(buf.toString());
-				else if (localName.equals(Const.ENDDIR_ELEMENT))
+				else if (localName.equals(ENDDIR_ELEMENT))
 					street.setDirectionRight(buf.toString());
 			}
 		}

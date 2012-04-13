@@ -12,12 +12,14 @@ import java.net.URL;
 import org.xml.sax.InputSource;
 
 public class TrafficDAO {
+	private static final String xml = ".xml";
+
 	public static InputSource getData(int mapId, String baseUrl) throws GenericException, BadConfException, ConnectionException {
 		InputSource inputSource = null;
 		int numTries = 3;
 		while (true) {
 			try {
-				inputSource = new InputSource(new URL(Const.http + baseUrl + Const.slash + mapId + Const.xml).openStream());
+				inputSource = new InputSource(new URL(Const.http + baseUrl + Const.slash + mapId + xml).openStream());
 				break;
 			} catch (MalformedURLException e) {
 				throw new BadConfException(e);

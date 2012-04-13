@@ -6,13 +6,22 @@ import java.util.concurrent.Executors;
 import com.google.android.apps.analytics.GoogleAnalyticsTracker;
 
 public class TdAnalytics {
+	private static final String ID = "UA-12243941-5";
+	public static final String eventCatApp = "App";
+	public static final String eventActionVersion = "Version";
+	public static final String eventCatWebcam = "Webcam";
+	public static final String eventCatBadNews = "BadNews";
+	public static final String eventCatGraph = "Graph";
+	public static final String eventActionRequest = "Request";
+	public static final String eventActionOpen = "Open";
+	public static final String eventActionNone = "None";
 	private static GoogleAnalyticsTracker tracker = GoogleAnalyticsTracker.getInstance();
 	private static ExecutorService executor = Executors.newSingleThreadExecutor();
 
-	public static void startNewSession(final String arg0) {
+	public static void startNewSession() {
 		executor.submit(new Runnable() {
 			public void run() {
-				tracker.startNewSession(arg0, TdApp.getContext());
+				tracker.startNewSession(ID, TdApp.getContext());
 			}
 		});
 	}

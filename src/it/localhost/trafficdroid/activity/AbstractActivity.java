@@ -1,6 +1,5 @@
 package it.localhost.trafficdroid.activity;
 
-import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdAnalytics;
 import android.app.Activity;
 import android.os.Bundle;
@@ -9,7 +8,7 @@ abstract class AbstractActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		TdAnalytics.startNewSession(Const.anlyticsId);
+		TdAnalytics.startNewSession();
 	}
 
 	@Override

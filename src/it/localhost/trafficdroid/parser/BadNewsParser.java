@@ -1,6 +1,5 @@
 package it.localhost.trafficdroid.parser;
 
-import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.dao.EventDAO;
 import it.localhost.trafficdroid.dto.BadNewsDTO;
 import it.localhost.trafficdroid.dto.MainDTO;
@@ -11,6 +10,7 @@ import it.localhost.trafficdroid.exception.GenericException;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.StringTokenizer;
 
@@ -24,6 +24,14 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class BadNewsParser extends DefaultHandler {
+	private static final String BADNEWS_TITLE = "title";
+	private static final String BADNEWS_DESCRIPTION = "description";
+	private static final String BADNEWS_PUBDATE = "pubDate";
+	private static final String item = "item";
+	private static final SimpleDateFormat sdfBnParse = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+	private static final String badNewsStreetDelim = "A -";
+	private static final String badNewsDelim = "\n";
+	private static final char charAutostrade = 'A';
 	private MainDTO dto;
 	private String url;
 	private boolean inItem;
@@ -56,7 +64,7 @@ public class BadNewsParser extends DefaultHandler {
 	@Override
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 		buf = new StringBuilder();
-		if (localName.equals(Const.item)) {
+		if (localName.equals(item)) {
 			inItem = true;
 		}
 	}
@@ -69,23 +77,23 @@ public class BadNewsParser extends DefaultHandler {
 	@Override
 	public void endElement(String uri, String localName, String qName) {
 		if (buf.length() != 0 && inItem) {
-			if (localName.equals(Const.BADNEWS_TITLE)) {
+			if (localName.equals(BADNEWS_TITLE)) {
 				xml_title = buf.toString();
-				badnewsDaAutostrada = (xml_title.charAt(0) == Const.charAutostrade);
-			} else if (badnewsDaAutostrada && localName.equals(Const.BADNEWS_DESCRIPTION))
+				badnewsDaAutostrada = (xml_title.charAt(0) == charAutostrade);
+			} else if (badnewsDaAutostrada && localName.equals(BADNEWS_DESCRIPTION))
 				xml_description = buf.toString();
-			else if (badnewsDaAutostrada && localName.equals(Const.BADNEWS_PUBDATE))
+			else if (badnewsDaAutostrada && localName.equals(BADNEWS_PUBDATE))
 				try {
-					date = Const.sdfBnParse.parse(buf.toString());
+					date = sdfBnParse.parse(buf.toString());
 				} catch (ParseException e) {
 					date = new Date();
 				}
-			else if (badnewsDaAutostrada && localName.equals(Const.item)) {
+			else if (badnewsDaAutostrada && localName.equals(item)) {
 				inItem = false;
 				try {
-					StreetDTO streetDTO = dto.getStreet(Integer.parseInt(new StringTokenizer(xml_title, Const.badNewsStreetDelim).nextToken()));
+					StreetDTO streetDTO = dto.getStreet(Integer.parseInt(new StringTokenizer(xml_title, badNewsStreetDelim).nextToken()));
 					if (streetDTO != null) {
-						StringTokenizer descST = new StringTokenizer(xml_description, Const.badNewsDelim);
+						StringTokenizer descST = new StringTokenizer(xml_description, badNewsDelim);
 						streetDTO.addBadNews(new BadNewsDTO(descST.nextToken(), descST.nextToken(), date));
 					}
 				} catch (NumberFormatException e) {
