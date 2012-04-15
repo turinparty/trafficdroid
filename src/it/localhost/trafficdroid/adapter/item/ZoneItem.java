@@ -19,6 +19,8 @@ import android.widget.TextView;
 public class ZoneItem extends AbstractChildItem {
 	private static final String webcamFirst = "/autostrade-mobile/popupTelecamera.do?ua=Android%201.1&tlc=";
 	private static final String webcamSecond = "/webcam/temp-imgs/camsbig/";
+	private static final String webcamThird = "/vp2/vpcam.aspx?camid=";
+	private static final String webcamFourth = "/cgi-bin/cgiwebcam.exe?site=";
 	private static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
 	private static final String jpg = ".jpg";
 	private static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);
@@ -28,6 +30,8 @@ public class ZoneItem extends AbstractChildItem {
 	private static final String noDataSpeed = "-";
 	private static final char webcamTrueFirst = 'A';
 	private static final char webcamTrueSecond = 'C';
+	private static final char webcamTrueThird = 'E';
+	private static final char webcamTrueFourth = 'F';
 	private static final char webcamNone = 'H';
 	private ZoneDTO zoneDTO;
 
@@ -91,7 +95,7 @@ public class ZoneItem extends AbstractChildItem {
 			trendRightText.setVisibility(View.VISIBLE);
 		} else
 			trendRightText.setVisibility(View.INVISIBLE);
-		if (zoneDTO.getId().charAt(0) == webcamTrueFirst || zoneDTO.getId().charAt(0) == webcamTrueSecond)
+		if (zoneDTO.getId().charAt(0) == webcamTrueFirst || zoneDTO.getId().charAt(0) == webcamTrueSecond || zoneDTO.getId().charAt(0) == webcamTrueThird || zoneDTO.getId().charAt(0) == webcamTrueFourth)
 			cam.setImageResource(android.R.drawable.ic_menu_camera);
 		else if (zoneDTO.getId().charAt(0) == webcamNone)
 			cam.setImageResource(android.R.drawable.ic_menu_close_clear_cancel);
@@ -131,6 +135,16 @@ public class ZoneItem extends AbstractChildItem {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
 			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKeySecond, R.string.providerCamDefaultSecond) + webcamSecond + code.substring(1) + jpg);
+			context.startActivity(intent);
+		} else if (code.charAt(0) == webcamTrueThird) {
+			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
+			Intent intent = new Intent(context, WebViewActivity.class);
+			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKeyThird, R.string.providerCamDefaultThird) + webcamThird + code.substring(1));
+			context.startActivity(intent);
+		} else if (code.charAt(0) == webcamTrueFourth) {
+			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
+			Intent intent = new Intent(context, WebViewActivity.class);
+			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKeyFourth, R.string.providerCamDefaultFourth) + webcamFourth + code.substring(1));
 			context.startActivity(intent);
 		} else {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionRequest, code, 0);

@@ -28,6 +28,18 @@
             android:title="@string/providerCamTitleSecond" />
 
         <EditTextPreference
+            android:defaultValue="@string/providerCamDefaultThird"
+            android:key="@string/providerCamKeyThird"
+            android:summary="@string/providerSummary"
+            android:title="@string/providerCamTitleThird" />
+
+        <EditTextPreference
+            android:defaultValue="@string/providerCamDefaultFourth"
+            android:key="@string/providerCamKeyFourth"
+            android:summary="@string/providerSummary"
+            android:title="@string/providerCamTitleFourth" />
+
+        <EditTextPreference
             android:defaultValue="@string/providerFuelDefault"
             android:key="@string/providerFuelKey"
             android:summary="@string/providerSummary"

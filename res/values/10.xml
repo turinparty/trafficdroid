@@ -3,18 +3,18 @@
 <resources>
 
     <string-array name="zones10Id">
-        <item>Hs10z1</item>
-        <item>Hs10z2</item>
-        <item>Hs10z3</item>
+        <item>Fdelmonte</item>
+        <item>Fxxmiglia</item>
+        <item>Fbordighera</item>
         <item>Hs10z4</item>
         <item>Hs10z5</item>
-        <item>Hs10z6</item>
+        <item>Fimpero</item>
         <item>Hs10z7</item>
         <item>Hs10z8</item>
         <item>Hs10z9</item>
-        <item>Hs10z10</item>
-        <item>Hs10z11</item>
-        <item>Hs10z12</item>
+        <item>Fbastia</item>
+        <item>Fceriale</item>
+        <item>Ffinale</item>
         <item>Hs10z13</item>
         <item>Hs10z14</item>
         <item>A15948</item> <!-- A10 km. 42,8 Savona itinere ovest -->
