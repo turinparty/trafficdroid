@@ -11,7 +11,6 @@ import android.preference.PreferenceScreen;
 
 public class PreferencesActivity extends PreferenceActivity { // NO_UCD
 	private static final String autovelox = "Autovelox";
-	
 	public static final String autoveloxNone = "0";
 
 	@Override
@@ -28,31 +27,24 @@ public class PreferencesActivity extends PreferenceActivity { // NO_UCD
 		streetsCategory.setTitle(R.string.mappedSreet);
 		for (int i = 0; i < streetId.length; i++)
 			if (streetFather[i] == 0) {
-				PreferenceScreen streetScreen = getStreetScreen(streetId[i], streetName[i]);
-				streetsCategory.addPreference(streetScreen);
-				PreferenceCategory subStreetCategory = new PreferenceCategory(this);
-				streetScreen.addPreference(subStreetCategory);
-				subStreetCategory.setTitle(R.string.diramation);
-				boolean alone = true;
+				PreferenceScreen streetScreen = addStreetScreen(streetsCategory, streetId[i], streetName[i]);
+				PreferenceCategory subStreetCategory = null;
 				for (int j = 0; j < streetFather.length; j++)
 					if (streetFather[j] == streetId[i]) {
-						PreferenceScreen subStreetScreen = getStreetScreen(streetId[j], streetName[j]);
-						subStreetCategory.addPreference(subStreetScreen);
-						PreferenceCategory subZonesCategory = new PreferenceCategory(this);
-						subStreetScreen.addPreference(subZonesCategory);
-						setZonesCategory(subZonesCategory, streetId[j]);
-						alone = false;
+						if (subStreetCategory == null) {
+							subStreetCategory = new PreferenceCategory(this);
+							streetScreen.addPreference(subStreetCategory);
+							subStreetCategory.setTitle(R.string.diramation);
+						}
+						setZonesCategory(addStreetScreen(subStreetCategory, streetId[j], streetName[j]), streetId[j]);
 					}
-				if (alone)
-					streetScreen.removePreference(subStreetCategory);
-				PreferenceCategory zonesCategory = new PreferenceCategory(this);
-				streetScreen.addPreference(zonesCategory);
-				setZonesCategory(zonesCategory, streetId[i]);
+				setZonesCategory(streetScreen, streetId[i]);
 			}
 	}
 
-	private PreferenceScreen getStreetScreen(int streetId, String streetName) {
+	private PreferenceScreen addStreetScreen(PreferenceCategory streetsCategory, int streetId, String streetName) {
 		PreferenceScreen streetScreen = getPreferenceManager().createPreferenceScreen(this);
+		streetsCategory.addPreference(streetScreen);
 		streetScreen.setTitle(streetName);
 		CheckBoxPreference streetCheck = new CheckBoxPreference(this);
 		streetCheck.setKey(Integer.toString(streetId));
@@ -62,7 +54,9 @@ public class PreferencesActivity extends PreferenceActivity { // NO_UCD
 		return streetScreen;
 	}
 
-	private void setZonesCategory(PreferenceCategory zonesCategory, int streetId) {
+	private void setZonesCategory(PreferenceScreen streetScreen, int streetId) {
+		PreferenceCategory zonesCategory = new PreferenceCategory(this);
+		streetScreen.addPreference(zonesCategory);
 		zonesCategory.setTitle(R.string.sniper);
 		String[] zonesId = getResources().getStringArray(Const.zonesResId.get(streetId));
 		String[] zonesName = getResources().getStringArray(Const.zonesResName.get(streetId));
