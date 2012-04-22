@@ -24,6 +24,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.v4.app.NotificationCompat;
 
 import com.commonsware.cwac.wakeful.WakefulIntentService;
 
@@ -133,11 +134,16 @@ public class TdService extends WakefulIntentService { // NO_UCD
 			}
 			String congestedZones = currDTO.getCongestedZones();
 			if (congestedZones != null && TdApp.getPrefBoolean(R.string.chiaroveggenzaEnablerKey, R.string.chiaroveggenzaEnablerDefault)) {
-				Notification notification = new Notification(R.drawable.icon, getString(R.string.notificationTicker), System.currentTimeMillis());
-				notification.flags |= Notification.FLAG_AUTO_CANCEL;
-				notification.defaults |= Notification.DEFAULT_ALL;
-				notification.setLatestEventInfo(this, getString(R.string.notificationTitle), congestedZones, PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), PendingIntent.FLAG_UPDATE_CURRENT));
-				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(Const.notificationId, notification);
+				NotificationCompat.Builder bui = new NotificationCompat.Builder(this);
+				bui.setDefaults(Notification.DEFAULT_ALL);
+				bui.setSmallIcon(R.drawable.icon);
+				bui.setTicker(getString(R.string.notificationTicker));
+				bui.setContentTitle(getString(R.string.notificationTitle));
+				bui.setContentText(congestedZones);
+				Intent intent = new Intent(this, MainActivity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+				bui.setContentIntent(PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT));
+				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(Const.notificationId, bui.getNotification());
 			} else
 				((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
 			MainDAO.store(currDTO);

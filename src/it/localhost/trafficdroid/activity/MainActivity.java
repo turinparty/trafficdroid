@@ -56,6 +56,10 @@ public class MainActivity extends AbstractActivity {
 		intentFilter.addAction(TdService.endUpdate);
 		listView = (ExpandableListView) findViewById(R.id.mainTable);
 		tdListener = new TdListener();
+		if (TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
+			new AlertDialog.Builder(this).setTitle(R.string.warning).setPositiveButton(R.string.ok, null).setMessage(R.string.badConf).show();
+		else if (TdApp.getPrefBoolean(R.string.berserkKey, R.string.berserkDefault))
+			tdListener.sendWakefulWork(TdApp.getContext());
 		listView.setOnChildClickListener(new OnChildClickListener() {
 			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 				((AbstractChildItem) parent.getExpandableListAdapter().getChild(groupPosition, childPosition)).onClick();
@@ -80,10 +84,6 @@ public class MainActivity extends AbstractActivity {
 		registerReceiver(receiver, intentFilter);
 		WakefulIntentService.scheduleAlarms(new TdListener(), this, false);
 		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
-		if (TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
-			new AlertDialog.Builder(this).setTitle(R.string.warning).setPositiveButton(R.string.ok, null).setMessage(R.string.badConf).show();
-		else if (TdApp.getPrefBoolean(R.string.berserkKey, R.string.berserkDefault))
-			tdListener.sendWakefulWork(TdApp.getContext());
 		refresh();
 	}
 
