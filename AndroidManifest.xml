@@ -3,7 +3,7 @@
     package="it.localhost.trafficdroid"
     android:installLocation="preferExternal"
     android:versionCode="91"
-    android:versionName="1.12.3 Goonies" >
+    android:versionName="1.13.0 more eyes" >
 
     <uses-sdk
         android:minSdkVersion="8"
