@@ -17,7 +17,6 @@
         android:layout_height="wrap_content"
         ads:adSize="SMART_BANNER"
         ads:adUnitId="a14f53f479792ee"
-        ads:loadAdOnCreate="true"
-        ads:testDevices="5EC179F0C7E09626F5F260EE6CBDB4A3" />
+        ads:loadAdOnCreate="true" />
 
 </LinearLayout>
