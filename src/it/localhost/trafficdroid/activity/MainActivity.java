@@ -6,6 +6,7 @@ import it.localhost.trafficdroid.adapter.item.AbstractChildItem;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdAnalytics;
 import it.localhost.trafficdroid.common.TdApp;
+import it.localhost.trafficdroid.common.ViewTagger;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.service.TdListener;
@@ -127,18 +128,18 @@ public class MainActivity extends AbstractActivity {
 		ExpandableListContextMenuInfo info = (ExpandableListContextMenuInfo) menuInfo;
 		int packedPositionType = ExpandableListView.getPackedPositionType(info.packedPosition);
 		View item = info.targetView;
-		if (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_GROUP || (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_CHILD && ((Integer) item.getTag(R.id.zoneType)) == Const.itemTypes[1])) {
+		if (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_GROUP || (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_CHILD && ((Integer) ViewTagger.getTag(item, R.id.zoneType)) == Const.itemTypes[1])) {
 			getMenuInflater().inflate(R.menu.main_context, menu);
-			menu.getItem(0).setChecked(TdApp.getPrefBoolean((String) item.getTag(R.id.itemKey), false));
-			menu.setHeaderTitle((String) item.getTag(R.id.itemName));
+			menu.getItem(0).setChecked(TdApp.getPrefBoolean((String) ViewTagger.getTag(item, R.id.itemKey), false));
+			menu.setHeaderTitle((String) ViewTagger.getTag(item, R.id.itemName));
 		}
 	}
 
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		View v = ((ExpandableListContextMenuInfo) item.getMenuInfo()).targetView;
-		String itemKey = (String) v.getTag(R.id.itemKey);
-		String itemName = (String) v.getTag(R.id.itemName);
+		String itemKey = (String) ViewTagger.getTag(v, R.id.itemKey);
+		String itemName = (String) ViewTagger.getTag(v, R.id.itemName);
 		switch (item.getItemId()) {
 		case R.id.removePref:
 			String msg;

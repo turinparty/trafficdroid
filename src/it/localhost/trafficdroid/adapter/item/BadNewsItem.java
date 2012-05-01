@@ -4,6 +4,7 @@ import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.BadNewsAdapter;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdAnalytics;
+import it.localhost.trafficdroid.common.ViewTagger;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import android.app.Dialog;
 import android.content.Context;
@@ -27,17 +28,17 @@ public class BadNewsItem extends AbstractChildItem {
 
 	public View inflateView() {
 		View view = inflater.inflate(R.layout.main_item_badnews, null, false);
-		view.setTag(R.id.streetDirLeft, view.findViewById(R.id.streetDirLeft));
-		view.setTag(R.id.streetDirRight, view.findViewById(R.id.streetDirRight));
-		view.setTag(R.id.badNews, view.findViewById(R.id.badNews));
+		ViewTagger.setTag(view, R.id.streetDirLeft, view.findViewById(R.id.streetDirLeft));
+		ViewTagger.setTag(view, R.id.streetDirRight, view.findViewById(R.id.streetDirRight));
+		ViewTagger.setTag(view, R.id.badNews, view.findViewById(R.id.badNews));
 		return view;
 	}
 
 	public void fillView(View view) {
-		view.setTag(R.id.zoneType, getType());
-		((TextView) view.getTag(R.id.streetDirLeft)).setText(streetDTO.getDirectionLeft());
-		((TextView) view.getTag(R.id.streetDirRight)).setText(streetDTO.getDirectionRight());
-		TextView badNews = (TextView) view.getTag(R.id.badNews);
+		ViewTagger.setTag(view, R.id.zoneType, getType());
+		((TextView) ViewTagger.getTag(view, R.id.streetDirLeft)).setText(streetDTO.getDirectionLeft());
+		((TextView) ViewTagger.getTag(view, R.id.streetDirRight)).setText(streetDTO.getDirectionRight());
+		TextView badNews = (TextView) ViewTagger.getTag(view, R.id.badNews);
 		if (streetDTO.getBadNews().size() != 0) {
 			badNews.setText(badNewsLabel + streetDTO.getBadNews().size());
 			badNews.setVisibility(View.VISIBLE);

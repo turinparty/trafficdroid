@@ -1,6 +1,7 @@
 package it.localhost.trafficdroid.adapter;
 
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.common.ViewTagger;
 import it.localhost.trafficdroid.dto.BadNewsDTO;
 
 import java.text.SimpleDateFormat;
@@ -49,14 +50,14 @@ public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
 		BadNewsDTO event = getItem(position);
 		if (convertView == null) {
 			convertView = inflater.inflate(R.layout.dialog_item_badnews, null);
-			convertView.setTag(R.id.badNewsTitle, convertView.findViewById(R.id.badNewsTitle));
-			convertView.setTag(R.id.badNewsImage, convertView.findViewById(R.id.badNewsImage));
-			convertView.setTag(R.id.badNewsDate, convertView.findViewById(R.id.badNewsDate));
-			convertView.setTag(R.id.badNewsDescription, convertView.findViewById(R.id.badNewsDescription));
+			ViewTagger.setTag(convertView, R.id.badNewsTitle, convertView.findViewById(R.id.badNewsTitle));
+			ViewTagger.setTag(convertView, R.id.badNewsImage, convertView.findViewById(R.id.badNewsImage));
+			ViewTagger.setTag(convertView, R.id.badNewsDate, convertView.findViewById(R.id.badNewsDate));
+			ViewTagger.setTag(convertView, R.id.badNewsDescription, convertView.findViewById(R.id.badNewsDescription));
 		}
-		((TextView) convertView.getTag(R.id.badNewsTitle)).setText(event.getTitle());
-		((TextView) convertView.getTag(R.id.badNewsDescription)).setText(event.getDescription());
-		TextView badNewsDate = (TextView) convertView.getTag(R.id.badNewsDate);
+		((TextView) ViewTagger.getTag(convertView, R.id.badNewsTitle)).setText(event.getTitle());
+		((TextView) ViewTagger.getTag(convertView, R.id.badNewsDescription)).setText(event.getDescription());
+		TextView badNewsDate = (TextView) ViewTagger.getTag(convertView, R.id.badNewsDate);
 		badNewsDate.setText(sdfBnFormat.format(event.getDate()));
 		int drawable;
 		if (event.getTitle().contains(bn_acc))
