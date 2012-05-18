@@ -3,6 +3,7 @@
 
     <string name="app_name">TrafficDroid</string>
     <string name="ok">OK</string>
+    <string name="help">Un inaspettata variazione nel provider del traffico ha reso incompatibile l\'applicazione. Attualmente funzionano soltanto le webcam e le bad-news. Siamo a lavoro per ripristinare la funzionalità. Una piccola donazione sarà per noi una grande spinta a continuare il nostro lavoro che finora è stato, e sempre sarà, disponibile gratuitamente per tutti.</string>
     <string name="error">Errore</string>
     <string name="warning">Attenzione</string>
     <string name="info">Informazione</string>

@@ -77,6 +77,8 @@ public class MainActivity extends AbstractActivity {
 				}
 			}
 		};
+		new AlertDialog.Builder(this).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.help).show();
+		
 	}
 
 	@Override
@@ -160,9 +162,8 @@ public class MainActivity extends AbstractActivity {
 	}
 
 	private void refresh() {
-		if (!TdApp.getPrefBoolean(Const.exceptionCheck, false)) {
-			new RefreshTask().execute((Void[]) null);
-		} else {
+		new RefreshTask().execute((Void[]) null);
+		if (TdApp.getPrefBoolean(Const.exceptionCheck, false)) {
 			String msg = TdApp.getPrefString(Const.exceptionMsg, unknowError);
 			new AlertDialog.Builder(this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(msg).show();
 			setTitle(msg);
