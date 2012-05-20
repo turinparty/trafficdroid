@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="zones181Id">
-        <item>Hs181z1</item>
-        <item>Hs181z2</item>
-        <item>Hs181z3</item>
-        <item>Hs181z4</item>
-        <item>Hs181z5</item>
-    </string-array>
-    <string-array name="zones181Name">
-        <item>Allaccio A18/Catania Centro</item>
-        <item>Gravina</item>
-        <item>San Giovanni Galermo</item>
-        <item>Misterbianco</item>
-        <item>San Giorgio</item>
-    </string-array>
-    <string-array name="zones181Autovelox">
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
+    <string-array name="z181Name">
+
     </string-array>
 
+    <integer-array name="z181Id">
+    </integer-array>
+    <string-array name="z181Webcam">
+
+    </string-array>
 </resources>

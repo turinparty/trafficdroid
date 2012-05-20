@@ -29,7 +29,7 @@ public class BadNewsParser extends DefaultHandler {
 	private static final String BADNEWS_PUBDATE = "pubDate";
 	private static final String item = "item";
 	private static final SimpleDateFormat sdfBnParse = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-	private static final String badNewsStreetDelim = "A -";
+	private static final String badNewsStreetDelim = " ";
 	private static final String badNewsDelim = "\n";
 	private static final char charAutostrade = 'A';
 	private MainDTO dto;
@@ -90,13 +90,11 @@ public class BadNewsParser extends DefaultHandler {
 				}
 			else if (badnewsDaAutostrada && localName.equals(item)) {
 				inItem = false;
-				try {
-					StreetDTO streetDTO = dto.getStreet(Integer.parseInt(new StringTokenizer(xml_title, badNewsStreetDelim).nextToken()));
-					if (streetDTO != null) {
+				for (StreetDTO street : dto.getStreets()) {
+					if (street.getTag().equalsIgnoreCase(new StringTokenizer(xml_title, badNewsStreetDelim).nextToken())) {
 						StringTokenizer descST = new StringTokenizer(xml_description, badNewsDelim);
-						streetDTO.addBadNews(new BadNewsDTO(descST.nextToken(), descST.nextToken(), date));
+						street.addBadNews(new BadNewsDTO(descST.nextToken(), descST.nextToken(), date));
 					}
-				} catch (NumberFormatException e) {
 				}
 			}
 		}

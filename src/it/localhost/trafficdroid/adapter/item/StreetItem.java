@@ -23,7 +23,7 @@ public class StreetItem extends AbstractItem {
 	}
 
 	public void fillView(View view) {
-		ViewTagger.setTag(view, R.id.itemKey, Integer.toString(streetDTO.getId()));
+		ViewTagger.setTag(view, R.id.itemKey, streetDTO.getId());
 		ViewTagger.setTag(view, R.id.itemName, streetDTO.getName());
 		((TextView) ViewTagger.getTag(view, R.id.streetText1)).setText(streetDTO.getName());
 		TextView streetText2 = (TextView) ViewTagger.getTag(view, R.id.streetText2);

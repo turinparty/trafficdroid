@@ -3,7 +3,6 @@ package it.localhost.trafficdroid.adapter;
 import it.localhost.trafficdroid.adapter.item.AbstractChildItem;
 import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.adapter.item.BadNewsItem;
-import it.localhost.trafficdroid.adapter.item.GraphItem;
 import it.localhost.trafficdroid.adapter.item.StreetItem;
 import it.localhost.trafficdroid.adapter.item.ZoneItem;
 import it.localhost.trafficdroid.common.Const;
@@ -31,8 +30,6 @@ public class MainAdapter extends BaseExpandableListAdapter {
 		for (StreetDTO street : mainDTO.getStreets()) {
 			groupItems.add(new StreetItem(context, street));
 			ArrayList<AbstractChildItem> childItem = new ArrayList<AbstractChildItem>();
-			if (street.getGraph() != 0)
-				childItem.add(new GraphItem(context, street));
 			childItem.add(new BadNewsItem(context, street));
 			for (ZoneDTO zone : street.getZones())
 				childItem.add(new ZoneItem(context, zone));

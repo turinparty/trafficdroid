@@ -1,59 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="zones143Id">
-        <item>Hs143z1</item>
-        <item>Hs143z2</item>
-        <item>Hs143z3</item>
-        <item>Hs143z4</item>
-        <item>Hs143z5</item>
-        <item>Hs143z6</item>
-        <item>Hs143z7</item>
-        <item>Hs143z8</item>
-        <item>Hs143z9</item>
-        <item>Hs143z10</item>
-        <item>Hs143z11</item>
-        <item>Hs143z12</item>
-        <item>Hs143z13</item>
-        <item>Hs143z14</item>
-        <item>Hs143z15</item>
-        <item>Hs143z16</item>
-    </string-array>
-    <string-array name="zones143Name">
-        <item>Allaccio A1/Bettole</item>
-        <item>Foiano</item>
-        <item>Cortona</item>
-        <item>Pietraia</item>
-        <item>Castiglione del Lago</item>
-        <item>Tuoro</item>
-        <item>Passignano Ovest</item>
-        <item>Passignano Est</item>
-        <item>Torricella</item>
-        <item>Magione</item>
-        <item>Corciano</item>
-        <item>Perugia Ferro di Cavallo</item>
-        <item>Perugia Madonna Alta</item>
-        <item>Perugia S. Faustino</item>
-        <item>Perugia Prepo</item>
-        <item>Perugia Piscille</item>
-    </string-array>
-    <string-array name="zones143Autovelox">
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
+    <string-array name="z143Name">
+
     </string-array>
 
+    <integer-array name="z143Id">
+    </integer-array>
+    <string-array name="z143Webcam">
+
+    </string-array>
 </resources>

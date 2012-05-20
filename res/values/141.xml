@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- A14R A14 Bologna-Casalecchio -->
 <resources>
 
-    <string-array name="zones141Id">
-        <item>A20470</item> <!-- R14 km. 000,2 PMV Bologna Casalecchio It. Sud -->
-        <item>A6969</item> <!-- R01 Km.1,1 Borgo Panigale dir sx -->
-    </string-array>
-    <string-array name="zones141Name">
-        <item>Allaccio A1</item>
-        <item>Casalechio di Reno</item>
-    </string-array>
-    <string-array name="zones141Autovelox">
-        <item>0</item>
-        <item>0</item>
+    <string-array name="z141Name">
+
     </string-array>
 
+    <integer-array name="z141Id">
+    </integer-array>
+    <string-array name="z141Webcam">
+
+    </string-array>
 </resources>

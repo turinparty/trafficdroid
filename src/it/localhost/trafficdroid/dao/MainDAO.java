@@ -29,21 +29,32 @@ public class MainDAO {
 		mainDto.setVersionCode(TdApp.getVersionCode());
 		Resources resources = TdApp.getContext().getResources();
 		mainDto.setCongestionThreshold(Byte.parseByte(TdApp.getPrefString(R.string.notificationSpeedKey, R.string.notificationSpeedDefault)));
-		int[] streetsId = resources.getIntArray(R.array.streetsId);
-		int[] streetsGraph = resources.getIntArray(R.array.streetsGraph);
-		String[] streetsName = resources.getStringArray(R.array.streetsName);
+		int[] streetsId = resources.getIntArray(R.array.streetId);
+		String[] streetsName = resources.getStringArray(R.array.streetName);
+		String[] streetsTag = resources.getStringArray(R.array.streetTag);
+		int[] autoveloxStreet = resources.getIntArray(R.array.autoveloxStreet);
+		int[] autoveloxFrom = resources.getIntArray(R.array.autoveloxFrom);
+		int[] autoveloxTo = resources.getIntArray(R.array.autoveloxTo);
 		for (int i = 0; i < streetsId.length; i++) {
 			StreetDTO street = new StreetDTO(streetsId[i]);
 			boolean streetEnabled = TdApp.getPrefBoolean(Integer.toString(street.getId()), false);
-			String[] zonesId = resources.getStringArray(Const.zonesResId.get((streetsId[i])));
+			int[] zonesId = resources.getIntArray(Const.zonesResId.get((streetsId[i])));
+			String[] zonesWebcam = resources.getStringArray(Const.zonesResWebcam.get((streetsId[i])));
 			String[] zonesName = resources.getStringArray(Const.zonesResName.get(streetsId[i]));
-			String[] zonesAutovelox = resources.getStringArray(Const.zonesResAutovelox.get(streetsId[i]));
 			for (int j = 0; j < zonesId.length; j++)
-				if (streetEnabled || TdApp.getPrefBoolean(zonesId[j], false))
-					street.putZone(new ZoneDTO(zonesId[j], zonesName[j], zonesAutovelox[j]));
+				if (streetEnabled || TdApp.getPrefBoolean(Integer.toString(zonesId[j]), false)) {
+					ZoneDTO zone = new ZoneDTO(zonesId[j], zonesName[j], zonesWebcam[j]);
+					for (int k = 0; k < autoveloxStreet.length; k++) {
+						if (autoveloxStreet[k] == streetsId[i] && zonesId[j] >= autoveloxFrom[k] && zonesId[j] < autoveloxTo[k])
+							zone.setAutoveloxLeft();
+						if (autoveloxStreet[k] == streetsId[i] && zonesId[j] >= autoveloxTo[k] && zonesId[j] < autoveloxFrom[k])
+							zone.setAutoveloxRight();
+					}
+					street.putZone(zone);
+				}
 			if (street.getZonesSize() > 0) {
 				street.setName(streetsName[i]);
-				street.setGraph(streetsGraph[i]);
+				street.setTag(streetsTag[i]);
 				mainDto.putStreet(street);
 			}
 		}

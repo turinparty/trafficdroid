@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="zones211Id">
-        <item>Hs211z1</item>
-        <item>Hs211z2</item>
-    </string-array>
-    <string-array name="zones211Name">
-        <item>Allaccio A21</item>
-        <item>Cortemaggiore</item>
-    </string-array>
-    <string-array name="zones211Autovelox">
-        <item>0</item>
-        <item>0</item>
+    <string-array name="z211Name">
+
     </string-array>
 
+    <integer-array name="z211Id">
+    </integer-array>
+    <string-array name="z211Webcam">
+
+    </string-array>
 </resources>

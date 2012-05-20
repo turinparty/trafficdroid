@@ -40,7 +40,7 @@ public class MainActivity extends AbstractActivity {
 	private static final String removePrefToastUndo = " è stato aggiunto ai preferiti.";
 	private static final String removePrefToast = " è stato rimosso dai preferiti.";
 	private static final String unknowError = "Unknow Error";
-	private static final String blank = " ";
+	public static final String blank = " ";
 	private ExpandableListView listView;
 	private IntentFilter intentFilter;
 	private BroadcastReceiver receiver;
@@ -78,7 +78,6 @@ public class MainActivity extends AbstractActivity {
 			}
 		};
 		new AlertDialog.Builder(this).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.help).show();
-		
 	}
 
 	@Override
@@ -132,7 +131,7 @@ public class MainActivity extends AbstractActivity {
 		View item = info.targetView;
 		if (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_GROUP || (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_CHILD && ((Integer) ViewTagger.getTag(item, R.id.zoneType)) == Const.itemTypes[1])) {
 			getMenuInflater().inflate(R.menu.main_context, menu);
-			menu.getItem(0).setChecked(TdApp.getPrefBoolean((String) ViewTagger.getTag(item, R.id.itemKey), false));
+			menu.getItem(0).setChecked(TdApp.getPrefBoolean(Integer.toString((Integer) ViewTagger.getTag(item, R.id.itemKey)), false));
 			menu.setHeaderTitle((String) ViewTagger.getTag(item, R.id.itemName));
 		}
 	}
@@ -140,7 +139,7 @@ public class MainActivity extends AbstractActivity {
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		View v = ((ExpandableListContextMenuInfo) item.getMenuInfo()).targetView;
-		String itemKey = (String) ViewTagger.getTag(v, R.id.itemKey);
+		String itemKey = Integer.toString((Integer) ViewTagger.getTag(v, R.id.itemKey));
 		String itemName = (String) ViewTagger.getTag(v, R.id.itemName);
 		switch (item.getItemId()) {
 		case R.id.removePref:

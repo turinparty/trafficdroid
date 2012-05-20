@@ -3,11 +3,10 @@
 
     <string name="app_name">TrafficDroid</string>
     <string name="ok">OK</string>
-    <string name="help">Un inaspettata variazione nel provider del traffico ha reso incompatibile l\'applicazione. Attualmente funzionano soltanto le webcam e le bad-news. Siamo a lavoro per ripristinare la funzionalità. Una piccola donazione sarà per noi una grande spinta a continuare il nostro lavoro che finora è stato, e sempre sarà, disponibile gratuitamente per tutti.</string>
+    <string name="help">Un inaspettata variazione nel provider del traffico ha reso necessaria una totale riscrittura dell\'applicazione. Attualmente funzionano soltanto poche strade. Siamo a lavoro per ripristinare la funzionalità completa. Una piccola donazione sarà per noi una grande spinta a continuare il nostro lavoro che finora è stato, e sempre sarà, disponibile gratuitamente per tutti.</string>
     <string name="error">Errore</string>
     <string name="warning">Attenzione</string>
     <string name="info">Informazione</string>
-    <string name="graph">Visualizza Mappa Traffico</string>
     <string name="webcamAdd">Questa Webcam non è ancora mappata, aiutaci a mapparla. Sul sito trovi tutte le informazioni. Richiesta di mappatura inoltrata.</string>
     <string name="webcamNone">Non esistono Webcam associabili a questa tratta. Se non è vero segnalalo sul sito.</string>
     <string name="settings">Impostazioni</string>
@@ -23,8 +22,8 @@
     <string name="providerCategory">Provider</string>
     <string name="providerSummary">Verifica di averne i permessi</string>
     <string name="providerTrafficTitle">Servizio Traffico</string>
-    <string name="providerTrafficKey">providerTrafficKeyTwo</string>
-    <string name="providerTrafficDefault">iphone.OTTOtelematics.com</string>
+    <string name="providerTrafficKey">providerTrafficKeyTree</string>
+    <string name="providerTrafficDefault">traffic.infoCELESTEtraffic.com</string>
     <string name="providerCamTitle">Servizio WebCam 1</string>
     <string name="providerCamTitleSecond">Servizio WebCam 2</string>
     <string name="providerCamTitleThird">Servizio WebCam 3</string>
@@ -61,7 +60,6 @@
     <string name="chiaroveggenzaTimeSummary">Ogni quanto tempo aggiornare i dati</string>
     <string name="chiaroveggenzaTimeDefault">1800000</string>
     <string name="notificationTitle">Traffico nelle seguenti tratte</string>
-    <string name="notificationTicker">Traffico rilevato</string>
     <string name="notificationSpeedTitle">Notifica se …</string>
     <string name="notificationSpeedKey">notificationSpeedKey</string>
     <string name="notificationSpeedSummary">Velocità massima per creare la notifica</string>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="z231Name">
+
+    </string-array>
+
+    <integer-array name="z231Id">
+    </integer-array>
+    <string-array name="z231Webcam">
+
+    </string-array>
+</resources>

@@ -4,28 +4,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <LinearLayout
+    <TextView
+        android:id="@id/zoneName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:id="@id/zoneKm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:gravity="center"
-            android:textStyle="italic" />
-
-        <TextView
-            android:id="@id/zoneName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:gravity="center" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:weightSum="7" >
 
         <ImageView
             android:id="@id/trendLeft"
@@ -48,7 +36,8 @@
             android:layout_height="20dp"
             android:layout_weight="1"
             android:contentDescription="@string/warning"
-            android:gravity="center" />
+            android:gravity="center"
+            android:src="@drawable/autovelox" />
 
         <ImageView
             android:id="@id/zoneCam"
@@ -64,7 +53,8 @@
             android:layout_height="20dp"
             android:layout_weight="1"
             android:contentDescription="@string/warning"
-            android:gravity="center" />
+            android:gravity="center"
+            android:src="@drawable/autovelox" />
 
         <TextView
             android:id="@id/zoneSpeedRight"

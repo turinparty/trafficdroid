@@ -25,9 +25,6 @@ public class ZoneItem extends AbstractChildItem {
 	private static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
 	private static final String jpg = ".jpg";
 	private static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);
-	private static final String autoveloxLeftCode = "L";
-	private static final String autoveloxRightCode = "R";
-	private static final String autoveloxAllCode = "A";
 	private static final String noDataSpeed = "-";
 	private static final char webcamTrueFirst = 'A';
 	private static final char webcamTrueSecond = 'C';
@@ -48,7 +45,6 @@ public class ZoneItem extends AbstractChildItem {
 	public View inflateView() {
 		View view = inflater.inflate(R.layout.main_item_zone, null, false);
 		ViewTagger.setTag(view, R.id.zoneName, view.findViewById(R.id.zoneName));
-		ViewTagger.setTag(view, R.id.zoneKm, view.findViewById(R.id.zoneKm));
 		ViewTagger.setTag(view, R.id.zoneSpeedLeft, view.findViewById(R.id.zoneSpeedLeft));
 		ViewTagger.setTag(view, R.id.zoneSpeedRight, view.findViewById(R.id.zoneSpeedRight));
 		ViewTagger.setTag(view, R.id.trendLeft, view.findViewById(R.id.trendLeft));
@@ -64,7 +60,6 @@ public class ZoneItem extends AbstractChildItem {
 		ViewTagger.setTag(view, R.id.itemKey, zoneDTO.getId());
 		ViewTagger.setTag(view, R.id.itemName, zoneDTO.getName());
 		TextView zoneNameText = (TextView) ViewTagger.getTag(view, R.id.zoneName);
-		TextView zoneKmText = (TextView) ViewTagger.getTag(view, R.id.zoneKm);
 		TextView leftZoneSpeedText = (TextView) ViewTagger.getTag(view, R.id.zoneSpeedLeft);
 		TextView rightZoneSpeedText = (TextView) ViewTagger.getTag(view, R.id.zoneSpeedRight);
 		ImageView trendLeftText = (ImageView) ViewTagger.getTag(view, R.id.trendLeft);
@@ -73,7 +68,6 @@ public class ZoneItem extends AbstractChildItem {
 		ImageView autoveloxLeft = (ImageView) ViewTagger.getTag(view, R.id.zoneAutoveloxLeft);
 		ImageView autoveloxRight = (ImageView) ViewTagger.getTag(view, R.id.zoneAutoveloxRight);
 		zoneNameText.setText(zoneDTO.getName());
-		zoneKmText.setText(zoneDTO.getKm());
 		leftZoneSpeedText.setTextColor(colorCat[zoneDTO.getCatLeft()]);
 		rightZoneSpeedText.setTextColor(colorCat[zoneDTO.getCatRight()]);
 		leftZoneSpeedText.setTypeface(zoneDTO.getCatLeft() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
@@ -96,33 +90,24 @@ public class ZoneItem extends AbstractChildItem {
 			trendRightText.setVisibility(View.VISIBLE);
 		} else
 			trendRightText.setVisibility(View.INVISIBLE);
-		if (zoneDTO.getId().charAt(0) == webcamTrueFirst || zoneDTO.getId().charAt(0) == webcamTrueSecond || zoneDTO.getId().charAt(0) == webcamTrueThird || zoneDTO.getId().charAt(0) == webcamTrueFourth)
+		if (zoneDTO.getWebcam().charAt(0) == webcamTrueFirst || zoneDTO.getWebcam().charAt(0) == webcamTrueSecond || zoneDTO.getWebcam().charAt(0) == webcamTrueThird || zoneDTO.getWebcam().charAt(0) == webcamTrueFourth)
 			cam.setImageResource(android.R.drawable.ic_menu_camera);
-		else if (zoneDTO.getId().charAt(0) == webcamNone)
+		else if (zoneDTO.getWebcam().charAt(0) == webcamNone)
 			cam.setImageResource(android.R.drawable.ic_menu_close_clear_cancel);
 		else
 			cam.setImageResource(android.R.drawable.ic_menu_add);
-		if (autoveloxLeftCode.equalsIgnoreCase(zoneDTO.getAutovelox())) {
-			autoveloxLeft.setImageResource(R.drawable.autovelox);
+		if (zoneDTO.isAutoveloxLeft())
 			autoveloxLeft.setVisibility(View.VISIBLE);
-			autoveloxRight.setVisibility(View.INVISIBLE);
-		} else if (autoveloxRightCode.equalsIgnoreCase(zoneDTO.getAutovelox())) {
-			autoveloxRight.setImageResource(R.drawable.autovelox);
-			autoveloxRight.setVisibility(View.VISIBLE);
+		else
 			autoveloxLeft.setVisibility(View.INVISIBLE);
-		} else if (autoveloxAllCode.equalsIgnoreCase(zoneDTO.getAutovelox())) {
-			autoveloxLeft.setImageResource(R.drawable.autovelox);
-			autoveloxRight.setImageResource(R.drawable.autovelox);
-			autoveloxLeft.setVisibility(View.VISIBLE);
+		if (zoneDTO.isAutoveloxRight())
 			autoveloxRight.setVisibility(View.VISIBLE);
-		} else {
-			autoveloxLeft.setVisibility(View.INVISIBLE);
+		else
 			autoveloxRight.setVisibility(View.INVISIBLE);
-		}
 	}
 
 	public void onClick() {
-		String code = zoneDTO.getId();
+		String code = zoneDTO.getWebcam();
 		if (code.charAt(0) == webcamNone) {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionNone, code, 0);
 			new AlertDialog.Builder(context).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamNone).show();

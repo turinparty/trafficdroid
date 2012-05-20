@@ -1,32 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="zones144Id">
-        <item>Hs144z1</item>
-        <item>Hs144z2</item>
-        <item>Hs144z3</item>
-        <item>Hs144z4</item>
-        <item>Hs144z5</item>
-        <item>Hs144z6</item>
-        <item>Hs144z7</item>
-    </string-array>
-    <string-array name="zones144Name">
-        <item>Ascoli Piceno</item>
-        <item>Marino del Tronto</item>
-        <item>Maltignano</item>
-        <item>Ancarano-Castel di Lama</item>
-        <item>Spinetoli</item>
-        <item>Monsampolo del Tronto</item>
-        <item>Monteprandone</item>
-    </string-array>
-    <string-array name="zones144Autovelox">
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
+    <string-array name="z144Name">
+
     </string-array>
 
+    <integer-array name="z144Id">
+    </integer-array>
+    <string-array name="z144Webcam">
+
+    </string-array>
 </resources>

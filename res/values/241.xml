@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="zones241Id">
-        <item>Hs241z1</item>
-        <item>Hs241z2</item>
-        <item>Hs241z3</item>
-        <item>Hs241z4</item>
-    </string-array>
-    <string-array name="zones241Name">
-        <item>Tangenziale</item>
-        <item>Portonaccio</item>
-        <item>Via dei fiorentini</item>
-        <item>Via Palmiro Togliatti</item>
-    </string-array>
-    <string-array name="zones241Autovelox">
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
+    <string-array name="z241Name">
+
     </string-array>
 
+    <integer-array name="z241Id">
+    </integer-array>
+    <string-array name="z241Webcam">
+
+    </string-array>
 </resources>

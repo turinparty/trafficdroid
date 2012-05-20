@@ -12,22 +12,29 @@ import android.preference.PreferenceScreen;
 public class PreferencesActivity extends PreferenceActivity { // NO_UCD
 	private static final String autovelox = "Autovelox";
 	public static final String autoveloxNone = "0";
+	public int[] autoveloxStreet;
+	public int[] autoveloxFrom;
+	public int[] autoveloxTo;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		TdAnalytics.startNewSession();
 		addPreferencesFromResource(R.layout.preferencescreen);
-		int[] streetId = getResources().getIntArray(R.array.streetsId);
-		String[] streetName = getResources().getStringArray(R.array.streetsName);
-		int[] streetFather = getResources().getIntArray(R.array.streetsFather);
+		int[] streetId = getResources().getIntArray(R.array.streetId);
+		String[] streetName = getResources().getStringArray(R.array.streetName);
+		String[] streetTag = getResources().getStringArray(R.array.streetTag);
+		int[] streetFather = getResources().getIntArray(R.array.streetFather);
+		autoveloxStreet = getResources().getIntArray(R.array.autoveloxStreet);
+		autoveloxFrom = getResources().getIntArray(R.array.autoveloxFrom);
+		autoveloxTo = getResources().getIntArray(R.array.autoveloxTo);
 		PreferenceScreen root = getPreferenceScreen();
 		PreferenceCategory streetsCategory = new PreferenceCategory(this);
 		root.addPreference(streetsCategory);
 		streetsCategory.setTitle(R.string.mappedSreet);
 		for (int i = 0; i < streetId.length; i++)
 			if (streetFather[i] == 0) {
-				PreferenceScreen streetScreen = addStreetScreen(streetsCategory, streetId[i], streetName[i]);
+				PreferenceScreen streetScreen = addStreetScreen(streetsCategory, streetId[i], streetTag[i] + MainActivity.blank + streetName[i]);
 				PreferenceCategory subStreetCategory = null;
 				for (int j = 0; j < streetFather.length; j++)
 					if (streetFather[j] == streetId[i]) {
@@ -58,15 +65,15 @@ public class PreferencesActivity extends PreferenceActivity { // NO_UCD
 		PreferenceCategory zonesCategory = new PreferenceCategory(this);
 		streetScreen.addPreference(zonesCategory);
 		zonesCategory.setTitle(R.string.sniper);
-		String[] zonesId = getResources().getStringArray(Const.zonesResId.get(streetId));
+		int[] zonesId = getResources().getIntArray(Const.zonesResId.get(streetId));
 		String[] zonesName = getResources().getStringArray(Const.zonesResName.get(streetId));
-		String[] zonesAutovelox = getResources().getStringArray(Const.zonesResAutovelox.get(streetId));
 		for (int k = 0; k < zonesId.length; k++) {
 			CheckBoxPreference singlezone = new CheckBoxPreference(this);
-			singlezone.setKey(zonesId[k]);
+			singlezone.setKey(Integer.toBinaryString(zonesId[k]));
 			singlezone.setTitle(zonesName[k]);
-			if (!zonesAutovelox[k].equalsIgnoreCase(autoveloxNone))
-				singlezone.setSummary(autovelox);
+			for (int t = 0; t < autoveloxStreet.length; t++)
+				if (autoveloxStreet[t] == streetId && ((zonesId[k] >= autoveloxFrom[t] && zonesId[k] < autoveloxTo[t]) || (zonesId[k] >= autoveloxTo[t] && zonesId[k] < autoveloxFrom[t])))
+					singlezone.setSummary(autovelox);
 			zonesCategory.addPreference(singlezone);
 		}
 	}

@@ -3,30 +3,39 @@ package it.localhost.trafficdroid.dao;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.exception.BadConfException;
 import it.localhost.trafficdroid.exception.ConnectionException;
+import it.localhost.trafficdroid.exception.GenericException;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 
-import org.xml.sax.InputSource;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 public class TrafficDAO {
-	private static final String xml = ".xml";
+	private static final String path = "/engine/traffic_server.php?type=4&sq=1&roa=";
 
-	public static InputSource getData(int mapId, String baseUrl) throws BadConfException, ConnectionException {
-		InputSource inputSource = null;
-		int numTries = 3;
-		while (true) {
-			try {
-				inputSource = new InputSource(new URL(Const.http + baseUrl + Const.slash + mapId + xml).openStream());
-				break;
-			} catch (MalformedURLException e) {
-				throw new BadConfException(e);
-			} catch (IOException e) {
-				if (--numTries == 0)
-					throw new ConnectionException(e);
+	public static Document getData(int mapId, String baseUrl) throws GenericException, BadConfException, ConnectionException {
+		Document doc = null;
+		try {
+			int numTries = 3;
+			while (true) {
+				try {
+					doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(Const.http + baseUrl + path + mapId);
+					break;
+				} catch (SAXException e) {
+					if (--numTries == 0)
+						throw new ConnectionException(e);
+				}
 			}
+		} catch (IOException e) {
+			throw new BadConfException(e);
+		} catch (NullPointerException e) {
+			throw new BadConfException(e);
+		} catch (ParserConfigurationException e) {
+			throw new GenericException(e);
 		}
-		return inputSource;
+		return doc;
 	}
 }
