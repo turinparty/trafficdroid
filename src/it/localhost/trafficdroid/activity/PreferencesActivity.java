@@ -69,7 +69,7 @@ public class PreferencesActivity extends PreferenceActivity { // NO_UCD
 		String[] zonesName = getResources().getStringArray(Const.zonesResName.get(streetId));
 		for (int k = 0; k < zonesId.length; k++) {
 			CheckBoxPreference singlezone = new CheckBoxPreference(this);
-			singlezone.setKey(Integer.toBinaryString(zonesId[k]));
+			singlezone.setKey(Integer.toString(zonesId[k]));
 			singlezone.setTitle(zonesName[k]);
 			for (int t = 0; t < autoveloxStreet.length; t++)
 				if (autoveloxStreet[t] == streetId && ((zonesId[k] >= autoveloxFrom[t] && zonesId[k] < autoveloxTo[t]) || (zonesId[k] >= autoveloxTo[t] && zonesId[k] < autoveloxFrom[t])))
