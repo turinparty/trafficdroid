@@ -2,12 +2,42 @@
 <resources>
 
     <string-array name="z219Name">
-
+        <item>Chieti</item>
+        <item>Svincolo Di Villareia-Innesto Ss5 Tiburtina</item>
+        <item>Via Erasmo Piaggio</item>
+        <item>Svincolo Per Ss81 Piceno Aprutina</item>
+        <item>Salvaiessi</item>
+        <item>Svincolo Per A14 Bologna-Taranto</item>
+        <item>Dragonara</item>
+        <item>Zona Industriale Sambuceto</item>
+        <item>Zona Industriale Di Pescara</item>
+        <item>Innesto Ss16 Adriatica</item>
     </string-array>
 
     <integer-array name="z219Id">
+        <item>2330</item>
+        <item>13524</item>
+        <item>13525</item>
+        <item>13526</item>
+        <item>2335</item>
+        <item>13527</item>
+        <item>2337</item>
+        <item>13528</item>
+        <item>13529</item>
+        <item>13530</item>
     </integer-array>
-    <string-array name="z219Webcam">
 
+    <string-array name="z219Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

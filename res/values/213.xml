@@ -2,12 +2,51 @@
 <resources>
 
     <string-array name="z213Name">
-
+        <item>Allacciamento A13 Bologna-Padova</item>
+        <item>Svincolo Ss64 Porrettana</item>
+        <item>Ferrara-Ss 16 Adriatica</item>
+        <item>Cona</item>
+        <item>Gualdo</item>
+        <item>Masi Torello (direzione Ferrara)</item>
+        <item>Masi S.Giacomo</item>
+        <item>Rovereto-Portomaggiore</item>
+        <item>Migliarino</item>
+        <item>Ostellato</item>
+        <item>Corte Centrale</item>
+        <item>Comacchio</item>
+        <item>Porto Garibaldi</item>
     </string-array>
 
     <integer-array name="z213Id">
+        <item>2293</item>
+        <item>2295</item>
+        <item>13993</item>
+        <item>2297</item>
+        <item>2298</item>
+        <item>13992</item>
+        <item>2299</item>
+        <item>2300</item>
+        <item>2301</item>
+        <item>2302</item>
+        <item>2303</item>
+        <item>2304</item>
+        <item>2305</item>
     </integer-array>
-    <string-array name="z213Webcam">
 
+    <string-array name="z213Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

@@ -2,12 +2,24 @@
 <resources>
 
     <string-array name="z703Name">
-
+        <item>Aereoporto Di Fiumicino/Allacciamento Autostrada Rm-Fiumicino</item>
+        <item>Fiumicino Aeroporto</item>
+        <item>Bivio Per Fiumicino</item>
+        <item>Ostia Scavi/Innesto Ss8 Via Del Mare</item>
     </string-array>
 
     <integer-array name="z703Id">
+        <item>9725</item>
+        <item>9726</item>
+        <item>9727</item>
+        <item>9728</item>
     </integer-array>
+
     <string-array name="z703Webcam">
-        
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

@@ -2,12 +2,18 @@
 <resources>
 
     <string-array name="z192Name">
-
+        <item>Allacciamento A21-A1 La Villa</item>
+        <item>Allacciamento   A1-A21 Fiorenzuola</item>
     </string-array>
 
     <integer-array name="z192Id">
+        <item>2163</item>
+        <item>2165</item>
     </integer-array>
-    <string-array name="z192Webcam">
 
+    <string-array name="z192Webcam">
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

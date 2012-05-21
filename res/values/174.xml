@@ -2,12 +2,66 @@
 <resources>
 
     <string-array name="z174Name">
-
+        <item>Allacciamento Tangenziale Nord Di Torino</item>
+        <item>Rivoli-Rosta</item>
+        <item>Avigliana  Est</item>
+        <item>Avigliana  Ovest</item>
+        <item>Barriera Avigliana</item>
+        <item>Borgone</item>
+        <item>Chianocco-Bussoleno</item>
+        <item>Susa-Autoporto</item>
+        <item>Susa Est</item>
+        <item>Susa Ovest-Venaus</item>
+        <item>Gran Bosco Salbertrand</item>
+        <item>Barriera Di Salbertrand</item>
+        <item>Oulx Est</item>
+        <item>Oulx Ovest</item>
+        <item>Circonvallazione Oulx</item>
+        <item>Savoulx</item>
+        <item>Bardonecchia</item>
+        <item>Piazzale Traforo Del Frejus</item>
     </string-array>
 
     <integer-array name="z174Id">
+        <item>2030</item>
+        <item>2031</item>
+        <item>2032</item>
+        <item>2033</item>
+        <item>2034</item>
+        <item>2035</item>
+        <item>2036</item>
+        <item>2037</item>
+        <item>2038</item>
+        <item>2039</item>
+        <item>2040</item>
+        <item>2041</item>
+        <item>2042</item>
+        <item>2043</item>
+        <item>2044</item>
+        <item>2045</item>
+        <item>2046</item>
+        <item>2047</item>
     </integer-array>
-    <string-array name="z174Webcam">
 
+    <string-array name="z174Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

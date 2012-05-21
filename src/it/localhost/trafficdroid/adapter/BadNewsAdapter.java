@@ -27,7 +27,8 @@ public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
 	private static final String bn_los2 = "traffico";
 	private static final String bn_ocm = "perdita di carico";
 	private static final String bn_peo = "pedoni";
-	private static final String bn_pra = "pioggia";
+	private static final String bn_pra1 = "pioggia";
+	private static final String bn_pra2 = "temporale";
 	private static final String bn_pss = "personale su strada";
 	private static final String bn_res = "chius";
 	private static final String bn_rsr = "riduzione di carreggiata";
@@ -82,7 +83,7 @@ public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
 			drawable = R.drawable.bn_ocm;
 		else if (event.getTitle().contains(bn_peo))
 			drawable = R.drawable.bn_peo;
-		else if (event.getTitle().contains(bn_pra))
+		else if (event.getTitle().contains(bn_pra1) || event.getTitle().contains(bn_pra2))
 			drawable = R.drawable.bn_pra;
 		else if (event.getTitle().contains(bn_res))
 			drawable = R.drawable.bn_res;

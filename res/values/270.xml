@@ -2,12 +2,168 @@
 <resources>
 
     <string-array name="z270Name">
-
+        <item>Roma</item>
+        <item>Svincolo Castel Giubileo G.R.A.</item>
+        <item>Bivio Per Settebagni</item>
+        <item>Incrocio Settebagni</item>
+        <item>Svincolo Settebagni Diramazione Roma Nord A1 Mi-Na</item>
+        <item>Monterotondo Scalo</item>
+        <item>Monterotondo Nucleo Industriale</item>
+        <item>Innesto Sp18/A Ponte Del Grillo</item>
+        <item>Innesto Sp26/A Per Montelibretti</item>
+        <item>Passo Corese/Innesto Ss313 Di Passo Corese</item>
+        <item>Santa Maria-Innesto Sp26/A Per Montelibretti</item>
+        <item>Borgo Quinzio/Innesto Ss636 Di Palombara</item>
+        <item>Bivio Per Fara In Sabina</item>
+        <item>Confine Province Di Roma E Rieti</item>
+        <item>Osteria Nuova</item>
+        <item>Ponte Buida/Innesto Ss314 Licinese</item>
+        <item>Bivio Per Rocca Sinibalda</item>
+        <item>Maglianello</item>
+        <item>Rieti-Innesto Raccordo Rieti-Terni</item>
+        <item>Rieti/Innesto Ss578 Salto Cicolana</item>
+        <item>Svincolo Per Zona Industriale Di Rieti</item>
+        <item>Svincolo Di Santa Rufina</item>
+        <item>Cittaducale</item>
+        <item>Vasche</item>
+        <item>Canetra Di Castel Sant\'angelo</item>
+        <item>Antrodoco</item>
+        <item>Antrodoco/Innesto Ss17 App. Abruz. Appulo Sann.</item>
+        <item>Sigillo</item>
+        <item>Posta/Innesto Ss471 Di Leonessa</item>
+        <item>Picciame Di Posta</item>
+        <item>Santa Croce</item>
+        <item>Collicelle</item>
+        <item>Valico Di S.Giusta</item>
+        <item>Ponte Scandarello/Innesto Ss260 Picente</item>
+        <item>Variante Di Accumoli</item>
+        <item>Grisciano</item>
+        <item>Confine Tra Le Province Di Rieti E Ascoli P.</item>
+        <item>Arquata Del Tronto</item>
+        <item>Acquasanta Terme</item>
+        <item>Santa Maria</item>
+        <item>Svincolo Paggese</item>
+        <item>Taverna Piccinini/Innesto Ss78 Picena</item>
+        <item>Innesto Raccordo Ascoli-P.To D\'ascoli</item>
+        <item>Variante Di Ascoli Piceno</item>
+        <item>Ascoli Piceno</item>
+        <item>Ascoli Piceno-Innesto Ss81 Piceno Aprutina</item>
+        <item>Villa Sant\'antonio</item>
+        <item>Bivio Colli</item>
+        <item>Stella</item>
+        <item>Centobuchi</item>
+        <item>Casello S.Benedetto A14 Bo-Ta-Innesto Raccordo A14-Ap</item>
+        <item>Porto D\'ascoli- Innesto Ss16 Adriatica</item>
     </string-array>
 
     <integer-array name="z270Id">
+        <item>3217</item>
+        <item>3218</item>
+        <item>13667</item>
+        <item>13668</item>
+        <item>3220</item>
+        <item>3221</item>
+        <item>13670</item>
+        <item>13671</item>
+        <item>3222</item>
+        <item>3223</item>
+        <item>13672</item>
+        <item>3224</item>
+        <item>13673</item>
+        <item>3226</item>
+        <item>3227</item>
+        <item>3228</item>
+        <item>13674</item>
+        <item>3230</item>
+        <item>13675</item>
+        <item>13676</item>
+        <item>13677</item>
+        <item>13678</item>
+        <item>3235</item>
+        <item>3236</item>
+        <item>3237</item>
+        <item>3238</item>
+        <item>13679</item>
+        <item>3240</item>
+        <item>13680</item>
+        <item>3242</item>
+        <item>3243</item>
+        <item>3244</item>
+        <item>3245</item>
+        <item>3246</item>
+        <item>3248</item>
+        <item>3249</item>
+        <item>13681</item>
+        <item>3250</item>
+        <item>3251</item>
+        <item>3252</item>
+        <item>13682</item>
+        <item>13683</item>
+        <item>13684</item>
+        <item>3254</item>
+        <item>3255</item>
+        <item>3256</item>
+        <item>3257</item>
+        <item>3258</item>
+        <item>3259</item>
+        <item>3260</item>
+        <item>3261</item>
+        <item>3262</item>
     </integer-array>
-    <string-array name="z270Webcam">
 
+    <string-array name="z270Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

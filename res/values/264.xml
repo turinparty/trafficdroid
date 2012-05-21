@@ -2,12 +2,21 @@
 <resources>
 
     <string-array name="z264Name">
-
+        <item>Innesto Grande Raccordo Anulare</item>
+        <item>Bivio Per Formello</item>
+        <item>Le Rughe/Innesto Ss2 Cassia</item>
     </string-array>
 
     <integer-array name="z264Id">
+        <item>3074</item>
+        <item>3075</item>
+        <item>3076</item>
     </integer-array>
-    <string-array name="z264Webcam">
 
+    <string-array name="z264Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

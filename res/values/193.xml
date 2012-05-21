@@ -2,12 +2,21 @@
 <resources>
 
     <string-array name="z193Name">
-
+        <item>Catania - Via V.Giuffrida</item>
+        <item>Svincolo Canalicchio</item>
+        <item>S.Gregorio-Allacciamento A18 Messina-Catania</item>
     </string-array>
 
     <integer-array name="z193Id">
+        <item>2166</item>
+        <item>13508</item>
+        <item>2167</item>
     </integer-array>
-    <string-array name="z193Webcam">
 
+    <string-array name="z193Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

@@ -2,12 +2,51 @@
 <resources>
 
     <string-array name="z238Name">
-
+        <item>Allacciamento Tangenziale Est Di Milano</item>
+        <item>Svincolo Sesto S.Giovanni Sud: Cologno M.</item>
+        <item>Svincolo Sesto S.Giovanni (Diramazione  Nord)</item>
+        <item>Barriera Di Sesto S.Giovanni</item>
+        <item>Allacciamento A4 Torino-Trieste</item>
+        <item>Svincolo Monza-S.Alessandro</item>
+        <item>Svincolo Monza Centro: 1 Maggio</item>
+        <item>Svincolo Cinisello B.-Robecco</item>
+        <item>Svincolo Ss36 Del Lago Di Como: Lecco-Monza</item>
+        <item>Svincolo Sp151 Cinisello B.Nord: Zona Industriale</item>
+        <item>Svincolo Sp131 Nova Milanese</item>
+        <item>Svincolo SP9 Vecchia Valsassina</item>
+        <item>Svincolo Sp44 Milano-Meda: Lentate-Bruzzano</item>
     </string-array>
 
     <integer-array name="z238Id">
+        <item>2592</item>
+        <item>2593</item>
+        <item>2594</item>
+        <item>2595</item>
+        <item>2596</item>
+        <item>2597</item>
+        <item>2598</item>
+        <item>2599</item>
+        <item>2600</item>
+        <item>2601</item>
+        <item>2602</item>
+        <item>14020</item>
+        <item>2603</item>
     </integer-array>
-    <string-array name="z238Webcam">
 
+    <string-array name="z238Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

@@ -2,12 +2,33 @@
 <resources>
 
     <string-array name="z181Name">
-
+        <item>Allacciamento A8 Milano-Varese</item>
+        <item>Barriera Di Gallarate Ovest</item>
+        <item>Besnate</item>
+        <item>Verbano</item>
+        <item>Sesto Calende-Vergiate</item>
+        <item>Castelletto Ticino</item>
+        <item>Allacciamento A26 Ge Voltri-Gravellona T.</item>
     </string-array>
 
     <integer-array name="z181Id">
+        <item>2105</item>
+        <item>2106</item>
+        <item>2107</item>
+        <item>2108</item>
+        <item>2109</item>
+        <item>2110</item>
+        <item>2111</item>
     </integer-array>
-    <string-array name="z181Webcam">
 
+    <string-array name="z181Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

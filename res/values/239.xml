@@ -2,12 +2,75 @@
 <resources>
 
     <string-array name="z239Name">
-
+        <item>Allacciamento A8 Milano-Varese</item>
+        <item>Barriera Di Terrazzano</item>
+        <item>Rho Ovest</item>
+        <item>Svincolo Ss33 Del Sempione: Rho-Pero</item>
+        <item>Rho Area Industriale</item>
+        <item>Allacciamento A4 Torino-Trieste: V.Le Certosa</item>
+        <item>Svincolo Cascina Ghisolfa</item>
+        <item>Svincolo Ss11 Padana Superiore E Ss33: Molino Dorino</item>
+        <item>Svincolo Settimo Milanese-Ss11: S.Siro-Fiera</item>
+        <item>Svincolo Baggio-Cusago: Via Zurigo-Zona Ind.</item>
+        <item>Muggiano</item>
+        <item>Svincolo Ss494 Vigevanese Nuova: Lorenteggio</item>
+        <item>Svincolo Sp59 Vigevanese Vecchia: Trezzano</item>
+        <item>Assago Ovest</item>
+        <item>Allacciamento A7 Milano-Genova</item>
+        <item>Svincolo Ss.35 Dei Giovi: Pavia-Rozzano-Assago</item>
+        <item>Rozzano Est</item>
+        <item>Svincolo Ss.412 Della Val Tidone: Pavia-Opera</item>
+        <item>S. Giuliano</item>
+        <item>Svincolo San Donato</item>
+        <item>Allacciamento A1 Milano-Napoli</item>
     </string-array>
 
     <integer-array name="z239Id">
+        <item>2604</item>
+        <item>2605</item>
+        <item>2606</item>
+        <item>2607</item>
+        <item>14021</item>
+        <item>2608</item>
+        <item>14193</item>
+        <item>2609</item>
+        <item>2610</item>
+        <item>2611</item>
+        <item>2612</item>
+        <item>2613</item>
+        <item>2614</item>
+        <item>2615</item>
+        <item>2616</item>
+        <item>2617</item>
+        <item>2618</item>
+        <item>2619</item>
+        <item>2620</item>
+        <item>14194</item>
+        <item>2621</item>
     </integer-array>
-    <string-array name="z239Webcam">
 
+    <string-array name="z239Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

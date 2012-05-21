@@ -2,12 +2,57 @@
 <resources>
 
     <string-array name="z165Name">
-
+        <item>Allacciamento A4 Torino-Trieste</item>
+        <item>Udine Sud-Tangenziale</item>
+        <item>Zugliano</item>
+        <item>Udine Nord</item>
+        <item>Ledra</item>
+        <item>Gemona-Osoppo</item>
+        <item>Carnia</item>
+        <item>Campiolo Ovest</item>
+        <item>Pontebba</item>
+        <item>Fella Est</item>
+        <item>Barriera Di Ugovizza-Tarvisio</item>
+        <item>Svincolo Malborghetto-Valbruna</item>
+        <item>Svincolo Di Tarvisio Sud</item>
+        <item>Svincolo Di Tarvisio Nord</item>
+        <item>Dogana Di Coccau-Confine Di Stato</item>
     </string-array>
 
     <integer-array name="z165Id">
+        <item>1881</item>
+        <item>1882</item>
+        <item>1883</item>
+        <item>1884</item>
+        <item>1885</item>
+        <item>1886</item>
+        <item>1887</item>
+        <item>1888</item>
+        <item>1889</item>
+        <item>1890</item>
+        <item>1891</item>
+        <item>1892</item>
+        <item>1893</item>
+        <item>1894</item>
+        <item>1895</item>
     </integer-array>
-    <string-array name="z165Webcam">
 
+    <string-array name="z165Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

@@ -2,12 +2,78 @@
 <resources>
 
     <string-array name="z141Name">
-
+        <item>Allacciamento Diramazione Per Moncalieri</item>
+        <item>Allacciamento Tangenziale Sud Di Torino</item>
+        <item>Rio Dei Cocchi</item>
+        <item>Barriera Di Torino</item>
+        <item>Carmagnola</item>
+        <item>Rio Colore</item>
+        <item>Marene</item>
+        <item>Rio Ghidone</item>
+        <item>Fossano</item>
+        <item>Allacciamento A06 - A33</item>
+        <item>Carru\'</item>
+        <item>Mondovi\' Est</item>
+        <item>Mondovi\'</item>
+        <item>Mondovi\' Ovest</item>
+        <item>Niella Tanaro</item>
+        <item>Ceva</item>
+        <item>Priero</item>
+        <item>Millesimo</item>
+        <item>Ca\' Lidora Ovest</item>
+        <item>Carcare Vispa Est</item>
+        <item>Altare</item>
+        <item>Savona-Zinola-Vado-Allacciamento A10 Ge-Ventimiglia</item>
     </string-array>
 
     <integer-array name="z141Id">
+        <item>1415</item>
+        <item>1416</item>
+        <item>1417</item>
+        <item>1418</item>
+        <item>1419</item>
+        <item>1420</item>
+        <item>1421</item>
+        <item>1422</item>
+        <item>1423</item>
+        <item>14184</item>
+        <item>1424</item>
+        <item>1425</item>
+        <item>1426</item>
+        <item>1427</item>
+        <item>1428</item>
+        <item>1429</item>
+        <item>1430</item>
+        <item>1432</item>
+        <item>1433</item>
+        <item>1434</item>
+        <item>1435</item>
+        <item>1437</item>
     </integer-array>
-    <string-array name="z141Webcam">
 
+    <string-array name="z141Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

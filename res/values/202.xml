@@ -2,12 +2,36 @@
 <resources>
 
     <string-array name="z202Name">
-
+        <item>V.Della Magliana-Ss8 Via Ostiense</item>
+        <item>Via Isacco Newton</item>
+        <item>Parco Dei Medici</item>
+        <item>Svincolo Via Magliana Vecchia</item>
+        <item>Magliana</item>
+        <item>Allacciamento G.R.A.</item>
+        <item>Allacciamento A12 Roma-Civitavecchia</item>
+        <item>Aeroporto Di Fiumicino</item>
     </string-array>
 
     <integer-array name="z202Id">
+        <item>2221</item>
+        <item>13514</item>
+        <item>13515</item>
+        <item>13516</item>
+        <item>2223</item>
+        <item>2224</item>
+        <item>2225</item>
+        <item>2226</item>
     </integer-array>
-    <string-array name="z202Webcam">
 
+    <string-array name="z202Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

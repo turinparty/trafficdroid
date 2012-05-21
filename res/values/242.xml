@@ -2,12 +2,90 @@
 <resources>
 
     <string-array name="z242Name">
-
+        <item>Pozzuoli-Ss7 Quater - Inizio Tangenziale</item>
+        <item>Strada Statale Domitiana</item>
+        <item>Uscita Arco Felice</item>
+        <item>Damiani</item>
+        <item>Pozzuoli Arco Felice</item>
+        <item>Cuma</item>
+        <item>Ingresso Arco Felice</item>
+        <item>Pozzuoli-Via Campana</item>
+        <item>Antica Campana</item>
+        <item>Barriera Napoli Ovest</item>
+        <item>Agnano</item>
+        <item>Astroni</item>
+        <item>ITALIA \'90 COMUNE DI NAPOLI</item>
+        <item>Fuorigrotta</item>
+        <item>Vomero</item>
+        <item>Camaldoli</item>
+        <item>Zona Ospedaliera</item>
+        <item>Arenella</item>
+        <item>Capodimonte</item>
+        <item>Scudillo</item>
+        <item>Corso Malta</item>
+        <item>Viale Maddalena</item>
+        <item>Barriera Napoli Est</item>
+        <item>Doganella Ovest</item>
+        <item>Doganella</item>
+        <item>Secondigliano-Raccordo Capodichino</item>
     </string-array>
 
     <integer-array name="z242Id">
+        <item>2667</item>
+        <item>14031</item>
+        <item>14032</item>
+        <item>14035</item>
+        <item>14034</item>
+        <item>14033</item>
+        <item>2668</item>
+        <item>2669</item>
+        <item>2670</item>
+        <item>2671</item>
+        <item>2672</item>
+        <item>2673</item>
+        <item>2674</item>
+        <item>2675</item>
+        <item>2676</item>
+        <item>2677</item>
+        <item>2678</item>
+        <item>14374</item>
+        <item>2679</item>
+        <item>2680</item>
+        <item>2681</item>
+        <item>14036</item>
+        <item>2682</item>
+        <item>2683</item>
+        <item>2684</item>
+        <item>2685</item>
     </integer-array>
-    <string-array name="z242Webcam">
 
+    <string-array name="z242Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

@@ -2,12 +2,39 @@
 <resources>
 
     <string-array name="z194Name">
-
+        <item>Allacciamento G.R.A.</item>
+        <item>La Rustica Nord</item>
+        <item>Svincolo Di Tor Cervara</item>
+        <item>Svincolo Di Via Togliatti</item>
+        <item>Ponte di Nona</item>
+        <item>Svincolo Di Via Fiorentini</item>
+        <item>Tiburtina Sud</item>
+        <item>Portonaccio - Galla Placidia</item>
+        <item>Tangenziale Est</item>
     </string-array>
 
     <integer-array name="z194Id">
+        <item>2168</item>
+        <item>2169</item>
+        <item>14357</item>
+        <item>2170</item>
+        <item>14171</item>
+        <item>2171</item>
+        <item>13509</item>
+        <item>2173</item>
+        <item>2174</item>
     </integer-array>
-    <string-array name="z194Webcam">
 
+    <string-array name="z194Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

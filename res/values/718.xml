@@ -2,14 +2,18 @@
 <resources>
 
     <string-array name="z718Name">
-
+        <item>Ravenna/Innesto Ss309 Romea</item>
+        <item>Ravenna/Allacciamento A14 Diramazione Per Ravenna E Innesto Ss16</item>
     </string-array>
 
     <integer-array name="z718Id">
+        <item>9894</item>
+        <item>9895</item>
     </integer-array>
-    
+
     <string-array name="z718Webcam">
-        
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
-    
+
 </resources>

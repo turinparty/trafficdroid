@@ -2,12 +2,63 @@
 <resources>
 
     <string-array name="z243Name">
-
+        <item>Santena - A21 Torino-Brescia</item>
+        <item>Svincolo Di Santena</item>
+        <item>Barriera Di Trofarello</item>
+        <item>Svincolo di Vado\'</item>
+        <item>Vado\'</item>
+        <item>Interscambio Diramazione per Moncalieri</item>
+        <item>Svincolo La Loggia-Ss20 Del Colle Di Tenda</item>
+        <item>Nichelino Nord</item>
+        <item>Nichelino Sud</item>
+        <item>Svincolo Debouche\'</item>
+        <item>Svincolo Stupinigi</item>
+        <item>Interscambio Drosso</item>
+        <item>Svincolo Autoporto S.I.T.O.</item>
+        <item>Svincolo Per Corso Allamano</item>
+        <item>Svincolo Corso Iv Novembre</item>
+        <item>Svincolo Corso Francia-Cascine Vica</item>
+        <item>Interconnessione Tangenziale Nord</item>
     </string-array>
 
     <integer-array name="z243Id">
+        <item>2686</item>
+        <item>2687</item>
+        <item>2688</item>
+        <item>13617</item>
+        <item>14271</item>
+        <item>2690</item>
+        <item>2691</item>
+        <item>2692</item>
+        <item>2693</item>
+        <item>2694</item>
+        <item>2695</item>
+        <item>2696</item>
+        <item>2698</item>
+        <item>2699</item>
+        <item>2700</item>
+        <item>2701</item>
+        <item>2702</item>
     </integer-array>
-    <string-array name="z243Webcam">
 
+    <string-array name="z243Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

@@ -2,12 +2,39 @@
 <resources>
 
     <string-array name="z613Name">
-
+        <item>Roma</item>
+        <item>Via Tor Di Mezza/Innesto Ss511 Anagnina</item>
+        <item>Svincolo Grande Raccordo Anulare</item>
+        <item>Frascati</item>
+        <item>Frascati/Innesto Ss216 E Ss218</item>
+        <item>Bivio Per Pedica/Innesto Ss511 Anagnina/Innesto Ss218</item>
+        <item>Bivio Per Rocca Priora</item>
+        <item>Bivio Per Carchitti</item>
+        <item>Macere/Innesto Ss600 Ariana</item>
     </string-array>
 
     <integer-array name="z613Id">
+        <item>8745</item>
+        <item>8746</item>
+        <item>8747</item>
+        <item>8748</item>
+        <item>8749</item>
+        <item>8750</item>
+        <item>8751</item>
+        <item>8752</item>
+        <item>8753</item>
     </integer-array>
+
     <string-array name="z613Webcam">
-        
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

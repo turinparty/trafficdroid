@@ -2,12 +2,36 @@
 <resources>
 
     <string-array name="z292Name">
-
+        <item>Roma</item>
+        <item>Via Della Magliana/Innesto Autostrada Per Aeroporto Fiumicino</item>
+        <item>Allacciamento G.R.A./Innesto Ss8 Bis Via Ostiense</item>
+        <item>Bivio Per C.Colombo</item>
+        <item>Acilia</item>
+        <item>Ostia Scavi/Innesto Ss296 Della Scafa</item>
+        <item>Ostia Antica</item>
+        <item>Lido Di Ostia/Innesto Ss8bis E Ss601</item>
     </string-array>
 
     <integer-array name="z292Id">
+        <item>3612</item>
+        <item>3613</item>
+        <item>3614</item>
+        <item>13695</item>
+        <item>13696</item>
+        <item>3615</item>
+        <item>3616</item>
+        <item>3617</item>
     </integer-array>
-    <string-array name="z292Webcam">
 
+    <string-array name="z292Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

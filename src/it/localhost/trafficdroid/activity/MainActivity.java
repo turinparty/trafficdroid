@@ -77,7 +77,6 @@ public class MainActivity extends AbstractActivity {
 				}
 			}
 		};
-		new AlertDialog.Builder(this).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.help).show();
 	}
 
 	@Override

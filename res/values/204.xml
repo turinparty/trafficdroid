@@ -2,12 +2,24 @@
 <resources>
 
     <string-array name="z204Name">
-
+        <item>Allacciamento A5 Torino-Courmayeur</item>
+        <item>Albiano</item>
+        <item>Viverone</item>
+        <item>Allacciamento A4 Torino-Trieste</item>
     </string-array>
 
     <integer-array name="z204Id">
+        <item>2234</item>
+        <item>2235</item>
+        <item>2236</item>
+        <item>2237</item>
     </integer-array>
-    <string-array name="z204Webcam">
 
+    <string-array name="z204Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

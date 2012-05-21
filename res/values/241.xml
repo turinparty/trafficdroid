@@ -2,12 +2,66 @@
 <resources>
 
     <string-array name="z241Name">
-
+        <item>A32 Torino-Bardonecchia</item>
+        <item>Ss25 Del Moncenisio</item>
+        <item>Alpi Graie</item>
+        <item>Rivoli Sud</item>
+        <item>Rivoli Nord</item>
+        <item>Barriera Di Bruere</item>
+        <item>Interconnesione Tangenziale Sud</item>
+        <item>Pianezza-Collegno - Ss24 Del Monginevro</item>
+        <item>Savonera</item>
+        <item>Regina Margherita</item>
+        <item>Venaria-Stadio</item>
+        <item>Valli Di Lanzo-Borgaro</item>
+        <item>Stura Nord</item>
+        <item>Stura Sud</item>
+        <item>Caselle</item>
+        <item>Interconnesione diramazione Pescarito</item>
+        <item>Settimo</item>
+        <item>Torino Nord - A5 To-Aosta</item>
     </string-array>
 
     <integer-array name="z241Id">
+        <item>2650</item>
+        <item>2651</item>
+        <item>2652</item>
+        <item>2653</item>
+        <item>2654</item>
+        <item>2655</item>
+        <item>2656</item>
+        <item>2657</item>
+        <item>14136</item>
+        <item>2658</item>
+        <item>2659</item>
+        <item>2660</item>
+        <item>2661</item>
+        <item>2662</item>
+        <item>2663</item>
+        <item>2664</item>
+        <item>2665</item>
+        <item>2666</item>
     </integer-array>
-    <string-array name="z241Webcam">
 
+    <string-array name="z241Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

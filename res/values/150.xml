@@ -2,12 +2,69 @@
 <resources>
 
     <string-array name="z150Name">
-
+        <item>Allacciamento A14 Bologna-Taranto</item>
+        <item>Bologna Arcoveggio-Raccordo Per La Tangenziale</item>
+        <item>Bologna Interporto</item>
+        <item>Castel Bentivoglio</item>
+        <item>Altedo</item>
+        <item>Ferrara Sud</item>
+        <item>Ferrara Nord</item>
+        <item>Po</item>
+        <item>Occhiobello</item>
+        <item>Rovigo Sud - Villa Marzana</item>
+        <item>Adige</item>
+        <item>Rovigo</item>
+        <item>Boara</item>
+        <item>Monselice</item>
+        <item>Terme Euganee</item>
+        <item>San Pelagio</item>
+        <item>Allacciamento Diramazione Padova Sud</item>
+        <item>Padova Zona Industriale-Interporto</item>
+        <item>Allacciamento A4 Torino-Trieste</item>
     </string-array>
 
     <integer-array name="z150Id">
+        <item>1602</item>
+        <item>1603</item>
+        <item>1604</item>
+        <item>1605</item>
+        <item>1606</item>
+        <item>1607</item>
+        <item>1608</item>
+        <item>1609</item>
+        <item>1610</item>
+        <item>14187</item>
+        <item>1611</item>
+        <item>1612</item>
+        <item>1613</item>
+        <item>1614</item>
+        <item>1615</item>
+        <item>1616</item>
+        <item>1617</item>
+        <item>1618</item>
+        <item>1619</item>
     </integer-array>
-    <string-array name="z150Webcam">
 
+    <string-array name="z150Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

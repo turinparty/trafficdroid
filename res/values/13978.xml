@@ -2,12 +2,51 @@
 <resources>
 
     <string-array name="z13978Name">
-
+        <item>Allacciamento Autostrada Roma-Fiumicino</item>
+        <item>Arrone</item>
+        <item>Maccarese-Fregene</item>
+        <item>Barriera Di Roma Ovest</item>
+        <item>Torrimpietra</item>
+        <item>Svincolo Di Cerveteri-Ladispoli</item>
+        <item>Tirreno</item>
+        <item>Svincolo Di S.Severa-S.Marinella</item>
+        <item>Civitavecchia Sud</item>
+        <item>Barriera Aurelia</item>
+        <item>Svincolo Di Civitavecchia Nord</item>
+        <item>Tolfa</item>
+        <item>Svincolo Ss.1 Aurelia</item>
     </string-array>
 
     <integer-array name="z13978Id">
+        <item>1589</item>
+        <item>1590</item>
+        <item>1591</item>
+        <item>1592</item>
+        <item>1593</item>
+        <item>1594</item>
+        <item>1595</item>
+        <item>1596</item>
+        <item>1597</item>
+        <item>1598</item>
+        <item>1599</item>
+        <item>1600</item>
+        <item>1601</item>
     </integer-array>
-    <string-array name="z13978Webcam">
 
+    <string-array name="z13978Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

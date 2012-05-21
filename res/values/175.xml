@@ -2,12 +2,144 @@
 <resources>
 
     <string-array name="z175Name">
-
+        <item>Svincolo 1: Ss1 Via Aurelia</item>
+        <item>Svincolo 1a: Montespaccato</item>
+        <item>Svincolo 2: Via Di Boccea</item>
+        <item>Svincolo 2a: Casal Del Marmo</item>
+        <item>selva Candida</item>
+        <item>Svincolo 2a: Trionfale</item>
+        <item>Svincolo 3: Ss2 Via Cassia</item>
+        <item>Svincolo 4: Ospedale S.Andrea</item>
+        <item>Svincolo 5: Ss2bis Cassia Veientana</item>
+        <item>Svincolo 6: Ss3 Via Flaminia</item>
+        <item>Svincolo 7: Castel Giubileo</item>
+        <item>Svincolo 8: Ss4 Via Salaria</item>
+        <item>Svincolo 9: Via Di Settebagni-Bel Poggio</item>
+        <item>Svincolo 10: Allacciamento Diramazione Roma Nord</item>
+        <item>Settebagni</item>
+        <item>Svincolo Della Bufalotta</item>
+        <item>Svincolo 11: Via Nomentana</item>
+        <item>Svincolo 12: Via S.Alessandro-C.Le Latte</item>
+        <item>Svincolo 13: Ss5 Via Tiburtina</item>
+        <item>Svincolo 14: Allacciamento A24 Roma-Teramo</item>
+        <item>Svincolo 15: La Rustica</item>
+        <item>Svincolo 16: Via Prenestina</item>
+        <item>Svincolo 17: Tor Bella Monaca</item>
+        <item>Casilina</item>
+        <item>Svincolo 18: Ss6 Via Casilina</item>
+        <item>Svincolo 19: Allacciamento Diramazione Roma Sud</item>
+        <item>Svincolo 20: La Romanina</item>
+        <item>Svincolo 21: Ss215 Via Tuscolana</item>
+        <item>Svincolo 22: Ss511 Via Anagnina</item>
+        <item>Svincolo Di Ciampino</item>
+        <item>Svincolo 23: Ss7 Via Appia</item>
+        <item>Svincolo 24: Via Ardeatina</item>
+        <item>Ardeatina</item>
+        <item>Svincolo 25: Via Laurentina</item>
+        <item>Svincolo 26: Ss148 Via Pontina</item>
+        <item>Svincolo 27: Via C.Colombo</item>
+        <item>Svincolo 28: Ss8 Via Del Mare-V.Ostiense</item>
+        <item>Svincolo 29: Parco dei Medici</item>
+        <item>Svincolo 30: Allacciamento Autos. Per Aeroporto Fiumicino</item>
+        <item>Svincolo 31: Via Della Magliana</item>
+        <item>Svincolo 32: Via Della Pisana</item>
+        <item>Pisana</item>
+        <item>Svincolo 33: Via Del Pescaccio</item>
+        <item>Gra-Aurelia</item>
     </string-array>
 
     <integer-array name="z175Id">
+        <item>2048</item>
+        <item>14375</item>
+        <item>2049</item>
+        <item>14376</item>
+        <item>2050</item>
+        <item>14377</item>
+        <item>2051</item>
+        <item>14378</item>
+        <item>2052</item>
+        <item>2053</item>
+        <item>2054</item>
+        <item>2055</item>
+        <item>2056</item>
+        <item>2057</item>
+        <item>2058</item>
+        <item>41863</item>
+        <item>2059</item>
+        <item>2060</item>
+        <item>2061</item>
+        <item>2063</item>
+        <item>2064</item>
+        <item>2065</item>
+        <item>2066</item>
+        <item>2067</item>
+        <item>2068</item>
+        <item>2069</item>
+        <item>2070</item>
+        <item>2071</item>
+        <item>2072</item>
+        <item>13507</item>
+        <item>2073</item>
+        <item>2074</item>
+        <item>2075</item>
+        <item>2076</item>
+        <item>2077</item>
+        <item>2078</item>
+        <item>2079</item>
+        <item>14379</item>
+        <item>2080</item>
+        <item>2081</item>
+        <item>2082</item>
+        <item>2083</item>
+        <item>2084</item>
+        <item>2085</item>
     </integer-array>
-    <string-array name="z175Webcam">
 
+    <string-array name="z175Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

@@ -2,12 +2,102 @@
 <resources>
 
     <string-array name="z142Name">
-
+        <item>Milano</item>
+        <item>Cantalupa</item>
+        <item>Svincolo Di Assago</item>
+        <item>Allacciamento Tangenziale Ovest Di Milano</item>
+        <item>Barriera Di Milano</item>
+        <item>Binasco</item>
+        <item>Bereguardo - Allacciamento Raccordo Bereguardo-Pv</item>
+        <item>Gropello Cairoli</item>
+        <item>Dorno</item>
+        <item>Casei Gerola</item>
+        <item>Castelnuovo Scrivia</item>
+        <item>Castelnuovo Scrivia</item>
+        <item>Allacciamento A21 Torino-Piacenza-Brescia</item>
+        <item>Tortona</item>
+        <item>Allacciamento Diramazione Predosa-Bettole</item>
+        <item>Bettole Di Novi Ligure</item>
+        <item>Serravalle Scrivia</item>
+        <item>Vignole Borbera</item>
+        <item>Valle Scrivia</item>
+        <item>Isola Del Cantone</item>
+        <item>Giovi</item>
+        <item>Ronco Scrivia</item>
+        <item>Busalla</item>
+        <item>Campora Est</item>
+        <item>Genova Bolzaneto</item>
+        <item>Allacciamento A12 Genova-Rosignano</item>
+        <item>Allacciamento A10 Genova-Ventimiglia</item>
+        <item>Barriera Di Genova Ovest</item>
+        <item>La Lanterna Est</item>
+        <item>Genova</item>
     </string-array>
 
     <integer-array name="z142Id">
+        <item>1439</item>
+        <item>1440</item>
+        <item>1441</item>
+        <item>1442</item>
+        <item>1443</item>
+        <item>1444</item>
+        <item>1445</item>
+        <item>1446</item>
+        <item>1447</item>
+        <item>1448</item>
+        <item>1449</item>
+        <item>13489</item>
+        <item>1450</item>
+        <item>1451</item>
+        <item>1452</item>
+        <item>1453</item>
+        <item>1454</item>
+        <item>1455</item>
+        <item>1456</item>
+        <item>1457</item>
+        <item>1458</item>
+        <item>1459</item>
+        <item>1460</item>
+        <item>1461</item>
+        <item>1462</item>
+        <item>1463</item>
+        <item>1464</item>
+        <item>1465</item>
+        <item>1466</item>
+        <item>1467</item>
     </integer-array>
-    <string-array name="z142Webcam">
 
+    <string-array name="z142Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

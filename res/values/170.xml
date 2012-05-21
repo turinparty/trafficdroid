@@ -2,12 +2,63 @@
 <resources>
 
     <string-array name="z170Name">
-
+        <item>Allacciamento A4 Torino-Trieste</item>
+        <item>Barriera Di Portogruaro</item>
+        <item>Portogruaro</item>
+        <item>Gruaro</item>
+        <item>Sesto Al Reghena</item>
+        <item>Villotta</item>
+        <item>Azzano Decimo</item>
+        <item>Cimpello-Allacciamento Raccordo Cimpello-Ss13</item>
+        <item>Pordenone Centro Comm.Le</item>
+        <item>Pordenone Sud</item>
+        <item>Porcia</item>
+        <item>Fontanafredda</item>
+        <item>Porcia Nord</item>
+        <item>Brugnera Sud</item>
+        <item>Sacile Est</item>
+        <item>Sacile Ovest</item>
+        <item>Svincolo Godega S.Urbano</item>
     </string-array>
 
     <integer-array name="z170Id">
+        <item>1977</item>
+        <item>1978</item>
+        <item>1979</item>
+        <item>1980</item>
+        <item>1981</item>
+        <item>1982</item>
+        <item>1983</item>
+        <item>1984</item>
+        <item>1985</item>
+        <item>1986</item>
+        <item>1987</item>
+        <item>1988</item>
+        <item>1989</item>
+        <item>1990</item>
+        <item>1991</item>
+        <item>1992</item>
+        <item>14153</item>
     </integer-array>
-    <string-array name="z170Webcam">
 
+    <string-array name="z170Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

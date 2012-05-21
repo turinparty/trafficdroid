@@ -2,12 +2,30 @@
 <resources>
 
     <string-array name="z173Name">
-
+        <item>Allacciamento A4 Torino-Trieste</item>
+        <item>Vicenza Nord</item>
+        <item>Postumia Nord</item>
+        <item>Dueville</item>
+        <item>Thiene</item>
+        <item>Barriera Piovene-Rocchette</item>
     </string-array>
 
     <integer-array name="z173Id">
+        <item>2024</item>
+        <item>2025</item>
+        <item>2026</item>
+        <item>2027</item>
+        <item>2028</item>
+        <item>2029</item>
     </integer-array>
-    <string-array name="z173Webcam">
 
+    <string-array name="z173Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

@@ -2,12 +2,75 @@
 <resources>
 
     <string-array name="z143Name">
-
+        <item>Fiorenza-Allacciamento A4 (milano V.Le Certosa)</item>
+        <item>Fiera Milano</item>
+        <item>Barriera Di Milano Nord</item>
+        <item>Allacciamento Tangenziale Ovest Di Milano</item>
+        <item>Svincolo Di Arese</item>
+        <item>Villoresi</item>
+        <item>Lainate</item>
+        <item>Allacciamento A9 Lainate-Como Chiasso</item>
+        <item>Svincolo Di Origgio Ovest</item>
+        <item>Svincolo Di Legnano</item>
+        <item>Svincolo Di Castellanza</item>
+        <item>Svincolo Di Busto Arsizio</item>
+        <item>Gallarate</item>
+        <item>Allacciamento Diramazione Gallarate-Gattico</item>
+        <item>Barriera Di Gallarate Nord</item>
+        <item>Svincolo Di Cavaria</item>
+        <item>Svincolo Di Solbiate Arno</item>
+        <item>Svincolo Di Castronno</item>
+        <item>Brughiera</item>
+        <item>Svincolo Di Gazzada-Lago Di Varese</item>
+        <item>Varese</item>
     </string-array>
 
     <integer-array name="z143Id">
+        <item>1468</item>
+        <item>14004</item>
+        <item>1469</item>
+        <item>1470</item>
+        <item>1471</item>
+        <item>1472</item>
+        <item>1474</item>
+        <item>1475</item>
+        <item>13490</item>
+        <item>1476</item>
+        <item>1477</item>
+        <item>1478</item>
+        <item>1479</item>
+        <item>1481</item>
+        <item>1482</item>
+        <item>1483</item>
+        <item>1484</item>
+        <item>1485</item>
+        <item>1486</item>
+        <item>1487</item>
+        <item>1488</item>
     </integer-array>
-    <string-array name="z143Webcam">
 
+    <string-array name="z143Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

@@ -2,12 +2,105 @@
 <resources>
 
     <string-array name="z240Name">
-
+        <item>Allacciamento A1 Milano-Napoli</item>
+        <item>Svincolo Ss9 Via Emilia: Rogoredo-P.Le Corvetto</item>
+        <item>Svincolo Via Rogoredo</item>
+        <item>Svincolo Paullo: Ss415 Paullese-Ss10 Padana Inferiore</item>
+        <item>Svincolo Via Mecenate: Ponte Lambro</item>
+        <item>Svincolo C.A.M.M.: Monlue\'</item>
+        <item>Svincolo Linate: V.Le Forlanini-Sp14 Rivoltana</item>
+        <item>Svincolo V. Rubattino: Segrate-Citta\' Studi</item>
+        <item>Svincolo Lambrate: Melzo - Dogana Segrate</item>
+        <item>Cascina Gobba</item>
+        <item>Svincolo Gobba: Treviglio-Vimodrone</item>
+        <item>Allacciamento Tangenziale Nord Milano</item>
+        <item>Svincolo Cologno Monzese: S.S.Giovanni Sud</item>
+        <item>Svincolo Sp3 Brugherio: Cologno M. Nord</item>
+        <item>Cologno M. Est</item>
+        <item>Svincolo Sp113 Cernusco Sul Naviglio</item>
+        <item>Svincolo Sp208 Carugate: Brugherio Nord</item>
+        <item>Carugate</item>
+        <item>Barriera Di Agrate Brianza</item>
+        <item>Allacciamento A4 Torino-Trieste</item>
+        <item>Svincolo Agrate B.: Sp13 Melzo-Monza-Dogana</item>
+        <item>Svincolo Concorezzo: Agrate Nord</item>
+        <item>Svincolo Sp41 Cascina Morosina: Burago</item>
+        <item>Svincolo Vimercate Sud: Torri Bianche</item>
+        <item>Svincolo Vimercate Sud: Bg-Trezzo-Arcore</item>
+        <item>Svincolo Vimercate Centro: Oreno</item>
+        <item>Svincolo Vimercate Nord: Frazione Velasca</item>
+        <item>Velasca Ovest</item>
+        <item>Svincolo Usmate-Velate Sud: Carnate-Paderno</item>
+        <item>Svincolo Usmate-Velate Nord: Merate-Leccotangenziale Est Di Milano</item>
+        <item>Lecco</item>
     </string-array>
 
     <integer-array name="z240Id">
+        <item>2622</item>
+        <item>2623</item>
+        <item>14358</item>
+        <item>2624</item>
+        <item>2625</item>
+        <item>2626</item>
+        <item>2627</item>
+        <item>2628</item>
+        <item>2629</item>
+        <item>2630</item>
+        <item>2631</item>
+        <item>2632</item>
+        <item>2633</item>
+        <item>2634</item>
+        <item>2635</item>
+        <item>2636</item>
+        <item>2637</item>
+        <item>2638</item>
+        <item>2639</item>
+        <item>2640</item>
+        <item>2641</item>
+        <item>2642</item>
+        <item>2643</item>
+        <item>14359</item>
+        <item>2644</item>
+        <item>2645</item>
+        <item>2646</item>
+        <item>2647</item>
+        <item>2648</item>
+        <item>2649</item>
+        <item>14360</item>
     </integer-array>
-    <string-array name="z240Webcam">
 
+    <string-array name="z240Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

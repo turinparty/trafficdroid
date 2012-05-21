@@ -2,12 +2,21 @@
 <resources>
 
     <string-array name="z183Name">
-
+        <item>Allacciamento A29 Palerno-Mazara Del Vallo</item>
+        <item>Villagrazia Di Carini</item>
+        <item>Aeroporto Falcone E Borsellino</item>
     </string-array>
 
     <integer-array name="z183Id">
+        <item>2114</item>
+        <item>2115</item>
+        <item>2116</item>
     </integer-array>
-    <string-array name="z183Webcam">
 
+    <string-array name="z183Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

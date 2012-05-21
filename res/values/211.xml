@@ -2,12 +2,24 @@
 <resources>
 
     <string-array name="z211Name">
-
+        <item>Allacciamento A27 Mestre Belluno</item>
+        <item>Allacciamento A57 Torino Trieste</item>
+        <item>Favaro Dese</item>
+        <item>Venezia-Aeroporto Tessera</item>
     </string-array>
 
     <integer-array name="z211Id">
+        <item>2287</item>
+        <item>2288</item>
+        <item>2289</item>
+        <item>2290</item>
     </integer-array>
-    <string-array name="z211Webcam">
 
+    <string-array name="z211Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

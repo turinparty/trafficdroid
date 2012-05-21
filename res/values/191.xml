@@ -2,12 +2,36 @@
 <resources>
 
     <string-array name="z191Name">
-
+        <item>Allacciamento A1 Milano-Napoli</item>
+        <item>San Cesareo</item>
+        <item>Monteporzio</item>
+        <item>Frascati</item>
+        <item>Barriera Di Roma Sud</item>
+        <item>Svincolo Di Torrenova</item>
+        <item>Tuscolana</item>
+        <item>Allacciamento G.R.A.</item>
     </string-array>
 
     <integer-array name="z191Id">
+        <item>2155</item>
+        <item>2156</item>
+        <item>2157</item>
+        <item>2158</item>
+        <item>2159</item>
+        <item>2160</item>
+        <item>2161</item>
+        <item>2162</item>
     </integer-array>
-    <string-array name="z191Webcam">
 
+    <string-array name="z191Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

@@ -2,12 +2,105 @@
 <resources>
 
     <string-array name="z147Name">
-
+        <item>Allacciamento A7 Milano-Genova</item>
+        <item>Genova Est</item>
+        <item>Genova Nervi</item>
+        <item>Sant\' Ilario</item>
+        <item>Recco</item>
+        <item>Rapallo</item>
+        <item>Chiavari</item>
+        <item>Lavagna</item>
+        <item>Sestri Levante</item>
+        <item>Riviera</item>
+        <item>Deiva Marina</item>
+        <item>Carrodano</item>
+        <item>Brugnato-Borghetto Vara</item>
+        <item>Brugnato</item>
+        <item>S.Stefano Di Magra-La Spezia-Allacciamento A15 Pr-Sp</item>
+        <item>Magra</item>
+        <item>Sarzana</item>
+        <item>Carrara</item>
+        <item>Massa</item>
+        <item>Versilia</item>
+        <item>Versilia</item>
+        <item>Allacciamento Diramazione Lucca-Viareggio</item>
+        <item>Allacciamento A11 Firenze-Pisa Nord</item>
+        <item>Pisa Centro</item>
+        <item>Castagnolo</item>
+        <item>Livorno - Raccordo Per Livorno</item>
+        <item>Collesalvetti/Sgc Fi-Pi-Li</item>
+        <item>Savalano Ovest</item>
+        <item>Fine Est</item>
+        <item>Barriera Di Rosignano Marittimo</item>
+        <item>Rosignano</item>
     </string-array>
 
     <integer-array name="z147Id">
+        <item>1557</item>
+        <item>1558</item>
+        <item>1559</item>
+        <item>1560</item>
+        <item>1561</item>
+        <item>1562</item>
+        <item>1563</item>
+        <item>1564</item>
+        <item>1565</item>
+        <item>1566</item>
+        <item>1567</item>
+        <item>1568</item>
+        <item>1569</item>
+        <item>1570</item>
+        <item>1571</item>
+        <item>1572</item>
+        <item>1573</item>
+        <item>1574</item>
+        <item>1575</item>
+        <item>1576</item>
+        <item>13491</item>
+        <item>1578</item>
+        <item>1579</item>
+        <item>1580</item>
+        <item>1581</item>
+        <item>1582</item>
+        <item>1583</item>
+        <item>1584</item>
+        <item>1585</item>
+        <item>1586</item>
+        <item>1588</item>
     </integer-array>
-    <string-array name="z147Webcam">
 
+    <string-array name="z147Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

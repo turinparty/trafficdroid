@@ -2,12 +2,63 @@
 <resources>
 
     <string-array name="z169Name">
-
+        <item>Allacciamento A57 Torino-Trieste/Raccordo Per Tessera</item>
+        <item>Svincolo Di Mogliano Veneto</item>
+        <item>Barriera Di Venezia</item>
+        <item>Allacciamento A4 Padova - Venezia</item>
+        <item>Treviso Sud</item>
+        <item>Treviso Nord</item>
+        <item>Piave</item>
+        <item>Conegliano Veneto</item>
+        <item>Cervada Est</item>
+        <item>Vittorio Veneto Sud</item>
+        <item>Vittorio Veneto Nord</item>
+        <item>Fadalto-Lago Di S.Croce</item>
+        <item>Barriera Di Belluno</item>
+        <item>Cadola-Svincolo Di Belluno</item>
+        <item>Pian Di Vedoia Ovest</item>
+        <item>Ponte Delle Alpi Est</item>
+        <item>Pian Di Vedoia-Ss51 Di Alemagna</item>
     </string-array>
 
     <integer-array name="z169Id">
+        <item>14261</item>
+        <item>14262</item>
+        <item>14263</item>
+        <item>14264</item>
+        <item>1965</item>
+        <item>1966</item>
+        <item>1967</item>
+        <item>1968</item>
+        <item>1969</item>
+        <item>1970</item>
+        <item>1971</item>
+        <item>1972</item>
+        <item>1973</item>
+        <item>1974</item>
+        <item>1975</item>
+        <item>13504</item>
+        <item>1976</item>
     </integer-array>
-    <string-array name="z169Webcam">
 
+    <string-array name="z169Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

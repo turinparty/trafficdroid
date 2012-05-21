@@ -2,12 +2,42 @@
 <resources>
 
     <string-array name="z228Name">
-
+        <item>Allacciamento A3 Salerno-Reggio Calabria</item>
+        <item>Baronissi</item>
+        <item>Lancusi</item>
+        <item>Allacciamento A30 Caserta-Salerno</item>
+        <item>Fisciano-Mercato S.Severino</item>
+        <item>Montoro</item>
+        <item>Torchiati</item>
+        <item>Solofra</item>
+        <item>Serino</item>
+        <item>Avellino-Ss7bis Terra Di Lavoro</item>
     </string-array>
 
     <integer-array name="z228Id">
+        <item>2392</item>
+        <item>2393</item>
+        <item>2394</item>
+        <item>2395</item>
+        <item>2396</item>
+        <item>2397</item>
+        <item>2398</item>
+        <item>2399</item>
+        <item>2400</item>
+        <item>2401</item>
     </integer-array>
-    <string-array name="z228Webcam">
 
+    <string-array name="z228Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

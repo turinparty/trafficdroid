@@ -2,12 +2,117 @@
 <resources>
 
     <string-array name="z163Name">
-
+        <item>Santena - Tangenziale Sud Torino</item>
+        <item>Chieri</item>
+        <item>Villanova</item>
+        <item>Barriera Di Villanova D\'asti</item>
+        <item>Villanova</item>
+        <item>Asti Ovest</item>
+        <item>Asti Est</item>
+        <item>Crocetta</item>
+        <item>Felizzano</item>
+        <item>Allacciamento A26 Ge Voltri-Gravellona T.</item>
+        <item>Alessandria Ovest</item>
+        <item>Alessandria Est</item>
+        <item>Allacciamento A7 Milano-Genova</item>
+        <item>Tortona</item>
+        <item>Voghera</item>
+        <item>Casteggio</item>
+        <item>Broni-Stradella</item>
+        <item>Stradella</item>
+        <item>Castel S.Giovanni</item>
+        <item>Piacenza Ovest</item>
+        <item>Allacciamento Raccordo A21-A1</item>
+        <item>Allacciamento Raccordo A1-A21 Brescia</item>
+        <item>Nure</item>
+        <item>Svincolo Di Caorso</item>
+        <item>Allacciamento A21 A1 La Villa</item>
+        <item>Castelvetro</item>
+        <item>Cremona Sud</item>
+        <item>Cremona Nord</item>
+        <item>Cremona</item>
+        <item>Pontevico Robecco</item>
+        <item>Manerbio</item>
+        <item>Ghedi</item>
+        <item>Brescia Sud</item>
+        <item>Allacciamento A4 Torino-Trieste</item>
+        <item>Brescia Centro</item>
     </string-array>
 
     <integer-array name="z163Id">
+        <item>1806</item>
+        <item>14129</item>
+        <item>1807</item>
+        <item>1808</item>
+        <item>13987</item>
+        <item>1809</item>
+        <item>1810</item>
+        <item>1811</item>
+        <item>1812</item>
+        <item>1813</item>
+        <item>1814</item>
+        <item>1815</item>
+        <item>1816</item>
+        <item>1817</item>
+        <item>1818</item>
+        <item>1819</item>
+        <item>1820</item>
+        <item>1821</item>
+        <item>1822</item>
+        <item>1824</item>
+        <item>1825</item>
+        <item>14188</item>
+        <item>1827</item>
+        <item>1828</item>
+        <item>1829</item>
+        <item>1831</item>
+        <item>1832</item>
+        <item>1833</item>
+        <item>1834</item>
+        <item>1835</item>
+        <item>1836</item>
+        <item>1837</item>
+        <item>14331</item>
+        <item>1838</item>
+        <item>1839</item>
     </integer-array>
-    <string-array name="z163Webcam">
 
+    <string-array name="z163Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>

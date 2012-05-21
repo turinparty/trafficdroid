@@ -2,12 +2,213 @@
 <resources>
 
     <string-array name="z263Name">
-
+        <item>Roma</item>
+        <item>Svincolo Grande Raccordo Anulare</item>
+        <item>La Storta</item>
+        <item>La Storta/Innesto Ss493 Claudia Braccianese</item>
+        <item>Le Rughe/Innesto Ss2bis Cassia Veientana</item>
+        <item>Baccano</item>
+        <item>Bivio Di Pavone</item>
+        <item>Sette Vene</item>
+        <item>Monterosi/Innesto Ss311 Nepesina</item>
+        <item>Sutri</item>
+        <item>Capranica</item>
+        <item>Quercie D\'orlando/Innesto Ss493 Claudia Braccianese</item>
+        <item>La Botte</item>
+        <item>Cura</item>
+        <item>Vetralla/Innesto Ss1 Bis Aurelia</item>
+        <item>Svincolo Viterbo Sud/Innesto Raccordo Vetralla-Viterbo</item>
+        <item>Viterbo</item>
+        <item>Viterbo/Innesto Ss204 Ortana</item>
+        <item>Viterbo Nord/Innesto Raccordo Vetralla-Viterbo</item>
+        <item>Bivio Per Valle Castellone</item>
+        <item>Zepponami</item>
+        <item>Montefiascone</item>
+        <item>Montefiascone/Innesto Ss71 Umbro Casent. Rom.</item>
+        <item>Bolsena</item>
+        <item>Borghetto/Innesto Ss489 Di Gradoli</item>
+        <item>S.Lorenzo Nuovo</item>
+        <item>S.Lorenzo Nuovo/Incrocio Ss74 Maremmana</item>
+        <item>Acquapendente</item>
+        <item>Centeno</item>
+        <item>Bivio Polacco/Innesto Ss321 Del Polacco</item>
+        <item>Ponte A Rigo</item>
+        <item>Bivio Per Piancastagnaio</item>
+        <item>Bivio Per Radicofani</item>
+        <item>Bivio Per Abbadia S.Salvatore</item>
+        <item>Galleria Delle Chiavi</item>
+        <item>La Bisarca/Innesto Ss478 Di Sarteano</item>
+        <item>Ponte Orcia/Innesto Ss323 Di Monte Amiata</item>
+        <item>S.Quirico D\'orcia/Innesto Ss146 Di Chianciano</item>
+        <item>Torrenieri</item>
+        <item>Bivio Per Montalcino</item>
+        <item>Buonconvento/Innesto Ss451 Di Monte Oliveto</item>
+        <item>Ponte D\'arbia</item>
+        <item>Monteroni D\'arbia</item>
+        <item>Ponte A Tressa</item>
+        <item>Isola D\'arbia</item>
+        <item>Cerchiaia/Innesto Ss73/Ss223 E Tangenziale Di Siena</item>
+        <item>Siena/Innesto Ss408 Di Montevarchi</item>
+        <item>Siena N./Innesto Ss222/Bivio Per Raccordo Fi-Si E Tangenziale Si</item>
+        <item>Svincolo Monteriggioni/Raccordo Firenze-Siena</item>
+        <item>Casello Di Staggia/Raccordo Firenze-Siena</item>
+        <item>Bivio Per Poggibonsi/Innesto Ss68 Di Val Cecina</item>
+        <item>Svincolo Poggibonsi Raccordo Firenze-Siena</item>
+        <item>Poggibonsi/Innesto Ss429 Di Val D\'elsa</item>
+        <item>Barberino Val D\'elsa</item>
+        <item>Tavarnelle Val Di Pesa</item>
+        <item>Svincolo Tavarnelle Val Di Pesa Raccordo Firenze-Siena</item>
+        <item>Bargino</item>
+        <item>Svincolo Bargino Raccordo Firenze-Siena</item>
+        <item>Pesa Ponte</item>
+        <item>Svincolo S. Casciano In Val Di Pesa Raccordo Fi-Si</item>
+        <item>S. Casciano In Val Di Pesa</item>
+        <item>Svincolo Tavernuzze Raccordo Firenze-Siena</item>
+        <item>Tavernuzze</item>
+        <item>Casello Firenze Certosa A1 Milano-Napoli</item>
+        <item>Firenze/Innesto Ss2 Diramazione Cassia</item>
+        <item>Firenze</item>
+        <item>Firenze/Innesto Ss67 Tosco Romagnola</item>
     </string-array>
 
     <integer-array name="z263Id">
+        <item>3007</item>
+        <item>3008</item>
+        <item>3009</item>
+        <item>3010</item>
+        <item>3011</item>
+        <item>3012</item>
+        <item>3013</item>
+        <item>3014</item>
+        <item>3015</item>
+        <item>3016</item>
+        <item>3017</item>
+        <item>3018</item>
+        <item>3019</item>
+        <item>3020</item>
+        <item>3021</item>
+        <item>13153</item>
+        <item>3022</item>
+        <item>3023</item>
+        <item>13664</item>
+        <item>3025</item>
+        <item>3026</item>
+        <item>3027</item>
+        <item>3028</item>
+        <item>3029</item>
+        <item>3030</item>
+        <item>3031</item>
+        <item>3032</item>
+        <item>3033</item>
+        <item>3034</item>
+        <item>3035</item>
+        <item>3036</item>
+        <item>3037</item>
+        <item>3038</item>
+        <item>3039</item>
+        <item>3040</item>
+        <item>3041</item>
+        <item>3042</item>
+        <item>3043</item>
+        <item>3044</item>
+        <item>3045</item>
+        <item>3046</item>
+        <item>3047</item>
+        <item>3048</item>
+        <item>3049</item>
+        <item>3050</item>
+        <item>3051</item>
+        <item>3052</item>
+        <item>3053</item>
+        <item>3054</item>
+        <item>3055</item>
+        <item>3057</item>
+        <item>3058</item>
+        <item>3059</item>
+        <item>3060</item>
+        <item>3061</item>
+        <item>3062</item>
+        <item>3063</item>
+        <item>3064</item>
+        <item>3065</item>
+        <item>3066</item>
+        <item>3067</item>
+        <item>3068</item>
+        <item>3069</item>
+        <item>3070</item>
+        <item>3071</item>
+        <item>3072</item>
+        <item>3073</item>
     </integer-array>
-    <string-array name="z263Webcam">
 
+    <string-array name="z263Webcam">
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
     </string-array>
+
 </resources>
