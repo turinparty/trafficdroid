@@ -53,7 +53,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 				for (StreetDTO currStreet : currDTO.getStreets()) {
 					List<ZoneDTO> currZones = currStreet.getZones();
 					for (ZoneDTO currZone : currZones) {
-						if (currZone.getSpeedLeft() == 0)
+						if (currZone.getSpeedLeft() < 1)
 							currZone.setCatLeft((byte) 0);
 						else if (currZone.getSpeedLeft() < 11)
 							currZone.setCatLeft((byte) 1);
@@ -67,7 +67,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 							currZone.setCatLeft((byte) 5);
 						else
 							currZone.setCatLeft((byte) 6);
-						if (currZone.getSpeedRight() == 0)
+						if (currZone.getSpeedRight() < 1)
 							currZone.setCatRight((byte) 0);
 						else if (currZone.getSpeedRight() < 11)
 							currZone.setCatRight((byte) 1);
@@ -97,7 +97,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 								pastZone = pastStreet.getZone(currZone.getName());
 								if (pastZone != null) {
 									int trendSpeed = Integer.parseInt(TdApp.getPrefString(R.string.trendSpeedKey, R.string.trendSpeedDefault));
-									if (currZone.getSpeedLeft() == 0 || pastZone.getSpeedLeft() == 0)
+									if (currZone.getCatLeft() == 0 || pastZone.getCatLeft() == 0)
 										currZone.setTrendLeft(0);
 									else if (currZone.getSpeedLeft() - pastZone.getSpeedLeft() >= trendSpeed)
 										currZone.setTrendLeft(R.drawable.speed_up);
@@ -105,7 +105,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 										currZone.setTrendLeft(R.drawable.speed_down);
 									else
 										currZone.setTrendLeft(0);
-									if (currZone.getSpeedRight() == 0 || pastZone.getSpeedRight() == 0)
+									if (currZone.getCatRight() == 0 || pastZone.getCatRight() == 0)
 										currZone.setTrendRight(0);
 									else if (currZone.getSpeedRight() - pastZone.getSpeedRight() >= trendSpeed)
 										currZone.setTrendRight(R.drawable.speed_up);

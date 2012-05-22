@@ -72,11 +72,11 @@ public class ZoneItem extends AbstractChildItem {
 		rightZoneSpeedText.setTextColor(colorCat[zoneDTO.getCatRight()]);
 		leftZoneSpeedText.setTypeface(zoneDTO.getCatLeft() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
 		rightZoneSpeedText.setTypeface(zoneDTO.getCatRight() == 1 ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
-		if (zoneDTO.getSpeedLeft() != 0)
+		if (zoneDTO.getCatLeft() != 0)
 			leftZoneSpeedText.setText(Short.toString(zoneDTO.getSpeedLeft()));
 		else
 			leftZoneSpeedText.setText(noDataSpeed);
-		if (zoneDTO.getSpeedRight() != 0)
+		if (zoneDTO.getCatRight() != 0)
 			rightZoneSpeedText.setText(Short.toString(zoneDTO.getSpeedRight()));
 		else
 			rightZoneSpeedText.setText(noDataSpeed);

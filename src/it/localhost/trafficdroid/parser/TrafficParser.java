@@ -15,12 +15,12 @@ public class TrafficParser {
 	public static void parse(MainDTO dto, String url) throws GenericException, BadConfException, ConnectionException {
 		for (StreetDTO street : dto.getStreets()) {
 			Element document = TrafficDAO.getData(street.getId(), url).getDocumentElement();
-			NodeList aa = document.getLastChild().getFirstChild().getChildNodes();
-			for (int i = 0; i < aa.getLength(); i++) {
-				NodeList bb = aa.item(i).getChildNodes();
-				int from = Integer.parseInt(bb.item(0).getTextContent());
-				int to = Integer.parseInt(bb.item(1).getTextContent());
-				String speed = bb.item(2).getTextContent();
+			NodeList segments = document.getLastChild().getFirstChild().getChildNodes();
+			for (int i = 0; i < segments.getLength(); i++) {
+				NodeList segChildrens = segments.item(i).getChildNodes();
+				int from = Integer.parseInt(segChildrens.item(0).getTextContent());
+				int to = Integer.parseInt(segChildrens.item(1).getTextContent());
+				String speed = segChildrens.item(2).getTextContent();
 				for (ZoneDTO zone : street.getZones()) {
 					if (zone.getId() >= from && zone.getId() < to)
 						zone.setSpeedLeft(speed);
