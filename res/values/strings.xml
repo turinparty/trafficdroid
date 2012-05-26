@@ -4,6 +4,7 @@
     <string name="app_name">TrafficDroid</string>
     <string name="ok">OK</string>
     <string name="error">Errore</string>
+    <string name="help">Il cambio del provider ha reso necessaria una nuova mappatura delle webcam. Una piccola donazione sarà per noi una grande spinta a continuare il nostro lavoro che finora è stato, e sempre sarà, disponibile gratuitamente per tutti.</string>
     <string name="warning">Attenzione</string>
     <string name="info">Informazione</string>
     <string name="webcamAdd">Questa Webcam non è ancora mappata, aiutaci a mapparla. Sul sito trovi tutte le informazioni. Richiesta di mappatura inoltrata.</string>
