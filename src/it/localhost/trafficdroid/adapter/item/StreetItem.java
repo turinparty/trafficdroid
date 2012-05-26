@@ -1,6 +1,7 @@
 package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.ViewTagger;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import android.content.Context;
@@ -25,7 +26,7 @@ public class StreetItem extends AbstractItem {
 	public void fillView(View view) {
 		ViewTagger.setTag(view, R.id.itemKey, streetDTO.getId());
 		ViewTagger.setTag(view, R.id.itemName, streetDTO.getName());
-		((TextView) ViewTagger.getTag(view, R.id.streetText1)).setText(streetDTO.getName());
+		((TextView) ViewTagger.getTag(view, R.id.streetText1)).setText(streetDTO.getTag() + MainActivity.blank + streetDTO.getName());
 		TextView streetText2 = (TextView) ViewTagger.getTag(view, R.id.streetText2);
 		if (streetDTO.getBadNews().size() != 0) {
 			streetText2.setText(BadNewsItem.badNewsLabel + streetDTO.getBadNews().size());
