@@ -39,7 +39,7 @@ public class MainActivity extends AbstractActivity {
 	private static final String donate = "market://details?id=it.localhost.donate";
 	private static final String removePrefToastUndo = " è stato aggiunto ai preferiti.";
 	private static final String removePrefToast = " è stato rimosso dai preferiti.";
-	private static final String unknowError = "Unknow Error";
+	private static final String unknownError = "Unknown Error";
 	public static final String blank = " ";
 	private ExpandableListView listView;
 	private IntentFilter intentFilter;
@@ -51,6 +51,7 @@ public class MainActivity extends AbstractActivity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
+		setProgressBarIndeterminateVisibility(false);
 		TdAnalytics.trackEvent(TdAnalytics.eventCatApp, TdAnalytics.eventActionVersion, TdApp.getVersionName(), TdApp.getVersionCode());
 		intentFilter = new IntentFilter();
 		intentFilter.addAction(TdService.beginUpdate);
@@ -161,9 +162,9 @@ public class MainActivity extends AbstractActivity {
 	}
 
 	private void refresh() {
-		new RefreshTask().execute((Void[]) null);
+		new RefreshTask().execute();
 		if (TdApp.getPrefBoolean(Const.exceptionCheck, false)) {
-			String msg = TdApp.getPrefString(Const.exceptionMsg, unknowError);
+			String msg = TdApp.getPrefString(Const.exceptionMsg, unknownError);
 			new AlertDialog.Builder(this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(msg).show();
 			setTitle(msg);
 			TdApp.getEditor().putBoolean(Const.exceptionCheck, false).commit();
