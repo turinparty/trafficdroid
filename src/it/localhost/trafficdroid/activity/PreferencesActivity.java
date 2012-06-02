@@ -43,7 +43,7 @@ public class PreferencesActivity extends PreferenceActivity { // NO_UCD
 							streetScreen.addPreference(subStreetCategory);
 							subStreetCategory.setTitle(R.string.diramation);
 						}
-						setZonesCategory(addStreetScreen(subStreetCategory, streetId[j], streetName[j]), streetId[j]);
+						setZonesCategory(addStreetScreen(subStreetCategory, streetId[j], streetTag[j] + MainActivity.blank + streetName[j]), streetId[j]);
 					}
 				setZonesCategory(streetScreen, streetId[i]);
 			}
