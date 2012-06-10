@@ -18,9 +18,9 @@ public class TrafficParser {
 			NodeList segments = document.getLastChild().getFirstChild().getChildNodes();
 			for (int i = 0; i < segments.getLength(); i++) {
 				NodeList segChildrens = segments.item(i).getChildNodes();
-				int from = Integer.parseInt(segChildrens.item(0).getTextContent());
-				int to = Integer.parseInt(segChildrens.item(1).getTextContent());
-				String speed = segChildrens.item(2).getTextContent();
+				int from = Integer.parseInt(segChildrens.item(0).getFirstChild().getNodeValue());
+				int to = Integer.parseInt(segChildrens.item(1).getFirstChild().getNodeValue());
+				String speed = segChildrens.item(2).getFirstChild().getNodeValue();
 				for (ZoneDTO zone : street.getZones()) {
 					if (zone.getId() >= from && zone.getId() < to)
 						zone.setSpeedLeft(speed);
