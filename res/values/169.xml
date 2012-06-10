@@ -43,16 +43,16 @@
 
     <string-array name="z169Webcam">
         <item>-1</item>
+        <item>A20540</item> <!-- A27 km. 2,5 Mogliano Veneto itinere nord -->
         <item>-1</item>
         <item>-1</item>
+        <item>19182</item> <!-- A27 km. 10,2 Treviso Sud itinere nord -->
+        <item>6276</item> <!-- A27 km. 21,5 Treviso Nord itinere nord -->
         <item>-1</item>
+        <item>10653</item> <!-- A27 km. 40,0 Conegliano itinere nord -->
         <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
+        <item>10636</item> <!-- A27 km. 51,0 Vittorio V. Sud itinere nord -->
+        <item>14566</item> <!-- A27 km. 58,4 Vittorio V. Nord itinere nord -->
         <item>-1</item>
         <item>-1</item>
         <item>-1</item>

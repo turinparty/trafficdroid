@@ -283,13 +283,26 @@
         <item>-1</item>
         <item>-1</item>
         <item>-1</item>
+        <item>A8003</item> <!-- A04 km. 124,0 Inizio Competenza -->
+        <item>A21488</item> <!-- A04 km. 126,0 Fiorenza itinere ovest -->
         <item>-1</item>
+        <item>A19830</item> <!-- A04 km. 131,0 Cormano itinere ovest -->
         <item>-1</item>
+        <item>A19824</item> <!-- A04 km. 137,1 Sesto S.Giovanni itinere ovest -->
         <item>-1</item>
         <item>-1</item>
         <item>-1</item>
+        <item>A19917</item> <!-- A04 km. 142,1 Tangenziale Milano Est itinere est -->
+        <item>A21474</item> <!-- A04 km. 147 Agrate itinere ovest -->
         <item>-1</item>
+        <item>A21467</item> <!-- A04 km. 151,6 Cavenago itinere ovest -->
+        <item>A19809</item> <!-- A04 km. 158,1 Trezzo itinere ovest -->
+        <item>A19803</item> <!-- A04 km. 161,6 Capriate itinere ovest -->
         <item>-1</item>
+        <item>A19798</item> <!-- A04 km. 168,8 Dalmine itinere ovest -->
+        <item>A22311</item> <!-- A04 km. 172,6 Bergamo itinere ovest -->
+        <item>A21461</item> <!-- A04 km. 180,2 Seriate itinere ovest -->
+        <item>A19874</item> <!-- A04 km. 187,2 Grumello itinere est -->
         <item>-1</item>
         <item>-1</item>
         <item>-1</item>
@@ -332,23 +345,10 @@
         <item>-1</item>
         <item>-1</item>
         <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
+        <item>C201-220</item>
+        <item>C101-145</item>
+        <item>C201-215</item>
+        <item>C201-218</item>
         <item>-1</item>
         <item>-1</item>
         <item>-1</item>

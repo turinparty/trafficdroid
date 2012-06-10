@@ -24,9 +24,9 @@
     <string-array name="z190Webcam">
         <item>-1</item>
         <item>-1</item>
+        <item>A21826</item> <!-- D18 km. 04,0 Roma Nord (DT) -->
         <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
+        <item>A21813</item> <!-- D18 km. 19,0 Settebagni -->
         <item>-1</item>
         <item>-1</item>
     </string-array>
