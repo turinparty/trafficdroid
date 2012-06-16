@@ -1,0 +1,2086 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<integer-array name="caselli_id">
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>7</item>
+		<item>8</item>
+		<item>9</item>
+		<item>10</item>
+		<item>11</item>
+		<item>12</item>
+		<item>15</item>
+		<item>17</item>
+		<item>19</item>
+		<item>23</item>
+		<item>25</item>
+		<item>29</item>
+		<item>31</item>
+		<item>33</item>
+		<item>34</item>
+		<item>36</item>
+		<item>38</item>
+		<item>39</item>
+		<item>43</item>
+		<item>44</item>
+		<item>46</item>
+		<item>49</item>
+		<item>50</item>
+		<item>51</item>
+		<item>52</item>
+		<item>53</item>
+		<item>55</item>
+		<item>61</item>
+		<item>62</item>
+		<item>65</item>
+		<item>68</item>
+		<item>69</item>
+		<item>70</item>
+		<item>72</item>
+		<item>76</item>
+		<item>78</item>
+		<item>80</item>
+		<item>81</item>
+		<item>83</item>
+		<item>86</item>
+		<item>89</item>
+		<item>90</item>
+		<item>92</item>
+		<item>94</item>
+		<item>95</item>
+		<item>96</item>
+		<item>98</item>
+		<item>99</item>
+		<item>100</item>
+		<item>101</item>
+		<item>104</item>
+		<item>107</item>
+		<item>109</item>
+		<item>110</item>
+		<item>111</item>
+		<item>112</item>
+		<item>113</item>
+		<item>114</item>
+		<item>115</item>
+		<item>118</item>
+		<item>119</item>
+		<item>120</item>
+		<item>122</item>
+		<item>125</item>
+		<item>127</item>
+		<item>128</item>
+		<item>129</item>
+		<item>132</item>
+		<item>133</item>
+		<item>137</item>
+		<item>139</item>
+		<item>140</item>
+		<item>143</item>
+		<item>144</item>
+		<item>146</item>
+		<item>147</item>
+		<item>148</item>
+		<item>152</item>
+		<item>154</item>
+		<item>155</item>
+		<item>156</item>
+		<item>157</item>
+		<item>160</item>
+		<item>161</item>
+		<item>163</item>
+		<item>164</item>
+		<item>165</item>
+		<item>166</item>
+		<item>167</item>
+		<item>169</item>
+		<item>171</item>
+		<item>174</item>
+		<item>175</item>
+		<item>178</item>
+		<item>180</item>
+		<item>182</item>
+		<item>188</item>
+		<item>189</item>
+		<item>191</item>
+		<item>192</item>
+		<item>194</item>
+		<item>195</item>
+		<item>196</item>
+		<item>197</item>
+		<item>198</item>
+		<item>200</item>
+		<item>201</item>
+		<item>202</item>
+		<item>203</item>
+		<item>205</item>
+		<item>207</item>
+		<item>208</item>
+		<item>213</item>
+		<item>215</item>
+		<item>217</item>
+		<item>220</item>
+		<item>221</item>
+		<item>223</item>
+		<item>224</item>
+		<item>226</item>
+		<item>227</item>
+		<item>229</item>
+		<item>256</item>
+		<item>260</item>
+		<item>262</item>
+		<item>263</item>
+		<item>266</item>
+		<item>267</item>
+		<item>270</item>
+		<item>271</item>
+		<item>273</item>
+		<item>275</item>
+		<item>278</item>
+		<item>279</item>
+		<item>281</item>
+		<item>282</item>
+		<item>283</item>
+		<item>284</item>
+		<item>285</item>
+		<item>287</item>
+		<item>290</item>
+		<item>292</item>
+		<item>293</item>
+		<item>297</item>
+		<item>298</item>
+		<item>299</item>
+		<item>301</item>
+		<item>304</item>
+		<item>305</item>
+		<item>306</item>
+		<item>307</item>
+		<item>309</item>
+		<item>311</item>
+		<item>313</item>
+		<item>314</item>
+		<item>316</item>
+		<item>317</item>
+		<item>318</item>
+		<item>319</item>
+		<item>321</item>
+		<item>322</item>
+		<item>325</item>
+		<item>328</item>
+		<item>330</item>
+		<item>332</item>
+		<item>333</item>
+		<item>336</item>
+		<item>337</item>
+		<item>338</item>
+		<item>339</item>
+		<item>340</item>
+		<item>341</item>
+		<item>342</item>
+		<item>345</item>
+		<item>346</item>
+		<item>347</item>
+		<item>349</item>
+		<item>350</item>
+		<item>351</item>
+		<item>352</item>
+		<item>353</item>
+		<item>354</item>
+		<item>355</item>
+		<item>356</item>
+		<item>360</item>
+		<item>361</item>
+		<item>364</item>
+		<item>365</item>
+		<item>367</item>
+		<item>369</item>
+		<item>370</item>
+		<item>371</item>
+		<item>372</item>
+		<item>373</item>
+		<item>374</item>
+		<item>375</item>
+		<item>378</item>
+		<item>379</item>
+		<item>380</item>
+		<item>382</item>
+		<item>383</item>
+		<item>385</item>
+		<item>387</item>
+		<item>389</item>
+		<item>392</item>
+		<item>393</item>
+		<item>394</item>
+		<item>396</item>
+		<item>399</item>
+		<item>400</item>
+		<item>403</item>
+		<item>406</item>
+		<item>408</item>
+		<item>412</item>
+		<item>415</item>
+		<item>416</item>
+		<item>417</item>
+		<item>418</item>
+		<item>420</item>
+		<item>421</item>
+		<item>422</item>
+		<item>425</item>
+		<item>428</item>
+		<item>431</item>
+		<item>432</item>
+		<item>439</item>
+		<item>440</item>
+		<item>441</item>
+		<item>442</item>
+		<item>443</item>
+		<item>466</item>
+		<item>467</item>
+		<item>469</item>
+		<item>470</item>
+		<item>473</item>
+		<item>474</item>
+		<item>475</item>
+		<item>478</item>
+		<item>479</item>
+		<item>482</item>
+		<item>483</item>
+		<item>485</item>
+		<item>487</item>
+		<item>489</item>
+		<item>491</item>
+		<item>494</item>
+		<item>495</item>
+		<item>496</item>
+		<item>503</item>
+		<item>544</item>
+		<item>547</item>
+		<item>550</item>
+		<item>552</item>
+		<item>556</item>
+		<item>558</item>
+		<item>559</item>
+		<item>561</item>
+		<item>569</item>
+		<item>577</item>
+		<item>578</item>
+		<item>580</item>
+		<item>581</item>
+		<item>585</item>
+		<item>586</item>
+		<item>588</item>
+		<item>589</item>
+		<item>590</item>
+		<item>592</item>
+		<item>593</item>
+		<item>595</item>
+		<item>597</item>
+		<item>600</item>
+		<item>602</item>
+		<item>606</item>
+		<item>609</item>
+		<item>610</item>
+		<item>612</item>
+		<item>625</item>
+		<item>642</item>
+		<item>645</item>
+		<item>647</item>
+		<item>668</item>
+		<item>675</item>
+		<item>676</item>
+		<item>685</item>
+		<item>752</item>
+		<item>757</item>
+		<item>759</item>
+		<item>760</item>
+		<item>761</item>
+		<item>763</item>
+		<item>764</item>
+		<item>779</item>
+		<item>815</item>
+		<item>816</item>
+		<item>817</item>
+		<item>820</item>
+		<item>821</item>
+		<item>823</item>
+		<item>832</item>
+		<item>842</item>
+		<item>844</item>
+		<item>845</item>
+		<item>846</item>
+		<item>847</item>
+		<item>849</item>
+		<item>850</item>
+		<item>851</item>
+		<item>1031</item>
+		<item>1038</item>
+		<item>1047</item>
+		<item>1048</item>
+		<item>1050</item>
+		<item>1052</item>
+		<item>1054</item>
+		<item>1055</item>
+		<item>1056</item>
+		<item>1068</item>
+		<item>1069</item>
+		<item>1071</item>
+		<item>1073</item>
+		<item>1075</item>
+		<item>1076</item>
+		<item>1077</item>
+		<item>1078</item>
+		<item>1080</item>
+		<item>1081</item>
+		<item>1082</item>
+		<item>1083</item>
+		<item>1085</item>
+		<item>1087</item>
+		<item>1088</item>
+		<item>1089</item>
+		<item>1090</item>
+		<item>1091</item>
+		<item>1092</item>
+		<item>1093</item>
+		<item>1095</item>
+		<item>1096</item>
+		<item>1097</item>
+		<item>1100</item>
+		<item>1102</item>
+		<item>1110</item>
+		<item>1111</item>
+		<item>1122</item>
+		<item>1124</item>
+		<item>1125</item>
+		<item>1126</item>
+		<item>1127</item>
+		<item>1129</item>
+		<item>1133</item>
+		<item>1135</item>
+		<item>1137</item>
+		<item>1140</item>
+		<item>1142</item>
+		<item>1146</item>
+		<item>1148</item>
+		<item>1150</item>
+		<item>1153</item>
+		<item>1154</item>
+		<item>1156</item>
+		<item>1157</item>
+		<item>1158</item>
+		<item>1159</item>
+		<item>1161</item>
+		<item>1162</item>
+		<item>1163</item>
+		<item>1166</item>
+		<item>1169</item>
+		<item>1170</item>
+		<item>1171</item>
+		<item>1172</item>
+		<item>1173</item>
+		<item>1174</item>
+		<item>1175</item>
+		<item>1176</item>
+		<item>1177</item>
+		<item>1179</item>
+		<item>1334</item>
+		<item>1336</item>
+		<item>1353</item>
+		<item>1381</item>
+		<item>1383</item>
+		<item>1384</item>
+		<item>1386</item>
+		<item>1387</item>
+		<item>1388</item>
+		<item>3521</item>
+		<item>3525</item>
+		<item>3530</item>
+		<item>3533</item>
+		<item>3538</item>
+		<item>3543</item>
+		<item>3545</item>
+		<item>3546</item>
+		<item>3547</item>
+		<item>3548</item>
+		<item>3550</item>
+		<item>3552</item>
+		<item>3553</item>
+		<item>3557</item>
+		<item>3559</item>
+		<item>3560</item>
+		<item>3563</item>
+		<item>3564</item>
+		<item>3565</item>
+		<item>3567</item>
+		<item>3570</item>
+		<item>3571</item>
+		<item>3573</item>
+		<item>3575</item>
+		<item>3576</item>
+		<item>3580</item>
+		<item>3583</item>
+		<item>3584</item>
+		<item>3585</item>
+		<item>3588</item>
+		<item>3589</item>
+		<item>3591</item>
+		<item>3593</item>
+		<item>3602</item>
+		<item>3604</item>
+		<item>3606</item>
+		<item>3608</item>
+		<item>3609</item>
+		<item>3610</item>
+		<item>3615</item>
+		<item>3616</item>
+		<item>3617</item>
+		<item>3619</item>
+		<item>3621</item>
+		<item>3625</item>
+		<item>3627</item>
+		<item>3629</item>
+		<item>3631</item>
+		<item>3632</item>
+		<item>3670</item>
+		<item>3691</item>
+		<item>3693</item>
+		<item>3697</item>
+		<item>3698</item>
+		<item>3700</item>
+		<item>3702</item>
+		<item>3703</item>
+		<item>3704</item>
+		<item>3705</item>
+		<item>3708</item>
+		<item>3710</item>
+		<item>3715</item>
+		<item>3717</item>
+		<item>3719</item>
+		<item>3720</item>
+		<item>3721</item>
+		<item>3724</item>
+		<item>3725</item>
+		<item>3729</item>
+		<item>3731</item>
+		<item>3732</item>
+		<item>3734</item>
+		<item>3736</item>
+		<item>3737</item>
+		<item>3738</item>
+		<item>3739</item>
+		<item>3741</item>
+		<item>3743</item>
+		<item>3744</item>
+		<item>3745</item>
+		<item>3746</item>
+		<item>3748</item>
+		<item>3749</item>
+		<item>3751</item>
+		<item>3752</item>
+		<item>3755</item>
+		<item>3756</item>
+		<item>3757</item>
+		<item>3759</item>
+		<item>3760</item>
+		<item>3762</item>
+		<item>3763</item>
+		<item>3765</item>
+		<item>3766</item>
+		<item>3771</item>
+		<item>3772</item>
+		<item>3774</item>
+		<item>3784</item>
+		<item>3785</item>
+		<item>3787</item>
+		<item>3796</item>
+		<item>3797</item>
+		<item>3800</item>
+		<item>3802</item>
+		<item>3803</item>
+		<item>3804</item>
+		<item>3806</item>
+		<item>3809</item>
+		<item>3815</item>
+		<item>3817</item>
+		<item>3818</item>
+		<item>3819</item>
+		<item>3820</item>
+		<item>3821</item>
+		<item>3823</item>
+		<item>3824</item>
+		<item>3825</item>
+		<item>3829</item>
+		<item>3830</item>
+		<item>3831</item>
+		<item>3833</item>
+		<item>3836</item>
+		<item>3837</item>
+		<item>3839</item>
+		<item>3841</item>
+		<item>3842</item>
+		<item>3844</item>
+		<item>3845</item>
+		<item>3849</item>
+		<item>3850</item>
+		<item>3855</item>
+		<item>3856</item>
+		<item>3858</item>
+		<item>3859</item>
+		<item>3860</item>
+		<item>3862</item>
+		<item>3864</item>
+		<item>3865</item>
+		<item>3867</item>
+		<item>3869</item>
+		<item>3870</item>
+		<item>3871</item>
+		<item>3872</item>
+		<item>3874</item>
+		<item>3877</item>
+		<item>3880</item>
+		<item>3881</item>
+		<item>3884</item>
+		<item>3886</item>
+		<item>3887</item>
+		<item>3888</item>
+		<item>3889</item>
+		<item>3890</item>
+		<item>3892</item>
+		<item>3894</item>
+		<item>3895</item>
+		<item>3898</item>
+		<item>3900</item>
+		<item>3906</item>
+		<item>3907</item>
+		<item>3909</item>
+		<item>3912</item>
+		<item>3913</item>
+		<item>3914</item>
+		<item>3916</item>
+		<item>3917</item>
+		<item>3919</item>
+		<item>3921</item>
+		<item>3922</item>
+		<item>3923</item>
+		<item>3925</item>
+		<item>3926</item>
+		<item>3928</item>
+		<item>3929</item>
+		<item>3930</item>
+		<item>3931</item>
+		<item>3932</item>
+		<item>3933</item>
+		<item>3934</item>
+		<item>3935</item>
+		<item>3944</item>
+		<item>3946</item>
+		<item>3947</item>
+		<item>3948</item>
+		<item>3950</item>
+		<item>3951</item>
+		<item>3952</item>
+		<item>3953</item>
+		<item>3955</item>
+		<item>3957</item>
+		<item>11003</item>
+		<item>11008</item>
+		<item>11013</item>
+		<item>11014</item>
+		<item>11015</item>
+		<item>11019</item>
+		<item>11024</item>
+		<item>11032</item>
+		<item>11034</item>
+		<item>11039</item>
+		<item>11040</item>
+		<item>11043</item>
+		<item>11044</item>
+		<item>11059</item>
+		<item>11068</item>
+		<item>11070</item>
+		<item>11071</item>
+		<item>11073</item>
+		<item>11082</item>
+		<item>11095</item>
+		<item>11100</item>
+		<item>11108</item>
+		<item>11109</item>
+		<item>11111</item>
+		<item>11112</item>
+		<item>11114</item>
+		<item>11117</item>
+		<item>11118</item>
+		<item>11120</item>
+		<item>11121</item>
+		<item>11122</item>
+		<item>11123</item>
+		<item>11129</item>
+		<item>11131</item>
+		<item>11133</item>
+		<item>11134</item>
+		<item>11168</item>
+		<item>11178</item>
+		<item>11179</item>
+		<item>11180</item>
+		<item>11183</item>
+		<item>11184</item>
+		<item>11185</item>
+		<item>11190</item>
+		<item>11191</item>
+		<item>11192</item>
+		<item>11198</item>
+		<item>11199</item>
+		<item>11200</item>
+		<item>11221</item>
+		<item>11222</item>
+		<item>11224</item>
+		<item>11225</item>
+		<item>11226</item>
+		<item>11227</item>
+		<item>11228</item>
+		<item>11229</item>
+		<item>11230</item>
+		<item>11231</item>
+		<item>11235</item>
+		<item>11236</item>
+		<item>11237</item>
+		<item>11238</item>
+		<item>11239</item>
+		<item>11240</item>
+		<item>11241</item>
+		<item>11242</item>
+		<item>11243</item>
+		<item>11244</item>
+		<item>11245</item>
+		<item>11247</item>
+		<item>11248</item>
+		<item>11250</item>
+		<item>11251</item>
+		<item>11253</item>
+		<item>11254</item>
+		<item>11256</item>
+		<item>11257</item>
+		<item>11258</item>
+		<item>11259</item>
+		<item>11275</item>
+		<item>11277</item>
+		<item>11294</item>
+		<item>11295</item>
+		<item>11297</item>
+		<item>11298</item>
+		<item>11299</item>
+		<item>11300</item>
+		<item>11304</item>
+		<item>11305</item>
+		<item>11306</item>
+		<item>11307</item>
+		<item>11308</item>
+		<item>11309</item>
+		<item>11310</item>
+		<item>11311</item>
+		<item>15000</item>
+		<item>15001</item>
+		<item>15002</item>
+		<item>15003</item>
+		<item>15004</item>
+		<item>15005</item>
+		<item>15006</item>
+		<item>15007</item>
+		<item>15008</item>
+		<item>15009</item>
+		<item>15010</item>
+		<item>15011</item>
+		<item>15012</item>
+		<item>15013</item>
+		<item>15014</item>
+		<item>15015</item>
+		<item>15016</item>
+		<item>15017</item>
+		<item>15018</item>
+		<item>15019</item>
+		<item>15020</item>
+		<item>15021</item>
+		<item>15022</item>
+		<item>15023</item>
+		<item>15024</item>
+		<item>15025</item>
+		<item>15026</item>
+		<item>15027</item>
+		<item>15028</item>
+		<item>15029</item>
+		<item>15030</item>
+		<item>15031</item>
+		<item>15032</item>
+		<item>15040</item>
+		<item>15042</item>
+		<item>15044</item>
+		<item>15045</item>
+		<item>15057</item>
+		<item>15058</item>
+		<item>15060</item>
+		<item>15061</item>
+		<item>15063</item>
+		<item>15064</item>
+		<item>15065</item>
+		<item>15066</item>
+		<item>15075</item>
+		<item>15077</item>
+		<item>15078</item>
+		<item>15079</item>
+		<item>15095</item>
+		<item>15500</item>
+		<item>15501</item>
+		<item>15502</item>
+		<item>15503</item>
+		<item>15504</item>
+		<item>15505</item>
+		<item>15506</item>
+		<item>15507</item>
+		<item>15509</item>
+		<item>15510</item>
+		<item>15511</item>
+		<item>15513</item>
+		<item>15514</item>
+		<item>15515</item>
+		<item>15516</item>
+		<item>15518</item>
+		<item>15519</item>
+		<item>15520</item>
+		<item>15521</item>
+		<item>15522</item>
+		<item>15523</item>
+		<item>15524</item>
+		<item>15525</item>
+		<item>15526</item>
+		<item>15528</item>
+		<item>15529</item>
+		<item>15530</item>
+		<item>15531</item>
+		<item>15532</item>
+		<item>15533</item>
+		<item>15534</item>
+		<item>15535</item>
+		<item>15536</item>
+		<item>15537</item>
+		<item>15538</item>
+		<item>15539</item>
+		<item>15540</item>
+		<item>15541</item>
+		<item>15542</item>
+		<item>15543</item>
+		<item>15544</item>
+		<item>15545</item>
+		<item>15546</item>
+		<item>15547</item>
+		<item>15548</item>
+		<item>15549</item>
+		<item>15550</item>
+		<item>15551</item>
+		<item>15552</item>
+		<item>15553</item>
+		<item>15554</item>
+		<item>15555</item>
+		<item>15556</item>
+		<item>15558</item>
+		<item>15559</item>
+		<item>15560</item>
+		<item>15561</item>
+		<item>15562</item>
+		<item>15563</item>
+		<item>15564</item>
+		<item>15565</item>
+		<item>15566</item>
+		<item>15567</item>
+		<item>15568</item>
+		<item>15569</item>
+		<item>15570</item>
+		<item>15571</item>
+		<item>15572</item>
+		<item>15573</item>
+		<item>15575</item>
+		<item>15576</item>
+		<item>15577</item>
+		<item>15578</item>
+		<item>15579</item>
+		<item>15580</item>
+		<item>16276</item>
+		<item>16286</item>
+		<item>22070</item>
+		<item>22071</item>
+		<item>22083</item>
+		<item>22085</item>
+		<item>24672</item>
+		<item>24674</item>
+		<item>24682</item>
+		<item>24683</item>
+		<item>24686</item>
+		<item>24690</item>
+		<item>24707</item>
+		<item>24708</item>
+		<item>24709</item>
+		<item>24711</item>
+		<item>24712</item>
+		<item>24713</item>
+		<item>24715</item>
+		<item>24716</item>
+		<item>24717</item>
+		<item>24718</item>
+		<item>24743</item>
+		<item>24746</item>
+		<item>24748</item>
+		<item>24749</item>
+		<item>24751</item>
+		<item>24753</item>
+		<item>24755</item>
+		<item>24756</item>
+		<item>24758</item>
+		<item>24760</item>
+		<item>24762</item>
+		<item>24763</item>
+		<item>24768</item>
+		<item>24769</item>
+		<item>24770</item>
+		<item>24771</item>
+		<item>24773</item>
+		<item>24775</item>
+		<item>24776</item>
+		<item>24777</item>
+		<item>24778</item>
+		<item>24779</item>
+		<item>24780</item>
+		<item>24781</item>
+		<item>24783</item>
+		<item>24784</item>
+		<item>24785</item>
+		<item>24786</item>
+		<item>24787</item>
+		<item>24808</item>
+		<item>24810</item>
+		<item>24812</item>
+		<item>24816</item>
+		<item>24817</item>
+		<item>24818</item>
+		<item>24820</item>
+		<item>24821</item>
+		<item>24823</item>
+		<item>24824</item>
+		<item>24825</item>
+		<item>24826</item>
+		<item>24828</item>
+		<item>24829</item>
+		<item>24830</item>
+		<item>24831</item>
+		<item>24832</item>
+		<item>24834</item>
+		<item>24835</item>
+		<item>24836</item>
+		<item>24837</item>
+		<item>24838</item>
+		<item>24839</item>
+		<item>24850</item>
+		<item>24851</item>
+		<item>24852</item>
+		<item>24858</item>
+		<item>24859</item>
+		<item>24860</item>
+		<item>24863</item>
+		<item>24864</item>
+		<item>24866</item>
+		<item>24868</item>
+		<item>24870</item>
+		<item>24872</item>
+		<item>24873</item>
+		<item>24874</item>
+		<item>24875</item>
+		<item>24877</item>
+		<item>24878</item>
+		<item>24879</item>
+		<item>24880</item>
+		<item>24883</item>
+		<item>24884</item>
+		<item>24887</item>
+		<item>24888</item>
+		<item>24892</item>
+		<item>24904</item>
+		<item>24910</item>
+		<item>24915</item>
+		<item>24916</item>
+		<item>24917</item>
+		<item>24918</item>
+		<item>24919</item>
+		<item>24920</item>
+		<item>24921</item>
+		<item>24923</item>
+		<item>24924</item>
+		<item>24925</item>
+		<item>24926</item>
+		<item>24927</item>
+		<item>24928</item>
+		<item>24929</item>
+		<item>24931</item>
+		<item>24932</item>
+		<item>24934</item>
+		<item>24936</item>
+		<item>24939</item>
+		<item>24940</item>
+		<item>24942</item>
+		<item>24944</item>
+		<item>24945</item>
+		<item>24946</item>
+		<item>24947</item>
+		<item>24950</item>
+		<item>24951</item>
+		<item>24952</item>
+		<item>24957</item>
+		<item>24964</item>
+		<item>24965</item>
+		<item>24967</item>
+		<item>24968</item>
+		<item>24977</item>
+		<item>24978</item>
+		<item>24979</item>
+		<item>24981</item>
+		<item>24982</item>
+		<item>24984</item>
+		<item>24985</item>
+		<item>24986</item>
+		<item>24987</item>
+		<item>24992</item>
+		<item>24995</item>
+		<item>24998</item>
+		<item>25000</item>
+		<item>25002</item>
+		<item>25003</item>
+		<item>25005</item>
+		<item>25006</item>
+		<item>25007</item>
+		<item>25008</item>
+		<item>25010</item>
+		<item>25012</item>
+		<item>25014</item>
+		<item>25015</item>
+		<item>25016</item>
+		<item>25018</item>
+		<item>25020</item>
+		<item>25021</item>
+		<item>25024</item>
+		<item>25025</item>
+		<item>25026</item>
+		<item>25027</item>
+		<item>25028</item>
+		<item>25030</item>
+		<item>25031</item>
+		<item>25032</item>
+		<item>25033</item>
+		<item>25035</item>
+		<item>25037</item>
+		<item>25046</item>
+		<item>25048</item>
+		<item>25050</item>
+		<item>25051</item>
+		<item>25054</item>
+		<item>25056</item>
+		<item>25057</item>
+		<item>25058</item>
+		<item>25059</item>
+		<item>25060</item>
+		<item>25061</item>
+		<item>25062</item>
+		<item>25066</item>
+		<item>25067</item>
+		<item>25068</item>
+		<item>25071</item>
+		<item>25072</item>
+		<item>25073</item>
+		<item>25076</item>
+		<item>25077</item>
+		<item>25079</item>
+		<item>25080</item>
+		<item>25081</item>
+		<item>25082</item>
+		<item>25085</item>
+		<item>25202</item>
+		<item>25203</item>
+		<item>25204</item>
+		<item>25208</item>
+		<item>25209</item>
+		<item>25211</item>
+		<item>25212</item>
+		<item>25213</item>
+		<item>25214</item>
+		<item>25215</item>
+		<item>25216</item>
+		<item>25217</item>
+		<item>25218</item>
+		<item>25219</item>
+		<item>25220</item>
+		<item>25221</item>
+		<item>25222</item>
+		<item>25223</item>
+		<item>25224</item>
+		<item>25225</item>
+		<item>25226</item>
+		<item>25227</item>
+		<item>25228</item>
+		<item>25234</item>
+		<item>25236</item>
+		<item>25237</item>
+		<item>25253</item>
+		<item>25257</item>
+		<item>25258</item>
+		<item>25259</item>
+		<item>25261</item>
+		<item>25262</item>
+		<item>25271</item>
+		<item>25272</item>
+		<item>25273</item>
+		<item>25274</item>
+		<item>25276</item>
+		<item>25290</item>
+		<item>25293</item>
+		<item>25293</item>
+	</integer-array>
+
+	<string-array name="caselli_name">
+		<item>Quincinetto (A5 Aosta-Courmayer)</item>
+		<item>Pont Saint Martin (A5 Aosta-Courmayer)</item>
+		<item>Chatillon-Saint Vincent (A5 Aosta-Courmayer)</item>
+		<item>Verres (A5 Aosta-Courmayer)</item>
+		<item>Morgex (A5 Aosta-Courmayer)</item>
+		<item>Settimo Torinese (A5 Aosta-Courmayer)</item>
+		<item>Scarmagno (A5 Aosta-Courmayer)</item>
+		<item>San Giorgio (A5 Aosta-Courmayer)</item>
+		<item>Volpiano (A5 Aosta-Courmayer)</item>
+		<item>Ivrea (A5 Aosta-Courmayer)</item>
+		<item>Aosta Ovest (A5 Aosta-Courmayer)</item>
+		<item>Nus (A5 Aosta-Courmayer)</item>
+		<item>Ceva (A6 Torino-Savona)</item>
+		<item>Altare (A6 Torino-Savona)</item>
+		<item>Millesimo (A6 Torino-Savona)</item>
+		<item>Niella Tanaro (A6 Torino-Savona)</item>
+		<item>Mondovi` (A6 Torino-Savona)</item>
+		<item>Carru` (A6 Torino-Savona)</item>
+		<item>Fossano (A6 Torino-Savona)</item>
+		<item>Marene (A6 Torino-Savona)</item>
+		<item>Carmagnola (A6 Torino-Savona)</item>
+		<item>Torino (A6 Torino-Savona)</item>
+		<item>Serravalle Scrivia (A7 Serravalle-Genova)</item>
+		<item>Vignole Borbera (A7 Serravalle-Genova)</item>
+		<item>Isola del Cantone (A7 Serravalle-Genova)</item>
+		<item>Genova Ovest (A7 Serravalle-Genova)</item>
+		<item>Gropello Cairoli (A7 Serravalle-Genova)</item>
+		<item>Bereguardo (A7 Serravalle-Genova)</item>
+		<item>Binasco (A7 Serravalle-Genova)</item>
+		<item>Milano Ovest (A7 Serravalle-Genova)</item>
+		<item>Assago (A7 Serravalle-Genova)</item>
+		<item>Tortona (A7 Serravalle-Genova)</item>
+		<item>Castelnuovo Scrivia (A7 Serravalle-Genova)</item>
+		<item>Genova (A7 Serravalle-Genova)</item>
+		<item>Genova Bolzaneto (A7 Serravalle-Genova)</item>
+		<item>Busalla (A7 Serravalle-Genova)</item>
+		<item>Ronco Scrivia (A7 Serravalle-Genova)</item>
+		<item>Gallarate (A8 Milano-Varese)</item>
+		<item>Castronno (A8 Milano-Varese)</item>
+		<item>Varese (A8 Milano-Varese)</item>
+		<item>Solbiate-Arno (A8 Milano-Varese)</item>
+		<item>Legnano (A8 Milano-Varese)</item>
+		<item>Lainate (A8 Milano-Varese)</item>
+		<item>Arese (A8 Milano-Varese)</item>
+		<item>Busto Arsizio (A8 Milano-Varese)</item>
+		<item>Castellanza (A8 Milano-Varese)</item>
+		<item>Cavaria (A8 Milano-Varese)</item>
+		<item>Saronno (A9 Lainate-Chiasso)</item>
+		<item>Lomazzo (A9 Lainate-Chiasso)</item>
+		<item>Fino Mornasco (A9 Lainate-Chiasso)</item>
+		<item>Como Monte Olimpino (A9 Lainate-Chiasso)</item>
+		<item>Como Nord (A9 Lainate-Chiasso)</item>
+		<item>Chiasso (A9 Lainate-Chiasso)</item>
+		<item>Como Sud (A9 Lainate-Chiasso)</item>
+		<item>Turate (A9 Lainate-Chiasso)</item>
+		<item>Arma di Taggia (A10 Genova-Savona)</item>
+		<item>Ventimiglia (A10 Genova-Savona)</item>
+		<item>Sanremo Ovest (A10 Genova-Savona)</item>
+		<item>Genova Voltri (A10 Genova-Savona)</item>
+		<item>Arenzano (A10 Genova-Savona)</item>
+		<item>Varazze (A10 Genova-Savona)</item>
+		<item>Albisola (A10 Genova-Savona)</item>
+		<item>Celle Ligure (A10 Genova-Savona)</item>
+		<item>Pietra Ligure (A10 Genova-Savona)</item>
+		<item>Finale Ligure (A10 Genova-Savona)</item>
+		<item>Orco Feglino (A10 Genova-Savona)</item>
+		<item>Spotorno (A10 Genova-Savona)</item>
+		<item>Genova Aeroporto (A10 Genova-Savona)</item>
+		<item>Imperia Ovest (A10 Genova-Savona)</item>
+		<item>Imperia Est (A10 Genova-Savona)</item>
+		<item>San Bartolomeo (A10 Genova-Savona)</item>
+		<item>Andora (A10 Genova-Savona)</item>
+		<item>Albenga (A10 Genova-Savona)</item>
+		<item>Genova Pegli (A10 Genova-Savona)</item>
+		<item>Confine di Stato (A10 Genova-Savona)</item>
+		<item>Ventimiglia (A10 Genova-Savona)</item>
+		<item>Chiesina Uzzanese (A11 Firenze-Pisa nord)</item>
+		<item>Montecatini Terme (A11 Firenze-Pisa nord)</item>
+		<item>Pistoia (A11 Firenze-Pisa nord)</item>
+		<item>Prato Ovest (A11 Firenze-Pisa nord)</item>
+		<item>Prato Est (A11 Firenze-Pisa nord)</item>
+		<item>Lucca (A11 Firenze-Pisa nord)</item>
+		<item>Altopascio (A11 Firenze-Pisa nord)</item>
+		<item>Pisa Nord (A11 Firenze-Pisa nord)</item>
+		<item>Firenze Peretola (A11 Firenze-Pisa nord)</item>
+		<item>Sesto Fiorentino (A11 Firenze-Pisa nord)</item>
+		<item>Pisa (A11 Firenze-Pisa nord)</item>
+		<item>Bologna Interporto (A13 Bologna-Padova)</item>
+		<item>Ferrara Sud (A13 Bologna-Padova)</item>
+		<item>Altedo (A13 Bologna-Padova)</item>
+		<item>Occhiobello (A13 Bologna-Padova)</item>
+		<item>Rovigo (A13 Bologna-Padova)</item>
+		<item>Monselice (A13 Bologna-Padova)</item>
+		<item>Padova industriale (A13 Bologna-Padova)</item>
+		<item>Bologna Arcoveggio (A13 Bologna-Padova)</item>
+		<item>Terme Euganee (A13 Bologna-Padova)</item>
+		<item>Boara (A13 Bologna-Padova)</item>
+		<item>Ferrara Nord (A13 Bologna-Padova)</item>
+		<item>Parma Ovest (A15 Parma-La Spezia)</item>
+		<item>Borgotaro (A15 Parma-La Spezia)</item>
+		<item>Fornola (A15 Parma-La Spezia)</item>
+		<item>La Spezia (A15 Parma-La Spezia)</item>
+		<item>La Spezia (A15 Parma-La Spezia)</item>
+		<item>Aulla (A15 Parma-La Spezia)</item>
+		<item>Berceto (A15 Parma-La Spezia)</item>
+		<item>Fornovo (A15 Parma-La Spezia)</item>
+		<item>Pontremoli (A15 Parma-La Spezia)</item>
+		<item>Avellino Ovest (A16 Napoli-Canosa)</item>
+		<item>Baiano (A16 Napoli-Canosa)</item>
+		<item>Benevento (A16 Napoli-Canosa)</item>
+		<item>Avellino Est (A16 Napoli-Canosa)</item>
+		<item>Vallata (A16 Napoli-Canosa)</item>
+		<item>Lacedonia (A16 Napoli-Canosa)</item>
+		<item>Cerignola (A16 Napoli-Canosa)</item>
+		<item>Napoli Est (A16 Napoli-Canosa)</item>
+		<item>Pomigliano d\'Arco (A16 Napoli-Canosa)</item>
+		<item>Candela (A16 Napoli-Canosa)</item>
+		<item>Grottaminarda (A16 Napoli-Canosa)</item>
+		<item>Catania Nord (A18 Messina-Catania)</item>
+		<item>Giarre (A18 Messina-Catania)</item>
+		<item>Fiumefreddo (A18 Messina-Catania)</item>
+		<item>Giardini Naxos (A18 Messina-Catania)</item>
+		<item>Taormina (A18 Messina-Catania)</item>
+		<item>Roccalumera (A18 Messina-Catania)</item>
+		<item>Messina Sud (A18 Messina-Catania)</item>
+		<item>Acireale (A18 Messina-Catania)</item>
+		<item>Caorso (A21 Torino-Piacenza-Brescia)</item>
+		<item>Castelvetro (A21 Torino-Piacenza-Brescia)</item>
+		<item>Cremona (A21 Torino-Piacenza-Brescia)</item>
+		<item>Manerbio (A21 Torino-Piacenza-Brescia)</item>
+		<item>Villanova (A21 Torino-Piacenza-Brescia)</item>
+		<item>Villanova (A21 Torino-Piacenza-Brescia)</item>
+		<item>Alessandria Est (A21 Torino-Piacenza-Brescia)</item>
+		<item>Alessandria Ovest (A21 Torino-Piacenza-Brescia)</item>
+		<item>Felizzano (A21 Torino-Piacenza-Brescia)</item>
+		<item>Asti Est (A21 Torino-Piacenza-Brescia)</item>
+		<item>Piacenza (A21 Torino-Piacenza-Brescia)</item>
+		<item>Castel San Giovanni (A21 Torino-Piacenza-Brescia)</item>
+		<item>Broni Stradella (A21 Torino-Piacenza-Brescia)</item>
+		<item>Casteggio (A21 Torino-Piacenza-Brescia)</item>
+		<item>Voghera (A21 Torino-Piacenza-Brescia)</item>
+		<item>Asti Ovest (A21 Torino-Piacenza-Brescia)</item>
+		<item>Brescia Centro (A21 Torino-Piacenza-Brescia)</item>
+		<item>Pontevico (A21 Torino-Piacenza-Brescia)</item>
+		<item>Carpi (A22 Brennero-Modena)</item>
+		<item>Pegognaga (A22 Brennero-Modena)</item>
+		<item>Mantova Sud (A22 Brennero-Modena)</item>
+		<item>Bolzano Sud (A22 Brennero-Modena)</item>
+		<item>Bolzano Nord (A22 Brennero-Modena)</item>
+		<item>Egna Ora (A22 Brennero-Modena)</item>
+		<item>San Michele (A22 Brennero-Modena)</item>
+		<item>Vipiteno (A22 Brennero-Modena)</item>
+		<item>Brennero (A22 Brennero-Modena)</item>
+		<item>Ponticolo (A22 Brennero-Modena)</item>
+		<item>Terme di Brennero (A22 Brennero-Modena)</item>
+		<item>Confine di Stato (A22 Brennero-Modena)</item>
+		<item>Affi (A22 Brennero-Modena)</item>
+		<item>Ala Avio (A22 Brennero-Modena)</item>
+		<item>Rovereto Sud (A22 Brennero-Modena)</item>
+		<item>Rovereto Nord (A22 Brennero-Modena)</item>
+		<item>Trento Centro (A22 Brennero-Modena)</item>
+		<item>Bressanone (A22 Brennero-Modena)</item>
+		<item>Reggiolo Rolo (A22 Brennero-Modena)</item>
+		<item>Mantova Nord (A22 Brennero-Modena)</item>
+		<item>Nogarole Rocca (A22 Brennero-Modena)</item>
+		<item>Verona Nord (A22 Brennero-Modena)</item>
+		<item>Chiusa (A22 Brennero-Modena)</item>
+		<item>Trento Nord (A22 Brennero-Modena)</item>
+		<item>Udine Nord (A23 Udine-Tarvisio)</item>
+		<item>Gemona-Osoppo (A23 Udine-Tarvisio)</item>
+		<item>Malborghetto-Valbruna (A23 Udine-Tarvisio)</item>
+		<item>Ugovizza Tarvisio (A23 Udine-Tarvisio)</item>
+		<item>Confine di Stato (A23 Udine-Tarvisio)</item>
+		<item>Tarvisio Nord (A23 Udine-Tarvisio)</item>
+		<item>Tarvisio Sud (A23 Udine-Tarvisio)</item>
+		<item>Pontebba (A23 Udine-Tarvisio)</item>
+		<item>Carnia (A23 Udine-Tarvisio)</item>
+		<item>Udine Sud (A23 Udine-Tarvisio)</item>
+		<item>Castel Madama (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Vicovaro-Mandela (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Carsoli Oricola (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Tornimparte (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>L\'Aquila Ovest (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Assergi (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Teramo (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Val Vomano (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Basciano (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Tivoli (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Roma Est (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Lunghezza (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>San Gabriele Colledara (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>L\'Aquila Est (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Valle del Salto (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Tagliacozzo (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Sulmona-Pratola Peligna (A25 Torano-Pescara)</item>
+		<item>Aielli Celano (A25 Torano-Pescara)</item>
+		<item>Avezzano (A25 Torano-Pescara)</item>
+		<item>Cocullo (A25 Torano-Pescara)</item>
+		<item>Pescina (A25 Torano-Pescara)</item>
+		<item>Magliano dei Marsi (A25 Torano-Pescara)</item>
+		<item>Bussi Popoli (A25 Torano-Pescara)</item>
+		<item>Casauria Torre De\' Passeri (A25 Torano-Pescara)</item>
+		<item>Scafa-Alanno (A25 Torano-Pescara)</item>
+		<item>Pescara-Villanova (A25 Torano-Pescara)</item>
+		<item>Chieti (A25 Torano-Pescara)</item>
+		<item>Borgomanero (A26 Genova Voltri-Gravellona Toce)</item>
+		<item>Arona (A26 Genova Voltri-Gravellona Toce)</item>
+		<item>Baveno (A26 Genova Voltri-Gravellona Toce)</item>
+		<item>Carpugnino (A26 Genova Voltri-Gravellona Toce)</item>
+		<item>Lago Maggiore (A26 Genova Voltri-Gravellona Toce)</item>
+		<item>Romagnano Sesia - Ghemme (A26 Genova Voltri-Gravellona Toce)</item>
+		<item>Vercelli Est (A26 Genova Voltri-Gravellona Toce)</item>
+		<item>Casale Monferrato Nord (A26 Genova Voltri-Gravellona Toce)</item>
+		<item>Casale Monferrato Sud (A26 Genova Voltri-Gravellona Toce)</item>
+		<item>Alessandria Sud (A26 Genova Voltri-Gravellona Toce)</item>
+		<item>Ovada (A26 Genova Voltri-Gravellona Toce)</item>
+		<item>Masone (A26 Genova Voltri-Gravellona Toce)</item>
+		<item>Belluno (A27 Venezia-Belluno)</item>
+		<item>Treviso Nord (A27 Venezia-Belluno)</item>
+		<item>Conegliano Veneto (R64 R64 Raccordo Conegliano)</item>
+		<item>Vittorio Veneto Sud (A27 Venezia-Belluno)</item>
+		<item>Fadalto-Lago Santa Croce (A27 Venezia-Belluno)</item>
+		<item>Belluno (A27 Venezia-Belluno)</item>
+		<item>S.S. 51 Alemagna (A27 Venezia-Belluno)</item>
+		<item>Vittorio Veneto Nord (A27 Venezia-Belluno)</item>
+		<item>Treviso Sud (A27 Venezia-Belluno)</item>
+		<item>Portogruaro (A28 Portogruaro-Pordenone)</item>
+		<item>Cimpello (A28 Portogruaro-Pordenone)</item>
+		<item>Pordenone Sud (A28 Portogruaro-Pordenone)</item>
+		<item>Porcia (A28 Portogruaro-Pordenone)</item>
+		<item>Pordenone Centro Commerciale (A28 Portogruaro-Pordenone)</item>
+		<item>Azzano Decimo (A28 Portogruaro-Pordenone)</item>
+		<item>Villotta (A28 Portogruaro-Pordenone)</item>
+		<item>Sesto Al Reghena (A28 Portogruaro-Pordenone)</item>
+		<item>Nocera Pagani (A30 Caserta-Salerno)</item>
+		<item>Castel San Giorgio (A30 Caserta-Salerno)</item>
+		<item>Salerno (A30 Caserta-Salerno)</item>
+		<item>Sarno (A30 Caserta-Salerno)</item>
+		<item>Nola (A30 Caserta-Salerno)</item>
+		<item>Dueville (A31 Vicenza nord-Piovene Rocchette)</item>
+		<item>Thiene (A31 Vicenza nord-Piovene Rocchette)</item>
+		<item>Vicenza Nord (A31 Vicenza nord-Piovene Rocchette)</item>
+		<item>Piovene-Rocchette (A31 Vicenza nord-Piovene Rocchette)</item>
+		<item>Chianocco (A32 Torino-Bardonecchia)</item>
+		<item>Susa Est (A32 Torino-Bardonecchia)</item>
+		<item>Gad-Oulx Est (A32 Torino-Bardonecchia)</item>
+		<item>Bardonecchia (A32 Torino-Bardonecchia)</item>
+		<item>Savoulx (A32 Torino-Bardonecchia)</item>
+		<item>Oulx Ovest (A32 Torino-Bardonecchia)</item>
+		<item>Borgone (A32 Torino-Bardonecchia)</item>
+		<item>Almese (A32 Torino-Bardonecchia)</item>
+		<item>Avigliana (A32 Torino-Bardonecchia)</item>
+		<item>Gra-Aurelia (Grande Raccordo Anulare di Roma)</item>
+		<item>Moncalieri Corso Trieste (Diramazione per Moncalieri)</item>
+		<item>S.S. 393 (Diramazione per Moncalieri)</item>
+		<item>Trinita`-Benevagienna (A6 Diramazione per Fossano)</item>
+		<item>Fossano-S.S. 28 (A6 Diramazione per Fossano)</item>
+		<item>Castelletto Ticino (Diramaz. A8-A26 Gallarate-Gattico)</item>
+		<item>Sesto Calende-Vergiate (Diramaz. A8-A26 Gallarate-Gattico)</item>
+		<item>Gallarate Ovest (Diramaz. A8-A26 Gallarate-Gattico)</item>
+		<item>Besnate (Diramaz. A8-A26 Gallarate-Gattico)</item>
+		<item>Massarosa (Diramazione A11-A12 Lucca-Viareggio)</item>
+		<item>Padova Sud (A13 Diramazione per Padova sud)</item>
+		<item>Padova (A13 Diramazione per Padova sud)</item>
+		<item>Ravenna-San Vitale (A14 Diramazione per Ravenna)</item>
+		<item>Ravenna (A14 Diramazione per Ravenna)</item>
+		<item>Svincolo Cotignola (A14 Diramazione per Ravenna)</item>
+		<item>Santo Stefano di Magra (A15 Diram.La Spezia-S.Stefano Magra)</item>
+		<item>Torino Corso Orbassano (Diramazione per Pinerolo)</item>
+		<item>Gerbole (Diramazione per Pinerolo)</item>
+		<item>None (Diramazione per Pinerolo)</item>
+		<item>Volvera (Diramazione per Pinerolo)</item>
+		<item>Candiolo (Diramazione per Pinerolo)</item>
+		<item>Orbassano (Diramazione per Pinerolo)</item>
+		<item>Fiano Romano (A1 Diramazione Roma nord - GRA)</item>
+		<item>Roma Nord (A1 Diramazione Roma nord - GRA)</item>
+		<item>Settebagni (A1 Diramazione Roma nord - GRA)</item>
+		<item>Torrenova (A1 Diramazione Roma sud - GRA)</item>
+		<item>Roma Sud (A1 Diramazione Roma sud - GRA)</item>
+		<item>San Cesareo (A1 Diramazione Roma sud - GRA)</item>
+		<item>Monteporzio (A1 Diramazione Roma sud - GRA)</item>
+		<item>Novi Ligure (Diramazione A26-A7 Predosa-Bettole)</item>
+		<item>Vercelli Ovest (Diramaz. A26-A4 Stroppiana Santhia)</item>
+		<item>Bari zona industriale (A14 Raccordo per Tangenziale Bari)</item>
+		<item>Modugno (A14 Raccordo per Tangenziale Bari)</item>
+		<item>San Giovanni in Persiceto (R01 Racc.Borgo Panigale-Tang.Bologna)</item>
+		<item>Roma (Roma-aereoporto di Fiumicino)</item>
+		<item>Aeroporto Fiumicino (Roma-aereoporto di Fiumicino)</item>
+		<item>Albiano (R04 Raccordo A4-A5 Ivrea-Santhia)</item>
+		<item>S.S. 64 Porrettana (A13 Diramazione per Ferrara)</item>
+		<item>Bologna Casalecchio (R14 Raccordo A1-A14 Bologna Casalecchio)</item>
+		<item>Villesse (R17 Raccordo Villesse-Gorizia)</item>
+		<item>Confine Di Stato (R17 Raccordo Villesse-Gorizia)</item>
+		<item>Gorizia (R17 Raccordo Villesse-Gorizia)</item>
+		<item>Gradisca (R17 Raccordo Villesse-Gorizia)</item>
+		<item>Fogliano (R17 Raccordo Villesse-Gorizia)</item>
+		<item>barriera di Livorno (A12 Diramazione per Livorno)</item>
+		<item>Torre d\'Isola (Raccordo Bereguardo-Pavia)</item>
+		<item>Casottole (Raccordo Bereguardo-Pavia)</item>
+		<item>Bereguardo (Raccordo Bereguardo-Pavia)</item>
+		<item>Villaggio dei Pioppi (Raccordo Bereguardo-Pavia)</item>
+		<item>Pavia San Lanfranco (Raccordo Bereguardo-Pavia)</item>
+		<item>Tre Ponti (Raccordo Bereguardo-Pavia)</item>
+		<item>San Donato (R05 Racc. A1 Milano-Piazzale Corvetto)</item>
+		<item>Lancusi (Raccordo Salerno-Avellino)</item>
+		<item>Fisciano-Mercato San Severino (Raccordo Salerno-Avellino)</item>
+		<item>Montoro (Raccordo Salerno-Avellino)</item>
+		<item>Avellino (Raccordo Salerno-Avellino)</item>
+		<item>Baronissi (Raccordo Salerno-Avellino)</item>
+		<item>Serino (Raccordo Salerno-Avellino)</item>
+		<item>Solofra (Raccordo Salerno-Avellino)</item>
+		<item>Torchiati (Raccordo Salerno-Avellino)</item>
+		<item>Firenze (Firenze Pisa Livorno)</item>
+		<item>Livorno (Firenze Pisa Livorno)</item>
+		<item>S.P. 131 Nova Milanese (A52 Tangenziale nord Milano)</item>
+		<item>S.P. 151 Cinisello Balsamo (A52 Tangenziale nord Milano)</item>
+		<item>Cinisello Balsamo-Robecco (A52 Tangenziale nord Milano)</item>
+		<item>Monza Sant\'Alessandro (A52 Tangenziale nord Milano)</item>
+		<item>S.S. 11 Padana Superiore (A50 Tangenziale ovest Milano)</item>
+		<item>Via Zurigo (A50 Tangenziale ovest Milano)</item>
+		<item>S.P. 43 Vigevanese Nuova (A50 Tangenziale ovest Milano)</item>
+		<item>S.S. 412 della Val Tidone (A50 Tangenziale ovest Milano)</item>
+		<item>S.S. 35 dei Giovi (A50 Tangenziale ovest Milano)</item>
+		<item>S.S. 494 Vigevanese Vecchia (A50 Tangenziale ovest Milano)</item>
+		<item>S.P. 113 Cernusco Sul Naviglio (A51 Tangenziale est Milano)</item>
+		<item>S.P. 208 Carugate (A51 Tangenziale est Milano)</item>
+		<item>S.P. 13 Agrate Monza (A51 Tangenziale est Milano)</item>
+		<item>S.P. 41 Burago (A51 Tangenziale est Milano)</item>
+		<item>Vimercate Centro (A51 Tangenziale est Milano)</item>
+		<item>Usmate-Velate Nord (A51 Tangenziale est Milano)</item>
+		<item>Usmate-Velate Sud (A51 Tangenziale est Milano)</item>
+		<item>S.P. 3 Brugherio (A51 Tangenziale est Milano)</item>
+		<item>S.P. 209 Cologno Monzese (A51 Tangenziale est Milano)</item>
+		<item>S.S. 11-Cascina Gobba (A51 Tangenziale est Milano)</item>
+		<item>S.P. 103 Lambrate (A51 Tangenziale est Milano)</item>
+		<item>Segrate-Via Rubattino (A51 Tangenziale est Milano)</item>
+		<item>Linate Viale Forlanini (A51 Tangenziale est Milano)</item>
+		<item>Centro Autotrasporto Milanese (A51 Tangenziale est Milano)</item>
+		<item>Via Mecenate (A51 Tangenziale est Milano)</item>
+		<item>Paullo (A51 Tangenziale est Milano)</item>
+		<item>S.S. 9 Via Emilia (A51 Tangenziale est Milano)</item>
+		<item>Vimercate Sud (A51 Tangenziale est Milano)</item>
+		<item>Vimercate Sud (A51 Tangenziale est Milano)</item>
+		<item>Concorezzo (A51 Tangenziale est Milano)</item>
+		<item>Borgaro (Tangenziale nord Torino)</item>
+		<item>S.S. 24 (Tangenziale nord Torino)</item>
+		<item>Venaria (Tangenziale nord Torino)</item>
+		<item>Corso Regina Margherita (Tangenziale nord Torino)</item>
+		<item>Corso Malta (Tangenziale Napoli)</item>
+		<item>Capodimonte (Tangenziale Napoli)</item>
+		<item>zona Ospedaliera Cardarelli (Tangenziale Napoli)</item>
+		<item>Camaldoli (Tangenziale Napoli)</item>
+		<item>Vomero (Tangenziale Napoli)</item>
+		<item>Fuorigrotta (Tangenziale Napoli)</item>
+		<item>Agnano (Tangenziale Napoli)</item>
+		<item>Inizio Tangenziale di Napoli (Tangenziale Napoli)</item>
+		<item>Santena (Tangenziale sud Torino)</item>
+		<item>Debouche` (Tangenziale sud Torino)</item>
+		<item>svincolo Autoporto San I.t.o. (Tangenziale sud Torino)</item>
+		<item>Corso Francia (Tangenziale sud Torino)</item>
+		<item>Corso Stupinigi (Tangenziale sud Torino)</item>
+		<item>S.S. 20 (Tangenziale sud Torino)</item>
+		<item>Castelmaggiore (Tangenziale Bologna)</item>
+		<item>Bologna Quartiere Lame (Tangenziale Bologna)</item>
+		<item>Bologna Centro (Tangenziale Bologna)</item>
+		<item>S.S. 64 Ferrara (Tangenziale Bologna)</item>
+		<item>San Vitale-S.S. 253 Ravenna (Tangenziale Bologna)</item>
+		<item>Bologna-S.S. della Futa (Tangenziale Bologna)</item>
+		<item>S.S. 9 Via Emilia (Tangenziale Bologna)</item>
+		<item>Castenaso Ravenna (Tangenziale Bologna)</item>
+		<item>Bologna Aeroporto (Tangenziale Bologna)</item>
+		<item>Bologna borgopanigale (Tangenziale Bologna)</item>
+		<item>Bologna zona industriale Roveri (Tangenziale Bologna)</item>
+		<item>Bologna San Donato (Tangenziale Bologna)</item>
+		<item>Fiera-Via Michelino (Tangenziale Bologna)</item>
+		<item>S.S. 35-Genova (Tangenziale Pavia)</item>
+		<item>Universita` (Tangenziale Pavia)</item>
+		<item>S.S. 35-Milano (Tangenziale Pavia)</item>
+		<item>Pavia Nord (Tangenziale Pavia)</item>
+		<item>Policlinico (Tangenziale Pavia)</item>
+		<item>Pavia Sud (Tangenziale Pavia)</item>
+		<item>San Martino Siccomario (Tangenziale Pavia)</item>
+		<item>Castiglioncello (SS1 Aurelia)</item>
+		<item>Tarquinia (SS1 Aurelia)</item>
+		<item>Donoratico (SS1 Aurelia)</item>
+		<item>Stagno-innesto Ss555 delle Colline (SS1 Aurelia)</item>
+		<item>Rosignano Solvay (SS1 Aurelia)</item>
+		<item>Vada (SS1 Aurelia)</item>
+		<item>Cencina Nord (SS1 Aurelia)</item>
+		<item>Cecina Centro (SS1 Aurelia)</item>
+		<item>Cecina Sud/Innesto Ss1 Var (SS1 Aurelia)</item>
+		<item>Modena Sud (A1 Milano-Napoli)</item>
+		<item>San Giuliano (A1 Milano-Napoli)</item>
+		<item>Melegnano (A1 Milano-Napoli)</item>
+		<item>Piacenza Nord (A1 Milano-Napoli)</item>
+		<item>Milano Sud (A1 Milano-Napoli)</item>
+		<item>Parma (A1 Milano-Napoli)</item>
+		<item>Fidenza (A1 Milano-Napoli)</item>
+		<item>Fiorenzuola (A1 Milano-Napoli)</item>
+		<item>Modena Nord (A1 Milano-Napoli)</item>
+		<item>Melegnano (A1 Milano-Napoli)</item>
+		<item>Pian del Voglio (A1 Milano-Napoli)</item>
+		<item>Rioveggio (A1 Milano-Napoli)</item>
+		<item>Roncobilaccio (A1 Milano-Napoli)</item>
+		<item>Firenze Nord (A1 Milano-Napoli)</item>
+		<item>Calenzano-Sesto Fiorentino (A1 Milano-Napoli)</item>
+		<item>Valdichiana (A1 Milano-Napoli)</item>
+		<item>Chiusi-Chianciano Terme (A1 Milano-Napoli)</item>
+		<item>Attigliano (A1 Milano-Napoli)</item>
+		<item>Orte (A1 Milano-Napoli)</item>
+		<item>Monte San Savino (A1 Milano-Napoli)</item>
+		<item>Arezzo (A1 Milano-Napoli)</item>
+		<item>Valdarno (A1 Milano-Napoli)</item>
+		<item>Incisa - Reggello (A1 Milano-Napoli)</item>
+		<item>Firenze Sud (A1 Milano-Napoli)</item>
+		<item>Firenze Impruneta (A1 Milano-Napoli)</item>
+		<item>Magliano Sabina (A1 Milano-Napoli)</item>
+		<item>Orvieto (A1 Milano-Napoli)</item>
+		<item>San Vittore (A1 Milano-Napoli)</item>
+		<item>Caianello (A1 Milano-Napoli)</item>
+		<item>Caserta Nord (A1 Milano-Napoli)</item>
+		<item>Capua (A1 Milano-Napoli)</item>
+		<item>Napoli Nord (A1 Milano-Napoli)</item>
+		<item>Caserta Sud (A1 Milano-Napoli)</item>
+		<item>Cassino (A1 Milano-Napoli)</item>
+		<item>Pontecorvo (A1 Milano-Napoli)</item>
+		<item>Frosinone (A1 Milano-Napoli)</item>
+		<item>Anagni-Fiuggi (A1 Milano-Napoli)</item>
+		<item>Colleferro (A1 Milano-Napoli)</item>
+		<item>Valmontone (A1 Milano-Napoli)</item>
+		<item>Pompei (A3 Napoli-Salerno)</item>
+		<item>Torre Annunziata Sud (A3 Napoli-Salerno)</item>
+		<item>Angri (A3 Napoli-Salerno)</item>
+		<item>San Giovanni (A3 Napoli-Salerno)</item>
+		<item>San Giorgio a Cremano (A3 Napoli-Salerno)</item>
+		<item>Napoli Porto-Via Marina (A3 Napoli-Salerno)</item>
+		<item>Vietri sul Mare (A3 Napoli-Salerno)</item>
+		<item>Cava dei Tirreni (A3 Napoli-Salerno)</item>
+		<item>Scafati (A3 Napoli-Salerno)</item>
+		<item>Castellammare di Stabia (A3 Napoli-Salerno)</item>
+		<item>Salerno Centro (A3 Napoli-Salerno)</item>
+		<item>Lamezia Terme (A3 Napoli-Salerno)</item>
+		<item>Rho (A4 Milano-Brescia)</item>
+		<item>Pero (A4 Milano-Brescia)</item>
+		<item>Torino (A4 Milano-Brescia)</item>
+		<item>Chivasso Ovest (A4 Milano-Brescia)</item>
+		<item>Chivasso (A4 Milano-Brescia)</item>
+		<item>Balocco (A4 Milano-Brescia)</item>
+		<item>Carisio (A4 Milano-Brescia)</item>
+		<item>Santhia` (A4 Milano-Brescia)</item>
+		<item>Borgo d\'Ale (A4 Milano-Brescia)</item>
+		<item>Torino (A4 Milano-Brescia)</item>
+		<item>Biandrate-Vicolungo (A4 Milano-Brescia)</item>
+		<item>Greggio (A4 Milano-Brescia)</item>
+		<item>Novara Ovest (A4 Milano-Brescia)</item>
+		<item>Rondissone (A4 Milano-Brescia)</item>
+		<item>Brandizzo (A4 Milano-Brescia)</item>
+		<item>Ponte Oglio (A4 Milano-Brescia)</item>
+		<item>Palazzolo (A4 Milano-Brescia)</item>
+		<item>Agrate (A4 Milano-Brescia)</item>
+		<item>Monza (A4 Milano-Brescia)</item>
+		<item>Milano Est (A4 Milano-Brescia)</item>
+		<item>Sesto San Giovanni (A4 Milano-Brescia)</item>
+		<item>Grumello (A4 Milano-Brescia)</item>
+		<item>Seriate (A4 Milano-Brescia)</item>
+		<item>Bergamo (A4 Milano-Brescia)</item>
+		<item>Dalmine (A4 Milano-Brescia)</item>
+		<item>Capriate (A4 Milano-Brescia)</item>
+		<item>Cavenago (A4 Milano-Brescia)</item>
+		<item>Cormano (A4 Milano-Brescia)</item>
+		<item>Rovato (A4 Milano-Brescia)</item>
+		<item>Brescia Ovest (A4 Milano-Brescia)</item>
+		<item>Ospitaletto (A4 Milano-Brescia)</item>
+		<item>Vicenza Ovest (A4 Milano-Brescia)</item>
+		<item>Vicenza Est (A4 Milano-Brescia)</item>
+		<item>Soave (A4 Milano-Brescia)</item>
+		<item>Sommacampagna (A4 Milano-Brescia)</item>
+		<item>Peschiera (A4 Milano-Brescia)</item>
+		<item>Sirmione (A4 Milano-Brescia)</item>
+		<item>Desenzano (A4 Milano-Brescia)</item>
+		<item>Brescia Est (A4 Milano-Brescia)</item>
+		<item>Montecchio (A4 Milano-Brescia)</item>
+		<item>Montebello (A4 Milano-Brescia)</item>
+		<item>Verona Est (A4 Milano-Brescia)</item>
+		<item>Verona Sud (A4 Milano-Brescia)</item>
+		<item>Padova Ovest (A4 Milano-Brescia)</item>
+		<item>Padova Est (A4 Milano-Brescia)</item>
+		<item>Grisignano (A4 Milano-Brescia)</item>
+		<item>Cessalto (A4 Milano-Brescia)</item>
+		<item>San Stino di Livenza (A4 Milano-Brescia)</item>
+		<item>San Dona` di Piave (A4 Milano-Brescia)</item>
+		<item>Villesse (A4 Milano-Brescia)</item>
+		<item>Trieste Lisert (A4 Milano-Brescia)</item>
+		<item>Duino (A4 Milano-Brescia)</item>
+		<item>Monfalcone (A4 Milano-Brescia)</item>
+		<item>Redipuglia (A4 Milano-Brescia)</item>
+		<item>Palmanova (A4 Milano-Brescia)</item>
+		<item>San Giorgio di Nogaro (A4 Milano-Brescia)</item>
+		<item>Pisa Centro (A12 Genova-Rosignano Marittimo)</item>
+		<item>Rosignano Marittimo (A12 Genova-Rosignano Marittimo)</item>
+		<item>Sestri Levante (A12 Genova-Rosignano Marittimo)</item>
+		<item>Lavagna (A12 Genova-Rosignano Marittimo)</item>
+		<item>Chiavari (A12 Genova-Rosignano Marittimo)</item>
+		<item>Rapallo (A12 Genova-Rosignano Marittimo)</item>
+		<item>Recco (A12 Genova-Rosignano Marittimo)</item>
+		<item>Genova Nervi (A12 Genova-Rosignano Marittimo)</item>
+		<item>Genova Est (A12 Genova-Rosignano Marittimo)</item>
+		<item>Sarzana (A12 Genova-Rosignano Marittimo)</item>
+		<item>Brugnato (A12 Genova-Rosignano Marittimo)</item>
+		<item>Carrodano (A12 Genova-Rosignano Marittimo)</item>
+		<item>Deiva Marina (A12 Genova-Rosignano Marittimo)</item>
+		<item>Carrara (A12 Genova-Rosignano Marittimo)</item>
+		<item>Versilia (A12 Genova-Rosignano Marittimo)</item>
+		<item>Massa (A12 Genova-Rosignano Marittimo)</item>
+		<item>Collesalvetti (A12 Genova-Rosignano Marittimo)</item>
+		<item>Maccarese-Fregene (A12 Roma-Civitavecchia)</item>
+		<item>Torrimpietra (A12 Roma-Civitavecchia)</item>
+		<item>Civitavecchia Sud (A12 Roma-Civitavecchia)</item>
+		<item>Civitavecchia Nord (A12 Roma-Civitavecchia)</item>
+		<item>Santa Severa (A12 Roma-Civitavecchia)</item>
+		<item>Cerveteri-Ladispoli (A12 Roma-Civitavecchia)</item>
+		<item>Faenza (A14 Bologna-Taranto)</item>
+		<item>Cesena Nord (A14 Bologna-Taranto)</item>
+		<item>Forli` (A14 Bologna-Taranto)</item>
+		<item>Cesena (A14 Bologna-Taranto)</item>
+		<item>Rimini Nord (A14 Bologna-Taranto)</item>
+		<item>Rimini Sud (A14 Bologna-Taranto)</item>
+		<item>Senigallia (A14 Bologna-Taranto)</item>
+		<item>Marotta-Mondolfo (A14 Bologna-Taranto)</item>
+		<item>Fano (A14 Bologna-Taranto)</item>
+		<item>Pesaro-Urbino (A14 Bologna-Taranto)</item>
+		<item>Cattolica (A14 Bologna-Taranto)</item>
+		<item>Imola (A14 Bologna-Taranto)</item>
+		<item>Castel San Pietro (A14 Bologna-Taranto)</item>
+		<item>Bologna San Lazzaro (A14 Bologna-Taranto)</item>
+		<item>Bologna Borgo Panigale (A14 Bologna-Taranto)</item>
+		<item>Ancona Nord (A14 Bologna-Taranto)</item>
+		<item>Riccione (A14 Bologna-Taranto)</item>
+		<item>Fermo (A14 Bologna-Taranto)</item>
+		<item>Pedaso (A14 Bologna-Taranto)</item>
+		<item>Teramo-Giulianova (A14 Bologna-Taranto)</item>
+		<item>Roseto degli Abruzzi (A14 Bologna-Taranto)</item>
+		<item>Macerata (A14 Bologna-Taranto)</item>
+		<item>Loreto-Porto Recanati (A14 Bologna-Taranto)</item>
+		<item>Ancona Sud (A14 Bologna-Taranto)</item>
+		<item>Pescara Nord-Citta` Sant\'Angelo (A14 Bologna-Taranto)</item>
+		<item>Atri Pineto (A14 Bologna-Taranto)</item>
+		<item>San Benedetto del Tronto (A14 Bologna-Taranto)</item>
+		<item>Poggio Imperiale (A14 Bologna-Taranto)</item>
+		<item>Trani (A14 Bologna-Taranto)</item>
+		<item>Molfetta (A14 Bologna-Taranto)</item>
+		<item>Termoli Molise (A14 Bologna-Taranto)</item>
+		<item>Val di Sangro (A14 Bologna-Taranto)</item>
+		<item>Lanciano (A14 Bologna-Taranto)</item>
+		<item>Ortona (A14 Bologna-Taranto)</item>
+		<item>Pescara Sud-Francavilla (A14 Bologna-Taranto)</item>
+		<item>Pescara Ovest-Chieti (A14 Bologna-Taranto)</item>
+		<item>Bari Nord (A14 Bologna-Taranto)</item>
+		<item>Bitonto (A14 Bologna-Taranto)</item>
+		<item>Andria-Barletta (A14 Bologna-Taranto)</item>
+		<item>Canosa (A14 Bologna-Taranto)</item>
+		<item>Foggia (A14 Bologna-Taranto)</item>
+		<item>San Severo (A14 Bologna-Taranto)</item>
+		<item>Vasto Sud (A14 Bologna-Taranto)</item>
+		<item>Vasto Nord (A14 Bologna-Taranto)</item>
+		<item>Cerignola Est (A14 Bologna-Taranto)</item>
+		<item>Bari Sud (A14 Bologna-Taranto)</item>
+		<item>Gioia del Colle (A14 Bologna-Taranto)</item>
+		<item>Taranto Nord (A14 Bologna-Taranto)</item>
+		<item>Mottola-Castellaneta (A14 Bologna-Taranto)</item>
+		<item>Acquaviva delle Fonti (A14 Bologna-Taranto)</item>
+		<item>Rometta (A20 Messina-Palermo)</item>
+		<item>Falcone (A20 Messina-Palermo)</item>
+		<item>Barcellona (A20 Messina-Palermo)</item>
+		<item>Furiano-allacciamento Ss113 (A20 Messina-Palermo)</item>
+		<item>San Agata di Militello (A20 Messina-Palermo)</item>
+		<item>Rocca di Capri Leone (A20 Messina-Palermo)</item>
+		<item>Brolo (A20 Messina-Palermo)</item>
+		<item>Patti (A20 Messina-Palermo)</item>
+		<item>Milazzo-Isole Eolie (A20 Messina-Palermo)</item>
+		<item>barriera di Messina Nord (A20 Messina-Palermo)</item>
+		<item>Fabro (A1 Milano-Napoli)</item>
+		<item>Milano Ghisolfa (A4 Milano-Brescia)</item>
+		<item>Torino Nord (A5 Aosta-Courmayer)</item>
+		<item>Settimo Nord (A5 Aosta-Courmayer)</item>
+		<item>Aosta (A5 Aosta-Courmayer)</item>
+		<item>Bordighera (A10 Genova-Savona)</item>
+		<item>Campogalliano (A22 Brennero-Modena)</item>
+		<item>Ghevio (A26 Genova Voltri-Gravellona Toce)</item>
+		<item>Mercato San Severino (A30 Caserta-Salerno)</item>
+		<item>San Donato (A50 Tangenziale ovest Milano)</item>
+		<item>Via Rogoredo (A51 Tangenziale est Milano)</item>
+		<item>Lecco (A51 Tangenziale est Milano)</item>
+		<item>Arenella (Tangenziale Napoli)</item>
+		<item>Monza Viale Marconi (R03 Racc. A4 Monza-Tang.nord Milano)</item>
+		<item>Caserta Centro (R08 Raccordo A1-Caserta sud)</item>
+		<item>Capodichino (A1 Diramaz. Capodichino-Tang.Napoli)</item>
+		<item>Capodichino (Tangenziale Napoli)</item>
+		<item>Val Vibrata (A14 Bologna-Taranto)</item>
+		<item>Origgio Ovest (A8 Milano-Varese)</item>
+		<item>Napoli Centro (A3 Napoli-Salerno)</item>
+		<item>Svincolo SS33 Del Sempione (SS33 del Sempione)</item>
+		<item>Marcon (Racc. A4 aeroporto VE Marco Polo)</item>
+		<item>Aereoporto Marco Polo (Racc. A4 aeroporto VE Marco Polo)</item>
+		<item>Barchette (Raccordo Bereguardo-Pavia)</item>
+		<item>Cascina Ghisolfa (A50 Tangenziale ovest Milano)</item>
+		<item>Tangenziale Est di Milano (R09 Racc. A4 Agrate-Tang. est Milano)</item>
+		<item>San Piero a Grado-Tirrenia (R18 Raccordo Pisa Centro - FI-PI-LI)</item>
+		<item>Bardonecchia (Traforo del Frejus)</item>
+		<item>Collegamento con Autoporto Freney (Traforo del Frejus)</item>
+		<item>Modane-Replat (Traforo del Frejus)</item>
+		<item>Autoporto Freney (Traforo del Frejus)</item>
+		<item>Piazzale Autoporto Freney (Traforo del Frejus)</item>
+		<item>zona industriale (A15 Diram.La Spezia-S.Stefano Magra)</item>
+		<item>Area Retroportuale (A15 Diram.La Spezia-S.Stefano Magra)</item>
+		<item>Porto Est (R19 A15 Raccordo La Spezia-Lerici)</item>
+		<item>Lerici (R19 A15 Raccordo La Spezia-Lerici)</item>
+		<item>Savona-Vado (R24 Complanare di Savona)</item>
+		<item>Ponzano Romano-Soratte (A1 Milano-Napoli)</item>
+		<item>Grottammare (A14 Bologna-Taranto)</item>
+		<item>Aosta Ovest (A5 Aosta-Courmayer)</item>
+		<item>Pontechiasso (A9 Lainate-Chiasso)</item>
+		<item>Chiasso Uscita Merci (A9 Lainate-Chiasso)</item>
+		<item>Via Cogne (R20 Raccordo A4 Milano Viale Certosa)</item>
+		<item>Milano Viale Certosa (Raccordo A4-A8 Milano Viale Certosa)</item>
+		<item>Courmayeur Sud (A5 Aosta-Courmayer)</item>
+		<item>raccordo S.S. 516 Piovese (A13 Diramazione per Padova sud)</item>
+		<item>via Emilia (R28 Complanare Milano-Poasco-Via Emilia)</item>
+		<item>Poasco (R28 Complanare Milano-Poasco-Via Emilia)</item>
+		<item>Svincolo Via Emilia-E.N.I. (R28 Complanare Milano-Poasco-Via Emilia)</item>
+		<item>ITALIA \'90 COMUNE DI NAPOLI (Tangenziale Napoli)</item>
+		<item>Aeroporto Secondigliano (Tangenziale Napoli)</item>
+		<item>Doganella (Tangenziale Napoli)</item>
+		<item>Viale Maddalena (Tangenziale Napoli)</item>
+		<item>VIA CAMPANA (Tangenziale Napoli)</item>
+		<item>INGRESSO ARCO FELICE (Tangenziale Napoli)</item>
+		<item>POZZUOLI-ARCO FELICE (Tangenziale Napoli)</item>
+		<item>USCITA ARCO FELICE (Tangenziale Napoli)</item>
+		<item>Strada Statale domitiana (Tangenziale Napoli)</item>
+		<item>Courmayeur Sud (A5 Aosta-Courmayer)</item>
+		<item>Scandicci (Firenze Pisa Livorno)</item>
+		<item>Lastra a Signa (Firenze Pisa Livorno)</item>
+		<item>Ginestra fiorentina (Firenze Pisa Livorno)</item>
+		<item>Montelupo Fiorentino (Firenze Pisa Livorno)</item>
+		<item>Empoli Est (Firenze Pisa Livorno)</item>
+		<item>Empoli Ovest (Firenze Pisa Livorno)</item>
+		<item>San Miniato (Firenze Pisa Livorno)</item>
+		<item>Santa Croce Sull\'Arno (Firenze Pisa Livorno)</item>
+		<item>Montopoli Valdarno (Firenze Pisa Livorno)</item>
+		<item>Pontedera est (Firenze Pisa Livorno)</item>
+		<item>Pontedera Ovest (Firenze Pisa Livorno)</item>
+		<item>Lavoria (Firenze Pisa Livorno)</item>
+		<item>Vicarello (Firenze Pisa Livorno)</item>
+		<item>Interporto Toscano est (Firenze Pisa Livorno)</item>
+		<item>Interporto Toscano ovest (Firenze Pisa Livorno)</item>
+		<item>Livorno-Aurelia (Firenze Pisa Livorno)</item>
+		<item>Livorno Porto (Firenze Pisa Livorno)</item>
+		<item>Cascina (FI-PI-LI Diramazione per Pisa)</item>
+		<item>Navacchio (FI-PI-LI Diramazione per Pisa)</item>
+		<item>Pisa Nord est (FI-PI-LI Diramazione per Pisa)</item>
+		<item>Pisa Aeroporto (FI-PI-LI Diramazione per Pisa)</item>
+		<item>Firenze Viadotto dell\'Indiano (Firenze Pisa Livorno)</item>
+		<item>Aosta-Gran San Bernardo (R29 Raccordo A5 Aosta-Gran San Bernardo)</item>
+		<item>Settecamini (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Teramo Est (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Tor Cervara (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Via Togliatti (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Via Fiorentini (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Portonaccio (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Aosta est (A5 Aosta-Courmayer)</item>
+		<item>Torri Bianche (A51 Tangenziale est Milano)</item>
+		<item>Bivio Tang. N/SP9 V.Valassina-Erba (A52 Tangenziale nord Milano)</item>
+		<item>Sesto San Giovanni (A52 Tangenziale nord Milano)</item>
+		<item>Sesto San Giovanni sud (A52 Tangenziale nord Milano)</item>
+		<item>Parco dei Medici (Roma-aereoporto di Fiumicino)</item>
+		<item>Darsena Toscana est (Firenze Pisa Livorno)</item>
+		<item>Tirrenia (Firenze Pisa Livorno)</item>
+		<item>ROMA (Area Urbana)</item>
+		<item>MILANO (Area Urbana)</item>
+		<item>FIRENZE (Area Urbana)</item>
+		<item>BOLOGNA (Area Urbana)</item>
+		<item>ALESSANDRIA (Area Urbana)</item>
+		<item>ANCONA (Area Urbana)</item>
+		<item>AOSTA (Area Urbana)</item>
+		<item>ASTI (Area Urbana)</item>
+		<item>AVELLINO (Area Urbana)</item>
+		<item>BARI (Area Urbana)</item>
+		<item>BOLZANO (Area Urbana)</item>
+		<item>BRESCIA (Area Urbana)</item>
+		<item>CASALE MONFERRATO (Area Urbana)</item>
+		<item>CASERTA (Area Urbana)</item>
+		<item>CERIGNOLA (Area Urbana)</item>
+		<item>GENOVA (Area Urbana)</item>
+		<item>L\'AQUILA (Area Urbana)</item>
+		<item>MANTOVA (Area Urbana)</item>
+		<item>MODENA (Area Urbana)</item>
+		<item>NOVARA (Area Urbana)</item>
+		<item>PADOVA (Area Urbana)</item>
+		<item>PRATO (Area Urbana)</item>
+		<item>PIACENZA (Area Urbana)</item>
+		<item>RIMINI (Area Urbana)</item>
+		<item>ROVERETO (Area Urbana)</item>
+		<item>TORRE ANNUNZIATA (Area Urbana)</item>
+		<item>TRENTO (Area Urbana)</item>
+		<item>TREVISO (Area Urbana)</item>
+		<item>UDINE (Area Urbana)</item>
+		<item>VERCELLI (Area Urbana)</item>
+		<item>VERONA (Area Urbana)</item>
+		<item>VICENZA (Area Urbana)</item>
+		<item>VITTORIO VENETO (Area Urbana)</item>
+		<item>MALPENSA (Area Urbana)</item>
+		<item>MISANO (Area Urbana)</item>
+		<item>NAPOLI (Area Urbana)</item>
+		<item>PAVIA (Area Urbana)</item>
+		<item>S. MARGHERITA LIGURE (Area Urbana)</item>
+		<item>CIVITANOVA MARCHE (Area Urbana)</item>
+		<item>CUNEO (Area Urbana)</item>
+		<item>S.MARINO (Area Urbana)</item>
+		<item>PINEROLO (Area Urbana)</item>
+		<item>RIVA DEL GARDA (Area Urbana)</item>
+		<item>ISEO (Area Urbana)</item>
+		<item>OSTIA (Area Urbana)</item>
+		<item>POZZUOLI (Area Urbana)</item>
+		<item>COURMAYEUR (Area Urbana)</item>
+		<item>TORINO (Area Urbana)</item>
+		<item>Venezia (Area Urbana)</item>
+		<item>FIRENZE OVEST (Area Urbana)</item>
+		<item>Bivio SS1 Aurelia (Grande Raccordo Anulare di Roma)</item>
+		<item>Via Boccea (Grande Raccordo Anulare di Roma)</item>
+		<item>Bivio SS2 Cassia (Grande Raccordo Anulare di Roma)</item>
+		<item>Bivio SS2 Cassia bis (Grande Raccordo Anulare di Roma)</item>
+		<item>Bivio SS3 Flaminia (Grande Raccordo Anulare di Roma)</item>
+		<item>Castel Giubileo (Grande Raccordo Anulare di Roma)</item>
+		<item>Bivio SS4 Salaria (Grande Raccordo Anulare di Roma)</item>
+		<item>Via Settebagni (Grande Raccordo Anulare di Roma)</item>
+		<item>Bivio Nomentana (Grande Raccordo Anulare di Roma)</item>
+		<item>Via S. Alessandro (Grande Raccordo Anulare di Roma)</item>
+		<item>Bivio SS5 Tiburtina (Grande Raccordo Anulare di Roma)</item>
+		<item>La Rustica (Grande Raccordo Anulare di Roma)</item>
+		<item>Bivio Prenestina (Grande Raccordo Anulare di Roma)</item>
+		<item>Tor Bella Monaca (Grande Raccordo Anulare di Roma)</item>
+		<item>Bivio SS6 Casilina (Grande Raccordo Anulare di Roma)</item>
+		<item>La Romanina (Grande Raccordo Anulare di Roma)</item>
+		<item>Bivio SS215 Tuscolana (Grande Raccordo Anulare di Roma)</item>
+		<item>Bivio SS511 Anagnina (Grande Raccordo Anulare di Roma)</item>
+		<item>Bivio SS7 Appia (Grande Raccordo Anulare di Roma)</item>
+		<item>Bivio Ardeatina (Grande Raccordo Anulare di Roma)</item>
+		<item>Bivio Laurentina (Grande Raccordo Anulare di Roma)</item>
+		<item>Bivio SS148 Pontina (Grande Raccordo Anulare di Roma)</item>
+		<item>Via Cristoforo Colombo (Grande Raccordo Anulare di Roma)</item>
+		<item>Bivio SS8 Ostiense (Grande Raccordo Anulare di Roma)</item>
+		<item>Via della Magliana (Grande Raccordo Anulare di Roma)</item>
+		<item>Via della Pisana (Grande Raccordo Anulare di Roma)</item>
+		<item>Via di Pescaccio (Grande Raccordo Anulare di Roma)</item>
+		<item>Petina (A3 Napoli-Salerno)</item>
+		<item>Polla (A3 Napoli-Salerno)</item>
+		<item>Atena Lucana (A3 Napoli-Salerno)</item>
+		<item>Sala Consilina (A3 Napoli-Salerno)</item>
+		<item>Buonabitacolo-Padula (A3 Napoli-Salerno)</item>
+		<item>Maratea-Lagonegro nord (A3 Napoli-Salerno)</item>
+		<item>Lagonegro sud (A3 Napoli-Salerno)</item>
+		<item>Lauria nord (A3 Napoli-Salerno)</item>
+		<item>Lauria sud (A3 Napoli-Salerno)</item>
+		<item>Laino Borgo (A3 Napoli-Salerno)</item>
+		<item>Mormanno-Scalea (A3 Napoli-Salerno)</item>
+		<item>Campotenese (A3 Napoli-Salerno)</item>
+		<item>Castrovillari-Morano (A3 Napoli-Salerno)</item>
+		<item>Frascineto-Castrovillari (A3 Napoli-Salerno)</item>
+		<item>Sibari (A3 Napoli-Salerno)</item>
+		<item>Altomonte (A3 Napoli-Salerno)</item>
+		<item>Tarsia Nord (A3 Napoli-Salerno)</item>
+		<item>Tarsia (A3 Napoli-Salerno)</item>
+		<item>Torano (A3 Napoli-Salerno)</item>
+		<item>Rose-Montalto (A3 Napoli-Salerno)</item>
+		<item>Cosenza nord (A3 Napoli-Salerno)</item>
+		<item>Cosenza (A3 Napoli-Salerno)</item>
+		<item>Rogliano-Grimaldi (A3 Napoli-Salerno)</item>
+		<item>Altilia (A3 Napoli-Salerno)</item>
+		<item>San Mango d\'Aquino (A3 Napoli-Salerno)</item>
+		<item>Falerna (A3 Napoli-Salerno)</item>
+		<item>Pizzo Calabro (A3 Napoli-Salerno)</item>
+		<item>Vibo Valenzia-Sant\'Onofrio (A3 Napoli-Salerno)</item>
+		<item>Serre (A3 Napoli-Salerno)</item>
+		<item>Mileto Dinami (A3 Napoli-Salerno)</item>
+		<item>Rosarno (A3 Napoli-Salerno)</item>
+		<item>Gioia Tauro (A3 Napoli-Salerno)</item>
+		<item>Palmi (A3 Napoli-Salerno)</item>
+		<item>Sant\'Elia (A3 Napoli-Salerno)</item>
+		<item>Bagnara Calabra (A3 Napoli-Salerno)</item>
+		<item>Scilla (A3 Napoli-Salerno)</item>
+		<item>S. Trada (A3 Napoli-Salerno)</item>
+		<item>Villa San Giovanni (A3 Napoli-Salerno)</item>
+		<item>Gallico (A3 Napoli-Salerno)</item>
+		<item>Reggio Calabria Porto (A3 Napoli-Salerno)</item>
+		<item>Bivio A3/SS106 (A3 Napoli-Salerno)</item>
+		<item>Reggio Calabria (A3 Napoli-Salerno)</item>
+		<item>Pontecagnano (A3 Napoli-Salerno)</item>
+		<item>Battipaglia (A3 Napoli-Salerno)</item>
+		<item>Eboli (A3 Napoli-Salerno)</item>
+		<item>Campagna (A3 Napoli-Salerno)</item>
+		<item>Contursi (A3 Napoli-Salerno)</item>
+		<item>Sicignano (A3 Napoli-Salerno)</item>
+		<item>SV. DI CIAMPINO (Grande Raccordo Anulare di Roma)</item>
+		<item>FERRARA-SS 16 ADRIATICA (A13 Diramazione per Ferrara)</item>
+		<item>STAZ. DI NOTARESCO/INN. SS553 DI ATRI (DEL GRAN SASSO D\'ITALIA)</item>
+		<item>STAZ. DI MOSCIANO/INN. SS262 DIR DI CAMPLI (DEL GRAN SASSO D\'ITALIA)</item>
+		<item>BV. PER BELLANTE (DEL GRAN SASSO D\'ITALIA)</item>
+		<item>INN. SS80 RACC DI TERAMO (DEL GRAN SASSO D\'ITALIA)</item>
+		<item>SETTIMO TORINESE (A4 Milano-Brescia)</item>
+		<item>Novara Est (A4 Milano-Brescia)</item>
+		<item>SVINCOLO DI PONTICELLI (A3 Napoli-Salerno)</item>
+		<item>TORRE DEL GRECO (A3 Napoli-Salerno)</item>
+		<item>Nocera Nord (A3 Napoli-Salerno)</item>
+		<item>TORRE ANNUNZIATA NORD (A3 Napoli-Salerno)</item>
+		<item>Campo Calabro (A3 Napoli-Salerno)</item>
+		<item>Ravenna (A14 Diramazione per Ravenna)</item>
+		<item>Lucca ovest (R32 Racc. Lucca Viareggio-Lucca ovest)</item>
+		<item>BORGHETTO SANTO SPIRITO (A10 Genova-Savona)</item>
+		<item>PALMA CAMPANIA (A30 Caserta-Salerno)</item>
+		<item>Torino Corso Grosseto (R38 RACCORDO TORINO-AEROPORTO CASELLE)</item>
+		<item>Borgaro Torinese (R38 RACCORDO TORINO-AEROPORTO CASELLE)</item>
+		<item>SS460 Rivarolo (R38 RACCORDO TORINO-AEROPORTO CASELLE)</item>
+		<item>Caselle Leini (R38 RACCORDO TORINO-AEROPORTO CASELLE)</item>
+		<item>Aeroporto Torino Caselle (R38 RACCORDO TORINO-AEROPORTO CASELLE)</item>
+		<item>Svincolo Per Porto (A3 Napoli-Salerno)</item>
+		<item>Cantalupa (A7 Serravalle-Genova)</item>
+		<item>Circonvallazione Oulx (A32 Torino-Bardonecchia)</item>
+		<item>Rho Area Industriale (A50 Tangenziale ovest Milano)</item>
+		<item>Damiani (Tangenziale Napoli)</item>
+		<item>Vado (Tangenziale sud Torino)</item>
+		<item>Piazza Maggi (R35 Raccordo A7 - Piazza Maggi)</item>
+		<item>Milano (R35 Raccordo A7 - Piazza Maggi)</item>
+		<item>SP 46 Rho-Monza (R37 Raccordo Fiera di Milano)</item>
+		<item>Accesso nord-est Fiera Milano (R37 Raccordo Fiera di Milano)</item>
+		<item>Accesso est Merci Fiera Milano (R37 Raccordo Fiera di Milano)</item>
+		<item>Accesso sud-ovest Fiera Milano (R37 Raccordo Fiera di Milano)</item>
+		<item>Molino Dorino (R36 RACCORDO SS11-SS33)</item>
+		<item>Pero sud (R36 RACCORDO SS11-SS33)</item>
+		<item>Via Silla-Figino (R36 RACCORDO SS11-SS33)</item>
+		<item>Settimo Milanese (R36 RACCORDO SS11-SS33)</item>
+		<item>Via Michelangelo Buonarroti (TANGENZIALE UDINE)</item>
+		<item>Feletto Umberto (TANGENZIALE UDINE)</item>
+		<item>Via Pagnacco (TANGENZIALE UDINE)</item>
+		<item>Udine Fiera (TANGENZIALE UDINE)</item>
+		<item>Via Spilimbergo (TANGENZIALE UDINE)</item>
+		<item>Via Martignacco (TANGENZIALE UDINE)</item>
+		<item>Viale Cadore (TANGENZIALE UDINE)</item>
+		<item>Viale Venezia (TANGENZIALE UDINE)</item>
+		<item>SS56 DIR (TANGENZIALE UDINE)</item>
+		<item>Basaldella/S.Osvaldo (TANGENZIALE UDINE)</item>
+		<item>Cormor (TANGENZIALE UDINE)</item>
+		<item>SS13 (TANGENZIALE UDINE)</item>
+		<item>Zona Ind. Tavagnacco (TANGENZIALE UDINE)</item>
+		<item>SS13 Cornadella (R39 Raccordo Sacile Ovest - SS13 Pontebbana)</item>
+		<item>SS13 San Giovanni al Tempio (R40 Raccordo Sacile Est - SS13 Pontebbana)</item>
+		<item>Firenze Scandicci (A1 Milano-Napoli)</item>
+		<item>Reggio Emilia (A1 Milano-Napoli)</item>
+		<item>Sasso Marconi (A1 Milano-Napoli)</item>
+		<item>Svincolo di Bagnocavallo (A14 Diramazione per Ravenna)</item>
+		<item>Strada Provinciale 325 (R43 Raccordo Sasso Marconi - SS64)</item>
+		<item>Sasso Marconi Svincolo (R43 Raccordo Sasso Marconi - SS64)</item>
+		<item>Piscina (Diramazione per Pinerolo)</item>
+		<item>Riva (Diramazione per Pinerolo)</item>
+		<item>Pinerolo (Diramazione per Pinerolo)</item>
+		<item>Idice (Tangenziale Bologna)</item>
+		<item>SS13 Ronche (R41 Raccordo Fontanafredda - SS13)</item>
+		<item>Trezzo (A4 Milano-Brescia)</item>
+		<item>Bologna Fiera (A14 Bologna-Taranto)</item>
+		<item>Bressanone Zona Industriale (A22 Brennero-Modena)</item>
+		<item>Svincolo di Empoli (Firenze Pisa Livorno)</item>
+		<item>Ponte di Nona (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Svincolo Via Triumvirato (Tangenziale Bologna)</item>
+		<item>Barberino di Mugello (A1 Milano-Napoli)</item>
+		<item>Lodi (A1 Milano-Napoli)</item>
+		<item>Casalpusterlengo (A1 Milano-Napoli)</item>
+		<item>Rovigo Sud - Villamarzana (A13 Bologna-Padova)</item>
+		<item>Piacenza Sud (R49 Raccordo Piacenza Sud- A21)</item>
+		<item>Cherasco (A33 Asti - A6)</item>
+		<item>Svincolo di Marene (A33 Asti - A6)</item>
+		<item>Viareggio (R59 Raccordo A12/Viareggio)</item>
+		<item>Lucca ovest (Diramazione A11-A12 Lucca-Viareggio)</item>
+		<item>Ceprano (A1 Milano-Napoli)</item>
+		<item>Sv. Fontanafredda (R41 Raccordo Fontanafredda - SS13)</item>
+		<item>Farra D\' Isonzo (R17 Raccordo Villesse-Gorizia)</item>
+		<item>Godega (A28 Portogruaro-Pordenone)</item>
+		<item>Terre di canossa - Campegine (A1 Milano-Napoli)</item>
+		<item>Sv. Viale Europa (Tangenziale Bologna)</item>
+		<item>Capannori (A11 Firenze-Pisa nord)</item>
+		<item>Casei Gerola (A7 Serravalle-Genova)</item>
+		<item>LIVORNO STAGNO (R33 Raccordo FI-PI-LI - A12)</item>
+		<item>LA SPEZIA / VIA VALDILOCCHI (R19 A15 Raccordo La Spezia-Lerici)</item>
+		<item>SVINCOLO SR 25 (Tangenziale nord Torino)</item>
+		<item>ALPI GRAIE (Tangenziale nord Torino)</item>
+		<item>Savonera (Tangenziale nord Torino)</item>
+		<item>INNESTO S.S. 27 (R29 Raccordo A5 Aosta-Gran San Bernardo)</item>
+		<item>DIREZIONE CHIERI (R61 Raccordo A21 - SS10)</item>
+		<item>DIREZIONE VILLANOVA (R61 Raccordo A21 - SS10)</item>
+		<item>CORSO 4 NOVEMBRE (R62 Raccordo Tangenziale Sud TO / SP7)</item>
+		<item>CORSO ALLAMANO (R62 Raccordo Tangenziale Sud TO / SP7)</item>
+		<item>Chieri (A21 Torino-Piacenza-Brescia)</item>
+		<item>BRESCIA SUD (A21 Torino-Piacenza-Brescia)</item>
+		<item>Abbadia di Stura (Diramazione per Abbadia)</item>
+		<item>Pero Piazzale Sud Est (A4 Milano-Brescia)</item>
+		<item>leini\' (Diramazione per Abbadia)</item>
+		<item>ss231 (A33 Asti - A6)</item>
+		<item>Cefalù (A20 Messina-Palermo)</item>
+		<item>isola d\'asti (A33 Asti - A6)</item>
+		<item>costigliole govone (A33 Asti - A6)</item>
+		<item>castagnito (A33 Asti - A6)</item>
+		<item>govone ovest (A33 Asti - A6)</item>
+		<item>guarene (A33 Asti - A6)</item>
+		<item>Buonfornello (A20 Messina-Palermo)</item>
+		<item>Castelbuono (A20 Messina-Palermo)</item>
+		<item>S.Stefano di Camastra (A20 Messina-Palermo)</item>
+		<item>Tusa (A20 Messina-Palermo)</item>
+		<item>strada statale 11 (Diramazione per Abbadia)</item>
+		<item>pero piazzale sud est (R37 Raccordo Fiera di Milano)</item>
+		<item>Reggio C.-Catona-Arghila\' (A3 Napoli-Salerno)</item>
+		<item>Santa Maria Capua Vetere (A1 Milano-Napoli)</item>
+		<item>Preganziol (A4 Milano-Brescia)</item>
+		<item>Mirano Dolo (A57 Tangenziale di Mestre)</item>
+		<item>Mira-Oriago (A57 Tangenziale di Mestre)</item>
+		<item>Marghera All. SS 309 Romea (A57 Tangenziale di Mestre)</item>
+		<item>Venezia Rampa Rizzardi (A57 Tangenziale di Mestre)</item>
+		<item>rotatoria Miranese (A57 Tangenziale di Mestre)</item>
+		<item>rotatoria Castellana (A57 Tangenziale di Mestre)</item>
+		<item>Mestre Est (A57 Tangenziale di Mestre)</item>
+		<item>Svincolo di Marcon (A57 Tangenziale di Mestre)</item>
+		<item>Quarto d\'Altino (A57 Tangenziale di Mestre)</item>
+		<item>Venezia Est (A57 Tangenziale di Mestre)</item>
+		<item>Susa (A32 Torino-Bardonecchia)</item>
+		<item>Mogliano Veneto (A27 Venezia-Belluno)</item>
+		<item>Venezia (A27 Venezia-Belluno)</item>
+		<item>Spinea (A4 Milano-Brescia)</item>
+		<item>Latisana (A4 Milano-Brescia)</item>
+		<item>Vado (Tangenziale sud Torino)</item>
+		<item>Innesto Statale 25 (Tangenziale Est Di Brescia)</item>
+		<item>Tangenziale Brescia Sud (Tangenziale Est Di Brescia)</item>
+		<item>Macina (Tangenziale Est Di Brescia)</item>
+		<item>Innesto Strada Statale 236 (Tangenziale Est Di Brescia)</item>
+		<item>Limena Sud (Tangenziale Di Limena Padova - Bassano)</item>
+		<item>Zona Industriale (Tangenziale Di Limena Padova - Bassano)</item>
+		<item>Via Ceresara (Tangenziale Di Limena Padova - Bassano)</item>
+		<item>Strada Provinciale 47 Bassano (Tangenziale Di Limena Padova - Bassano)</item>
+		<item>Via Po (R58 Raccordo Tangenziale di Limena - Tangenziale Nord di Padova)</item>
+		<item>Allacciamento Tangenziale Est Di Brescia (R53 Raccordo Brescia Est)</item>
+		<item>Viale Scaligeri (R55 Raccordo Ovest Tangenziale Sud Di Vicenza)</item>
+		<item>Via Della Pelosa (R56 Viale Serenissima)</item>
+		<item>Viale Serenissima Di Vicenza (R56 Viale Serenissima)</item>
+		<item>Monte Alto (Variante di Lonato)</item>
+		<item>Lonato (Variante di Lonato)</item>
+		<item>SP25 (Variante di Lonato)</item>
+		<item>Sedena SP78 (Variante di Lonato)</item>
+		<item>Via Monteroseo (Variante di Lonato)</item>
+		<item>SS567 (R57 Raccordo Variante di Lonato)</item>
+		<item>SS11 (R57 Raccordo Variante di Lonato)</item>
+		<item>SAN DONA\' DI PIAVE SP55 (R60 Bretella di Noventa)</item>
+		<item>SAN DONA\' DI PIAVE SP83 (R60 Bretella di Noventa)</item>
+		<item>SAN DONA\' DI PIAVE SP56 (R60 Bretella di Noventa)</item>
+		<item>ALL. TANGENZIALE SUD VERONA (R50 Raccordo Porcilana Ovest)</item>
+		<item>SOAVE S.R.11 (R51 Bretella Porcilana Est)</item>
+		<item>LOC. BELFIORE (R51 Bretella Porcilana Est)</item>
+		<item>Sorgente (Tangenziale Est Di Verona)</item>
+		<item>S.R. 11 (Tangenziale Est Di Verona)</item>
+		<item>Borgo Venezia Mattarana (Tangenziale Est Di Verona)</item>
+		<item>Montorio (Tangenziale Est Di Verona)</item>
+		<item>Poiano (Tangenziale Est Di Verona)</item>
+		<item>Via Reni (Tangenziale Nord di Padova)</item>
+		<item>SS308 Del Santo (Tangenziale Nord di Padova)</item>
+		<item>Rondo\' Busa Di Vigonza (Tangenziale Nord di Padova)</item>
+		<item>SR515 (Tangenziale Nord di Padova)</item>
+		<item>Riviera Berica SS247 (Tangenziale Sud Di Vicenza)</item>
+		<item>Torri Quartesolo (Tangenziale Sud Di Vicenza)</item>
+		<item>S. Filippo (A20 Messina-Palermo)</item>
+		<item>Dittaino (A19 Palermo-Catania)</item>
+		<item>Imera (DIRAMAZIONE PER CALTANISSETTA)</item>
+		<item>Caltanissetta (DIRAMAZIONE PER CALTANISSETTA)</item>
+		<item>Svincolo Tubital (R63 R63 Raccordo Tubital)</item>
+		<item>Svincolo Lugo (A14 Diramazione per Ravenna)</item>
+		<item>Montespaccato (Grande Raccordo Anulare di Roma)</item>
+		<item>Casal Del Marmo (Grande Raccordo Anulare di Roma)</item>
+		<item>Trionfale (Grande Raccordo Anulare di Roma)</item>
+		<item>Ospedale S.Andrea (Grande Raccordo Anulare di Roma)</item>
+		<item>Parco Dei Medici (Grande Raccordo Anulare di Roma)</item>
+		<item>Volpiano Sud (A4 Milano-Brescia)</item>
+		<item>Ferentino (A1 Milano-Napoli)</item>
+		<item>Marcallo-Mesero (A4 Milano-Brescia)</item>
+		<item>Arluno (A4 Milano-Brescia)</item>
+		<item>Rosignano Marittimo (SS1 Aurelia)</item>
+		<item>Ingresso Del Maroccone (SS1 Aurelia)</item>
+		<item>Montenero (SS1 Aurelia)</item>
+		<item>Svincolo Per Collesalvetti (SS1 Aurelia)</item>
+		<item>Livorno Zona Industriale (SS1 Aurelia)</item>
+		<item>Ercolano (A3 Napoli-Salerno)</item>
+		<item>V.le della Scienza / V.le del Lavoro (R55 Raccordo Ovest Tangenziale Sud Di Vicenza)</item>
+		<item>Via Salaria (Tangenziale Est di Roma)</item>
+		<item>Via Prenestina (Tangenziale Est di Roma)</item>
+		<item>Rotatoria di Marghera (R63 R63 Raccordo Tubital)</item>
+		<item>Svincolo Della Bufalotta (Grande Raccordo Anulare di Roma)</item>
+		<item>Castelnuovo di Porto (A1 Diramazione Roma nord - GRA)</item>
+		<item>Cordignano (A28 Portogruaro-Pordenone)</item>
+		<item>Nocera Sud (A3 Napoli-Salerno)</item>
+		<item>Ponticelli (A3 Napoli-Salerno)</item>
+		<item>Siena centro (RA3 Raccordo Siena-Firenze)</item>
+		<item>Siena nord (RA3 Raccordo Siena-Firenze)</item>
+		<item>Badesse (RA3 Raccordo Siena-Firenze)</item>
+		<item>Monteriggioni (RA3 Raccordo Siena-Firenze)</item>
+		<item>Colle Val D\'Elsa Sud (RA3 Raccordo Siena-Firenze)</item>
+		<item>Colle Val D\'Elsa Nord (RA3 Raccordo Siena-Firenze)</item>
+		<item>Poggibonsi centro (RA3 Raccordo Siena-Firenze)</item>
+		<item>Poggibonsi nord (RA3 Raccordo Siena-Firenze)</item>
+		<item>San Donato in Poggio (RA3 Raccordo Siena-Firenze)</item>
+		<item>Tavarnelle in Val di Pesa (RA3 Raccordo Siena-Firenze)</item>
+		<item>Bargino (RA3 Raccordo Siena-Firenze)</item>
+		<item>San Casciano sud (RA3 Raccordo Siena-Firenze)</item>
+		<item>San Casciano nord (RA3 Raccordo Siena-Firenze)</item>
+		<item>Impruneta - Greve in Chianti (RA3 Raccordo Siena-Firenze)</item>
+		<item>Piazzale Fi Certosa (RA3 Raccordo Siena-Firenze)</item>
+		<item>La Carbonifera (A57 Tangenziale di Mestre)</item>
+		<item>Teramo Ovest (A24 Roma-L\'Aquila-Teramo)</item>
+		<item>Trento Sud (A22 Brennero-Modena)</item>
+		<item>Rosignano Barriera (A12 Genova-Rosignano Marittimo)</item>
+		<item>Porto S. Elpidio (A14 Bologna-Taranto)</item>
+		<item>Guidonia Montecelio (A1 Milano-Napoli)</item>
+		<item>Lomazzo (A9 Lainate-Chiasso)</item>
+		<item>Uboldo (A9 Lainate-Chiasso)</item>
+		<item>Origgio (A9 Lainate-Chiasso)</item>
+		<item>S.S. 1 Aurelia (A12 Roma-Civitavecchia)</item>
+		<item>Castelletto Stura (A33 Asti-Cuneo)</item>
+		<item>S. Albano (A33 Asti-Cuneo)</item>
+		<item>Superstrada del Liri - S.S.690 (R48 Superstrada del Liri)</item>
+		<item>Avezzano (R48 Superstrada del Liri)</item>
+		<item>Svincolo Brescia Centro (A21 Torino-Piacenza-Brescia)</item>
+		<item>Sant\'Andrea (R17 Raccordo Villesse-Gorizia)</item>
+		<item>Caserta (R08 Raccordo A1-Caserta sud)</item>
+		<item>Portici (A3 Napoli-Salerno)</item>
+		<item>Rosignano (R69 Raccordo Rosignano)</item>
+		<item>Rosignano (R69 Raccordo Rosignano)</item>
+	</string-array>
+
+</resources>
