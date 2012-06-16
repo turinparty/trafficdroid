@@ -7,8 +7,6 @@ import com.google.android.apps.analytics.GoogleAnalyticsTracker;
 
 public class TdAnalytics {
 	private static final String ID = "UA-12243941-5";
-	public static final String eventCatApp = "App";
-	public static final String eventActionVersion = "Version";
 	public static final String eventCatWebcam = "Webcam";
 	public static final String eventCatBadNews = "BadNews";
 	public static final String eventCatGraph = "Graph";

@@ -4,7 +4,6 @@ import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.MainAdapter;
 import it.localhost.trafficdroid.adapter.item.AbstractChildItem;
 import it.localhost.trafficdroid.common.Const;
-import it.localhost.trafficdroid.common.TdAnalytics;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.common.ViewTagger;
 import it.localhost.trafficdroid.dao.MainDAO;
@@ -52,7 +51,6 @@ public class MainActivity extends AbstractActivity {
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
 		setProgressBarIndeterminateVisibility(false);
-		TdAnalytics.trackEvent(TdAnalytics.eventCatApp, TdAnalytics.eventActionVersion, TdApp.getVersionName(), TdApp.getVersionCode());
 		intentFilter = new IntentFilter();
 		intentFilter.addAction(TdService.beginUpdate);
 		intentFilter.addAction(TdService.endUpdate);

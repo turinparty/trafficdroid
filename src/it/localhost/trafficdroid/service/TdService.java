@@ -5,6 +5,7 @@ import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.MainDAO;
+import it.localhost.trafficdroid.dao.MoneyDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
@@ -13,6 +14,8 @@ import it.localhost.trafficdroid.parser.TrafficParser;
 
 import java.util.Date;
 import java.util.List;
+
+import org.w3c.dom.Document;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -39,6 +42,12 @@ public class TdService extends WakefulIntentService { // NO_UCD
 	@Override
 	public void doWakefulWork(Intent arg0) {
 		sendBroadcast(beginUpdateIntent);
+		try {
+			Document doc = MoneyDAO.getData(1, 2, "www.autostrade.it");
+			System.err.println(doc.getNodeName());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		MainDTO currDTO = MainDAO.create();
 		MainDTO pastDTO;
 		try {
