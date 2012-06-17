@@ -35,6 +35,7 @@
         </activity>
         <activity android:name=".activity.PreferencesActivity" />
         <activity android:name=".activity.WebViewActivity" />
+        <activity android:name=".activity.MoneyActivity" />
         <activity
             android:name="com.google.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />

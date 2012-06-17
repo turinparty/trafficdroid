@@ -22,6 +22,7 @@ public class ZoneItem extends AbstractChildItem {
 	private static final String webcamSecond = "/webcam/temp-imgs/camsbig/";
 	private static final String webcamThird = "/vp2/vpcam.aspx?camid=";
 	private static final String webcamFourth = "/cgi-bin/cgiwebcam.exe?site=";
+	private static final String mobile = "mobile.";
 	private static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
 	private static final String jpg = ".jpg";
 	private static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);
@@ -115,7 +116,7 @@ public class ZoneItem extends AbstractChildItem {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
 			int id = Integer.parseInt(code.substring(1)) + 6280 * (date);
-			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault) + webcamFirst + id);
+			intent.putExtra(Const.url, Const.http + mobile + TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault) + webcamFirst + id);
 			context.startActivity(intent);
 		} else if (code.charAt(0) == webcamTrueSecond) {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);

@@ -7,6 +7,11 @@
         android:showAsAction="ifRoom"
         android:title="@string/fuel"/>
     <item
+        android:id="@id/menuMoney"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:showAsAction="ifRoom"
+        android:title="@string/money"/>
+    <item
         android:id="@id/menuRefresh"
         android:icon="@android:drawable/ic_menu_rotate"
         android:showAsAction="ifRoom"

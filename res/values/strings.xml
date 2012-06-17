@@ -3,6 +3,7 @@
 
     <string name="app_name">TrafficDroid</string>
     <string name="ok">OK</string>
+    <string name="money">Costo Percorso</string>
     <string name="error">Errore</string>
     <string name="help">Il cambio del provider ha reso necessaria una nuova mappatura delle webcam. Una piccola donazione sarà per noi una grande spinta a continuare il nostro lavoro che finora è stato, e sempre sarà, disponibile gratuitamente per tutti.</string>
     <string name="warning">Attenzione</string>
@@ -22,17 +23,17 @@
     <string name="providerCategory">Provider</string>
     <string name="providerSummary">Verifica di averne i permessi</string>
     <string name="providerTrafficTitle">Servizio Traffico</string>
-    <string name="providerTrafficKey">providerTrafficKeyTree</string>
-    <string name="providerTrafficDefault">traffic.infoCELESTEtraffic.com</string>
+    <string name="providerTrafficKey">providerTrafficKeyFour</string>
+    <string name="providerTrafficDefault">infoCELESTEtraffic.com</string>
     <string name="providerCamTitle">Servizio WebCam 1</string>
     <string name="providerCamTitleSecond">Servizio WebCam 2</string>
     <string name="providerCamTitleThird">Servizio WebCam 3</string>
     <string name="providerCamTitleFourth">Servizio WebCam 4</string>
-    <string name="providerCamKey">providerCamKeyTre</string>
+    <string name="providerCamKey">providerCamKeyNew</string>
     <string name="providerCamKeySecond">providerCamKeySecond</string>
     <string name="providerCamKeyThird">providerCamKeyThird</string>
     <string name="providerCamKeyFourth">providerCamKeyFourth</string>
-    <string name="providerCamDefault">mobile.autostrade.it</string>
+    <string name="providerCamDefault">autostrade.it</string>
     <string name="providerCamDefaultSecond">www.cavspa.it</string>
     <string name="providerCamDefaultThird">telecamere.edidomus.it</string>
     <string name="providerCamDefaultFourth">www.autofiori.it</string>

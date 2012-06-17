@@ -15,6 +15,7 @@ import org.xml.sax.SAXException;
 
 public class TrafficDAO {
 	private static final String path = "/engine/traffic_server.php?type=4&sq=1&roa=";
+	private static final String traffic = "traffic.";
 
 	public static Document getData(int mapId, String baseUrl) throws GenericException, BadConfException, ConnectionException {
 		Document doc = null;
@@ -22,7 +23,7 @@ public class TrafficDAO {
 			int numTries = 3;
 			while (true) {
 				try {
-					doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(Const.http + baseUrl + path + mapId);
+					doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(Const.http + traffic + baseUrl + path + mapId);
 					break;
 				} catch (SAXException e) {
 					if (--numTries == 0)

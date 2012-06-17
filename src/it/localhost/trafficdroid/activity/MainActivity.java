@@ -114,6 +114,9 @@ public class MainActivity extends AbstractActivity {
 			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerFuelKey, R.string.providerFuelDefault) + fuel);
 			startActivity(intent);
 			return true;
+		case R.id.menuMoney:
+			startActivity(new Intent(MainActivity.this, MoneyActivity.class));
+			return true;
 		case R.id.menuDonate:
 			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(donate)));
 			return true;
