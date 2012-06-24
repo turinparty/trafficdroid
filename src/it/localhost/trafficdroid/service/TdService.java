@@ -2,12 +2,12 @@ package it.localhost.trafficdroid.service;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
-import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
+import it.localhost.trafficdroid.exception.GenericException;
 import it.localhost.trafficdroid.parser.BadNewsParser;
 import it.localhost.trafficdroid.parser.TrafficParser;
 
@@ -31,6 +31,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 	private static final Intent beginUpdateIntent = new Intent(beginUpdate);
 	private static final Intent endUpdateIntent = new Intent(endUpdate);
 	private static final String disconnectedMessage = "Connessione di rete inesistente";
+	public static final int notificationId = 1;
 
 	public TdService() {
 		super(MainDAO.tdData);
@@ -133,30 +134,30 @@ public class TdService extends WakefulIntentService { // NO_UCD
 					Intent intent = new Intent(this, MainActivity.class);
 					intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 					bui.setContentIntent(PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT));
-					((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(Const.notificationId, bui.getNotification());
+					((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(TdService.notificationId, bui.getNotification());
 				} else
-					((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
+					((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(TdService.notificationId);
 			} catch (Exception e) {
-				TdApp.getEditor().putBoolean(Const.exceptionCheck, true);
-				TdApp.getEditor().putString(Const.exceptionMsg, e.getMessage());
+				TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
+				TdApp.getEditor().putString(GenericException.exceptionMsg, e.getMessage());
 			}
 			try {
 				if (TdApp.getPrefBoolean(R.string.badnewsEnablerKey, R.string.badnewsEnablerDefault))
 					new BadNewsParser(currDTO, TdApp.getPrefString(R.string.providerBadNewsKey, R.string.providerBadNewsDefault)).parse();
 			} catch (Exception e) {
-				TdApp.getEditor().putBoolean(Const.exceptionCheck, true);
-				TdApp.getEditor().putString(Const.exceptionMsg, e.getMessage());
+				TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
+				TdApp.getEditor().putString(GenericException.exceptionMsg, e.getMessage());
 			}
 			try {
 				currDTO.setTrafficTime(new Date());
 				MainDAO.store(currDTO);
 			} catch (Exception e) {
-				TdApp.getEditor().putBoolean(Const.exceptionCheck, true);
-				TdApp.getEditor().putString(Const.exceptionMsg, e.getMessage());
+				TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
+				TdApp.getEditor().putString(GenericException.exceptionMsg, e.getMessage());
 			}
 		} else {
-			TdApp.getEditor().putBoolean(Const.exceptionCheck, true);
-			TdApp.getEditor().putString(Const.exceptionMsg, disconnectedMessage);
+			TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
+			TdApp.getEditor().putString(GenericException.exceptionMsg, disconnectedMessage);
 		}
 		TdApp.getEditor().commit();
 		sendBroadcast(endUpdateIntent);

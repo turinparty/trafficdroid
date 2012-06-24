@@ -4,7 +4,7 @@ import java.util.GregorianCalendar;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.WebViewActivity;
-import it.localhost.trafficdroid.common.Const;
+import it.localhost.trafficdroid.adapter.MainAdapter;
 import it.localhost.trafficdroid.common.TdAnalytics;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.common.ViewTagger;
@@ -40,7 +40,7 @@ public class ZoneItem extends AbstractChildItem {
 	}
 
 	public int getType() {
-		return Const.itemTypes[1];
+		return MainAdapter.itemTypes[1];
 	}
 
 	public View inflateView() {
@@ -116,22 +116,22 @@ public class ZoneItem extends AbstractChildItem {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
 			int id = Integer.parseInt(code.substring(1)) + 6280 * (date);
-			intent.putExtra(Const.url, Const.http + mobile + TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault) + webcamFirst + id);
+			intent.putExtra(WebViewActivity.url, WebViewActivity.http + mobile + TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault) + webcamFirst + id);
 			context.startActivity(intent);
 		} else if (code.charAt(0) == webcamTrueSecond) {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKeySecond, R.string.providerCamDefaultSecond) + webcamSecond + code.substring(1) + jpg);
+			intent.putExtra(WebViewActivity.url, WebViewActivity.http + TdApp.getPrefString(R.string.providerCamKeySecond, R.string.providerCamDefaultSecond) + webcamSecond + code.substring(1) + jpg);
 			context.startActivity(intent);
 		} else if (code.charAt(0) == webcamTrueThird) {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKeyThird, R.string.providerCamDefaultThird) + webcamThird + code.substring(1));
+			intent.putExtra(WebViewActivity.url, WebViewActivity.http + TdApp.getPrefString(R.string.providerCamKeyThird, R.string.providerCamDefaultThird) + webcamThird + code.substring(1));
 			context.startActivity(intent);
 		} else if (code.charAt(0) == webcamTrueFourth) {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerCamKeyFourth, R.string.providerCamDefaultFourth) + webcamFourth + code.substring(1));
+			intent.putExtra(WebViewActivity.url, WebViewActivity.http + TdApp.getPrefString(R.string.providerCamKeyFourth, R.string.providerCamDefaultFourth) + webcamFourth + code.substring(1));
 			context.startActivity(intent);
 		} else {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionRequest, code, 0);

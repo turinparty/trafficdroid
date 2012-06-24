@@ -3,11 +3,11 @@ package it.localhost.trafficdroid.activity;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.MainAdapter;
 import it.localhost.trafficdroid.adapter.item.AbstractChildItem;
-import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.common.ViewTagger;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
+import it.localhost.trafficdroid.exception.GenericException;
 import it.localhost.trafficdroid.service.TdListener;
 import it.localhost.trafficdroid.service.TdService;
 import android.app.AlertDialog;
@@ -76,7 +76,6 @@ public class MainActivity extends AbstractActivity {
 				}
 			}
 		};
-		new AlertDialog.Builder(this).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.help).show();
 	}
 
 	@Override
@@ -84,7 +83,7 @@ public class MainActivity extends AbstractActivity {
 		super.onResume();
 		registerReceiver(receiver, intentFilter);
 		WakefulIntentService.scheduleAlarms(new TdListener(), this, false);
-		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(Const.notificationId);
+		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(TdService.notificationId);
 		refresh();
 	}
 
@@ -111,7 +110,7 @@ public class MainActivity extends AbstractActivity {
 			return true;
 		case R.id.menuFuel:
 			Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-			intent.putExtra(Const.url, Const.http + TdApp.getPrefString(R.string.providerFuelKey, R.string.providerFuelDefault) + fuel);
+			intent.putExtra(WebViewActivity.url, WebViewActivity.http + TdApp.getPrefString(R.string.providerFuelKey, R.string.providerFuelDefault) + fuel);
 			startActivity(intent);
 			return true;
 		case R.id.menuMoney:
@@ -131,7 +130,7 @@ public class MainActivity extends AbstractActivity {
 		ExpandableListContextMenuInfo info = (ExpandableListContextMenuInfo) menuInfo;
 		int packedPositionType = ExpandableListView.getPackedPositionType(info.packedPosition);
 		View item = info.targetView;
-		if (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_GROUP || (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_CHILD && ((Integer) ViewTagger.getTag(item, R.id.zoneType)) == Const.itemTypes[1])) {
+		if (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_GROUP || (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_CHILD && ((Integer) ViewTagger.getTag(item, R.id.zoneType)) == MainAdapter.itemTypes[1])) {
 			getMenuInflater().inflate(R.menu.main_context, menu);
 			menu.getItem(0).setChecked(TdApp.getPrefBoolean(Integer.toString((Integer) ViewTagger.getTag(item, R.id.itemKey)), false));
 			menu.setHeaderTitle((String) ViewTagger.getTag(item, R.id.itemName));
@@ -164,11 +163,11 @@ public class MainActivity extends AbstractActivity {
 
 	private void refresh() {
 		new RefreshTask().execute();
-		if (TdApp.getPrefBoolean(Const.exceptionCheck, false)) {
-			String msg = TdApp.getPrefString(Const.exceptionMsg, unknownError);
+		if (TdApp.getPrefBoolean(GenericException.exceptionCheck, false)) {
+			String msg = TdApp.getPrefString(GenericException.exceptionMsg, unknownError);
 			new AlertDialog.Builder(this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(msg).show();
 			setTitle(msg);
-			TdApp.getEditor().putBoolean(Const.exceptionCheck, false).commit();
+			TdApp.getEditor().putBoolean(GenericException.exceptionCheck, false).commit();
 		}
 	}
 

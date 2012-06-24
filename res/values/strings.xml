@@ -5,7 +5,6 @@
     <string name="ok">OK</string>
     <string name="money">Costo Percorso</string>
     <string name="error">Errore</string>
-    <string name="help">Il cambio del provider ha reso necessaria una nuova mappatura delle webcam. Una piccola donazione sarà per noi una grande spinta a continuare il nostro lavoro che finora è stato, e sempre sarà, disponibile gratuitamente per tutti.</string>
     <string name="warning">Attenzione</string>
     <string name="info">Informazione</string>
     <string name="webcamAdd">Questa Webcam non è ancora mappata, aiutaci a mapparla. Sul sito trovi tutte le informazioni. Richiesta di mappatura inoltrata.</string>
@@ -70,5 +69,7 @@
     <string name="trendSpeedSummary">Variazione di velocità minima per mostrare l\'icona del trend</string>
     <string name="trendSpeedDefault">4</string>
     <string name="invalid_money_from_to">Dati forniti non validi.</string>
+    <string name="from">Casello di partenza</string>
+    <string name="to">Casello di arrivo</string>
 
 </resources>

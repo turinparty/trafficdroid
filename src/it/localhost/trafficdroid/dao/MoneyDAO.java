@@ -1,6 +1,6 @@
 package it.localhost.trafficdroid.dao;
 
-import it.localhost.trafficdroid.common.Const;
+import it.localhost.trafficdroid.activity.WebViewActivity;
 import it.localhost.trafficdroid.exception.BadConfException;
 
 import java.net.URL;
@@ -16,7 +16,7 @@ public class MoneyDAO {
 
 	public static String getData(int da, int a, String baseUrl) throws BadConfException {
 		try {
-			String s = new Scanner(new URL(Const.http + baseUrl + path + da + arg + a).openStream()).useDelimiter(delimiter).next();
+			String s = new Scanner(new URL(WebViewActivity.http + baseUrl + path + da + arg + a).openStream()).useDelimiter(delimiter).next();
 			int start = s.indexOf(spanAperto);
 			if (start != -1) {
 				start = start + spanAperto.length();

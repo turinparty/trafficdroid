@@ -2,7 +2,7 @@ package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.BadNewsAdapter;
-import it.localhost.trafficdroid.common.Const;
+import it.localhost.trafficdroid.adapter.MainAdapter;
 import it.localhost.trafficdroid.common.TdAnalytics;
 import it.localhost.trafficdroid.common.ViewTagger;
 import it.localhost.trafficdroid.dto.StreetDTO;
@@ -23,7 +23,7 @@ public class BadNewsItem extends AbstractChildItem {
 	}
 
 	public int getType() {
-		return Const.itemTypes[0];
+		return MainAdapter.itemTypes[0];
 	}
 
 	public View inflateView() {

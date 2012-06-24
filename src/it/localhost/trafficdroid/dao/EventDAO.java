@@ -1,6 +1,6 @@
 package it.localhost.trafficdroid.dao;
 
-import it.localhost.trafficdroid.common.Const;
+import it.localhost.trafficdroid.activity.WebViewActivity;
 import it.localhost.trafficdroid.exception.BadConfException;
 import it.localhost.trafficdroid.exception.ConnectionException;
 
@@ -18,7 +18,7 @@ public class EventDAO {
 		int numTries = 3;
 		while (true) {
 			try {
-				inputSource = new InputSource(new URL(Const.http + url + events).openStream());
+				inputSource = new InputSource(new URL(WebViewActivity.http + url + events).openStream());
 				break;
 			} catch (MalformedURLException e) {
 				throw new BadConfException(e);

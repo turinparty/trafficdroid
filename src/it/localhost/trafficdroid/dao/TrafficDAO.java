@@ -1,6 +1,6 @@
 package it.localhost.trafficdroid.dao;
 
-import it.localhost.trafficdroid.common.Const;
+import it.localhost.trafficdroid.activity.WebViewActivity;
 import it.localhost.trafficdroid.exception.BadConfException;
 import it.localhost.trafficdroid.exception.ConnectionException;
 import it.localhost.trafficdroid.exception.GenericException;
@@ -23,7 +23,7 @@ public class TrafficDAO {
 			int numTries = 3;
 			while (true) {
 				try {
-					doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(Const.http + traffic + baseUrl + path + mapId);
+					doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(WebViewActivity.http + traffic + baseUrl + path + mapId);
 					break;
 				} catch (SAXException e) {
 					if (--numTries == 0)

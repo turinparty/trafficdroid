@@ -5,7 +5,6 @@ import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.adapter.item.BadNewsItem;
 import it.localhost.trafficdroid.adapter.item.StreetItem;
 import it.localhost.trafficdroid.adapter.item.ZoneItem;
-import it.localhost.trafficdroid.common.Const;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
@@ -22,6 +21,7 @@ public class MainAdapter extends BaseExpandableListAdapter {
 	public static final String expanded = "Expanded";
 	private ArrayList<AbstractItem> groupItems;
 	private ArrayList<ArrayList<AbstractChildItem>> childItems;
+	public static final byte[] itemTypes = new byte[] { 0, 1, 2 };
 
 	public MainAdapter(Context context, MainDTO mainDTO) {
 		super();
@@ -92,7 +92,7 @@ public class MainAdapter extends BaseExpandableListAdapter {
 
 	@Override
 	public int getChildTypeCount() {
-		return Const.itemTypes.length;
+		return MainAdapter.itemTypes.length;
 	}
 
 	@Override
