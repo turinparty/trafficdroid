@@ -1,6 +1,8 @@
 package it.localhost.trafficdroid.common;
 
 import it.localhost.trafficdroid.R;
+
+
 import android.util.SparseIntArray;
 
 public class Const {
@@ -12,6 +14,7 @@ public class Const {
 	public static final String url = "url";
 	public static final int notificationId = 1;
 	public static final byte[] itemTypes = new byte[] { 0, 1, 2 };
+
 	public static final SparseIntArray zonesResId = new SparseIntArray(64) {
 		{
 			put(126, R.array.z126Id);

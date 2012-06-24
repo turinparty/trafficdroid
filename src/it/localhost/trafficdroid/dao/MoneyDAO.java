@@ -14,7 +14,7 @@ public class MoneyDAO {
 	private static final String delimiter = "\\A";
 	private static final String badParams = "Parametri non validi";
 
-	public static String getData(String da, String a, String baseUrl) throws BadConfException {
+	public static String getData(int da, int a, String baseUrl) throws BadConfException {
 		try {
 			String s = new Scanner(new URL(Const.http + baseUrl + path + da + arg + a).openStream()).useDelimiter(delimiter).next();
 			int start = s.indexOf(spanAperto);

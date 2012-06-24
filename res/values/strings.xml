@@ -69,5 +69,6 @@
     <string name="trendSpeedKey">trendSpeedKey</string>
     <string name="trendSpeedSummary">Variazione di velocità minima per mostrare l\'icona del trend</string>
     <string name="trendSpeedDefault">4</string>
+    <string name="invalid_money_from_to">Dati forniti non validi.</string>
 
 </resources>
