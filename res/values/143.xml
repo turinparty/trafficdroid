@@ -50,6 +50,7 @@
     </integer-array>
 
     <string-array name="z143Webcam">
+        <item>A20877</item> <!-- A04 km. 125,0 Bivio Fiorenza --> 
         <item>-1</item>
         <item>-1</item>
         <item>-1</item>
@@ -58,18 +59,17 @@
         <item>-1</item>
         <item>-1</item>
         <item>-1</item>
+        <item>A18893</item> <!-- A08 km. 13,5 Legnano itinere nord --> 
+        <item>A18875</item> <!-- A08 km. 25,6 Busto Arsizio itinere sud --> 
+        <item>A14787</item> <!-- A08 km. 24,5 Svincolo Busto Arsizio --> 
+        <item>A11346</item> <!-- A08 km. 27,2 itinere nord --> 
+        <item>A17593</item> <!-- D08 km. 2,5 Gallarate Ovest entrata --> 
+        <item>A18888</item> <!-- A08 km. 30,2 A8/A26 itinere nord --> 
+        <item>A18882</item> <!-- A08 km. 35,1 Cavaria itinere sud --> 
+        <item>A11332</item> <!-- A08 km. 34,7 Solbiate itinere nord --> 
+        <item>A11339</item> <!-- A08 km. 39,4 Castronno itinere nord --> 
         <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
+        <item>A17725</item> <!-- A08 km. 41,9 Gazzada itinere sud --> 
         <item>-1</item>
     </string-array>
 
