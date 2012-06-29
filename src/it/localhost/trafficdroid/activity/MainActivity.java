@@ -110,7 +110,7 @@ public class MainActivity extends AbstractActivity {
 			return true;
 		case R.id.menuFuel:
 			Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.url, WebViewActivity.http + TdApp.getPrefString(R.string.providerFuelKey, R.string.providerFuelDefault) + fuel);
+			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + TdApp.getPrefString(R.string.providerFuelKey, R.string.providerFuelDefault) + fuel);
 			startActivity(intent);
 			return true;
 		case R.id.menuMoney:

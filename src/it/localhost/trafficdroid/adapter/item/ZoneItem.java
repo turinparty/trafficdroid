@@ -116,22 +116,22 @@ public class ZoneItem extends AbstractChildItem {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
 			int id = Integer.parseInt(code.substring(1)) + 6280 * (date);
-			intent.putExtra(WebViewActivity.url, WebViewActivity.http + mobile + TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault) + webcamFirst + id);
+			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + mobile + TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault) + webcamFirst + id);
 			context.startActivity(intent);
 		} else if (code.charAt(0) == webcamTrueSecond) {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.url, WebViewActivity.http + TdApp.getPrefString(R.string.providerCamKeySecond, R.string.providerCamDefaultSecond) + webcamSecond + code.substring(1) + jpg);
+			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + TdApp.getPrefString(R.string.providerCamKeySecond, R.string.providerCamDefaultSecond) + webcamSecond + code.substring(1) + jpg);
 			context.startActivity(intent);
 		} else if (code.charAt(0) == webcamTrueThird) {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.url, WebViewActivity.http + TdApp.getPrefString(R.string.providerCamKeyThird, R.string.providerCamDefaultThird) + webcamThird + code.substring(1));
+			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + TdApp.getPrefString(R.string.providerCamKeyThird, R.string.providerCamDefaultThird) + webcamThird + code.substring(1));
 			context.startActivity(intent);
 		} else if (code.charAt(0) == webcamTrueFourth) {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.url, WebViewActivity.http + TdApp.getPrefString(R.string.providerCamKeyFourth, R.string.providerCamDefaultFourth) + webcamFourth + code.substring(1));
+			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + TdApp.getPrefString(R.string.providerCamKeyFourth, R.string.providerCamDefaultFourth) + webcamFourth + code.substring(1));
 			context.startActivity(intent);
 		} else {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionRequest, code, 0);
