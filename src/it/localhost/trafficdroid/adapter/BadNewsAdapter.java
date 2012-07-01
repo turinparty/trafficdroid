@@ -19,6 +19,7 @@ public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
 	private static final String bn_acc = "incidente";
 	private static final String bn_anh = "animali";
 	private static final String bn_bkd = "veicolo fermo o avaria";
+	private static final String bn_emv = "colonnine SOS";
 	private static final String bn_fig = "incendio";
 	private static final String bn_fod = "nebbia";
 	private static final String bn_fop = "nebbia a banchi";
@@ -77,6 +78,8 @@ public class BadNewsAdapter extends ArrayAdapter<BadNewsDTO> {
 			drawable = R.drawable.bn_ibu;
 		else if (event.getTitle().contains(bn_fig))
 			drawable = R.drawable.bn_fig;
+		else if (event.getTitle().contains(bn_emv))
+			drawable = R.drawable.bn_emv;
 		else if (event.getTitle().contains(bn_fod))
 			drawable = R.drawable.bn_fod;
 		else if (event.getTitle().contains(bn_ocm))

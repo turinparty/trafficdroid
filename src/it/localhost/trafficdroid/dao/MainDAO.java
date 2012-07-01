@@ -35,6 +35,7 @@ public class MainDAO {
 		int[] autoveloxStreet = resources.getIntArray(R.array.autoveloxStreet);
 		int[] autoveloxFrom = resources.getIntArray(R.array.autoveloxFrom);
 		int[] autoveloxTo = resources.getIntArray(R.array.autoveloxTo);
+		boolean allStreets = TdApp.getPrefBoolean(TdApp.getContext().getString(R.string.allStreetsKey), false);
 		for (int i = 0; i < streetsId.length; i++) {
 			StreetDTO street = new StreetDTO(streetsId[i]);
 			boolean streetEnabled = TdApp.getPrefBoolean(Integer.toString(street.getId()), false);
@@ -42,7 +43,7 @@ public class MainDAO {
 			String[] zonesWebcam = resources.getStringArray(ZoneArray.zonesResWebcam.get((streetsId[i])));
 			String[] zonesName = resources.getStringArray(ZoneArray.zonesResName.get(streetsId[i]));
 			for (int j = 0; j < zonesId.length; j++)
-				if (streetEnabled || TdApp.getPrefBoolean(Integer.toString(zonesId[j]), false)) {
+				if (allStreets || streetEnabled || TdApp.getPrefBoolean(Integer.toString(zonesId[j]), false)) {
 					ZoneDTO zone = new ZoneDTO(zonesId[j], zonesName[j], zonesWebcam[j]);
 					for (int k = 0; k < autoveloxStreet.length; k++) {
 						if (autoveloxStreet[k] == streetsId[i] && zonesId[j] >= autoveloxFrom[k] && zonesId[j] < autoveloxTo[k])
