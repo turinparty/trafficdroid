@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 abstract class AbstractActivity extends Activity {
+	//asd
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
