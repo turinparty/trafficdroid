@@ -22,9 +22,9 @@ public class TrafficParser {
 				int to = Integer.parseInt(segChildrens.item(1).getTextContent());
 				String speed = segChildrens.item(2).getTextContent();
 				for (ZoneDTO zone : street.getZones()) {
-					if (zone.getId() >= from && zone.getId() < to)
+					if (zone.getSpeedLeft() == 0 && zone.getId() >= from && zone.getId() < to)
 						zone.setSpeedLeft(speed);
-					else if (zone.getId() <= from && zone.getId() > to)
+					else if (zone.getSpeedRight() == 0 && zone.getId() < from && zone.getId() >= to)
 						zone.setSpeedRight(speed);
 				}
 			}
