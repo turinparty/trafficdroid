@@ -51,12 +51,12 @@
 
     <string-array name="z143Webcam">
         <item>A20877</item> <!-- A04 km. 125,0 Bivio Fiorenza --> 
+        <item>A14862</item> <!-- A08 km. 2,2 Milano Fiera itinere nord --> 
+        <item>A22296</item> <!-- A08 km. 5,6 Milano Nord itinere nord --> 
+        <item>A18861</item> <!-- A08 km. 7,0 Villoresi itinere sud --> 
         <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
+        <item>A22341</item> <!-- A08 km. 7,6 Villoresi itinere sud --> 
+        <item>A18899</item> <!-- A08 km. 8,9 A08/A09 itinere nord --> 
         <item>-1</item>
         <item>-1</item>
         <item>A18893</item> <!-- A08 km. 13,5 Legnano itinere nord --> 
