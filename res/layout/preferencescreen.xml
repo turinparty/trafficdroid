@@ -40,6 +40,12 @@
 			android:title="@string/providerCamTitleFourth" />
 
 		<EditTextPreference
+			android:defaultValue="@string/providerCamDefaultFive"
+			android:key="@string/providerCamKeyFive"
+			android:summary="@string/providerSummary"
+			android:title="@string/providerCamTitleFive" />
+
+		<EditTextPreference
 			android:defaultValue="@string/providerFuelDefault"
 			android:key="@string/providerFuelKey"
 			android:summary="@string/providerSummary"

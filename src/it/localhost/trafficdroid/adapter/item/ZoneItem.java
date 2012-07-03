@@ -22,6 +22,8 @@ public class ZoneItem extends AbstractChildItem {
 	private static final String webcamSecond = "/webcam/temp-imgs/camsbig/";
 	private static final String webcamThird = "/vp2/vpcam.aspx?camid=";
 	private static final String webcamFourth = "/cgi-bin/cgiwebcam.exe?site=";
+	private static final String webcamFive = "/images/telecamereAutobspd/";
+	private static final String telecamere = "telecamere.";
 	private static final String mobile = "mobile.";
 	private static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
 	private static final String jpg = ".jpg";
@@ -31,6 +33,7 @@ public class ZoneItem extends AbstractChildItem {
 	private static final char webcamTrueSecond = 'C';
 	private static final char webcamTrueThird = 'E';
 	private static final char webcamTrueFourth = 'F';
+	private static final char webcamTrueFive = 'B';
 	private static final char webcamNone = 'H';
 	private ZoneDTO zoneDTO;
 
@@ -91,7 +94,7 @@ public class ZoneItem extends AbstractChildItem {
 			trendRightText.setVisibility(View.VISIBLE);
 		} else
 			trendRightText.setVisibility(View.INVISIBLE);
-		if (zoneDTO.getWebcam().charAt(0) == webcamTrueFirst || zoneDTO.getWebcam().charAt(0) == webcamTrueSecond || zoneDTO.getWebcam().charAt(0) == webcamTrueThird || zoneDTO.getWebcam().charAt(0) == webcamTrueFourth)
+		if (zoneDTO.getWebcam().charAt(0) == webcamTrueFirst || zoneDTO.getWebcam().charAt(0) == webcamTrueSecond || zoneDTO.getWebcam().charAt(0) == webcamTrueThird || zoneDTO.getWebcam().charAt(0) == webcamTrueFourth || zoneDTO.getWebcam().charAt(0) == webcamTrueFive)
 			cam.setImageResource(android.R.drawable.ic_menu_camera);
 		else if (zoneDTO.getWebcam().charAt(0) == webcamNone)
 			cam.setImageResource(android.R.drawable.ic_menu_close_clear_cancel);
@@ -121,17 +124,22 @@ public class ZoneItem extends AbstractChildItem {
 		} else if (code.charAt(0) == webcamTrueSecond) {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + TdApp.getPrefString(R.string.providerCamKeySecond, R.string.providerCamDefaultSecond) + webcamSecond + code.substring(1) + jpg);
+			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + WebViewActivity.www + TdApp.getPrefString(R.string.providerCamKeySecond, R.string.providerCamDefaultSecond) + webcamSecond + code.substring(1) + jpg);
 			context.startActivity(intent);
 		} else if (code.charAt(0) == webcamTrueThird) {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + TdApp.getPrefString(R.string.providerCamKeyThird, R.string.providerCamDefaultThird) + webcamThird + code.substring(1));
+			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + telecamere + TdApp.getPrefString(R.string.providerCamKeyThird, R.string.providerCamDefaultThird) + webcamThird + code.substring(1));
 			context.startActivity(intent);
 		} else if (code.charAt(0) == webcamTrueFourth) {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + TdApp.getPrefString(R.string.providerCamKeyFourth, R.string.providerCamDefaultFourth) + webcamFourth + code.substring(1));
+			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + WebViewActivity.www + TdApp.getPrefString(R.string.providerCamKeyFourth, R.string.providerCamDefaultFourth) + webcamFourth + code.substring(1));
+			context.startActivity(intent);
+		} else if (code.charAt(0) == webcamTrueFive) {
+			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
+			Intent intent = new Intent(context, WebViewActivity.class);
+			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + WebViewActivity.www + TdApp.getPrefString(R.string.providerCamKeyFive, R.string.providerCamDefaultFive) + webcamFive + code.substring(1) + jpg);
 			context.startActivity(intent);
 		} else {
 			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionRequest, code, 0);
