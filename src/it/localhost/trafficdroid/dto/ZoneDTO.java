@@ -50,24 +50,16 @@ public class ZoneDTO implements Serializable {
 		return speedLeft;
 	}
 
-	public void setSpeedLeft(String speedLeft) {
-		try {
-			this.speedLeft = Short.parseShort(speedLeft);
-		} catch (NumberFormatException e) {
-			this.speedLeft = 0;
-		}
+	public void setSpeedLeft(Short speedLeft) {
+		this.speedLeft = speedLeft;
 	}
 
 	public short getSpeedRight() {
 		return speedRight;
 	}
 
-	public void setSpeedRight(String speedRight) {
-		try {
-			this.speedRight = Short.parseShort(speedRight);
-		} catch (NumberFormatException e) {
-			this.speedRight = 0;
-		}
+	public void setSpeedRight(short speedRight) {
+		this.speedRight = speedRight;
 	}
 
 	public byte getCatLeft() {

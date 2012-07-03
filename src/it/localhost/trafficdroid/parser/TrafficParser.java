@@ -1,5 +1,7 @@
 package it.localhost.trafficdroid.parser;
 
+import java.util.ArrayList;
+
 import it.localhost.trafficdroid.dao.TrafficDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
@@ -20,13 +22,20 @@ public class TrafficParser {
 				NodeList segChildrens = segments.item(i).getChildNodes();
 				int from = Integer.parseInt(segChildrens.item(0).getTextContent());
 				int to = Integer.parseInt(segChildrens.item(1).getTextContent());
-				String speed = segChildrens.item(2).getTextContent();
-				for (ZoneDTO zone : street.getZones()) {
-					if (zone.getSpeedLeft() == 0 && zone.getId() >= from && zone.getId() < to)
-						zone.setSpeedLeft(speed);
-					else if (zone.getSpeedRight() == 0 && zone.getId() < from && zone.getId() >= to)
-						zone.setSpeedRight(speed);
-				}
+				short speed = Short.parseShort(segChildrens.item(2).getTextContent());
+				ArrayList<ZoneDTO> zones = street.getZones();
+				int start = 0, end = 0;
+				for (int j = 0; j < zones.size() - 1; j++)
+					if (from == zones.get(j).getId())
+						start = j;
+					else if (to == zones.get(j).getId())
+						end = j;
+				if (start < end)
+					for (int j = start; j <= end; j++)
+						zones.get(j).setSpeedLeft(speed);
+				else
+					for (int j = end; j <= start; j++)
+						zones.get(j).setSpeedRight(speed);
 			}
 		}
 	}
