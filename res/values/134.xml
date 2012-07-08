@@ -290,7 +290,7 @@
         <item>-1</item>
         <item>A19824</item> <!-- A04 km. 137,1 Sesto S.Giovanni itinere ovest -->
         <item>-1</item>
-        <item>-1</item>
+        <item>A22328</item> <!-- A04 km. 138,3 Barr. Milano est -->
         <item>-1</item>
         <item>A19917</item> <!-- A04 km. 142,1 Tangenziale Milano Est itinere est -->
         <item>A21474</item> <!-- A04 km. 147 Agrate itinere ovest -->
@@ -298,35 +298,35 @@
         <item>A21467</item> <!-- A04 km. 151,6 Cavenago itinere ovest -->
         <item>A19809</item> <!-- A04 km. 158,1 Trezzo itinere ovest -->
         <item>A19803</item> <!-- A04 km. 161,6 Capriate itinere ovest -->
-        <item>-1</item>
+        <item>A22279</item> <!-- A04 km. 162,2 Ponte Brembo itinere ovest -->  
         <item>A19798</item> <!-- A04 km. 168,8 Dalmine itinere ovest -->
         <item>A22311</item> <!-- A04 km. 172,6 Bergamo itinere ovest -->
         <item>A21461</item> <!-- A04 km. 180,2 Seriate itinere ovest -->
         <item>A19874</item> <!-- A04 km. 187,2 Grumello itinere est -->
+        <item>A19868</item> <!-- A04 km. 190,5 Ponte Oglio itinere est -->
+        <item>A19861</item> <!-- A04 km. 192,4 Palazzolo itinere est -->
         <item>-1</item>
+        <item>A21450</item> <!-- A04 km. 202,3 Rovato itinere ovest -->
+        <item>A21444</item> <!-- A04 km. 207,0 Ospitaletto itinere ovest -->
+        <item>A19841</item> <!-- A04 km. 214,5 Val Trompia itinere est -->
+        <item>A19772</item> <!-- A04 km. 217,0 Brescia Ovest itinere ovest -->
+        <item>BAXIS01-01</item> <!-- A21/A04 km. 217,73 Dir. Venezia inizio tratta di competenza -->
+        <item>BAXIS03-01</item> <!-- A04 km. 221,56 Dir. Milano Brescia Centro -->
         <item>-1</item>
+        <item>BAXIS05-01</item> <!-- A04 km. 231,95 Dir. Venezia Brescia est -->
         <item>-1</item>
+        <item>BAXIS10-01</item> <!-- A04 km. 244,35 Dir. Milano Desenzano -->
+        <item>BAXIS11-01</item> <!-- A04 km. 245,20 Dir. Venezia Area di servizio Monte Alto -->
+        <item>BAXIS14-01</item> <!-- A04 km. 251 Dir. Venezia Sirmione -->
+        <item>BAXIS16-01</item> <!-- A04 km. 256,1 Dir. Venezia Area parcheggio Frassino est -->
+        <item>BAXIS12-01</item> <!-- A04 km. 259 Dir. Milano Peschiera del Garda -->
+        <item>BAXIS02-02</item> <!-- A04 km. 268,75 Dir. Venezia Area parcheggio Val di Sona -->
+        <item>BAXIS03-02</item> <!-- A04 km. 270,78 Dir. Milano Sommacampagna -->
         <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
+        <item>BAXIS04-02</item> <!-- A04 km. 275,12 Dir. Milano Area di servizio Monte Baldo -->
+        <item>BAXIS05-02</item> <!-- A04 km. 276,15 Dir. Venezia Svincolo A22 -->
+        <item>BAXIS08-02</item> <!-- A04 km. 281 Dir. Milano Verona Sud -->
+        <item>BAXIS11-02</item> <!-- A04 km. 290,10 Dir. Venezia Verona Est -->
         <item>-1</item>
         <item>-1</item>
         <item>-1</item>
