@@ -22,6 +22,17 @@ import android.content.res.Resources;
 
 public class MainDAO {
 	public static final String tdData = "trafficData";
+	private static final String N = "N";
+	private static final String E = "E";
+	private static final String S = "S";
+	private static final String O = "O";
+	private static final String I = "I";
+	private static final String EXT = "Ext";
+	private static final String INT = "Int";
+	private static final String OVEST = "Ovest";
+	private static final String EST = "Est";
+	private static final String SUD = "Sud";
+	private static final String NORD = "Nord";
 	private static final String versionMismatch = "Version Mismatch";
 
 	public static MainDTO create() {
@@ -32,6 +43,7 @@ public class MainDAO {
 		int[] streetsId = resources.getIntArray(R.array.streetId);
 		String[] streetsName = resources.getStringArray(R.array.streetName);
 		String[] streetsTag = resources.getStringArray(R.array.streetTag);
+		String[] streetsDir = resources.getStringArray(R.array.streetDir);
 		int[] autoveloxStreet = resources.getIntArray(R.array.autoveloxStreet);
 		int[] autoveloxFrom = resources.getIntArray(R.array.autoveloxFrom);
 		int[] autoveloxTo = resources.getIntArray(R.array.autoveloxTo);
@@ -56,6 +68,22 @@ public class MainDAO {
 			if (street.getZonesSize() > 0) {
 				street.setName(streetsName[i]);
 				street.setTag(streetsTag[i]);
+				if (streetsDir[i].equals(N)) {
+					street.setDirectionLeft(NORD);
+					street.setDirectionRight(SUD);
+				} else if (streetsDir[i].equals(E)) {
+					street.setDirectionLeft(EST);
+					street.setDirectionRight(OVEST);
+				} else if (streetsDir[i].equals(S)) {
+					street.setDirectionLeft(SUD);
+					street.setDirectionRight(NORD);
+				} else if (streetsDir[i].equals(O)) {
+					street.setDirectionLeft(OVEST);
+					street.setDirectionRight(EST);
+				} else if (streetsDir[i].equals(I)) {
+					street.setDirectionLeft(INT);
+					street.setDirectionRight(EXT);
+				}
 				mainDto.putStreet(street);
 			}
 		}
