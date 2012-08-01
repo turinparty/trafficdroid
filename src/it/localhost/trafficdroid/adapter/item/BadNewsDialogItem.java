@@ -1,7 +1,6 @@
 package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.adapter.BadNewsDialogAdapter;
 import it.localhost.trafficdroid.common.ViewTagger;
 import it.localhost.trafficdroid.dto.BadNewsDTO;
 
@@ -45,7 +44,7 @@ public class BadNewsDialogItem extends AbstractItem {
 	}
 
 	public int getType() {
-		return BadNewsDialogAdapter.itemTypes[0];
+		return itemTypes[0];
 	}
 
 	public View inflateView() {

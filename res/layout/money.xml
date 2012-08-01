@@ -5,60 +5,54 @@
 	android:layout_height="match_parent"
 	android:orientation="vertical" >
 
-	<com.google.ads.AdView
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/from" />
+
+	<AutoCompleteTextView
+		android:id="@+id/moneyFrom"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		ads:adSize="SMART_BANNER"
-		ads:adUnitId="a14d8f6a3c4c2f3"
-		ads:loadAdOnCreate="true"
-		android:gravity="center" />
+		android:completionThreshold="1"
+		android:imeOptions="actionNext"
+		android:inputType="text" />
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:text="@string/to" />
+
+	<AutoCompleteTextView
+		android:id="@+id/moneyTo"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:completionThreshold="1"
+		android:imeOptions="actionDone"
+		android:inputType="text" />
+
+	<include layout="@layout/iab_mrect" />
 
 	<LinearLayout
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:orientation="vertical"
-		android:padding="10dp" >
-
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="@string/from" />
-
-		<AutoCompleteTextView
-			android:id="@+id/moneyFrom"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:completionThreshold="1"
-			android:imeOptions="actionNext"
-			android:inputType="text" />
-
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="10dp"
-			android:text="@string/to" />
-
-		<AutoCompleteTextView
-			android:id="@+id/moneyTo"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:completionThreshold="1"
-			android:imeOptions="actionDone"
-			android:inputType="text" />
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:weightSum="3" >
 
 		<Button
 			android:id="@+id/moneyOk"
-			android:layout_width="match_parent"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
-			android:layout_marginTop="10dp"
+			android:layout_weight="2"
 			android:text="@string/money" />
 
 		<TextView
 			android:id="@+id/money"
-			android:layout_width="wrap_content"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
-			android:layout_gravity="center_horizontal"
-			android:layout_marginTop="20dp"
+			android:layout_weight="1"
+			android:gravity="center"
 			android:textAppearance="?android:attr/textAppearanceLarge" />
 	</LinearLayout>
 

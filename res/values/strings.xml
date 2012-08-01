@@ -3,7 +3,7 @@
 
 	<string name="app_name">TrafficDroid</string>
 	<string name="ok">OK</string>
-	<string name="money">Costo Percorso</string>
+	<string name="money">Costo Autostradale</string>
 	<string name="error">Errore</string>
 	<string name="warning">Attenzione</string>
 	<string name="info">Informazione</string>

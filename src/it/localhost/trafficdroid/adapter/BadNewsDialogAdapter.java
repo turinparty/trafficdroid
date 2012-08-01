@@ -15,13 +15,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 public class BadNewsDialogAdapter extends ArrayAdapter<BadNewsDTO> {
-	public static final byte[] itemTypes = new byte[] { 0, 1 };
+	
 	private ArrayList<AbstractItem> items;
 
 	public BadNewsDialogAdapter(Context context, StreetDTO street) {
 		super(context, R.layout.dialog_item_badnews); // QUALE COSTRUTTORE CHIAMO???
 		items = new ArrayList<AbstractItem>();
-		items.add(new BannerDialogItem(context));
+		items.add(new BannerDialogItem(context, R.layout.iab_mrect));
 		for (BadNewsDTO badNews : street.getBadNews())
 			items.add(new BadNewsDialogItem(context, badNews));
 	}
@@ -47,6 +47,6 @@ public class BadNewsDialogAdapter extends ArrayAdapter<BadNewsDTO> {
 
 	@Override
 	public int getViewTypeCount() {
-		return itemTypes.length;
+		return AbstractItem.itemTypes.length;
 	}
 }

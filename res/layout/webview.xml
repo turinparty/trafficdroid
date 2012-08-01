@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical" >
 
-    <WebView
-        android:id="@id/webview"
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1" />
+	<WebView
+		android:id="@id/webview"
+		android:layout_width="match_parent"
+		android:layout_height="0dip"
+		android:layout_weight="1" />
 
-    <com.google.ads.AdView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="a14d8f6a3c4c2f3"
-        ads:loadAdOnCreate="true"
-        android:gravity="center" />
+	<include layout="@layout/smart_banner" />
 
 </LinearLayout>

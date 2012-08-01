@@ -2,7 +2,6 @@ package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
-import it.localhost.trafficdroid.adapter.MainAdapter;
 import it.localhost.trafficdroid.common.ViewTagger;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import android.content.Context;
@@ -19,7 +18,7 @@ public class StreetItem extends AbstractItem {
 
 	@Override
 	public int getType() {
-		return MainAdapter.itemTypes[0];
+		return itemTypes[3];
 	}
 
 	public View inflateView() {

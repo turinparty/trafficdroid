@@ -130,7 +130,7 @@ public class MainActivity extends AbstractActivity {
 		ExpandableListContextMenuInfo info = (ExpandableListContextMenuInfo) menuInfo;
 		int packedPositionType = ExpandableListView.getPackedPositionType(info.packedPosition);
 		View item = info.targetView;
-		if (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_GROUP || (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_CHILD && ((Integer) ViewTagger.getTag(item, R.id.zoneType)) == MainAdapter.itemTypes[1])) {
+		if (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_GROUP || (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_CHILD && ((Integer) ViewTagger.getTag(item, R.id.zoneType)) == AbstractItem.itemTypes[4])) {
 			getMenuInflater().inflate(R.menu.main_context, menu);
 			menu.getItem(0).setChecked(TdApp.getPrefBoolean(Integer.toString((Integer) ViewTagger.getTag(item, R.id.itemKey)), false));
 			menu.setHeaderTitle((String) ViewTagger.getTag(item, R.id.itemName));
@@ -184,7 +184,7 @@ public class MainActivity extends AbstractActivity {
 		@Override
 		protected void onPostExecute(MainDTO mainDTO) {
 			if (mainDTO != null && mainDTO.getTrafficTime() != null) {
-				setTitle(getString(R.string.app_name) + blank + DateFormat.getTimeFormat(MainActivity.this).format(mainDTO.getTrafficTime()));
+				setTitle(DateFormat.getTimeFormat(MainActivity.this).format(mainDTO.getTrafficTime()) + blank + getString(R.string.app_name));
 				listView.setAdapter(new MainAdapter(MainActivity.this, mainDTO));
 				registerForContextMenu(listView);
 				for (int i = 0; i < listView.getExpandableListAdapter().getGroupCount(); i++)

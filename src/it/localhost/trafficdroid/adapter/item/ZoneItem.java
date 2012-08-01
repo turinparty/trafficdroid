@@ -1,14 +1,14 @@
 package it.localhost.trafficdroid.adapter.item;
 
-import java.util.GregorianCalendar;
-
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.WebViewActivity;
-import it.localhost.trafficdroid.adapter.MainAdapter;
 import it.localhost.trafficdroid.common.TdAnalytics;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.common.ViewTagger;
 import it.localhost.trafficdroid.dto.ZoneDTO;
+
+import java.util.GregorianCalendar;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -43,7 +43,7 @@ public class ZoneItem extends AbstractItem {
 	}
 
 	public int getType() {
-		return MainAdapter.itemTypes[1];
+		return itemTypes[4];
 	}
 
 	public View inflateView() {

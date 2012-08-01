@@ -1,21 +1,22 @@
 package it.localhost.trafficdroid.adapter.item;
 
-import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.adapter.BadNewsDialogAdapter;
 import android.content.Context;
 import android.view.View;
 
 public class BannerDialogItem extends AbstractItem {
-	public BannerDialogItem(Context context) {
+	private int layout;
+
+	public BannerDialogItem(Context context, int layout) {
 		super(context);
+		this.layout = layout;
 	}
 
 	public int getType() {
-		return BadNewsDialogAdapter.itemTypes[1];
+		return itemTypes[2];
 	}
 
 	public View inflateView() {
-		View view = inflater.inflate(R.layout.banner, null);
+		View view = inflater.inflate(layout, null);
 		return view;
 	}
 

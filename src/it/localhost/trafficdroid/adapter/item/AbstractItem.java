@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 public abstract class AbstractItem {
+	public static final byte[] itemTypes = new byte[] { 0, 1, 2, 3, 4 };
 	protected Context context;
 	protected LayoutInflater inflater;
 
