@@ -90,7 +90,7 @@ public class MainAdapter extends BaseExpandableListAdapter {
 
 	@Override
 	public int getChildTypeCount() {
-		return MainAdapter.itemTypes.length;
+		return itemTypes.length;
 	}
 
 	@Override
