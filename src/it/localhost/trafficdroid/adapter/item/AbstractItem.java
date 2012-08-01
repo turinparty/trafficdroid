@@ -12,6 +12,10 @@ public abstract class AbstractItem {
 
 	public abstract void fillView(View view);
 
+	public abstract int getType();
+
+	public abstract void onClick();
+
 	AbstractItem(Context context) {
 		this.context = context;
 		this.inflater = LayoutInflater.from(context);

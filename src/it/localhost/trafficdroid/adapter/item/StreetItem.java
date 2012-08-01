@@ -2,6 +2,7 @@ package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
+import it.localhost.trafficdroid.adapter.MainAdapter;
 import it.localhost.trafficdroid.common.ViewTagger;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import android.content.Context;
@@ -14,6 +15,11 @@ public class StreetItem extends AbstractItem {
 	public StreetItem(Context context, StreetDTO streetDTO) {
 		super(context);
 		this.streetDTO = streetDTO;
+	}
+
+	@Override
+	public int getType() {
+		return MainAdapter.itemTypes[0];
 	}
 
 	public View inflateView() {
@@ -33,5 +39,9 @@ public class StreetItem extends AbstractItem {
 			streetText2.setVisibility(View.VISIBLE);
 		} else
 			streetText2.setVisibility(View.INVISIBLE);
+	}
+
+	@Override
+	public void onClick() {
 	}
 }

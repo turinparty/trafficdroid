@@ -2,7 +2,7 @@ package it.localhost.trafficdroid.activity;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.MainAdapter;
-import it.localhost.trafficdroid.adapter.item.AbstractChildItem;
+import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.common.ViewTagger;
 import it.localhost.trafficdroid.dao.MainDAO;
@@ -62,7 +62,7 @@ public class MainActivity extends AbstractActivity {
 			tdListener.sendWakefulWork(TdApp.getContext());
 		listView.setOnChildClickListener(new OnChildClickListener() {
 			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-				((AbstractChildItem) parent.getExpandableListAdapter().getChild(groupPosition, childPosition)).onClick();
+				((AbstractItem) parent.getExpandableListAdapter().getChild(groupPosition, childPosition)).onClick();
 				return true;
 			}
 		});

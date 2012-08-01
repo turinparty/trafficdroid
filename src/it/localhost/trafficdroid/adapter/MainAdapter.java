@@ -1,6 +1,5 @@
 package it.localhost.trafficdroid.adapter;
 
-import it.localhost.trafficdroid.adapter.item.AbstractChildItem;
 import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.adapter.item.BadNewsItem;
 import it.localhost.trafficdroid.adapter.item.StreetItem;
@@ -20,15 +19,15 @@ import android.widget.BaseExpandableListAdapter;
 public class MainAdapter extends BaseExpandableListAdapter {
 	public static final String expanded = "Expanded";
 	private ArrayList<AbstractItem> groupItems;
-	private ArrayList<ArrayList<AbstractChildItem>> childItems;
+	private ArrayList<ArrayList<AbstractItem>> childItems;
 	public static final byte[] itemTypes = new byte[] { 0, 1, 2 };
 
 	public MainAdapter(Context context, MainDTO mainDTO) {
 		groupItems = new ArrayList<AbstractItem>();
-		childItems = new ArrayList<ArrayList<AbstractChildItem>>();
+		childItems = new ArrayList<ArrayList<AbstractItem>>();
 		for (StreetDTO street : mainDTO.getStreets()) {
 			groupItems.add(new StreetItem(context, street));
-			ArrayList<AbstractChildItem> childItems = new ArrayList<AbstractChildItem>();
+			ArrayList<AbstractItem> childItems = new ArrayList<AbstractItem>();
 			childItems.add(new BadNewsItem(context, street));
 			for (ZoneDTO zone : street.getZones())
 				childItems.add(new ZoneItem(context, zone));
@@ -45,7 +44,7 @@ public class MainAdapter extends BaseExpandableListAdapter {
 	}
 
 	public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-		AbstractChildItem rowModel = childItems.get(groupPosition).get(childPosition);
+		AbstractItem rowModel = childItems.get(groupPosition).get(childPosition);
 		if (convertView == null)
 			convertView = rowModel.inflateView();
 		rowModel.fillView(convertView);

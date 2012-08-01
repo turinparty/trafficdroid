@@ -17,7 +17,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ZoneItem extends AbstractChildItem {
+public class ZoneItem extends AbstractItem {
 	private static final String webcamFirst = "/autostrade-mobile/popupTelecamera.do?ua=Android%201.1&tlc=";
 	private static final String webcamSecond = "/webcam/temp-imgs/camsbig/";
 	private static final String webcamThird = "/vp2/vpcam.aspx?camid=";

@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class BadNewsItem extends AbstractChildItem {
+public class BadNewsItem extends AbstractItem {
 	static final String badNewsLabel = "Bad News: ";
 	private StreetDTO streetDTO;
 
