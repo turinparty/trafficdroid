@@ -29,11 +29,11 @@ public class MainAdapter extends BaseExpandableListAdapter {
 		childItems = new ArrayList<ArrayList<AbstractChildItem>>();
 		for (StreetDTO street : mainDTO.getStreets()) {
 			groupItems.add(new StreetItem(context, street));
-			ArrayList<AbstractChildItem> childItem = new ArrayList<AbstractChildItem>();
-			childItem.add(new BadNewsItem(context, street));
+			ArrayList<AbstractChildItem> childItems = new ArrayList<AbstractChildItem>();
+			childItems.add(new BadNewsItem(context, street));
 			for (ZoneDTO zone : street.getZones())
-				childItem.add(new ZoneItem(context, zone));
-			this.childItems.add(childItem);
+				childItems.add(new ZoneItem(context, zone));
+			this.childItems.add(childItems);
 		}
 	}
 
