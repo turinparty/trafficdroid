@@ -24,7 +24,6 @@ public class MainAdapter extends BaseExpandableListAdapter {
 	public static final byte[] itemTypes = new byte[] { 0, 1, 2 };
 
 	public MainAdapter(Context context, MainDTO mainDTO) {
-		super();
 		groupItems = new ArrayList<AbstractItem>();
 		childItems = new ArrayList<ArrayList<AbstractChildItem>>();
 		for (StreetDTO street : mainDTO.getStreets()) {

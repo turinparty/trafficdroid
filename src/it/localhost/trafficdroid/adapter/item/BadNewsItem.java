@@ -55,11 +55,6 @@ public class BadNewsItem extends AbstractChildItem {
 			listview.setAdapter(new BadNewsAdapter(context, R.layout.dialog_item_badnews, streetDTO.getBadNews()));
 			dialog.setContentView(listview);
 			dialog.show();
-			Dialog banner = new Dialog(context);
-			banner.setTitle("Banner");
-			View view = LayoutInflater.from(context).inflate(R.layout.banner, null);
-			banner.setContentView(view);
-			banner.show();
 		}
 	}
 }
