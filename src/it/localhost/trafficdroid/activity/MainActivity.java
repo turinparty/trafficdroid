@@ -1,6 +1,6 @@
 package it.localhost.trafficdroid.activity;
 
-import it.localhost.trafficdroid.paid.R;
+import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.MainAdapter;
 import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.common.TdApp;

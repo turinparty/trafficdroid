@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="app_name">TrafficDroid Premium</string>
+	<string name="app_name">TrafficDroid</string>
 	<string name="ok">OK</string>
 	<string name="money">Costo Autostradale</string>
 	<string name="error">Errore</string>

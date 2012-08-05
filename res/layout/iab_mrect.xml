@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<com.google.ads.AdView xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_gravity="center"
+	ads:adSize="IAB_MRECT"
+	ads:adUnitId="a14d8f6a3c4c2f3"
+	ads:loadAdOnCreate="true"
+	android:gravity="center" />
