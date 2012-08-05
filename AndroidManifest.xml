@@ -2,12 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	package="it.localhost.trafficdroid"
 	android:installLocation="preferExternal"
-	android:versionCode="109"
-	android:versionName="1.15.3 shutUpAndTakeMyMoney" >
+	android:versionCode="110"
+	android:versionName="1.15.4 shutUpAndTakeMyMoney" >
 
 	<uses-sdk
 		android:minSdkVersion="10"
-		android:targetSdkVersion="15" />
+		android:targetSdkVersion="16" />
 
 	<supports-screens
 		android:largeScreens="true"
