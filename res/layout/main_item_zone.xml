@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical" >
 
-    <TextView
-        android:id="@id/zoneName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center" />
+	<TextView
+		android:id="@id/zoneName"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="7" >
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:weightSum="7" >
 
-        <ImageView
-            android:id="@id/trendLeft"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:contentDescription="@string/trendSpeedTitle" />
+		<ImageView
+			android:id="@id/trendLeft"
+			android:layout_width="match_parent"
+			android:layout_height="20dp"
+			android:layout_gravity="center"
+			android:layout_weight="1"
+			android:contentDescription="@string/trendSpeedTitle" />
 
-        <TextView
-            android:id="@id/zoneSpeedLeft"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center" />
+		<TextView
+			android:id="@id/zoneSpeedLeft"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:gravity="center" />
 
-        <ImageView
-            android:id="@id/zoneAutoveloxLeft"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_weight="1"
-            android:contentDescription="@string/warning"
-            android:gravity="center"
-            android:src="@drawable/autovelox" />
+		<ImageView
+			android:id="@id/zoneAutoveloxLeft"
+			android:layout_width="match_parent"
+			android:layout_height="20dp"
+			android:layout_weight="1"
+			android:contentDescription="@string/warning"
+			android:gravity="center"
+			android:src="@drawable/autovelox" />
 
-        <ImageView
-            android:id="@id/zoneCam"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_weight="1"
-            android:contentDescription="@string/providerCamDefault"
-            android:gravity="center" />
+		<ImageView
+			android:id="@id/zoneCam"
+			android:layout_width="match_parent"
+			android:layout_height="20dp"
+			android:layout_weight="1"
+			android:contentDescription="@string/providerCamDefault"
+			android:gravity="center" />
 
-        <ImageView
-            android:id="@id/zoneAutoveloxRight"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_weight="1"
-            android:contentDescription="@string/warning"
-            android:gravity="center"
-            android:src="@drawable/autovelox" />
+		<ImageView
+			android:id="@id/zoneAutoveloxRight"
+			android:layout_width="match_parent"
+			android:layout_height="20dp"
+			android:layout_weight="1"
+			android:contentDescription="@string/warning"
+			android:gravity="center"
+			android:src="@drawable/autovelox" />
 
-        <TextView
-            android:id="@id/zoneSpeedRight"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center" />
+		<TextView
+			android:id="@id/zoneSpeedRight"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1"
+			android:gravity="center" />
 
-        <ImageView
-            android:id="@id/trendRight"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:contentDescription="@string/trendSpeedTitle" />
-    </LinearLayout>
+		<ImageView
+			android:id="@id/trendRight"
+			android:layout_width="match_parent"
+			android:layout_height="20dp"
+			android:layout_gravity="center"
+			android:layout_weight="1"
+			android:contentDescription="@string/trendSpeedTitle" />
+	</LinearLayout>
 
 </LinearLayout>
