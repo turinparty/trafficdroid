@@ -1,6 +1,6 @@
 package it.localhost.trafficdroid.common;
 
-import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.paid.R;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;

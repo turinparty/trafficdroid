@@ -13,6 +13,4 @@
 		android:layout_weight="1"
 		android:cacheColorHint="#00000000" />
 
-	<include layout="@layout/smart_banner" />
-
 </LinearLayout>

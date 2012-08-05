@@ -1,9 +1,7 @@
 package it.localhost.trafficdroid.adapter;
 
-import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.adapter.item.BadNewsItem;
-import it.localhost.trafficdroid.adapter.item.BannerDialogItem;
 import it.localhost.trafficdroid.adapter.item.StreetItem;
 import it.localhost.trafficdroid.adapter.item.ZoneItem;
 import it.localhost.trafficdroid.common.TdApp;
@@ -29,7 +27,6 @@ public class MainAdapter extends BaseExpandableListAdapter {
 		for (StreetDTO street : mainDTO.getStreets()) {
 			groupItems.add(new StreetItem(context, street));
 			ArrayList<AbstractItem> childItems = new ArrayList<AbstractItem>();
-			childItems.add(new BannerDialogItem(context, R.layout.smart_banner));
 			childItems.add(new BadNewsItem(context, street));
 			for (ZoneDTO zone : street.getZones())
 				childItems.add(new ZoneItem(context, zone));

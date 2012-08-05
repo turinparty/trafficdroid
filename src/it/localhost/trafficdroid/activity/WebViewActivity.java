@@ -1,6 +1,6 @@
 package it.localhost.trafficdroid.activity;
 
-import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.paid.R;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;

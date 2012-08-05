@@ -1,9 +1,8 @@
 package it.localhost.trafficdroid.adapter;
 
-import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.paid.R;
 import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.adapter.item.BadNewsDialogItem;
-import it.localhost.trafficdroid.adapter.item.BannerDialogItem;
 import it.localhost.trafficdroid.dto.BadNewsDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 
@@ -21,7 +20,6 @@ public class BadNewsDialogAdapter extends ArrayAdapter<BadNewsDTO> {
 	public BadNewsDialogAdapter(Context context, StreetDTO street) {
 		super(context, R.layout.dialog_item_badnews); // QUALE COSTRUTTORE CHIAMO???
 		items = new ArrayList<AbstractItem>();
-		items.add(new BannerDialogItem(context, R.layout.iab_mrect));
 		for (BadNewsDTO badNews : street.getBadNews())
 			items.add(new BadNewsDialogItem(context, badNews));
 	}

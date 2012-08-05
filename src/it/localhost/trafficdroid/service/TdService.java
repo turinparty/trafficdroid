@@ -1,6 +1,6 @@
 package it.localhost.trafficdroid.service;
 
-import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.paid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.MainDAO;

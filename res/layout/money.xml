@@ -32,8 +32,6 @@
 		android:imeOptions="actionDone"
 		android:inputType="text" />
 
-	<include layout="@layout/iab_mrect" />
-
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
