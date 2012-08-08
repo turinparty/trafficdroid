@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Via Claudia Braccianese -->
 <resources>
 
-    <string-array name="z922Name">
-        <item>La Storta/Innesto Ss2 Cassia</item>
-        <item>Osteria Nuova</item>
-        <item>Bivio Per Vigna Di Valle</item>
-        <item>Bracciano</item>
-        <item>Manziana</item>
-        <item>Oriolo Romano</item>
-        <item>Vejano</item>
-        <item>Querce D\'orlando/Innesto Ss2 Cassia</item>
-    </string-array>
+	<string-array name="z922Name">
+		<item>La Storta/Innesto Ss2 Cassia</item>
+		<item>Osteria Nuova</item>
+		<item>Bivio Per Vigna Di Valle</item>
+		<item>Bracciano</item>
+		<item>Manziana</item>
+		<item>Oriolo Romano</item>
+		<item>Vejano</item>
+		<item>Querce D\'orlando/Innesto Ss2 Cassia</item>
+	</string-array>
 
-    <integer-array name="z922Id">
-        <item>11766</item>
-        <item>11767</item>
-        <item>11768</item>
-        <item>11769</item>
-        <item>11770</item>
-        <item>11771</item>
-        <item>11772</item>
-        <item>11773</item>
-    </integer-array>
+	<integer-array name="z922Id">
+		<item>11766</item>
+		<item>11767</item>
+		<item>11768</item>
+		<item>11769</item>
+		<item>11770</item>
+		<item>11771</item>
+		<item>11772</item>
+		<item>11773</item>
+	</integer-array>
 
-    <string-array name="z922Webcam">
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-    </string-array>
+	<string-array name="z922Webcam">
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+	</string-array>
 
 </resources>

@@ -1,94 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Genova - Gravellona Toce -->
 <resources>
 
-    <string-array name="z168Name">
-        <item>Allacciamento A10 Genova-Ventimiglia</item>
-        <item>Turchino</item>
-        <item>Masone</item>
-        <item>Stura</item>
-        <item>Ovada</item>
-        <item>Allacciamento Diram. Predosa-Bettole</item>
-        <item>Bormida</item>
-        <item>Alessandria Sud</item>
-        <item>Allacciamento A21 Torino-Piacenza-Brescia</item>
-        <item>Monferrato</item>
-        <item>Casale Monferrato Sud</item>
-        <item>Casale Monferrato Nord</item>
-        <item>Allacciamento Diramazione Stroppiana-Santhia\'</item>
-        <item>Sesia</item>
-        <item>Vercelli Est</item>
-        <item>Allacciamento A4 Torino-Trieste</item>
-        <item>Romagnano Sesia-Ghemme</item>
-        <item>Borgomanero</item>
-        <item>Agogna</item>
-        <item>Allacciamento Diramazione Gallarate-Gattico</item>
-        <item>Arona</item>
-        <item>Barriera Lago Maggiore</item>
-        <item>Svincolo Di Meina</item>
-        <item>Svincolo Di Carpugnino</item>
-        <item>Svincolo Di Baveno</item>
-        <item>Svincolo Gravellona Toce-Ss34 Lago Maggiore</item>
-        <item>Svincolo Ss33 Del Sempione</item>
-    </string-array>
+	<string-array name="z168Name">
+		<item>Allacciamento A10 Genova-Ventimiglia</item>
+		<item>Turchino</item>
+		<item>Masone</item>
+		<item>Stura</item>
+		<item>Ovada</item>
+		<item>Allacciamento Diram. Predosa-Bettole</item>
+		<item>Bormida</item>
+		<item>Alessandria Sud</item>
+		<item>Allacciamento A21 Torino-Piacenza-Brescia</item>
+		<item>Monferrato</item>
+		<item>Casale Monferrato Sud</item>
+		<item>Casale Monferrato Nord</item>
+		<item>Allacciamento Diramazione Stroppiana-Santhia\'</item>
+		<item>Sesia</item>
+		<item>Vercelli Est</item>
+		<item>Allacciamento A4 Torino-Trieste</item>
+		<item>Romagnano Sesia-Ghemme</item>
+		<item>Borgomanero</item>
+		<item>Agogna</item>
+		<item>Allacciamento Diramazione Gallarate-Gattico</item>
+		<item>Arona</item>
+		<item>Barriera Lago Maggiore</item>
+		<item>Svincolo Di Meina</item>
+		<item>Svincolo Di Carpugnino</item>
+		<item>Svincolo Di Baveno</item>
+		<item>Svincolo Gravellona Toce-Ss34 Lago Maggiore</item>
+		<item>Svincolo Ss33 Del Sempione</item>
+	</string-array>
 
-    <integer-array name="z168Id">
-        <item>1935</item>
-        <item>1936</item>
-        <item>1937</item>
-        <item>1938</item>
-        <item>1939</item>
-        <item>1940</item>
-        <item>1941</item>
-        <item>1942</item>
-        <item>1943</item>
-        <item>1944</item>
-        <item>1945</item>
-        <item>1946</item>
-        <item>1947</item>
-        <item>1948</item>
-        <item>1949</item>
-        <item>1950</item>
-        <item>1951</item>
-        <item>1952</item>
-        <item>1953</item>
-        <item>1954</item>
-        <item>1955</item>
-        <item>1956</item>
-        <item>13989</item>
-        <item>1957</item>
-        <item>1958</item>
-        <item>1959</item>
-        <item>1960</item>
-    </integer-array>
+	<integer-array name="z168Id">
+		<item>1935</item>
+		<item>1936</item>
+		<item>1937</item>
+		<item>1938</item>
+		<item>1939</item>
+		<item>1940</item>
+		<item>1941</item>
+		<item>1942</item>
+		<item>1943</item>
+		<item>1944</item>
+		<item>1945</item>
+		<item>1946</item>
+		<item>1947</item>
+		<item>1948</item>
+		<item>1949</item>
+		<item>1950</item>
+		<item>1951</item>
+		<item>1952</item>
+		<item>1953</item>
+		<item>1954</item>
+		<item>1955</item>
+		<item>1956</item>
+		<item>13989</item>
+		<item>1957</item>
+		<item>1958</item>
+		<item>1959</item>
+		<item>1960</item>
+	</integer-array>
 
-    <string-array name="z168Webcam">
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-    </string-array>
+	<string-array name="z168Webcam">
+		<item>-1</item>
+		<item>-1</item>
+		<item>A19440</item> <!-- A26 km. 7,3 Masone itinere nord -->
+		<item>-1</item>
+		<item>A17927</item> <!-- A26 km. 29,8 Ovada itinere sud -->
+		<item>A19428</item> <!-- A26 km. 44,5 All.A26/D26 itinere nord -->
+		<item>-1</item>
+		<item>A19408</item> <!-- A26 km. 57,1 Alessandria Sud itinere nord -->
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>A14873</item> <!-- A26 km. 101,2 Allacc. A26-D36 itinere nord -->
+		<item>-1</item>
+		<item>-1</item>
+		<item>A19383</item> <!-- A26 km. 130,6 A26/A4 itinere sud -->
+		<item>A11427</item> <!-- A26 km. 143,0 Romagnano itinere nord -->
+		<item>A19370</item> <!-- A26 km. 151,1 Borgomanero itinere nord -->
+		<item>-1</item>
+		<item>A11421</item> <!-- A26 km. 157,9 A26/D8 itinere nord -->
+		<item>A19359</item> <!-- A26 km. 166,4 Arona itinere sud -->
+		<item>-1</item>
+		<item>-1</item>
+		<item>A14693</item> <!-- A26 km. 181,4 Carpugnino itinere nord -->
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+	</string-array>
 
 </resources>

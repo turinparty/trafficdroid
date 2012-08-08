@@ -1,106 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Torino - Courmayeur -->
 <resources>
 
-    <string-array name="z140Name">
-        <item>Svincolo Torino Corso Giulio Cesare</item>
-        <item>Settimo Est</item>
-        <item>Allacciamento A05 - Tangenziale di Torino</item>
-        <item>Barriera Di Torino Nord</item>
-        <item>Settimo Nord</item>
-        <item>Volpiano</item>
-        <item>S. Giorgio Canavese</item>
-        <item>Scarmagno</item>
-        <item>Scarmagno</item>
-        <item>Allacciamento Raccordo A4-A5</item>
-        <item>Ivrea</item>
-        <item>Quincinetto</item>
-        <item>Pont Saint Martin</item>
-        <item>Verres</item>
-        <item>Chatillon-Saint Vincent</item>
-        <item>Saint Vincent-Chatillon</item>
-        <item>Nus</item>
-        <item>Les Iles De Brissogne Nord</item>
-        <item>Aosta Gran S. Bernardo</item>
-        <item>Barriera Di Aosta  Monte Bianco</item>
-        <item>Aosta Est</item>
-        <item>Allacciamento A5/Controllo Merci Aosta</item>
-        <item>Allacciamento Controllo Merci AO / A5</item>
-        <item>Autoporto Aosta Sud</item>
-        <item>SVINCOLO AOSTA EST-AUTOPORTO</item>
-        <item>SVINCOLO LIBERO AOSTA OVEST</item>
-        <item>Svincolo Aosta Ovest-Aymavilles</item>
-        <item>Svincolo Morgex (entrata Direzione Sud)</item>
-        <item>ENTRATA COURMAYEUR SUD</item>
-        <item>USCITA COURMAYEUR SUD</item>
-        <item>Allacciamento A05-SS26DIR</item>
-    </string-array>
+	<string-array name="z140Name">
+		<item>Svincolo Torino Corso Giulio Cesare</item>
+		<item>Settimo Est</item>
+		<item>Allacciamento A05 - Tangenziale di Torino</item>
+		<item>Barriera Di Torino Nord</item>
+		<item>Settimo Nord</item>
+		<item>Volpiano</item>
+		<item>S. Giorgio Canavese</item>
+		<item>Scarmagno</item>
+		<item>Scarmagno</item>
+		<item>Allacciamento Raccordo A4-A5</item>
+		<item>Ivrea</item>
+		<item>Quincinetto</item>
+		<item>Pont Saint Martin</item>
+		<item>Verres</item>
+		<item>Chatillon-Saint Vincent</item>
+		<item>Saint Vincent-Chatillon</item>
+		<item>Nus</item>
+		<item>Les Iles De Brissogne Nord</item>
+		<item>Aosta Gran S. Bernardo</item>
+		<item>Barriera Di Aosta  Monte Bianco</item>
+		<item>Aosta Est</item>
+		<item>Allacciamento A5/Controllo Merci Aosta</item>
+		<item>Allacciamento Controllo Merci AO / A5</item>
+		<item>Autoporto Aosta Sud</item>
+		<item>SVINCOLO AOSTA EST-AUTOPORTO</item>
+		<item>SVINCOLO LIBERO AOSTA OVEST</item>
+		<item>Svincolo Aosta Ovest-Aymavilles</item>
+		<item>Svincolo Morgex (entrata Direzione Sud)</item>
+		<item>ENTRATA COURMAYEUR SUD</item>
+		<item>USCITA COURMAYEUR SUD</item>
+		<item>Allacciamento A05-SS26DIR</item>
+	</string-array>
 
-    <integer-array name="z140Id">
-        <item>1397</item>
-        <item>13994</item>
-        <item>14007</item>
-        <item>1398</item>
-        <item>14024</item>
-        <item>1399</item>
-        <item>1400</item>
-        <item>1401</item>
-        <item>13488</item>
-        <item>1402</item>
-        <item>1403</item>
-        <item>1404</item>
-        <item>1405</item>
-        <item>1406</item>
-        <item>1407</item>
-        <item>1408</item>
-        <item>1409</item>
-        <item>13995</item>
-        <item>14009</item>
-        <item>1410</item>
-        <item>13997</item>
-        <item>14011</item>
-        <item>14012</item>
-        <item>1411</item>
-        <item>14013</item>
-        <item>14014</item>
-        <item>1413</item>
-        <item>1414</item>
-        <item>14015</item>
-        <item>13998</item>
-        <item>14169</item>
-    </integer-array>
+	<integer-array name="z140Id">
+		<item>1397</item>
+		<item>13994</item>
+		<item>14007</item>
+		<item>1398</item>
+		<item>14024</item>
+		<item>1399</item>
+		<item>1400</item>
+		<item>1401</item>
+		<item>13488</item>
+		<item>1402</item>
+		<item>1403</item>
+		<item>1404</item>
+		<item>1405</item>
+		<item>1406</item>
+		<item>1407</item>
+		<item>1408</item>
+		<item>1409</item>
+		<item>13995</item>
+		<item>14009</item>
+		<item>1410</item>
+		<item>13997</item>
+		<item>14011</item>
+		<item>14012</item>
+		<item>1411</item>
+		<item>14013</item>
+		<item>14014</item>
+		<item>1413</item>
+		<item>1414</item>
+		<item>14015</item>
+		<item>13998</item>
+		<item>14169</item>
+	</integer-array>
 
-    <string-array name="z140Webcam">
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-    </string-array>
+	<string-array name="z140Webcam">
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>A13178</item> <!-- A5 km. 110,9 LES CRETES N 001 -->
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>A13894</item> <!-- A5 km. 130,6 SV. MORGEX 600 -->
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+	</string-array>
 
 </resources>

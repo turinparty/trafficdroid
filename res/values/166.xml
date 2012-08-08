@@ -1,91 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Roma - Teramo -->
 <resources>
 
-    <string-array name="z166Name">
-        <item>Allacciamento G.R.A.</item>
-        <item>Settecamini (C.A.R.)</item>
-        <item>Ponte di Nona</item>
-        <item>Svincolo Di Lunghezza</item>
-        <item>Barriera Di Roma Est</item>
-        <item>Colle Tasso</item>
-        <item>Allacciamento A1 Milano Napoli</item>
-        <item>Tivoli</item>
-        <item>Castel Madama</item>
-        <item>Vicovaro-Mandela</item>
-        <item>Civita</item>
-        <item>Carsoli-Oricola</item>
-        <item>Tagliacozzo</item>
-        <item>Allacciamento A25 Torano-Pescara</item>
-        <item>Valle Del Salto</item>
-        <item>Tornimparte</item>
-        <item>Valle Aterno</item>
-        <item>L\'aquila Ovest</item>
-        <item>L\'aquila Est</item>
-        <item>Assergi</item>
-        <item>Colledara-San Gabriele</item>
-        <item>Barriera Di Teramo</item>
-        <item>Svincolo Di Basciano-Villa Vomano</item>
-        <item>Svincolo Di Val Vomano</item>
-        <item>Cartecchio</item>
-        <item>Teramo</item>
-    </string-array>
+	<string-array name="z166Name">
+		<item>Allacciamento G.R.A.</item>
+		<item>Settecamini (C.A.R.)</item>
+		<item>Ponte di Nona</item>
+		<item>Svincolo Di Lunghezza</item>
+		<item>Barriera Di Roma Est</item>
+		<item>Colle Tasso</item>
+		<item>Allacciamento A1 Milano Napoli</item>
+		<item>Tivoli</item>
+		<item>Castel Madama</item>
+		<item>Vicovaro-Mandela</item>
+		<item>Civita</item>
+		<item>Carsoli-Oricola</item>
+		<item>Tagliacozzo</item>
+		<item>Allacciamento A25 Torano-Pescara</item>
+		<item>Valle Del Salto</item>
+		<item>Tornimparte</item>
+		<item>Valle Aterno</item>
+		<item>L\'aquila Ovest</item>
+		<item>L\'aquila Est</item>
+		<item>Assergi</item>
+		<item>Colledara-San Gabriele</item>
+		<item>Barriera Di Teramo</item>
+		<item>Svincolo Di Basciano-Villa Vomano</item>
+		<item>Svincolo Di Val Vomano</item>
+		<item>Cartecchio</item>
+		<item>Teramo</item>
+	</string-array>
 
-    <integer-array name="z166Id">
-        <item>1896</item>
-        <item>14002</item>
-        <item>14189</item>
-        <item>1897</item>
-        <item>1899</item>
-        <item>1900</item>
-        <item>1901</item>
-        <item>1902</item>
-        <item>1903</item>
-        <item>1904</item>
-        <item>1905</item>
-        <item>1906</item>
-        <item>1907</item>
-        <item>1908</item>
-        <item>1909</item>
-        <item>1910</item>
-        <item>1911</item>
-        <item>1912</item>
-        <item>1913</item>
-        <item>1914</item>
-        <item>1915</item>
-        <item>1916</item>
-        <item>1917</item>
-        <item>1918</item>
-        <item>14190</item>
-        <item>1919</item>
-    </integer-array>
+	<integer-array name="z166Id">
+		<item>1896</item>
+		<item>14002</item>
+		<item>14189</item>
+		<item>1897</item>
+		<item>1899</item>
+		<item>1900</item>
+		<item>1901</item>
+		<item>1902</item>
+		<item>1903</item>
+		<item>1904</item>
+		<item>1905</item>
+		<item>1906</item>
+		<item>1907</item>
+		<item>1908</item>
+		<item>1909</item>
+		<item>1910</item>
+		<item>1911</item>
+		<item>1912</item>
+		<item>1913</item>
+		<item>1914</item>
+		<item>1915</item>
+		<item>1916</item>
+		<item>1917</item>
+		<item>1918</item>
+		<item>14190</item>
+		<item>1919</item>
+	</integer-array>
 
-    <string-array name="z166Webcam">
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-    </string-array>
+	<string-array name="z166Webcam">
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>A6365</item> <!-- A24 km. 074,6 Valle del Salto Dx -->
+		<item>A8155</item> <!-- A24 km 079,7 San Rocco Dx -->
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>A6297</item> <!-- A24 km. 127,5 Gran Sasso lato TE -->
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+	</string-array>
 
 </resources>

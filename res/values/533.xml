@@ -1,130 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Pontina -->
 <resources>
 
-    <string-array name="z533Name">
-        <item>Roma Centro</item>
-        <item>Roma Eur/V.Le Oceano Pacifico</item>
-        <item>Svincolo Via Di Decima/Ospedale S.Raffaele</item>
-        <item>Svincolo Grande Raccordo Anulare</item>
-        <item>Svincolo Mostacciano</item>
-        <item>Svincolo Tor De\' Cenci</item>
-        <item>Via Di Decima/Castel Porziano (direzione Lt)</item>
-        <item>Via Decima-Castel Porziano (direzione Rm)</item>
-        <item>Svincolo Pratica Di Mare/Torvajanica</item>
-        <item>Svincolo Castel Romano/Trigoria</item>
-        <item>Svincolo Monte D\'oro</item>
-        <item>Uscita Pomezia Nord</item>
-        <item>Uscita Pomezia Centro/Castelli Romani</item>
-        <item>Uscita Pomezia Sud/Maggiona</item>
-        <item>Svincolo Pontina Vecchia</item>
-        <item>Svincolo Strampelli</item>
-        <item>Svincolo Ardeatina</item>
-        <item>Svincolo Apriliana</item>
-        <item>Svincolo Sottopasso Via Del Tufetto</item>
-        <item>Svincolo Fossignano/Valle Lata</item>
-        <item>Svincolo Riserva Nuova/Via Delle Valli</item>
-        <item>Svincolo Aprilia/Innesto Ss207 Nettunense</item>
-        <item>Via Del Commercio/Via Mascagni</item>
-        <item>Viale Europa</item>
-        <item>Via Guardapasso</item>
-        <item>Via Genio Civile/Via Selciatella</item>
-        <item>Campo Verde</item>
-        <item>Bivio Per Nettuno</item>
-        <item>Borgo Montello</item>
-        <item>Via Del Valloncello / Via Conca</item>
-        <item>Via Cesarino Prato</item>
-        <item>Borgo Piave</item>
-        <item>Latina</item>
-        <item>Bivio Per Latina</item>
-        <item>Bivio Per Sezze</item>
-        <item>Bivio Per Pontinia</item>
-        <item>Bivio Per Sabaudia</item>
-        <item>Bivio Per S.Felice Circeo</item>
-        <item>Terracina/Innesto Ss7 Appia</item>
-    </string-array>
+	<string-array name="z533Name">
+		<item>Roma Centro</item>
+		<item>Roma Eur/V.Le Oceano Pacifico</item>
+		<item>Svincolo Via Di Decima/Ospedale S.Raffaele</item>
+		<item>Svincolo Grande Raccordo Anulare</item>
+		<item>Svincolo Mostacciano</item>
+		<item>Svincolo Tor De\' Cenci</item>
+		<item>Via Di Decima/Castel Porziano (direzione Lt)</item>
+		<item>Via Decima-Castel Porziano (direzione Rm)</item>
+		<item>Svincolo Pratica Di Mare/Torvajanica</item>
+		<item>Svincolo Castel Romano/Trigoria</item>
+		<item>Svincolo Monte D\'oro</item>
+		<item>Uscita Pomezia Nord</item>
+		<item>Uscita Pomezia Centro/Castelli Romani</item>
+		<item>Uscita Pomezia Sud/Maggiona</item>
+		<item>Svincolo Pontina Vecchia</item>
+		<item>Svincolo Strampelli</item>
+		<item>Svincolo Ardeatina</item>
+		<item>Svincolo Apriliana</item>
+		<item>Svincolo Sottopasso Via Del Tufetto</item>
+		<item>Svincolo Fossignano/Valle Lata</item>
+		<item>Svincolo Riserva Nuova/Via Delle Valli</item>
+		<item>Svincolo Aprilia/Innesto Ss207 Nettunense</item>
+		<item>Via Del Commercio/Via Mascagni</item>
+		<item>Viale Europa</item>
+		<item>Via Guardapasso</item>
+		<item>Via Genio Civile/Via Selciatella</item>
+		<item>Campo Verde</item>
+		<item>Bivio Per Nettuno</item>
+		<item>Borgo Montello</item>
+		<item>Via Del Valloncello / Via Conca</item>
+		<item>Via Cesarino Prato</item>
+		<item>Borgo Piave</item>
+		<item>Latina</item>
+		<item>Bivio Per Latina</item>
+		<item>Bivio Per Sezze</item>
+		<item>Bivio Per Pontinia</item>
+		<item>Bivio Per Sabaudia</item>
+		<item>Bivio Per S.Felice Circeo</item>
+		<item>Terracina/Innesto Ss7 Appia</item>
+	</string-array>
 
-    <integer-array name="z533Id">
-        <item>7996</item>
-        <item>13854</item>
-        <item>7998</item>
-        <item>7999</item>
-        <item>13856</item>
-        <item>13857</item>
-        <item>13858</item>
-        <item>13859</item>
-        <item>13860</item>
-        <item>13861</item>
-        <item>13862</item>
-        <item>13863</item>
-        <item>8001</item>
-        <item>13864</item>
-        <item>13865</item>
-        <item>13866</item>
-        <item>8002</item>
-        <item>13867</item>
-        <item>13868</item>
-        <item>13869</item>
-        <item>13870</item>
-        <item>8003</item>
-        <item>14450</item>
-        <item>14451</item>
-        <item>14452</item>
-        <item>14453</item>
-        <item>8004</item>
-        <item>8005</item>
-        <item>13149</item>
-        <item>14454</item>
-        <item>14455</item>
-        <item>8006</item>
-        <item>8007</item>
-        <item>8008</item>
-        <item>8009</item>
-        <item>8010</item>
-        <item>8011</item>
-        <item>8012</item>
-        <item>8013</item>
-    </integer-array>
+	<integer-array name="z533Id">
+		<item>7996</item>
+		<item>13854</item>
+		<item>7998</item>
+		<item>7999</item>
+		<item>13856</item>
+		<item>13857</item>
+		<item>13858</item>
+		<item>13859</item>
+		<item>13860</item>
+		<item>13861</item>
+		<item>13862</item>
+		<item>13863</item>
+		<item>8001</item>
+		<item>13864</item>
+		<item>13865</item>
+		<item>13866</item>
+		<item>8002</item>
+		<item>13867</item>
+		<item>13868</item>
+		<item>13869</item>
+		<item>13870</item>
+		<item>8003</item>
+		<item>14450</item>
+		<item>14451</item>
+		<item>14452</item>
+		<item>14453</item>
+		<item>8004</item>
+		<item>8005</item>
+		<item>13149</item>
+		<item>14454</item>
+		<item>14455</item>
+		<item>8006</item>
+		<item>8007</item>
+		<item>8008</item>
+		<item>8009</item>
+		<item>8010</item>
+		<item>8011</item>
+		<item>8012</item>
+		<item>8013</item>
+	</integer-array>
 
-    <string-array name="z533Webcam">
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-    </string-array>
+	<string-array name="z533Webcam">
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+	</string-array>
 
 </resources>

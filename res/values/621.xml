@@ -1,64 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Di Paganico -->
 <resources>
 
-    <string-array name="z621Name">
-        <item>Grosseto/Innesto Ss1 Via Aurelia</item>
-        <item>Il Poggione</item>
-        <item>Variante Di Roselle</item>
-        <item>Bivio Per Roselle</item>
-        <item>Bivio Per Batignano</item>
-        <item>Capannelle</item>
-        <item>Bivio Per Campagnatico</item>
-        <item>Variante Di Paganico</item>
-        <item>Paganico Nord</item>
-        <item>Bivio Per Civitella Marittima</item>
-        <item>Bivio Per Fercole</item>
-        <item>Galleria Artificiale Casale Di Pari</item>
-        <item>Bivio Per Bagni Di Petriolo</item>
-        <item>Ponte Macereto</item>
-        <item>Bivio Per Bagnaia</item>
-        <item>S.Salvatore A Pilli</item>
-        <item>Siena/Innesto Ss2/Ss73/Tangenziale Siena</item>
-    </string-array>
+	<string-array name="z621Name">
+		<item>Grosseto/Innesto Ss1 Via Aurelia</item>
+		<item>Il Poggione</item>
+		<item>Variante Di Roselle</item>
+		<item>Bivio Per Roselle</item>
+		<item>Bivio Per Batignano</item>
+		<item>Capannelle</item>
+		<item>Bivio Per Campagnatico</item>
+		<item>Variante Di Paganico</item>
+		<item>Paganico Nord</item>
+		<item>Bivio Per Civitella Marittima</item>
+		<item>Bivio Per Fercole</item>
+		<item>Galleria Artificiale Casale Di Pari</item>
+		<item>Bivio Per Bagni Di Petriolo</item>
+		<item>Ponte Macereto</item>
+		<item>Bivio Per Bagnaia</item>
+		<item>S.Salvatore A Pilli</item>
+		<item>Siena/Innesto Ss2/Ss73/Tangenziale Siena</item>
+	</string-array>
 
-    <integer-array name="z621Id">
-        <item>8822</item>
-        <item>8823</item>
-        <item>8824</item>
-        <item>14416</item>
-        <item>8825</item>
-        <item>8826</item>
-        <item>14417</item>
-        <item>8827</item>
-        <item>8828</item>
-        <item>8829</item>
-        <item>8830</item>
-        <item>8831</item>
-        <item>8832</item>
-        <item>8833</item>
-        <item>8834</item>
-        <item>8835</item>
-        <item>8836</item>
-    </integer-array>
+	<integer-array name="z621Id">
+		<item>8822</item>
+		<item>8823</item>
+		<item>8824</item>
+		<item>14416</item>
+		<item>8825</item>
+		<item>8826</item>
+		<item>14417</item>
+		<item>8827</item>
+		<item>8828</item>
+		<item>8829</item>
+		<item>8830</item>
+		<item>8831</item>
+		<item>8832</item>
+		<item>8833</item>
+		<item>8834</item>
+		<item>8835</item>
+		<item>8836</item>
+	</integer-array>
 
-    <string-array name="z621Webcam">
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-    </string-array>
+	<string-array name="z621Webcam">
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+	</string-array>
 
 </resources>

@@ -1,70 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Raccordo Bettolle-Perugia -->
 <resources>
 
-    <string-array name="z206Name">
-        <item>A1-Ss327-Raccordo Siena-Bettolle</item>
-        <item>Foiano della Chiana</item>
-        <item>Cortona</item>
-        <item>Pietraia</item>
-        <item>Castiglione Del Lago</item>
-        <item>Tuoro</item>
-        <item>Passignano Ovest</item>
-        <item>Passignano Est</item>
-        <item>Torricella</item>
-        <item>Magione</item>
-        <item>Mantignana</item>
-        <item>Corciano</item>
-        <item>Olmo</item>
-        <item>Perugia Ovest-Ferro Di Cavallo</item>
-        <item>Perugia Stadio-Madonna Alta</item>
-        <item>Perugia Staz.-San Faustino</item>
-        <item>Perugia Centro-Prepo</item>
-        <item>Perugia Est-Piscille</item>
-        <item>Svincolo Ponte S.Giovanni-Ss3 Bis-Raccordo Orte-Ra</item>
-    </string-array>
+	<string-array name="z206Name">
+		<item>A1-Ss327-Raccordo Siena-Bettolle</item>
+		<item>Foiano della Chiana</item>
+		<item>Cortona</item>
+		<item>Pietraia</item>
+		<item>Castiglione Del Lago</item>
+		<item>Tuoro</item>
+		<item>Passignano Ovest</item>
+		<item>Passignano Est</item>
+		<item>Torricella</item>
+		<item>Magione</item>
+		<item>Mantignana</item>
+		<item>Corciano</item>
+		<item>Olmo</item>
+		<item>Perugia Ovest-Ferro Di Cavallo</item>
+		<item>Perugia Stadio-Madonna Alta</item>
+		<item>Perugia Staz.-San Faustino</item>
+		<item>Perugia Centro-Prepo</item>
+		<item>Perugia Est-Piscille</item>
+		<item>Svincolo Ponte S.Giovanni-Ss3 Bis-Raccordo Orte-Ra</item>
+	</string-array>
 
-    <integer-array name="z206Id">
-        <item>2246</item>
-        <item>2247</item>
-        <item>2248</item>
-        <item>2249</item>
-        <item>2250</item>
-        <item>2251</item>
-        <item>2252</item>
-        <item>2253</item>
-        <item>2254</item>
-        <item>2255</item>
-        <item>14400</item>
-        <item>2256</item>
-        <item>14418</item>
-        <item>2257</item>
-        <item>2258</item>
-        <item>2259</item>
-        <item>2260</item>
-        <item>2261</item>
-        <item>2262</item>
-    </integer-array>
+	<integer-array name="z206Id">
+		<item>2246</item>
+		<item>2247</item>
+		<item>2248</item>
+		<item>2249</item>
+		<item>2250</item>
+		<item>2251</item>
+		<item>2252</item>
+		<item>2253</item>
+		<item>2254</item>
+		<item>2255</item>
+		<item>14400</item>
+		<item>2256</item>
+		<item>14418</item>
+		<item>2257</item>
+		<item>2258</item>
+		<item>2259</item>
+		<item>2260</item>
+		<item>2261</item>
+		<item>2262</item>
+	</integer-array>
 
-    <string-array name="z206Webcam">
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-    </string-array>
+	<string-array name="z206Webcam">
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+	</string-array>
 
 </resources>

@@ -1,43 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Raccordo Bereguardo-Pavia -->
 <resources>
 
-    <string-array name="z222Name">
-        <item>Allacciamento  A7 Milano-Genova</item>
-        <item>Barriera Di Bereguardo</item>
-        <item>Svincolo Bereguardo</item>
-        <item>Svincolo di Barchette</item>
-        <item>Svincolo Casottole</item>
-        <item>Svincolo Torre D\'isola</item>
-        <item>Svincolo Cascina Campagna</item>
-        <item>Svincolo Cascina Gaggiola</item>
-        <item>Svincolo Pavia Lanfranco</item>
-        <item>Allacciamento Tangenziale Di Pavia</item>
-    </string-array>
+	<string-array name="z222Name">
+		<item>Allacciamento  A7 Milano-Genova</item>
+		<item>Barriera Di Bereguardo</item>
+		<item>Svincolo Bereguardo</item>
+		<item>Svincolo di Barchette</item>
+		<item>Svincolo Casottole</item>
+		<item>Svincolo Torre D\'isola</item>
+		<item>Svincolo Cascina Campagna</item>
+		<item>Svincolo Cascina Gaggiola</item>
+		<item>Svincolo Pavia Lanfranco</item>
+		<item>Allacciamento Tangenziale Di Pavia</item>
+	</string-array>
 
-    <integer-array name="z222Id">
-        <item>2365</item>
-        <item>2366</item>
-        <item>2367</item>
-        <item>14016</item>
-        <item>2368</item>
-        <item>2369</item>
-        <item>2370</item>
-        <item>2371</item>
-        <item>2372</item>
-        <item>2373</item>
-    </integer-array>
+	<integer-array name="z222Id">
+		<item>2365</item>
+		<item>2366</item>
+		<item>2367</item>
+		<item>14016</item>
+		<item>2368</item>
+		<item>2369</item>
+		<item>2370</item>
+		<item>2371</item>
+		<item>2372</item>
+		<item>2373</item>
+	</integer-array>
 
-    <string-array name="z222Webcam">
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-    </string-array>
+	<string-array name="z222Webcam">
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+	</string-array>
 
 </resources>

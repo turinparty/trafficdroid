@@ -1,130 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Genova - Ventimiglia -->
 <resources>
 
-    <string-array name="z145Name">
-        <item>Allacciamento A7 Milano-Genova</item>
-        <item>Genova Aeroporto</item>
-        <item>Genova Pegli</item>
-        <item>Genova Voltri</item>
-        <item>Allacciamento A26 Ge Voltri-Gravellona T.</item>
-        <item>Arenzano</item>
-        <item>Piani D\'invrea Nord</item>
-        <item>Piani D\'invrea Sud</item>
-        <item>Varazze</item>
-        <item>Celle Ligure</item>
-        <item>Albisola</item>
-        <item>San Cristoforo</item>
-        <item>Raccordo A10 - A06 al Km 44</item>
-        <item>Raccordo A10 - A06 al Km 45</item>
-        <item>Valeggia Nord</item>
-        <item>Spotorno</item>
-        <item>Borsana Sud</item>
-        <item>Orco Feglino</item>
-        <item>Finale Ligure</item>
-        <item>Pietra Ligure</item>
-        <item>Borghetto Santo Spirito</item>
-        <item>Ceriale</item>
-        <item>Albenga</item>
-        <item>Andora</item>
-        <item>Rinovo Nord</item>
-        <item>Valle Chiappa Sud</item>
-        <item>San Bartolomeo</item>
-        <item>Imperia Est</item>
-        <item>Imperia Ovest</item>
-        <item>Conioli Sud</item>
-        <item>Castellaro Nord</item>
-        <item>Arma Di Taggia</item>
-        <item>Sanremo Ovest</item>
-        <item>Bordighera</item>
-        <item>Bordighera</item>
-        <item>Ventimiglia</item>
-        <item>Autoporto Riviera Dei Fiori</item>
-        <item>Barriera Di Ventimiglia</item>
-        <item>Confine Di Stato</item>
-    </string-array>
+	<string-array name="z145Name">
+		<item>Allacciamento A7 Milano-Genova</item>
+		<item>Genova Aeroporto</item>
+		<item>Genova Pegli</item>
+		<item>Genova Voltri</item>
+		<item>Allacciamento A26 Ge Voltri-Gravellona T.</item>
+		<item>Arenzano</item>
+		<item>Piani D\'invrea Nord</item>
+		<item>Piani D\'invrea Sud</item>
+		<item>Varazze</item>
+		<item>Celle Ligure</item>
+		<item>Albisola</item>
+		<item>San Cristoforo</item>
+		<item>Raccordo A10 - A06 al Km 44</item>
+		<item>Raccordo A10 - A06 al Km 45</item>
+		<item>Valeggia Nord</item>
+		<item>Spotorno</item>
+		<item>Borsana Sud</item>
+		<item>Orco Feglino</item>
+		<item>Finale Ligure</item>
+		<item>Pietra Ligure</item>
+		<item>Borghetto Santo Spirito</item>
+		<item>Ceriale</item>
+		<item>Albenga</item>
+		<item>Andora</item>
+		<item>Rinovo Nord</item>
+		<item>Valle Chiappa Sud</item>
+		<item>San Bartolomeo</item>
+		<item>Imperia Est</item>
+		<item>Imperia Ovest</item>
+		<item>Conioli Sud</item>
+		<item>Castellaro Nord</item>
+		<item>Arma Di Taggia</item>
+		<item>Sanremo Ovest</item>
+		<item>Bordighera</item>
+		<item>Bordighera</item>
+		<item>Ventimiglia</item>
+		<item>Autoporto Riviera Dei Fiori</item>
+		<item>Barriera Di Ventimiglia</item>
+		<item>Confine Di Stato</item>
+	</string-array>
 
-    <integer-array name="z145Id">
-        <item>1502</item>
-        <item>1503</item>
-        <item>1504</item>
-        <item>1505</item>
-        <item>1506</item>
-        <item>1507</item>
-        <item>1508</item>
-        <item>14380</item>
-        <item>1509</item>
-        <item>1510</item>
-        <item>1511</item>
-        <item>1512</item>
-        <item>1513</item>
-        <item>14185</item>
-        <item>14181</item>
-        <item>1515</item>
-        <item>1516</item>
-        <item>1517</item>
-        <item>1518</item>
-        <item>1519</item>
-        <item>14003</item>
-        <item>1520</item>
-        <item>1521</item>
-        <item>1522</item>
-        <item>1523</item>
-        <item>1524</item>
-        <item>1525</item>
-        <item>1526</item>
-        <item>1527</item>
-        <item>1528</item>
-        <item>1529</item>
-        <item>1530</item>
-        <item>1531</item>
-        <item>13986</item>
-        <item>1532</item>
-        <item>1533</item>
-        <item>1534</item>
-        <item>1535</item>
-        <item>1536</item>
-    </integer-array>
+	<integer-array name="z145Id">
+		<item>1502</item>
+		<item>1503</item>
+		<item>1504</item>
+		<item>1505</item>
+		<item>1506</item>
+		<item>1507</item>
+		<item>1508</item>
+		<item>14380</item>
+		<item>1509</item>
+		<item>1510</item>
+		<item>1511</item>
+		<item>1512</item>
+		<item>1513</item>
+		<item>14185</item>
+		<item>14181</item>
+		<item>1515</item>
+		<item>1516</item>
+		<item>1517</item>
+		<item>1518</item>
+		<item>1519</item>
+		<item>14003</item>
+		<item>1520</item>
+		<item>1521</item>
+		<item>1522</item>
+		<item>1523</item>
+		<item>1524</item>
+		<item>1525</item>
+		<item>1526</item>
+		<item>1527</item>
+		<item>1528</item>
+		<item>1529</item>
+		<item>1530</item>
+		<item>1531</item>
+		<item>13986</item>
+		<item>1532</item>
+		<item>1533</item>
+		<item>1534</item>
+		<item>1535</item>
+		<item>1536</item>
+	</integer-array>
 
-    <string-array name="z145Webcam">
-        <item>A22505</item> <!--  A10 Km. 0,0  Polcevera itinere est  --> 
-        <item>A19592</item> <!--  A10 Km. 3,1  Ge Aerop. itinere est  -->
-        <item>A11308</item> <!--  A10 Km. 5,3  Pegli itinere ovest  -->
-        <item>A7017</item>  <!--  A10 Km. 10,1  Ge-Voltri itinere ovest  -->
-        <item>A22523</item> <!--  A10  Bivio A26S/A10E itinere est  -->
-        <item>A22556</item> <!--  A10 Km. 20,0  Arenzano itinere est  -->
-        <item>-1</item>
-        <item>-1</item>
-        <item>A19495</item> <!--  A10 Km. 28.8  Varazze itinere est  -->
-        <item>A11302</item> <!--  A10 Km. 31,7  Celle Ligure itinere ovest  -->
-        <item>A22485</item> <!--  A10 Km. 37,0  Albisola itinere ovest  -->
-        <item>-1</item>
-        <item>A15948</item> <!--  A10 Km. 42,8  Savona itinere ovest  -->
-        <item>Fa10a6</item>
-        <item>Fsavona</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>Ffinale</item>
-        <item>Fpietra</item>
-        <item>-1</item>
-        <item>Fceriale</item>
-        <item>Fbastia</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>Fimpero</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>Ftaggia</item>
-        <item>Fsanremo</item>
-        <item>-1</item>
-        <item>Fbordighera</item>
-        <item>Fxxmiglia</item>
-        <item>-1</item>
-        <item>Fdelmonte</item>
-        <item>-1</item>
-    </string-array>
+	<string-array name="z145Webcam">
+		<item>A22505</item> <!-- A10 Km. 0,0  Polcevera itinere est -->
+		<item>A19592</item> <!-- A10 Km. 3,1  Ge Aerop. itinere est -->
+		<item>A11308</item> <!-- A10 Km. 5,3  Pegli itinere ovest -->
+		<item>A7017</item> <!-- A10 Km. 10,1  Ge-Voltri itinere ovest -->
+		<item>A22523</item> <!-- A10  Bivio A26S/A10E itinere est -->
+		<item>A22556</item> <!-- A10 Km. 20,0  Arenzano itinere est -->
+		<item>-1</item>
+		<item>-1</item>
+		<item>A19495</item> <!-- A10 Km. 28.8  Varazze itinere est -->
+		<item>A11302</item> <!-- A10 Km. 31,7  Celle Ligure itinere ovest -->
+		<item>A22485</item> <!-- A10 Km. 37,0  Albisola itinere ovest -->
+		<item>-1</item>
+		<item>A15948</item> <!-- A10 Km. 42,8  Savona itinere ovest -->
+		<item>Fa10a6</item>
+		<item>Fsavona</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>Ffinale</item>
+		<item>Fpietra</item>
+		<item>-1</item>
+		<item>Fceriale</item>
+		<item>Fbastia</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>Fimpero</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>Ftaggia</item>
+		<item>Fsanremo</item>
+		<item>-1</item>
+		<item>Fbordighera</item>
+		<item>Fxxmiglia</item>
+		<item>-1</item>
+		<item>Fdelmonte</item>
+		<item>-1</item>
+	</string-array>
 
 </resources>

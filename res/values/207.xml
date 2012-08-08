@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Raccordo Ascoli P.-Porto D\'ascoli -->
 <resources>
 
-    <string-array name="z207Name">
-        <item>Ascoli Piceno - Ss4 Via Salaria</item>
-        <item>Svincolo Marino Del Tronto</item>
-        <item>Svincolo Di Maltignano</item>
-        <item>Svincolo Di Ancarano-Castel Di Lama</item>
-        <item>Svincolo Di Spinetoli</item>
-        <item>Svincolo Di Monsampolo</item>
-        <item>Svincolo Di Monteprandone-A14 Bo-Ta</item>
-        <item>Svincolo Porto D\'ascoli - Ss16 Adriatica</item>
-    </string-array>
+	<string-array name="z207Name">
+		<item>Ascoli Piceno - Ss4 Via Salaria</item>
+		<item>Svincolo Marino Del Tronto</item>
+		<item>Svincolo Di Maltignano</item>
+		<item>Svincolo Di Ancarano-Castel Di Lama</item>
+		<item>Svincolo Di Spinetoli</item>
+		<item>Svincolo Di Monsampolo</item>
+		<item>Svincolo Di Monteprandone-A14 Bo-Ta</item>
+		<item>Svincolo Porto D\'ascoli - Ss16 Adriatica</item>
+	</string-array>
 
-    <integer-array name="z207Id">
-        <item>2263</item>
-        <item>13517</item>
-        <item>2265</item>
-        <item>2266</item>
-        <item>2268</item>
-        <item>2269</item>
-        <item>2271</item>
-        <item>13521</item>
-    </integer-array>
+	<integer-array name="z207Id">
+		<item>2263</item>
+		<item>13517</item>
+		<item>2265</item>
+		<item>2266</item>
+		<item>2268</item>
+		<item>2269</item>
+		<item>2271</item>
+		<item>13521</item>
+	</integer-array>
 
-    <string-array name="z207Webcam">
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-    </string-array>
+	<string-array name="z207Webcam">
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+	</string-array>
 
 </resources>

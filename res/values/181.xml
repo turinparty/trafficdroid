@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Diramazione Per Gallarate-Gattico -->
 <resources>
 
-    <string-array name="z181Name">
-        <item>Allacciamento A8 Milano-Varese</item>
-        <item>Barriera Di Gallarate Ovest</item>
-        <item>Besnate</item>
-        <item>Verbano</item>
-        <item>Sesto Calende-Vergiate</item>
-        <item>Castelletto Ticino</item>
-        <item>Allacciamento A26 Ge Voltri-Gravellona T.</item>
-    </string-array>
+	<string-array name="z181Name">
+		<item>Allacciamento A8 Milano-Varese</item>
+		<item>Barriera Di Gallarate Ovest</item>
+		<item>Besnate</item>
+		<item>Verbano</item>
+		<item>Sesto Calende-Vergiate</item>
+		<item>Castelletto Ticino</item>
+		<item>Allacciamento A26 Ge Voltri-Gravellona T.</item>
+	</string-array>
 
-    <integer-array name="z181Id">
-        <item>2105</item>
-        <item>2106</item>
-        <item>2107</item>
-        <item>2108</item>
-        <item>2109</item>
-        <item>2110</item>
-        <item>2111</item>
-    </integer-array>
+	<integer-array name="z181Id">
+		<item>2105</item>
+		<item>2106</item>
+		<item>2107</item>
+		<item>2108</item>
+		<item>2109</item>
+		<item>2110</item>
+		<item>2111</item>
+	</integer-array>
 
-    <string-array name="z181Webcam">
-        <item>-1</item>
-        <item>-1</item>
-        <item>A18806</item> <!-- D08 km. 8,1 Besnate itinere sud -->
-        <item>-1</item>
-        <item>A14679</item> <!-- A08 km. 12,1 Diram. Gallarate Gattico Vergiate (Va) -->
-        <item>A19365</item> <!-- D08 km. 16,9 Castelletto T. itinere ovest -->
-        <item>A11421</item> <!-- A26 km. 157,9 A26/D8 itinere nord -->
-    </string-array>
+	<string-array name="z181Webcam">
+		<item>-1</item>
+		<item>-1</item>
+		<item>A18806</item> <!-- D08 km. 8,1 Besnate itinere sud -->
+		<item>-1</item>
+		<item>A14679</item> <!-- A08 km. 12,1 Diram. Gallarate Gattico Vergiate (Va) -->
+		<item>A19365</item> <!-- D08 km. 16,9 Castelletto T. itinere ovest -->
+		<item>A11421</item> <!-- A26 km. 157,9 A26/D8 itinere nord -->
+	</string-array>
 
 </resources>

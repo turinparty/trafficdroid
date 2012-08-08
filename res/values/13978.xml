@@ -1,52 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Roma - Civitavecchia -->
 <resources>
 
-    <string-array name="z13978Name">
-        <item>Allacciamento Autostrada Roma-Fiumicino</item>
-        <item>Arrone</item>
-        <item>Maccarese-Fregene</item>
-        <item>Barriera Di Roma Ovest</item>
-        <item>Torrimpietra</item>
-        <item>Svincolo Di Cerveteri-Ladispoli</item>
-        <item>Tirreno</item>
-        <item>Svincolo Di S.Severa-S.Marinella</item>
-        <item>Civitavecchia Sud</item>
-        <item>Barriera Aurelia</item>
-        <item>Svincolo Di Civitavecchia Nord</item>
-        <item>Tolfa</item>
-        <item>Svincolo Ss.1 Aurelia</item>
-    </string-array>
+	<string-array name="z13978Name">
+		<item>Allacciamento Autostrada Roma-Fiumicino</item>
+		<item>Arrone</item>
+		<item>Maccarese-Fregene</item>
+		<item>Barriera Di Roma Ovest</item>
+		<item>Torrimpietra</item>
+		<item>Svincolo Di Cerveteri-Ladispoli</item>
+		<item>Tirreno</item>
+		<item>Svincolo Di S.Severa-S.Marinella</item>
+		<item>Civitavecchia Sud</item>
+		<item>Barriera Aurelia</item>
+		<item>Svincolo Di Civitavecchia Nord</item>
+		<item>Tolfa</item>
+		<item>Svincolo Ss.1 Aurelia</item>
+	</string-array>
 
-    <integer-array name="z13978Id">
-        <item>1589</item>
-        <item>1590</item>
-        <item>1591</item>
-        <item>1592</item>
-        <item>1593</item>
-        <item>1594</item>
-        <item>1595</item>
-        <item>1596</item>
-        <item>1597</item>
-        <item>1598</item>
-        <item>1599</item>
-        <item>1600</item>
-        <item>1601</item>
-    </integer-array>
+	<integer-array name="z13978Id">
+		<item>1589</item>
+		<item>1590</item>
+		<item>1591</item>
+		<item>1592</item>
+		<item>1593</item>
+		<item>1594</item>
+		<item>1595</item>
+		<item>1596</item>
+		<item>1597</item>
+		<item>1598</item>
+		<item>1599</item>
+		<item>1600</item>
+		<item>1601</item>
+	</integer-array>
 
-    <string-array name="z13978Webcam">
-        <item>-1</item>
-        <item>-1</item>
-        <item>A19641</item> <!-- A12 km. 09,9 Maccarese itinere nord -->
-        <item>-1</item>
-        <item>A9950</item> <!-- A12 km. 15,0 Torrimpietra itinere sud -->
-        <item>A19659</item> <!-- A12 km. 30,0 Cerveteri itinere sud -->
-        <item>-1</item>
-        <item>A9493</item> <!-- A12 km. 39,5 Tirreno Est itinere nord -->
-        <item>A19646</item> <!-- A12 km. 50,2 Aurelia itinere nord -->
-        <item>-1</item>
-        <item>A19652</item> <!-- A12 km. 53,0 Aurelia itinere sud -->
-        <item>-1</item>
-        <item>A10002</item> <!-- A12 km. 65,0 Svincolo Tarquinia itinere sud -->
-    </string-array>
+	<string-array name="z13978Webcam">
+		<item>-1</item>
+		<item>-1</item>
+		<item>A19641</item> <!-- A12 km. 09,9 Maccarese itinere nord -->
+		<item>-1</item>
+		<item>A9950</item> <!-- A12 km. 15,0 Torrimpietra itinere sud -->
+		<item>A19659</item> <!-- A12 km. 30,0 Cerveteri itinere sud -->
+		<item>-1</item>
+		<item>A9493</item> <!-- A12 km. 39,5 Tirreno Est itinere nord -->
+		<item>A19646</item> <!-- A12 km. 50,2 Aurelia itinere nord -->
+		<item>-1</item>
+		<item>A19652</item> <!-- A12 km. 53,0 Aurelia itinere sud -->
+		<item>-1</item>
+		<item>A10002</item> <!-- A12 km. 65,0 Svincolo Tarquinia itinere sud -->
+	</string-array>
 
 </resources>

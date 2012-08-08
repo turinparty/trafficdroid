@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Diramazione Per Ravenna -->
 <resources>
 
-    <string-array name="z187Name">
-        <item>Allacciamento A14 Bologna-Taranto</item>
-        <item>Ravenna</item>
-        <item>Svincolo Cotignola</item>
-        <item>Svincolo Lugo</item>
-        <item>Bagnacavallo</item>
-        <item>Sant\'eufemia</item>
-        <item>Svincolo Di Ravenna - S.Vitale</item>
-        <item>Svincolo S.S.16 Adriatica</item>
-        <item>Svincolo SS 309 Diramazione Ravenna</item>
-    </string-array>
+	<string-array name="z187Name">
+		<item>Allacciamento A14 Bologna-Taranto</item>
+		<item>Ravenna</item>
+		<item>Svincolo Cotignola</item>
+		<item>Svincolo Lugo</item>
+		<item>Bagnacavallo</item>
+		<item>Sant\'eufemia</item>
+		<item>Svincolo Di Ravenna - S.Vitale</item>
+		<item>Svincolo S.S.16 Adriatica</item>
+		<item>Svincolo SS 309 Diramazione Ravenna</item>
+	</string-array>
 
-    <integer-array name="z187Id">
-        <item>2129</item>
-        <item>14074</item>
-        <item>2130</item>
-        <item>14361</item>
-        <item>14166</item>
-        <item>2131</item>
-        <item>2133</item>
-        <item>2134</item>
-        <item>2135</item>
-    </integer-array>
+	<integer-array name="z187Id">
+		<item>2129</item>
+		<item>14074</item>
+		<item>2130</item>
+		<item>14361</item>
+		<item>14166</item>
+		<item>2131</item>
+		<item>2133</item>
+		<item>2134</item>
+		<item>2135</item>
+	</integer-array>
 
-    <string-array name="z187Webcam">
-        <item>A16607</item> <!-- D14 km. 008,6 Barriera Ravenna itinere -->
-        <item>-1</item>
-        <item>A20475</item> <!-- D14 km. 011,0 Lugo Cotignola Itinere Nord -->
-        <item>-1</item>
-        <item>A22247</item> <!-- D14 km. 024,0 Ravenna ex barriera -->
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-    </string-array>
+	<string-array name="z187Webcam">
+		<item>A16607</item> <!-- D14 km. 008,6 Barriera Ravenna itinere -->
+		<item>-1</item>
+		<item>A20475</item> <!-- D14 km. 011,0 Lugo Cotignola Itinere Nord -->
+		<item>-1</item>
+		<item>A22247</item> <!-- D14 km. 024,0 Ravenna ex barriera -->
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+	</string-array>
 
 </resources>

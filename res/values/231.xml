@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Raccordo SS106 Ter -->
 <resources>
 
-    <string-array name="z231Name">
-        <item>A3 Salerno - R.Calabria</item>
-        <item>Svincolo Via Lia</item>
-        <item>Svincolo Cardinale Porta Nova</item>
-        <item>Svincolo Spirito Santo</item>
-        <item>Svincolo Calopinace</item>
-        <item>Svincolo Modena</item>
-        <item>Svincolo Reggio Arangea</item>
-        <item>Innesto Ss106 E Ss106 Ter</item>
-    </string-array>
+	<string-array name="z231Name">
+		<item>A3 Salerno - R.Calabria</item>
+		<item>Svincolo Via Lia</item>
+		<item>Svincolo Cardinale Porta Nova</item>
+		<item>Svincolo Spirito Santo</item>
+		<item>Svincolo Calopinace</item>
+		<item>Svincolo Modena</item>
+		<item>Svincolo Reggio Arangea</item>
+		<item>Innesto Ss106 E Ss106 Ter</item>
+	</string-array>
 
-    <integer-array name="z231Id">
-        <item>2424</item>
-        <item>2425</item>
-        <item>2426</item>
-        <item>2427</item>
-        <item>2428</item>
-        <item>2429</item>
-        <item>2430</item>
-        <item>2431</item>
-    </integer-array>
+	<integer-array name="z231Id">
+		<item>2424</item>
+		<item>2425</item>
+		<item>2426</item>
+		<item>2427</item>
+		<item>2428</item>
+		<item>2429</item>
+		<item>2430</item>
+		<item>2431</item>
+	</integer-array>
 
-    <string-array name="z231Webcam">
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-    </string-array>
+	<string-array name="z231Webcam">
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+	</string-array>
 
 </resources>

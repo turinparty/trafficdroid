@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Raccordo Sistiana-Trieste -->
 <resources>
 
-    <string-array name="z13442Name">
-        <item>Svincolo Di Sistiana-A4 To-Ts</item>
-        <item>Sistiana</item>
-        <item>Svincolo Di Sgonico</item>
-        <item>Sgonico</item>
-        <item>Svincolo Di Prosecco</item>
-        <item>Diramazione Opicina-Fernetti</item>
-        <item>Svincolo Di Trebiciano</item>
-        <item>Svincolo Di Padriciano-Innesto Ss202</item>
-    </string-array>
+	<string-array name="z13442Name">
+		<item>Svincolo Di Sistiana-A4 To-Ts</item>
+		<item>Sistiana</item>
+		<item>Svincolo Di Sgonico</item>
+		<item>Sgonico</item>
+		<item>Svincolo Di Prosecco</item>
+		<item>Diramazione Opicina-Fernetti</item>
+		<item>Svincolo Di Trebiciano</item>
+		<item>Svincolo Di Padriciano-Innesto Ss202</item>
+	</string-array>
 
-    <integer-array name="z13442Id">
-        <item>13532</item>
-        <item>13533</item>
-        <item>13534</item>
-        <item>13535</item>
-        <item>13536</item>
-        <item>13537</item>
-        <item>13538</item>
-        <item>13539</item>
-    </integer-array>
+	<integer-array name="z13442Id">
+		<item>13532</item>
+		<item>13533</item>
+		<item>13534</item>
+		<item>13535</item>
+		<item>13536</item>
+		<item>13537</item>
+		<item>13538</item>
+		<item>13539</item>
+	</integer-array>
 
-    <string-array name="z13442Webcam">
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-    </string-array>
+	<string-array name="z13442Webcam">
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+	</string-array>
 
 </resources>

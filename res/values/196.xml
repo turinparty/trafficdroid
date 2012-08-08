@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Diramazione Alcamo-Trapani -->
 <resources>
 
-    <string-array name="z196Name">
-        <item>Fegotto-Allacciamento A29 Pa-Mazara Del Vallo</item>
-        <item>Segesta</item>
-        <item>Fulgatore</item>
-        <item>Dattilo</item>
-        <item>Allacciamento Diramazione Aeroporto Di Birgi</item>
-        <item>Milo - Trapani - Ss113</item>
-    </string-array>
+	<string-array name="z196Name">
+		<item>Fegotto-Allacciamento A29 Pa-Mazara Del Vallo</item>
+		<item>Segesta</item>
+		<item>Fulgatore</item>
+		<item>Dattilo</item>
+		<item>Allacciamento Diramazione Aeroporto Di Birgi</item>
+		<item>Milo - Trapani - Ss113</item>
+	</string-array>
 
-    <integer-array name="z196Id">
-        <item>2179</item>
-        <item>2180</item>
-        <item>2181</item>
-        <item>2182</item>
-        <item>2183</item>
-        <item>13990</item>
-    </integer-array>
+	<integer-array name="z196Id">
+		<item>2179</item>
+		<item>2180</item>
+		<item>2181</item>
+		<item>2182</item>
+		<item>2183</item>
+		<item>13990</item>
+	</integer-array>
 
-    <string-array name="z196Webcam">
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-    </string-array>
+	<string-array name="z196Webcam">
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+	</string-array>
 
 </resources>

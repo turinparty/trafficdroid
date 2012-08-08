@@ -1,64 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Raccordo Siena-Bettolle -->
 <resources>
 
-    <string-array name="z221Name">
-        <item>Siena Est - Due Ponti</item>
-        <item>Ruffolo</item>
-        <item>Bivio Taverne D\'arbia-Ss438 Lauretana</item>
-        <item>Casetta Per Taverne D\'a.-Pianelle</item>
-        <item>Bivio Castelnuovo Berardenga Scalo</item>
-        <item>Bivio Castelnuovo B. S. E Pianella</item>
-        <item>Bivio Castelnuovo Berardenga</item>
-        <item>Bivio Torre A Castello</item>
-        <item>Colonna Del Grillo-Ss73 Senese Aretina</item>
-        <item>Bivio Armaiolo E Rapolano Terme</item>
-        <item>Bivio Rapolano Terme</item>
-        <item>Bivio Serre Di Rapolano</item>
-        <item>S.Gimignanello-Ss438 Lauretana</item>
-        <item>Bivio Rigomagno E Sinalunga</item>
-        <item>Sinalunga-Bivio Ss326 Di Rapolano</item>
-        <item>Bivio Sinalunga-Foiano Della Chiana</item>
-        <item>Bettolle-A1-Raccordo Bettolle-Pg-Ss327</item>
-    </string-array>
+	<string-array name="z221Name">
+		<item>Siena Est - Due Ponti</item>
+		<item>Ruffolo</item>
+		<item>Bivio Taverne D\'arbia-Ss438 Lauretana</item>
+		<item>Casetta Per Taverne D\'a.-Pianelle</item>
+		<item>Bivio Castelnuovo Berardenga Scalo</item>
+		<item>Bivio Castelnuovo B. S. E Pianella</item>
+		<item>Bivio Castelnuovo Berardenga</item>
+		<item>Bivio Torre A Castello</item>
+		<item>Colonna Del Grillo-Ss73 Senese Aretina</item>
+		<item>Bivio Armaiolo E Rapolano Terme</item>
+		<item>Bivio Rapolano Terme</item>
+		<item>Bivio Serre Di Rapolano</item>
+		<item>S.Gimignanello-Ss438 Lauretana</item>
+		<item>Bivio Rigomagno E Sinalunga</item>
+		<item>Sinalunga-Bivio Ss326 Di Rapolano</item>
+		<item>Bivio Sinalunga-Foiano Della Chiana</item>
+		<item>Bettolle-A1-Raccordo Bettolle-Pg-Ss327</item>
+	</string-array>
 
-    <integer-array name="z221Id">
-        <item>2348</item>
-        <item>2349</item>
-        <item>2350</item>
-        <item>2351</item>
-        <item>2352</item>
-        <item>2353</item>
-        <item>2354</item>
-        <item>2355</item>
-        <item>2356</item>
-        <item>2357</item>
-        <item>2358</item>
-        <item>2359</item>
-        <item>2360</item>
-        <item>2361</item>
-        <item>2362</item>
-        <item>2363</item>
-        <item>2364</item>
-    </integer-array>
+	<integer-array name="z221Id">
+		<item>2348</item>
+		<item>2349</item>
+		<item>2350</item>
+		<item>2351</item>
+		<item>2352</item>
+		<item>2353</item>
+		<item>2354</item>
+		<item>2355</item>
+		<item>2356</item>
+		<item>2357</item>
+		<item>2358</item>
+		<item>2359</item>
+		<item>2360</item>
+		<item>2361</item>
+		<item>2362</item>
+		<item>2363</item>
+		<item>2364</item>
+	</integer-array>
 
-    <string-array name="z221Webcam">
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-        <item>-1</item>
-    </string-array>
+	<string-array name="z221Webcam">
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+		<item>-1</item>
+	</string-array>
 
 </resources>
