@@ -36,6 +36,7 @@ import com.commonsware.cwac.wakeful.WakefulIntentService;
 public class MainActivity extends AbstractActivity {
 	private static final String fuel = "/public/tabellanazionale/tabellaNazionale.php";
 	private static final String donate = "market://details?id=it.localhost.donate";
+	private static final String premium = "market://details?id=it.localhost.trafficdroid.premium";
 	private static final String removePrefToastUndo = " è stato aggiunto ai preferiti.";
 	private static final String removePrefToast = " è stato rimosso dai preferiti.";
 	private static final String unknownError = "Unknown Error";
@@ -118,6 +119,9 @@ public class MainActivity extends AbstractActivity {
 			return true;
 		case R.id.menuDonate:
 			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(donate)));
+			return true;
+		case R.id.menuPremium:
+			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(premium)));
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
