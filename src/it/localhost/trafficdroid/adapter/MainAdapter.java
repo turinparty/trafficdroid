@@ -29,10 +29,12 @@ public class MainAdapter extends BaseExpandableListAdapter {
 		for (StreetDTO street : mainDTO.getStreets()) {
 			groupItems.add(new StreetItem(context, street));
 			ArrayList<AbstractItem> childItems = new ArrayList<AbstractItem>();
-			childItems.add(new BannerDialogItem(context, R.layout.smart_banner));
 			childItems.add(new BadNewsItem(context, street));
-			for (ZoneDTO zone : street.getZones())
+			for (ZoneDTO zone : street.getZones()) {
+				if (Math.random() < 0.1)
+					childItems.add(new BannerDialogItem(context, R.layout.smart_banner));
 				childItems.add(new ZoneItem(context, zone));
+			}
 			this.childItems.add(childItems);
 		}
 	}

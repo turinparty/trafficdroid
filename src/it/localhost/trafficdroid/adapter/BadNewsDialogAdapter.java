@@ -1,4 +1,3 @@
-
 package it.localhost.trafficdroid.adapter;
 
 import it.localhost.trafficdroid.R;
@@ -16,15 +15,16 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 public class BadNewsDialogAdapter extends ArrayAdapter<BadNewsDTO> {
-	
 	private ArrayList<AbstractItem> items;
 
 	public BadNewsDialogAdapter(Context context, StreetDTO street) {
 		super(context, 0);
 		items = new ArrayList<AbstractItem>();
-		items.add(new BannerDialogItem(context, R.layout.iab_mrect));
-		for (BadNewsDTO badNews : street.getBadNews())
+		for (BadNewsDTO badNews : street.getBadNews()) {
+			if (Math.random() < 0.1)
+				items.add(new BannerDialogItem(context, R.layout.iab_mrect));
 			items.add(new BadNewsDialogItem(context, badNews));
+		}
 	}
 
 	@Override
