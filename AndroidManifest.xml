@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	package="it.localhost.trafficdroid"
 	android:installLocation="preferExternal"
-	android:versionCode="112"
-	android:versionName="1.15.5 shutUpAndTakeMyMoney" >
+	android:versionCode="113"
+	android:versionName="1.15.6 shutUpAndTakeMyMoney" >
 
 	<uses-sdk
 		android:minSdkVersion="10"
