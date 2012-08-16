@@ -196,8 +196,7 @@ public class MainActivity extends AbstractActivity {
 						listView.expandGroup(i);
 					else
 						listView.collapseGroup(i);
-			} else
-				tdListener.sendWakefulWork(TdApp.getContext());
+			}
 		}
 	}
 }
