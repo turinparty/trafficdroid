@@ -1,7 +1,5 @@
 package it.localhost.trafficdroid.parser;
 
-import java.util.ArrayList;
-
 import it.localhost.trafficdroid.dao.TrafficDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
@@ -9,6 +7,8 @@ import it.localhost.trafficdroid.dto.ZoneDTO;
 import it.localhost.trafficdroid.exception.BadConfException;
 import it.localhost.trafficdroid.exception.ConnectionException;
 import it.localhost.trafficdroid.exception.GenericException;
+
+import java.util.ArrayList;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;

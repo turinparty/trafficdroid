@@ -43,8 +43,8 @@ public class MainActivity extends AbstractActivity {
 	public static final String blank = " ";
 	private ExpandableListView listView;
 	private IntentFilter intentFilter;
-	private BroadcastReceiver receiver;
 	private TdListener tdListener;
+	private BroadcastReceiver receiver;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
