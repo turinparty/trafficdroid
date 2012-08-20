@@ -49,9 +49,9 @@ public class MainDAO {
 		int[] autoveloxTo = resources.getIntArray(R.array.autoveloxTo);
 		boolean allStreets = TdApp.getPrefBoolean(TdApp.getContext().getString(R.string.allStreetsKey), false);
 		for (int i = 0; i < streetsId.length; i++) {
-			StreetDTO street = new StreetDTO(streetsId[i]);
-			boolean streetEnabled = TdApp.getPrefBoolean(Integer.toString(street.getId()), false);
 			int[] zonesId = resources.getIntArray(ZoneArray.zonesResId.get((streetsId[i])));
+			StreetDTO street = new StreetDTO(streetsId[i], zonesId);
+			boolean streetEnabled = TdApp.getPrefBoolean(Integer.toString(street.getId()), false);
 			String[] zonesWebcam = resources.getStringArray(ZoneArray.zonesResWebcam.get((streetsId[i])));
 			String[] zonesName = resources.getStringArray(ZoneArray.zonesResName.get(streetsId[i]));
 			for (int j = 0; j < zonesId.length; j++)

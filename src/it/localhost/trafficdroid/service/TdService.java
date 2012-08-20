@@ -95,7 +95,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 						if (pastDTO != null) {
 							pastStreet = pastDTO.getStreet(currStreet.getId());
 							if (pastStreet != null) {
-								pastZone = pastStreet.getZone(currZone.getName());
+								pastZone = pastStreet.getZone(currZone.getId());
 								if (pastZone != null) {
 									int trendSpeed = Integer.parseInt(TdApp.getPrefString(R.string.trendSpeedKey, R.string.trendSpeedDefault));
 									if (currZone.getCatLeft() == 0 || pastZone.getCatLeft() == 0)

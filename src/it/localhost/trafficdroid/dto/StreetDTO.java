@@ -9,15 +9,19 @@ public class StreetDTO implements Serializable {
 	private String name;
 	private String tag;
 	private int id;
-	private LinkedHashMap<String, ZoneDTO> zones;
+	private LinkedHashMap<Integer, ZoneDTO> zones;
 	private ArrayList<BadNewsDTO> badNews;
 	private String[] directions;
+	private ArrayList<Integer> allZonesId;
 
-	public StreetDTO(int id) {
+	public StreetDTO(int id, int[] allZonesId) {
 		this.id = id;
-		zones = new LinkedHashMap<String, ZoneDTO>();
-		badNews = new ArrayList<BadNewsDTO>();
-		directions = new String[2];
+		this.zones = new LinkedHashMap<Integer, ZoneDTO>();
+		this.badNews = new ArrayList<BadNewsDTO>();
+		this.directions = new String[2];
+		this.allZonesId = new ArrayList<Integer>();
+		for (int i : allZonesId)
+			this.allZonesId.add(i);
 	}
 
 	public String getTag() {
@@ -44,7 +48,7 @@ public class StreetDTO implements Serializable {
 		return new ArrayList<ZoneDTO>(zones.values());
 	}
 
-	public ZoneDTO getZone(String key) {
+	public ZoneDTO getZone(int key) {
 		return zones.get(key);
 	}
 
@@ -57,7 +61,7 @@ public class StreetDTO implements Serializable {
 	}
 
 	public void putZone(ZoneDTO zone) {
-		zones.put(zone.getName(), zone);
+		zones.put(zone.getId(), zone);
 	}
 
 	public String getDirectionLeft() {
@@ -78,6 +82,10 @@ public class StreetDTO implements Serializable {
 
 	public ArrayList<BadNewsDTO> getBadNews() {
 		return badNews;
+	}
+
+	public ArrayList<Integer> getAllZonesId() {
+		return allZonesId;
 	}
 
 	@Override
