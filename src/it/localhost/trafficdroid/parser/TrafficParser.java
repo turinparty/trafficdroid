@@ -20,14 +20,16 @@ public class TrafficParser {
 				short speed = Short.parseShort(segChildrens.item(2).getTextContent());
 				int fromIndex = street.getAllZonesId().indexOf(from);
 				int toIndex = street.getAllZonesId().indexOf(to);
-				if (fromIndex < toIndex) {
-					for (int id : street.getAllZonesId().subList(fromIndex, toIndex))
-						if (street.getZone(id) != null)
-							street.getZone(id).setSpeedLeft(speed);
-				} else {
-					for (int id : street.getAllZonesId().subList(toIndex, fromIndex))
-						if (street.getZone(id) != null)
-							street.getZone(id).setSpeedRight(speed);
+				if (fromIndex != -1 && toIndex != -1) {
+					if (fromIndex < toIndex) {
+						for (int id : street.getAllZonesId().subList(fromIndex, toIndex))
+							if (street.getZone(id) != null)
+								street.getZone(id).setSpeedLeft(speed);
+					} else {
+						for (int id : street.getAllZonesId().subList(toIndex, fromIndex))
+							if (street.getZone(id) != null)
+								street.getZone(id).setSpeedRight(speed);
+					}
 				}
 			}
 		}
