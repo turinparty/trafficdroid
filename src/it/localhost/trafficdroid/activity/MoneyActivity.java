@@ -32,11 +32,10 @@ public class MoneyActivity extends AbstractActivity {
 			public void onClick(View v) {
 				Integer from = ListExit.getInstance().get(moneyFrom.getText().toString());
 				Integer to = ListExit.getInstance().get(moneyTo.getText().toString());
-				if (from != null && to != null) {
+				if (from != null && to != null)
 					new RefreshTask().execute(from, to);
-				} else {
+				else
 					new AlertDialog.Builder(MoneyActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(R.string.invalid_money_from_to).show();
-				}
 			}
 		});
 	}
