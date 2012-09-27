@@ -31,7 +31,6 @@ public class TdAppWidgetProvider extends AppWidgetProvider {
 	public static void updateAppWidget(Context context, AppWidgetManager appWidgetManager, int mAppWidgetId) {
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
 		views.setOnClickPendingIntent(R.id.widget, PendingIntent.getActivity(context, 0, new Intent(context, MainActivity.class), 0));
-		appWidgetManager.updateAppWidget(mAppWidgetId, views);
 		int street = TdApp.getPrefInt(WIDGET_STREET + mAppWidgetId, 0);
 		int zone = TdApp.getPrefInt(WIDGET_ZONE + mAppWidgetId, 0);
 		try {
