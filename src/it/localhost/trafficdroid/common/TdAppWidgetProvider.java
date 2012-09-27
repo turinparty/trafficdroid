@@ -44,9 +44,9 @@ public class TdAppWidgetProvider extends AppWidgetProvider {
 				views.setImageViewResource(R.id.trendLeft, dto.getStreet(street).getZone(zone).getTrendLeft());
 				views.setImageViewResource(R.id.trendRight, dto.getStreet(street).getZone(zone).getTrendRight());
 			}
-			appWidgetManager.updateAppWidget(mAppWidgetId, views);
 		} catch (Exception e) {
-			e.printStackTrace();
+			//Do nothing
 		}
+		appWidgetManager.updateAppWidget(mAppWidgetId, views);
 	}
 }
