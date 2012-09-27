@@ -60,6 +60,10 @@ public class TdApp extends Application {
 		return getPrefBoolean(getContext().getString(key), Boolean.parseBoolean(getContext().getString(def)));
 	}
 
+	public static int getPrefInt(String key, int def) {
+		return sharedPreferences.getInt(key, def);
+	}
+
 	public static String getVersionName() {
 		return versionName;
 	}

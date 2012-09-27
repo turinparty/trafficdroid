@@ -1,8 +1,9 @@
 package it.localhost.trafficdroid.activity;
 
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.common.ListZoneResId;
+import it.localhost.trafficdroid.common.ListZoneResName;
 import it.localhost.trafficdroid.common.TdAnalytics;
-import it.localhost.trafficdroid.common.ZoneArray;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.PreferenceActivity;
@@ -65,8 +66,8 @@ public class PreferencesActivity extends PreferenceActivity { // NO_UCD
 		PreferenceCategory zonesCategory = new PreferenceCategory(this);
 		streetScreen.addPreference(zonesCategory);
 		zonesCategory.setTitle(R.string.sniper);
-		int[] zonesId = getResources().getIntArray(ZoneArray.zonesResId.get(streetId));
-		String[] zonesName = getResources().getStringArray(ZoneArray.zonesResName.get(streetId));
+		int[] zonesId = getResources().getIntArray(ListZoneResId.getInstance().get(streetId));
+		String[] zonesName = getResources().getStringArray(ListZoneResName.getInstance().get(streetId));
 		for (int k = 0; k < zonesId.length; k++) {
 			CheckBoxPreference singlezone = new CheckBoxPreference(this);
 			singlezone.setKey(Integer.toString(zonesId[k]));

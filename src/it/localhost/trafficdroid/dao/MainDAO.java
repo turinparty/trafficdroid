@@ -1,8 +1,10 @@
 package it.localhost.trafficdroid.dao;
 
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.common.ListZoneResId;
+import it.localhost.trafficdroid.common.ListZoneResName;
+import it.localhost.trafficdroid.common.ListZoneResWebcam;
 import it.localhost.trafficdroid.common.TdApp;
-import it.localhost.trafficdroid.common.ZoneArray;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
@@ -49,11 +51,11 @@ public class MainDAO {
 		int[] autoveloxTo = resources.getIntArray(R.array.autoveloxTo);
 		boolean allStreets = TdApp.getPrefBoolean(TdApp.getContext().getString(R.string.allStreetsKey), false);
 		for (int i = 0; i < streetsId.length; i++) {
-			int[] zonesId = resources.getIntArray(ZoneArray.zonesResId.get((streetsId[i])));
+			int[] zonesId = resources.getIntArray(ListZoneResId.getInstance().get((streetsId[i])));
 			StreetDTO street = new StreetDTO(streetsId[i], zonesId);
 			boolean streetEnabled = TdApp.getPrefBoolean(Integer.toString(street.getId()), false);
-			String[] zonesWebcam = resources.getStringArray(ZoneArray.zonesResWebcam.get((streetsId[i])));
-			String[] zonesName = resources.getStringArray(ZoneArray.zonesResName.get(streetsId[i]));
+			String[] zonesWebcam = resources.getStringArray(ListZoneResWebcam.getInstance().get((streetsId[i])));
+			String[] zonesName = resources.getStringArray(ListZoneResName.getInstance().get(streetsId[i]));
 			for (int j = 0; j < zonesId.length; j++)
 				if (allStreets || streetEnabled || TdApp.getPrefBoolean(Integer.toString(zonesId[j]), false)) {
 					ZoneDTO zone = new ZoneDTO(zonesId[j], zonesName[j], zonesWebcam[j]);

@@ -1,7 +1,7 @@
 package it.localhost.trafficdroid.activity;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.common.Money;
+import it.localhost.trafficdroid.common.ListExit;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.MoneyDAO;
 import android.app.AlertDialog;
@@ -25,13 +25,13 @@ public class MoneyActivity extends AbstractActivity {
 		setProgressBarIndeterminateVisibility(false);
 		final AutoCompleteTextView moneyFrom = (AutoCompleteTextView) findViewById(R.id.moneyFrom);
 		final AutoCompleteTextView moneyTo = (AutoCompleteTextView) findViewById(R.id.moneyTo);
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, Money.getInstance().getKeys());
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, ListExit.getInstance().getKeys());
 		moneyFrom.setAdapter(adapter);
 		moneyTo.setAdapter(adapter);
 		findViewById(R.id.moneyOk).setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Integer from = Money.getInstance().get(moneyFrom.getText().toString());
-				Integer to = Money.getInstance().get(moneyTo.getText().toString());
+				Integer from = ListExit.getInstance().get(moneyFrom.getText().toString());
+				Integer to = ListExit.getInstance().get(moneyTo.getText().toString());
 				if (from != null && to != null) {
 					new RefreshTask().execute(from, to);
 				} else {

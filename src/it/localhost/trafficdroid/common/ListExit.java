@@ -2,13 +2,13 @@ package it.localhost.trafficdroid.common;
 
 import java.util.HashMap;
 
-public class Money extends HashMap<String, Integer> {
+public class ListExit extends HashMap<String, Integer> {
 	private static final long serialVersionUID = 1L;
-	private static Money instance;
+	private static ListExit instance;
 
-	public static Money getInstance() {
+	public static ListExit getInstance() {
 		if (instance == null)
-			instance = new Money();
+			instance = new ListExit();
 		return instance;
 	}
 
@@ -16,7 +16,7 @@ public class Money extends HashMap<String, Integer> {
 		return keySet().toArray(new String[size()]);
 	}
 
-	private Money() {
+	private ListExit() {
 		put("Quincinetto (A5 Aosta-Courmayer)", 1);
 		put("Pont Saint Martin (A5 Aosta-Courmayer)", 2);
 		put("Chatillon-Saint Vincent (A5 Aosta-Courmayer)", 3);

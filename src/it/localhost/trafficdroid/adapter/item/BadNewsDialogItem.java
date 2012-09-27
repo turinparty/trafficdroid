@@ -14,7 +14,7 @@ public class BadNewsDialogItem extends AbstractItem {
 	private static final SimpleDateFormat sdfBnFormat = new SimpleDateFormat("HH:mm");
 	private static final String bn_acc = "incidente";
 	private static final String bn_anh = "animali";
-	private static final String bn_bkd = "veicolo fermo o avaria";
+	private static final String bn_bkd = "veicolo fermo";
 	private static final String bn_emv = "colonnine SOS";
 	private static final String bn_fig = "incendio";
 	private static final String bn_fod = "nebbia";

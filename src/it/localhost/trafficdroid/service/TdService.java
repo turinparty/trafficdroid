@@ -3,6 +3,7 @@ package it.localhost.trafficdroid.service;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.TdApp;
+import it.localhost.trafficdroid.common.TdAppWidgetProvider;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
@@ -155,6 +156,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 				TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
 				TdApp.getEditor().putString(GenericException.exceptionMsg, e.getMessage());
 			}
+			TdAppWidgetProvider.onUpdate(this);
 		} else {
 			TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
 			TdApp.getEditor().putString(GenericException.exceptionMsg, disconnectedMessage);
