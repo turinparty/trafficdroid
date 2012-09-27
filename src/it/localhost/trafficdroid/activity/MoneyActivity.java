@@ -65,11 +65,10 @@ public class MoneyActivity extends AbstractActivity {
 		@Override
 		protected void onPostExecute(String money) {
 			setProgressBarIndeterminateVisibility(false);
-			if (this.e == null) {
+			if (this.e == null)
 				((TextView) findViewById(R.id.money)).setText(money);
-			} else {
+			else
 				new AlertDialog.Builder(MoneyActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(e.getMessage()).show();
-			}
 		}
 	}
 }
