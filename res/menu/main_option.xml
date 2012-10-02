@@ -2,11 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
 	<item
-		android:id="@id/menuFuel"
-		android:icon="@android:drawable/ic_menu_info_details"
-		android:showAsAction="ifRoom"
-		android:title="@string/fuel"/>
-	<item
 		android:id="@id/menuMoney"
 		android:icon="@android:drawable/ic_menu_agenda"
 		android:showAsAction="ifRoom"

@@ -12,7 +12,6 @@
 	<string name="webcamNone">Non esistono Webcam associabili a questa tratta. Se non è vero segnalalo sul sito.</string>
 	<string name="settings">Impostazioni</string>
 	<string name="refresh">Aggiorna</string>
-	<string name="fuel">Carburanti</string>
 	<string name="donate">Fai una donazione!</string>
 	<string name="removePref">Strada preferita</string>
 	<string name="badConf">TrafficDroid ha bisogno di un provider per il traffico, inserisci questa informazione in impostazioni. Il sito contiene maggiori informazioni.</string>
@@ -40,9 +39,6 @@
 	<string name="providerCamDefaultThird">edidomus.it</string>
 	<string name="providerCamDefaultFourth">autofiori.it</string>
 	<string name="providerCamDefaultFive">autobspd.it</string>
-	<string name="providerFuelTitle">Servizio Carburanti</string>
-	<string name="providerFuelKey">providerFuelKey</string>
-	<string name="providerFuelDefault">checkupprezzi.netdigit.it</string>
 	<string name="providerBadNewsTitle">Servizio Bad-News</string>
 	<string name="providerBadNewsKey">providerBadNewsKeyDue</string>
 	<string name="providerBadNewsDefault">www.cciss.it</string>

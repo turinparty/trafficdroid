@@ -34,7 +34,6 @@ import android.widget.Toast;
 import com.commonsware.cwac.wakeful.WakefulIntentService;
 
 public class MainActivity extends AbstractActivity {
-	private static final String fuel = "/public/tabellanazionale/tabellaNazionale.php";
 	private static final String donate = "market://details?id=it.localhost.donate";
 	private static final String premium = "market://details?id=it.localhost.trafficdroid.premium";
 	private static final String removePrefToastUndo = " è stato aggiunto ai preferiti.";
@@ -108,11 +107,6 @@ public class MainActivity extends AbstractActivity {
 			return true;
 		case R.id.menuRefresh:
 			tdListener.sendWakefulWork(TdApp.getContext());
-			return true;
-		case R.id.menuFuel:
-			Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + TdApp.getPrefString(R.string.providerFuelKey, R.string.providerFuelDefault) + fuel);
-			startActivity(intent);
 			return true;
 		case R.id.menuMoney:
 			startActivity(new Intent(MainActivity.this, MoneyActivity.class));

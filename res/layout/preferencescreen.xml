@@ -44,12 +44,6 @@
 			android:key="@string/providerCamKeyFive"
 			android:summary="@string/providerSummary"
 			android:title="@string/providerCamTitleFive" />
-
-		<EditTextPreference
-			android:defaultValue="@string/providerFuelDefault"
-			android:key="@string/providerFuelKey"
-			android:summary="@string/providerSummary"
-			android:title="@string/providerFuelTitle" />
 	</PreferenceCategory>
 
 	<PreferenceCategory android:title="@string/updateCategory" >
