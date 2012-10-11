@@ -13,13 +13,17 @@ public class StreetDTO implements Serializable {
 	private ArrayList<BadNewsDTO> badNews;
 	private String[] directions;
 	private ArrayList<Integer> allZonesId;
+	private short[] speed;
+	private int[] trend;
 
 	public StreetDTO(int id, int[] allZonesId) {
 		this.id = id;
-		this.zones = new LinkedHashMap<Integer, ZoneDTO>();
-		this.badNews = new ArrayList<BadNewsDTO>();
-		this.directions = new String[2];
 		this.allZonesId = new ArrayList<Integer>();
+		zones = new LinkedHashMap<Integer, ZoneDTO>();
+		badNews = new ArrayList<BadNewsDTO>();
+		directions = new String[2];
+		speed = new short[2];
+		trend = new int[2];
 		for (int i : allZonesId)
 			this.allZonesId.add(i);
 	}
@@ -86,6 +90,46 @@ public class StreetDTO implements Serializable {
 
 	public ArrayList<Integer> getAllZonesId() {
 		return allZonesId;
+	}
+
+	public short getSpeedLeft() {
+		return speed[0];
+	}
+
+	public void setSpeedLeft(Short speedLeft) {
+		this.speed[0] = speedLeft;
+	}
+
+	public short getSpeedRight() {
+		return speed[1];
+	}
+
+	public void setSpeedRight(short speedRight) {
+		this.speed[1] = speedRight;
+	}
+
+	public void addSpeedLeft(Short speedLeft) {
+		speed[0] += speedLeft;
+	}
+
+	public void addSpeedRight(short speedRight) {
+		speed[1] += speedRight;
+	}
+
+	public int getTrendLeft() {
+		return trend[0];
+	}
+
+	public void setTrendLeft(int trendLeft) {
+		this.trend[0] = trendLeft;
+	}
+
+	public int getTrendRight() {
+		return trend[1];
+	}
+
+	public void setTrendRight(int trendRight) {
+		this.trend[1] = trendRight;
 	}
 
 	@Override

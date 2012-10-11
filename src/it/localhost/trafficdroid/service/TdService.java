@@ -3,7 +3,6 @@ package it.localhost.trafficdroid.service;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.TdApp;
-import it.localhost.trafficdroid.common.TdAppWidgetProvider;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
@@ -11,6 +10,7 @@ import it.localhost.trafficdroid.dto.ZoneDTO;
 import it.localhost.trafficdroid.exception.GenericException;
 import it.localhost.trafficdroid.parser.BadNewsParser;
 import it.localhost.trafficdroid.parser.TrafficParser;
+import it.localhost.trafficdroid.widget.provider.WidgetZoneProvider;
 
 import java.util.Date;
 import java.util.List;
@@ -53,6 +53,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 			try {
 				TrafficParser.parse(currDTO, TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault));
 				for (StreetDTO currStreet : currDTO.getStreets()) {
+					byte availableLeft = 0, availableRight = 0;
 					List<ZoneDTO> currZones = currStreet.getZones();
 					for (ZoneDTO currZone : currZones) {
 						if (currZone.getSpeedLeft() < 1)
@@ -91,12 +92,10 @@ public class TdService extends WakefulIntentService { // NO_UCD
 							currDTO.addCongestedZone(currZone.getName());
 						else if (congestionRight)
 							currDTO.addCongestedZone(currZone.getName());
-						StreetDTO pastStreet = null;
-						ZoneDTO pastZone = null;
 						if (pastDTO != null) {
-							pastStreet = pastDTO.getStreet(currStreet.getId());
+							StreetDTO pastStreet = pastDTO.getStreet(currStreet.getId());
 							if (pastStreet != null) {
-								pastZone = pastStreet.getZone(currZone.getId());
+								ZoneDTO pastZone = pastStreet.getZone(currZone.getId());
 								if (pastZone != null) {
 									int trendSpeed = Integer.parseInt(TdApp.getPrefString(R.string.trendSpeedKey, R.string.trendSpeedDefault));
 									if (currZone.getCatLeft() == 0 || pastZone.getCatLeft() == 0)
@@ -118,9 +117,43 @@ public class TdService extends WakefulIntentService { // NO_UCD
 								}
 							}
 						}
-						if (pastZone == null) {
-							currZone.setTrendLeft(0);
-							currZone.setTrendRight(0);
+						if (currZone.getCatLeft() != 0) {
+							currStreet.addSpeedLeft(currZone.getSpeedLeft());
+							availableLeft++;
+						}
+						if (currZone.getCatRight() != 0) {
+							currStreet.addSpeedRight(currZone.getSpeedRight());
+							availableRight++;
+						}
+					}
+					if (availableLeft != 0)
+						currStreet.setSpeedLeft((short) (currStreet.getSpeedLeft() / availableLeft));
+					else
+						currStreet.setSpeedLeft((short) 0);
+					if (availableRight != 0)
+						currStreet.setSpeedRight((short) (currStreet.getSpeedRight() / availableRight));
+					else
+						currStreet.setSpeedRight((short) 0);
+					if (pastDTO != null) {
+						StreetDTO pastStreet = pastDTO.getStreet(currStreet.getId());
+						if (pastStreet != null) {
+							int trendSpeed = Integer.parseInt(TdApp.getPrefString(R.string.trendSpeedKey, R.string.trendSpeedDefault));
+							if (currStreet.getSpeedLeft() == 0 || pastStreet.getSpeedLeft() == 0)
+								currStreet.setTrendLeft(0);
+							else if (currStreet.getSpeedLeft() - pastStreet.getSpeedLeft() >= trendSpeed)
+								currStreet.setTrendLeft(R.drawable.speed_up);
+							else if (pastStreet.getSpeedLeft() - currStreet.getSpeedLeft() >= trendSpeed)
+								currStreet.setTrendLeft(R.drawable.speed_down);
+							else
+								currStreet.setTrendLeft(0);
+							if (currStreet.getSpeedRight() == 0 || pastStreet.getSpeedRight() == 0)
+								currStreet.setTrendRight(0);
+							else if (currStreet.getSpeedRight() - pastStreet.getSpeedRight() >= trendSpeed)
+								currStreet.setTrendRight(R.drawable.speed_up);
+							else if (pastStreet.getSpeedRight() - currStreet.getSpeedRight() >= trendSpeed)
+								currStreet.setTrendRight(R.drawable.speed_down);
+							else
+								currStreet.setTrendRight(0);
 						}
 					}
 				}
@@ -156,7 +189,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 				TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
 				TdApp.getEditor().putString(GenericException.exceptionMsg, e.getMessage());
 			}
-			TdAppWidgetProvider.onUpdate(this);
+			WidgetZoneProvider.onUpdate(this);
 		} else {
 			TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
 			TdApp.getEditor().putString(GenericException.exceptionMsg, disconnectedMessage);

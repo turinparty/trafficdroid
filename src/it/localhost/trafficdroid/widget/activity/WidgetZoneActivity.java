@@ -1,11 +1,11 @@
-package it.localhost.trafficdroid.activity;
+package it.localhost.trafficdroid.widget.activity;
 
 import it.localhost.trafficdroid.common.TdApp;
-import it.localhost.trafficdroid.common.TdAppWidgetProvider;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
+import it.localhost.trafficdroid.widget.provider.WidgetZoneProvider;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,9 +19,9 @@ import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.SimpleExpandableListAdapter;
 
-public class ConfWidgetActivity extends ExpandableListActivity {
+public class WidgetZoneActivity extends ExpandableListActivity {
 	private static final String NAME = "NAME";
-	MainDTO dto;
+	private MainDTO dto;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -52,10 +52,10 @@ public class ConfWidgetActivity extends ExpandableListActivity {
 	@Override
 	public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 		int mAppWidgetId = getIntent().getExtras().getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
-		TdApp.getEditor().putInt(TdAppWidgetProvider.WIDGET_STREET + mAppWidgetId, dto.getStreets().get(groupPosition).getId());
-		TdApp.getEditor().putInt(TdAppWidgetProvider.WIDGET_ZONE + mAppWidgetId, dto.getStreets().get(groupPosition).getZones().get(childPosition).getId());
+		TdApp.getEditor().putInt(WidgetZoneProvider.WIDGET_ZONE_STREET + mAppWidgetId, dto.getStreets().get(groupPosition).getId());
+		TdApp.getEditor().putInt(WidgetZoneProvider.WIDGET_ZONE_ZONE + mAppWidgetId, dto.getStreets().get(groupPosition).getZones().get(childPosition).getId());
 		TdApp.getEditor().commit();
-		TdAppWidgetProvider.updateAppWidget(this, AppWidgetManager.getInstance(this), mAppWidgetId);
+		WidgetZoneProvider.updateAppWidget(this, AppWidgetManager.getInstance(this), mAppWidgetId);
 		setResult(RESULT_OK, getIntent());
 		finish();
 		return true;

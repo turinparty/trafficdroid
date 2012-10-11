@@ -31,7 +31,7 @@ public class MainAdapter extends BaseExpandableListAdapter {
 			ArrayList<AbstractItem> childItems = new ArrayList<AbstractItem>();
 			childItems.add(new BadNewsItem(context, street));
 			for (ZoneDTO zone : street.getZones()) {
-				if (Math.random() < 0.1)
+				if (Math.random() < 0.05)
 					childItems.add(new BannerDialogItem(context, R.layout.smart_banner));
 				childItems.add(new ZoneItem(context, zone));
 			}

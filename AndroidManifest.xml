@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	package="it.localhost.trafficdroid"
 	android:installLocation="preferExternal"
-	android:versionCode="123"
-	android:versionName="1.16.2 Hop-hop-gadget" >
+	android:versionCode="124"
+	android:versionName="1.16.3 Hop-hop-gadget" >
 
 	<uses-sdk
 		android:minSdkVersion="10"
@@ -39,7 +39,12 @@
 		<activity
 			android:name="com.google.ads.AdActivity"
 			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
-		<activity android:name=".activity.ConfWidgetActivity" >
+		<activity android:name=".widget.activity.WidgetZoneActivity" >
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+			</intent-filter>
+		</activity>
+		<activity android:name=".widget.activity.WidgetStreetActivity" >
 			<intent-filter>
 				<action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
 			</intent-filter>
@@ -55,14 +60,27 @@
 				android:name="com.commonsware.cwac.wakeful"
 				android:resource="@xml/wakeful" />
 		</receiver>
-		<receiver android:name=".common.TdAppWidgetProvider" >
+		<receiver
+			android:name=".widget.provider.WidgetZoneProvider"
+			android:label="@string/widgetZoneName" >
 			<intent-filter>
 				<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
 			</intent-filter>
 
 			<meta-data
 				android:name="android.appwidget.provider"
-				android:resource="@xml/appwidget_info" />
+				android:resource="@xml/widget_zone_info" />
+		</receiver>
+		<receiver
+			android:name=".widget.provider.WidgetStreetProvider"
+			android:label="@string/widgetStreetName" >
+			<intent-filter>
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+			</intent-filter>
+
+			<meta-data
+				android:name="android.appwidget.provider"
+				android:resource="@xml/widget_street_info" />
 		</receiver>
 
 		<service android:name=".service.TdService" />
