@@ -10,6 +10,7 @@ public class WebViewActivity extends AbstractActivity {
 	private WebView webView;
 	public static final String slash = "/";
 	public static final String http = "http://";
+	public static final String https = "https://";
 	public static final String www = "www.";
 	public static final String URL = "url";
 	private String url;
