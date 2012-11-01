@@ -18,6 +18,7 @@ public class BadNewsDialogItem extends AbstractItem {
 	private static final String bn_emv = "colonnine SOS";
 	private static final String bn_fig = "incendio";
 	private static final String bn_fod = "nebbia";
+	private static final String bn_fld = "straripamenti";
 	private static final String bn_fop = "nebbia a banchi";
 	private static final String bn_ibu = "nevischio";
 	private static final String bn_los1 = "code";
@@ -30,6 +31,7 @@ public class BadNewsDialogItem extends AbstractItem {
 	private static final String bn_res = "chius";
 	private static final String bn_rsr = "riduzione di carreggiata";
 	private static final String bn_sab = "area di servizio";
+	private static final String bn_sat = "senso unico alternato";
 	private static final String bn_sdc = "scambio di carreggiata";
 	private static final String bn_sm = "catene";
 	private static final String bn_sn = "mezzi spargisale";
@@ -80,6 +82,8 @@ public class BadNewsDialogItem extends AbstractItem {
 			drawable = R.drawable.bn_fig;
 		else if (badNews.getTitle().contains(bn_emv))
 			drawable = R.drawable.bn_emv;
+		else if (badNews.getTitle().contains(bn_fld))
+			drawable = R.drawable.bn_fld;
 		else if (badNews.getTitle().contains(bn_fod))
 			drawable = R.drawable.bn_fod;
 		else if (badNews.getTitle().contains(bn_ocm))
@@ -100,6 +104,8 @@ public class BadNewsDialogItem extends AbstractItem {
 			drawable = R.drawable.bn_rsr;
 		else if (badNews.getTitle().contains(bn_sab))
 			drawable = R.drawable.bn_sab;
+		else if (badNews.getTitle().contains(bn_sat))
+			drawable = R.drawable.bn_sat;
 		else if (badNews.getTitle().contains(bn_sdc))
 			drawable = R.drawable.bn_sdc;
 		else if (badNews.getTitle().contains(bn_spc))
