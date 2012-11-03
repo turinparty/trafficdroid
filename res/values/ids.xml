@@ -24,6 +24,7 @@
 	<item name="menuRefresh" type="id"/>
 	<item name="menuMoney" type="id"/>
 	<item name="menuDonate" type="id"/>
+	<item name="menuBollo" type="id"/>
 	<item name="removePref" type="id"/>
 	<item name="trendLeft" type="id"/>
 	<item name="trendRight" type="id"/>

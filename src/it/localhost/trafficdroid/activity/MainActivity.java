@@ -111,6 +111,11 @@ public class MainActivity extends AbstractActivity {
 		case R.id.menuMoney:
 			startActivity(new Intent(MainActivity.this, MoneyActivity.class));
 			return true;
+		case R.id.menuBollo:
+			Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+			intent.putExtra(WebViewActivity.URL, WebViewActivity.bollo);
+			startActivity(intent);
+			return true;
 		case R.id.menuDonate:
 			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(donate)));
 			return true;
