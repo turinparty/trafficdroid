@@ -1,7 +1,5 @@
 package it.localhost.trafficdroid.activity;
 
-import com.google.analytics.tracking.android.EasyTracker;
-
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.ListZoneResId;
 import it.localhost.trafficdroid.common.ListZoneResName;
@@ -10,6 +8,8 @@ import android.preference.CheckBoxPreference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
+
+import com.google.analytics.tracking.android.EasyTracker;
 
 public class PreferencesActivity extends PreferenceActivity { // NO_UCD
 	private static final String autovelox = "Autovelox";

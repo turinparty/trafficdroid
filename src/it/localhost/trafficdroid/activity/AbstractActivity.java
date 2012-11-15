@@ -1,9 +1,9 @@
 package it.localhost.trafficdroid.activity;
 
-import com.google.analytics.tracking.android.EasyTracker;
-
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.google.analytics.tracking.android.EasyTracker;
 
 public abstract class AbstractActivity extends Activity {
 	public static final String eventCatWebcam = "Webcam";

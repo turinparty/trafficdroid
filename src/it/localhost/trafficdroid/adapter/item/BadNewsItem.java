@@ -1,7 +1,5 @@
 package it.localhost.trafficdroid.adapter.item;
 
-import com.google.analytics.tracking.android.EasyTracker;
-
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.AbstractActivity;
 import it.localhost.trafficdroid.adapter.BadNewsDialogAdapter;
@@ -13,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.google.analytics.tracking.android.EasyTracker;
 
 public class BadNewsItem extends AbstractItem {
 	static final String badNewsLabel = "Bad News: ";
