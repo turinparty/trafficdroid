@@ -26,12 +26,12 @@ import org.xml.sax.helpers.DefaultHandler;
 public class BadNewsParser extends DefaultHandler {
 	private static final String BADNEWS_TITLE = "title";
 	private static final String BADNEWS_DESCRIPTION = "description";
-	private static final String BADNEWS_PUBDATE = "pubDate";
+	private static final String BADNEWS_PUBDATE = "date";
 	private static final String item = "item";
-	private static final SimpleDateFormat sdfBnParse = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 	private static final String badNewsStreetDelim = " ";
 	private static final String badNewsDelim = "\n";
 	private static final char charAutostrade = 'A';
+	private static SimpleDateFormat sdfBnParse;
 	private MainDTO dto;
 	private String url;
 	private boolean inItem;
@@ -42,6 +42,7 @@ public class BadNewsParser extends DefaultHandler {
 	private Date date;
 
 	public BadNewsParser(MainDTO dto, String url) {
+		sdfBnParse = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 		this.dto = dto;
 		this.url = url;
 	}

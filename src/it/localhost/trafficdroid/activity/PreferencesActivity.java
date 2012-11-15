@@ -1,9 +1,10 @@
 package it.localhost.trafficdroid.activity;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.ListZoneResId;
 import it.localhost.trafficdroid.common.ListZoneResName;
-import it.localhost.trafficdroid.common.TdAnalytics;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.PreferenceActivity;
@@ -20,7 +21,6 @@ public class PreferencesActivity extends PreferenceActivity { // NO_UCD
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		TdAnalytics.startNewSession();
 		addPreferencesFromResource(R.layout.preferencescreen);
 		int[] streetId = getResources().getIntArray(R.array.streetId);
 		String[] streetName = getResources().getStringArray(R.array.streetName);
@@ -80,20 +80,14 @@ public class PreferencesActivity extends PreferenceActivity { // NO_UCD
 	}
 
 	@Override
-	public void onResume() {
-		super.onResume();
-		TdAnalytics.trackPageView(this.getClass().getName());
-	}
-
-	@Override
-	public void onPause() {
-		super.onPause();
-		TdAnalytics.dispatch();
+	public void onStart() {
+		super.onStart();
+		EasyTracker.getInstance().activityStart(this);
 	}
 
 	@Override
 	public void onStop() {
 		super.onStop();
-		TdAnalytics.stopSession();
+		EasyTracker.getInstance().activityStop(this);
 	}
 }

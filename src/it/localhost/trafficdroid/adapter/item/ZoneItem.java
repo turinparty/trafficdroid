@@ -1,9 +1,8 @@
 package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.activity.AbstractActivity;
 import it.localhost.trafficdroid.activity.WebViewActivity;
-import it.localhost.trafficdroid.common.TdAnalytics;
-import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.common.ViewTagger;
 import it.localhost.trafficdroid.dto.ZoneDTO;
 
@@ -17,24 +16,24 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 public class ZoneItem extends AbstractItem {
-	private static final String webcamFirst = "/autostrade-mobile/popupTelecamera.do?ua=Android%201.1&tlc=";
-	private static final String webcamSecond = "/webcam/temp-imgs/camsbig/";
-	private static final String webcamThird = "/vp2/vpcam.aspx?camid=";
-	private static final String webcamFourth = "/cgi-bin/cgiwebcam.exe?site=";
-	private static final String webcamFive = "/images/telecamereAutobspd/";
-	private static final String telecamere = "telecamere.";
-	private static final String mobile = "mobile.";
+	private static final String autostrade = "http://mobile.autostrade.it/autostrade-mobile/popupTelecamera.do?ua=Android%201.1&tlc=";
+	private static final String cavspa = "http://www.cavspa.it/webcam/temp-imgs/camsbig/";
+	private static final String edidomus = "http://telecamere.edidomus.it/vp2/vpcam.aspx?camid=";
+	private static final String autofiori = "http://www.autofiori.it/cgi-bin/cgiwebcam.exe?site=";
+	private static final String autobspd = "http://www.autobspd.it/images/telecamereAutobspd/";
 	private static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
 	private static final String jpg = ".jpg";
 	private static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);
 	private static final String noDataSpeed = "-";
-	private static final char webcamTrueFirst = 'A';
-	private static final char webcamTrueSecond = 'C';
-	private static final char webcamTrueThird = 'E';
-	private static final char webcamTrueFourth = 'F';
-	private static final char webcamTrueFive = 'B';
-	private static final char webcamNone = 'H';
+	private static final char camAutostrade = 'A';
+	private static final char camCavspa = 'C';
+	private static final char camEdidomus = 'E';
+	private static final char camAutofiori = 'F';
+	private static final char camAutobspd = 'B';
+	private static final char camNone = 'H';
 	private ZoneDTO zoneDTO;
 
 	public ZoneItem(Context context, ZoneDTO zoneDTO) {
@@ -94,9 +93,9 @@ public class ZoneItem extends AbstractItem {
 			trendRightText.setVisibility(View.VISIBLE);
 		} else
 			trendRightText.setVisibility(View.INVISIBLE);
-		if (zoneDTO.getWebcam().charAt(0) == webcamTrueFirst || zoneDTO.getWebcam().charAt(0) == webcamTrueSecond || zoneDTO.getWebcam().charAt(0) == webcamTrueThird || zoneDTO.getWebcam().charAt(0) == webcamTrueFourth || zoneDTO.getWebcam().charAt(0) == webcamTrueFive)
+		if (zoneDTO.getWebcam().charAt(0) == camAutostrade || zoneDTO.getWebcam().charAt(0) == camCavspa || zoneDTO.getWebcam().charAt(0) == camEdidomus || zoneDTO.getWebcam().charAt(0) == camAutofiori || zoneDTO.getWebcam().charAt(0) == camAutobspd)
 			cam.setImageResource(android.R.drawable.ic_menu_camera);
-		else if (zoneDTO.getWebcam().charAt(0) == webcamNone)
+		else if (zoneDTO.getWebcam().charAt(0) == camNone)
 			cam.setImageResource(android.R.drawable.ic_menu_close_clear_cancel);
 		else
 			cam.setImageResource(android.R.drawable.ic_menu_add);
@@ -112,37 +111,37 @@ public class ZoneItem extends AbstractItem {
 
 	public void onClick() {
 		String code = zoneDTO.getWebcam();
-		if (code.charAt(0) == webcamNone) {
-			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionNone, code, 0);
+		if (code.charAt(0) == camNone) {
+			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionNone, code, (long) 0);
 			new AlertDialog.Builder(context).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamNone).show();
-		} else if (code.charAt(0) == webcamTrueFirst) {
-			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
+		} else if (code.charAt(0) == camAutostrade) {
+			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
 			int id = Integer.parseInt(code.substring(1)) + 6280 * (date);
-			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + mobile + TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault) + webcamFirst + id);
+			intent.putExtra(WebViewActivity.URL, autostrade + id);
 			context.startActivity(intent);
-		} else if (code.charAt(0) == webcamTrueSecond) {
-			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
+		} else if (code.charAt(0) == camCavspa) {
+			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + WebViewActivity.www + TdApp.getPrefString(R.string.providerCamKeySecond, R.string.providerCamDefaultSecond) + webcamSecond + code.substring(1) + jpg);
+			intent.putExtra(WebViewActivity.URL, cavspa + code.substring(1) + jpg);
 			context.startActivity(intent);
-		} else if (code.charAt(0) == webcamTrueThird) {
-			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
+		} else if (code.charAt(0) == camEdidomus) {
+			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + telecamere + TdApp.getPrefString(R.string.providerCamKeyThird, R.string.providerCamDefaultThird) + webcamThird + code.substring(1));
+			intent.putExtra(WebViewActivity.URL, edidomus + code.substring(1));
 			context.startActivity(intent);
-		} else if (code.charAt(0) == webcamTrueFourth) {
-			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
+		} else if (code.charAt(0) == camAutofiori) {
+			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + WebViewActivity.www + TdApp.getPrefString(R.string.providerCamKeyFourth, R.string.providerCamDefaultFourth) + webcamFourth + code.substring(1));
+			intent.putExtra(WebViewActivity.URL, autofiori + code.substring(1));
 			context.startActivity(intent);
-		} else if (code.charAt(0) == webcamTrueFive) {
-			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionOpen, code, 0);
+		} else if (code.charAt(0) == camAutobspd) {
+			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.URL, WebViewActivity.http + WebViewActivity.www + TdApp.getPrefString(R.string.providerCamKeyFive, R.string.providerCamDefaultFive) + webcamFive + code.substring(1) + jpg);
+			intent.putExtra(WebViewActivity.URL, autobspd + code.substring(1) + jpg);
 			context.startActivity(intent);
 		} else {
-			TdAnalytics.trackEvent(TdAnalytics.eventCatWebcam, TdAnalytics.eventActionRequest, code, 0);
+			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionRequest, code, (long) 0);
 			new AlertDialog.Builder(context).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamAdd).show();
 		}
 	}

@@ -6,4 +6,5 @@
 	ads:adSize="SMART_BANNER"
 	ads:adUnitId="a14d8f6a3c4c2f3"
 	ads:loadAdOnCreate="true"
+	ads:testDevices="3E3BA1580C4C0748C1645065665BC000"
 	android:gravity="center" />

@@ -6,7 +6,7 @@ import it.localhost.trafficdroid.exception.BadConfException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class MoneyDAO {
+public class PedaggioDAO {
 	private static final String path = "/autostrade/ricercaPercorso.do?tipo=G&dtxpDa=";
 	private static final String arg = "&dtxpA=";
 	private static final String spanAperto = "<span class=\"km\">";
@@ -20,8 +20,7 @@ public class MoneyDAO {
 			int start = s.indexOf(spanAperto);
 			if (start != -1) {
 				start = start + spanAperto.length();
-				int end = s.indexOf(and, start);
-				return s.substring(start, end).trim();
+				return s.substring(start, s.indexOf(and, start)).trim();
 			} else
 				throw new BadConfException(badParams);
 		} catch (Exception e) {

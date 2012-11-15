@@ -1,31 +1,32 @@
 package it.localhost.trafficdroid.activity;
 
-import it.localhost.trafficdroid.common.TdAnalytics;
+import com.google.analytics.tracking.android.EasyTracker;
+
 import android.app.Activity;
 import android.os.Bundle;
 
-abstract class AbstractActivity extends Activity {
+public abstract class AbstractActivity extends Activity {
+	public static final String eventCatWebcam = "Webcam";
+	public static final String eventCatBadNews = "BadNews";
+	public static final String eventCatGraph = "Graph";
+	public static final String eventActionRequest = "Request";
+	public static final String eventActionOpen = "Open";
+	public static final String eventActionNone = "None";
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		TdAnalytics.startNewSession();
 	}
 
 	@Override
-	public void onResume() {
-		super.onResume();
-		TdAnalytics.trackPageView(this.getClass().getName());
-	}
-
-	@Override
-	public void onPause() {
-		super.onPause();
-		TdAnalytics.dispatch();
+	public void onStart() {
+		super.onStart();
+		EasyTracker.getInstance().activityStart(this);
 	}
 
 	@Override
 	public void onStop() {
 		super.onStop();
-		TdAnalytics.stopSession();
+		EasyTracker.getInstance().activityStop(this);
 	}
 }

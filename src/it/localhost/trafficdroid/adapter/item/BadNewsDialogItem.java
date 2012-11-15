@@ -4,14 +4,13 @@ import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.ViewTagger;
 import it.localhost.trafficdroid.dto.BadNewsDTO;
 
-import java.text.SimpleDateFormat;
+import java.text.DateFormat;
 
 import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 
 public class BadNewsDialogItem extends AbstractItem {
-	private static final SimpleDateFormat sdfBnFormat = new SimpleDateFormat("HH:mm");
 	private static final String bn_acc = "incidente";
 	private static final String bn_anh = "animali";
 	private static final String bn_bkd = "veicolo fermo";
@@ -38,11 +37,13 @@ public class BadNewsDialogItem extends AbstractItem {
 	private static final String bn_sne = "neve";
 	private static final String bn_spc = "controllo velocità";
 	private static final String bn_win = "vento forte";
+	private static DateFormat sdfBnFormat;
 	private BadNewsDTO badNews;
 
 	public BadNewsDialogItem(Context context, BadNewsDTO badNews) {
 		super(context);
 		this.badNews = badNews;
+		sdfBnFormat = DateFormat.getTimeInstance(DateFormat.SHORT);
 	}
 
 	public int getType() {

@@ -1,8 +1,10 @@
 package it.localhost.trafficdroid.adapter.item;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.activity.AbstractActivity;
 import it.localhost.trafficdroid.adapter.BadNewsDialogAdapter;
-import it.localhost.trafficdroid.common.TdAnalytics;
 import it.localhost.trafficdroid.common.ViewTagger;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import android.app.Dialog;
@@ -47,7 +49,7 @@ public class BadNewsItem extends AbstractItem {
 
 	public void onClick() {
 		if (streetDTO.getBadNews().size() != 0) {
-			TdAnalytics.trackEvent(TdAnalytics.eventCatBadNews, TdAnalytics.eventActionOpen, streetDTO.getName(), 0);
+			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatBadNews, AbstractActivity.eventActionOpen, streetDTO.getName(), (long) 0);
 			Dialog dialog = new Dialog(context);
 			dialog.setTitle(streetDTO.getName());
 			ListView listview = (ListView) LayoutInflater.from(context).inflate(R.layout.dialog_badnews, null);

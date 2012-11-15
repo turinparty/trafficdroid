@@ -3,7 +3,7 @@ package it.localhost.trafficdroid.activity;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.ListExit;
 import it.localhost.trafficdroid.common.TdApp;
-import it.localhost.trafficdroid.dao.MoneyDAO;
+import it.localhost.trafficdroid.dao.PedaggioDAO;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -16,26 +16,26 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 
-public class MoneyActivity extends AbstractActivity {
+public class PedaggioActivity extends AbstractActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-		setContentView(R.layout.money);
+		setContentView(R.layout.pedaggio);
 		setProgressBarIndeterminateVisibility(false);
 		final AutoCompleteTextView moneyFrom = (AutoCompleteTextView) findViewById(R.id.moneyFrom);
 		final AutoCompleteTextView moneyTo = (AutoCompleteTextView) findViewById(R.id.moneyTo);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, ListExit.getInstance().getKeys());
 		moneyFrom.setAdapter(adapter);
 		moneyTo.setAdapter(adapter);
-		findViewById(R.id.moneyOk).setOnClickListener(new OnClickListener() {
+		findViewById(R.id.ok).setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Integer from = ListExit.getInstance().get(moneyFrom.getText().toString());
 				Integer to = ListExit.getInstance().get(moneyTo.getText().toString());
 				if (from != null && to != null)
 					new RefreshTask().execute(from, to);
 				else
-					new AlertDialog.Builder(MoneyActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(R.string.invalid_money_from_to).show();
+					new AlertDialog.Builder(PedaggioActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(R.string.invalid_money_from_to).show();
 			}
 		});
 	}
@@ -53,7 +53,7 @@ public class MoneyActivity extends AbstractActivity {
 		@Override
 		protected String doInBackground(Integer... args) {
 			try {
-				String money = "€ " + MoneyDAO.getData(args[0], args[1], TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault));
+				String money = "€ " + PedaggioDAO.getData(args[0], args[1], TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault));
 				return money;
 			} catch (Exception e) {
 				this.e = e;
@@ -65,9 +65,9 @@ public class MoneyActivity extends AbstractActivity {
 		protected void onPostExecute(String money) {
 			setProgressBarIndeterminateVisibility(false);
 			if (this.e == null)
-				((TextView) findViewById(R.id.money)).setText(money);
+				((TextView) findViewById(R.id.result)).setText(money);
 			else
-				new AlertDialog.Builder(MoneyActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(e.getMessage()).show();
+				new AlertDialog.Builder(PedaggioActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(e.getMessage()).show();
 		}
 	}
 }

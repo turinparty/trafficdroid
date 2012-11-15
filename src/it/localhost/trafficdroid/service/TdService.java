@@ -161,7 +161,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 				if (congestedZones != null && TdApp.getPrefBoolean(R.string.chiaroveggenzaEnablerKey, R.string.chiaroveggenzaEnablerDefault)) {
 					NotificationCompat.Builder bui = new NotificationCompat.Builder(this);
 					bui.setDefaults(Notification.DEFAULT_ALL);
-					bui.setSmallIcon(R.drawable.icon);
+					bui.setSmallIcon(R.drawable.ic_stat_notify_trafficdroid);
 					bui.setTicker(congestedZones);
 					bui.setContentTitle(getString(R.string.notificationTitle));
 					bui.setContentText(congestedZones);

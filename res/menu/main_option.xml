@@ -5,7 +5,7 @@
 		android:id="@id/menuMoney"
 		android:icon="@android:drawable/ic_menu_agenda"
 		android:showAsAction="ifRoom"
-		android:title="@string/money"/>
+		android:title="@string/pedaggio"/>
 	<item
 		android:id="@id/menuBollo"
 		android:icon="@android:drawable/ic_menu_manage"

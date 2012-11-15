@@ -5,8 +5,9 @@
 	<string name="widgetStreetName">Trafficdroid - Strada intera</string>
 	<string name="app_name">TrafficDroid</string>
 	<string name="ok">OK</string>
-	<string name="bollo">Bollo Auto</string>
-	<string name="money">Costo Autostradale</string>
+	<string name="targa">Targa</string>
+	<string name="pedaggio">Pedaggio Autostradale</string>
+	<string name="bollo">Verifica Bollo</string>
 	<string name="error">Errore</string>
 	<string name="premium">Rimuovi i banner!</string>
 	<string name="warning">Attenzione</string>

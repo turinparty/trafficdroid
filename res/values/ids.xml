@@ -35,8 +35,10 @@
 	<item name="menuPremium" type="id"/>
 	<item name="moneyFrom" type="id"/>
 	<item name="moneyTo" type="id"/>
-	<item name="moneyOk" type="id"/>
-	<item name="money" type="id"/>
+	<item name="ok" type="id"/>
+	<item name="result" type="id"/>
 	<item name="widget" type="id"/>
+	<item name="targa" type="id"/>
+	<item name="euro" type="id"/>
 
 </resources>
