@@ -21,7 +21,7 @@
 			android:layout_height="20dp"
 			android:layout_gravity="center"
 			android:layout_weight="1"
-			android:contentDescription="@string/trendSpeedTitle" />
+			android:contentDescription="@string/trendLeft" />
 
 		<TextView
 			android:id="@id/zoneSpeedLeft"
@@ -35,7 +35,7 @@
 			android:layout_width="match_parent"
 			android:layout_height="20dp"
 			android:layout_weight="1"
-			android:contentDescription="@string/warning"
+			android:contentDescription="@string/autoveloxLeft"
 			android:gravity="center"
 			android:src="@drawable/autovelox" />
 
@@ -44,7 +44,7 @@
 			android:layout_width="match_parent"
 			android:layout_height="20dp"
 			android:layout_weight="1"
-			android:contentDescription="@string/providerCamDefault"
+			android:contentDescription="@string/webcam"
 			android:gravity="center" />
 
 		<ImageView
@@ -52,7 +52,7 @@
 			android:layout_width="match_parent"
 			android:layout_height="20dp"
 			android:layout_weight="1"
-			android:contentDescription="@string/warning"
+			android:contentDescription="@string/autoveloxRight"
 			android:gravity="center"
 			android:src="@drawable/autovelox" />
 
@@ -69,7 +69,7 @@
 			android:layout_height="20dp"
 			android:layout_gravity="center"
 			android:layout_weight="1"
-			android:contentDescription="@string/trendSpeedTitle" />
+			android:contentDescription="@string/trendRight" />
 	</LinearLayout>
 
 </LinearLayout>

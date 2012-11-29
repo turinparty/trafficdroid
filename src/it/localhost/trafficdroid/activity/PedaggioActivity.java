@@ -53,7 +53,7 @@ public class PedaggioActivity extends AbstractActivity {
 		@Override
 		protected String doInBackground(Integer... args) {
 			try {
-				String money = "€ " + PedaggioDAO.getData(args[0], args[1], TdApp.getPrefString(R.string.providerCamKey, R.string.providerCamDefault));
+				String money = "€ " + PedaggioDAO.getData(args[0], args[1]);
 				return money;
 			} catch (Exception e) {
 				this.e = e;

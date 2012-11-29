@@ -33,7 +33,6 @@ public class BadNewsParser extends DefaultHandler {
 	private static final char charAutostrade = 'A';
 	private static SimpleDateFormat sdfBnParse;
 	private MainDTO dto;
-	private String url;
 	private boolean inItem;
 	private boolean badnewsDaAutostrada;
 	private StringBuilder buf;
@@ -41,17 +40,16 @@ public class BadNewsParser extends DefaultHandler {
 	private String xml_description;
 	private Date date;
 
-	public BadNewsParser(MainDTO dto, String url) {
+	public BadNewsParser(MainDTO dto) {
 		sdfBnParse = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 		this.dto = dto;
-		this.url = url;
 	}
 
 	public void parse() throws GenericException, BadConfException, ConnectionException {
 		try {
 			XMLReader xmlReader = SAXParserFactory.newInstance().newSAXParser().getXMLReader();
 			xmlReader.setContentHandler(this);
-			InputSource inputSource = EventDAO.getData(url);
+			InputSource inputSource = EventDAO.getData();
 			xmlReader.parse(inputSource);
 		} catch (ParserConfigurationException e) {
 			throw new GenericException(e);

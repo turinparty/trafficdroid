@@ -177,7 +177,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 			}
 			try {
 				if (TdApp.getPrefBoolean(R.string.badnewsEnablerKey, R.string.badnewsEnablerDefault))
-					new BadNewsParser(currDTO, TdApp.getPrefString(R.string.providerBadNewsKey, R.string.providerBadNewsDefault)).parse();
+					new BadNewsParser(currDTO).parse();
 			} catch (Exception e) {
 				TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
 				TdApp.getEditor().putString(GenericException.exceptionMsg, e.getMessage());

@@ -28,24 +28,6 @@
 	<string name="providerTrafficTitle">Servizio Traffico</string>
 	<string name="providerTrafficKey">providerTrafficKeyFour</string>
 	<string name="providerTrafficDefault">infoCELESTEtraffic.com</string>
-	<string name="providerCamTitle">Servizio WebCam 1</string>
-	<string name="providerCamTitleSecond">Servizio WebCam 2</string>
-	<string name="providerCamTitleThird">Servizio WebCam 3</string>
-	<string name="providerCamTitleFourth">Servizio WebCam 4</string>
-	<string name="providerCamTitleFive">Servizio WebCam 5</string>
-	<string name="providerCamKey">providerCamKeya1</string>
-	<string name="providerCamKeySecond">providerCamKeyb1</string>
-	<string name="providerCamKeyThird">providerCamKeyc1</string>
-	<string name="providerCamKeyFourth">providerCamKeyd1</string>
-	<string name="providerCamKeyFive">providerCamKeye1</string>
-	<string name="providerCamDefault">autostrade.it</string>
-	<string name="providerCamDefaultSecond">cavspa.it</string>
-	<string name="providerCamDefaultThird">edidomus.it</string>
-	<string name="providerCamDefaultFourth">autofiori.it</string>
-	<string name="providerCamDefaultFive">autobspd.it</string>
-	<string name="providerBadNewsTitle">Servizio Bad-News</string>
-	<string name="providerBadNewsKey">providerBadNewsKeyDue</string>
-	<string name="providerBadNewsDefault">www.cciss.it</string>
 	<string name="updateCategory">Opzioni</string>
 	<string name="berserkTitle">Berserk</string>
 	<string name="berserkKey">berserkKey</string>
@@ -79,5 +61,10 @@
 	<string name="allStreetsKey">allStreetsKey</string>
 	<string name="allStreetsSummary">Attenzione aumenta il consumo dati</string>
 	<string name="allStreetsTitle">Tutte le Strade</string>
+	<string name="autoveloxLeft">Autovelox sinistro</string>
+	<string name="autoveloxRight">Autovelox destro</string>
+	<string name="trendLeft">Trend sinistro</string>
+	<string name="trendRight">Trend destro</string>
+	<string name="webcam">Webcam stradale</string>
 
 </resources>

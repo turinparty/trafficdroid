@@ -1,6 +1,5 @@
 package it.localhost.trafficdroid.dao;
 
-import it.localhost.trafficdroid.activity.WebViewActivity;
 import it.localhost.trafficdroid.exception.BadConfException;
 import it.localhost.trafficdroid.exception.ConnectionException;
 
@@ -11,14 +10,14 @@ import java.net.URL;
 import org.xml.sax.InputSource;
 
 public class EventDAO {
-	private static final String events = "/portale/rss?rsstype=traffic";
+	private static final String url = "http://www.cciss.it/portale/rss?rsstype=traffic";
 
-	public static InputSource getData(String url) throws BadConfException, ConnectionException {
+	public static InputSource getData() throws BadConfException, ConnectionException {
 		InputSource inputSource = null;
 		int numTries = 3;
 		while (true) {
 			try {
-				inputSource = new InputSource(new URL(WebViewActivity.http + url + events).openStream());
+				inputSource = new InputSource(new URL(url).openStream());
 				break;
 			} catch (MalformedURLException e) {
 				throw new BadConfException(e);

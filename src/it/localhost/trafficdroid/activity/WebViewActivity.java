@@ -15,9 +15,10 @@ public class WebViewActivity extends AbstractActivity {
 	public static final String http = "http://";
 	public static final String https = "https://";
 	public static final String www = "www.";
-	public static final String URL = "url";
-	public static final String bollo = "http://www.agenziaentrate.gov.it/wps/content/Nsilib/Nsi/Home/Servizi+online/Servizi+senza+registrazione/Calcolo+del+bollo+e+controllo+dei+pagamenti+effettuati+in+base+ai+KW+o+ai+CV/";
+	public static final String urlTag = "url";
+	public static final String dataTag = "data";
 	private String url;
+	private String data;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -33,13 +34,18 @@ public class WebViewActivity extends AbstractActivity {
 		});
 		webView.getSettings().setJavaScriptEnabled(true);
 		webView.getSettings().setBuiltInZoomControls(true);
-		url = getIntent().getStringExtra(WebViewActivity.URL);
-		webView.loadUrl(url);
+		url = getIntent().getStringExtra(WebViewActivity.urlTag);
+		data = getIntent().getStringExtra(WebViewActivity.dataTag);
+		if (url != null)
+			webView.loadUrl(url);
+		else if (data != null)
+			webView.loadData(data, "text/html", null);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.webview_option, menu);
+		if (url != null)
+			getMenuInflater().inflate(R.menu.webview_option, menu);
 		return true;
 	}
 

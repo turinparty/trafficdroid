@@ -118,27 +118,27 @@ public class ZoneItem extends AbstractItem {
 			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
 			int id = Integer.parseInt(code.substring(1)) + 6280 * (date);
-			intent.putExtra(WebViewActivity.URL, autostrade + id);
+			intent.putExtra(WebViewActivity.urlTag, autostrade + id);
 			context.startActivity(intent);
 		} else if (code.charAt(0) == camCavspa) {
 			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.URL, cavspa + code.substring(1) + jpg);
+			intent.putExtra(WebViewActivity.urlTag, cavspa + code.substring(1) + jpg);
 			context.startActivity(intent);
 		} else if (code.charAt(0) == camEdidomus) {
 			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.URL, edidomus + code.substring(1));
+			intent.putExtra(WebViewActivity.urlTag, edidomus + code.substring(1));
 			context.startActivity(intent);
 		} else if (code.charAt(0) == camAutofiori) {
 			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.URL, autofiori + code.substring(1));
+			intent.putExtra(WebViewActivity.urlTag, autofiori + code.substring(1));
 			context.startActivity(intent);
 		} else if (code.charAt(0) == camAutobspd) {
 			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.URL, autobspd + code.substring(1) + jpg);
+			intent.putExtra(WebViewActivity.urlTag, autobspd + code.substring(1) + jpg);
 			context.startActivity(intent);
 		} else {
 			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionRequest, code, (long) 0);
