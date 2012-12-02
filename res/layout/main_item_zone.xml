@@ -5,7 +5,7 @@
 	android:orientation="vertical" >
 
 	<TextView
-		android:id="@id/zoneName"
+		android:id="@+id/zoneName"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:gravity="center" />
@@ -16,7 +16,7 @@
 		android:weightSum="7" >
 
 		<ImageView
-			android:id="@id/trendLeft"
+			android:id="@+id/trendLeft"
 			android:layout_width="match_parent"
 			android:layout_height="20dp"
 			android:layout_gravity="center"
@@ -24,14 +24,14 @@
 			android:contentDescription="@string/trendLeft" />
 
 		<TextView
-			android:id="@id/zoneSpeedLeft"
+			android:id="@+id/zoneSpeedLeft"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:layout_weight="1"
 			android:gravity="center" />
 
 		<ImageView
-			android:id="@id/zoneAutoveloxLeft"
+			android:id="@+id/zoneAutoveloxLeft"
 			android:layout_width="match_parent"
 			android:layout_height="20dp"
 			android:layout_weight="1"
@@ -40,7 +40,7 @@
 			android:src="@drawable/autovelox" />
 
 		<ImageView
-			android:id="@id/zoneCam"
+			android:id="@+id/zoneCam"
 			android:layout_width="match_parent"
 			android:layout_height="20dp"
 			android:layout_weight="1"
@@ -48,7 +48,7 @@
 			android:gravity="center" />
 
 		<ImageView
-			android:id="@id/zoneAutoveloxRight"
+			android:id="@+id/zoneAutoveloxRight"
 			android:layout_width="match_parent"
 			android:layout_height="20dp"
 			android:layout_weight="1"
@@ -57,14 +57,14 @@
 			android:src="@drawable/autovelox" />
 
 		<TextView
-			android:id="@id/zoneSpeedRight"
+			android:id="@+id/zoneSpeedRight"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:layout_weight="1"
 			android:gravity="center" />
 
 		<ImageView
-			android:id="@id/trendRight"
+			android:id="@+id/trendRight"
 			android:layout_width="match_parent"
 			android:layout_height="20dp"
 			android:layout_gravity="center"

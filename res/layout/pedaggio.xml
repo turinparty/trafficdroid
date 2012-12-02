@@ -11,7 +11,7 @@
 		android:text="@string/from" />
 
 	<AutoCompleteTextView
-		android:id="@id/moneyFrom"
+		android:id="@+id/moneyFrom"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:completionThreshold="1"
@@ -25,7 +25,7 @@
 		android:text="@string/to" />
 
 	<AutoCompleteTextView
-		android:id="@id/moneyTo"
+		android:id="@+id/moneyTo"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:completionThreshold="1"
@@ -48,7 +48,7 @@
 			android:text="@string/pedaggio" />
 
 		<TextView
-			android:id="@id/result"
+			android:id="@+id/result"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"

@@ -5,7 +5,7 @@
 	android:weightSum="6" >
 
 	<TextView
-		android:id="@id/badNewsDate"
+		android:id="@+id/badNewsDate"
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
 		android:layout_weight="1"
@@ -19,13 +19,13 @@
 		android:orientation="vertical" >
 
 		<TextView
-			android:id="@id/badNewsTitle"
+			android:id="@+id/badNewsTitle"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:textStyle="bold" />
 
 		<TextView
-			android:id="@id/badNewsDescription"
+			android:id="@+id/badNewsDescription"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" />
 	</LinearLayout>
