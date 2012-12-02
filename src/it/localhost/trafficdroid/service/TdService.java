@@ -56,64 +56,69 @@ public class TdService extends WakefulIntentService { // NO_UCD
 					byte availableLeft = 0, availableRight = 0;
 					List<ZoneDTO> currZones = currStreet.getZones();
 					for (ZoneDTO currZone : currZones) {
-						if (currZone.getSpeedLeft() < 1)
+						if (currZone.getSpeedLeft() < 1) {
 							currZone.setCatLeft((byte) 0);
-						else if (currZone.getSpeedLeft() < 11)
+						} else if (currZone.getSpeedLeft() < 11) {
 							currZone.setCatLeft((byte) 1);
-						else if (currZone.getSpeedLeft() < 31)
+						} else if (currZone.getSpeedLeft() < 31) {
 							currZone.setCatLeft((byte) 2);
-						else if (currZone.getSpeedLeft() < 51)
+						} else if (currZone.getSpeedLeft() < 51) {
 							currZone.setCatLeft((byte) 3);
-						else if (currZone.getSpeedLeft() < 71)
+						} else if (currZone.getSpeedLeft() < 71) {
 							currZone.setCatLeft((byte) 4);
-						else if (currZone.getSpeedLeft() < 91)
+						} else if (currZone.getSpeedLeft() < 91) {
 							currZone.setCatLeft((byte) 5);
-						else
+						} else {
 							currZone.setCatLeft((byte) 6);
-						if (currZone.getSpeedRight() < 1)
+						}
+						if (currZone.getSpeedRight() < 1) {
 							currZone.setCatRight((byte) 0);
-						else if (currZone.getSpeedRight() < 11)
+						} else if (currZone.getSpeedRight() < 11) {
 							currZone.setCatRight((byte) 1);
-						else if (currZone.getSpeedRight() < 31)
+						} else if (currZone.getSpeedRight() < 31) {
 							currZone.setCatRight((byte) 2);
-						else if (currZone.getSpeedRight() < 51)
+						} else if (currZone.getSpeedRight() < 51) {
 							currZone.setCatRight((byte) 3);
-						else if (currZone.getSpeedRight() < 71)
+						} else if (currZone.getSpeedRight() < 71) {
 							currZone.setCatRight((byte) 4);
-						else if (currZone.getSpeedRight() < 91)
+						} else if (currZone.getSpeedRight() < 91) {
 							currZone.setCatRight((byte) 5);
-						else
+						} else {
 							currZone.setCatRight((byte) 6);
+						}
 						boolean congestionLeft = currZone.getCatLeft() > 0 && currZone.getCatLeft() <= currDTO.getCongestionThreshold();
 						boolean congestionRight = currZone.getCatRight() > 0 && currZone.getCatRight() <= currDTO.getCongestionThreshold();
-						if (congestionLeft && congestionRight)
+						if (congestionLeft && congestionRight) {
 							currDTO.addCongestedZone(currZone.getName());
-						else if (congestionLeft)
+						} else if (congestionLeft) {
 							currDTO.addCongestedZone(currZone.getName());
-						else if (congestionRight)
+						} else if (congestionRight) {
 							currDTO.addCongestedZone(currZone.getName());
+						}
 						if (pastDTO != null) {
 							StreetDTO pastStreet = pastDTO.getStreet(currStreet.getId());
 							if (pastStreet != null) {
 								ZoneDTO pastZone = pastStreet.getZone(currZone.getId());
 								if (pastZone != null) {
 									int trendSpeed = Integer.parseInt(TdApp.getPrefString(R.string.trendSpeedKey, R.string.trendSpeedDefault));
-									if (currZone.getCatLeft() == 0 || pastZone.getCatLeft() == 0)
+									if (currZone.getCatLeft() == 0 || pastZone.getCatLeft() == 0) {
 										currZone.setTrendLeft(0);
-									else if (currZone.getSpeedLeft() - pastZone.getSpeedLeft() >= trendSpeed)
+									} else if (currZone.getSpeedLeft() - pastZone.getSpeedLeft() >= trendSpeed) {
 										currZone.setTrendLeft(R.drawable.speed_up);
-									else if (pastZone.getSpeedLeft() - currZone.getSpeedLeft() >= trendSpeed)
+									} else if (pastZone.getSpeedLeft() - currZone.getSpeedLeft() >= trendSpeed) {
 										currZone.setTrendLeft(R.drawable.speed_down);
-									else
+									} else {
 										currZone.setTrendLeft(0);
-									if (currZone.getCatRight() == 0 || pastZone.getCatRight() == 0)
+									}
+									if (currZone.getCatRight() == 0 || pastZone.getCatRight() == 0) {
 										currZone.setTrendRight(0);
-									else if (currZone.getSpeedRight() - pastZone.getSpeedRight() >= trendSpeed)
+									} else if (currZone.getSpeedRight() - pastZone.getSpeedRight() >= trendSpeed) {
 										currZone.setTrendRight(R.drawable.speed_up);
-									else if (pastZone.getSpeedRight() - currZone.getSpeedRight() >= trendSpeed)
+									} else if (pastZone.getSpeedRight() - currZone.getSpeedRight() >= trendSpeed) {
 										currZone.setTrendRight(R.drawable.speed_down);
-									else
+									} else {
 										currZone.setTrendRight(0);
+									}
 								}
 							}
 						}
@@ -126,34 +131,38 @@ public class TdService extends WakefulIntentService { // NO_UCD
 							availableRight++;
 						}
 					}
-					if (availableLeft != 0)
+					if (availableLeft != 0) {
 						currStreet.setSpeedLeft((short) (currStreet.getSpeedLeft() / availableLeft));
-					else
+					} else {
 						currStreet.setSpeedLeft((short) 0);
-					if (availableRight != 0)
+					}
+					if (availableRight != 0) {
 						currStreet.setSpeedRight((short) (currStreet.getSpeedRight() / availableRight));
-					else
+					} else {
 						currStreet.setSpeedRight((short) 0);
+					}
 					if (pastDTO != null) {
 						StreetDTO pastStreet = pastDTO.getStreet(currStreet.getId());
 						if (pastStreet != null) {
 							int trendSpeed = Integer.parseInt(TdApp.getPrefString(R.string.trendSpeedKey, R.string.trendSpeedDefault));
-							if (currStreet.getSpeedLeft() == 0 || pastStreet.getSpeedLeft() == 0)
+							if (currStreet.getSpeedLeft() == 0 || pastStreet.getSpeedLeft() == 0) {
 								currStreet.setTrendLeft(0);
-							else if (currStreet.getSpeedLeft() - pastStreet.getSpeedLeft() >= trendSpeed)
+							} else if (currStreet.getSpeedLeft() - pastStreet.getSpeedLeft() >= trendSpeed) {
 								currStreet.setTrendLeft(R.drawable.speed_up);
-							else if (pastStreet.getSpeedLeft() - currStreet.getSpeedLeft() >= trendSpeed)
+							} else if (pastStreet.getSpeedLeft() - currStreet.getSpeedLeft() >= trendSpeed) {
 								currStreet.setTrendLeft(R.drawable.speed_down);
-							else
+							} else {
 								currStreet.setTrendLeft(0);
-							if (currStreet.getSpeedRight() == 0 || pastStreet.getSpeedRight() == 0)
+							}
+							if (currStreet.getSpeedRight() == 0 || pastStreet.getSpeedRight() == 0) {
 								currStreet.setTrendRight(0);
-							else if (currStreet.getSpeedRight() - pastStreet.getSpeedRight() >= trendSpeed)
+							} else if (currStreet.getSpeedRight() - pastStreet.getSpeedRight() >= trendSpeed) {
 								currStreet.setTrendRight(R.drawable.speed_up);
-							else if (pastStreet.getSpeedRight() - currStreet.getSpeedRight() >= trendSpeed)
+							} else if (pastStreet.getSpeedRight() - currStreet.getSpeedRight() >= trendSpeed) {
 								currStreet.setTrendRight(R.drawable.speed_down);
-							else
+							} else {
 								currStreet.setTrendRight(0);
+							}
 						}
 					}
 				}
@@ -168,16 +177,18 @@ public class TdService extends WakefulIntentService { // NO_UCD
 					Intent intent = new Intent(this, MainActivity.class);
 					intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 					bui.setContentIntent(PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT));
-					((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(TdService.notificationId, bui.getNotification());
-				} else
+					((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(TdService.notificationId, bui.build());
+				} else {
 					((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(TdService.notificationId);
+				}
 			} catch (Exception e) {
 				TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
 				TdApp.getEditor().putString(GenericException.exceptionMsg, e.getMessage());
 			}
 			try {
-				if (TdApp.getPrefBoolean(R.string.badnewsEnablerKey, R.string.badnewsEnablerDefault))
+				if (TdApp.getPrefBoolean(R.string.badnewsEnablerKey, R.string.badnewsEnablerDefault)) {
 					new BadNewsParser(currDTO).parse();
+				}
 			} catch (Exception e) {
 				TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
 				TdApp.getEditor().putString(GenericException.exceptionMsg, e.getMessage());
