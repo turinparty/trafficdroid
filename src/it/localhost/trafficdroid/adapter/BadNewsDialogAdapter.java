@@ -1,9 +1,15 @@
 package it.localhost.trafficdroid.adapter;
 
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.activity.AbstractActivity;
 import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.adapter.item.BadNewsDialogItem;
 import it.localhost.trafficdroid.adapter.item.BannerDialogItem;
+import it.localhost.trafficdroid.common.billing.IabHelper;
+import it.localhost.trafficdroid.common.billing.IabHelper.OnIabSetupFinishedListener;
+import it.localhost.trafficdroid.common.billing.IabHelper.QueryInventoryFinishedListener;
+import it.localhost.trafficdroid.common.billing.IabResult;
+import it.localhost.trafficdroid.common.billing.Inventory;
 import it.localhost.trafficdroid.dto.BadNewsDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 
@@ -14,16 +20,32 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
-public class BadNewsDialogAdapter extends ArrayAdapter<BadNewsDTO> {
+public class BadNewsDialogAdapter extends ArrayAdapter<BadNewsDTO> implements QueryInventoryFinishedListener, OnIabSetupFinishedListener {
 	private ArrayList<AbstractItem> items;
+	private IabHelper mHelper;
+	private Context context;
 
 	public BadNewsDialogAdapter(Context context, StreetDTO street) {
 		super(context, 0);
+		this.context = context;
+		mHelper = new IabHelper(context, AbstractActivity.KEY);
+		mHelper.startSetup(this);
 		items = new ArrayList<AbstractItem>();
-		for (BadNewsDTO badNews : street.getBadNews()) {
-			if (Math.random() < 0.1)
-				items.add(new BannerDialogItem(context, R.layout.iab_mrect));
+		for (BadNewsDTO badNews : street.getBadNews())
 			items.add(new BadNewsDialogItem(context, badNews));
+	}
+
+	@Override
+	public void onIabSetupFinished(IabResult result) {
+		if (result.isSuccess())
+			mHelper.queryInventoryAsync(true, AbstractActivity.additionalSkuList, this);
+	}
+
+	@Override
+	public void onQueryInventoryFinished(IabResult result, Inventory inv) {
+		if (!result.isSuccess() || !inv.hasPurchase(AbstractActivity.SKU_AD_FREE)) {
+			items.add(0, new BannerDialogItem(context, R.layout.iab_mrect));
+			items.add(new BannerDialogItem(context, R.layout.iab_mrect));
 		}
 	}
 

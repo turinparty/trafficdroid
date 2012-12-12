@@ -35,7 +35,6 @@ import com.commonsware.cwac.wakeful.WakefulIntentService;
 
 public class MainActivity extends AbstractActivity {
 	private static final String donate = "market://details?id=it.localhost.donate";
-	private static final String premium = "market://details?id=it.localhost.trafficdroid.premium";
 	private static final String removePrefToastUndo = " è stato aggiunto ai preferiti.";
 	private static final String removePrefToast = " è stato rimosso dai preferiti.";
 	private static final String unknownError = "Unknown Error";
@@ -94,6 +93,13 @@ public class MainActivity extends AbstractActivity {
 	}
 
 	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+		if (isPremium())
+			menu.removeItem(R.id.menuPremium);
+		return true;
+	}
+
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main_option, menu);
 		return true;
@@ -118,7 +124,7 @@ public class MainActivity extends AbstractActivity {
 			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(donate)));
 			return true;
 		case R.id.menuPremium:
-			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(premium)));
+			launchPurchaseFlow(this);
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);

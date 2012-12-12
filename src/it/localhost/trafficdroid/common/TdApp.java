@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.StrictMode;
 import android.preference.PreferenceManager;
 
 public class TdApp extends Application {
@@ -19,8 +20,8 @@ public class TdApp extends Application {
 
 	@Override
 	public void onCreate() {
-		//android.os.StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
-		//android.os.StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
+		StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
+		StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
 		super.onCreate();
 		PreferenceManager.setDefaultValues(this, R.layout.preferencescreen, false);
 		sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());

@@ -34,8 +34,10 @@ public class BadNewsDialogItem extends AbstractItem {
 	private static final String bn_sdc = "scambio di carreggiata";
 	private static final String bn_sm = "catene";
 	private static final String bn_sn = "mezzi spargisale";
-	private static final String bn_sne = "neve";
+	private static final String bn_sne1 = "neve";
+	private static final String bn_sne2 = "grandine";
 	private static final String bn_spc = "controllo velocità";
+	private static final String bn_vfr = "veicolo in fiamme";
 	private static final String bn_win = "vento forte";
 	private static DateFormat sdfBnFormat;
 	private BadNewsDTO badNews;
@@ -67,57 +69,58 @@ public class BadNewsDialogItem extends AbstractItem {
 		TextView badNewsDate = (TextView) ViewTagger.getTag(view, R.id.badNewsDate);
 		badNewsDate.setText(sdfBnFormat.format(badNews.getDate()));
 		int drawable;
-		if (badNews.getTitle().contains(bn_acc)) {
-			drawable = R.drawable.bn_acc;
-		} else if (badNews.getTitle().contains(bn_anh)) {
-			drawable = R.drawable.bn_anh;
-		} else if (badNews.getTitle().contains(bn_los1) || badNews.getTitle().contains(bn_los2)) {
+		if (badNews.getTitle().contains(bn_los1) || badNews.getTitle().contains(bn_los2))
 			drawable = R.drawable.bn_los;
-		} else if (badNews.getTitle().contains(bn_pss)) {
+		else if (badNews.getTitle().contains(bn_acc))
+			drawable = R.drawable.bn_acc;
+		else if (badNews.getTitle().contains(bn_anh))
+			drawable = R.drawable.bn_anh;
+		else if (badNews.getTitle().contains(bn_pss))
 			drawable = R.drawable.bn_pss;
-		} else if (badNews.getTitle().contains(bn_bkd)) {
+		else if (badNews.getTitle().contains(bn_bkd))
 			drawable = R.drawable.bn_bkd;
-		} else if (badNews.getTitle().contains(bn_fop)) {
+		else if (badNews.getTitle().contains(bn_fop))
 			drawable = R.drawable.bn_fop;
-		} else if (badNews.getTitle().contains(bn_ibu)) {
+		else if (badNews.getTitle().contains(bn_ibu))
 			drawable = R.drawable.bn_ibu;
-		} else if (badNews.getTitle().contains(bn_fig)) {
+		else if (badNews.getTitle().contains(bn_fig))
 			drawable = R.drawable.bn_fig;
-		} else if (badNews.getTitle().contains(bn_emv)) {
+		else if (badNews.getTitle().contains(bn_emv))
 			drawable = R.drawable.bn_emv;
-		} else if (badNews.getTitle().contains(bn_fld)) {
+		else if (badNews.getTitle().contains(bn_fld))
 			drawable = R.drawable.bn_fld;
-		} else if (badNews.getTitle().contains(bn_fod)) {
+		else if (badNews.getTitle().contains(bn_fod))
 			drawable = R.drawable.bn_fod;
-		} else if (badNews.getTitle().contains(bn_ocm)) {
+		else if (badNews.getTitle().contains(bn_ocm))
 			drawable = R.drawable.bn_ocm;
-		} else if (badNews.getTitle().contains(bn_peo)) {
+		else if (badNews.getTitle().contains(bn_peo))
 			drawable = R.drawable.bn_peo;
-		} else if (badNews.getTitle().contains(bn_pra1) || badNews.getTitle().contains(bn_pra2)) {
+		else if (badNews.getTitle().contains(bn_pra1) || badNews.getTitle().contains(bn_pra2))
 			drawable = R.drawable.bn_pra;
-		} else if (badNews.getTitle().contains(bn_res)) {
+		else if (badNews.getTitle().contains(bn_res))
 			drawable = R.drawable.bn_res;
-		} else if (badNews.getTitle().contains(bn_sn)) {
+		else if (badNews.getTitle().contains(bn_sn))
 			drawable = R.drawable.bn_sn;
-		} else if (badNews.getTitle().contains(bn_sne)) {
+		else if (badNews.getTitle().contains(bn_sne1) || badNews.getTitle().contains(bn_sne2))
 			drawable = R.drawable.bn_sne;
-		} else if (badNews.getTitle().contains(bn_sm)) {
+		else if (badNews.getTitle().contains(bn_sm))
 			drawable = R.drawable.bn_sm;
-		} else if (badNews.getTitle().contains(bn_rsr)) {
+		else if (badNews.getTitle().contains(bn_rsr))
 			drawable = R.drawable.bn_rsr;
-		} else if (badNews.getTitle().contains(bn_sab)) {
+		else if (badNews.getTitle().contains(bn_sab))
 			drawable = R.drawable.bn_sab;
-		} else if (badNews.getTitle().contains(bn_sat)) {
+		else if (badNews.getTitle().contains(bn_sat))
 			drawable = R.drawable.bn_sat;
-		} else if (badNews.getTitle().contains(bn_sdc)) {
+		else if (badNews.getTitle().contains(bn_sdc))
 			drawable = R.drawable.bn_sdc;
-		} else if (badNews.getTitle().contains(bn_spc)) {
+		else if (badNews.getTitle().contains(bn_spc))
 			drawable = R.drawable.bn_spc;
-		} else if (badNews.getTitle().contains(bn_win)) {
+		else if (badNews.getTitle().contains(bn_win))
 			drawable = R.drawable.bn_win;
-		} else {
+		else if (badNews.getTitle().contains(bn_vfr))
+			drawable = R.drawable.bn_vfr;
+		else
 			drawable = android.R.drawable.ic_dialog_alert;
-		}
 		badNewsDate.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, drawable);
 	}
 

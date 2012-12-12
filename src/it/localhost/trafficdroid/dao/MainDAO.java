@@ -137,6 +137,19 @@ public class MainDAO {
 			throw new GenericException(e);
 		} catch (ClassNotFoundException e) {
 			throw new GenericException(e);
+		} finally {
+			try {
+				if (fis != null)
+					fis.close();
+			} catch (IOException e) {
+				// Do nothing
+			}
+			try {
+				if (ois != null)
+					ois.close();
+			} catch (IOException e) {
+				// Do nothing
+			}
 		}
 	}
 }

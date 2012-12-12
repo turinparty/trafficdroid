@@ -15,6 +15,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 public class BolloActivity extends AbstractActivity {
+	private static final String BLANK = "";
 	private static final String targaKey = "targa";
 
 	@Override
@@ -24,7 +25,7 @@ public class BolloActivity extends AbstractActivity {
 		setContentView(R.layout.bollo);
 		setProgressBarIndeterminateVisibility(false);
 		final EditText targa = (EditText) findViewById(R.id.targa);
-		targa.setText(TdApp.getPrefString(targaKey, ""));
+		targa.setText(TdApp.getPrefString(targaKey, BLANK));
 		findViewById(R.id.ok).setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				TdApp.getEditor().putString(targaKey, targa.getText().toString()).commit();

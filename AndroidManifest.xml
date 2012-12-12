@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	package="it.localhost.trafficdroid"
-	android:versionCode="129"
-	android:versionName="1.19.0 Disconnected from the past" >
+	android:versionCode="130"
+	android:versionName="1.19.1 DisconnectedFromThePast" >
 
 	<uses-sdk
 		android:minSdkVersion="11"
@@ -17,6 +17,7 @@
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.VIBRATE" />
 	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="com.android.vending.BILLING" />
 
 	<application
 		android:name=".common.TdApp"
