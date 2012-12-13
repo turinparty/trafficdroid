@@ -24,10 +24,12 @@ public abstract class AbstractActivity extends Activity implements QueryInventor
 	public static final List<String> additionalSkuList = Arrays.asList(new String[] { SKU_AD_FREE });
 	public static final String eventCatWebcam = "Webcam";
 	public static final String eventCatBadNews = "BadNews";
-	public static final String eventCatGraph = "Graph";
+	public static final String eventCatIab = "InAppBilling";
 	public static final String eventActionRequest = "Request";
 	public static final String eventActionOpen = "Open";
 	public static final String eventActionNone = "None";
+	public static final String eventActionLaunchPurchaseFlow = "LaunchPurchaseFlow";
+	public static final String eventActionOnIabPurchaseFinished = "OnIabPurchaseFinished";
 	private IabHelper mHelper;
 	private boolean premium;
 
@@ -76,6 +78,7 @@ public abstract class AbstractActivity extends Activity implements QueryInventor
 
 	@Override
 	public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
+		EasyTracker.getTracker().trackEvent(eventCatIab, eventActionOnIabPurchaseFinished, result.getMessage(), (long) result.getResponse());
 		if (result.isSuccess() && purchase.getSku().equals(SKU_AD_FREE)) {
 			premium = true;
 			findViewById(R.id.ad).setVisibility(View.GONE);
@@ -84,7 +87,8 @@ public abstract class AbstractActivity extends Activity implements QueryInventor
 	}
 
 	public void launchPurchaseFlow(Activity act) {
-		mHelper.launchPurchaseFlow(act, SKU_AD_FREE, 10001, this);
+		EasyTracker.getTracker().trackEvent(eventCatIab, eventActionLaunchPurchaseFlow, SKU_AD_FREE, (long) 0);
+		mHelper.launchPurchaseFlow(act, SKU_AD_FREE, 101010, this);
 	}
 
 	public boolean isPremium() {
