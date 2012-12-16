@@ -5,10 +5,15 @@
 	<string name="widgetStreetName">Trafficdroid - Strada intera</string>
 	<string name="app_name">TrafficDroid</string>
 	<string name="ok">OK</string>
+	<string name="patenteProvider">www.ilportaledellautomobilista.it</string>
 	<string name="targa">Targa Italiana (Lombardia esclusa)</string>
 	<string name="pedaggio">Pedaggio Autostradale</string>
 	<string name="bollo">Verifica Bollo</string>
 	<string name="error">Errore</string>
+	<string name="alcol">Etilometro</string>
+	<string name="usr">Username</string>
+	<string name="pwd">Password</string>
+	<string name="patente">Verifica Patente</string>
 	<string name="premium">Rimuovi i banner!</string>
 	<string name="warning">Attenzione</string>
 	<string name="info">Informazione</string>
@@ -54,7 +59,7 @@
 	<string name="trendSpeedKey">trendSpeedKey</string>
 	<string name="trendSpeedSummary">Variazione di velocità minima per mostrare l\'icona del trend</string>
 	<string name="trendSpeedDefault">4</string>
-	<string name="invalid_money_from_to">Dati forniti non validi.</string>
+	<string name="wrongData">Dati forniti non validi.</string>
 	<string name="from">Casello di partenza</string>
 	<string name="to">Casello di arrivo</string>
 	<string name="allStreetsDefault">false</string>

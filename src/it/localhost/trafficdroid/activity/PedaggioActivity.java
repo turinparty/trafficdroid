@@ -35,7 +35,7 @@ public class PedaggioActivity extends AbstractActivity {
 				if (from != null && to != null)
 					new RefreshTask().execute(from, to);
 				else
-					new AlertDialog.Builder(PedaggioActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(R.string.invalid_money_from_to).show();
+					new AlertDialog.Builder(PedaggioActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(R.string.wrongData).show();
 			}
 		});
 	}

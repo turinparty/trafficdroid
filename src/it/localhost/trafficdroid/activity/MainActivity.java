@@ -34,6 +34,7 @@ import android.widget.Toast;
 import com.commonsware.cwac.wakeful.WakefulIntentService;
 
 public class MainActivity extends AbstractActivity {
+	private static final String ALCOL_URL = "http://voti.kataweb.it/etilometro/index.php";
 	private static final String donate = "market://details?id=it.localhost.donate";
 	private static final String removePrefToastUndo = " è stato aggiunto ai preferiti.";
 	private static final String removePrefToast = " è stato rimosso dai preferiti.";
@@ -117,8 +118,16 @@ public class MainActivity extends AbstractActivity {
 		case R.id.menuMoney:
 			startActivity(new Intent(MainActivity.this, PedaggioActivity.class));
 			return true;
+		case R.id.menuPatente:
+			startActivity(new Intent(MainActivity.this, PatenteActivity.class));
+			return true;
 		case R.id.menuBollo:
 			startActivity(new Intent(MainActivity.this, BolloActivity.class));
+			return true;
+		case R.id.menuAlcol:
+			Intent intent = new Intent(this, WebViewActivity.class);
+			intent.putExtra(WebViewActivity.urlTag, ALCOL_URL);
+			startActivity(intent);
 			return true;
 		case R.id.menuDonate:
 			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(donate)));
