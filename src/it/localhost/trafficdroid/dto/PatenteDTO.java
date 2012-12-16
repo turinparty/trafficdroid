@@ -5,10 +5,15 @@ public class PatenteDTO {
 	private String saldo;
 	private String scadenzaPatente;
 
-	public PatenteDTO(String numeoPatente, String saldo, String scadenzaPatente) {
-		super();
+	public void setNumeoPatente(String numeoPatente) {
 		this.numeoPatente = numeoPatente;
+	}
+
+	public void setSaldo(String saldo) {
 		this.saldo = saldo;
+	}
+
+	public void setScadenzaPatente(String scadenzaPatente) {
 		this.scadenzaPatente = scadenzaPatente;
 	}
 

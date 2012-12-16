@@ -21,7 +21,15 @@ public class PatenteParser {
 			NodeList info = (NodeList) XPathFactory.newInstance().newXPath().compile(SALDO_PUNTI_PATENTE).evaluate(PatenteDAO.getData(usr, pwd), XPathConstants.NODESET);
 			if (info.getLength() == 0)
 				throw new BadConfException(ERROR);
-			return new PatenteDTO(info.item(0).getTextContent(), info.item(1).getTextContent(), info.item(2).getTextContent());
+			PatenteDTO patente = new PatenteDTO();
+			for (int i = 0; i < 3; i++)
+				if (info.item(i).getNodeName().equals("numeoPatente"))
+					patente.setNumeoPatente(info.item(i).getTextContent());
+				else if (info.item(i).getNodeName().equals("saldo"))
+					patente.setSaldo(info.item(i).getTextContent());
+				else if (info.item(i).getNodeName().equals("scadenzaPatente"))
+					patente.setScadenzaPatente(info.item(i).getTextContent());
+			return patente;
 		} catch (XPathExpressionException e) {
 			throw new GenericException(e);
 		}

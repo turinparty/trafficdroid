@@ -71,5 +71,8 @@
 	<string name="trendLeft">Trend sinistro</string>
 	<string name="trendRight">Trend destro</string>
 	<string name="webcam">Webcam stradale</string>
+	<string name="patenteNumero">Numero Patente:</string>
+	<string name="patenteScadenza">Scadenza Patente:</string>
+	<string name="patenteSaldo">Saldo Punti:</string>
 
 </resources>

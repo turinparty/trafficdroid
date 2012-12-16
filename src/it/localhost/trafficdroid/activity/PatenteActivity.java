@@ -69,9 +69,9 @@ public class PatenteActivity extends AbstractActivity {
 		protected void onPostExecute(PatenteDTO patente) {
 			setProgressBarIndeterminateVisibility(false);
 			if (this.e == null) {
-				((TextView) findViewById(R.id.patenteSaldo)).setText("Punti: " + patente.getSaldo());
-				((TextView) findViewById(R.id.patenteNumero)).setText("Numero: " + patente.getNumeoPatente());
-				((TextView) findViewById(R.id.patenteScadenza)).setText("Scadenza: " + patente.getScadenzaPatente());
+				((TextView) findViewById(R.id.patenteSaldo)).setText(patente.getSaldo());
+				((TextView) findViewById(R.id.patenteNumero)).setText(patente.getNumeoPatente());
+				((TextView) findViewById(R.id.patenteScadenza)).setText(patente.getScadenzaPatente());
 			} else
 				new AlertDialog.Builder(PatenteActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(e.getMessage()).show();
 		}
