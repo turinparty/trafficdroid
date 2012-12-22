@@ -1,6 +1,6 @@
 package it.localhost.trafficdroid.common;
 
-import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.premium.R;
 import android.util.SparseIntArray;
 
 public class ListZoneResId extends SparseIntArray {

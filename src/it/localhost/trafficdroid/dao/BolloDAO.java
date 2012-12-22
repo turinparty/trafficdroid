@@ -43,6 +43,7 @@ public class BolloDAO {
 			} else
 				throw new BadConfException(badParams);
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new BadConfException(e.getMessage());
 		}
 	}

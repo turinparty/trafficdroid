@@ -3,7 +3,7 @@
 
 	<string name="widgetZoneName">Trafficdroid - Tratta stradale</string>
 	<string name="widgetStreetName">Trafficdroid - Strada intera</string>
-	<string name="app_name">TrafficDroid</string>
+	<string name="app_name">TrafficDroid Legacy</string>
 	<string name="ok">OK</string>
 	<string name="patenteProvider">www.ilportaledellautomobilista.it</string>
 	<string name="targa">Targa Italiana (Lombardia esclusa)</string>

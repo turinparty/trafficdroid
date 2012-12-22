@@ -1,6 +1,6 @@
 package it.localhost.trafficdroid.adapter.item;
 
-import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.premium.R;
 import it.localhost.trafficdroid.activity.AbstractActivity;
 import it.localhost.trafficdroid.adapter.BadNewsDialogAdapter;
 import it.localhost.trafficdroid.common.ViewTagger;

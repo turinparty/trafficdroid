@@ -1,6 +1,6 @@
 package it.localhost.trafficdroid.dao;
 
-import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.premium.R;
 import it.localhost.trafficdroid.common.ListZoneResId;
 import it.localhost.trafficdroid.common.ListZoneResName;
 import it.localhost.trafficdroid.common.ListZoneResWebcam;

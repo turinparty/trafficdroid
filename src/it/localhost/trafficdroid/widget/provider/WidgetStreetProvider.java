@@ -1,6 +1,6 @@
 package it.localhost.trafficdroid.widget.provider;
 
-import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.premium.R;
 import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.MainDAO;

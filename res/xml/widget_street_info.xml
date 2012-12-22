@@ -2,7 +2,6 @@
 	android:configure="it.localhost.trafficdroid.widget.activity.WidgetStreetActivity"
 	android:initialLayout="@layout/widget"
 	android:minHeight="40dp"
-	android:minWidth="110dp"
-	android:resizeMode="horizontal|vertical" >
+	android:minWidth="110dp" >
 
 </appwidget-provider>

@@ -32,8 +32,6 @@
 				android:layout_height="wrap_content"
 				android:text="@string/bollo" />
 		</LinearLayout>
-
-		<include layout="@layout/iab_mrect" />
 	</LinearLayout>
 
 </ScrollView>

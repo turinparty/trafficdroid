@@ -1,6 +1,6 @@
 package it.localhost.trafficdroid.activity;
 
-import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.premium.R;
 import it.localhost.trafficdroid.adapter.MainAdapter;
 import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.common.TdApp;
@@ -94,13 +94,6 @@ public class MainActivity extends AbstractActivity {
 	}
 
 	@Override
-	public boolean onPrepareOptionsMenu(Menu menu) {
-		if (isPremium())
-			menu.removeItem(R.id.menuPremium);
-		return true;
-	}
-
-	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main_option, menu);
 		return true;
@@ -131,9 +124,6 @@ public class MainActivity extends AbstractActivity {
 			return true;
 		case R.id.menuDonate:
 			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(donate)));
-			return true;
-		case R.id.menuPremium:
-			launchPurchaseFlow(this);
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);

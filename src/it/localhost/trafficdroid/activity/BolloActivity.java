@@ -1,6 +1,6 @@
 package it.localhost.trafficdroid.activity;
 
-import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.premium.R;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.BolloDAO;
 import android.app.AlertDialog;

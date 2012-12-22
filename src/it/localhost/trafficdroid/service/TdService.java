@@ -1,6 +1,6 @@
 package it.localhost.trafficdroid.service;
 
-import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.premium.R;
 import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.MainDAO;
@@ -22,6 +22,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.v4.app.NotificationCompat;
 
 import com.commonsware.cwac.wakeful.WakefulIntentService;
 
@@ -167,7 +168,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 				}
 				String congestedZones = currDTO.getCongestedZones();
 				if (congestedZones != null && TdApp.getPrefBoolean(R.string.chiaroveggenzaEnablerKey, R.string.chiaroveggenzaEnablerDefault)) {
-					Notification.Builder bui = new Notification.Builder(this);
+					NotificationCompat.Builder bui = new NotificationCompat.Builder(this);
 					bui.setDefaults(Notification.DEFAULT_ALL);
 					bui.setSmallIcon(R.drawable.ic_stat_notify_trafficdroid);
 					bui.setTicker(congestedZones);
@@ -176,7 +177,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 					Intent intent = new Intent(this, MainActivity.class);
 					intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 					bui.setContentIntent(PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT));
-					((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(TdService.notificationId, bui.getNotification());
+					((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(TdService.notificationId, bui.build());
 				} else {
 					((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(TdService.notificationId);
 				}
