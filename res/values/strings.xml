@@ -6,7 +6,7 @@
 	<string name="app_name">TrafficDroid</string>
 	<string name="ok">OK</string>
 	<string name="patenteProvider">www.ilportaledellautomobilista.it</string>
-	<string name="targa">Targa Italiana (Lombardia esclusa)</string>
+	<string name="targa">Targa</string>
 	<string name="pedaggio">Pedaggio Autostradale</string>
 	<string name="bollo">Verifica Bollo</string>
 	<string name="error">Errore</string>

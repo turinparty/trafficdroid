@@ -13,23 +13,21 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 public class BolloActivity extends AbstractActivity {
-	private static final String BLANK = "";
-	private static final String targaKey = "targa";
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.bollo);
 		setProgressBarIndeterminateVisibility(false);
-		final EditText targa = (EditText) findViewById(R.id.targa);
-		targa.setText(TdApp.getPrefString(targaKey, BLANK));
 		findViewById(R.id.ok).setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				TdApp.getEditor().putString(targaKey, targa.getText().toString()).commit();
-				new RefreshTask().execute(targa.getText().toString());
+				String targa = ((EditText) findViewById(R.id.targa)).getText().toString();
+				String tipoVeicolo = getResources().getStringArray(R.array.tipoVeicoloKey)[((Spinner) findViewById(R.id.tipoVeicolo)).getSelectedItemPosition()];
+				String regioneResidenza = getResources().getStringArray(R.array.regioneResidenzaKey)[((Spinner) findViewById(R.id.regioneResidenza)).getSelectedItemPosition()];
+				new RefreshTask().execute(targa, tipoVeicolo, regioneResidenza);
 			}
 		});
 	}
@@ -46,7 +44,7 @@ public class BolloActivity extends AbstractActivity {
 		@Override
 		protected String doInBackground(String... args) {
 			try {
-				return BolloDAO.getData(args[0]);
+				return BolloDAO.getData(args[0], args[1], args[2]);
 			} catch (Exception e) {
 				e.printStackTrace();
 				this.e = e;

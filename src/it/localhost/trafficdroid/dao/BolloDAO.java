@@ -6,7 +6,9 @@ import java.net.URL;
 import java.util.Scanner;
 
 public class BolloDAO {
-	private static final String bolloUrl = "https://servizi.aci.it/Bollonet/calcolo.do?TipoVeicolo=1&LinguaSelezionata=ita&CodiceServizio=2&Targa=";
+	private static final String bolloUrl = "https://servizi.aci.it/Bollonet/calcolo.do?LinguaSelezionata=ita&CodiceServizio=2&TipoVeicolo=";
+	private static final String param1 = "&RegioneResidenza=";
+	private static final String param2 = "&Targa=";
 	private static final String startDelimiterYes = "<table summary=\"Informazioni sul veicolo\" id=\"info\">";
 	private static final String endDelimiterYes = "<p>� possibile il pagamento nelle seguenti modalit�: </p>";
 	private static final String startDelimiterNo = "<span class=\"blu\">";
@@ -22,9 +24,9 @@ public class BolloDAO {
 	private static final String delimiter = "\\A";
 	private static final String badParams = "Parametri non validi";
 
-	public static String getData(String targa) throws BadConfException {
+	public static String getData(String targa, String tipo, String residenza) throws BadConfException {
 		try {
-			String bollo = new Scanner(new URL(bolloUrl + targa).openStream()).useDelimiter(delimiter).next();
+			String bollo = new Scanner(new URL(bolloUrl + tipo + param1 + residenza + param2 + targa).openStream()).useDelimiter(delimiter).next();
 			int startBollo = bollo.indexOf(startDelimiterYes);
 			if (startBollo < 1)
 				startBollo = bollo.indexOf(startDelimiterNo);
