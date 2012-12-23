@@ -3,8 +3,8 @@
 <resources>
 
 	<string-array name="z206Name">
-		<item>A1-Ss327-Raccordo Siena-Bettolle</item>
-		<item>Foiano della Chiana</item>
+		<item>A1-SS327-Raccordo Siena-Bettolle</item>
+		<item>Foiano Della Chiana</item>
 		<item>Cortona</item>
 		<item>Pietraia</item>
 		<item>Castiglione Del Lago</item>
@@ -21,7 +21,7 @@
 		<item>Perugia Staz.-San Faustino</item>
 		<item>Perugia Centro-Prepo</item>
 		<item>Perugia Est-Piscille</item>
-		<item>Svincolo Ponte S.Giovanni-Ss3 Bis-Raccordo Orte-Ra</item>
+		<item>Ponte S.Giovanni-SS3 Bis-Raccordo Orte-Ra</item>
 	</string-array>
 
 	<integer-array name="z206Id">

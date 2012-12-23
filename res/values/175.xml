@@ -3,49 +3,49 @@
 <resources>
 
 	<string-array name="z175Name">
-		<item>Svincolo 1: Ss1 Via Aurelia</item>
-		<item>Svincolo 1a: Montespaccato</item>
-		<item>Svincolo 2: Via Di Boccea</item>
-		<item>Svincolo 2a: Casal Del Marmo</item>
-		<item>selva Candida</item>
-		<item>Svincolo 2a: Trionfale</item>
-		<item>Svincolo 3: Ss2 Via Cassia</item>
-		<item>Svincolo 4: Ospedale S.Andrea</item>
-		<item>Svincolo 5: Ss2bis Cassia Veientana</item>
-		<item>Svincolo 6: Ss3 Via Flaminia</item>
-		<item>Svincolo 7: Castel Giubileo</item>
-		<item>Svincolo 8: Ss4 Via Salaria</item>
-		<item>Svincolo 9: Via Di Settebagni-Bel Poggio</item>
-		<item>Svincolo 10: Allacciamento Diramazione Roma Nord</item>
+		<item>1: SS1 Via Aurelia</item>
+		<item>1A: Montespaccato</item>
+		<item>2: Via Di Boccea</item>
+		<item>2A: Casal Del Marmo</item>
+		<item>Selva Candida</item>
+		<item>2A: Trionfale</item>
+		<item>3: SS2 Via Cassia</item>
+		<item>4: Ospedale S.Andrea</item>
+		<item>5: SS2Bis Cassia Veientana</item>
+		<item>6: SS3 Via Flaminia</item>
+		<item>7: Castel Giubileo</item>
+		<item>8: SS4 Via Salaria</item>
+		<item>9: Via Di Settebagni-Bel Poggio</item>
+		<item>10: Allacciamento Diramazione Roma Nord</item>
 		<item>Settebagni</item>
-		<item>Svincolo Della Bufalotta</item>
-		<item>Svincolo 11: Via Nomentana</item>
-		<item>Svincolo 12: Via S.Alessandro-C.Le Latte</item>
-		<item>Svincolo 13: Ss5 Via Tiburtina</item>
-		<item>Svincolo 14: Allacciamento A24 Roma-Teramo</item>
-		<item>Svincolo 15: La Rustica</item>
-		<item>Svincolo 16: Via Prenestina</item>
-		<item>Svincolo 17: Tor Bella Monaca</item>
+		<item>Della Bufalotta</item>
+		<item>11: Via Nomentana</item>
+		<item>12: Via S.Alessandro-C.Le Latte</item>
+		<item>13: SS5 Via Tiburtina</item>
+		<item>14: Allacciamento A24 Roma-Teramo</item>
+		<item>15: La Rustica</item>
+		<item>16: Via Prenestina</item>
+		<item>17: Tor Bella Monaca</item>
 		<item>Casilina</item>
-		<item>Svincolo 18: Ss6 Via Casilina</item>
-		<item>Svincolo 19: Allacciamento Diramazione Roma Sud</item>
-		<item>Svincolo 20: La Romanina</item>
-		<item>Svincolo 21: Ss215 Via Tuscolana</item>
-		<item>Svincolo 22: Ss511 Via Anagnina</item>
-		<item>Svincolo Di Ciampino</item>
-		<item>Svincolo 23: Ss7 Via Appia</item>
-		<item>Svincolo 24: Via Ardeatina</item>
+		<item>18: SS6 Via Casilina</item>
+		<item>19: Allacciamento Diramazione Roma Sud</item>
+		<item>20: La Romanina</item>
+		<item>21: SS215 Via Tuscolana</item>
+		<item>22: SS511 Via Anagnina</item>
+		<item>Di Ciampino</item>
+		<item>23: SS7 Via Appia</item>
+		<item>24: Via Ardeatina</item>
 		<item>Ardeatina</item>
-		<item>Svincolo 25: Via Laurentina</item>
-		<item>Svincolo 26: Ss148 Via Pontina</item>
-		<item>Svincolo 27: Via C.Colombo</item>
-		<item>Svincolo 28: Ss8 Via Del Mare-V.Ostiense</item>
-		<item>Svincolo 29: Parco dei Medici</item>
-		<item>Svincolo 30: Allacciamento Autos. Per Aeroporto Fiumicino</item>
-		<item>Svincolo 31: Via Della Magliana</item>
-		<item>Svincolo 32: Via Della Pisana</item>
+		<item>25: Via Laurentina</item>
+		<item>26: SS148 Via Pontina</item>
+		<item>27: Via C.Colombo</item>
+		<item>28: SS8 Via Del Mare-V.Ostiense</item>
+		<item>29: Parco Dei Medici</item>
+		<item>30: Allacciamento Autos. Per Aeroporto Fiumicino</item>
+		<item>31: Via Della Magliana</item>
+		<item>32: Via Della Pisana</item>
 		<item>Pisana</item>
-		<item>Svincolo 33: Via Del Pescaccio</item>
+		<item>33: Via Del Pescaccio</item>
 		<item>Gra-Aurelia</item>
 	</string-array>
 

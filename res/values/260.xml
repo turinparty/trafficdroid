@@ -4,69 +4,69 @@
 
 	<string-array name="z260Name">
 		<item>Roma</item>
-		<item>Svincolo Per Monte Spaccato</item>
-		<item>Svincolo Grande Raccordo Anulare</item>
-		<item>Svincolo Pio Spezi</item>
-		<item>Svincolo Monachina-Casalombroso</item>
-		<item>Svincolo Massimina</item>
-		<item>Svincolo Malagrotta</item>
-		<item>Svincolo Castel Di Guido Sud</item>
-		<item>Svincolo Castel Di Guido</item>
-		<item>Svincolo Castel Di Guido Nord</item>
-		<item>Svincolo Fregene Sud</item>
-		<item>Svincolo Aranova</item>
-		<item>Svincolo Di Torrimpietra A12 Roma-Civitavecchia</item>
-		<item>Svincolo Fregene Nord</item>
-		<item>Svincolo Di Bracciano</item>
-		<item>Svincolo Di Palidoro</item>
-		<item>Svincolo Di Ceri</item>
-		<item>Svincolo Di Monteroni</item>
+		<item>Monte Spaccato</item>
+		<item>Grande Raccordo Anulare</item>
+		<item>Pio Spezi</item>
+		<item>Monachina-Casalombroso</item>
+		<item>Massimina</item>
+		<item>Malagrotta</item>
+		<item>Castel Di Guido Sud</item>
+		<item>Castel Di Guido</item>
+		<item>Castel Di Guido Nord</item>
+		<item>Fregene Sud</item>
+		<item>Aranova</item>
+		<item>Torrimpietra A12 Roma-Civitavecchia</item>
+		<item>Fregene Nord</item>
+		<item>Bracciano</item>
+		<item>Palidoro</item>
+		<item>Ceri</item>
+		<item>Monteroni</item>
 		<item>Palo</item>
-		<item>Svincolo Cerveteri Ladispoli A12 Roma-Civitavecchia</item>
-		<item>Svincolo Santa Severa A12 Roma-Civitavecchia</item>
+		<item>Cerveteri Ladispoli A12 Roma-Civitavecchia</item>
+		<item>Santa Severa A12 Roma-Civitavecchia</item>
 		<item>Santa Marinella</item>
-		<item>Svincolo Civitavecchia Sud A12 Roma-Civitavecchia</item>
+		<item>Civitavecchia Sud A12 Roma-Civitavecchia</item>
 		<item>Villaggio Del Fanciullo</item>
 		<item>Civitavecchia</item>
 		<item>Aurelia</item>
-		<item>Innesto Raccordo Civitavecchia-Tarquinia(e45)</item>
-		<item>Svincolo Aurelia A12 Roma - Civitavecchia</item>
-		<item>Taccone Di Mezzo/Innesto Ss1 Bis Via Aurelia</item>
-		<item>Tarquinia Sud/Innesto Sp102 Aurelia Vecchia</item>
+		<item>Innesto Raccordo Civitavecchia-Tarquinia(E45)</item>
+		<item>Aurelia A12 Roma - Civitavecchia</item>
+		<item>Taccone Di Mezzo/Innesto SS1 Bis Via Aurelia</item>
+		<item>Tarquinia Sud/Innesto SP102 Aurelia Vecchia</item>
 		<item>Tarquinia</item>
-		<item>Tarquinia Nord/Innesto Sp102 Aurelia Vecchia</item>
+		<item>Tarquinia Nord/Innesto SP102 Aurelia Vecchia</item>
 		<item>Riva Dei Tarquini</item>
 		<item>Bivio Per Montalto Di Castro</item>
-		<item>Montalto Di Castro/Innesto Ss312 Castrense</item>
+		<item>Montalto Di Castro/Innesto SS312 Castrense</item>
 		<item>Pescia Romana</item>
 		<item>Bivio Per Garavicchio</item>
 		<item>Bivio Per Ansedonia Sud</item>
 		<item>Bivio Per Ansedonia Nord</item>
-		<item>Orbetello Scalo/Innesto Ss440 Di Porto S.Stefano</item>
-		<item>Staz. Di Albinia/Innesto Ss74 Maremmana</item>
+		<item>Orbetello Scalo/Innesto SS440 Di Porto S.Stefano</item>
+		<item>Staz. Di Albinia/Innesto SS74 Maremmana</item>
 		<item>Bivio Per Magliano In Toscana</item>
 		<item>Fonteblanda</item>
-		<item>Svincolo Di Alberese</item>
-		<item>Svincolo Di Santa Maria Di Rispescia</item>
-		<item>Svincolo Di Montiano</item>
+		<item>Alberese</item>
+		<item>Santa Maria Di Rispescia</item>
+		<item>Montiano</item>
 		<item>Grosseto Sud</item>
-		<item>Grosseto Est/Incrocio Ss322 Delle Collacchie</item>
-		<item>Grosseto/Innesto Ss223 Di Paganico</item>
+		<item>Grosseto Est/Incrocio SS322 Delle Collacchie</item>
+		<item>Grosseto/Innesto SS223 Di Paganico</item>
 		<item>Grosseto Nord</item>
 		<item>Braccagni</item>
-		<item>Bivio Per Montepescali/Innesto Ss73 Senese Aretina</item>
-		<item>Svincolo Di Giuncarico</item>
+		<item>Bivio Per Montepescali/Innesto SS73 Senese Aretina</item>
+		<item>Giuncarico</item>
 		<item>Staz. Di Gavorrano</item>
-		<item>Svincolo Di Gavorrano</item>
+		<item>Gavorrano</item>
 		<item>Scarlino Scalo</item>
-		<item>Bivio Per Follonica Est/Innesto Ss439 Sarzanese Valdera</item>
-		<item>Svincolo Di Follonica Nord</item>
+		<item>Bivio Per Follonica Est/Innesto SS439 Sarzanese Valdera</item>
+		<item>Follonica Nord</item>
 		<item>Bivio Per Riotorto</item>
-		<item>Bivio Per Venturina/Innesto Ss398 Via Val Di Cornia</item>
+		<item>Bivio Per Venturina/Innesto SS398 Via Val Di Cornia</item>
 		<item>Bivio Per S.Vincenzo Sud</item>
 		<item>Bivio Per S.Vincenzo</item>
 		<item>Donoratico</item>
-		<item>Cecina Sud/Innesto Ss1 Var</item>
+		<item>Cecina Sud/Innesto SS1 Var</item>
 		<item>Cecina Centro</item>
 		<item>Cecina Nord</item>
 		<item>Vada</item>
@@ -74,100 +74,100 @@
 		<item>Rosignano Marittimo</item>
 		<item>Rosignano Solvay</item>
 		<item>Castiglioncello</item>
-		<item>Quercianella/Innesto Ss1 Var</item>
+		<item>Quercianella/Innesto SS1 Var</item>
 		<item>Variante Di Quercianella</item>
-		<item>Ingresso del Maroccone</item>
+		<item>Ingresso Del Maroccone</item>
 		<item>Montenero</item>
 		<item>Livorno Sud</item>
 		<item>Livorno Centro</item>
-		<item>Svincolo Per Collesalvetti</item>
+		<item>Collesalvetti</item>
 		<item>Livorno Zona Industriale</item>
 		<item>Innesto S.G.C. Firenze-Pisa-Livorno</item>
-		<item>Stagno/Innesto Ss555 Delle Colline</item>
-		<item>Stagno/Innesto Ss67 Bis Tosco Romagnola</item>
-		<item>Pisa/Innesto Ss224 Di Marina Di Pisa</item>
+		<item>Stagno/Innesto SS555 Delle Colline</item>
+		<item>Stagno/Innesto SS67 Bis Tosco Romagnola</item>
+		<item>Pisa/Innesto SS224 Di Marina Di Pisa</item>
 		<item>Pisa/Innesto S.G.C. Firenze-Pisa-Livorno</item>
-		<item>Pisa/Innesto Ss12 Dell\'abetone E Del Brennero</item>
-		<item>Svincolo Pisa Nord A11 Firenze-Pisa Nord</item>
+		<item>Pisa/Innesto SS12 Dell\'Abetone E Del Brennero</item>
+		<item>Pisa Nord A11 Firenze-Pisa Nord</item>
 		<item>Variante Di Viareggio</item>
-		<item>Svincolo Viareggio Diramazione Lucca-Viareggio</item>
-		<item>Pietrasanta/Innesto Ss439 Sarzanese Valdera</item>
+		<item>Viareggio Diramazione Lucca-Viareggio</item>
+		<item>Pietrasanta/Innesto SS439 Sarzanese Valdera</item>
 		<item>Querceta</item>
 		<item>Massa</item>
-		<item>Svincolo Massa A12 Genova-Rosignano</item>
-		<item>Massa/Innesto Ss446 Diramazione Di Fosdinovo</item>
-		<item>Svincolo Avenza A12 Genova-Rosignano</item>
+		<item>Massa A12 Genova-Rosignano</item>
+		<item>Massa/Innesto SS446 Diramazione Di Fosdinovo</item>
+		<item>Avenza A12 Genova-Rosignano</item>
 		<item>Bivio Per Carrara</item>
-		<item>Svincolo Carrara A12 Genova-Rosignano</item>
+		<item>Carrara A12 Genova-Rosignano</item>
 		<item>Bivio Per Ortonovo</item>
-		<item>Sarzana/Innesto Ss446 Di Fosdinovo</item>
-		<item>Sarzana/Innesto Ss62 Della Cisa</item>
-		<item>Svincolo Sarzana A12 Genova-Rosignano</item>
-		<item>Ponte Sul Magra/Innesto Ss331 Di Lerici</item>
+		<item>Sarzana/Innesto SS446 Di Fosdinovo</item>
+		<item>Sarzana/Innesto SS62 Della Cisa</item>
+		<item>Sarzana A12 Genova-Rosignano</item>
+		<item>Ponte Sul Magra/Innesto SS331 Di Lerici</item>
 		<item>Ressora</item>
 		<item>Bivio Per Arcola</item>
-		<item>Svincolo Vezzano A15 Parma-La Spezia</item>
+		<item>Vezzano A15 Parma-La Spezia</item>
 		<item>Bivio Per Vezzano Ligure</item>
 		<item>Termo</item>
 		<item>La Spezia</item>
-		<item>Migliarina/Innesto Ss330 Di Buonviaggio</item>
-		<item>La Spezia/Innesto Ss331 Di Lerici</item>
-		<item>La Spezia/Innesto Ss370 Litoranea Delle 5 Terre</item>
+		<item>Migliarina/Innesto SS330 Di Buonviaggio</item>
+		<item>La Spezia/Innesto SS331 Di Lerici</item>
+		<item>La Spezia/Innesto SS370 Litoranea Delle 5 Terre</item>
 		<item>Foce</item>
 		<item>S.Benedetto</item>
 		<item>Ricco\' Del Golfo Di La Spezia</item>
 		<item>Pian Di Barca</item>
 		<item>Padivarma</item>
 		<item>Borghetto Di Vara</item>
-		<item>Borghetto Di Vara/Innesto Ss566 Di Val Di Vara</item>
+		<item>Borghetto Di Vara/Innesto SS566 Di Val Di Vara</item>
 		<item>Termine Di Roverano</item>
-		<item>Svincolo Carrodano A12 Genova-Rosignano</item>
-		<item>Ponte Carrodano/Innesto Ss566 Diramazione Di Val Di Vara</item>
+		<item>Carrodano A12 Genova-Rosignano</item>
+		<item>Ponte Carrodano/Innesto SS566 Diramazione Di Val Di Vara</item>
 		<item>Mattarana</item>
 		<item>La Baracca</item>
 		<item>Passo Del Bracco</item>
-		<item>Svincolo Deiva Marina A12 Genova-Rosignano</item>
-		<item>Bracco/Innesto Sp35 Moneglia</item>
+		<item>Deiva Marina A12 Genova-Rosignano</item>
+		<item>Bracco/Innesto SP35 Moneglia</item>
 		<item>Inizio Abitato Sestri Levante</item>
-		<item>Bivio Per Sestri Levante - Innesto Ss370</item>
-		<item>Sestri Levante-Innesto Ss523 Colle Di Cento Croci</item>
+		<item>Bivio Per Sestri Levante - Innesto SS370</item>
+		<item>Sestri Levante-Innesto SS523 Colle Di Cento Croci</item>
 		<item>Sestri Levante/Via Tino Paggi</item>
-		<item>Svincolo Sestri Levante A12/Innesto Ss523</item>
+		<item>Sestri Levante A12/Innesto SS523</item>
 		<item>Sestri Levante</item>
 		<item>Termine Abitato Di Sestri Levante</item>
 		<item>Lavagna</item>
 		<item>Chiavari</item>
-		<item>Chiavari/Innesto Ss225 Della Fontanabuona</item>
+		<item>Chiavari/Innesto SS225 Della Fontanabuona</item>
 		<item>Zoagli</item>
 		<item>Rapallo</item>
-		<item>Rapallo/Innesto Ss227 Di Portofino</item>
+		<item>Rapallo/Innesto SS227 Di Portofino</item>
 		<item>Recco</item>
-		<item>Recco/Innesto Ss333 Di Uscio</item>
+		<item>Recco/Innesto SS333 Di Uscio</item>
 		<item>Sori</item>
 		<item>Pieve Ligure</item>
 		<item>Bogliasco</item>
 		<item>Genova Nervi</item>
-		<item>Genova/Innesto Ss45 Di Val Trebbia</item>
+		<item>Genova/Innesto SS45 Di Val Trebbia</item>
 		<item>Genova</item>
 		<item>Genova Staglieno</item>
-		<item>Svincolo Genova Sampierdarena A7 Milano-Genova</item>
-		<item>Genova/Innesto Ss35 Dei Giovi</item>
+		<item>Genova Sampierdarena A7 Milano-Genova</item>
+		<item>Genova/Innesto SS35 Dei Giovi</item>
 		<item>Casello Genova Pegli A10 Genova-Ventimiglia</item>
-		<item>Svincolo Genova Voltri A10 Genova-Ventimiglia</item>
-		<item>Genova Voltri/Innesto Ss456 Del Turchino</item>
+		<item>Genova Voltri A10 Genova-Ventimiglia</item>
+		<item>Genova Voltri/Innesto SS456 Del Turchino</item>
 		<item>Arenzano</item>
-		<item>Svincolo Arenzano A10 Genova-Ventimiglia</item>
+		<item>Arenzano A10 Genova-Ventimiglia</item>
 		<item>Cogoleto</item>
 		<item>Casello Varazze A10 Genova-Ventimiglia</item>
 		<item>Varazze</item>
-		<item>Varazze/Innesto Ss542 Di Pontinvrea</item>
+		<item>Varazze/Innesto SS542 Di Pontinvrea</item>
 		<item>Casello Celle Ligure A10 Genova-Ventimiglia</item>
 		<item>Celle Ligure</item>
 		<item>Albisola Superiore</item>
-		<item>Albisola Marina/Innesto Ss334 Del Sassello</item>
+		<item>Albisola Marina/Innesto SS334 Del Sassello</item>
 		<item>Albisola Marina</item>
 		<item>Savona</item>
-		<item>Savona/Innesto Ss29 Del Colle Di Cadibona</item>
+		<item>Savona/Innesto SS29 Del Colle Di Cadibona</item>
 		<item>Casello Savona Vado A6 Torino-Savona</item>
 		<item>Vado Ligure</item>
 		<item>Bivio Per Bergeggi</item>
@@ -176,7 +176,7 @@
 		<item>Noli</item>
 		<item>Varigotti</item>
 		<item>Finale Ligure</item>
-		<item>Finale Ligure/Innesto Ss490 Del Colle Del Melogno</item>
+		<item>Finale Ligure/Innesto SS490 Del Colle Del Melogno</item>
 		<item>Borgio Verezzi</item>
 		<item>Pietra Ligure</item>
 		<item>Casello Pietra Ligure A10 Ge-Ventimiglia</item>
@@ -184,32 +184,32 @@
 		<item>Borghetto S.Spirito</item>
 		<item>Ceriale</item>
 		<item>Albenga</item>
-		<item>Cavallo Di Albenga/Innesto Ss582 Colle S. Bernardo</item>
+		<item>Cavallo Di Albenga/Innesto SS582 Colle S. Bernardo</item>
 		<item>Alassio</item>
 		<item>Laigueglia</item>
 		<item>Andora</item>
 		<item>Cervo</item>
 		<item>S.Bartolomeo Al Mare</item>
 		<item>Diano Marina</item>
-		<item>Diano Marina/Innesto Ss449 Di Diano Marina</item>
+		<item>Diano Marina/Innesto SS449 Di Diano Marina</item>
 		<item>Imperia</item>
-		<item>Oneglia/Innesto Ss449 Di Diano Marina</item>
-		<item>Imperia/Innesto Ss28 Del Colle Di Nava</item>
+		<item>Oneglia/Innesto SS449 Di Diano Marina</item>
+		<item>Imperia/Innesto SS28 Del Colle Di Nava</item>
 		<item>S.Lorenzo Al Mare</item>
 		<item>S.Stefano Al Mare</item>
 		<item>Riva Ligure</item>
 		<item>Arma Di Taggia</item>
-		<item>Arma Di Taggia/Innesto Ss548 Della Valle Argentina</item>
+		<item>Arma Di Taggia/Innesto SS548 Della Valle Argentina</item>
 		<item>San Remo</item>
 		<item>Ospedaletti</item>
 		<item>Bordighera</item>
 		<item>Vallecrosia</item>
 		<item>Camporosso</item>
 		<item>Ventimiglia</item>
-		<item>Ventimiglia/Innesto Ss20 Del Colle Di Tenda</item>
+		<item>Ventimiglia/Innesto SS20 Del Colle Di Tenda</item>
 		<item>Variante Di Ventimiglia</item>
 		<item>Latte</item>
-		<item>Latte/Innesto Ss1 Diramazione Dei Balzi Rossi</item>
+		<item>Latte/Innesto SS1 Diramazione Dei Balzi Rossi</item>
 		<item>Mortola</item>
 		<item>Grimaldi</item>
 		<item>Ponte S.Luigi/Allacciamento A10 Genova-Ventimiglia</item>

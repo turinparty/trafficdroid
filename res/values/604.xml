@@ -3,16 +3,16 @@
 <resources>
 
 	<string-array name="z604Name">
-		<item>Frattocchie/Innesto Ss7 Appia</item>
+		<item>Frattocchie/Innesto SS7 Appia</item>
 		<item>Pavona</item>
 		<item>Cecchina</item>
 		<item>Fontana Di Papa</item>
 		<item>Bivio Per Campoleone</item>
 		<item>Aprilia</item>
-		<item>Aprilia/Incrocio Ss148 Pontina</item>
+		<item>Aprilia/Incrocio SS148 Pontina</item>
 		<item>Campodicarne</item>
 		<item>Falasche</item>
-		<item>Anzio/Innesto Ss601 Ostia Anzio</item>
+		<item>Anzio/Innesto SS601 Ostia Anzio</item>
 	</string-array>
 
 	<integer-array name="z604Id">

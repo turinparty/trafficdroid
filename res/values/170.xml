@@ -10,7 +10,7 @@
 		<item>Sesto Al Reghena</item>
 		<item>Villotta</item>
 		<item>Azzano Decimo</item>
-		<item>Cimpello-Allacciamento Raccordo Cimpello-Ss13</item>
+		<item>Cimpello-Allacciamento Raccordo Cimpello-SS13</item>
 		<item>Pordenone Centro Comm.Le</item>
 		<item>Pordenone Sud</item>
 		<item>Porcia</item>
@@ -19,7 +19,7 @@
 		<item>Brugnera Sud</item>
 		<item>Sacile Est</item>
 		<item>Sacile Ovest</item>
-		<item>Svincolo Godega S.Urbano</item>
+		<item>Godega S.Urbano</item>
 	</string-array>
 
 	<integer-array name="z170Id">

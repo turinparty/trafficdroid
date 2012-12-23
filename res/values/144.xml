@@ -4,19 +4,19 @@
 
 	<string-array name="z144Name">
 		<item>Allacciamento A8 Milano-Varese</item>
-		<item>Svincolo Di Origgio</item>
-		<item>Svincolo Di Saronno</item>
-		<item>Svincolo Di Turate</item>
-		<item>Svincolo Di Lomazzo</item>
+		<item>Origgio</item>
+		<item>Saronno</item>
+		<item>Turate</item>
+		<item>Lomazzo</item>
 		<item>Lario</item>
-		<item>Svincolo Di Fino Mornasco</item>
+		<item>Fino Mornasco</item>
 		<item>Barriera Di Como Grandate</item>
-		<item>Svincolo Di Como Sud</item>
-		<item>Svincolo Di Como Monte Olimpino</item>
+		<item>Como Sud</item>
+		<item>Como Monte Olimpino</item>
 		<item>Chiasso-Dogana Di Brogeda</item>
-		<item>Svincolo di Pontechiasso</item>
-		<item>Svincolo Chiasso uscita merci</item>
-		<item>Svincolo Di Como Nord</item>
+		<item>Pontechiasso</item>
+		<item>Chiasso Uscita Merci</item>
+		<item>Como Nord</item>
 	</string-array>
 
 	<integer-array name="z144Id">

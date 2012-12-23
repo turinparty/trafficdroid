@@ -4,12 +4,12 @@
 
 	<string-array name="z131Name">
 		<item>Napoli Centro-Via G.Ferraris</item>
-		<item>Svincolo per Porto</item>
+		<item>Porto</item>
 		<item>Napoli Centro-Via Marina</item>
 		<item>S.Giovanni-Zona Industriale</item>
 		<item>Allacciamento A1 Milano-Napoli</item>
 		<item>Barriera Di Napoli Sud-Barra</item>
-		<item>Svincolo Di Ponticelli</item>
+		<item>Ponticelli</item>
 		<item>San Giorgio A Cremano</item>
 		<item>Portici-Bellavista</item>
 		<item>Ercolano-Portici</item>
@@ -67,13 +67,13 @@
 		<item>Rogliano-Grimaldi</item>
 		<item>Rogliano</item>
 		<item>Altilia-Grimaldi</item>
-		<item>S.Mango D\'aquino</item>
+		<item>S.Mango D\'Aquino</item>
 		<item>Falerna-Lamezia Terme</item>
 		<item>Lamezia</item>
 		<item>Catanzaro-Lamezia T.</item>
 		<item>Pizzo Calabro</item>
 		<item>Pizzo Est</item>
-		<item>Vibo Valentia-Sant\'onofrio</item>
+		<item>Vibo Valentia-Sant\'Onofrio</item>
 		<item>Serre</item>
 		<item>Mileto</item>
 		<item>Rosarno</item>
@@ -90,7 +90,7 @@
 		<item>Gallico</item>
 		<item>Porto Di Reggio Calabria</item>
 		<item>Reggio Di Calabria</item>
-		<item>Circ. Ss 106</item>
+		<item>Circ. SS106</item>
 		<item>Portale Di R.Calabria Centro</item>
 	</string-array>
 
@@ -187,95 +187,95 @@
 	</integer-array>
 
 	<string-array name="z131Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>1202</item>
+		<item>14182</item>
+		<item>1203</item>
+		<item>1205</item>
+		<item>1206</item>
+		<item>1207</item>
+		<item>13477</item>
+		<item>1208</item>
+		<item>1209</item>
+		<item>1210</item>
+		<item>13980</item>
+		<item>13478</item>
+		<item>1212</item>
+		<item>13479</item>
+		<item>1213</item>
+		<item>1214</item>
+		<item>1215</item>
+		<item>1216</item>
 		<item>A21526</item> <!-- A3 km. 36,800 Nocera - TLC 26 -->
-		<item>-1</item>
-		<item>-1</item>
+		<item>13480</item>
+		<item>1218</item>
 		<item>A21519</item> <!-- A3 km. 42,900 C. de Tirreni - TLC 31 -->
 		<item>A21580</item> <!-- A3 Km. 48,700 nord Vietri - TLC 32 -->
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>1222</item>
+		<item>1223</item>
+		<item>1224</item>
+		<item>1225</item>
+		<item>1226</item>
+		<item>1227</item>
+		<item>1228</item>
+		<item>1229</item>
+		<item>13481</item>
+		<item>1230</item>
+		<item>1231</item>
+		<item>1232</item>
+		<item>1233</item>
+		<item>1234</item>
+		<item>1235</item>
+		<item>13482</item>
+		<item>1236</item>
+		<item>1237</item>
+		<item>1238</item>
+		<item>1239</item>
+		<item>1240</item>
+		<item>1241</item>
+		<item>1242</item>
+		<item>1243</item>
+		<item>1244</item>
+		<item>1245</item>
+		<item>1246</item>
+		<item>1247</item>
+		<item>1248</item>
+		<item>1249</item>
+		<item>1250</item>
+		<item>1251</item>
+		<item>1252</item>
+		<item>1253</item>
+		<item>1254</item>
+		<item>1255</item>
+		<item>13982</item>
+		<item>1256</item>
+		<item>1257</item>
+		<item>1258</item>
+		<item>1259</item>
+		<item>1260</item>
+		<item>1261</item>
+		<item>1262</item>
+		<item>1263</item>
+		<item>1264</item>
+		<item>1265</item>
+		<item>1266</item>
+		<item>1267</item>
+		<item>1268</item>
+		<item>1269</item>
+		<item>13483</item>
+		<item>1270</item>
+		<item>1271</item>
+		<item>1272</item>
+		<item>1273</item>
+		<item>1274</item>
+		<item>1275</item>
+		<item>13983</item>
+		<item>1276</item>
+		<item>13484</item>
+		<item>1277</item>
+		<item>1278</item>
+		<item>1279</item>
+		<item>1280</item>
+		<item>1281</item>
 	</string-array>
 
 </resources>

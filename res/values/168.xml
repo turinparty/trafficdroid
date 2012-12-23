@@ -25,11 +25,11 @@
 		<item>Allacciamento Diramazione Gallarate-Gattico</item>
 		<item>Arona</item>
 		<item>Barriera Lago Maggiore</item>
-		<item>Svincolo Di Meina</item>
-		<item>Svincolo Di Carpugnino</item>
-		<item>Svincolo Di Baveno</item>
-		<item>Svincolo Gravellona Toce-Ss34 Lago Maggiore</item>
-		<item>Svincolo Ss33 Del Sempione</item>
+		<item>Meina</item>
+		<item>Carpugnino</item>
+		<item>Baveno</item>
+		<item>Gravellona Toce-SS34 Lago Maggiore</item>
+		<item>SS33 Del Sempione</item>
 	</string-array>
 
 	<integer-array name="z168Id">

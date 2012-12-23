@@ -9,14 +9,14 @@
 		<item>Genova Voltri</item>
 		<item>Allacciamento A26 Ge Voltri-Gravellona T.</item>
 		<item>Arenzano</item>
-		<item>Piani D\'invrea Nord</item>
-		<item>Piani D\'invrea Sud</item>
+		<item>Piani D\'Invrea Nord</item>
+		<item>Piani D\'Invrea Sud</item>
 		<item>Varazze</item>
 		<item>Celle Ligure</item>
 		<item>Albisola</item>
 		<item>San Cristoforo</item>
-		<item>Raccordo A10 - A06 al Km 44</item>
-		<item>Raccordo A10 - A06 al Km 45</item>
+		<item>Raccordo A10 - A06 Al Km 44</item>
+		<item>Raccordo A10 - A06 Al Km 45</item>
 		<item>Valeggia Nord</item>
 		<item>Spotorno</item>
 		<item>Borsana Sud</item>
@@ -87,19 +87,19 @@
 	</integer-array>
 
 	<string-array name="z145Webcam">
-		<item>A22505</item> <!-- A10 Km. 0,0  Polcevera itinere est -->
-		<item>A19592</item> <!-- A10 Km. 3,1  Ge Aerop. itinere est -->
-		<item>A11308</item> <!-- A10 Km. 5,3  Pegli itinere ovest -->
-		<item>A7017</item> <!-- A10 Km. 10,1  Ge-Voltri itinere ovest -->
-		<item>A22523</item> <!-- A10  Bivio A26S/A10E itinere est -->
-		<item>A22556</item> <!-- A10 Km. 20,0  Arenzano itinere est -->
+		<item>A22505</item> <!-- A10 Km. 0,0 Polcevera itinere est -->
+		<item>A19592</item> <!-- A10 Km. 3,1 Ge Aerop. itinere est -->
+		<item>A11308</item> <!-- A10 Km. 5,3 Pegli itinere ovest -->
+		<item>A7017</item> <!-- A10 Km. 10,1 Ge-Voltri itinere ovest -->
+		<item>A22523</item> <!-- A10 Bivio A26S/A10E itinere est -->
+		<item>A22556</item> <!-- A10 Km. 20,0 Arenzano itinere est -->
 		<item>-1</item>
 		<item>-1</item>
-		<item>A19495</item> <!-- A10 Km. 28.8  Varazze itinere est -->
-		<item>A11302</item> <!-- A10 Km. 31,7  Celle Ligure itinere ovest -->
-		<item>A22485</item> <!-- A10 Km. 37,0  Albisola itinere ovest -->
+		<item>A19495</item> <!-- A10 Km. 28.8 Varazze itinere est -->
+		<item>A11302</item> <!-- A10 Km. 31,7 Celle Ligure itinere ovest -->
+		<item>A22485</item> <!-- A10 Km. 37,0 Albisola itinere ovest -->
 		<item>-1</item>
-		<item>A15948</item> <!-- A10 Km. 42,8  Savona itinere ovest -->
+		<item>A15948</item> <!-- A10 Km. 42,8 Savona itinere ovest -->
 		<item>Fa10a6</item>
 		<item>Fsavona</item>
 		<item>-1</item>

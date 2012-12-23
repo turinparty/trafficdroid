@@ -3,22 +3,22 @@
 <resources>
 
 	<string-array name="z14230Name">
-		<item>Allacciamento A57 ovest/A4 Venezia-Belluno</item>
+		<item>Allacciamento A57 Ovest/A4 Venezia-Belluno</item>
 		<item>Mirano Dolo</item>
 		<item>Mira-Oriago</item>
 		<item>Barriera Di Venezia-Mestre</item>
 		<item>Allacciamento SS309 Statale Romea</item>
 		<item>Marghera</item>
-		<item>Svincolo Venezia</item>
-		<item>Svincolo Rotatoria Miranese</item>
-		<item>Svincolo Rotatoria Castellana</item>
-		<item>Svincolo Terraglio</item>
+		<item>Venezia</item>
+		<item>Rotatoria Miranese</item>
+		<item>Rotatoria Castellana</item>
+		<item>Terraglio</item>
 		<item>Bazzera</item>
 		<item>Allacciamento A27 Mestre-Belluno</item>
-		<item>Svincolo Di Marcon</item>
-		<item>Quarto D\'altino</item>
+		<item>Marcon</item>
+		<item>Quarto D\'Altino</item>
 		<item>Barriera Di Venezia Est</item>
-		<item>Allacciamento A57 est/A4 Venezia-Trieste</item>
+		<item>Allacciamento A57 Est/A4 Venezia-Trieste</item>
 	</string-array>
 
 	<integer-array name="z14230Id">

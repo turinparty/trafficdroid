@@ -4,57 +4,57 @@
 
 	<string-array name="z270Name">
 		<item>Roma</item>
-		<item>Svincolo Castel Giubileo G.R.A.</item>
+		<item>Castel Giubileo G.R.A.</item>
 		<item>Bivio Per Settebagni</item>
 		<item>Incrocio Settebagni</item>
-		<item>Svincolo Settebagni Diramazione Roma Nord A1 Mi-Na</item>
+		<item>Settebagni Diramazione Roma Nord A1 Mi-Na</item>
 		<item>Monterotondo Scalo</item>
 		<item>Monterotondo Nucleo Industriale</item>
-		<item>Innesto Sp18/A Ponte Del Grillo</item>
-		<item>Innesto Sp26/A Per Montelibretti</item>
-		<item>Passo Corese/Innesto Ss313 Di Passo Corese</item>
-		<item>Santa Maria-Innesto Sp26/A Per Montelibretti</item>
-		<item>Borgo Quinzio/Innesto Ss636 Di Palombara</item>
+		<item>Innesto SP18/A Ponte Del Grillo</item>
+		<item>Innesto SP26/A Per Montelibretti</item>
+		<item>Passo Corese/Innesto SS313 Di Passo Corese</item>
+		<item>Santa Maria-Innesto SP26/A Per Montelibretti</item>
+		<item>Borgo Quinzio/Innesto SS636 Di Palombara</item>
 		<item>Bivio Per Fara In Sabina</item>
 		<item>Confine Province Di Roma E Rieti</item>
 		<item>Osteria Nuova</item>
-		<item>Ponte Buida/Innesto Ss314 Licinese</item>
+		<item>Ponte Buida/Innesto SS314 Licinese</item>
 		<item>Bivio Per Rocca Sinibalda</item>
 		<item>Maglianello</item>
 		<item>Rieti-Innesto Raccordo Rieti-Terni</item>
-		<item>Rieti/Innesto Ss578 Salto Cicolana</item>
-		<item>Svincolo Per Zona Industriale Di Rieti</item>
-		<item>Svincolo Di Santa Rufina</item>
+		<item>Rieti/Innesto SS578 Salto Cicolana</item>
+		<item>Zona Industriale Di Rieti</item>
+		<item>Santa Rufina</item>
 		<item>Cittaducale</item>
 		<item>Vasche</item>
-		<item>Canetra Di Castel Sant\'angelo</item>
+		<item>Canetra Di Castel Sant\'Angelo</item>
 		<item>Antrodoco</item>
-		<item>Antrodoco/Innesto Ss17 App. Abruz. Appulo Sann.</item>
+		<item>Antrodoco/Innesto SS17 App. Abruz. Appulo Sann.</item>
 		<item>Sigillo</item>
-		<item>Posta/Innesto Ss471 Di Leonessa</item>
+		<item>Posta/Innesto SS471 Di Leonessa</item>
 		<item>Picciame Di Posta</item>
 		<item>Santa Croce</item>
 		<item>Collicelle</item>
 		<item>Valico Di S.Giusta</item>
-		<item>Ponte Scandarello/Innesto Ss260 Picente</item>
+		<item>Ponte Scandarello/Innesto SS260 Picente</item>
 		<item>Variante Di Accumoli</item>
 		<item>Grisciano</item>
 		<item>Confine Tra Le Province Di Rieti E Ascoli P.</item>
 		<item>Arquata Del Tronto</item>
 		<item>Acquasanta Terme</item>
 		<item>Santa Maria</item>
-		<item>Svincolo Paggese</item>
-		<item>Taverna Piccinini/Innesto Ss78 Picena</item>
-		<item>Innesto Raccordo Ascoli-P.To D\'ascoli</item>
+		<item>Paggese</item>
+		<item>Taverna Piccinini/Innesto SS78 Picena</item>
+		<item>Innesto Raccordo Ascoli-P.To D\'Ascoli</item>
 		<item>Variante Di Ascoli Piceno</item>
 		<item>Ascoli Piceno</item>
-		<item>Ascoli Piceno-Innesto Ss81 Piceno Aprutina</item>
-		<item>Villa Sant\'antonio</item>
+		<item>Ascoli Piceno-Innesto SS81 Piceno Aprutina</item>
+		<item>Villa Sant\'Antonio</item>
 		<item>Bivio Colli</item>
 		<item>Stella</item>
 		<item>Centobuchi</item>
 		<item>Casello S.Benedetto A14 Bo-Ta-Innesto Raccordo A14-Ap</item>
-		<item>Porto D\'ascoli- Innesto Ss16 Adriatica</item>
+		<item>Porto D\'Ascoli- Innesto SS16 Adriatica</item>
 	</string-array>
 
 	<integer-array name="z270Id">

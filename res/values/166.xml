@@ -5,8 +5,8 @@
 	<string-array name="z166Name">
 		<item>Allacciamento G.R.A.</item>
 		<item>Settecamini (C.A.R.)</item>
-		<item>Ponte di Nona</item>
-		<item>Svincolo Di Lunghezza</item>
+		<item>Ponte Di Nona</item>
+		<item>Lunghezza</item>
 		<item>Barriera Di Roma Est</item>
 		<item>Colle Tasso</item>
 		<item>Allacciamento A1 Milano Napoli</item>
@@ -20,13 +20,13 @@
 		<item>Valle Del Salto</item>
 		<item>Tornimparte</item>
 		<item>Valle Aterno</item>
-		<item>L\'aquila Ovest</item>
-		<item>L\'aquila Est</item>
+		<item>L\'Aquila Ovest</item>
+		<item>L\'Aquila Est</item>
 		<item>Assergi</item>
 		<item>Colledara-San Gabriele</item>
 		<item>Barriera Di Teramo</item>
-		<item>Svincolo Di Basciano-Villa Vomano</item>
-		<item>Svincolo Di Val Vomano</item>
+		<item>Basciano-Villa Vomano</item>
+		<item>Val Vomano</item>
 		<item>Cartecchio</item>
 		<item>Teramo</item>
 	</string-array>

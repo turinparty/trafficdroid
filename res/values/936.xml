@@ -3,10 +3,10 @@
 <resources>
 
 	<string-array name="z936Name">
-		<item>Via Tor Di Mezza/Innesto Ss215 Tuscolana</item>
-		<item>Svincolo Anagnina G.R.A.</item>
-		<item>Grottaferrata/Incrocio Ss216 Maremmana Iii</item>
-		<item>Bivio Pedica/Innesto Ss215 E Ss218 Di Rocca Di Papa</item>
+		<item>Via Tor Di Mezza/Innesto SS215 Tuscolana</item>
+		<item>Anagnina G.R.A.</item>
+		<item>Grottaferrata/Incrocio SS216 Maremmana Iii</item>
+		<item>Bivio Pedica/Innesto SS215 E SS218 Di Rocca Di Papa</item>
 	</string-array>
 
 	<integer-array name="z936Id">

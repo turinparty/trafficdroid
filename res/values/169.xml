@@ -4,7 +4,7 @@
 
 	<string-array name="z169Name">
 		<item>Allacciamento A57 Torino-Trieste/Raccordo Per Tessera</item>
-		<item>Svincolo Di Mogliano Veneto</item>
+		<item>Mogliano Veneto</item>
 		<item>Barriera Di Venezia</item>
 		<item>Allacciamento A4 Padova - Venezia</item>
 		<item>Treviso Sud</item>
@@ -16,10 +16,10 @@
 		<item>Vittorio Veneto Nord</item>
 		<item>Fadalto-Lago Di S.Croce</item>
 		<item>Barriera Di Belluno</item>
-		<item>Cadola-Svincolo Di Belluno</item>
+		<item>Cadola-Belluno</item>
 		<item>Pian Di Vedoia Ovest</item>
 		<item>Ponte Delle Alpi Est</item>
-		<item>Pian Di Vedoia-Ss51 Di Alemagna</item>
+		<item>Pian Di Vedoia-SS51 Di Alemagna</item>
 	</string-array>
 
 	<integer-array name="z169Id">

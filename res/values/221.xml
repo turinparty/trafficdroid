@@ -5,21 +5,21 @@
 	<string-array name="z221Name">
 		<item>Siena Est - Due Ponti</item>
 		<item>Ruffolo</item>
-		<item>Bivio Taverne D\'arbia-Ss438 Lauretana</item>
-		<item>Casetta Per Taverne D\'a.-Pianelle</item>
+		<item>Bivio Taverne D\'Arbia-SS438 Lauretana</item>
+		<item>Casetta Per Taverne D\'A.-Pianelle</item>
 		<item>Bivio Castelnuovo Berardenga Scalo</item>
 		<item>Bivio Castelnuovo B. S. E Pianella</item>
 		<item>Bivio Castelnuovo Berardenga</item>
 		<item>Bivio Torre A Castello</item>
-		<item>Colonna Del Grillo-Ss73 Senese Aretina</item>
+		<item>Colonna Del Grillo-SS73 Senese Aretina</item>
 		<item>Bivio Armaiolo E Rapolano Terme</item>
 		<item>Bivio Rapolano Terme</item>
 		<item>Bivio Serre Di Rapolano</item>
-		<item>S.Gimignanello-Ss438 Lauretana</item>
+		<item>S.Gimignanello-SS438 Lauretana</item>
 		<item>Bivio Rigomagno E Sinalunga</item>
-		<item>Sinalunga-Bivio Ss326 Di Rapolano</item>
+		<item>Sinalunga-Bivio SS326 Di Rapolano</item>
 		<item>Bivio Sinalunga-Foiano Della Chiana</item>
-		<item>Bettolle-A1-Raccordo Bettolle-Pg-Ss327</item>
+		<item>Bettolle-A1-Raccordo Bettolle-Pg-SS327</item>
 	</string-array>
 
 	<integer-array name="z221Id">

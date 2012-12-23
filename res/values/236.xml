@@ -3,76 +3,76 @@
 <resources>
 
 	<string-array name="z236Name">
-		<item>Svincolo Raccordo Viterbo-Terni</item>
-		<item>Svincolo San Gemini Sud</item>
-		<item>Svincolo San Gemini Nord</item>
-		<item>Svincolo Montecastrilli</item>
-		<item>Svincolo Acquasparta</item>
-		<item>Svincolo Massa Martana</item>
-		<item>Svincolo Collevalenza</item>
-		<item>Svincolo S.Damiano</item>
-		<item>Svincolo Ponte Rio Di Todi</item>
-		<item>Svincolo Montemolino</item>
-		<item>Svincolo Pantalla</item>
-		<item>Svincolo Sp Per Collazzone</item>
-		<item>Svincolo Sp Per Marsciano</item>
-		<item>Svincolo Ripabianca</item>
-		<item>Svincolo Casalina</item>
-		<item>Svincolo Deruta Sud</item>
-		<item>Svincolo Deruta Centro</item>
-		<item>Svincolo Deruta Nord</item>
-		<item>Svincolo Ponte Nuovo</item>
-		<item>Svincolo Per Sp S.Nicolo\' Di Celle</item>
-		<item>Svincolo Torgiano</item>
-		<item>Svincolo Per Sp Bettona</item>
-		<item>Svincolo Balanzano</item>
-		<item>Svincolo Raccordo Bettolle-Perugia</item>
-		<item>Svincolo Ponte S.Giovanni</item>
-		<item>Svincolo Ospedalone-San Francesco</item>
-		<item>Svincolo Ss75 Centrale Umbra</item>
-		<item>Svincolo Ss318 Di Valfabbrica</item>
-		<item>Svincolo Lidarno</item>
-		<item>Svincolo Ponte Valleceppi</item>
-		<item>Svincolo Ponte Felcino</item>
-		<item>Svincolo Bosco</item>
-		<item>Svincolo Ponte Pattoli</item>
-		<item>Svincolo Resina</item>
-		<item>Svincolo Pierantonio</item>
-		<item>Svincolo Ss219 Di Gubbio E Piandassino</item>
-		<item>Svincolo Umbertide</item>
-		<item>Svincolo Montone</item>
-		<item>Svincolo Promano</item>
-		<item>Svincolo S.Lucia</item>
-		<item>Svincolo Citta\' Di Castello-Ss221</item>
-		<item>Svincolo Selci</item>
-		<item>Svincolo S.Giustino</item>
-		<item>Svincolo Sansepolcro Sud</item>
-		<item>Svincolo Sansepolcro Nord</item>
-		<item>Svincolo Madonnuccia Poggiolino</item>
-		<item>Svincolo Pieve S.Stefano Sud</item>
-		<item>Svincolo Pieve S.Stefano Nord</item>
-		<item>Svincolo Valsavignone</item>
-		<item>Svincolo Canili</item>
-		<item>Svincolo Verghereto</item>
-		<item>Svincolo Bagno Di Romagna</item>
-		<item>Svincolo S.Piero In Bagno</item>
-		<item>Svincolo Quarto</item>
-		<item>Svincolo Sarsina Sud</item>
-		<item>Svincolo Sarsina Nord</item>
-		<item>Svincolo Monte Castello</item>
-		<item>Svincolo S.Damiano</item>
-		<item>Svincolo Monte Gelli</item>
-		<item>Svincolo Borello (per Ranchio)</item>
-		<item>Svincolo Borello</item>
-		<item>Svincolo S.Carlo</item>
-		<item>Svincolo S.Vittore</item>
-		<item>Svincolo Cesena Sud</item>
-		<item>Svincolo Cesena Ss9</item>
-		<item>Svincolo Tangenziale Di Cesena</item>
-		<item>Svincolo A14 / Cesena Nord</item>
-		<item>Svincolo Casemurate</item>
-		<item>Svincolo Cervia-Rimini-Mirabilandia</item>
-		<item>Svincolo Ravenna</item>
+		<item>Raccordo Viterbo-Terni</item>
+		<item>San Gemini Sud</item>
+		<item>San Gemini Nord</item>
+		<item>Montecastrilli</item>
+		<item>Acquasparta</item>
+		<item>Massa Martana</item>
+		<item>Collevalenza</item>
+		<item>S.Damiano</item>
+		<item>Ponte Rio Di Todi</item>
+		<item>Montemolino</item>
+		<item>Pantalla</item>
+		<item>Collazzone</item>
+		<item>Marsciano</item>
+		<item>Ripabianca</item>
+		<item>Casalina</item>
+		<item>Deruta Sud</item>
+		<item>Deruta Centro</item>
+		<item>Deruta Nord</item>
+		<item>Ponte Nuovo</item>
+		<item>S.Nicolo\' Di Celle</item>
+		<item>Torgiano</item>
+		<item>Bettona</item>
+		<item>Balanzano</item>
+		<item>Raccordo Bettolle-Perugia</item>
+		<item>Ponte S.Giovanni</item>
+		<item>Ospedalone-San Francesco</item>
+		<item>SS75 Centrale Umbra</item>
+		<item>SS318 Di Valfabbrica</item>
+		<item>Lidarno</item>
+		<item>Ponte Valleceppi</item>
+		<item>Ponte Felcino</item>
+		<item>Bosco</item>
+		<item>Ponte Pattoli</item>
+		<item>Resina</item>
+		<item>Pierantonio</item>
+		<item>SS219 Di Gubbio E Piandassino</item>
+		<item>Umbertide</item>
+		<item>Montone</item>
+		<item>Promano</item>
+		<item>S.Lucia</item>
+		<item>Citta\' Di Castello-SS221</item>
+		<item>Selci</item>
+		<item>S.Giustino</item>
+		<item>Sansepolcro Sud</item>
+		<item>Sansepolcro Nord</item>
+		<item>Madonnuccia Poggiolino</item>
+		<item>Pieve S.Stefano Sud</item>
+		<item>Pieve S.Stefano Nord</item>
+		<item>Valsavignone</item>
+		<item>Canili</item>
+		<item>Verghereto</item>
+		<item>Bagno Di Romagna</item>
+		<item>S.Piero In Bagno</item>
+		<item>Quarto</item>
+		<item>Sarsina Sud</item>
+		<item>Sarsina Nord</item>
+		<item>Monte Castello</item>
+		<item>S.Damiano</item>
+		<item>Monte Gelli</item>
+		<item>Borello (Per Ranchio)</item>
+		<item>Borello</item>
+		<item>S.Carlo</item>
+		<item>S.Vittore</item>
+		<item>Cesena Sud</item>
+		<item>Cesena SS9</item>
+		<item>Tangenziale Di Cesena</item>
+		<item>A14 / Cesena Nord</item>
+		<item>Casemurate</item>
+		<item>Cervia-Rimini-Mirabilandia</item>
+		<item>Ravenna</item>
 	</string-array>
 
 	<integer-array name="z236Id">

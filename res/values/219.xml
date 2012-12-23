@@ -4,15 +4,15 @@
 
 	<string-array name="z219Name">
 		<item>Chieti</item>
-		<item>Svincolo Di Villareia-Innesto Ss5 Tiburtina</item>
+		<item>Villareia-Innesto SS5 Tiburtina</item>
 		<item>Via Erasmo Piaggio</item>
-		<item>Svincolo Per Ss81 Piceno Aprutina</item>
+		<item>SS81 Piceno Aprutina</item>
 		<item>Salvaiessi</item>
-		<item>Svincolo Per A14 Bologna-Taranto</item>
+		<item>A14 Bologna-Taranto</item>
 		<item>Dragonara</item>
 		<item>Zona Industriale Sambuceto</item>
 		<item>Zona Industriale Di Pescara</item>
-		<item>Innesto Ss16 Adriatica</item>
+		<item>Innesto SS16 Adriatica</item>
 	</string-array>
 
 	<integer-array name="z219Id">

@@ -6,36 +6,36 @@
 		<item>Roma</item>
 		<item>Allacciamento Grande Raccordo Anulare</item>
 		<item>Finocchio</item>
-		<item>S.Cesareo/Innesto Ss216 Maremmana Iii</item>
-		<item>Bivio Per S. Cesareo/Innesto Ss155 Di Fiuggi</item>
+		<item>S.Cesareo/Innesto SS216 Maremmana Iii</item>
+		<item>Bivio Per S. Cesareo/Innesto SS155 Di Fiuggi</item>
 		<item>Labico</item>
 		<item>Valmontone</item>
-		<item>Valmontone/Innesto Ss600 Ariana</item>
-		<item>Svincolo Colleferro A1 Milano Napoli</item>
+		<item>Valmontone/Innesto SS600 Ariana</item>
+		<item>Colleferro A1 Milano Napoli</item>
 		<item>Segni Scalo</item>
-		<item>Staz. Colleferro/Segni/Innesto Ss609 Carpinetana</item>
-		<item>Anagni/Innesto Ss155 Racc Di Fiuggi</item>
+		<item>Staz. Colleferro/Segni/Innesto SS609 Carpinetana</item>
+		<item>Anagni/Innesto SS155 Racc Di Fiuggi</item>
 		<item>Ferentino</item>
-		<item>Madonna Della Neve/Innesto Ss155 E Ss156</item>
+		<item>Madonna Della Neve/Innesto SS155 E SS156</item>
 		<item>Frosinone</item>
-		<item>Frosinone/Innesto Ss637 Di Frosinone E Di Gaeta</item>
+		<item>Frosinone/Innesto SS637 Di Frosinone E Di Gaeta</item>
 		<item>Ceprano - A1 Milano-Napoli - SS82 Della Valle Del Liri</item>
-		<item>Arce/Innesto Ss82 Della Valle Del Liri</item>
+		<item>Arce/Innesto SS82 Della Valle Del Liri</item>
 		<item>Melfa</item>
-		<item>Staz. D\'aquino/Innesto Ss628 Leuciana</item>
-		<item>Cassino/Innesto Ss630 Ausonia</item>
+		<item>Staz. D\'Aquino/Innesto SS628 Leuciana</item>
+		<item>Cassino/Innesto SS630 Ausonia</item>
 		<item>Cassino</item>
-		<item>Cassino/Innesto Ss149 Di Montecassino</item>
-		<item>Cassino/Innesto Ss509 Di Forca D\'acero</item>
+		<item>Cassino/Innesto SS149 Di Montecassino</item>
+		<item>Cassino/Innesto SS509 Di Forca D\'Acero</item>
 		<item>Cervaro</item>
-		<item>Taverna/Innesto Ss430 Valle Del Garigliano</item>
-		<item>S.Pietro Infine/Innesto Ss6 Diramazione Via Casilina</item>
+		<item>Taverna/Innesto SS430 Valle Del Garigliano</item>
+		<item>S.Pietro Infine/Innesto SS6 Diramazione Via Casilina</item>
 		<item>Vairano Scalo</item>
-		<item>Staz. Di Vairano/Innesto Ss85 Venafrana/Innesto Ss608</item>
-		<item>Vairano Scalo - Innesto Ss608 Di Teano</item>
-		<item>Caianello/Innesto Ss372 Telesina</item>
+		<item>Staz. Di Vairano/Innesto SS85 Venafrana/Innesto SS608</item>
+		<item>Vairano Scalo - Innesto SS608 Di Teano</item>
+		<item>Caianello/Innesto SS372 Telesina</item>
 		<item>Casello Capua A1 Milano-Napoli</item>
-		<item>Taverna Spartimento/Innesto Ss7 Via Appia</item>
+		<item>Taverna Spartimento/Innesto SS7 Via Appia</item>
 	</string-array>
 
 	<integer-array name="z281Id">

@@ -3,14 +3,14 @@
 <resources>
 
 	<string-array name="z207Name">
-		<item>Ascoli Piceno - Ss4 Via Salaria</item>
-		<item>Svincolo Marino Del Tronto</item>
-		<item>Svincolo Di Maltignano</item>
-		<item>Svincolo Di Ancarano-Castel Di Lama</item>
-		<item>Svincolo Di Spinetoli</item>
-		<item>Svincolo Di Monsampolo</item>
-		<item>Svincolo Di Monteprandone-A14 Bo-Ta</item>
-		<item>Svincolo Porto D\'ascoli - Ss16 Adriatica</item>
+		<item>Ascoli Piceno - SS4 Via Salaria</item>
+		<item>Marino Del Tronto</item>
+		<item>Maltignano</item>
+		<item>Ancarano-Castel Di Lama</item>
+		<item>Spinetoli</item>
+		<item>Monsampolo</item>
+		<item>Monteprandone-A14 Bo-Ta</item>
+		<item>Porto D\'Ascoli - SS16 Adriatica</item>
 	</string-array>
 
 	<integer-array name="z207Id">

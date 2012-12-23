@@ -3,7 +3,7 @@
 <resources>
 
 	<string-array name="z621Name">
-		<item>Grosseto/Innesto Ss1 Via Aurelia</item>
+		<item>Grosseto/Innesto SS1 Via Aurelia</item>
 		<item>Il Poggione</item>
 		<item>Variante Di Roselle</item>
 		<item>Bivio Per Roselle</item>
@@ -19,7 +19,7 @@
 		<item>Ponte Macereto</item>
 		<item>Bivio Per Bagnaia</item>
 		<item>S.Salvatore A Pilli</item>
-		<item>Siena/Innesto Ss2/Ss73/Tangenziale Siena</item>
+		<item>Siena/Innesto SS2/SS73/Tangenziale Siena</item>
 	</string-array>
 
 	<integer-array name="z621Id">

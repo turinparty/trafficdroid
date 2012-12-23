@@ -5,26 +5,26 @@
 	<string-array name="z126Name">
 		<item>Milano-Allacciamento Raccordo P.Le Corvetto-Tangenziale Est</item>
 		<item>Allacciamento Tangenziale Est Di Milano</item>
-		<item>Svincolo Di S. Giuliano</item>
+		<item>S. Giuliano</item>
 		<item>Allacciamento Tangenziale Ovest Di Milano</item>
 		<item>Melegnano</item>
-		<item>Svincolo Di Binasco</item>
-		<item>Svincolo Di Melegnano</item>
+		<item>Binasco</item>
+		<item>Melegnano</item>
 		<item>Barriera Di Milano Sud</item>
 		<item>San Zenone</item>
 		<item>Lodi</item>
 		<item>Casalpusterlengo</item>
 		<item>Somaglia</item>
 		<item>Piacenza Nord</item>
-		<item>Nodo A1/A21 km 55</item>
-		<item>Nodo A1/A21 km 58</item>
+		<item>Nodo A1/A21 Km 55</item>
+		<item>Nodo A1/A21 Km 58</item>
 		<item>Arda</item>
 		<item>Fiorenzuola</item>
 		<item>Fidenza</item>
 		<item>Allacciamento A15 Parma-La Spezia</item>
 		<item>Parma</item>
 		<item>San Martino</item>
-		<item>Terre di Canossa - Campegine</item>
+		<item>Terre Di Canossa - Campegine</item>
 		<item>Reggio Emilia</item>
 		<item>Allacciamento A22 Modena-Brennero</item>
 		<item>Secchia</item>
@@ -39,7 +39,7 @@
 		<item>Roncobilaccio</item>
 		<item>Aglio Ovest</item>
 		<item>Aglio Est</item>
-		<item>Barberino di Mugello</item>
+		<item>Barberino Di Mugello</item>
 		<item>Calenzano-Sesto Fiorentino</item>
 		<item>Bisenzio Ovest</item>
 		<item>Firenze Nord</item>
@@ -60,7 +60,7 @@
 		<item>Valdichiana</item>
 		<item>Montepulciano</item>
 		<item>Chiusi-Chianciano</item>
-		<item>Area di servizio Fabro</item>
+		<item>Area Di Servizio Fabro</item>
 		<item>Fabro</item>
 		<item>Orvieto</item>
 		<item>Tevere</item>
@@ -99,10 +99,10 @@
 		<item>Allacciamento Asse Supporto</item>
 		<item>Allacciamento Asse Mediano</item>
 		<item>Allacciamento A16 Napoli-Canosa</item>
-		<item>Svincolo Di Casoria</item>
+		<item>Casoria</item>
 		<item>Allacciamento A1 Nord/Diramazione Capodichino</item>
 		<item>Allacciamento A1 Sud/Diramazione Capodichino</item>
-		<item>Svincolo Centro Direzionale</item>
+		<item>Centro Direzionale</item>
 		<item>Allacciamento A3 Napoli-Salerno</item>
 	</string-array>
 

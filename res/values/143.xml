@@ -3,26 +3,26 @@
 <resources>
 
 	<string-array name="z143Name">
-		<item>Fiorenza-Allacciamento A4 (milano V.Le Certosa)</item>
+		<item>Fiorenza-Allacciamento A4 (Milano V.Le Certosa)</item>
 		<item>Fiera Milano</item>
 		<item>Barriera Di Milano Nord</item>
 		<item>Allacciamento Tangenziale Ovest Di Milano</item>
-		<item>Svincolo Di Arese</item>
+		<item>Arese</item>
 		<item>Villoresi</item>
 		<item>Lainate</item>
 		<item>Allacciamento A9 Lainate-Como Chiasso</item>
-		<item>Svincolo Di Origgio Ovest</item>
-		<item>Svincolo Di Legnano</item>
-		<item>Svincolo Di Castellanza</item>
-		<item>Svincolo Di Busto Arsizio</item>
+		<item>Origgio Ovest</item>
+		<item>Legnano</item>
+		<item>Castellanza</item>
+		<item>Busto Arsizio</item>
 		<item>Gallarate</item>
 		<item>Allacciamento Diramazione Gallarate-Gattico</item>
 		<item>Barriera Di Gallarate Nord</item>
-		<item>Svincolo Di Cavaria</item>
-		<item>Svincolo Di Solbiate Arno</item>
-		<item>Svincolo Di Castronno</item>
+		<item>Cavaria</item>
+		<item>Solbiate Arno</item>
+		<item>Castronno</item>
 		<item>Brughiera</item>
-		<item>Svincolo Di Gazzada-Lago Di Varese</item>
+		<item>Gazzada-Lago Di Varese</item>
 		<item>Varese</item>
 	</string-array>
 

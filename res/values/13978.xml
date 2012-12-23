@@ -8,14 +8,14 @@
 		<item>Maccarese-Fregene</item>
 		<item>Barriera Di Roma Ovest</item>
 		<item>Torrimpietra</item>
-		<item>Svincolo Di Cerveteri-Ladispoli</item>
+		<item>Cerveteri-Ladispoli</item>
 		<item>Tirreno</item>
-		<item>Svincolo Di S.Severa-S.Marinella</item>
+		<item>S.Severa-S.Marinella</item>
 		<item>Civitavecchia Sud</item>
 		<item>Barriera Aurelia</item>
-		<item>Svincolo Di Civitavecchia Nord</item>
+		<item>Civitavecchia Nord</item>
 		<item>Tolfa</item>
-		<item>Svincolo Ss.1 Aurelia</item>
+		<item>SS1 Aurelia</item>
 	</string-array>
 
 	<integer-array name="z13978Id">

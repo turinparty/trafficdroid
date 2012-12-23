@@ -4,7 +4,7 @@
 
 	<string-array name="z192Name">
 		<item>Allacciamento A21-A1 La Villa</item>
-		<item>Allacciamento   A1-A21 Fiorenzuola</item>
+		<item>Allacciamento A1-A21 Fiorenzuola</item>
 	</string-array>
 
 	<integer-array name="z192Id">

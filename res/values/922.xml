@@ -3,14 +3,14 @@
 <resources>
 
 	<string-array name="z922Name">
-		<item>La Storta/Innesto Ss2 Cassia</item>
+		<item>La Storta/Innesto SS2 Cassia</item>
 		<item>Osteria Nuova</item>
 		<item>Bivio Per Vigna Di Valle</item>
 		<item>Bracciano</item>
 		<item>Manziana</item>
 		<item>Oriolo Romano</item>
 		<item>Vejano</item>
-		<item>Querce D\'orlando/Innesto Ss2 Cassia</item>
+		<item>Querce D\'Orlando/Innesto SS2 Cassia</item>
 	</string-array>
 
 	<integer-array name="z922Id">

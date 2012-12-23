@@ -5,71 +5,71 @@
 	<string-array name="z266Name">
 		<item>Roma Citta\'</item>
 		<item>Corso Francia</item>
-		<item>Svincolo Grottarossa</item>
-		<item>Svincolo Saxa Rubra</item>
+		<item>Grottarossa</item>
+		<item>Saxa Rubra</item>
 		<item>Labaro</item>
-		<item>Svincolo Grande Raccordo Anulare</item>
+		<item>Grande Raccordo Anulare</item>
 		<item>Prima Porta</item>
-		<item>Svincolo Sacrofanese-Malborghetto</item>
+		<item>Sacrofanese-Malborghetto</item>
 		<item>Riano Flaminio</item>
 		<item>Castelnuovo Di Porto</item>
 		<item>Bivio Per Morlupo</item>
-		<item>Svincolo Sp Campagnese Per Magliano Romano</item>
+		<item>Campagnese Per Magliano Romano</item>
 		<item>Rignano Flaminio</item>
-		<item>Svincolo Per S.Oreste</item>
-		<item>Civita Castellana/Innesto Ss311 Nepesina</item>
+		<item>S.Oreste</item>
+		<item>Civita Castellana/Innesto SS311 Nepesina</item>
 		<item>Borghetto</item>
-		<item>Innesto Ss315 Di Magliano S. Per Gallese</item>
-		<item>Ponte Felice/Innesto Ss657 Sabina</item>
+		<item>Innesto SS315 Di Magliano S. Per Gallese</item>
+		<item>Ponte Felice/Innesto SS657 Sabina</item>
 		<item>Bivio Per Magliano Sabina</item>
 		<item>Casello Magliano Sabina A1 Milano-Napoli</item>
-		<item>Ponte Sanguinaro/Innesto Ss3 Ter</item>
+		<item>Ponte Sanguinaro/Innesto SS3 Ter</item>
 		<item>Testaccio</item>
 		<item>Narni</item>
 		<item>Terni</item>
-		<item>Terni/Innesto Ss313 Di Passo Corese</item>
-		<item>Terni/Innesto Ss209 Valnerina E Ss79</item>
-		<item>Terni/Svincolo Raccordo Terni-Orte</item>
+		<item>Terni/Innesto SS313 Di Passo Corese</item>
+		<item>Terni/Innesto SS209 Valnerina E SS79</item>
+		<item>Terni/Raccordo Terni-Orte</item>
 		<item>Colle Licino/Innesto Raccordo Terni-Orte</item>
 		<item>Valico Della Somma</item>
 		<item>Variante Di Spoleto</item>
 		<item>Spoleto</item>
-		<item>Spoleto/Innesto Ss395 Passo Cerro/Ss418 Spoletina</item>
+		<item>Spoleto/Innesto SS395 Passo Cerro/SS418 Spoletina</item>
 		<item>Variante Di S.Giacomo</item>
 		<item>Bivio Campello Clitunno</item>
 		<item>Fonti Del Clitunno</item>
 		<item>Variante Di Pissignano</item>
 		<item>Variante Di Borgo Trevi</item>
 		<item>Variante S.Eraclio E Foligno</item>
-		<item>Bivio Foligno/Innesto Ss77 Della Val Di Chienti</item>
-		<item>S. Giovanni Profiamma/Innesto Ss75 Centrale Umbra</item>
+		<item>Bivio Foligno/Innesto SS77 Della Val Di Chienti</item>
+		<item>S. Giovanni Profiamma/Innesto SS75 Centrale Umbra</item>
 		<item>Valtopina</item>
 		<item>Nocera Scalo/Inizio Variante Di Nocera</item>
 		<item>Nocera Scalo</item>
 		<item>Nocera Umbra</item>
-		<item>Nocera Umbra/Innesto Ss361 Septempedana</item>
-		<item>Campo D\'arco/Fine Variante Di Nocera</item>
+		<item>Nocera Umbra/Innesto SS361 Septempedana</item>
+		<item>Campo D\'Arco/Fine Variante Di Nocera</item>
 		<item>Rigali</item>
 		<item>Gualdo Tadino</item>
-		<item>Gualdo Tadino/Innesto Ss444 Del Subasio</item>
+		<item>Gualdo Tadino/Innesto SS444 Del Subasio</item>
 		<item>Osteria Del Gatto</item>
-		<item>Osteria Del Gatto/Innesto Ss219 Di Gubbio/Innesto Ss76</item>
-		<item>Ponte S. Giovanni/Innesto Ss76 Var Della Val D\'esino</item>
+		<item>Osteria Del Gatto/Innesto SS219 Di Gubbio/Innesto SS76</item>
+		<item>Ponte S. Giovanni/Innesto SS76 Var Della Val D\'Esino</item>
 		<item>Purello</item>
 		<item>Villa Col De Canali</item>
-		<item>Scheggia/Innesto Ss360 Arceviese</item>
-		<item>Scheggia/Innesto Ss298 Eugubina</item>
+		<item>Scheggia/Innesto SS360 Arceviese</item>
+		<item>Scheggia/Innesto SS298 Eugubina</item>
 		<item>Valico Della Scheggia</item>
-		<item>Pontericcioli/Innesto Ss452 Della Contessa</item>
+		<item>Pontericcioli/Innesto SS452 Della Contessa</item>
 		<item>Pontedazzo</item>
 		<item>Cagli</item>
-		<item>Cagli/Innesto Ss424 Della Val Cesano</item>
+		<item>Cagli/Innesto SS424 Della Val Cesano</item>
 		<item>Smirra</item>
 		<item>Acqualagna</item>
-		<item>Acqualagna/Innesto Ss257 Apecchiese</item>
+		<item>Acqualagna/Innesto SS257 Apecchiese</item>
 		<item>Passo Del Furlo</item>
 		<item>Furlo Di Acqualagna</item>
-		<item>Calmazzo/Innesto Ss73 Bis Di Bocca Trabaria</item>
+		<item>Calmazzo/Innesto SS73 Bis Di Bocca Trabaria</item>
 		<item>Fossombrone/Innesto Raccordo Fano-Fossombrone</item>
 		<item>Fossombrone</item>
 		<item>Tavarnelle</item>
@@ -78,7 +78,7 @@
 		<item>Lucrezia</item>
 		<item>Ponte Murello</item>
 		<item>Carrara/Cuccurano</item>
-		<item>Fano/Innesto Ss16 Adriatica</item>
+		<item>Fano/Innesto SS16 Adriatica</item>
 	</string-array>
 
 	<integer-array name="z266Id">

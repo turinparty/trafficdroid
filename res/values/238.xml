@@ -4,18 +4,18 @@
 
 	<string-array name="z238Name">
 		<item>Allacciamento Tangenziale Est Di Milano</item>
-		<item>Svincolo Sesto S.Giovanni Sud: Cologno M.</item>
-		<item>Svincolo Sesto S.Giovanni (Diramazione  Nord)</item>
+		<item>Sesto S.Giovanni Sud: Cologno M.</item>
+		<item>Sesto S.Giovanni (Diramazione Nord)</item>
 		<item>Barriera Di Sesto S.Giovanni</item>
 		<item>Allacciamento A4 Torino-Trieste</item>
-		<item>Svincolo Monza-S.Alessandro</item>
-		<item>Svincolo Monza Centro: 1 Maggio</item>
-		<item>Svincolo Cinisello B.-Robecco</item>
-		<item>Svincolo Ss36 Del Lago Di Como: Lecco-Monza</item>
-		<item>Svincolo Sp151 Cinisello B.Nord: Zona Industriale</item>
-		<item>Svincolo Sp131 Nova Milanese</item>
-		<item>Svincolo SP9 Vecchia Valsassina</item>
-		<item>Svincolo Sp44 Milano-Meda: Lentate-Bruzzano</item>
+		<item>Monza-S.Alessandro</item>
+		<item>Monza Centro: 1 Maggio</item>
+		<item>Cinisello B.-Robecco</item>
+		<item>SS36 Del Lago Di Como: Lecco-Monza</item>
+		<item>SP151 Cinisello B.Nord: Zona Industriale</item>
+		<item>SP131 Nova Milanese</item>
+		<item>SP9 Vecchia Valsassina</item>
+		<item>SP44 Milano-Meda: Lentate-Bruzzano</item>
 	</string-array>
 
 	<integer-array name="z238Id">

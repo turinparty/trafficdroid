@@ -5,13 +5,13 @@
 	<string-array name="z187Name">
 		<item>Allacciamento A14 Bologna-Taranto</item>
 		<item>Ravenna</item>
-		<item>Svincolo Cotignola</item>
-		<item>Svincolo Lugo</item>
+		<item>Cotignola</item>
+		<item>Lugo</item>
 		<item>Bagnacavallo</item>
-		<item>Sant\'eufemia</item>
-		<item>Svincolo Di Ravenna - S.Vitale</item>
-		<item>Svincolo S.S.16 Adriatica</item>
-		<item>Svincolo SS 309 Diramazione Ravenna</item>
+		<item>Sant\'Eufemia</item>
+		<item>Ravenna - S.Vitale</item>
+		<item>SS16 Adriatica</item>
+		<item>SS309 Diramazione Ravenna</item>
 	</string-array>
 
 	<integer-array name="z187Id">

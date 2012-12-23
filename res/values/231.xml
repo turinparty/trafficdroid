@@ -4,13 +4,13 @@
 
 	<string-array name="z231Name">
 		<item>A3 Salerno - R.Calabria</item>
-		<item>Svincolo Via Lia</item>
-		<item>Svincolo Cardinale Porta Nova</item>
-		<item>Svincolo Spirito Santo</item>
-		<item>Svincolo Calopinace</item>
-		<item>Svincolo Modena</item>
-		<item>Svincolo Reggio Arangea</item>
-		<item>Innesto Ss106 E Ss106 Ter</item>
+		<item>Via Lia</item>
+		<item>Cardinale Porta Nova</item>
+		<item>Spirito Santo</item>
+		<item>Calopinace</item>
+		<item>Modena</item>
+		<item>Reggio Arangea</item>
+		<item>Innesto SS106 E SS106 Ter</item>
 	</string-array>
 
 	<integer-array name="z231Id">

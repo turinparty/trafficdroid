@@ -4,62 +4,62 @@
 
 	<string-array name="z273Name">
 		<item>Roma</item>
-		<item>Svincolo Grande Raccordo Anulare</item>
-		<item>Bagni Di Tivoli/Innesto Ss5 Ter</item>
+		<item>Grande Raccordo Anulare</item>
+		<item>Bagni Di Tivoli/Innesto SS5 Ter</item>
 		<item>Bagni Di Tivoli</item>
-		<item>Tivoli/Innesto Ss636 Di Palombara</item>
+		<item>Tivoli/Innesto SS636 Di Palombara</item>
 		<item>Tivoli</item>
 		<item>Vicovaro</item>
-		<item>S. Cosimato/Innesto Ss314 Licinese</item>
+		<item>S. Cosimato/Innesto SS314 Licinese</item>
 		<item>Casello Mandela A24 Roma-Teramo</item>
-		<item>Arsoli/Innesto Ss411 Sublacense</item>
+		<item>Arsoli/Innesto SS411 Sublacense</item>
 		<item>Arsoli</item>
 		<item>Casello Carsoli A24 Roma-Teramo</item>
-		<item>Carsoli/Innesto Ss5 Quater Tiburtina</item>
+		<item>Carsoli/Innesto SS5 Quater Tiburtina</item>
 		<item>Carsoli</item>
 		<item>Bivio Per Colli Di Monte Bove</item>
 		<item>Valico Di Monte Bove</item>
 		<item>Tagliacozzo</item>
-		<item>Tagliacozzo/Innesto Ss5 Quater</item>
-		<item>Staz. Villa S.Sebastiano/Innesto Ss579 Palentina</item>
+		<item>Tagliacozzo/Innesto SS5 Quater</item>
+		<item>Staz. Villa S.Sebastiano/Innesto SS579 Palentina</item>
 		<item>Scurcola Marsicana</item>
 		<item>Casello Magliano De\' Marsi A25 Torano-Pescara</item>
 		<item>Cappelle</item>
-		<item>Cappelle/Innesto Ss578 Salto Cicolana</item>
+		<item>Cappelle/Innesto SS578 Salto Cicolana</item>
 		<item>Avezzano</item>
-		<item>Avezzano/Innesto Ss82 Della Valle Del Liri</item>
+		<item>Avezzano/Innesto SS82 Della Valle Del Liri</item>
 		<item>S. Pelino</item>
 		<item>Variante Di Paterno\'</item>
-		<item>Paterno/Innesto Ss5 Bis/Diramazione (ramo Destro) Vestina</item>
-		<item>Paterno/Innesto Ss5 Bis/Diramazione (ramo Sinistro) Vestina</item>
-		<item>Celano/Innesto Ss5 Bis Vestina-Sarentina</item>
+		<item>Paterno/Innesto SS5 Bis/Diramazione (Ramo Destro) Vestina</item>
+		<item>Paterno/Innesto SS5 Bis/Diramazione (Ramo Sinistro) Vestina</item>
+		<item>Celano/Innesto SS5 Bis Vestina-Sarentina</item>
 		<item>Casello Celano A25 Torano-Pescara</item>
-		<item>Cerchio/Innesto Ss83 Marsicana</item>
+		<item>Cerchio/Innesto SS83 Marsicana</item>
 		<item>Collarmele</item>
 		<item>Valico Di Forca Caruso</item>
 		<item>Castelvecchio Subequo</item>
-		<item>Molina Aterno/Innesto Ss261 Subequana</item>
-		<item>Raiano/Innesto Ss5 Diramazione Tiburtina Valeria</item>
+		<item>Molina Aterno/Innesto SS261 Subequana</item>
+		<item>Raiano/Innesto SS5 Diramazione Tiburtina Valeria</item>
 		<item>Raiano</item>
 		<item>Corfino</item>
-		<item>Corfinio/Innesto Ss17 App. Abruz. E Appulo Sann.</item>
-		<item>Capo D\'acero Monte</item>
-		<item>Popoli/Innesto Ss17 App.Abruz. E Appulo Sann.</item>
-		<item>Bussi Sul Tirino/Innesto Ss153 Della Valle Del Tirino</item>
+		<item>Corfinio/Innesto SS17 App. Abruz. E Appulo Sann.</item>
+		<item>Capo D\'Acero Monte</item>
+		<item>Popoli/Innesto SS17 App.Abruz. E Appulo Sann.</item>
+		<item>Bussi Sul Tirino/Innesto SS153 Della Valle Del Tirino</item>
 		<item>Casello Bussi A25 Torano-Pescara</item>
-		<item>Casello Torre De\'passeri A25 Torano-Pescara</item>
-		<item>Piano D\'orta</item>
-		<item>Scafa S.Valentino/Innesto Ss487 Di Caramanico Terme</item>
+		<item>Casello Torre De\'Passeri A25 Torano-Pescara</item>
+		<item>Piano D\'Orta</item>
+		<item>Scafa S.Valentino/Innesto SS487 Di Caramanico Terme</item>
 		<item>Casello Scafa/Alanno A25 Torano-Pescara</item>
-		<item>Manoppello/Innesto Ss539 Di Manoppello</item>
-		<item>Brecciarola Di Chieti/Innesto Ss5 Racc</item>
+		<item>Manoppello/Innesto SS539 Di Manoppello</item>
+		<item>Brecciarola Di Chieti/Innesto SS5 Racc</item>
 		<item>Villareia/Innesto Raccordo Chieti-Pescara</item>
-		<item>Svincolo Chieti A25 Torano-Pescara</item>
-		<item>Villareia/Innesto Ss656 Diramazione Val Pescara-Chieti</item>
+		<item>Chieti A25 Torano-Pescara</item>
+		<item>Villareia/Innesto SS656 Diramazione Val Pescara-Chieti</item>
 		<item>Chieti Scalo</item>
-		<item>Chieti/Incrocio Ss81 Piceno Aprutina</item>
-		<item>Pescara Aeroporto/Innesto Ss16 Var</item>
-		<item>Pescara/Innesto Ss16 Adriatica</item>
+		<item>Chieti/Incrocio SS81 Piceno Aprutina</item>
+		<item>Pescara Aeroporto/Innesto SS16 Var</item>
+		<item>Pescara/Innesto SS16 Adriatica</item>
 	</string-array>
 
 	<integer-array name="z273Id">

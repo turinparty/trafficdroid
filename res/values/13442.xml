@@ -3,14 +3,14 @@
 <resources>
 
 	<string-array name="z13442Name">
-		<item>Svincolo Di Sistiana-A4 To-Ts</item>
+		<item>Sistiana-A4 To-Ts</item>
 		<item>Sistiana</item>
-		<item>Svincolo Di Sgonico</item>
 		<item>Sgonico</item>
-		<item>Svincolo Di Prosecco</item>
+		<item>Sgonico</item>
+		<item>Prosecco</item>
 		<item>Diramazione Opicina-Fernetti</item>
-		<item>Svincolo Di Trebiciano</item>
-		<item>Svincolo Di Padriciano-Innesto Ss202</item>
+		<item>Trebiciano</item>
+		<item>Padriciano-Innesto SS202</item>
 	</string-array>
 
 	<integer-array name="z13442Id">

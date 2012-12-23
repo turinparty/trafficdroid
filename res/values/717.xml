@@ -3,7 +3,7 @@
 <resources>
 
 	<string-array name="z717Name">
-		<item>Ravenna/Innesto Ss309Diramazione Romea</item>
+		<item>Ravenna/Innesto SS309Diramazione Romea</item>
 		<item>Bivio Per Marina Romea</item>
 		<item>Bivio Per Casal Borsetti</item>
 		<item>Bellocchio</item>
@@ -30,8 +30,8 @@
 		<item>Bivio Per Codevigo</item>
 		<item>Confine Province Di Padova E Venezia</item>
 		<item>Lova</item>
-		<item>Marghera/Incrocio Ss11 Padana Superiore</item>
-		<item>Mestre Ovest/Svincolo Rotatoria Marghera A57</item>
+		<item>Marghera/Incrocio SS11 Padana Superiore</item>
+		<item>Mestre Ovest/Rotatoria Marghera A57</item>
 	</string-array>
 
 	<integer-array name="z717Id">

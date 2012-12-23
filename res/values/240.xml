@@ -4,35 +4,35 @@
 
 	<string-array name="z240Name">
 		<item>Allacciamento A1 Milano-Napoli</item>
-		<item>Svincolo Ss9 Via Emilia: Rogoredo-P.Le Corvetto</item>
-		<item>Svincolo Via Rogoredo</item>
-		<item>Svincolo Paullo: Ss415 Paullese-Ss10 Padana Inferiore</item>
-		<item>Svincolo Via Mecenate: Ponte Lambro</item>
-		<item>Svincolo C.A.M.M.: Monlue\'</item>
-		<item>Svincolo Linate: V.Le Forlanini-Sp14 Rivoltana</item>
-		<item>Svincolo V. Rubattino: Segrate-Citta\' Studi</item>
-		<item>Svincolo Lambrate: Melzo - Dogana Segrate</item>
+		<item>SS9 Via Emilia: Rogoredo-P.Le Corvetto</item>
+		<item>Via Rogoredo</item>
+		<item>Paullo: SS415 Paullese-SS10 Padana Inferiore</item>
+		<item>Via Mecenate: Ponte Lambro</item>
+		<item>C.A.M.M.: Monlue\'</item>
+		<item>Linate: V.Le Forlanini-SP14 Rivoltana</item>
+		<item>V. Rubattino: Segrate-Citta\' Studi</item>
+		<item>Lambrate: Melzo - Dogana Segrate</item>
 		<item>Cascina Gobba</item>
-		<item>Svincolo Gobba: Treviglio-Vimodrone</item>
+		<item>Gobba: Treviglio-Vimodrone</item>
 		<item>Allacciamento Tangenziale Nord Milano</item>
-		<item>Svincolo Cologno Monzese: S.S.Giovanni Sud</item>
-		<item>Svincolo Sp3 Brugherio: Cologno M. Nord</item>
+		<item>Cologno Monzese: SS Giovanni Sud</item>
+		<item>SP3 Brugherio: Cologno M. Nord</item>
 		<item>Cologno M. Est</item>
-		<item>Svincolo Sp113 Cernusco Sul Naviglio</item>
-		<item>Svincolo Sp208 Carugate: Brugherio Nord</item>
+		<item>SP113 Cernusco Sul Naviglio</item>
+		<item>SP208 Carugate: Brugherio Nord</item>
 		<item>Carugate</item>
 		<item>Barriera Di Agrate Brianza</item>
 		<item>Allacciamento A4 Torino-Trieste</item>
-		<item>Svincolo Agrate B.: Sp13 Melzo-Monza-Dogana</item>
-		<item>Svincolo Concorezzo: Agrate Nord</item>
-		<item>Svincolo Sp41 Cascina Morosina: Burago</item>
-		<item>Svincolo Vimercate Sud: Torri Bianche</item>
-		<item>Svincolo Vimercate Sud: Bg-Trezzo-Arcore</item>
-		<item>Svincolo Vimercate Centro: Oreno</item>
-		<item>Svincolo Vimercate Nord: Frazione Velasca</item>
+		<item>Agrate B.: SP13 Melzo-Monza-Dogana</item>
+		<item>Concorezzo: Agrate Nord</item>
+		<item>SP41 Cascina Morosina: Burago</item>
+		<item>Vimercate Sud: Torri Bianche</item>
+		<item>Vimercate Sud: Bg-Trezzo-Arcore</item>
+		<item>Vimercate Centro: Oreno</item>
+		<item>Vimercate Nord: Frazione Velasca</item>
 		<item>Velasca Ovest</item>
-		<item>Svincolo Usmate-Velate Sud: Carnate-Paderno</item>
-		<item>Svincolo Usmate-Velate Nord: Merate-Leccotangenziale Est Di Milano</item>
+		<item>Usmate-Velate Sud: Carnate-Paderno</item>
+		<item>Usmate-Velate Nord: Merate-Leccotangenziale Est Di Milano</item>
 		<item>Lecco</item>
 	</string-array>
 

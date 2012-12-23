@@ -5,26 +5,26 @@
 	<string-array name="z533Name">
 		<item>Roma Centro</item>
 		<item>Roma Eur/V.Le Oceano Pacifico</item>
-		<item>Svincolo Via Di Decima/Ospedale S.Raffaele</item>
-		<item>Svincolo Grande Raccordo Anulare</item>
-		<item>Svincolo Mostacciano</item>
-		<item>Svincolo Tor De\' Cenci</item>
-		<item>Via Di Decima/Castel Porziano (direzione Lt)</item>
-		<item>Via Decima-Castel Porziano (direzione Rm)</item>
-		<item>Svincolo Pratica Di Mare/Torvajanica</item>
-		<item>Svincolo Castel Romano/Trigoria</item>
-		<item>Svincolo Monte D\'oro</item>
+		<item>Via Di Decima/Ospedale S.Raffaele</item>
+		<item>Grande Raccordo Anulare</item>
+		<item>Mostacciano</item>
+		<item>Tor De\' Cenci</item>
+		<item>Via Di Decima/Castel Porziano (Direzione Lt)</item>
+		<item>Via Decima-Castel Porziano (Direzione Rm)</item>
+		<item>Pratica Di Mare/Torvajanica</item>
+		<item>Castel Romano/Trigoria</item>
+		<item>Monte D\'Oro</item>
 		<item>Uscita Pomezia Nord</item>
 		<item>Uscita Pomezia Centro/Castelli Romani</item>
 		<item>Uscita Pomezia Sud/Maggiona</item>
-		<item>Svincolo Pontina Vecchia</item>
-		<item>Svincolo Strampelli</item>
-		<item>Svincolo Ardeatina</item>
-		<item>Svincolo Apriliana</item>
-		<item>Svincolo Sottopasso Via Del Tufetto</item>
-		<item>Svincolo Fossignano/Valle Lata</item>
-		<item>Svincolo Riserva Nuova/Via Delle Valli</item>
-		<item>Svincolo Aprilia/Innesto Ss207 Nettunense</item>
+		<item>Pontina Vecchia</item>
+		<item>Strampelli</item>
+		<item>Ardeatina</item>
+		<item>Apriliana</item>
+		<item>Sottopasso Via Del Tufetto</item>
+		<item>Fossignano/Valle Lata</item>
+		<item>Riserva Nuova/Via Delle Valli</item>
+		<item>Aprilia/Innesto SS207 Nettunense</item>
 		<item>Via Del Commercio/Via Mascagni</item>
 		<item>Viale Europa</item>
 		<item>Via Guardapasso</item>
@@ -41,7 +41,7 @@
 		<item>Bivio Per Pontinia</item>
 		<item>Bivio Per Sabaudia</item>
 		<item>Bivio Per S.Felice Circeo</item>
-		<item>Terracina/Innesto Ss7 Appia</item>
+		<item>Terracina/Innesto SS7 Appia</item>
 	</string-array>
 
 	<integer-array name="z533Id">

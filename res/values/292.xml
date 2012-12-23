@@ -5,12 +5,12 @@
 	<string-array name="z292Name">
 		<item>Roma</item>
 		<item>Via Della Magliana/Innesto Autostrada Per Aeroporto Fiumicino</item>
-		<item>Allacciamento G.R.A./Innesto Ss8 Bis Via Ostiense</item>
+		<item>Allacciamento G.R.A./Innesto SS8 Bis Via Ostiense</item>
 		<item>Bivio Per C.Colombo</item>
 		<item>Acilia</item>
-		<item>Ostia Scavi/Innesto Ss296 Della Scafa</item>
+		<item>Ostia Scavi/Innesto SS296 Della Scafa</item>
 		<item>Ostia Antica</item>
-		<item>Lido Di Ostia/Innesto Ss8bis E Ss601</item>
+		<item>Lido Di Ostia/Innesto SS8Bis E SS601</item>
 	</string-array>
 
 	<integer-array name="z292Id">

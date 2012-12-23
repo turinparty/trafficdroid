@@ -4,9 +4,9 @@
 
 	<string-array name="z164Name">
 		<item>Confine Di Stato</item>
-		<item>Svincolo Di Brennero</item>
-		<item>Svincolo Di Terme Di Brennero</item>
-		<item>Svincolo Di Ponticolo</item>
+		<item>Brennero</item>
+		<item>Terme Di Brennero</item>
+		<item>Ponticolo</item>
 		<item>Sadobre</item>
 		<item>Barriera Autostradale Di Vipiteno</item>
 		<item>Vipiteno</item>
@@ -22,11 +22,11 @@
 		<item>Castel Varco-Laimburg Est</item>
 		<item>Castel Varco-Laimburg Ovest</item>
 		<item>Egna Ora</item>
-		<item>San Michele All\'adige-Mezzocorona</item>
+		<item>San Michele All\'Adige-Mezzocorona</item>
 		<item>Paganella</item>
 		<item>Trento Nord</item>
 		<item>Trento Centro</item>
-		<item>Trento Centro(entrata Direzione Sud)</item>
+		<item>Trento Centro(Entrata Direzione Sud)</item>
 		<item>Rovereto Nord</item>
 		<item>Nogaredo</item>
 		<item>Rovereto Sud-Lago Di Garda Nord</item>

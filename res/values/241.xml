@@ -4,13 +4,13 @@
 
 	<string-array name="z241Name">
 		<item>A32 Torino-Bardonecchia</item>
-		<item>Ss25 Del Moncenisio</item>
+		<item>SS25 Del Moncenisio</item>
 		<item>Alpi Graie</item>
 		<item>Rivoli Sud</item>
 		<item>Rivoli Nord</item>
 		<item>Barriera Di Bruere</item>
 		<item>Interconnesione Tangenziale Sud</item>
-		<item>Pianezza-Collegno - Ss24 Del Monginevro</item>
+		<item>Pianezza-Collegno - SS24 Del Monginevro</item>
 		<item>Savonera</item>
 		<item>Regina Margherita</item>
 		<item>Venaria-Stadio</item>
@@ -18,7 +18,7 @@
 		<item>Stura Nord</item>
 		<item>Stura Sud</item>
 		<item>Caselle</item>
-		<item>Interconnesione diramazione Pescarito</item>
+		<item>Interconnesione Diramazione Pescarito</item>
 		<item>Settimo</item>
 		<item>Torino Nord - A5 To-Aosta</item>
 	</string-array>

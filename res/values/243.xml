@@ -4,21 +4,21 @@
 
 	<string-array name="z243Name">
 		<item>Santena - A21 Torino-Brescia</item>
-		<item>Svincolo Di Santena</item>
+		<item>Santena</item>
 		<item>Barriera Di Trofarello</item>
-		<item>Svincolo di Vado\'</item>
 		<item>Vado\'</item>
-		<item>Interscambio Diramazione per Moncalieri</item>
-		<item>Svincolo La Loggia-Ss20 Del Colle Di Tenda</item>
+		<item>Vado\'</item>
+		<item>Interscambio Diramazione Per Moncalieri</item>
+		<item>La Loggia-SS20 Del Colle Di Tenda</item>
 		<item>Nichelino Nord</item>
 		<item>Nichelino Sud</item>
-		<item>Svincolo Debouche\'</item>
-		<item>Svincolo Stupinigi</item>
+		<item>Debouche\'</item>
+		<item>Stupinigi</item>
 		<item>Interscambio Drosso</item>
-		<item>Svincolo Autoporto S.I.T.O.</item>
-		<item>Svincolo Per Corso Allamano</item>
-		<item>Svincolo Corso Iv Novembre</item>
-		<item>Svincolo Corso Francia-Cascine Vica</item>
+		<item>Autoporto S.I.T.O.</item>
+		<item>Corso Allamano</item>
+		<item>Corso Iv Novembre</item>
+		<item>Corso Francia-Cascine Vica</item>
 		<item>Interconnessione Tangenziale Nord</item>
 	</string-array>
 

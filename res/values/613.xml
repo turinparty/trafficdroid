@@ -4,14 +4,14 @@
 
 	<string-array name="z613Name">
 		<item>Roma</item>
-		<item>Via Tor Di Mezza/Innesto Ss511 Anagnina</item>
-		<item>Svincolo Grande Raccordo Anulare</item>
+		<item>Via Tor Di Mezza/Innesto SS511 Anagnina</item>
+		<item>Grande Raccordo Anulare</item>
 		<item>Frascati</item>
-		<item>Frascati/Innesto Ss216 E Ss218</item>
-		<item>Bivio Per Pedica/Innesto Ss511 Anagnina/Innesto Ss218</item>
+		<item>Frascati/Innesto SS216 E SS218</item>
+		<item>Bivio Per Pedica/Innesto SS511 Anagnina/Innesto SS218</item>
 		<item>Bivio Per Rocca Priora</item>
 		<item>Bivio Per Carchitti</item>
-		<item>Macere/Innesto Ss600 Ariana</item>
+		<item>Macere/Innesto SS600 Ariana</item>
 	</string-array>
 
 	<integer-array name="z613Id">

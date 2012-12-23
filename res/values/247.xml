@@ -4,15 +4,15 @@
 
 	<string-array name="z247Name">
 		<item>Catania Centro-S.Gregorio-A18 Diramazione</item>
-		<item>Svincolo Gravina</item>
-		<item>Svincolo S.Giovanni Galermo</item>
-		<item>Misterbianco-Innesto Ss121 Catanese</item>
+		<item>Gravina</item>
+		<item>S.Giovanni Galermo</item>
+		<item>Misterbianco-Innesto SS121 Catanese</item>
 		<item>S.Giorgio</item>
 		<item>Catania Sud-Allacciamento A19 Palermo-Catania</item>
 		<item>Bicocca-Asse Servizi Per Porto-Aeroporto</item>
 		<item>Zona Industriale Nord</item>
 		<item>Passo Martino-Zona Industriale Sud</item>
-		<item>Simeto-Innesto Ss114</item>
+		<item>Simeto-Innesto SS114</item>
 	</string-array>
 
 	<integer-array name="z247Id">
