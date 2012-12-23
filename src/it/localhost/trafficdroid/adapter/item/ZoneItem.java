@@ -19,7 +19,7 @@ import android.widget.TextView;
 import com.google.analytics.tracking.android.EasyTracker;
 
 public class ZoneItem extends AbstractItem {
-	private static final String autostrade = "http://mobile.autostrade.it/autostrade-mobile/popupTelecamera.do?ua=Android%201.1&tlc=";
+	private static final String autostrade = "http://mobile.autostrade.it/autostrade-mobile/popupTelecamera.do?tlc=";
 	private static final String cavspa = "http://www.cavspa.it/webcam/temp-imgs/camsbig/";
 	private static final String edidomus = "http://telecamere.edidomus.it/vp2/vpcam.aspx?camid=";
 	private static final String autofiori = "http://www.autofiori.it/cgi-bin/cgiwebcam.exe?site=";

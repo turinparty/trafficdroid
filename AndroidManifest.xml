@@ -5,7 +5,7 @@
 	android:versionName="1.20.2 forewarnedIsForearmed" >
 
 	<uses-sdk
-		android:minSdkVersion="11"
+		android:minSdkVersion="13"
 		android:targetSdkVersion="17" />
 
 	<supports-screens
