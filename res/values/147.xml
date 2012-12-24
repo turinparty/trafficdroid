@@ -79,29 +79,29 @@
 		<item>A19547</item> <!-- A12 km. 39,000 Chiavari itinere Est -->
 		<item>A15962</item> <!-- A12 km. 39,9 Lavagna itinere est -->
 		<item>A19446</item> <!-- A12 km. 52,1 Sestri TR1/Salt itinere ovest -->
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1565</item>
+		<item>H1566</item>
+		<item>H1567</item>
+		<item>H1568</item>
+		<item>H1569</item>
+		<item>H1570</item>
+		<item>H1571</item>
+		<item>H1572</item>
+		<item>H1573</item>
+		<item>H1574</item>
+		<item>H1575</item>
+		<item>H1576</item>
+		<item>H13491</item>
+		<item>H1578</item>
+		<item>H1579</item>
+		<item>H1580</item>
+		<item>H1581</item>
 		<item>A21249</item> <!-- A12 km. 170,2 Livorno -->
 		<item>A21255</item> <!-- A12 km. 177,8 Collesalvetti -->
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1584</item>
+		<item>H1585</item>
+		<item>H1586</item>
+		<item>H1588</item>
 	</string-array>
 
 </resources>

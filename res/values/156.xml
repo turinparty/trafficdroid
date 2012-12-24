@@ -57,30 +57,30 @@
 	</integer-array>
 
 	<string-array name="z156Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>A19936</item> <!-- A15 km. 1,0 A15/A1 itinere nord -->
+		<item>H1706</item>
+		<item>H1707</item>
+		<item>H1708</item>
+		<item>H14120</item>
+		<item>H14121</item>
+		<item>H1709</item>
+		<item>H14122</item>
+		<item>H1710</item>
+		<item>H1711</item>
+		<item>H14123</item>
+		<item>H1712</item>
+		<item>H1713</item>
+		<item>H1714</item>
+		<item>H14124</item>
+		<item>H1715</item>
+		<item>H14125</item>
+		<item>H1716</item>
+		<item>H1717</item>
+		<item>H1718</item>
+		<item>H1719</item>
+		<item>H1720</item>
+		<item>H1721</item>
+		<item>H1722</item>
 	</string-array>
 
 </resources>

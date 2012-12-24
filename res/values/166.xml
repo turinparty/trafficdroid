@@ -61,32 +61,32 @@
 	</integer-array>
 
 	<string-array name="z166Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1896</item>
+		<item>H14002</item>
+		<item>H14189</item>
+		<item>H1897</item>
+		<item>H1899</item>
+		<item>H1900</item>
+		<item>H1901</item>
+		<item>H1902</item>
+		<item>H1903</item>
+		<item>H1904</item>
+		<item>H1905</item>
+		<item>H1906</item>
+		<item>A6037</item> <!-- A24 km. 065,9 Gall. S. Angelo Dx -->
+		<item>H1908</item>
 		<item>A6365</item> <!-- A24 km. 074,6 Valle del Salto Dx -->
 		<item>A8155</item> <!-- A24 km 079,7 San Rocco Dx -->
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1911</item>
+		<item>H1912</item>
+		<item>H1913</item>
+		<item>H1914</item>
 		<item>A6297</item> <!-- A24 km. 127,5 Gran Sasso lato TE -->
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1913</item>
+		<item>H1914</item>
+		<item>H1915</item>
+		<item>H1916</item>
+		<item>H1917</item>
 	</string-array>
 
 </resources>

@@ -55,29 +55,29 @@
 	</integer-array>
 
 	<string-array name="z171Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1994</item>
+		<item>H14394</item>
+		<item>H14395</item>
+		<item>H1995</item>
+		<item>H1996</item>
+		<item>H1997</item>
+		<item>H1998</item>
+		<item>H1999</item>
+		<item>H2000</item>
+		<item>H2001</item>
+		<item>H13505</item>
+		<item>H2002</item>
+		<item>H2003</item>
+		<item>H2004</item>
+		<item>H2005</item>
+		<item>H14396</item>
+		<item>H13506</item>
+		<item>H2007</item>
+		<item>H2008</item>
+		<item>H2009</item>
+		<item>H2010</item>
+		<item>H2011</item>
+		<item>H2012</item>
 	</string-array>
 
 </resources>

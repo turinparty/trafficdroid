@@ -21,12 +21,12 @@
 	</integer-array>
 
 	<string-array name="z173Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H2024</item>
+		<item>H2025</item>
+		<item>H2026</item>
+		<item>H2027</item>
+		<item>H2028</item>
+		<item>H2029</item>
 	</string-array>
 
 </resources>

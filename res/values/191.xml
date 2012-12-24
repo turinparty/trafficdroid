@@ -25,13 +25,13 @@
 	</integer-array>
 
 	<string-array name="z191Webcam">
-		<item>-1</item>
+		<item>A16168</item> <!-- D19 km. 03,8 PMV S.Cesareo Sud -->
 		<item>A16163</item> <!-- D19 km. 03,8 PMV S.Cesareo Nord -->
 		<item>A9957</item> <!-- D19 km. 10,2 Itinere.M.Porzio -->
-		<item>-1</item>
-		<item>-1</item>
+		<item>H2158</item>
+		<item>A21802</item> <!-- D19 km. 15 Barriera Roma Sud -->
 		<item>A19734</item> <!-- D19 km. 17,7 PMV Torrenova Itinere Sud -->
-		<item>-1</item>
+		<item>H2161</item>
 		<item>A20833</item> <!-- D19 km. 20,0 Gra Sud -->
 	</string-array>
 

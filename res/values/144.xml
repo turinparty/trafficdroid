@@ -37,18 +37,18 @@
 	</integer-array>
 
 	<string-array name="z144Webcam">
-		<item>-1</item>
+		<item>H1489</item>
 		<item>A18868</item> <!-- A09 km. 11,7 Origgio itinere sud -->
 		<item>A18830</item> <!-- A09 km. 17,9 Saronno itinere sud -->
-		<item>-1</item>
+		<item>H1492</item>
 		<item>A18823</item> <!-- A09 km. 22,7 Lomazzo itinere nord -->
-		<item>-1</item>
+		<item>A18844</item> <!-- A09 km. 26,8 Lomazzo Itinere Sud -->
 		<item>A22436</item> <!-- A09 km. 30,0 Fino Mornasco itinere nord -->
-		<item>-1</item>
+		<item>A22404</item> <!-- A09 km. 33,0 Como Grandate itinere nord -->
 		<item>A22416</item> <!-- A09 km. 34,0 Como Sud itinere nord -->
 		<item>A14667</item> <!-- A09 km. 39,6 Como M. Olimpino itinere sud -->
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1501</item>
+		<item>H14005</item>
 		<item>A22348</item> <!-- A09 km. 42,0 Dogana itinere sud -->
 		<item>A22409</item> <!-- A09 km. 40,0 Galleria Quarcino itinere sud -->
 	</string-array>

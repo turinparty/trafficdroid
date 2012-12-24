@@ -28,14 +28,14 @@
 
 	<string-array name="z187Webcam">
 		<item>A16607</item> <!-- D14 km. 008,6 Barriera Ravenna itinere -->
-		<item>-1</item>
+		<item>H14074</item>
 		<item>A20475</item> <!-- D14 km. 011,0 Lugo Cotignola Itinere Nord -->
-		<item>-1</item>
+		<item>H14361</item>
 		<item>A22247</item> <!-- D14 km. 024,0 Ravenna ex barriera -->
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H2131</item>
+		<item>A7658</item> <!-- D14 km.29,0 Itinere Quadrifoglio Ravenna -->
+		<item>H2134</item>
+		<item>H2135</item>
 	</string-array>
 
 </resources>

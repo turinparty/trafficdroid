@@ -25,14 +25,14 @@
 	</integer-array>
 
 	<string-array name="z202Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H2221</item>
+		<item>H13514</item>
+		<item>H13515</item>
+		<item>H13516</item>
+		<item>H2223</item>
+		<item>H2224</item>
+		<item>H2225</item>
+		<item>H2226</item>
 	</string-array>
 
 </resources>

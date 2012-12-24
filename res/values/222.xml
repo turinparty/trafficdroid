@@ -29,16 +29,16 @@
 	</integer-array>
 
 	<string-array name="z222Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H2365</item>
+		<item>H2366</item>
+		<item>H2367</item>
+		<item>H14016</item>
+		<item>H2368</item>
+		<item>H2369</item>
+		<item>H2370</item>
+		<item>H2371</item>
+		<item>H2372</item>
+		<item>H2373</item>
 	</string-array>
 
 </resources>

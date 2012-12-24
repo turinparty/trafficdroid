@@ -43,23 +43,23 @@
 	</integer-array>
 
 	<string-array name="z621Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H8822</item>
+		<item>H8823</item>
+		<item>H8824</item>
+		<item>H14416</item>
+		<item>H8825</item>
+		<item>H8826</item>
+		<item>H14417</item>
+		<item>H8827</item>
+		<item>H8828</item>
+		<item>H8829</item>
+		<item>H8830</item>
+		<item>H8831</item>
+		<item>H8832</item>
+		<item>H8833</item>
+		<item>H8834</item>
+		<item>H8835</item>
+		<item>H8836</item>
 	</string-array>
 
 </resources>

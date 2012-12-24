@@ -27,15 +27,15 @@
 	</integer-array>
 
 	<string-array name="z613Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H8745</item>
+		<item>H8746</item>
+		<item>H8747</item>
+		<item>H8748</item>
+		<item>H8749</item>
+		<item>H8750</item>
+		<item>H8751</item>
+		<item>H8752</item>
+		<item>H8753</item>
 	</string-array>
 
 </resources>

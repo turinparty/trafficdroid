@@ -92,40 +92,40 @@
 		<item>A11308</item> <!-- A10 Km. 5,3 Pegli itinere ovest -->
 		<item>A7017</item> <!-- A10 Km. 10,1 Ge-Voltri itinere ovest -->
 		<item>A22523</item> <!-- A10 Bivio A26S/A10E itinere est -->
-		<item>A22556</item> <!-- A10 Km. 20,0 Arenzano itinere est -->
-		<item>-1</item>
-		<item>-1</item>
+		<item>A19516</item> <!-- A10 km. 19,4 Arenzano itinere ovest -->
+		<item>A22556</item> <!-- A10 km. 20,0 Arenzano itinere est -->
+		<item>A19503</item> <!-- A10 km. 24,6 Varazze itinere ovest -->
 		<item>A19495</item> <!-- A10 Km. 28.8 Varazze itinere est -->
 		<item>A11302</item> <!-- A10 Km. 31,7 Celle Ligure itinere ovest -->
 		<item>A22485</item> <!-- A10 Km. 37,0 Albisola itinere ovest -->
-		<item>-1</item>
+		<item>A19484</item> <!-- A10 km. 38,7 Albisola itinere est -->
 		<item>A15948</item> <!-- A10 Km. 42,8 Savona itinere ovest -->
 		<item>Fa10a6</item>
 		<item>Fsavona</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1515</item>
+		<item>H1516</item>
+		<item>H1517</item>
 		<item>Ffinale</item>
 		<item>Fpietra</item>
-		<item>-1</item>
+		<item>H14003</item>
 		<item>Fceriale</item>
 		<item>Fbastia</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1522</item>
+		<item>H1523</item>
+		<item>H1524</item>
+		<item>H1525</item>
 		<item>Fimpero</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1527</item>
+		<item>H1528</item>
+		<item>H1529</item>
 		<item>Ftaggia</item>
 		<item>Fsanremo</item>
-		<item>-1</item>
+		<item>H13986</item>
 		<item>Fbordighera</item>
 		<item>Fxxmiglia</item>
-		<item>-1</item>
+		<item>H1534</item>
 		<item>Fdelmonte</item>
-		<item>-1</item>
+		<item>H1536</item>
 	</string-array>
 
 </resources>

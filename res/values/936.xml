@@ -17,10 +17,10 @@
 	</integer-array>
 
 	<string-array name="z936Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H11936</item>
+		<item>H11937</item>
+		<item>H11938</item>
+		<item>H11939</item>
 	</string-array>
 
 </resources>

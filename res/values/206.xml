@@ -47,25 +47,25 @@
 	</integer-array>
 
 	<string-array name="z206Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H2246</item>
+		<item>H2247</item>
+		<item>H2248</item>
+		<item>H2249</item>
+		<item>H2250</item>
+		<item>H2251</item>
+		<item>H2252</item>
+		<item>H2253</item>
+		<item>H2254</item>
+		<item>H2255</item>
+		<item>H14400</item>
+		<item>H2256</item>
+		<item>H14418</item>
+		<item>H2257</item>
+		<item>H2258</item>
+		<item>H2259</item>
+		<item>H2260</item>
+		<item>H2261</item>
+		<item>H2262</item>
 	</string-array>
 
 </resources>

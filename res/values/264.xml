@@ -15,9 +15,9 @@
 	</integer-array>
 
 	<string-array name="z264Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H3074</item>
+		<item>H3075</item>
+		<item>H3076</item>
 	</string-array>
 
 </resources>

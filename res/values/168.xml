@@ -63,33 +63,33 @@
 	</integer-array>
 
 	<string-array name="z168Webcam">
-		<item>-1</item>
-		<item>-1</item>
+		<item>A22523</item> <!-- A26 km. 0,250 Bivio A26S/A10E itinere est -->
+		<item>A19577</item> <!-- A26 km. 6,0 Turchino itinere sud -->
 		<item>A19440</item> <!-- A26 km. 7,3 Masone itinere nord -->
-		<item>-1</item>
+		<item>A17913</item> <!-- A26 km. 25,0 Stura itinere sud -->
 		<item>A17927</item> <!-- A26 km. 29,8 Ovada itinere sud -->
 		<item>A19428</item> <!-- A26 km. 44,5 All.A26/D26 itinere nord -->
-		<item>-1</item>
+		<item>A19565</item> <!-- A26 km. 47,0 All.A26/D26 itinere sud -->
 		<item>A19408</item> <!-- A26 km. 57,1 Alessandria Sud itinere nord -->
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>A19414</item> <!-- A26 km. 68,0 A26/A21 itinere sud -->
+		<item>A11414</item> <!-- A26 km. 73,8 Gall.Olimpia itinere sud -->
+		<item>H1945</item>
+		<item>H1946</item>
 		<item>A14873</item> <!-- A26 km. 101,2 Allacc. A26-D36 itinere nord -->
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1948</item>
+		<item>A19376</item> <!-- A26 km. 127,7 A26/A4 itinere nord -->
 		<item>A19383</item> <!-- A26 km. 130,6 A26/A4 itinere sud -->
 		<item>A11427</item> <!-- A26 km. 143,0 Romagnano itinere nord -->
 		<item>A19370</item> <!-- A26 km. 151,1 Borgomanero itinere nord -->
-		<item>-1</item>
+		<item>H1953</item>
 		<item>A11421</item> <!-- A26 km. 157,9 A26/D8 itinere nord -->
 		<item>A19359</item> <!-- A26 km. 166,4 Arona itinere sud -->
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1956</item>
+		<item>H13989</item>
 		<item>A14693</item> <!-- A26 km. 181,4 Carpugnino itinere nord -->
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1958</item>
+		<item>H1959</item>
+		<item>H1960</item>
 	</string-array>
 
 </resources>

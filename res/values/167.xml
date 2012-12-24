@@ -39,21 +39,21 @@
 	</integer-array>
 
 	<string-array name="z167Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1920</item>
+		<item>H1921</item>
+		<item>H1922</item>
+		<item>A6007</item> <!-- A25 km. 089,1 Avezzano Sx -->
+		<item>H1924</item>
+		<item>H1925</item>
+		<item>H1926</item>
+		<item>H1927</item>
+		<item>H1928</item>
+		<item>H1929</item>
+		<item>H1930</item>
+		<item>H1931</item>
+		<item>H1932</item>
+		<item>H1933</item>
+		<item>H1934</item>
 	</string-array>
 
 </resources>

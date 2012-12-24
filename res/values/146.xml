@@ -49,26 +49,26 @@
 	</integer-array>
 
 	<string-array name="z146Webcam">
+		<item>H1537</item>
+		<item>H1538</item>
 		<item>A11195</item> <!-- A11 km. 00,0 Peretola itinere ovest -->
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1540</item>
+		<item>H1541</item>
 		<item>A22027</item> <!-- A11 km. 02,0 Osmannoro itinere ovest -->
 		<item>A21997</item> <!-- A11 km. 07,0 Prato Est itinere est -->
 		<item>A21959</item> <!-- A11 km. 17,0 Prato Ovest itinere ovest -->
 		<item>A21965</item> <!-- A11 km. 28 Pistoia itinere ovest -->
-		<item>-1</item>
+		<item>A5939</item> <!-- A11 km. 36,1 Serravalle itinere ovest -->
 		<item>A20069</item> <!-- A11 km. 42 Montecatini itinere est -->
 		<item>A22014</item> <!-- A11 km. 46,0 Chiesina U. itinere ovest -->
 		<item>A21982</item> <!-- A11 km. 51,0 Altopascio itinere est -->
 		<item>A22090</item> <!-- A11 km. 62,4 Capannori itinere est -->
 		<item>A20042</item> <!-- A11 km. 64,8 Lucca itinere ovest -->
 		<item>A10421</item> <!-- A11 km. 65,0 Lucca itinere ovest -->
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1553</item>
+		<item>H1554</item>
+		<item>H1555</item>
+		<item>H1556</item>
 	</string-array>
 
 </resources>

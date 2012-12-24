@@ -41,22 +41,22 @@
 	</integer-array>
 
 	<string-array name="z14230Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H14234</item>
+		<item>H14238</item>
+		<item>H14224</item>
+		<item>H14239</item>
+		<item>H14240</item>
+		<item>H14241</item>
+		<item>H14242</item>
+		<item>H14243</item>
+		<item>H14244</item>
+		<item>H14245</item>
+		<item>A18373</item> <!-- A57 km. 19,6 Tang. Mestre -->
+		<item>H14247</item>
+		<item>H14249</item>
+		<item>H14236</item>
+		<item>H14237</item>
+		<item>H14235</item>
 	</string-array>
 
 </resources>

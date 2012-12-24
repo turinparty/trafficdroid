@@ -23,10 +23,10 @@
 	</integer-array>
 
 	<string-array name="z181Webcam">
-		<item>-1</item>
-		<item>-1</item>
+		<item>A5178</item> <!-- D08 km. 1,1 D08/A08 itinere sud -->
+		<item>A17593</item> <!-- D08 km. 2,5 Gallarate Ovest entrata -->
 		<item>A18806</item> <!-- D08 km. 8,1 Besnate itinere sud -->
-		<item>-1</item>
+		<item>A18812</item> <!-- D08 km. 8,1 Vergiate itinere nord -->
 		<item>A14679</item> <!-- A08 km. 12,1 Diram. Gallarate Gattico Vergiate (Va) -->
 		<item>A19365</item> <!-- D08 km. 16,9 Castelletto T. itinere ovest -->
 		<item>A11421</item> <!-- A26 km. 157,9 A26/D8 itinere nord -->

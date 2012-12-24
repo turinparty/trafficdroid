@@ -39,18 +39,18 @@
 	</integer-array>
 
 	<string-array name="z165Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1881</item>
+		<item>H1882</item>
+		<item>A12820</item> <!-- A23 km. 22,0 itinere sud -->
 		<item>A19151</item> <!-- A23 km. 31,0 Udine Nord itinere sud -->
-		<item>-1</item>
+		<item>A10974</item> <!-- A23 km. 37,0 Ledra Ovest itinere sud -->
 		<item>A10779</item> <!-- A23 km. 47,0 Gemona itinere sud -->
 		<item>A19137</item> <!-- A23 km. 61,0 Carnia itinere sud -->
-		<item>-1</item>
+		<item>A19132</item> <!-- A23 km. 89,6 Pontebba itinere nord -->
 		<item>A17418</item> <!-- A23 km. 91,5 Viadotti Pontebba itinere sud -->
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>A17418</item> <!-- A23 km. 92,1 Viad. Pontebba itinere sud -->
+		<item>A19126</item> <!-- A23 km. 97,0 Pontebba itinere sud -->
+		<item>A20513</item> <!-- A23 km. 101,2 itinere nord -->
 		<item>A19121</item> <!-- A23 km. 105,5 Camporosso itinere nord -->
 		<item>A17317</item> <!-- A23 km. 108,5 Viadotto Fella X itinere sud -->
 		<item>A20519</item> <!-- A23 km. 114,6 Svincoli Tarvisio Nord itinere nord -->

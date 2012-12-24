@@ -15,9 +15,9 @@
 	</integer-array>
 
 	<string-array name="z183Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H2114</item>
+		<item>H2115</item>
+		<item>H2116</item>
 	</string-array>
 
 </resources>

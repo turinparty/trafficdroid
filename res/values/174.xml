@@ -45,24 +45,24 @@
 	</integer-array>
 
 	<string-array name="z174Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H2030</item>
+		<item>H2031</item>
+		<item>H2032</item>
+		<item>H2033</item>
+		<item>H2034</item>
+		<item>H2035</item>
+		<item>H2036</item>
+		<item>H2037</item>
+		<item>H2038</item>
+		<item>H2039</item>
+		<item>H2040</item>
+		<item>H2041</item>
+		<item>H2042</item>
+		<item>H2043</item>
+		<item>H2044</item>
+		<item>H2045</item>
+		<item>H2046</item>
+		<item>H2047</item>
 	</string-array>
 
 </resources>

@@ -67,35 +67,35 @@
 	</integer-array>
 
 	<string-array name="z160Webcam">
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
-		<item>-1</item>
+		<item>H1782</item>
+		<item>H14363</item>
+		<item>H14364</item>
+		<item>H14365</item>
+		<item>H14366</item>
+		<item>H1784</item>
+		<item>H1785</item>
+		<item>H1786</item>
+		<item>H14367</item>
+		<item>H1787</item>
+		<item>H1789</item>
+		<item>H1790</item>
+		<item>H1791</item>
+		<item>H1792</item>
+		<item>H1793</item>
+		<item>H1794</item>
+		<item>H1795</item>
+		<item>H1796</item>
+		<item>H1797</item>
+		<item>H1798</item>
+		<item>H1799</item>
+		<item>H1800</item>
+		<item>H1801</item>
+		<item>H14368</item>
+		<item>H14369</item>
+		<item>H14370</item>
+		<item>H14371</item>
+		<item>H14372</item>
+		<item>H14373</item>
 	</string-array>
 
 </resources>
