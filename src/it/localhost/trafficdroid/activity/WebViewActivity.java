@@ -11,13 +11,10 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 public class WebViewActivity extends AbstractActivity {
-	private WebView webView;
-	public static final String slash = "/";
-	public static final String http = "http://";
-	public static final String https = "https://";
-	public static final String www = "www.";
+	private static final String AUTOSTRADE_IT = "autostrade.it";
 	public static final String urlTag = "url";
 	public static final String dataTag = "data";
+	private WebView webView;
 	private String url;
 	private String data;
 
@@ -39,14 +36,16 @@ public class WebViewActivity extends AbstractActivity {
 			}
 		});
 		if (url != null) {
-			Point size = new Point();
-			getWindowManager().getDefaultDisplay().getSize(size);
-			if (size.x > 768)
-				url = url + "&ua=Mozilla/5.0%20(iPad;%20U;%20CPU%20iPhone%20OS%203_2%20like%20Mac%20OS%20X;%20en-us)%20AppleWebKit/531.21.10";
-			else if (size.x > 320)
-				url = url + "&ua=Android%201.1";
-			else
-				url = url + "&ua=NokiaE51";
+			if (url.length() > 26 && url.substring(14, 27).equals(AUTOSTRADE_IT)) {
+				Point size = new Point();
+				getWindowManager().getDefaultDisplay().getSize(size);
+				if (size.x > 768)
+					url = url + "&ua=Mozilla/5.0%20(iPad;%20U;%20CPU%20iPhone%20OS%203_2%20like%20Mac%20OS%20X;%20en-us)%20AppleWebKit/531.21.10";
+				else if (size.x > 320)
+					url = url + "&ua=Android%201.1";
+				else
+					url = url + "&ua=NokiaE51";
+			}
 			webView.loadUrl(url);
 		} else if (data != null)
 			webView.loadData(data, "text/html", null);

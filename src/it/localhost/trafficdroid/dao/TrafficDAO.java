@@ -1,6 +1,5 @@
 package it.localhost.trafficdroid.dao;
 
-import it.localhost.trafficdroid.activity.WebViewActivity;
 import it.localhost.trafficdroid.exception.BadConfException;
 import it.localhost.trafficdroid.exception.ConnectionException;
 import it.localhost.trafficdroid.exception.GenericException;
@@ -22,7 +21,7 @@ import org.xml.sax.SAXException;
 
 public class TrafficDAO {
 	private static final String path = "/engine/traffic_server.php";
-	private static final String traffic = "etraffic.";
+	private static final String traffic = "https://etraffic.";
 	private static final String userKey = "user";
 	private static final String pwdKey = "pwd";
 	private static final String sqKey = "sq";
@@ -45,7 +44,7 @@ public class TrafficDAO {
 					params.add(new BasicNameValuePair(sqKey, sq));
 					params.add(new BasicNameValuePair(typeKey, type));
 					params.add(new BasicNameValuePair(roaKey, Integer.toString(mapId)));
-					HttpPost post = new HttpPost(WebViewActivity.https + traffic + baseUrl + path);
+					HttpPost post = new HttpPost(traffic + baseUrl + path);
 					post.setEntity(new UrlEncodedFormEntity(params));
 					doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new GZIPInputStream(new DefaultHttpClient().execute(post).getEntity().getContent()));
 					break;
