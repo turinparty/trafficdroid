@@ -5,6 +5,7 @@ import it.localhost.trafficdroid.activity.AbstractActivity;
 import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.adapter.item.BadNewsItem;
 import it.localhost.trafficdroid.adapter.item.BannerDialogItem;
+import it.localhost.trafficdroid.adapter.item.GraphItem;
 import it.localhost.trafficdroid.adapter.item.StreetItem;
 import it.localhost.trafficdroid.adapter.item.ZoneItem;
 import it.localhost.trafficdroid.common.TdApp;
@@ -40,6 +41,8 @@ public class MainAdapter extends BaseExpandableListAdapter implements QueryInven
 		for (StreetDTO street : mainDTO.getStreets()) {
 			groupItems.add(new StreetItem(context, street));
 			ArrayList<AbstractItem> childItems = new ArrayList<AbstractItem>();
+			if (street.getGraph().length() != 0)
+				childItems.add(new GraphItem(context, street));
 			childItems.add(new BadNewsItem(context, street));
 			for (ZoneDTO zone : street.getZones())
 				childItems.add(new ZoneItem(context, zone));

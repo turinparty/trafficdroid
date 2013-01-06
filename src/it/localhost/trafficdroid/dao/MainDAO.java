@@ -45,6 +45,7 @@ public class MainDAO {
 		int[] streetsId = resources.getIntArray(R.array.streetId);
 		String[] streetsName = resources.getStringArray(R.array.streetName);
 		String[] streetsTag = resources.getStringArray(R.array.streetTag);
+		String[] graphTag = resources.getStringArray(R.array.graphTag);
 		String[] streetsDir = resources.getStringArray(R.array.streetDir);
 		int[] autoveloxStreet = resources.getIntArray(R.array.autoveloxStreet);
 		int[] autoveloxFrom = resources.getIntArray(R.array.autoveloxFrom);
@@ -70,6 +71,7 @@ public class MainDAO {
 			if (street.getZonesSize() > 0) {
 				street.setName(streetsName[i]);
 				street.setTag(streetsTag[i]);
+				street.setGraph(graphTag[i]);
 				if (streetsDir[i].equals(N)) {
 					street.setDirectionLeft(NORD);
 					street.setDirectionRight(SUD);

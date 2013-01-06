@@ -25,6 +25,7 @@ public abstract class AbstractActivity extends Activity implements QueryInventor
 	public static final String eventCatWebcam = "Webcam";
 	public static final String eventCatBadNews = "BadNews";
 	public static final String eventCatIab = "InAppBilling";
+	public static final String eventCatGraph = "Graph";
 	public static final String eventActionRequest = "Request";
 	public static final String eventActionOpen = "Open";
 	public static final String eventActionNone = "None";

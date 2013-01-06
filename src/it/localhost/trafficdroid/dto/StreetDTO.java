@@ -8,6 +8,7 @@ public class StreetDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String name;
 	private String tag;
+	private String graph;
 	private int id;
 	private LinkedHashMap<Integer, ZoneDTO> zones;
 	private ArrayList<BadNewsDTO> badNews;
@@ -26,6 +27,14 @@ public class StreetDTO implements Serializable {
 		trend = new int[2];
 		for (int i : allZonesId)
 			this.allZonesId.add(i);
+	}
+
+	public String getGraph() {
+		return graph;
+	}
+
+	public void setGraph(String graph) {
+		this.graph = graph;
 	}
 
 	public String getTag() {
