@@ -14,6 +14,8 @@ import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
@@ -35,6 +37,7 @@ import com.commonsware.cwac.wakeful.WakefulIntentService;
 
 public class MainActivity extends AbstractActivity {
 	private static final String ALCOL_URL = "http://voti.kataweb.it/etilometro/index.php";
+	private static final String APP_URL = "https://code.google.com/p/trafficdroid";
 	private static final String donate = "market://details?id=it.localhost.donate";
 	private static final String removePrefToastUndo = " è stato aggiunto ai preferiti.";
 	private static final String removePrefToast = " è stato rimosso dai preferiti.";
@@ -56,35 +59,23 @@ public class MainActivity extends AbstractActivity {
 		intentFilter.addAction(TdService.endUpdate);
 		listView = (ExpandableListView) findViewById(R.id.mainTable);
 		tdListener = new TdListener();
-		if (TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
-			new AlertDialog.Builder(this).setTitle(R.string.warning).setPositiveButton(R.string.ok, null).setMessage(R.string.badConf).show();
-		else if (TdApp.getPrefBoolean(R.string.berserkKey, R.string.berserkDefault))
-			tdListener.sendWakefulWork(TdApp.getContext());
+		receiver = new UpdateReceiver();
+		updateData();
 		listView.setOnChildClickListener(new OnChildClickListener() {
 			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 				((AbstractItem) parent.getExpandableListAdapter().getChild(groupPosition, childPosition)).onClick();
 				return true;
 			}
 		});
-		receiver = new BroadcastReceiver() {
-			public void onReceive(Context context, Intent intent) {
-				if (intent.getAction().equals(TdService.beginUpdate)) {
-					setProgressBarIndeterminateVisibility(true);
-				} else if (intent.getAction().equals(TdService.endUpdate)) {
-					setProgressBarIndeterminateVisibility(false);
-					refresh();
-				}
-			}
-		};
 	}
 
 	@Override
 	public void onResume() {
 		super.onResume();
 		registerReceiver(receiver, intentFilter);
-		WakefulIntentService.scheduleAlarms(new TdListener(), this, false);
+		WakefulIntentService.scheduleAlarms(tdListener, this, false);
 		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(TdService.notificationId);
-		refresh();
+		updateGUI();
 	}
 
 	@Override
@@ -113,7 +104,7 @@ public class MainActivity extends AbstractActivity {
 			startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
 			return true;
 		case R.id.menuRefresh:
-			tdListener.sendWakefulWork(TdApp.getContext());
+			updateData();
 			return true;
 		case R.id.menuMoney:
 			startActivity(new Intent(MainActivity.this, PedaggioActivity.class));
@@ -177,13 +168,43 @@ public class MainActivity extends AbstractActivity {
 		}
 	}
 
-	private void refresh() {
+	private void updateData() {
+		if (TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault))) {
+			new AlertDialog.Builder(this).setTitle(R.string.warning).setMessage(R.string.badConf).setPositiveButton(R.string.setProvider, new OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
+				}
+			}).setNegativeButton(R.string.betterInfo, new OnClickListener() {
+				@Override
+				public void onClick(DialogInterface arg0, int arg1) {
+					Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+					intent.putExtra(WebViewActivity.urlTag, APP_URL);
+					startActivity(intent);
+				}
+			}).show();
+		} else if (TdApp.getPrefBoolean(R.string.berserkKey, R.string.berserkDefault))
+			tdListener.sendWakefulWork(TdApp.getContext());
+	}
+
+	private void updateGUI() {
 		new RefreshTask().execute();
 		if (TdApp.getPrefBoolean(GenericException.exceptionCheck, false)) {
 			String msg = TdApp.getPrefString(GenericException.exceptionMsg, unknownError);
 			new AlertDialog.Builder(this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(msg).show();
 			setTitle(msg);
 			TdApp.getEditor().putBoolean(GenericException.exceptionCheck, false).commit();
+		}
+	}
+
+	private final class UpdateReceiver extends BroadcastReceiver {
+		public void onReceive(Context context, Intent intent) {
+			if (intent.getAction().equals(TdService.beginUpdate)) {
+				setProgressBarIndeterminateVisibility(true);
+			} else if (intent.getAction().equals(TdService.endUpdate)) {
+				setProgressBarIndeterminateVisibility(false);
+				updateGUI();
+			}
 		}
 	}
 

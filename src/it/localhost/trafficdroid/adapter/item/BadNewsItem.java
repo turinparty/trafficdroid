@@ -49,7 +49,7 @@ public class BadNewsItem extends AbstractItem {
 
 	public void onClick() {
 		if (streetDTO.getBadNews().size() != 0) {
-			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatBadNews, AbstractActivity.eventActionOpen, streetDTO.getName(), (long) 0);
+			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatBadNews, AbstractActivity.eventActionOpen, streetDTO.getName(), (long) 0);
 			Dialog dialog = new Dialog(context);
 			dialog.setTitle(streetDTO.getName());
 			ListView listview = (ListView) LayoutInflater.from(context).inflate(R.layout.dialog_badnews, null);

@@ -5,6 +5,8 @@
 	<string name="widgetStreetName">Trafficdroid - Strada intera</string>
 	<string name="app_name">TrafficDroid</string>
 	<string name="ok">OK</string>
+	<string name="setProvider">Imposta Provider</string>
+	<string name="betterInfo">Maggiori Informazioni</string>
 	<string name="patenteProvider">www.ilportaledellautomobilista.it</string>
 	<string name="targa">Targa</string>
 	<string name="pedaggio">Pedaggio Autostradale</string>
@@ -24,7 +26,7 @@
 	<string name="refresh">Aggiorna</string>
 	<string name="donate">Fai una donazione!</string>
 	<string name="removePref">Strada preferita</string>
-	<string name="badConf">TrafficDroid ha bisogno di un provider per il traffico, inserisci questa informazione in impostazioni. Il sito contiene maggiori informazioni.</string>
+	<string name="badConf">TrafficDroid ha bisogno di un provider per il traffico, vuoi inserire questa informazione ora o preferisci visualizzare maggiori informazioni?</string>
 	<string name="selectStreet">Seleziona l\'intera strada</string>
 	<string name="sniper">Seleziona le singole zone</string>
 	<string name="diramation">Diramazioni</string>

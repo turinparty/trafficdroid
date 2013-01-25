@@ -112,36 +112,36 @@ public class ZoneItem extends AbstractItem {
 	public void onClick() {
 		String code = zoneDTO.getWebcam();
 		if (code.charAt(0) == camNone) {
-			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionNone, code, (long) 0);
+			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionNone, code, (long) 0);
 			new AlertDialog.Builder(context).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamNone).show();
 		} else if (code.charAt(0) == camAutostrade) {
-			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
+			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
 			int id = Integer.parseInt(code.substring(1)) + 6280 * (date);
 			intent.putExtra(WebViewActivity.urlTag, autostrade + id);
 			context.startActivity(intent);
 		} else if (code.charAt(0) == camCavspa) {
-			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
+			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
 			intent.putExtra(WebViewActivity.urlTag, cavspa + code.substring(1) + jpg);
 			context.startActivity(intent);
 		} else if (code.charAt(0) == camEdidomus) {
-			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
+			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
 			intent.putExtra(WebViewActivity.urlTag, edidomus + code.substring(1));
 			context.startActivity(intent);
 		} else if (code.charAt(0) == camAutofiori) {
-			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
+			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
 			intent.putExtra(WebViewActivity.urlTag, autofiori + code.substring(1));
 			context.startActivity(intent);
 		} else if (code.charAt(0) == camAutobspd) {
-			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
+			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
 			Intent intent = new Intent(context, WebViewActivity.class);
 			intent.putExtra(WebViewActivity.urlTag, autobspd + code.substring(1) + jpg);
 			context.startActivity(intent);
 		} else {
-			EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionRequest, code, (long) 0);
+			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionRequest, code, (long) 0);
 			new AlertDialog.Builder(context).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamAdd).show();
 		}
 	}

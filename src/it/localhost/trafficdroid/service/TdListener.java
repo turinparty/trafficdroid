@@ -12,7 +12,7 @@ import com.commonsware.cwac.wakeful.WakefulIntentService;
 public class TdListener implements WakefulIntentService.AlarmListener {
 	public void scheduleAlarms(AlarmManager mgr, PendingIntent pi, Context ctxt) {
 		mgr.cancel(pi);
-		if (TdApp.getPrefBoolean(R.string.chiaroveggenzaEnablerKey, R.string.chiaroveggenzaEnablerDefault)) {
+		if (TdApp.getPrefBoolean(R.string.chiaroveggenzaEnablerKey, R.string.chiaroveggenzaEnablerDefault) && !TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(TdApp.getContext().getString(R.string.providerTrafficDefault))) {
 			int notificationTimeValue = Integer.parseInt(TdApp.getPrefString(R.string.chiaroveggenzaTimeKey, R.string.chiaroveggenzaTimeDefault));
 			mgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + notificationTimeValue, notificationTimeValue, pi);
 		}

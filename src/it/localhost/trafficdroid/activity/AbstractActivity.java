@@ -79,7 +79,7 @@ public abstract class AbstractActivity extends Activity implements QueryInventor
 
 	@Override
 	public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
-		EasyTracker.getTracker().trackEvent(eventCatIab, eventActionOnIabPurchaseFinished, result.getMessage(), (long) result.getResponse());
+		EasyTracker.getTracker().sendEvent(eventCatIab, eventActionOnIabPurchaseFinished, result.getMessage(), (long) result.getResponse());
 		if (result.isSuccess() && purchase.getSku().equals(SKU_AD_FREE)) {
 			premium = true;
 			findViewById(R.id.ad).setVisibility(View.GONE);
@@ -88,7 +88,7 @@ public abstract class AbstractActivity extends Activity implements QueryInventor
 	}
 
 	public void launchPurchaseFlow(Activity act) {
-		EasyTracker.getTracker().trackEvent(eventCatIab, eventActionLaunchPurchaseFlow, SKU_AD_FREE, (long) 0);
+		EasyTracker.getTracker().sendEvent(eventCatIab, eventActionLaunchPurchaseFlow, SKU_AD_FREE, (long) 0);
 		mHelper.launchPurchaseFlow(act, SKU_AD_FREE, 101010, this);
 	}
 

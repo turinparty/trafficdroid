@@ -38,7 +38,7 @@ public class BadNewsDialogItem extends AbstractItem {
 	private static final String bn_sne2 = "grandine";
 	private static final String bn_spc = "controllo velocità";
 	private static final String bn_vfr = "veicolo in fiamme";
-	private static final String bn_win = "vento forte";
+	private static final String bn_win = "vento";
 	private static DateFormat sdfBnFormat;
 	private BadNewsDTO badNews;
 

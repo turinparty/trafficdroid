@@ -42,7 +42,7 @@ public class GraphItem extends AbstractItem {
 
 	@Override
 	public void onClick() {
-		EasyTracker.getTracker().trackEvent(AbstractActivity.eventCatGraph, AbstractActivity.eventActionOpen, streetDTO.getGraph(), (long) 0);
+		EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatGraph, AbstractActivity.eventActionOpen, streetDTO.getGraph(), (long) 0);
 		Intent intent = new Intent(context, WebViewActivity.class);
 		intent.putExtra(WebViewActivity.urlTag, firstUrl + streetDTO.getGraph() + secondUrl + date);
 		context.startActivity(intent);
