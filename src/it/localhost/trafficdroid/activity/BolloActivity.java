@@ -21,6 +21,7 @@ public class BolloActivity extends AbstractActivity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.bollo);
+		setTitle(R.string.bollo);
 		setProgressBarIndeterminateVisibility(false);
 		findViewById(R.id.ok).setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {

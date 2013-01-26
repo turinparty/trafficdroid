@@ -25,6 +25,7 @@ public class PatenteActivity extends AbstractActivity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.patente);
+		setTitle(R.string.patente);
 		setProgressBarIndeterminateVisibility(false);
 		final EditText usrEdit = (EditText) findViewById(R.id.patenteUsr);
 		final EditText pwdEdit = (EditText) findViewById(R.id.patentePwd);

@@ -76,7 +76,7 @@ public class MainActivity extends AbstractActivity {
 		registerReceiver(receiver, intentFilter);
 		WakefulIntentService.scheduleAlarms(tdListener, this, false);
 		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(TdService.notificationId);
-		updateGUI();
+		new RefreshTask().execute();
 	}
 
 	@Override
@@ -162,7 +162,7 @@ public class MainActivity extends AbstractActivity {
 				TdApp.getEditor().putBoolean(itemKey, true).commit();
 				msg = removePrefToastUndo;
 			}
-			Toast.makeText(TdApp.getContext(), itemName + msg, Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, itemName + msg, Toast.LENGTH_SHORT).show();
 			return true;
 		default:
 			return super.onContextItemSelected(item);
@@ -185,17 +185,7 @@ public class MainActivity extends AbstractActivity {
 				}
 			}).show();
 		} else
-			tdListener.sendWakefulWork(TdApp.getContext());
-	}
-
-	private void updateGUI() {
-		new RefreshTask().execute();
-		if (TdApp.getPrefBoolean(GenericException.exceptionCheck, false)) {
-			String msg = TdApp.getPrefString(GenericException.exceptionMsg, unknownError);
-			new AlertDialog.Builder(this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(msg).show();
-			setTitle(msg);
-			TdApp.getEditor().putBoolean(GenericException.exceptionCheck, false).commit();
-		}
+			tdListener.sendWakefulWork(this);
 	}
 
 	private final class UpdateReceiver extends BroadcastReceiver {
@@ -204,7 +194,7 @@ public class MainActivity extends AbstractActivity {
 				setProgressBarIndeterminateVisibility(true);
 			} else if (intent.getAction().equals(TdService.endUpdate)) {
 				setProgressBarIndeterminateVisibility(false);
-				updateGUI();
+				new RefreshTask().execute();
 			}
 		}
 	}
@@ -230,6 +220,12 @@ public class MainActivity extends AbstractActivity {
 						listView.expandGroup(i);
 					else
 						listView.collapseGroup(i);
+			}
+			if (TdApp.getPrefBoolean(GenericException.exceptionCheck, false)) {
+				String msg = TdApp.getPrefString(GenericException.exceptionMsg, unknownError);
+				new AlertDialog.Builder(MainActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(msg).show();
+				setTitle(msg);
+				TdApp.getEditor().putBoolean(GenericException.exceptionCheck, false).commit();
 			}
 		}
 	}

@@ -8,5 +8,6 @@ public class PreferencesActivity extends AbstractActivity { // NO_UCD
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.preference);
+		setTitle(R.string.settings);
 	}
 }

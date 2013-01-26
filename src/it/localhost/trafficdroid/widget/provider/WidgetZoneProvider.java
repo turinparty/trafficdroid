@@ -5,10 +5,11 @@ import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
+import it.localhost.trafficdroid.dto.StreetDTO;
+import it.localhost.trafficdroid.dto.ZoneDTO;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.widget.RemoteViews;
@@ -17,14 +18,8 @@ public class WidgetZoneProvider extends AppWidgetProvider {
 	public static final String WIDGET_ZONE_STREET = "widgetZoneStreet";
 	public static final String WIDGET_ZONE_ZONE = "widgetZoneZone";
 
+	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
-		for (int i = 0; i < appWidgetIds.length; i++)
-			updateAppWidget(context, appWidgetManager, appWidgetIds[i]);
-	}
-
-	public static void onUpdate(Context context) {
-		AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
-		int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(context, WidgetZoneProvider.class));
 		for (int i = 0; i < appWidgetIds.length; i++)
 			updateAppWidget(context, appWidgetManager, appWidgetIds[i]);
 	}
@@ -32,18 +27,20 @@ public class WidgetZoneProvider extends AppWidgetProvider {
 	public static void updateAppWidget(Context context, AppWidgetManager appWidgetManager, int mAppWidgetId) {
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
 		views.setOnClickPendingIntent(R.id.widget, PendingIntent.getActivity(context, 0, new Intent(context, MainActivity.class), 0));
-		int street = TdApp.getPrefInt(WIDGET_ZONE_STREET + mAppWidgetId, 0);
-		int zone = TdApp.getPrefInt(WIDGET_ZONE_ZONE + mAppWidgetId, 0);
 		try {
 			MainDTO dto = MainDAO.retrieve();
-			if (dto.getStreet(street) != null && dto.getStreet(street).getZone(zone) != null) {
-				views.setTextViewText(R.id.zoneName, dto.getStreet(street).getZone(zone).getName());
-				views.setTextViewText(R.id.zoneSpeedLeft, Short.toString(dto.getStreet(street).getZone(zone).getSpeedLeft()));
-				views.setTextViewText(R.id.zoneSpeedRight, Short.toString(dto.getStreet(street).getZone(zone).getSpeedRight()));
-				views.setTextViewText(R.id.streetDirLeft, dto.getStreet(street).getDirectionLeft());
-				views.setTextViewText(R.id.streetDirRight, dto.getStreet(street).getDirectionRight());
-				views.setImageViewResource(R.id.trendLeft, dto.getStreet(street).getZone(zone).getTrendLeft());
-				views.setImageViewResource(R.id.trendRight, dto.getStreet(street).getZone(zone).getTrendRight());
+			StreetDTO street = dto.getStreet(TdApp.getPrefInt(WIDGET_ZONE_STREET + mAppWidgetId, 0));
+			if (street != null) {
+				ZoneDTO zone = street.getZone(TdApp.getPrefInt(WIDGET_ZONE_ZONE + mAppWidgetId, 0));
+				if (zone != null) {
+					views.setTextViewText(R.id.streetDirLeft, street.getDirectionLeft());
+					views.setTextViewText(R.id.streetDirRight, street.getDirectionRight());
+					views.setTextViewText(R.id.zoneName, zone.getName());
+					views.setTextViewText(R.id.zoneSpeedLeft, Short.toString(zone.getSpeedLeft()));
+					views.setTextViewText(R.id.zoneSpeedRight, Short.toString(zone.getSpeedRight()));
+					views.setImageViewResource(R.id.trendLeft, zone.getTrendLeft());
+					views.setImageViewResource(R.id.trendRight, zone.getTrendRight());
+				}
 			}
 		} catch (Exception e) {
 			//Do nothing

@@ -16,6 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 import android.app.Notification;
+import android.app.Notification.Builder;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -167,7 +168,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 				}
 				String congestedZones = currDTO.getCongestedZones();
 				if (congestedZones != null && TdApp.getPrefBoolean(R.string.chiaroveggenzaEnablerKey, R.string.chiaroveggenzaEnablerDefault)) {
-					Notification.Builder bui = new Notification.Builder(this);
+					Builder bui = new Builder(this);
 					bui.setDefaults(Notification.DEFAULT_ALL);
 					bui.setSmallIcon(R.drawable.ic_stat_notify_trafficdroid);
 					bui.setTicker(congestedZones);
@@ -185,9 +186,8 @@ public class TdService extends WakefulIntentService { // NO_UCD
 				TdApp.getEditor().putString(GenericException.exceptionMsg, e.getMessage());
 			}
 			try {
-				if (TdApp.getPrefBoolean(R.string.badnewsEnablerKey, R.string.badnewsEnablerDefault)) {
+				if (TdApp.getPrefBoolean(R.string.badnewsEnablerKey, R.string.badnewsEnablerDefault))
 					new BadNewsParser(currDTO).parse();
-				}
 			} catch (Exception e) {
 				TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
 				TdApp.getEditor().putString(GenericException.exceptionMsg, e.getMessage());
@@ -199,7 +199,6 @@ public class TdService extends WakefulIntentService { // NO_UCD
 				TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
 				TdApp.getEditor().putString(GenericException.exceptionMsg, e.getMessage());
 			}
-			WidgetZoneProvider.onUpdate(this);
 		} else {
 			TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
 			TdApp.getEditor().putString(GenericException.exceptionMsg, disconnectedMessage);

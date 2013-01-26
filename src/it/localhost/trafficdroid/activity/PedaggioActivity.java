@@ -22,6 +22,7 @@ public class PedaggioActivity extends AbstractActivity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.pedaggio);
+		setTitle(R.string.pedaggio);
 		setProgressBarIndeterminateVisibility(false);
 		final AutoCompleteTextView moneyFrom = (AutoCompleteTextView) findViewById(R.id.moneyFrom);
 		final AutoCompleteTextView moneyTo = (AutoCompleteTextView) findViewById(R.id.moneyTo);
