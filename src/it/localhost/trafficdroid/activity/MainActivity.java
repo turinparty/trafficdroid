@@ -60,7 +60,8 @@ public class MainActivity extends AbstractActivity {
 		listView = (ExpandableListView) findViewById(R.id.mainTable);
 		tdListener = new TdListener();
 		receiver = new UpdateReceiver();
-		updateData();
+		if (TdApp.getPrefBoolean(R.string.berserkKey, R.string.berserkDefault))
+			updateData();
 		listView.setOnChildClickListener(new OnChildClickListener() {
 			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 				((AbstractItem) parent.getExpandableListAdapter().getChild(groupPosition, childPosition)).onClick();
@@ -183,7 +184,7 @@ public class MainActivity extends AbstractActivity {
 					startActivity(intent);
 				}
 			}).show();
-		} else if (TdApp.getPrefBoolean(R.string.berserkKey, R.string.berserkDefault))
+		} else
 			tdListener.sendWakefulWork(TdApp.getContext());
 	}
 
