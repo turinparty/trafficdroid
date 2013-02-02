@@ -1,10 +1,14 @@
 package it.localhost.trafficdroid.activity;
 
+import java.util.Random;
+
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.MainAdapter;
 import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.common.ViewTagger;
+import it.localhost.trafficdroid.common.billing.IabResult;
+import it.localhost.trafficdroid.common.billing.Inventory;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.exception.GenericException;
@@ -47,6 +51,8 @@ public class MainActivity extends AbstractActivity {
 	private IntentFilter intentFilter;
 	private TdListener tdListener;
 	private BroadcastReceiver receiver;
+	private String[] questionsTrue, questionFalse;
+	private Random rnd;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -60,14 +66,31 @@ public class MainActivity extends AbstractActivity {
 		listView = (ExpandableListView) findViewById(R.id.mainTable);
 		tdListener = new TdListener();
 		receiver = new UpdateReceiver();
-		if (TdApp.getPrefBoolean(R.string.berserkKey, R.string.berserkDefault))
-			updateData();
+		questionsTrue = getResources().getStringArray(R.array.patenteTrue);
+		questionFalse = getResources().getStringArray(R.array.patenteFalse);
+		rnd = new Random();
 		listView.setOnChildClickListener(new OnChildClickListener() {
 			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 				((AbstractItem) parent.getExpandableListAdapter().getChild(groupPosition, childPosition)).onClick();
 				return true;
 			}
 		});
+		if (TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault))) {
+			new AlertDialog.Builder(this).setTitle(R.string.warning).setMessage(R.string.badConf).setPositiveButton(R.string.setProvider, new OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
+				}
+			}).setNegativeButton(R.string.betterInfo, new OnClickListener() {
+				@Override
+				public void onClick(DialogInterface arg0, int arg1) {
+					Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+					intent.putExtra(WebViewActivity.urlTag, APP_URL);
+					startActivity(intent);
+				}
+			}).show();
+		} else if (TdApp.getPrefBoolean(R.string.berserkKey, R.string.berserkDefault))
+			tdListener.sendWakefulWork(this);
 	}
 
 	@Override
@@ -87,7 +110,7 @@ public class MainActivity extends AbstractActivity {
 
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
-		if (isPremium())
+		if (isAdFree())
 			menu.removeItem(R.id.menuPremium);
 		return true;
 	}
@@ -105,7 +128,8 @@ public class MainActivity extends AbstractActivity {
 			startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
 			return true;
 		case R.id.menuRefresh:
-			updateData();
+			if (!TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
+				tdListener.sendWakefulWork(this);
 			return true;
 		case R.id.menuMoney:
 			startActivity(new Intent(MainActivity.this, PedaggioActivity.class));
@@ -125,7 +149,10 @@ public class MainActivity extends AbstractActivity {
 			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(donate)));
 			return true;
 		case R.id.menuPremium:
-			launchPurchaseFlow(this);
+			launchPurchaseFlow(SKU_AD_FREE);
+			return true;
+		case R.id.menuQuiz:
+			showQuiz(R.string.patenteQuiz);
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
@@ -169,23 +196,33 @@ public class MainActivity extends AbstractActivity {
 		}
 	}
 
-	private void updateData() {
-		if (TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault))) {
-			new AlertDialog.Builder(this).setTitle(R.string.warning).setMessage(R.string.badConf).setPositiveButton(R.string.setProvider, new OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
-				}
-			}).setNegativeButton(R.string.betterInfo, new OnClickListener() {
-				@Override
-				public void onClick(DialogInterface arg0, int arg1) {
-					Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-					intent.putExtra(WebViewActivity.urlTag, APP_URL);
-					startActivity(intent);
-				}
-			}).show();
-		} else
-			tdListener.sendWakefulWork(this);
+	@Override
+	public void onQueryInventoryFinished(IabResult result, Inventory inv) {
+		super.onQueryInventoryFinished(result, inv);
+		if (result.isSuccess() && !inv.hasPurchase(SKU_QUIZ_FREE) && !TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
+			showQuiz(R.string.patenteQuiz);
+	}
+
+	public void showQuiz(int title) {
+		final boolean typeQuestion = rnd.nextBoolean();
+		new AlertDialog.Builder(this).setPositiveButton(R.string.trueAns, new OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				if (!typeQuestion)
+					showQuiz(R.string.retry);
+			}
+		}).setNegativeButton(R.string.falseAns, new OnClickListener() {
+			@Override
+			public void onClick(DialogInterface arg0, int arg1) {
+				if (typeQuestion)
+					showQuiz(R.string.retry);
+			}
+		}).setNeutralButton("Skip", new OnClickListener() {
+			@Override
+			public void onClick(DialogInterface arg0, int arg1) {
+				launchPurchaseFlow(SKU_QUIZ_FREE);
+			}
+		}).setTitle(title).setCancelable(false).setMessage(typeQuestion ? questionsTrue[rnd.nextInt(questionsTrue.length)] : questionFalse[rnd.nextInt(questionFalse.length)]).show();
 	}
 
 	private final class UpdateReceiver extends BroadcastReceiver {

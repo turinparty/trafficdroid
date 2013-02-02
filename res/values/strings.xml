@@ -4,6 +4,10 @@
 	<string name="widgetZoneName">Trafficdroid - Tratta stradale</string>
 	<string name="widgetStreetName">Trafficdroid - Strada intera</string>
 	<string name="app_name">TrafficDroid</string>
+	<string name="patenteQuiz">Quiz Patente</string>
+	<string name="trueAns">Vero</string>
+	<string name="falseAns">Falso</string>
+	<string name="retry">Sbagliato, prova ancora...</string>
 	<string name="ok">OK</string>
 	<string name="setProvider">Imposta Provider</string>
 	<string name="betterInfo">Maggiori Informazioni</string>

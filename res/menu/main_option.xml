@@ -22,6 +22,11 @@
 		android:showAsAction="ifRoom"
 		android:title="@string/alcol"/>
 	<item
+		android:id="@+id/menuQuiz"
+		android:icon="@android:drawable/ic_menu_edit"
+		android:showAsAction="ifRoom"
+		android:title="@string/patenteQuiz"/>
+	<item
 		android:id="@+id/menuRefresh"
 		android:icon="@android:drawable/ic_menu_rotate"
 		android:showAsAction="ifRoom"
