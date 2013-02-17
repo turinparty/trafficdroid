@@ -65,7 +65,7 @@ public abstract class AbstractActivity extends Activity implements QueryInventor
 	@Override
 	public void onIabSetupFinished(IabResult result) {
 		if (result.isSuccess())
-			mHelper.queryInventoryAsync(true, additionalSkuList, this);
+			mHelper.queryInventoryAsync(this);
 	}
 
 	@Override
