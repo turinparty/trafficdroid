@@ -1,6 +1,7 @@
-package it.localhost.trafficdroid.activity;
+package it.localhost.trafficdroid.fragment;
 
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.ListZoneResId;
 import it.localhost.trafficdroid.common.ListZoneResName;
 import android.os.Bundle;
