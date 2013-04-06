@@ -10,7 +10,6 @@ import it.localhost.trafficdroid.dto.ZoneDTO;
 import it.localhost.trafficdroid.exception.GenericException;
 import it.localhost.trafficdroid.parser.BadNewsParser;
 import it.localhost.trafficdroid.parser.TrafficParser;
-import it.localhost.trafficdroid.widget.provider.WidgetZoneProvider;
 
 import java.util.Date;
 import java.util.List;

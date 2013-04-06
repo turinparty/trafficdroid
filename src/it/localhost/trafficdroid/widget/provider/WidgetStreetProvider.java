@@ -11,6 +11,7 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
+import android.text.format.DateFormat;
 import android.widget.RemoteViews;
 
 public class WidgetStreetProvider extends AppWidgetProvider {
@@ -29,7 +30,7 @@ public class WidgetStreetProvider extends AppWidgetProvider {
 			MainDTO dto = MainDAO.retrieve();
 			StreetDTO street = dto.getStreet(TdApp.getPrefInt(WIDGET_STREET_STREET + mAppWidgetId, 0));
 			if (street != null) {
-				views.setTextViewText(R.id.zoneName, street.getName());
+				views.setTextViewText(R.id.zoneName, DateFormat.getTimeFormat(context).format(dto.getTrafficTime()) + " " + street.getName());
 				views.setTextViewText(R.id.zoneSpeedLeft, Short.toString(street.getSpeedLeft()));
 				views.setTextViewText(R.id.zoneSpeedRight, Short.toString(street.getSpeedRight()));
 				views.setTextViewText(R.id.streetDirLeft, street.getDirectionLeft());
