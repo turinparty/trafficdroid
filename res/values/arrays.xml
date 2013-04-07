@@ -16,8 +16,6 @@
 		<item>90 Km/h</item>
 	</string-array>
 	<string-array name="chiaroveggenzaTimeValue">
-		<item>300000</item>
-		<item>600000</item>
 		<item>900000</item>
 		<item>1800000</item>
 		<item>3600000</item>
@@ -25,8 +23,6 @@
 		<item>14400000</item>
 	</string-array>
 	<string-array name="chiaroveggenzaTimeLabel">
-		<item>5 minuti</item>
-		<item>10 minuti</item>
 		<item>15 minuti</item>
 		<item>30 minuti</item>
 		<item>1 ora</item>
