@@ -1,12 +1,12 @@
 package it.localhost.trafficdroid.activity;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.common.TdApp;
-import it.localhost.trafficdroid.dao.BolloDAO;
+import it.localhost.trafficdroid.dao.BolloService;
+import it.localhost.trafficdroid.dto.BaseDto;
+import it.localhost.trafficdroid.dto.BolloDto;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -25,43 +25,30 @@ public class BolloActivity extends AbstractActivity {
 		setProgressBarIndeterminateVisibility(false);
 		findViewById(R.id.ok).setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				String targa = ((EditText) findViewById(R.id.targa)).getText().toString();
+				String targa = ((EditText) findViewById(R.id.targaA)).getText().toString() + ((EditText) findViewById(R.id.targaB)).getText().toString() + ((EditText) findViewById(R.id.targaC)).getText().toString();
 				String tipoVeicolo = getResources().getStringArray(R.array.tipoVeicoloKey)[((Spinner) findViewById(R.id.tipoVeicolo)).getSelectedItemPosition()];
 				String regioneResidenza = getResources().getStringArray(R.array.regioneResidenzaKey)[((Spinner) findViewById(R.id.regioneResidenza)).getSelectedItemPosition()];
-				new RefreshTask().execute(targa, tipoVeicolo, regioneResidenza);
+				new BolloAsyncTask().execute(tipoVeicolo, regioneResidenza, targa);
 			}
 		});
 	}
 
-	private class RefreshTask extends AsyncTask<String, Void, String> {
-		private Exception e;
-
+	private class BolloAsyncTask extends BolloService {
 		@Override
 		protected void onPreExecute() {
 			setProgressBarIndeterminateVisibility(true);
-			((InputMethodManager) TdApp.getContext().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+			((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 		}
 
 		@Override
-		protected String doInBackground(String... args) {
-			try {
-				return BolloDAO.getData(args[0], args[1], args[2]);
-			} catch (Exception e) {
-				e.printStackTrace();
-				this.e = e;
-				return null;
-			}
-		}
-
-		@Override
-		protected void onPostExecute(String bollo) {
+		protected void onPostExecute(BaseDto abstractResult) {
 			setProgressBarIndeterminateVisibility(false);
-			if (this.e == null) {
-				Intent intent = new Intent(TdApp.getContext(), WebViewActivity.class);
-				intent.putExtra(WebViewActivity.dataTag, bollo);
+			if (abstractResult.isSuccess()) {
+				Intent intent = new Intent(BolloActivity.this, WebViewActivity.class);
+				intent.putExtra(WebViewActivity.dataTag, ((BolloDto) abstractResult).getBollo());
 				startActivity(intent);
 			} else
-				new AlertDialog.Builder(BolloActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(e.getMessage()).show();
+				new AlertDialog.Builder(BolloActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(abstractResult.getMessage()).show();
 		}
 	}
 }

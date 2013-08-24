@@ -1,6 +1,6 @@
 package it.localhost.trafficdroid.widget.activity;
 
-import it.localhost.trafficdroid.common.TdApp;
+import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
@@ -14,6 +14,7 @@ import java.util.Map;
 
 import android.app.ExpandableListActivity;
 import android.appwidget.AppWidgetManager;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListView;
@@ -30,7 +31,7 @@ public class WidgetZoneActivity extends ExpandableListActivity {
 		List<Map<String, String>> groupData = new ArrayList<Map<String, String>>();
 		List<List<Map<String, String>>> childData = new ArrayList<List<Map<String, String>>>();
 		try {
-			dto = MainDAO.retrieve();
+			dto = MainDAO.retrieve(this);
 			for (StreetDTO street : dto.getStreets()) {
 				Map<String, String> groupElem = new HashMap<String, String>();
 				List<Map<String, String>> brotherData = new ArrayList<Map<String, String>>();
@@ -52,9 +53,10 @@ public class WidgetZoneActivity extends ExpandableListActivity {
 	@Override
 	public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 		int mAppWidgetId = getIntent().getExtras().getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
-		TdApp.getEditor().putInt(WidgetZoneProvider.WIDGET_ZONE_STREET + mAppWidgetId, dto.getStreets().get(groupPosition).getId());
-		TdApp.getEditor().putInt(WidgetZoneProvider.WIDGET_ZONE_ZONE + mAppWidgetId, dto.getStreets().get(groupPosition).getZones().get(childPosition).getId());
-		TdApp.getEditor().commit();
+		Editor edit = Utility.getEditor(this);
+		edit.putInt(WidgetZoneProvider.WIDGET_ZONE_STREET + mAppWidgetId, dto.getStreets().get(groupPosition).getId());
+		edit.putInt(WidgetZoneProvider.WIDGET_ZONE_ZONE + mAppWidgetId, dto.getStreets().get(groupPosition).getZones().get(childPosition).getId());
+		edit.commit();
 		WidgetZoneProvider.updateAppWidget(this, AppWidgetManager.getInstance(this), mAppWidgetId);
 		setResult(RESULT_OK, getIntent());
 		finish();

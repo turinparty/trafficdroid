@@ -4,7 +4,7 @@ import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.ListZoneResId;
 import it.localhost.trafficdroid.common.ListZoneResName;
 import it.localhost.trafficdroid.common.ListZoneResWebcam;
-import it.localhost.trafficdroid.common.TdApp;
+import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
@@ -37,11 +37,11 @@ public class MainDAO {
 	private static final String NORD = "Nord";
 	private static final String versionMismatch = "Version Mismatch";
 
-	public static MainDTO create() {
+	public static MainDTO create(Context context) {
 		MainDTO mainDto = new MainDTO();
-		mainDto.setVersionCode(TdApp.getVersionCode());
-		Resources resources = TdApp.getContext().getResources();
-		mainDto.setCongestionThreshold(Byte.parseByte(TdApp.getPrefString(R.string.notificationSpeedKey, R.string.notificationSpeedDefault)));
+		mainDto.setVersionCode(Utility.getVersionCode(context));
+		Resources resources = context.getResources();
+		mainDto.setCongestionThreshold(Byte.parseByte(Utility.getPrefString(context, R.string.notificationSpeedKey, R.string.notificationSpeedDefault)));
 		int[] streetsId = resources.getIntArray(R.array.streetId);
 		String[] streetsName = resources.getStringArray(R.array.streetName);
 		String[] streetsTag = resources.getStringArray(R.array.streetTag);
@@ -50,15 +50,15 @@ public class MainDAO {
 		int[] autoveloxStreet = resources.getIntArray(R.array.autoveloxStreet);
 		int[] autoveloxFrom = resources.getIntArray(R.array.autoveloxFrom);
 		int[] autoveloxTo = resources.getIntArray(R.array.autoveloxTo);
-		boolean allStreets = TdApp.getPrefBoolean(TdApp.getContext().getString(R.string.allStreetsKey), false);
+		boolean allStreets = Utility.getPrefBoolean(context, context.getString(R.string.allStreetsKey), false);
 		for (int i = 0; i < streetsId.length; i++) {
 			int[] zonesId = resources.getIntArray(ListZoneResId.getInstance().get((streetsId[i])));
 			StreetDTO street = new StreetDTO(streetsId[i], zonesId);
-			boolean streetEnabled = TdApp.getPrefBoolean(Integer.toString(street.getId()), false);
+			boolean streetEnabled = Utility.getPrefBoolean(context, Integer.toString(street.getId()), false);
 			String[] zonesWebcam = resources.getStringArray(ListZoneResWebcam.getInstance().get((streetsId[i])));
 			String[] zonesName = resources.getStringArray(ListZoneResName.getInstance().get(streetsId[i]));
 			for (int j = 0; j < zonesId.length; j++)
-				if (allStreets || streetEnabled || TdApp.getPrefBoolean(Integer.toString(zonesId[j]), false)) {
+				if (allStreets || streetEnabled || Utility.getPrefBoolean(context, Integer.toString(zonesId[j]), false)) {
 					ZoneDTO zone = new ZoneDTO(zonesId[j], zonesName[j], zonesWebcam[j]);
 					for (int k = 0; k < autoveloxStreet.length; k++) {
 						if (autoveloxStreet[k] == streetsId[i] && zonesId[j] >= autoveloxFrom[k] && zonesId[j] < autoveloxTo[k])
@@ -94,11 +94,11 @@ public class MainDAO {
 		return mainDto;
 	}
 
-	public static void store(MainDTO dto) throws GenericException {
+	public static void store(Context context, MainDTO dto) throws GenericException {
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 		try {
-			fos = TdApp.getContext().openFileOutput(tdData, Context.MODE_PRIVATE);
+			fos = context.openFileOutput(tdData, Context.MODE_PRIVATE);
 			oos = new ObjectOutputStream(fos);
 			oos.writeObject(dto);
 		} catch (FileNotFoundException e) {
@@ -121,14 +121,14 @@ public class MainDAO {
 		}
 	}
 
-	public static MainDTO retrieve() throws GenericException, BadConfException {
+	public static MainDTO retrieve(Context context) throws GenericException, BadConfException {
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 		try {
-			fis = TdApp.getContext().openFileInput(tdData);
+			fis = context.openFileInput(tdData);
 			ois = new ObjectInputStream(fis);
 			MainDTO dlctask = (MainDTO) ois.readObject();
-			if (dlctask.getVersionCode() != TdApp.getVersionCode())
+			if (dlctask.getVersionCode() != Utility.getVersionCode(context))
 				throw new BadConfException(versionMismatch);
 			return dlctask;
 		} catch (FileNotFoundException e) {

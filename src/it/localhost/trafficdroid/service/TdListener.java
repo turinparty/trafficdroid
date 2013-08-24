@@ -1,7 +1,7 @@
 package it.localhost.trafficdroid.service;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.common.TdApp;
+import it.localhost.trafficdroid.common.Utility;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -12,8 +12,8 @@ import com.commonsware.cwac.wakeful.WakefulIntentService;
 public class TdListener implements WakefulIntentService.AlarmListener {
 	public void scheduleAlarms(AlarmManager mgr, PendingIntent pi, Context ctxt) {
 		mgr.cancel(pi);
-		if (TdApp.getPrefBoolean(R.string.chiaroveggenzaEnablerKey, R.string.chiaroveggenzaEnablerDefault) && !TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(TdApp.getContext().getString(R.string.providerTrafficDefault))) {
-			int notificationTimeValue = Integer.parseInt(TdApp.getPrefString(R.string.chiaroveggenzaTimeKey, R.string.chiaroveggenzaTimeDefault));
+		if (Utility.getPrefBoolean(ctxt, R.string.chiaroveggenzaEnablerKey, R.string.chiaroveggenzaEnablerDefault) && !Utility.getPrefString(ctxt, R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(ctxt.getString(R.string.providerTrafficDefault))) {
+			int notificationTimeValue = Integer.parseInt(Utility.getPrefString(ctxt, R.string.chiaroveggenzaTimeKey, R.string.chiaroveggenzaTimeDefault));
 			mgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + notificationTimeValue, notificationTimeValue, pi);
 		}
 	}
@@ -23,6 +23,6 @@ public class TdListener implements WakefulIntentService.AlarmListener {
 	}
 
 	public long getMaxAge() {
-		return Integer.parseInt(TdApp.getPrefString(R.string.chiaroveggenzaTimeKey, R.string.chiaroveggenzaTimeDefault)) * 2;
+		return 3600000;
 	}
 }

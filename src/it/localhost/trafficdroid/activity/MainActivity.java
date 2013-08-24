@@ -1,12 +1,9 @@
 package it.localhost.trafficdroid.activity;
 
-import java.util.Random;
-
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.MainAdapter;
 import it.localhost.trafficdroid.adapter.item.AbstractItem;
-import it.localhost.trafficdroid.common.TdApp;
-import it.localhost.trafficdroid.common.ViewTagger;
+import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.common.billing.IabResult;
 import it.localhost.trafficdroid.common.billing.Inventory;
 import it.localhost.trafficdroid.dao.MainDAO;
@@ -14,6 +11,9 @@ import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.exception.GenericException;
 import it.localhost.trafficdroid.service.TdListener;
 import it.localhost.trafficdroid.service.TdService;
+
+import java.util.Random;
+
 import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
@@ -57,6 +57,8 @@ public class MainActivity extends AbstractActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
+		//StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
 		setProgressBarIndeterminateVisibility(false);
@@ -75,7 +77,7 @@ public class MainActivity extends AbstractActivity {
 				return true;
 			}
 		});
-		if (TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault))) {
+		if (Utility.getPrefString(this, R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault))) {
 			new AlertDialog.Builder(this).setTitle(R.string.warning).setMessage(R.string.badConf).setPositiveButton(R.string.setProvider, new OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
@@ -89,7 +91,7 @@ public class MainActivity extends AbstractActivity {
 					startActivity(intent);
 				}
 			}).show();
-		} else if (TdApp.getPrefBoolean(R.string.berserkKey, R.string.berserkDefault))
+		} else if (Utility.getPrefBoolean(this, R.string.berserkKey, R.string.berserkDefault))
 			tdListener.sendWakefulWork(this);
 	}
 
@@ -127,8 +129,11 @@ public class MainActivity extends AbstractActivity {
 		case R.id.menuSettings:
 			startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
 			return true;
+		case R.id.menuNews:
+			startActivity(new Intent(MainActivity.this, VideoActivity.class));
+			return true;
 		case R.id.menuRefresh:
-			if (!TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
+			if (!Utility.getPrefString(this, R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
 				tdListener.sendWakefulWork(this);
 			return true;
 		case R.id.menuMoney:
@@ -165,28 +170,28 @@ public class MainActivity extends AbstractActivity {
 		ExpandableListContextMenuInfo info = (ExpandableListContextMenuInfo) menuInfo;
 		int packedPositionType = ExpandableListView.getPackedPositionType(info.packedPosition);
 		View item = info.targetView;
-		if (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_GROUP || (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_CHILD && ((Integer) ViewTagger.getTag(item, R.id.zoneType)) == AbstractItem.itemTypes[4])) {
+		if (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_GROUP || (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_CHILD && ((Integer) item.getTag(R.id.zoneType)) == AbstractItem.itemTypes[4])) {
 			getMenuInflater().inflate(R.menu.main_context, menu);
-			menu.getItem(0).setChecked(TdApp.getPrefBoolean(Integer.toString((Integer) ViewTagger.getTag(item, R.id.itemKey)), false));
-			menu.setHeaderTitle((String) ViewTagger.getTag(item, R.id.itemName));
+			menu.getItem(0).setChecked(Utility.getPrefBoolean(this, Integer.toString((Integer) item.getTag(R.id.itemKey)), false));
+			menu.setHeaderTitle((String) item.getTag(R.id.itemName));
 		}
 	}
 
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		View v = ((ExpandableListContextMenuInfo) item.getMenuInfo()).targetView;
-		String itemKey = Integer.toString((Integer) ViewTagger.getTag(v, R.id.itemKey));
-		String itemName = (String) ViewTagger.getTag(v, R.id.itemName);
+		String itemKey = Integer.toString((Integer) v.getTag(R.id.itemKey));
+		String itemName = (String) v.getTag(R.id.itemName);
 		switch (item.getItemId()) {
 		case R.id.removePref:
 			String msg;
-			if (TdApp.getPrefBoolean(itemKey, false)) {
+			if (Utility.getPrefBoolean(this, itemKey, false)) {
 				item.setChecked(false);
-				TdApp.getEditor().putBoolean(itemKey, false).commit();
+				Utility.getEditor(this).putBoolean(itemKey, false).commit();
 				msg = removePrefToast;
 			} else {
 				item.setChecked(true);
-				TdApp.getEditor().putBoolean(itemKey, true).commit();
+				Utility.getEditor(this).putBoolean(itemKey, true).commit();
 				msg = removePrefToastUndo;
 			}
 			Toast.makeText(this, itemName + msg, Toast.LENGTH_SHORT).show();
@@ -199,7 +204,7 @@ public class MainActivity extends AbstractActivity {
 	@Override
 	public void onQueryInventoryFinished(IabResult result, Inventory inv) {
 		super.onQueryInventoryFinished(result, inv);
-		if (result.isSuccess() && !inv.hasPurchase(SKU_QUIZ_FREE) && !TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
+		if (result.isSuccess() && !inv.hasPurchase(SKU_QUIZ_FREE) && !Utility.getPrefString(this, R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
 			showQuiz(R.string.patenteQuiz);
 	}
 
@@ -240,7 +245,7 @@ public class MainActivity extends AbstractActivity {
 		@Override
 		protected MainDTO doInBackground(Void... params) {
 			try {
-				return MainDAO.retrieve();
+				return MainDAO.retrieve(MainActivity.this);
 			} catch (Exception e) {
 				return null;
 			}
@@ -253,16 +258,16 @@ public class MainActivity extends AbstractActivity {
 				listView.setAdapter(new MainAdapter(MainActivity.this, mainDTO));
 				registerForContextMenu(listView);
 				for (int i = 0; i < listView.getExpandableListAdapter().getGroupCount(); i++)
-					if (TdApp.getPrefBoolean(MainAdapter.expanded + i, false))
+					if (Utility.getPrefBoolean(MainActivity.this, MainAdapter.expanded + i, false))
 						listView.expandGroup(i);
 					else
 						listView.collapseGroup(i);
 			}
-			if (TdApp.getPrefBoolean(GenericException.exceptionCheck, false)) {
-				String msg = TdApp.getPrefString(GenericException.exceptionMsg, unknownError);
+			if (Utility.getPrefBoolean(MainActivity.this, GenericException.exceptionCheck, false)) {
+				String msg = Utility.getPrefString(MainActivity.this, GenericException.exceptionMsg, unknownError);
 				new AlertDialog.Builder(MainActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(msg).show();
 				setTitle(msg);
-				TdApp.getEditor().putBoolean(GenericException.exceptionCheck, false).commit();
+				Utility.getEditor(MainActivity.this).putBoolean(GenericException.exceptionCheck, false).commit();
 			}
 		}
 	}

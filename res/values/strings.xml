@@ -7,13 +7,16 @@
 	<string name="patenteQuiz">Quiz Patente</string>
 	<string name="trueAns">Vero</string>
 	<string name="falseAns">Falso</string>
-	<string name="retry">Sbagliato, prova ancora...</string>
+	<string name="retry">Sbagliato, prova ancora…</string>
 	<string name="ok">OK</string>
 	<string name="setProvider">Imposta Provider</string>
 	<string name="betterInfo">Maggiori Informazioni</string>
 	<string name="patenteProvider">www.ilportaledellautomobilista.it</string>
-	<string name="targa">Targa</string>
+	<string name="targaA">AB</string>
+	<string name="targaB">123</string>
+	<string name="targaC">CD</string>
 	<string name="pedaggio">Pedaggio Autostradale</string>
+	<string name="anasTv">ANAS TV</string>
 	<string name="bollo">Verifica Bollo</string>
 	<string name="error">Errore</string>
 	<string name="alcol">Etilometro</string>
@@ -44,7 +47,7 @@
 	<string name="berserkTitle">Berserk</string>
 	<string name="berserkKey">berserkKey</string>
 	<string name="berserkSummary">Aggiorna i dati ad ogni visualizzazione</string>
-	<string name="berserkDefault">false</string>
+	<string name="berserkDefault">true</string>
 	<string name="chiaroveggenzaEnablerTitle">Chiaroveggenza</string>
 	<string name="chiaroveggenzaEnablerKey">notificationEnablerKey</string>
 	<string name="chiaroveggenzaEnablerSummary">Servizio di aggiornamento in background</string>

@@ -8,7 +8,7 @@ import it.localhost.trafficdroid.adapter.item.BannerDialogItem;
 import it.localhost.trafficdroid.adapter.item.GraphItem;
 import it.localhost.trafficdroid.adapter.item.StreetItem;
 import it.localhost.trafficdroid.adapter.item.ZoneItem;
-import it.localhost.trafficdroid.common.TdApp;
+import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.common.billing.IabHelper;
 import it.localhost.trafficdroid.common.billing.IabHelper.OnIabSetupFinishedListener;
 import it.localhost.trafficdroid.common.billing.IabHelper.QueryInventoryFinishedListener;
@@ -129,12 +129,12 @@ public class MainAdapter extends BaseExpandableListAdapter implements QueryInven
 	@Override
 	public void onGroupCollapsed(int groupPosition) {
 		super.onGroupCollapsed(groupPosition);
-		TdApp.getEditor().putBoolean(expanded + groupPosition, false).commit();
+		Utility.getEditor(context).putBoolean(expanded + groupPosition, false).commit();
 	}
 
 	@Override
 	public void onGroupExpanded(int groupPosition) {
 		super.onGroupExpanded(groupPosition);
-		TdApp.getEditor().putBoolean(expanded + groupPosition, true).commit();
+		Utility.getEditor(context).putBoolean(expanded + groupPosition, true).commit();
 	}
 }

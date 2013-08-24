@@ -3,7 +3,6 @@ package it.localhost.trafficdroid.adapter.item;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.AbstractActivity;
 import it.localhost.trafficdroid.activity.WebViewActivity;
-import it.localhost.trafficdroid.common.ViewTagger;
 import it.localhost.trafficdroid.dto.ZoneDTO;
 
 import java.util.GregorianCalendar;
@@ -47,29 +46,29 @@ public class ZoneItem extends AbstractItem {
 
 	public View inflateView() {
 		View view = inflater.inflate(R.layout.main_item_zone, null, false);
-		ViewTagger.setTag(view, R.id.zoneName, view.findViewById(R.id.zoneName));
-		ViewTagger.setTag(view, R.id.zoneSpeedLeft, view.findViewById(R.id.zoneSpeedLeft));
-		ViewTagger.setTag(view, R.id.zoneSpeedRight, view.findViewById(R.id.zoneSpeedRight));
-		ViewTagger.setTag(view, R.id.trendLeft, view.findViewById(R.id.trendLeft));
-		ViewTagger.setTag(view, R.id.trendRight, view.findViewById(R.id.trendRight));
-		ViewTagger.setTag(view, R.id.zoneCam, view.findViewById(R.id.zoneCam));
-		ViewTagger.setTag(view, R.id.zoneAutoveloxLeft, view.findViewById(R.id.zoneAutoveloxLeft));
-		ViewTagger.setTag(view, R.id.zoneAutoveloxRight, view.findViewById(R.id.zoneAutoveloxRight));
+		view.setTag(R.id.zoneName, view.findViewById(R.id.zoneName));
+		view.setTag(R.id.zoneSpeedLeft, view.findViewById(R.id.zoneSpeedLeft));
+		view.setTag(R.id.zoneSpeedRight, view.findViewById(R.id.zoneSpeedRight));
+		view.setTag(R.id.trendLeft, view.findViewById(R.id.trendLeft));
+		view.setTag(R.id.trendRight, view.findViewById(R.id.trendRight));
+		view.setTag(R.id.zoneCam, view.findViewById(R.id.zoneCam));
+		view.setTag(R.id.zoneAutoveloxLeft, view.findViewById(R.id.zoneAutoveloxLeft));
+		view.setTag(R.id.zoneAutoveloxRight, view.findViewById(R.id.zoneAutoveloxRight));
 		return view;
 	}
 
 	public void fillView(View view) {
-		ViewTagger.setTag(view, R.id.zoneType, getType());
-		ViewTagger.setTag(view, R.id.itemKey, zoneDTO.getId());
-		ViewTagger.setTag(view, R.id.itemName, zoneDTO.getName());
-		TextView zoneNameText = (TextView) ViewTagger.getTag(view, R.id.zoneName);
-		TextView leftZoneSpeedText = (TextView) ViewTagger.getTag(view, R.id.zoneSpeedLeft);
-		TextView rightZoneSpeedText = (TextView) ViewTagger.getTag(view, R.id.zoneSpeedRight);
-		ImageView trendLeftText = (ImageView) ViewTagger.getTag(view, R.id.trendLeft);
-		ImageView trendRightText = (ImageView) ViewTagger.getTag(view, R.id.trendRight);
-		ImageView cam = (ImageView) ViewTagger.getTag(view, R.id.zoneCam);
-		ImageView autoveloxLeft = (ImageView) ViewTagger.getTag(view, R.id.zoneAutoveloxLeft);
-		ImageView autoveloxRight = (ImageView) ViewTagger.getTag(view, R.id.zoneAutoveloxRight);
+		view.setTag(R.id.zoneType, getType());
+		view.setTag(R.id.itemKey, zoneDTO.getId());
+		view.setTag(R.id.itemName, zoneDTO.getName());
+		TextView zoneNameText = (TextView) view.getTag(R.id.zoneName);
+		TextView leftZoneSpeedText = (TextView) view.getTag(R.id.zoneSpeedLeft);
+		TextView rightZoneSpeedText = (TextView) view.getTag(R.id.zoneSpeedRight);
+		ImageView trendLeftText = (ImageView) view.getTag(R.id.trendLeft);
+		ImageView trendRightText = (ImageView) view.getTag(R.id.trendRight);
+		ImageView cam = (ImageView) view.getTag(R.id.zoneCam);
+		ImageView autoveloxLeft = (ImageView) view.getTag(R.id.zoneAutoveloxLeft);
+		ImageView autoveloxRight = (ImageView) view.getTag(R.id.zoneAutoveloxRight);
 		zoneNameText.setText(zoneDTO.getName());
 		leftZoneSpeedText.setTextColor(colorCat[zoneDTO.getCatLeft()]);
 		rightZoneSpeedText.setTextColor(colorCat[zoneDTO.getCatRight()]);

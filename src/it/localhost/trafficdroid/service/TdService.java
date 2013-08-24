@@ -2,17 +2,26 @@ package it.localhost.trafficdroid.service;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
-import it.localhost.trafficdroid.common.TdApp;
+import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
 import it.localhost.trafficdroid.exception.GenericException;
 import it.localhost.trafficdroid.parser.BadNewsParser;
-import it.localhost.trafficdroid.parser.TrafficParser;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.zip.GZIPInputStream;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.w3c.dom.NodeList;
 
 import android.app.Notification;
 import android.app.Notification.Builder;
@@ -20,6 +29,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences.Editor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
@@ -32,6 +42,17 @@ public class TdService extends WakefulIntentService { // NO_UCD
 	private static final Intent endUpdateIntent = new Intent(endUpdate);
 	private static final String disconnectedMessage = "Connessione di rete inesistente";
 	public static final int notificationId = 1;
+	private static final String path = "/engine/traffic_server.php";
+	private static final String traffic = "https://etraffic.";
+	private static final String userKey = "user";
+	private static final String pwdKey = "pwd";
+	private static final String sqKey = "sq";
+	private static final String typeKey = "type";
+	private static final String roaKey = "roa";
+	private static final String user = "robAnd_ev3nt5.appU";
+	private static final String pwd = "daP-2012_00005,android.ev";
+	private static final String sq = "1";
+	private static final String type = "4";
 
 	public TdService() {
 		super(MainDAO.tdData);
@@ -40,169 +61,203 @@ public class TdService extends WakefulIntentService { // NO_UCD
 	@Override
 	public void doWakefulWork(Intent arg0) {
 		sendBroadcast(beginUpdateIntent);
-		MainDTO currDTO = MainDAO.create();
+		Editor edit = Utility.getEditor(this);
+		MainDTO currDTO = MainDAO.create(this);
 		MainDTO pastDTO;
 		try {
-			pastDTO = MainDAO.retrieve();
+			pastDTO = MainDAO.retrieve(this);
 		} catch (Exception e) {
 			pastDTO = null;
 		}
-		NetworkInfo activeNetworkInfo = ((ConnectivityManager) TdApp.getContext().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+		NetworkInfo activeNetworkInfo = ((ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
 		if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
 			try {
-				TrafficParser.parse(currDTO, TdApp.getPrefString(R.string.providerTrafficKey, R.string.providerTrafficDefault));
-				for (StreetDTO currStreet : currDTO.getStreets()) {
-					byte availableLeft = 0, availableRight = 0;
-					List<ZoneDTO> currZones = currStreet.getZones();
-					for (ZoneDTO currZone : currZones) {
-						if (currZone.getSpeedLeft() < 1) {
-							currZone.setCatLeft((byte) 0);
-						} else if (currZone.getSpeedLeft() < 11) {
-							currZone.setCatLeft((byte) 1);
-						} else if (currZone.getSpeedLeft() < 31) {
-							currZone.setCatLeft((byte) 2);
-						} else if (currZone.getSpeedLeft() < 51) {
-							currZone.setCatLeft((byte) 3);
-						} else if (currZone.getSpeedLeft() < 71) {
-							currZone.setCatLeft((byte) 4);
-						} else if (currZone.getSpeedLeft() < 91) {
-							currZone.setCatLeft((byte) 5);
-						} else {
-							currZone.setCatLeft((byte) 6);
-						}
-						if (currZone.getSpeedRight() < 1) {
-							currZone.setCatRight((byte) 0);
-						} else if (currZone.getSpeedRight() < 11) {
-							currZone.setCatRight((byte) 1);
-						} else if (currZone.getSpeedRight() < 31) {
-							currZone.setCatRight((byte) 2);
-						} else if (currZone.getSpeedRight() < 51) {
-							currZone.setCatRight((byte) 3);
-						} else if (currZone.getSpeedRight() < 71) {
-							currZone.setCatRight((byte) 4);
-						} else if (currZone.getSpeedRight() < 91) {
-							currZone.setCatRight((byte) 5);
-						} else {
-							currZone.setCatRight((byte) 6);
-						}
-						boolean congestionLeft = currZone.getCatLeft() > 0 && currZone.getCatLeft() <= currDTO.getCongestionThreshold();
-						boolean congestionRight = currZone.getCatRight() > 0 && currZone.getCatRight() <= currDTO.getCongestionThreshold();
-						if (congestionLeft && congestionRight) {
-							currDTO.addCongestedZone(currZone.getName());
-						} else if (congestionLeft) {
-							currDTO.addCongestedZone(currZone.getName());
-						} else if (congestionRight) {
-							currDTO.addCongestedZone(currZone.getName());
-						}
-						if (pastDTO != null) {
-							StreetDTO pastStreet = pastDTO.getStreet(currStreet.getId());
-							if (pastStreet != null) {
-								ZoneDTO pastZone = pastStreet.getZone(currZone.getId());
-								if (pastZone != null) {
-									int trendSpeed = Integer.parseInt(TdApp.getPrefString(R.string.trendSpeedKey, R.string.trendSpeedDefault));
-									if (currZone.getCatLeft() == 0 || pastZone.getCatLeft() == 0) {
-										currZone.setTrendLeft(0);
-									} else if (currZone.getSpeedLeft() - pastZone.getSpeedLeft() >= trendSpeed) {
-										currZone.setTrendLeft(R.drawable.speed_up);
-									} else if (pastZone.getSpeedLeft() - currZone.getSpeedLeft() >= trendSpeed) {
-										currZone.setTrendLeft(R.drawable.speed_down);
-									} else {
-										currZone.setTrendLeft(0);
-									}
-									if (currZone.getCatRight() == 0 || pastZone.getCatRight() == 0) {
-										currZone.setTrendRight(0);
-									} else if (currZone.getSpeedRight() - pastZone.getSpeedRight() >= trendSpeed) {
-										currZone.setTrendRight(R.drawable.speed_up);
-									} else if (pastZone.getSpeedRight() - currZone.getSpeedRight() >= trendSpeed) {
-										currZone.setTrendRight(R.drawable.speed_down);
-									} else {
-										currZone.setTrendRight(0);
-									}
-								}
-							}
-						}
-						if (currZone.getCatLeft() != 0) {
-							currStreet.addSpeedLeft(currZone.getSpeedLeft());
-							availableLeft++;
-						}
-						if (currZone.getCatRight() != 0) {
-							currStreet.addSpeedRight(currZone.getSpeedRight());
-							availableRight++;
-						}
-					}
-					if (availableLeft != 0) {
-						currStreet.setSpeedLeft((short) (currStreet.getSpeedLeft() / availableLeft));
-					} else {
-						currStreet.setSpeedLeft((short) 0);
-					}
-					if (availableRight != 0) {
-						currStreet.setSpeedRight((short) (currStreet.getSpeedRight() / availableRight));
-					} else {
-						currStreet.setSpeedRight((short) 0);
-					}
-					if (pastDTO != null) {
-						StreetDTO pastStreet = pastDTO.getStreet(currStreet.getId());
-						if (pastStreet != null) {
-							int trendSpeed = Integer.parseInt(TdApp.getPrefString(R.string.trendSpeedKey, R.string.trendSpeedDefault));
-							if (currStreet.getSpeedLeft() == 0 || pastStreet.getSpeedLeft() == 0) {
-								currStreet.setTrendLeft(0);
-							} else if (currStreet.getSpeedLeft() - pastStreet.getSpeedLeft() >= trendSpeed) {
-								currStreet.setTrendLeft(R.drawable.speed_up);
-							} else if (pastStreet.getSpeedLeft() - currStreet.getSpeedLeft() >= trendSpeed) {
-								currStreet.setTrendLeft(R.drawable.speed_down);
-							} else {
-								currStreet.setTrendLeft(0);
-							}
-							if (currStreet.getSpeedRight() == 0 || pastStreet.getSpeedRight() == 0) {
-								currStreet.setTrendRight(0);
-							} else if (currStreet.getSpeedRight() - pastStreet.getSpeedRight() >= trendSpeed) {
-								currStreet.setTrendRight(R.drawable.speed_up);
-							} else if (pastStreet.getSpeedRight() - currStreet.getSpeedRight() >= trendSpeed) {
-								currStreet.setTrendRight(R.drawable.speed_down);
-							} else {
-								currStreet.setTrendRight(0);
-							}
-						}
-					}
-				}
-				String congestedZones = currDTO.getCongestedZones();
-				if (congestedZones != null && TdApp.getPrefBoolean(R.string.chiaroveggenzaEnablerKey, R.string.chiaroveggenzaEnablerDefault)) {
-					Builder bui = new Builder(this);
-					bui.setDefaults(Notification.DEFAULT_ALL);
-					bui.setSmallIcon(R.drawable.ic_stat_notify_trafficdroid);
-					bui.setTicker(congestedZones);
-					bui.setContentTitle(getString(R.string.notificationTitle));
-					bui.setContentText(congestedZones);
-					Intent intent = new Intent(this, MainActivity.class);
-					intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-					bui.setContentIntent(PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT));
-					((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(TdService.notificationId, bui.getNotification());
-				} else {
-					((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(TdService.notificationId);
-				}
+				parseTraffic(currDTO, Utility.getPrefString(this, R.string.providerTrafficKey, R.string.providerTrafficDefault));
+				configureDTO(currDTO, pastDTO);
+				setupNotification(currDTO.getCongestedZones());
 			} catch (Exception e) {
-				TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
-				TdApp.getEditor().putString(GenericException.exceptionMsg, e.getMessage());
+				edit.putBoolean(GenericException.exceptionCheck, true);
+				edit.putString(GenericException.exceptionMsg, e.getMessage());
 			}
 			try {
-				if (TdApp.getPrefBoolean(R.string.badnewsEnablerKey, R.string.badnewsEnablerDefault))
+				if (Utility.getPrefBoolean(this, R.string.badnewsEnablerKey, R.string.badnewsEnablerDefault))
 					new BadNewsParser(currDTO).parse();
 			} catch (Exception e) {
-				TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
-				TdApp.getEditor().putString(GenericException.exceptionMsg, e.getMessage());
+				edit.putBoolean(GenericException.exceptionCheck, true);
+				edit.putString(GenericException.exceptionMsg, e.getMessage());
 			}
 			try {
 				currDTO.setTrafficTime(new Date());
-				MainDAO.store(currDTO);
+				MainDAO.store(this, currDTO);
 			} catch (Exception e) {
-				TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
-				TdApp.getEditor().putString(GenericException.exceptionMsg, e.getMessage());
+				edit.putBoolean(GenericException.exceptionCheck, true);
+				edit.putString(GenericException.exceptionMsg, e.getMessage());
 			}
 		} else {
-			TdApp.getEditor().putBoolean(GenericException.exceptionCheck, true);
-			TdApp.getEditor().putString(GenericException.exceptionMsg, disconnectedMessage);
+			edit.putBoolean(GenericException.exceptionCheck, true);
+			edit.putString(GenericException.exceptionMsg, disconnectedMessage);
 		}
-		TdApp.getEditor().commit();
+		edit.commit();
 		sendBroadcast(endUpdateIntent);
+	}
+
+	private void parseTraffic(MainDTO dto, String url) {
+		List<BasicNameValuePair> params = new ArrayList<BasicNameValuePair>(5);
+		params.add(new BasicNameValuePair(userKey, user));
+		params.add(new BasicNameValuePair(pwdKey, pwd));
+		params.add(new BasicNameValuePair(sqKey, sq));
+		params.add(new BasicNameValuePair(typeKey, type));
+		params.add(null);
+		for (StreetDTO street : dto.getStreets())
+			try {
+				params.set(4, new BasicNameValuePair(roaKey, Integer.toString(street.getId())));
+				HttpPost post = new HttpPost(traffic + url + path);
+				post.setEntity(new UrlEncodedFormEntity(params));
+				NodeList segments = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new GZIPInputStream(new DefaultHttpClient().execute(post).getEntity().getContent())).getDocumentElement().getLastChild().getFirstChild().getChildNodes();
+				for (int i = 0; i < segments.getLength(); i++) {
+					NodeList segChildrens = segments.item(i).getChildNodes();
+					int from = Integer.parseInt(segChildrens.item(0).getTextContent());
+					int to = Integer.parseInt(segChildrens.item(1).getTextContent());
+					short speed = Short.parseShort(segChildrens.item(2).getTextContent());
+					int fromIndex = street.getAllZonesId().indexOf(from);
+					int toIndex = street.getAllZonesId().indexOf(to);
+					if (fromIndex != -1 && toIndex != -1)
+						if (fromIndex < toIndex) {
+							for (int id : street.getAllZonesId().subList(fromIndex, toIndex))
+								if (street.getZone(id) != null)
+									street.getZone(id).setSpeedLeft(speed);
+						} else
+							for (int id : street.getAllZonesId().subList(toIndex, fromIndex))
+								if (street.getZone(id) != null)
+									street.getZone(id).setSpeedRight(speed);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+	}
+
+	private void configureDTO(MainDTO currDTO, MainDTO pastDTO) {
+		for (StreetDTO currStreet : currDTO.getStreets()) {
+			byte availableLeft = 0, availableRight = 0;
+			List<ZoneDTO> currZones = currStreet.getZones();
+			for (ZoneDTO currZone : currZones) {
+				if (currZone.getSpeedLeft() < 1)
+					currZone.setCatLeft((byte) 0);
+				else if (currZone.getSpeedLeft() < 11)
+					currZone.setCatLeft((byte) 1);
+				else if (currZone.getSpeedLeft() < 31)
+					currZone.setCatLeft((byte) 2);
+				else if (currZone.getSpeedLeft() < 51)
+					currZone.setCatLeft((byte) 3);
+				else if (currZone.getSpeedLeft() < 71)
+					currZone.setCatLeft((byte) 4);
+				else if (currZone.getSpeedLeft() < 91)
+					currZone.setCatLeft((byte) 5);
+				else
+					currZone.setCatLeft((byte) 6);
+				if (currZone.getSpeedRight() < 1)
+					currZone.setCatRight((byte) 0);
+				else if (currZone.getSpeedRight() < 11)
+					currZone.setCatRight((byte) 1);
+				else if (currZone.getSpeedRight() < 31)
+					currZone.setCatRight((byte) 2);
+				else if (currZone.getSpeedRight() < 51)
+					currZone.setCatRight((byte) 3);
+				else if (currZone.getSpeedRight() < 71)
+					currZone.setCatRight((byte) 4);
+				else if (currZone.getSpeedRight() < 91)
+					currZone.setCatRight((byte) 5);
+				else
+					currZone.setCatRight((byte) 6);
+				boolean congestionLeft = currZone.getCatLeft() > 0 && currZone.getCatLeft() <= currDTO.getCongestionThreshold();
+				boolean congestionRight = currZone.getCatRight() > 0 && currZone.getCatRight() <= currDTO.getCongestionThreshold();
+				if (congestionLeft && congestionRight)
+					currDTO.addCongestedZone(currZone.getName());
+				else if (congestionLeft)
+					currDTO.addCongestedZone(currZone.getName());
+				else if (congestionRight)
+					currDTO.addCongestedZone(currZone.getName());
+				if (pastDTO != null) {
+					StreetDTO pastStreet = pastDTO.getStreet(currStreet.getId());
+					if (pastStreet != null) {
+						ZoneDTO pastZone = pastStreet.getZone(currZone.getId());
+						if (pastZone != null) {
+							int trendSpeed = Integer.parseInt(Utility.getPrefString(this, R.string.trendSpeedKey, R.string.trendSpeedDefault));
+							if (currZone.getCatLeft() == 0 || pastZone.getCatLeft() == 0)
+								currZone.setTrendLeft(0);
+							else if (currZone.getSpeedLeft() - pastZone.getSpeedLeft() >= trendSpeed)
+								currZone.setTrendLeft(R.drawable.speed_up);
+							else if (pastZone.getSpeedLeft() - currZone.getSpeedLeft() >= trendSpeed)
+								currZone.setTrendLeft(R.drawable.speed_down);
+							else
+								currZone.setTrendLeft(0);
+							if (currZone.getCatRight() == 0 || pastZone.getCatRight() == 0)
+								currZone.setTrendRight(0);
+							else if (currZone.getSpeedRight() - pastZone.getSpeedRight() >= trendSpeed)
+								currZone.setTrendRight(R.drawable.speed_up);
+							else if (pastZone.getSpeedRight() - currZone.getSpeedRight() >= trendSpeed)
+								currZone.setTrendRight(R.drawable.speed_down);
+							else
+								currZone.setTrendRight(0);
+						}
+					}
+				}
+				if (currZone.getCatLeft() != 0) {
+					currStreet.addSpeedLeft(currZone.getSpeedLeft());
+					availableLeft++;
+				}
+				if (currZone.getCatRight() != 0) {
+					currStreet.addSpeedRight(currZone.getSpeedRight());
+					availableRight++;
+				}
+			}
+			if (availableLeft != 0)
+				currStreet.setSpeedLeft((short) (currStreet.getSpeedLeft() / availableLeft));
+			else
+				currStreet.setSpeedLeft((short) 0);
+			if (availableRight != 0)
+				currStreet.setSpeedRight((short) (currStreet.getSpeedRight() / availableRight));
+			else
+				currStreet.setSpeedRight((short) 0);
+			if (pastDTO != null) {
+				StreetDTO pastStreet = pastDTO.getStreet(currStreet.getId());
+				if (pastStreet != null) {
+					int trendSpeed = Integer.parseInt(Utility.getPrefString(this, R.string.trendSpeedKey, R.string.trendSpeedDefault));
+					if (currStreet.getSpeedLeft() == 0 || pastStreet.getSpeedLeft() == 0)
+						currStreet.setTrendLeft(0);
+					else if (currStreet.getSpeedLeft() - pastStreet.getSpeedLeft() >= trendSpeed)
+						currStreet.setTrendLeft(R.drawable.speed_up);
+					else if (pastStreet.getSpeedLeft() - currStreet.getSpeedLeft() >= trendSpeed)
+						currStreet.setTrendLeft(R.drawable.speed_down);
+					else
+						currStreet.setTrendLeft(0);
+					if (currStreet.getSpeedRight() == 0 || pastStreet.getSpeedRight() == 0)
+						currStreet.setTrendRight(0);
+					else if (currStreet.getSpeedRight() - pastStreet.getSpeedRight() >= trendSpeed)
+						currStreet.setTrendRight(R.drawable.speed_up);
+					else if (pastStreet.getSpeedRight() - currStreet.getSpeedRight() >= trendSpeed)
+						currStreet.setTrendRight(R.drawable.speed_down);
+					else
+						currStreet.setTrendRight(0);
+				}
+			}
+		}
+	}
+
+	private void setupNotification(String congestedZones) {
+		if (congestedZones != null) {
+			Builder bui = new Builder(this);
+			bui.setDefaults(Notification.DEFAULT_ALL);
+			bui.setSmallIcon(R.drawable.ic_stat_notify_trafficdroid);
+			bui.setTicker(congestedZones);
+			bui.setContentTitle(getString(R.string.notificationTitle));
+			bui.setContentText(congestedZones);
+			Intent intent = new Intent(this, MainActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+			bui.setContentIntent(PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT));
+			((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(TdService.notificationId, bui.getNotification());
+		} else {
+			((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(TdService.notificationId);
+		}
 	}
 }

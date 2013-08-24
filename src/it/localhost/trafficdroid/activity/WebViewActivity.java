@@ -26,6 +26,7 @@ public class WebViewActivity extends AbstractActivity {
 		webView = (WebView) findViewById(R.id.webview);
 		webView.setWebViewClient(new WebViewClient());
 		webView.getSettings().setJavaScriptEnabled(true);
+		webView.getSettings().setLoadWithOverviewMode(true);
 		webView.getSettings().setBuiltInZoomControls(true);
 		webView.getSettings().setUseWideViewPort(true);
 		url = getIntent().getStringExtra(WebViewActivity.urlTag);

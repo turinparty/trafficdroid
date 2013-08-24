@@ -1,6 +1,6 @@
 package it.localhost.trafficdroid.widget.activity;
 
-import it.localhost.trafficdroid.common.TdApp;
+import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
@@ -25,7 +25,7 @@ public class WidgetStreetActivity extends ListActivity {
 		setResult(RESULT_CANCELED);
 		List<String> data = new ArrayList<String>();
 		try {
-			dto = MainDAO.retrieve();
+			dto = MainDAO.retrieve(this);
 			for (StreetDTO street : dto.getStreets())
 				data.add(street.getName());
 			setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data));
@@ -37,8 +37,7 @@ public class WidgetStreetActivity extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		int mAppWidgetId = getIntent().getExtras().getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
-		TdApp.getEditor().putInt(WidgetStreetProvider.WIDGET_STREET_STREET + mAppWidgetId, dto.getStreets().get(position).getId());
-		TdApp.getEditor().commit();
+		Utility.getEditor(this).putInt(WidgetStreetProvider.WIDGET_STREET_STREET + mAppWidgetId, dto.getStreets().get(position).getId()).commit();
 		WidgetStreetProvider.updateAppWidget(this, AppWidgetManager.getInstance(this), mAppWidgetId);
 		setResult(RESULT_OK, getIntent());
 		finish();

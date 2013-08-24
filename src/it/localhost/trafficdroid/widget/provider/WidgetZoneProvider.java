@@ -2,7 +2,7 @@ package it.localhost.trafficdroid.widget.provider;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
-import it.localhost.trafficdroid.common.TdApp;
+import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dao.MainDAO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
@@ -29,10 +29,10 @@ public class WidgetZoneProvider extends AppWidgetProvider {
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
 		views.setOnClickPendingIntent(R.id.widget, PendingIntent.getActivity(context, 0, new Intent(context, MainActivity.class), 0));
 		try {
-			MainDTO dto = MainDAO.retrieve();
-			StreetDTO street = dto.getStreet(TdApp.getPrefInt(WIDGET_ZONE_STREET + mAppWidgetId, 0));
+			MainDTO dto = MainDAO.retrieve(context);
+			StreetDTO street = dto.getStreet(Utility.getPrefInt(context, WIDGET_ZONE_STREET + mAppWidgetId, 0));
 			if (street != null) {
-				ZoneDTO zone = street.getZone(TdApp.getPrefInt(WIDGET_ZONE_ZONE + mAppWidgetId, 0));
+				ZoneDTO zone = street.getZone(Utility.getPrefInt(context, WIDGET_ZONE_ZONE + mAppWidgetId, 0));
 				if (zone != null) {
 					views.setTextViewText(R.id.streetDirLeft, street.getDirectionLeft());
 					views.setTextViewText(R.id.streetDirRight, street.getDirectionRight());

@@ -1,12 +1,13 @@
 package it.localhost.trafficdroid.activity;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.common.TdApp;
-import it.localhost.trafficdroid.dto.PatenteDTO;
-import it.localhost.trafficdroid.parser.PatenteParser;
+import it.localhost.trafficdroid.common.Utility;
+import it.localhost.trafficdroid.dao.PatenteService;
+import it.localhost.trafficdroid.dto.BaseDto;
+import it.localhost.trafficdroid.dto.PatenteDto;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.os.AsyncTask;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -29,52 +30,42 @@ public class PatenteActivity extends AbstractActivity {
 		setProgressBarIndeterminateVisibility(false);
 		final EditText usrEdit = (EditText) findViewById(R.id.patenteUsr);
 		final EditText pwdEdit = (EditText) findViewById(R.id.patentePwd);
-		usrEdit.setText(TdApp.getPrefString(PATENTE_USR, BLANK));
-		pwdEdit.setText(TdApp.getPrefString(PATENTE_PWD, BLANK));
+		usrEdit.setText(Utility.getPrefString(this, PATENTE_USR, BLANK));
+		pwdEdit.setText(Utility.getPrefString(this, PATENTE_PWD, BLANK));
 		findViewById(R.id.ok).setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				String usr = usrEdit.getText().toString();
 				String pwd = pwdEdit.getText().toString();
-				TdApp.getEditor().putString(PATENTE_USR, usr);
-				TdApp.getEditor().putString(PATENTE_PWD, pwd);
-				TdApp.getEditor().commit();
+				Editor edit = Utility.getEditor(PatenteActivity.this);
+				edit.putString(PATENTE_USR, usr);
+				edit.putString(PATENTE_PWD, pwd);
+				edit.commit();
 				if (!usr.equals(BLANK) && !pwd.equals(BLANK))
-					new RefreshTask().execute(usr, pwd);
+					new PatenteAsyncTask().execute(usr, pwd);
 				else
 					new AlertDialog.Builder(PatenteActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(R.string.wrongData).show();
 			}
 		});
 	}
 
-	private class RefreshTask extends AsyncTask<String, Void, PatenteDTO> {
-		private Exception e;
-
+	private class PatenteAsyncTask extends PatenteService {
 		@Override
 		protected void onPreExecute() {
 			setProgressBarIndeterminateVisibility(true);
-			InputMethodManager im = (InputMethodManager) TdApp.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+			InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 			im.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 		}
 
 		@Override
-		protected PatenteDTO doInBackground(String... args) {
-			try {
-				return PatenteParser.parse(args[0], args[1]);
-			} catch (Exception e) {
-				this.e = e;
-				return null;
-			}
-		}
-
-		@Override
-		protected void onPostExecute(PatenteDTO patente) {
+		protected void onPostExecute(BaseDto abstractResult) {
 			setProgressBarIndeterminateVisibility(false);
-			if (this.e == null) {
+			if (abstractResult.isSuccess()) {
+				PatenteDto patente = (PatenteDto) abstractResult;
 				((TextView) findViewById(R.id.patenteSaldo)).setText(patente.getSaldo());
 				((TextView) findViewById(R.id.patenteNumero)).setText(patente.getNumeoPatente());
 				((TextView) findViewById(R.id.patenteScadenza)).setText(patente.getScadenzaPatente());
 			} else
-				new AlertDialog.Builder(PatenteActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(e.getMessage()).show();
+				new AlertDialog.Builder(PatenteActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(abstractResult.getMessage()).show();
 		}
 	}
 }

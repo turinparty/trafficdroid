@@ -1,19 +1,14 @@
 package it.localhost.trafficdroid.dto;
 
-public class PatenteDTO {
+public class PatenteDto extends BaseDto {
 	private String numeoPatente;
 	private String saldo;
 	private String scadenzaPatente;
 
-	public void setNumeoPatente(String numeoPatente) {
+	public PatenteDto(boolean success, String numeoPatente, String saldo, String scadenzaPatente) {
+		super(success);
 		this.numeoPatente = numeoPatente;
-	}
-
-	public void setSaldo(String saldo) {
 		this.saldo = saldo;
-	}
-
-	public void setScadenzaPatente(String scadenzaPatente) {
 		this.scadenzaPatente = scadenzaPatente;
 	}
 

@@ -30,25 +30,47 @@
 
 		<LinearLayout
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content" >
+			android:layout_height="wrap_content"
+			android:weightSum="3" >
 
 			<EditText
-				android:id="@+id/targa"
+				android:id="@+id/targaA"
 				android:layout_width="0dp"
 				android:layout_height="wrap_content"
 				android:layout_weight="1"
-				android:hint="@string/targa"
-				android:imeOptions="actionDone"
-				android:inputType="text" />
+				android:gravity="center"
+				android:hint="@string/targaA"
+				android:imeOptions="actionNext"
+				android:inputType="textCapCharacters|textNoSuggestions" />
 
-			<Button
-				android:id="@+id/ok"
-				android:layout_width="wrap_content"
+			<EditText
+				android:id="@+id/targaB"
+				android:layout_width="0dp"
 				android:layout_height="wrap_content"
-				android:text="@string/bollo" />
+				android:layout_weight="1"
+				android:gravity="center"
+				android:hint="@string/targaB"
+				android:imeOptions="actionNext"
+				android:inputType="number" />
+
+			<EditText
+				android:id="@+id/targaC"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:gravity="center"
+				android:hint="@string/targaC"
+				android:imeOptions="actionDone"
+				android:inputType="textCapCharacters|textNoSuggestions" />
 		</LinearLayout>
 
 		<include layout="@layout/iab_mrect" />
+
+		<Button
+			android:id="@+id/ok"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/bollo" />
 	</LinearLayout>
 
 </ScrollView>

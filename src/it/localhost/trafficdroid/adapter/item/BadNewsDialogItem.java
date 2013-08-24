@@ -1,7 +1,6 @@
 package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.common.ViewTagger;
 import it.localhost.trafficdroid.dto.BadNewsDTO;
 
 import java.text.DateFormat;
@@ -39,6 +38,7 @@ public class BadNewsDialogItem extends AbstractItem {
 	private static final String bn_spc = "controllo velocità";
 	private static final String bn_vfr = "veicolo in fiamme";
 	private static final String bn_win = "vento";
+	private static final String bn_cls = "carburante chius";
 	private static DateFormat sdfBnFormat;
 	private BadNewsDTO badNews;
 
@@ -56,17 +56,17 @@ public class BadNewsDialogItem extends AbstractItem {
 	@Override
 	public View inflateView() {
 		View view = inflater.inflate(R.layout.dialog_item_badnews, null);
-		ViewTagger.setTag(view, R.id.badNewsTitle, view.findViewById(R.id.badNewsTitle));
-		ViewTagger.setTag(view, R.id.badNewsDate, view.findViewById(R.id.badNewsDate));
-		ViewTagger.setTag(view, R.id.badNewsDescription, view.findViewById(R.id.badNewsDescription));
+		view.setTag(R.id.badNewsTitle, view.findViewById(R.id.badNewsTitle));
+		view.setTag(R.id.badNewsDate, view.findViewById(R.id.badNewsDate));
+		view.setTag(R.id.badNewsDescription, view.findViewById(R.id.badNewsDescription));
 		return view;
 	}
 
 	@Override
 	public void fillView(View view) {
-		((TextView) ViewTagger.getTag(view, R.id.badNewsTitle)).setText(badNews.getTitle());
-		((TextView) ViewTagger.getTag(view, R.id.badNewsDescription)).setText(badNews.getDescription());
-		TextView badNewsDate = (TextView) ViewTagger.getTag(view, R.id.badNewsDate);
+		((TextView) view.getTag(R.id.badNewsTitle)).setText(badNews.getTitle());
+		((TextView) view.getTag(R.id.badNewsDescription)).setText(badNews.getDescription());
+		TextView badNewsDate = (TextView) view.getTag(R.id.badNewsDate);
 		badNewsDate.setText(sdfBnFormat.format(badNews.getDate()));
 		int drawable;
 		if (badNews.getTitle().contains(bn_los1) || badNews.getTitle().contains(bn_los2))
@@ -97,8 +97,6 @@ public class BadNewsDialogItem extends AbstractItem {
 			drawable = R.drawable.bn_peo;
 		else if (badNews.getTitle().contains(bn_pra1) || badNews.getTitle().contains(bn_pra2))
 			drawable = R.drawable.bn_pra;
-		else if (badNews.getTitle().contains(bn_res))
-			drawable = R.drawable.bn_res;
 		else if (badNews.getTitle().contains(bn_sn))
 			drawable = R.drawable.bn_sn;
 		else if (badNews.getTitle().contains(bn_sne1) || badNews.getTitle().contains(bn_sne2))
@@ -119,6 +117,10 @@ public class BadNewsDialogItem extends AbstractItem {
 			drawable = R.drawable.bn_win;
 		else if (badNews.getTitle().contains(bn_vfr))
 			drawable = R.drawable.bn_vfr;
+		else if (badNews.getTitle().contains(bn_cls))
+			drawable = R.drawable.bn_cls;
+		else if (badNews.getTitle().contains(bn_res))
+			drawable = R.drawable.bn_res;
 		else
 			drawable = android.R.drawable.ic_dialog_alert;
 		badNewsDate.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, drawable);

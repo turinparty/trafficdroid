@@ -2,7 +2,6 @@ package it.localhost.trafficdroid.activity;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.ListExit;
-import it.localhost.trafficdroid.common.TdApp;
 import it.localhost.trafficdroid.dao.PedaggioDAO;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -47,7 +46,7 @@ public class PedaggioActivity extends AbstractActivity {
 		@Override
 		protected void onPreExecute() {
 			setProgressBarIndeterminateVisibility(true);
-			InputMethodManager im = (InputMethodManager) TdApp.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+			InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 			im.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 		}
 
