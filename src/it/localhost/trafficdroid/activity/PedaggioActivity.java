@@ -2,10 +2,11 @@ package it.localhost.trafficdroid.activity;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.ListExit;
-import it.localhost.trafficdroid.dao.PedaggioDAO;
+import it.localhost.trafficdroid.dao.PedaggioService;
+import it.localhost.trafficdroid.dto.BaseDTO;
+import it.localhost.trafficdroid.dto.PedaggioDTO;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -30,44 +31,30 @@ public class PedaggioActivity extends AbstractActivity {
 		moneyTo.setAdapter(adapter);
 		findViewById(R.id.ok).setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Integer from = ListExit.getInstance().get(moneyFrom.getText().toString());
-				Integer to = ListExit.getInstance().get(moneyTo.getText().toString());
+				String from = ListExit.getInstance().get(moneyFrom.getText().toString()).toString();
+				String to = ListExit.getInstance().get(moneyTo.getText().toString()).toString();
 				if (from != null && to != null)
-					new RefreshTask().execute(from, to);
+					new PedaggioAsyncTask().execute(from, to);
 				else
 					new AlertDialog.Builder(PedaggioActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(R.string.wrongData).show();
 			}
 		});
 	}
 
-	private class RefreshTask extends AsyncTask<Integer, Void, String> {
-		private Exception e;
-
+	private class PedaggioAsyncTask extends PedaggioService {
 		@Override
 		protected void onPreExecute() {
 			setProgressBarIndeterminateVisibility(true);
-			InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-			im.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+			((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 		}
 
 		@Override
-		protected String doInBackground(Integer... args) {
-			try {
-				String money = "€ " + PedaggioDAO.getData(args[0], args[1]);
-				return money;
-			} catch (Exception e) {
-				this.e = e;
-				return null;
-			}
-		}
-
-		@Override
-		protected void onPostExecute(String money) {
+		protected void onPostExecute(BaseDTO dto) {
 			setProgressBarIndeterminateVisibility(false);
-			if (this.e == null)
-				((TextView) findViewById(R.id.result)).setText(money);
+			if (dto.isSuccess())
+				((TextView) findViewById(R.id.result)).setText("€ " + ((PedaggioDTO) dto).getPedaggio());
 			else
-				new AlertDialog.Builder(PedaggioActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(e.getMessage()).show();
+				new AlertDialog.Builder(PedaggioActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(dto.getMessage()).show();
 		}
 	}
 }

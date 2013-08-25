@@ -3,8 +3,8 @@ package it.localhost.trafficdroid.activity;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dao.PatenteService;
-import it.localhost.trafficdroid.dto.BaseDto;
-import it.localhost.trafficdroid.dto.PatenteDto;
+import it.localhost.trafficdroid.dto.BaseDTO;
+import it.localhost.trafficdroid.dto.PatenteDTO;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences.Editor;
@@ -57,10 +57,10 @@ public class PatenteActivity extends AbstractActivity {
 		}
 
 		@Override
-		protected void onPostExecute(BaseDto abstractResult) {
+		protected void onPostExecute(BaseDTO abstractResult) {
 			setProgressBarIndeterminateVisibility(false);
 			if (abstractResult.isSuccess()) {
-				PatenteDto patente = (PatenteDto) abstractResult;
+				PatenteDTO patente = (PatenteDTO) abstractResult;
 				((TextView) findViewById(R.id.patenteSaldo)).setText(patente.getSaldo());
 				((TextView) findViewById(R.id.patenteNumero)).setText(patente.getNumeoPatente());
 				((TextView) findViewById(R.id.patenteScadenza)).setText(patente.getScadenzaPatente());

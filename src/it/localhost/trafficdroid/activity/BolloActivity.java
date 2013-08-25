@@ -2,8 +2,8 @@ package it.localhost.trafficdroid.activity;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.dao.BolloService;
-import it.localhost.trafficdroid.dto.BaseDto;
-import it.localhost.trafficdroid.dto.BolloDto;
+import it.localhost.trafficdroid.dto.BaseDTO;
+import it.localhost.trafficdroid.dto.BolloDTO;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -41,11 +41,11 @@ public class BolloActivity extends AbstractActivity {
 		}
 
 		@Override
-		protected void onPostExecute(BaseDto abstractResult) {
+		protected void onPostExecute(BaseDTO abstractResult) {
 			setProgressBarIndeterminateVisibility(false);
 			if (abstractResult.isSuccess()) {
 				Intent intent = new Intent(BolloActivity.this, WebViewActivity.class);
-				intent.putExtra(WebViewActivity.dataTag, ((BolloDto) abstractResult).getBollo());
+				intent.putExtra(WebViewActivity.dataTag, ((BolloDTO) abstractResult).getBollo());
 				startActivity(intent);
 			} else
 				new AlertDialog.Builder(BolloActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(abstractResult.getMessage()).show();

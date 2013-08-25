@@ -1,11 +1,14 @@
 package it.localhost.trafficdroid.dao;
 
-import it.localhost.trafficdroid.exception.BadConfException;
+import it.localhost.trafficdroid.dto.BaseDTO;
+import it.localhost.trafficdroid.dto.PedaggioDTO;
 
 import java.net.URL;
 import java.util.Scanner;
 
-public class PedaggioDAO {
+import android.os.AsyncTask;
+
+public class PedaggioService extends AsyncTask<String, Void, BaseDTO> {
 	private static final String url = "http://autostrade.it/autostrade/ricercaPercorso.do?tipo=G&dtxpDa=";
 	private static final String arg = "&dtxpA=";
 	private static final String spanAperto = "<span class=\"km\">";
@@ -13,17 +16,18 @@ public class PedaggioDAO {
 	private static final String delimiter = "\\A";
 	private static final String badParams = "Parametri non validi";
 
-	public static String getData(int da, int a) throws BadConfException {
+	@Override
+	protected BaseDTO doInBackground(String... args) {
 		try {
-			String s = new Scanner(new URL(url + da + arg + a).openStream()).useDelimiter(delimiter).next();
+			String s = new Scanner(new URL(url + args[0] + arg + args[1]).openStream()).useDelimiter(delimiter).next();
 			int start = s.indexOf(spanAperto);
 			if (start != -1) {
 				start = start + spanAperto.length();
-				return s.substring(start, s.indexOf(and, start)).trim();
+				return new PedaggioDTO(true, s.substring(start, s.indexOf(and, start)).trim());
 			} else
-				throw new BadConfException(badParams);
+				return new BaseDTO(false, badParams);
 		} catch (Exception e) {
-			throw new BadConfException(e.getMessage());
+			return new BaseDTO(false, e.getMessage());
 		}
 	}
 }

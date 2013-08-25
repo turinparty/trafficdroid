@@ -1,7 +1,7 @@
 package it.localhost.trafficdroid.widget.activity;
 
 import it.localhost.trafficdroid.common.Utility;
-import it.localhost.trafficdroid.dao.MainDAO;
+import it.localhost.trafficdroid.dao.PersistanceService;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.widget.provider.WidgetStreetProvider;
@@ -25,7 +25,7 @@ public class WidgetStreetActivity extends ListActivity {
 		setResult(RESULT_CANCELED);
 		List<String> data = new ArrayList<String>();
 		try {
-			dto = MainDAO.retrieve(this);
+			dto = PersistanceService.retrieve(this);
 			for (StreetDTO street : dto.getStreets())
 				data.add(street.getName());
 			setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data));

@@ -6,7 +6,7 @@ import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.common.billing.IabResult;
 import it.localhost.trafficdroid.common.billing.Inventory;
-import it.localhost.trafficdroid.dao.MainDAO;
+import it.localhost.trafficdroid.dao.PersistanceService;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.exception.GenericException;
 import it.localhost.trafficdroid.service.TdListener;
@@ -245,7 +245,7 @@ public class MainActivity extends AbstractActivity {
 		@Override
 		protected MainDTO doInBackground(Void... params) {
 			try {
-				return MainDAO.retrieve(MainActivity.this);
+				return PersistanceService.retrieve(MainActivity.this);
 			} catch (Exception e) {
 				return null;
 			}

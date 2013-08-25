@@ -1,14 +1,14 @@
 package it.localhost.trafficdroid.dao;
 
-import it.localhost.trafficdroid.dto.BaseDto;
-import it.localhost.trafficdroid.dto.BolloDto;
+import it.localhost.trafficdroid.dto.BaseDTO;
+import it.localhost.trafficdroid.dto.BolloDTO;
 
 import java.net.URL;
 import java.util.Scanner;
 
 import android.os.AsyncTask;
 
-public class BolloService extends AsyncTask<String, Void, BaseDto> {
+public class BolloService extends AsyncTask<String, Void, BaseDTO> {
 	private static final String bolloUrl = "https://servizi.aci.it/Bollonet/calcolo.do?LinguaSelezionata=ita&CodiceServizio=2&TipoVeicolo=";
 	private static final String param1 = "&RegioneResidenza=";
 	private static final String param2 = "&Targa=";
@@ -28,7 +28,7 @@ public class BolloService extends AsyncTask<String, Void, BaseDto> {
 	private static final String badParams = "Parametri non validi";
 
 	@Override
-	protected BaseDto doInBackground(String... args) {
+	protected BaseDTO doInBackground(String... args) {
 		try {
 			String out = new Scanner(new URL(bolloUrl + args[0] + param1 + args[1] + param2 + args[2]).openStream()).useDelimiter(delimiter).next();
 			int startBollo = out.indexOf(startDelimiterYes);
@@ -45,11 +45,11 @@ public class BolloService extends AsyncTask<String, Void, BaseDto> {
 				out = out.replaceAll(RM4, BLANK);
 				out = out.replaceAll(RM5, BLANK);
 				out = header + out + footer;
-				return new BolloDto(true, out);
+				return new BolloDTO(true, out);
 			} else
-				return new BaseDto(false, badParams);
+				return new BaseDTO(false, badParams);
 		} catch (Exception e) {
-			return new BaseDto(false, e.getMessage());
+			return new BaseDTO(false, e.getMessage());
 		}
 	}
 }

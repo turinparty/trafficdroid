@@ -1,7 +1,7 @@
 package it.localhost.trafficdroid.widget.activity;
 
 import it.localhost.trafficdroid.common.Utility;
-import it.localhost.trafficdroid.dao.MainDAO;
+import it.localhost.trafficdroid.dao.PersistanceService;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
@@ -31,7 +31,7 @@ public class WidgetZoneActivity extends ExpandableListActivity {
 		List<Map<String, String>> groupData = new ArrayList<Map<String, String>>();
 		List<List<Map<String, String>>> childData = new ArrayList<List<Map<String, String>>>();
 		try {
-			dto = MainDAO.retrieve(this);
+			dto = PersistanceService.retrieve(this);
 			for (StreetDTO street : dto.getStreets()) {
 				Map<String, String> groupElem = new HashMap<String, String>();
 				List<Map<String, String>> brotherData = new ArrayList<Map<String, String>>();
