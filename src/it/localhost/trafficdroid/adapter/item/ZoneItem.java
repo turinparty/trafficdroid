@@ -1,37 +1,16 @@
 package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.activity.AbstractActivity;
-import it.localhost.trafficdroid.activity.WebViewActivity;
 import it.localhost.trafficdroid.dto.ZoneDTO;
-
-import java.util.GregorianCalendar;
-
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Typeface;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.analytics.tracking.android.EasyTracker;
-
 public class ZoneItem extends AbstractItem {
-	private static final String autostrade = "http://mobile.autostrade.it/autostrade-mobile/popupTelecamera.do?tlc=";
-	private static final String cavspa = "http://www.cavspa.it/webcam/temp-imgs/camsbig/";
-	private static final String edidomus = "http://telecamere.edidomus.it/vp2/vpimage.aspx?camid=";
-	private static final String autofiori = "http://www.autofiori.it/cgi-bin/cgiwebcam.exe?site=";
-	private static final String autobspd = "http://www.autobspd.it/images/telecamereAutobspd/";
 	private static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
-	private static final String jpg = ".jpg";
-	private static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);
 	private static final String noDataSpeed = "-";
-	private static final char camAutostrade = 'A';
-	private static final char camCavspa = 'C';
-	private static final char camEdidomus = 'E';
-	private static final char camAutofiori = 'F';
-	private static final char camAutobspd = 'B';
 	private static final char camNone = 'H';
 	private ZoneDTO zoneDTO;
 
@@ -92,10 +71,10 @@ public class ZoneItem extends AbstractItem {
 			trendRightText.setVisibility(View.VISIBLE);
 		} else
 			trendRightText.setVisibility(View.INVISIBLE);
-		if (zoneDTO.getWebcam().charAt(0) == camAutostrade || zoneDTO.getWebcam().charAt(0) == camCavspa || zoneDTO.getWebcam().charAt(0) == camEdidomus || zoneDTO.getWebcam().charAt(0) == camAutofiori || zoneDTO.getWebcam().charAt(0) == camAutobspd)
-			cam.setImageResource(android.R.drawable.ic_menu_camera);
-		else if (zoneDTO.getWebcam().charAt(0) == camNone)
+		if (zoneDTO.getWebcam().charAt(0) == camNone)
 			cam.setImageResource(android.R.drawable.ic_menu_close_clear_cancel);
+		else if (Character.isLetter(zoneDTO.getWebcam().charAt(0)))
+			cam.setImageResource(android.R.drawable.ic_menu_camera);
 		else
 			cam.setImageResource(android.R.drawable.ic_menu_add);
 		if (zoneDTO.isAutoveloxLeft())
@@ -109,39 +88,10 @@ public class ZoneItem extends AbstractItem {
 	}
 
 	public void onClick() {
-		String code = zoneDTO.getWebcam();
-		if (code.charAt(0) == camNone) {
-			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionNone, code, (long) 0);
-			new AlertDialog.Builder(context).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamNone).show();
-		} else if (code.charAt(0) == camAutostrade) {
-			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
-			Intent intent = new Intent(context, WebViewActivity.class);
-			int id = Integer.parseInt(code.substring(1)) + 6280 * (date);
-			intent.putExtra(WebViewActivity.urlTag, autostrade + id);
-			context.startActivity(intent);
-		} else if (code.charAt(0) == camCavspa) {
-			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
-			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.urlTag, cavspa + code.substring(1) + jpg);
-			context.startActivity(intent);
-		} else if (code.charAt(0) == camEdidomus) {
-			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
-			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.urlTag, edidomus + code.substring(1));
-			context.startActivity(intent);
-		} else if (code.charAt(0) == camAutofiori) {
-			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
-			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.urlTag, autofiori + code.substring(1));
-			context.startActivity(intent);
-		} else if (code.charAt(0) == camAutobspd) {
-			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, code, (long) 0);
-			Intent intent = new Intent(context, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.urlTag, autobspd + code.substring(1) + jpg);
-			context.startActivity(intent);
-		} else {
-			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionRequest, code, (long) 0);
-			new AlertDialog.Builder(context).setTitle(R.string.info).setPositiveButton(R.string.ok, null).setMessage(R.string.webcamAdd).show();
-		}
+		((OnZoneItemChildClickListener) context).onZoneItemChildClick(zoneDTO);
+	}
+
+	public interface OnZoneItemChildClickListener {
+		public void onZoneItemChildClick(ZoneDTO zone);
 	}
 }

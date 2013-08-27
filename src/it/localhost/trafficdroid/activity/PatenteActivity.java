@@ -5,7 +5,7 @@ import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dao.PatenteService;
 import it.localhost.trafficdroid.dto.BaseDTO;
 import it.localhost.trafficdroid.dto.PatenteDTO;
-import android.app.AlertDialog;
+import it.localhost.trafficdroid.fragment.MessageDialogFragment;
 import android.content.Context;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
@@ -43,7 +43,7 @@ public class PatenteActivity extends AbstractActivity {
 				if (!usr.equals(BLANK) && !pwd.equals(BLANK))
 					new PatenteAsyncTask().execute(usr, pwd);
 				else
-					new AlertDialog.Builder(PatenteActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(R.string.wrongData).show();
+					new MessageDialogFragment().show(getFragmentManager(), getString(R.string.error), getString(R.string.wrongData), false);
 			}
 		});
 	}
@@ -65,7 +65,7 @@ public class PatenteActivity extends AbstractActivity {
 				((TextView) findViewById(R.id.patenteNumero)).setText(patente.getNumeoPatente());
 				((TextView) findViewById(R.id.patenteScadenza)).setText(patente.getScadenzaPatente());
 			} else
-				new AlertDialog.Builder(PatenteActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(abstractResult.getMessage()).show();
+				new MessageDialogFragment().show(getFragmentManager(), getString(R.string.error), abstractResult.getMessage(), false);
 		}
 	}
 }

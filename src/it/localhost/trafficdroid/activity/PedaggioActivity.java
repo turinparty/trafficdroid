@@ -5,7 +5,7 @@ import it.localhost.trafficdroid.common.ListExit;
 import it.localhost.trafficdroid.dao.PedaggioService;
 import it.localhost.trafficdroid.dto.BaseDTO;
 import it.localhost.trafficdroid.dto.PedaggioDTO;
-import android.app.AlertDialog;
+import it.localhost.trafficdroid.fragment.MessageDialogFragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
@@ -36,7 +36,7 @@ public class PedaggioActivity extends AbstractActivity {
 				if (from != null && to != null)
 					new PedaggioAsyncTask().execute(from, to);
 				else
-					new AlertDialog.Builder(PedaggioActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(R.string.wrongData).show();
+					new MessageDialogFragment().show(getFragmentManager(), getString(R.string.error), getString(R.string.wrongData), false);
 			}
 		});
 	}
@@ -54,7 +54,7 @@ public class PedaggioActivity extends AbstractActivity {
 			if (dto.isSuccess())
 				((TextView) findViewById(R.id.result)).setText("€ " + ((PedaggioDTO) dto).getPedaggio());
 			else
-				new AlertDialog.Builder(PedaggioActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(dto.getMessage()).show();
+				new MessageDialogFragment().show(getFragmentManager(), getString(R.string.error), dto.getMessage(), false);
 		}
 	}
 }

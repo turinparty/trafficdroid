@@ -3,23 +3,25 @@ package it.localhost.trafficdroid.activity;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.MainAdapter;
 import it.localhost.trafficdroid.adapter.item.AbstractItem;
+import it.localhost.trafficdroid.adapter.item.ZoneItem.OnZoneItemChildClickListener;
 import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.common.billing.IabResult;
 import it.localhost.trafficdroid.common.billing.Inventory;
 import it.localhost.trafficdroid.dao.PersistanceService;
 import it.localhost.trafficdroid.dto.MainDTO;
+import it.localhost.trafficdroid.dto.ZoneDTO;
 import it.localhost.trafficdroid.exception.GenericException;
+import it.localhost.trafficdroid.fragment.MessageDialogFragment;
+import it.localhost.trafficdroid.fragment.QuizDialogFragment;
+import it.localhost.trafficdroid.fragment.SetupDialogFragment;
 import it.localhost.trafficdroid.service.TdListener;
 import it.localhost.trafficdroid.service.TdService;
 
-import java.util.Random;
+import java.util.GregorianCalendar;
 
-import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
@@ -38,27 +40,40 @@ import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.Toast;
 
 import com.commonsware.cwac.wakeful.WakefulIntentService;
+import com.google.analytics.tracking.android.EasyTracker;
 
-public class MainActivity extends AbstractActivity {
+public class MainActivity extends AbstractActivity implements OnZoneItemChildClickListener {
+	private static final String autostrade = "http://mobile.autostrade.it/autostrade-mobile/popupTelecamera.do?tlc=";
+	private static final String cavspa = "http://www.cavspa.it/webcam/temp-imgs/camsbig/";
+	private static final String edidomus = "http://telecamere.edidomus.it/vp2/vpimage.aspx?camid=";
+	private static final String autofiori = "http://www.autofiori.it/cgi-bin/cgiwebcam.exe?site=";
+	private static final String autobspd = "http://www.autobspd.it/images/telecamereAutobspd/";
+	private static final String jpg = ".jpg";
+	private static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);
 	private static final String ALCOL_URL = "http://voti.kataweb.it/etilometro/index.php";
-	private static final String APP_URL = "https://code.google.com/p/trafficdroid";
 	private static final String donate = "market://details?id=it.localhost.donate";
 	private static final String removePrefToastUndo = " è stato aggiunto ai preferiti.";
 	private static final String removePrefToast = " è stato rimosso dai preferiti.";
 	private static final String unknownError = "Unknown Error";
+	private static final char camAutostrade = 'A';
+	private static final char camCavspa = 'C';
+	private static final char camEdidomus = 'E';
+	private static final char camAutofiori = 'F';
+	private static final char camAutobspd = 'B';
+	private static final char camNone = 'H';
 	public static final String blank = " ";
 	private ExpandableListView listView;
 	private IntentFilter intentFilter;
 	private TdListener tdListener;
 	private BroadcastReceiver receiver;
-	private String[] questionsTrue, questionFalse;
-	private Random rnd;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
-		//StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
+		// StrictMode.setThreadPolicy(new
+		// StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
+		// StrictMode.setVmPolicy(new
+		// StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
 		setProgressBarIndeterminateVisibility(false);
@@ -68,9 +83,6 @@ public class MainActivity extends AbstractActivity {
 		listView = (ExpandableListView) findViewById(R.id.mainTable);
 		tdListener = new TdListener();
 		receiver = new UpdateReceiver();
-		questionsTrue = getResources().getStringArray(R.array.patenteTrue);
-		questionFalse = getResources().getStringArray(R.array.patenteFalse);
-		rnd = new Random();
 		listView.setOnChildClickListener(new OnChildClickListener() {
 			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 				((AbstractItem) parent.getExpandableListAdapter().getChild(groupPosition, childPosition)).onClick();
@@ -78,19 +90,7 @@ public class MainActivity extends AbstractActivity {
 			}
 		});
 		if (Utility.getPrefString(this, R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault))) {
-			new AlertDialog.Builder(this).setTitle(R.string.warning).setMessage(R.string.badConf).setPositiveButton(R.string.setProvider, new OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
-				}
-			}).setNegativeButton(R.string.betterInfo, new OnClickListener() {
-				@Override
-				public void onClick(DialogInterface arg0, int arg1) {
-					Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-					intent.putExtra(WebViewActivity.urlTag, APP_URL);
-					startActivity(intent);
-				}
-			}).show();
+			new SetupDialogFragment().show(getFragmentManager(), SetupDialogFragment.class.getSimpleName());
 		} else if (Utility.getPrefBoolean(this, R.string.berserkKey, R.string.berserkDefault))
 			tdListener.sendWakefulWork(this);
 	}
@@ -157,7 +157,7 @@ public class MainActivity extends AbstractActivity {
 			launchPurchaseFlow(SKU_AD_FREE);
 			return true;
 		case R.id.menuQuiz:
-			showQuiz(R.string.patenteQuiz);
+			new QuizDialogFragment().show(getFragmentManager(), getString(R.string.patenteQuiz));
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
@@ -170,7 +170,8 @@ public class MainActivity extends AbstractActivity {
 		ExpandableListContextMenuInfo info = (ExpandableListContextMenuInfo) menuInfo;
 		int packedPositionType = ExpandableListView.getPackedPositionType(info.packedPosition);
 		View item = info.targetView;
-		if (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_GROUP || (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_CHILD && ((Integer) item.getTag(R.id.zoneType)) == AbstractItem.itemTypes[4])) {
+		if (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_GROUP || (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_CHILD && ((Integer) item.getTag(R.id.zoneType)) == AbstractItem.itemTypes[4]))
+		{
 			getMenuInflater().inflate(R.menu.main_context, menu);
 			menu.getItem(0).setChecked(Utility.getPrefBoolean(this, Integer.toString((Integer) item.getTag(R.id.itemKey)), false));
 			menu.setHeaderTitle((String) item.getTag(R.id.itemName));
@@ -202,32 +203,48 @@ public class MainActivity extends AbstractActivity {
 	}
 
 	@Override
+	public void onZoneItemChildClick(ZoneDTO zone) {
+		String webcam = zone.getWebcam();
+		if (webcam.charAt(0) == camNone) {
+			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionNone, webcam, (long) 0);
+			new MessageDialogFragment().show(getFragmentManager(), getString(R.string.info), getString(R.string.webcamNone), false);
+		} else if (webcam.charAt(0) == camAutostrade) {
+			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, webcam, (long) 0);
+			Intent intent = new Intent(this, WebViewActivity.class);
+			int id = Integer.parseInt(webcam.substring(1)) + 6280 * (date);
+			intent.putExtra(WebViewActivity.urlTag, autostrade + id);
+			startActivity(intent);
+		} else if (webcam.charAt(0) == camCavspa) {
+			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, webcam, (long) 0);
+			Intent intent = new Intent(this, WebViewActivity.class);
+			intent.putExtra(WebViewActivity.urlTag, cavspa + webcam.substring(1) + jpg);
+			startActivity(intent);
+		} else if (webcam.charAt(0) == camEdidomus) {
+			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, webcam, (long) 0);
+			Intent intent = new Intent(this, WebViewActivity.class);
+			intent.putExtra(WebViewActivity.urlTag, edidomus + webcam.substring(1));
+			startActivity(intent);
+		} else if (webcam.charAt(0) == camAutofiori) {
+			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, webcam, (long) 0);
+			Intent intent = new Intent(this, WebViewActivity.class);
+			intent.putExtra(WebViewActivity.urlTag, autofiori + webcam.substring(1));
+			startActivity(intent);
+		} else if (webcam.charAt(0) == camAutobspd) {
+			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionOpen, webcam, (long) 0);
+			Intent intent = new Intent(this, WebViewActivity.class);
+			intent.putExtra(WebViewActivity.urlTag, autobspd + webcam.substring(1) + jpg);
+			startActivity(intent);
+		} else {
+			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatWebcam, AbstractActivity.eventActionRequest, webcam, (long) 0);
+			new MessageDialogFragment().show(getFragmentManager(), getString(R.string.info), getString(R.string.webcamAdd), false);
+		}
+	}
+
+	@Override
 	public void onQueryInventoryFinished(IabResult result, Inventory inv) {
 		super.onQueryInventoryFinished(result, inv);
 		if (result.isSuccess() && !inv.hasPurchase(SKU_QUIZ_FREE) && !Utility.getPrefString(this, R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
-			showQuiz(R.string.patenteQuiz);
-	}
-
-	public void showQuiz(int title) {
-		final boolean typeQuestion = rnd.nextBoolean();
-		new AlertDialog.Builder(this).setPositiveButton(R.string.trueAns, new OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				if (!typeQuestion)
-					showQuiz(R.string.retry);
-			}
-		}).setNegativeButton(R.string.falseAns, new OnClickListener() {
-			@Override
-			public void onClick(DialogInterface arg0, int arg1) {
-				if (typeQuestion)
-					showQuiz(R.string.retry);
-			}
-		}).setNeutralButton("Skip", new OnClickListener() {
-			@Override
-			public void onClick(DialogInterface arg0, int arg1) {
-				launchPurchaseFlow(SKU_QUIZ_FREE);
-			}
-		}).setTitle(title).setCancelable(false).setMessage(typeQuestion ? questionsTrue[rnd.nextInt(questionsTrue.length)] : questionFalse[rnd.nextInt(questionFalse.length)]).show();
+			new QuizDialogFragment().show(getFragmentManager(), getString(R.string.patenteQuiz));
 	}
 
 	private final class UpdateReceiver extends BroadcastReceiver {
@@ -265,7 +282,7 @@ public class MainActivity extends AbstractActivity {
 			}
 			if (Utility.getPrefBoolean(MainActivity.this, GenericException.exceptionCheck, false)) {
 				String msg = Utility.getPrefString(MainActivity.this, GenericException.exceptionMsg, unknownError);
-				new AlertDialog.Builder(MainActivity.this).setTitle(R.string.error).setPositiveButton(R.string.ok, null).setMessage(msg).show();
+				new MessageDialogFragment().show(getFragmentManager(), getString(R.string.error), msg, false);
 				setTitle(msg);
 				Utility.getEditor(MainActivity.this).putBoolean(GenericException.exceptionCheck, false).commit();
 			}
