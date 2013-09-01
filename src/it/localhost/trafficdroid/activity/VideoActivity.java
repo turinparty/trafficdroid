@@ -3,14 +3,13 @@ package it.localhost.trafficdroid.activity;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.dao.AnasTvService;
 import it.localhost.trafficdroid.fragment.ListDialogFragment;
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-public class VideoActivity extends Activity implements OnClickListener {
+public class VideoActivity extends AbstractActivity implements OnClickListener { // NO_UCD
 	private static final String MP4 = ".mp4";
 	private static final String URL = "http://www.stradeanas.tv/video/news/";
 	private static final String AFTER = " - ";

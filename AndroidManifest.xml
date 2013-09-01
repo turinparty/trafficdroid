@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	package="it.localhost.trafficdroid"
-	android:versionCode="142"
-	android:versionName="1.22.2 applyTheFormula" >
+	android:versionCode="144"
+	android:versionName="1.23.0 BBC" >
 
 	<uses-sdk
 		android:minSdkVersion="13"
@@ -39,6 +39,7 @@
 		<activity android:name=".activity.BolloActivity" />
 		<activity
 			android:name=".activity.VideoActivity"
+			android:screenOrientation="landscape"
 			android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
 		<activity
 			android:name="com.google.ads.AdActivity"

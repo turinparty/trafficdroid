@@ -39,7 +39,7 @@ public class WidgetStreetProvider extends AppWidgetProvider {
 				views.setImageViewResource(R.id.trendRight, street.getTrendRight());
 			}
 		} catch (Exception e) {
-			//Do nothing
+			// Do nothing
 		}
 		appWidgetManager.updateAppWidget(mAppWidgetId, views);
 	}

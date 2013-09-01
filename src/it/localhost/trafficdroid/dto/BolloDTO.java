@@ -1,7 +1,7 @@
 package it.localhost.trafficdroid.dto;
 
 public class BolloDTO extends BaseDTO {
-	String bollo;
+	private String bollo;
 
 	public BolloDTO(boolean success, String bollo) {
 		super(success);

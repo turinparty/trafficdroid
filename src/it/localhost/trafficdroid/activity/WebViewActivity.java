@@ -10,7 +10,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class WebViewActivity extends AbstractActivity {
+public class WebViewActivity extends AbstractActivity { // NO_UCD
 	private static final String AUTOSTRADE_IT = "autostrade.it";
 	public static final String urlTag = "url";
 	public static final String dataTag = "data";

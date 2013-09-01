@@ -1,7 +1,6 @@
 package it.localhost.trafficdroid.adapter;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.activity.AbstractActivity;
 import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.adapter.item.BadNewsItem;
 import it.localhost.trafficdroid.adapter.item.BannerDialogItem;
@@ -9,11 +8,6 @@ import it.localhost.trafficdroid.adapter.item.GraphItem;
 import it.localhost.trafficdroid.adapter.item.StreetItem;
 import it.localhost.trafficdroid.adapter.item.ZoneItem;
 import it.localhost.trafficdroid.common.Utility;
-import it.localhost.trafficdroid.common.billing.IabHelper;
-import it.localhost.trafficdroid.common.billing.IabHelper.OnIabSetupFinishedListener;
-import it.localhost.trafficdroid.common.billing.IabHelper.QueryInventoryFinishedListener;
-import it.localhost.trafficdroid.common.billing.IabResult;
-import it.localhost.trafficdroid.common.billing.Inventory;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
@@ -25,17 +19,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 
-public class MainAdapter extends BaseExpandableListAdapter implements QueryInventoryFinishedListener, OnIabSetupFinishedListener {
+public class MainAdapter extends BaseExpandableListAdapter {
 	public static final String expanded = "Expanded";
 	private ArrayList<AbstractItem> groupItems;
 	private ArrayList<ArrayList<AbstractItem>> childItems;
-	private IabHelper mHelper;
 	private Context context;
 
-	public MainAdapter(Context context, MainDTO mainDTO) {
+	public MainAdapter(Context context, MainDTO mainDTO, boolean isAdFree) {
 		this.context = context;
-		mHelper = new IabHelper(context, AbstractActivity.KEY);
-		mHelper.startSetup(this);
 		groupItems = new ArrayList<AbstractItem>();
 		childItems = new ArrayList<ArrayList<AbstractItem>>();
 		for (StreetDTO street : mainDTO.getStreets()) {
@@ -48,20 +39,10 @@ public class MainAdapter extends BaseExpandableListAdapter implements QueryInven
 				childItems.add(new ZoneItem(context, zone));
 			this.childItems.add(childItems);
 		}
-	}
-
-	@Override
-	public void onIabSetupFinished(IabResult result) {
-		if (result.isSuccess())
-			mHelper.queryInventoryAsync(true, AbstractActivity.additionalSkuList, this);
-	}
-
-	@Override
-	public void onQueryInventoryFinished(IabResult result, Inventory inv) {
 		for (int i = 0; i < childItems.size(); i++) {
 			int size = childItems.get(i).size();
 			for (int j = 0; j < size; j++)
-				if (Math.random() < 0.05 && (!result.isSuccess() || !inv.hasPurchase(AbstractActivity.SKU_AD_FREE))) {
+				if (Math.random() < 0.05 && !isAdFree) {
 					childItems.get(i).add(j++, new BannerDialogItem(context, R.layout.smart_banner));
 					size++;
 				}

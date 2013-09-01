@@ -1,7 +1,7 @@
 package it.localhost.trafficdroid.dto;
 
 public class PedaggioDTO extends BaseDTO {
-	String pedaggio;
+	private String pedaggio;
 
 	public PedaggioDTO(boolean success, String pedaggio) {
 		super(success);

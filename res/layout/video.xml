@@ -5,12 +5,12 @@
 	android:layout_gravity="center"
 	android:orientation="vertical" >
 
+	<include layout="@layout/smart_banner" />
+
 	<VideoView
 		android:id="@+id/videoView"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:layout_gravity="center" />
-
-	<include layout="@layout/iab_mrect" />
 
 </LinearLayout>

@@ -15,7 +15,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-public class BolloActivity extends AbstractActivity {
+public class BolloActivity extends AbstractActivity { // NO_UCD
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

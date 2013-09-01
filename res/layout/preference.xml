@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical" >
 
 	<fragment
-		xmlns:android="http://schemas.android.com/apk/res/android"
 		android:id="@+id/preferences"
 		android:name="it.localhost.trafficdroid.fragment.PreferencesFragment"
 		android:layout_width="match_parent"
 		android:layout_height="0dp"
-		android:layout_weight="1" />
+		android:layout_weight="1"
+		tools:layout="@layout/preferencescreen" />
 
 	<include layout="@layout/smart_banner" />
 

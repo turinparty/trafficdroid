@@ -16,7 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 
-public class PedaggioActivity extends AbstractActivity {
+public class PedaggioActivity extends AbstractActivity { // NO_UCD
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

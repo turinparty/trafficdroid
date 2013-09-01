@@ -16,7 +16,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class PatenteActivity extends AbstractActivity {
+public class PatenteActivity extends AbstractActivity { // NO_UCD
 	private static final String BLANK = "";
 	private static final String PATENTE_PWD = "PatentePwd";
 	private static final String PATENTE_USR = "PatenteUsr";

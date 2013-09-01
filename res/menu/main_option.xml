@@ -42,14 +42,14 @@
 		android:showAsAction="ifRoom"
 		android:title="@string/settings"/>
 	<item
-		android:id="@+id/menuPremium"
+		android:id="@+id/menuAdFree"
 		android:icon="@android:drawable/ic_menu_edit"
 		android:showAsAction="ifRoom"
-		android:title="@string/premium"/>
+		android:title="@string/adFreeButton"/>
 	<item
-		android:id="@+id/menuDonate"
+		android:id="@+id/menuInterstitialFree"
 		android:icon="@android:drawable/ic_menu_edit"
 		android:showAsAction="ifRoom"
-		android:title="@string/donate"/>
+		android:title="@string/interstitialFreeButton"/>
 
 </menu>

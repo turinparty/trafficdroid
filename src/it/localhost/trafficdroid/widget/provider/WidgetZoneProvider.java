@@ -44,7 +44,7 @@ public class WidgetZoneProvider extends AppWidgetProvider {
 				}
 			}
 		} catch (Exception e) {
-			//Do nothing
+			// Do nothing
 		}
 		appWidgetManager.updateAppWidget(mAppWidgetId, views);
 	}

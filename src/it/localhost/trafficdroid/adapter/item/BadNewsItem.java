@@ -1,17 +1,10 @@
 package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.activity.AbstractActivity;
-import it.localhost.trafficdroid.adapter.BadNewsDialogAdapter;
 import it.localhost.trafficdroid.dto.StreetDTO;
-import android.app.Dialog;
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.TextView;
-
-import com.google.analytics.tracking.android.EasyTracker;
 
 public class BadNewsItem extends AbstractItem {
 	static final String badNewsLabel = "Bad News: ";
@@ -47,14 +40,10 @@ public class BadNewsItem extends AbstractItem {
 	}
 
 	public void onClick() {
-		if (streetDTO.getBadNews().size() != 0) {
-			EasyTracker.getTracker().sendEvent(AbstractActivity.eventCatBadNews, AbstractActivity.eventActionOpen, streetDTO.getName(), (long) 0);
-			Dialog dialog = new Dialog(context);
-			dialog.setTitle(streetDTO.getName());
-			ListView listview = (ListView) LayoutInflater.from(context).inflate(R.layout.dialog_badnews, null);
-			listview.setAdapter(new BadNewsDialogAdapter(context, streetDTO));
-			dialog.setContentView(listview);
-			dialog.show();
-		}
+		((OnBadNewsItemClickListener) context).onBadNewsItemClick(streetDTO);
+	}
+
+	public interface OnBadNewsItemClickListener {
+		public void onBadNewsItemClick(StreetDTO streetDTO);
 	}
 }
