@@ -72,8 +72,10 @@ public class MainActivity extends AbstractActivity implements OnZoneItemChildCli
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		android.os.StrictMode.setThreadPolicy(new android.os.StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
-		android.os.StrictMode.setVmPolicy(new android.os.StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
+		// android.os.StrictMode.setThreadPolicy(new
+		// android.os.StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
+		// android.os.StrictMode.setVmPolicy(new
+		// android.os.StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setContentView(R.layout.main);
 		setProgressBarIndeterminateVisibility(false);

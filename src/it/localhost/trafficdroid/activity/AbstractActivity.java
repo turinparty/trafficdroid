@@ -30,6 +30,8 @@ import com.google.analytics.tracking.android.EasyTracker;
 
 public abstract class AbstractActivity extends Activity { // NO_UCD
 	private static final String IN_APP_BILLING_SERVICE = "com.android.vending.billing.InAppBillingService.BIND";
+	private static final String AD_FREE = "adFree";
+	private static final String INTERSTITIAL_FREE = "interstitialFree";
 	public static final String EVENT_CAT_WEBCAM = "Webcam";
 	public static final String EVENT_CAT_BADNEWS = "BadNews";
 	public static final String EVENT_CAT_IAB = "InAppBilling";
@@ -51,7 +53,6 @@ public abstract class AbstractActivity extends Activity { // NO_UCD
 	private static final String KEY_FACTORY_ALGORITHM = "RSA";
 	private static final String SIGNATURE_ALGORITHM = "SHA1withRSA";
 	private static final String KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgg7ckVCx3779Q4Dq99wMFYlwS4+jmbrTtBjLzG2cL4xoz6pZhLct4vIL2sfhA588Vfp4vRDHaIN3lpiCOGIxWRxI3krOoF+n1G/F9kUdiGaK4hYMPYa41MPbG6wc9tWJgcGe0PdYExCmeIvFiQrc4HU63J9zN+C1HRqw1t91YC2vzyZFxNLoIp3kcoz6rBCopm4GA01ZPZrP5RTR2hiJLrDVJl5mzuDrl7yoMq6OQ1SasVaWkgN7yTDyh9Df9hv5FsE8haVFddSJfTEh4BFZcFSW+17xgeImNtCgDtQ/GuTG3FIOiOotugIa1OjKC4z5zbZFl8Zz+cz8fFOxzfLkTQIDAQAB";
-	private boolean adFree, interstitialFree;
 	private IInAppBillingService inAppBillingService;
 	private ServiceConnection serviceConnection;
 
@@ -92,11 +93,11 @@ public abstract class AbstractActivity extends Activity { // NO_UCD
 	}
 
 	public boolean isAdFree() {
-		return adFree;
+		return Utility.getPrefBoolean(this, AD_FREE, false);
 	}
 
 	public boolean isInterstitialFree() {
-		return interstitialFree;
+		return Utility.getPrefBoolean(this, INTERSTITIAL_FREE, false);
 	}
 
 	private class TdServiceConnection implements ServiceConnection {
@@ -149,12 +150,12 @@ public abstract class AbstractActivity extends Activity { // NO_UCD
 		protected void onPostExecute(ArrayList<String> result) {
 			super.onPostExecute(result);
 			if (result.contains(SKU_AD_FREE)) {
-				adFree = true;
+				Utility.getEditor(AbstractActivity.this).putBoolean(AD_FREE, true).commit();
 				findViewById(R.id.ad).setVisibility(View.GONE);
 				invalidateOptionsMenu();
 			}
 			if (result.contains(SKU_INTERSTITIAL_FREE))
-				interstitialFree = true;
+				Utility.getEditor(AbstractActivity.this).putBoolean(INTERSTITIAL_FREE, true).commit();
 			else if (!(AbstractActivity.this instanceof MainActivity)) {
 				InterstitialAd interstitial = new InterstitialAd(AbstractActivity.this, getString(R.string.adUnitId));
 				interstitial.setAdListener(new TdAdListener());
