@@ -7,6 +7,7 @@ import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.adapter.item.BadNewsItem.OnBadNewsItemClickListener;
 import it.localhost.trafficdroid.adapter.item.ZoneItem.OnZoneItemChildClickListener;
 import it.localhost.trafficdroid.common.Utility;
+import it.localhost.trafficdroid.dao.MuoviRomaService;
 import it.localhost.trafficdroid.dao.PersistanceService;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
@@ -95,6 +96,7 @@ public class MainActivity extends AbstractActivity implements OnZoneItemChildCli
 			new SetupDialogFragment().show(getFragmentManager(), SetupDialogFragment.class.getSimpleName());
 		} else if (Utility.getPrefBoolean(this, R.string.berserkKey, R.string.berserkDefault))
 			tdListener.sendWakefulWork(this);
+		new MuoviRomaService().execute();
 	}
 
 	@Override
@@ -130,41 +132,41 @@ public class MainActivity extends AbstractActivity implements OnZoneItemChildCli
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.menuSettings:
-			startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
-			return true;
-		case R.id.menuNews:
-			startActivity(new Intent(MainActivity.this, VideoActivity.class));
-			return true;
-		case R.id.menuRefresh:
-			if (!Utility.getPrefString(this, R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
-				tdListener.sendWakefulWork(this);
-			return true;
-		case R.id.menuMoney:
-			startActivity(new Intent(MainActivity.this, PedaggioActivity.class));
-			return true;
-		case R.id.menuPatente:
-			startActivity(new Intent(MainActivity.this, PatenteActivity.class));
-			return true;
-		case R.id.menuBollo:
-			startActivity(new Intent(MainActivity.this, BolloActivity.class));
-			return true;
-		case R.id.menuAlcol:
-			Intent intent = new Intent(this, WebViewActivity.class);
-			intent.putExtra(WebViewActivity.urlTag, ALCOL_URL);
-			startActivity(intent);
-			return true;
-		case R.id.menuAdFree:
-			launchPurchaseFlow(SKU_AD_FREE);
-			return true;
-		case R.id.menuInterstitialFree:
-			launchPurchaseFlow(SKU_INTERSTITIAL_FREE);
-			return true;
-		case R.id.menuQuiz:
-			new QuizDialogFragment().show(getFragmentManager(), getString(R.string.patenteQuiz));
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
+			case R.id.menuSettings:
+				startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
+				return true;
+			case R.id.menuNews:
+				startActivity(new Intent(MainActivity.this, VideoActivity.class));
+				return true;
+			case R.id.menuRefresh:
+				if (!Utility.getPrefString(this, R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
+					tdListener.sendWakefulWork(this);
+				return true;
+			case R.id.menuMoney:
+				startActivity(new Intent(MainActivity.this, PedaggioActivity.class));
+				return true;
+			case R.id.menuPatente:
+				startActivity(new Intent(MainActivity.this, PatenteActivity.class));
+				return true;
+			case R.id.menuBollo:
+				startActivity(new Intent(MainActivity.this, BolloActivity.class));
+				return true;
+			case R.id.menuAlcol:
+				Intent intent = new Intent(this, WebViewActivity.class);
+				intent.putExtra(WebViewActivity.urlTag, ALCOL_URL);
+				startActivity(intent);
+				return true;
+			case R.id.menuAdFree:
+				launchPurchaseFlow(SKU_AD_FREE);
+				return true;
+			case R.id.menuInterstitialFree:
+				launchPurchaseFlow(SKU_INTERSTITIAL_FREE);
+				return true;
+			case R.id.menuQuiz:
+				new QuizDialogFragment().show(getFragmentManager(), getString(R.string.patenteQuiz));
+				return true;
+			default:
+				return super.onOptionsItemSelected(item);
 		}
 	}
 
@@ -174,8 +176,7 @@ public class MainActivity extends AbstractActivity implements OnZoneItemChildCli
 		ExpandableListContextMenuInfo info = (ExpandableListContextMenuInfo) menuInfo;
 		int packedPositionType = ExpandableListView.getPackedPositionType(info.packedPosition);
 		View item = info.targetView;
-		if (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_GROUP || (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_CHILD && ((Integer) item.getTag(R.id.zoneType)) == AbstractItem.itemTypes[4]))
-		{
+		if (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_GROUP || (packedPositionType == ExpandableListView.PACKED_POSITION_TYPE_CHILD && ((Integer) item.getTag(R.id.zoneType)) == AbstractItem.itemTypes[4])) {
 			getMenuInflater().inflate(R.menu.main_context, menu);
 			menu.getItem(0).setChecked(Utility.getPrefBoolean(this, Integer.toString((Integer) item.getTag(R.id.itemKey)), false));
 			menu.setHeaderTitle((String) item.getTag(R.id.itemName));
@@ -188,21 +189,21 @@ public class MainActivity extends AbstractActivity implements OnZoneItemChildCli
 		String itemKey = Integer.toString((Integer) v.getTag(R.id.itemKey));
 		String itemName = (String) v.getTag(R.id.itemName);
 		switch (item.getItemId()) {
-		case R.id.removePref:
-			String msg;
-			if (Utility.getPrefBoolean(this, itemKey, false)) {
-				item.setChecked(false);
-				Utility.getEditor(this).putBoolean(itemKey, false).commit();
-				msg = removePrefToast;
-			} else {
-				item.setChecked(true);
-				Utility.getEditor(this).putBoolean(itemKey, true).commit();
-				msg = removePrefToastUndo;
-			}
-			Toast.makeText(this, itemName + msg, Toast.LENGTH_SHORT).show();
-			return true;
-		default:
-			return super.onContextItemSelected(item);
+			case R.id.removePref:
+				String msg;
+				if (Utility.getPrefBoolean(this, itemKey, false)) {
+					item.setChecked(false);
+					Utility.getEditor(this).putBoolean(itemKey, false).commit();
+					msg = removePrefToast;
+				} else {
+					item.setChecked(true);
+					Utility.getEditor(this).putBoolean(itemKey, true).commit();
+					msg = removePrefToastUndo;
+				}
+				Toast.makeText(this, itemName + msg, Toast.LENGTH_SHORT).show();
+				return true;
+			default:
+				return super.onContextItemSelected(item);
 		}
 	}
 
