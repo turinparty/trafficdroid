@@ -1,0 +1,56 @@
+package it.localhost.trafficdroid.fragment;
+
+import it.localhost.trafficdroid.R;
+import android.app.AlertDialog.Builder;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.FragmentManager;
+import android.graphics.Point;
+import android.os.Bundle;
+import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+
+public class WebviewDialogFragment extends DialogFragment {
+	private static final String AUTOSTRADE_IT = "autostrade.it";
+	public static final String TAG_URL = "url";
+	public static final String TAG_DATA = "data";
+
+	@Override
+	public Dialog onCreateDialog(Bundle savedInstanceState) {
+		Builder builder = new Builder(getActivity());
+		View v = getActivity().getLayoutInflater().inflate(R.layout.webview, null);
+		WebView webView = (WebView) v.findViewById(R.id.webview);
+		webView.setWebViewClient(new WebViewClient());
+		webView.getSettings().setJavaScriptEnabled(true);
+		webView.getSettings().setLoadWithOverviewMode(true);
+		webView.getSettings().setBuiltInZoomControls(true);
+		webView.getSettings().setUseWideViewPort(true);
+		String url = getArguments().getString(TAG_URL);
+		String data = getArguments().getString(TAG_DATA);
+		if (url != null) {
+			if (url.length() > 26 && url.substring(14, 27).equals(AUTOSTRADE_IT)) {
+				Point size = new Point();
+				getActivity().getWindowManager().getDefaultDisplay().getSize(size);
+				if (size.x > 768)
+					url = url + "&ua=Mozilla/5.0%20(iPad;%20U;%20CPU%20iPhone%20OS%203_2%20like%20Mac%20OS%20X;%20en-us)%20AppleWebKit/531.21.10";
+				else if (size.x > 320)
+					url = url + "&ua=Android%201.1";
+				else
+					url = url + "&ua=NokiaE51";
+			}
+			webView.loadUrl(url);
+		} else if (data != null)
+			webView.loadData(data, "text/html", null);
+		builder.setView(v);
+		return builder.create();
+	}
+
+	public void show(FragmentManager fragmentManager, String url, String data) {
+		Bundle arguments = new Bundle(2);
+		arguments.putString(TAG_URL, url);
+		arguments.putString(TAG_DATA, data);
+		setArguments(arguments);
+		show(fragmentManager, WebviewDialogFragment.class.getSimpleName());
+	}
+}
