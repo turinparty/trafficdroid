@@ -10,21 +10,22 @@ import android.os.Bundle;
 public class ListDialogFragment extends DialogFragment {
 	private static final String TITLE = "title";
 	private static final String LIST = "list";
+	private OnClickListener onClickListener;
 
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		Builder builder = new Builder(getActivity());
 		builder.setTitle(getArguments().getInt(TITLE));
-		builder.setItems(getArguments().getStringArray(LIST), (OnClickListener) getActivity());
+		builder.setItems(getArguments().getStringArray(LIST), onClickListener);
 		return builder.create();
 	}
 
-	public void show(FragmentManager fragmentManager, int title, String[] list) {
-		ListDialogFragment dialog = new ListDialogFragment();
+	public void show(FragmentManager fragmentManager, int title, String[] list, OnClickListener onClickListener) {
+		this.onClickListener = onClickListener;
 		Bundle bundle = new Bundle(2);
 		bundle.putStringArray(LIST, list);
 		bundle.putInt(TITLE, title);
-		dialog.setArguments(bundle);
-		dialog.show(fragmentManager, ListDialogFragment.class.getSimpleName());
+		setArguments(bundle);
+		show(fragmentManager, ListDialogFragment.class.getSimpleName());
 	}
 }

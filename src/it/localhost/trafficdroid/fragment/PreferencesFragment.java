@@ -1,7 +1,6 @@
 package it.localhost.trafficdroid.fragment;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.ListZoneResId;
 import it.localhost.trafficdroid.common.ListZoneResName;
 import android.os.Bundle;
@@ -34,7 +33,7 @@ public class PreferencesFragment extends PreferenceFragment { // NO_UCD
 		streetsCategory.setTitle(R.string.mappedSreet);
 		for (int i = 0; i < streetId.length; i++) {
 			if (streetFather[i] == 0) {
-				PreferenceScreen streetScreen = addStreetScreen(streetsCategory, streetId[i], streetTag[i] + MainActivity.blank + streetName[i]);
+				PreferenceScreen streetScreen = addStreetScreen(streetsCategory, streetId[i], streetTag[i] + " " + streetName[i]);
 				PreferenceCategory subStreetCategory = null;
 				for (int j = 0; j < streetFather.length; j++) {
 					if (streetFather[j] == streetId[i]) {
@@ -43,7 +42,7 @@ public class PreferencesFragment extends PreferenceFragment { // NO_UCD
 							streetScreen.addPreference(subStreetCategory);
 							subStreetCategory.setTitle(R.string.diramation);
 						}
-						setZonesCategory(addStreetScreen(subStreetCategory, streetId[j], streetTag[j] + MainActivity.blank + streetName[j]), streetId[j]);
+						setZonesCategory(addStreetScreen(subStreetCategory, streetId[j], streetTag[j] + " " + streetName[j]), streetId[j]);
 					}
 				}
 				setZonesCategory(streetScreen, streetId[i]);

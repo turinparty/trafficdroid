@@ -5,8 +5,8 @@ import it.localhost.trafficdroid.dao.BolloService;
 import it.localhost.trafficdroid.dto.BaseDTO;
 import it.localhost.trafficdroid.dto.BolloDTO;
 import it.localhost.trafficdroid.fragment.MessageDialogFragment;
+import it.localhost.trafficdroid.fragment.WebviewDialogFragment;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -43,11 +43,9 @@ public class BolloActivity extends AbstractActivity { // NO_UCD
 		@Override
 		protected void onPostExecute(BaseDTO abstractResult) {
 			setProgressBarIndeterminateVisibility(false);
-			if (abstractResult.isSuccess()) {
-				Intent intent = new Intent(BolloActivity.this, WebViewActivity.class);
-				intent.putExtra(WebViewActivity.dataTag, ((BolloDTO) abstractResult).getBollo());
-				startActivity(intent);
-			} else
+			if (abstractResult.isSuccess())
+				new WebviewDialogFragment().show(getFragmentManager(), null, ((BolloDTO) abstractResult).getBollo());
+			else
 				new MessageDialogFragment().show(getFragmentManager(), getString(R.string.error), abstractResult.getMessage(), false);
 		}
 	}

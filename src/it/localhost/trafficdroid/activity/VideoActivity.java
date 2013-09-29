@@ -41,7 +41,7 @@ public class VideoActivity extends AbstractActivity implements OnClickListener {
 			String[] item = new String[result.length];
 			for (int i = 0; i < result.length; i++)
 				item[i] = result[i].replaceAll(BEFORE, AFTER);
-			new ListDialogFragment().show(getFragmentManager(), R.string.anasTv, item);
+			new ListDialogFragment().show(getFragmentManager(), R.string.anasTv, item, VideoActivity.this);
 		}
 	}
 }

@@ -2,7 +2,6 @@ package it.localhost.trafficdroid.fragment;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.PreferencesActivity;
-import it.localhost.trafficdroid.activity.WebViewActivity;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -28,9 +27,7 @@ public class SetupDialogFragment extends DialogFragment {
 		builder.setNegativeButton(R.string.betterInfo, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface arg0, int arg1) {
-				Intent intent = new Intent(getActivity(), WebViewActivity.class);
-				intent.putExtra(WebViewActivity.urlTag, APP_URL);
-				startActivity(intent);
+				new WebviewDialogFragment().show(getFragmentManager(), APP_URL, null);
 			}
 		});
 		setCancelable(false);
