@@ -1,13 +1,18 @@
 package it.localhost.trafficdroid.fragment;
 
+import com.google.ads.AdRequest;
+import com.google.ads.InterstitialAd;
+
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.activity.AbstractActivity;
+import it.localhost.trafficdroid.common.TdAdListener;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.FragmentManager;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.view.View;
+import android.view.WindowManager.LayoutParams;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -19,8 +24,7 @@ public class WebviewDialogFragment extends DialogFragment {
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		Builder builder = new Builder(getActivity());
-		View v = getActivity().getLayoutInflater().inflate(R.layout.webview, null);
-		WebView webView = (WebView) v.findViewById(R.id.webview);
+		WebView webView = (WebView) getActivity().getLayoutInflater().inflate(R.layout.webview, null);
 		webView.setWebViewClient(new WebViewClient());
 		webView.getSettings().setJavaScriptEnabled(true);
 		webView.getSettings().setLoadWithOverviewMode(true);
@@ -42,8 +46,17 @@ public class WebviewDialogFragment extends DialogFragment {
 			webView.loadUrl(url);
 		} else if (data != null)
 			webView.loadData(data, "text/html", null);
-		builder.setView(v);
-		return builder.create();
+		builder.setView(webView);
+		if (!((AbstractActivity) getActivity()).isInterstitialFree()) {
+			InterstitialAd interstitial = new InterstitialAd(getActivity(), getString(R.string.adUnitId));
+			interstitial.setAdListener(new TdAdListener());
+			AdRequest adRequest = new AdRequest();
+			adRequest.addTestDevice(getString(R.string.testDevices));
+			interstitial.loadAd(adRequest);
+		}
+		Dialog d = builder.create();
+		d.getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+		return d;
 	}
 
 	public void show(FragmentManager fragmentManager, String url, String data) {

@@ -1,15 +1,19 @@
-package it.localhost.trafficdroid.fragment;
+package it.localhost.trafficdroid.tabFragment;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.ListZoneResId;
 import it.localhost.trafficdroid.common.ListZoneResName;
+import android.app.FragmentTransaction;
+import android.app.ActionBar.Tab;
+import android.app.ActionBar.TabListener;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 
-public class PreferencesFragment extends PreferenceFragment { // NO_UCD
+public class PreferencesFragment extends PreferenceFragment implements TabListener { // NO_UCD
 	private static final String autovelox = "Autovelox";
 	public static final String autoveloxNone = "0";
 	private int[] autoveloxStreet;
@@ -20,6 +24,7 @@ public class PreferencesFragment extends PreferenceFragment { // NO_UCD
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.layout.preferencescreen);
+		PreferenceManager.setDefaultValues(getActivity(), R.layout.preferencescreen, false);
 		int[] streetId = getResources().getIntArray(R.array.streetId);
 		String[] streetName = getResources().getStringArray(R.array.streetName);
 		String[] streetTag = getResources().getStringArray(R.array.streetTag);
@@ -48,6 +53,19 @@ public class PreferencesFragment extends PreferenceFragment { // NO_UCD
 				setZonesCategory(streetScreen, streetId[i]);
 			}
 		}
+	}
+
+	@Override
+	public void onTabReselected(Tab tab, FragmentTransaction ft) {
+	}
+
+	@Override
+	public void onTabSelected(Tab tab, FragmentTransaction ft) {
+		ft.replace(android.R.id.content, this);
+	}
+
+	@Override
+	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 	}
 
 	private PreferenceScreen addStreetScreen(PreferenceCategory streetsCategory, int streetId, String streetName) {

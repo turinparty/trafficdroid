@@ -1,13 +1,11 @@
 package it.localhost.trafficdroid.fragment;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.activity.PreferencesActivity;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
-import android.content.Intent;
 import android.os.Bundle;
 
 public class SetupDialogFragment extends DialogFragment {
@@ -21,7 +19,7 @@ public class SetupDialogFragment extends DialogFragment {
 		builder.setPositiveButton(R.string.setProvider, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				startActivity(new Intent(getActivity(), PreferencesActivity.class));
+				getActivity().getActionBar().setSelectedNavigationItem(5);
 			}
 		});
 		builder.setNegativeButton(R.string.betterInfo, new OnClickListener() {

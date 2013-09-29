@@ -1,4 +1,4 @@
-package it.localhost.trafficdroid.fragment;
+package it.localhost.trafficdroid.tabFragment;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.MainAdapter;
@@ -7,9 +7,14 @@ import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dao.PersistanceService;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.exception.GenericException;
+import it.localhost.trafficdroid.fragment.MessageDialogFragment;
+import it.localhost.trafficdroid.fragment.SetupDialogFragment;
 import it.localhost.trafficdroid.service.TdListener;
 import it.localhost.trafficdroid.service.TdService;
+import android.app.ActionBar.Tab;
+import android.app.ActionBar.TabListener;
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -17,17 +22,17 @@ import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
 import android.widget.ExpandableListView.ExpandableListContextMenuInfo;
 import android.widget.ExpandableListView.OnChildClickListener;
+import android.widget.Toast;
 
-public class MainFragment extends Fragment {
+public class MainFragment extends Fragment implements TabListener {
 	private ExpandableListView listView;
 	private IntentFilter intentFilter;
 	private BroadcastReceiver receiver;
@@ -89,22 +94,35 @@ public class MainFragment extends Fragment {
 		String itemKey = Integer.toString((Integer) v.getTag(R.id.itemKey));
 		String itemName = (String) v.getTag(R.id.itemName);
 		switch (item.getItemId()) {
-			case R.id.removePref:
-				String msg;
-				if (Utility.getPrefBoolean(getActivity(), itemKey, false)) {
-					item.setChecked(false);
-					Utility.getEditor(getActivity()).putBoolean(itemKey, false).commit();
-					msg = removePrefToast;
-				} else {
-					item.setChecked(true);
-					Utility.getEditor(getActivity()).putBoolean(itemKey, true).commit();
-					msg = removePrefToastUndo;
-				}
-				Toast.makeText(getActivity(), itemName + msg, Toast.LENGTH_SHORT).show();
-				return true;
-			default:
-				return super.onContextItemSelected(item);
+		case R.id.removePref:
+			String msg;
+			if (Utility.getPrefBoolean(getActivity(), itemKey, false)) {
+				item.setChecked(false);
+				Utility.getEditor(getActivity()).putBoolean(itemKey, false).commit();
+				msg = removePrefToast;
+			} else {
+				item.setChecked(true);
+				Utility.getEditor(getActivity()).putBoolean(itemKey, true).commit();
+				msg = removePrefToastUndo;
+			}
+			Toast.makeText(getActivity(), itemName + msg, Toast.LENGTH_SHORT).show();
+			return true;
+		default:
+			return super.onContextItemSelected(item);
 		}
+	}
+
+	@Override
+	public void onTabReselected(Tab tab, FragmentTransaction ft) {
+	}
+
+	@Override
+	public void onTabSelected(Tab tab, FragmentTransaction ft) {
+		ft.replace(android.R.id.content, new MainFragment());
+	}
+
+	@Override
+	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 	}
 
 	private final class UpdateReceiver extends BroadcastReceiver {

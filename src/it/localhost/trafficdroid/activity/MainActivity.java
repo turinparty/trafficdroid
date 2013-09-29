@@ -1,13 +1,5 @@
 package it.localhost.trafficdroid.activity;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
-
-import com.commonsware.cwac.wakeful.WakefulIntentService;
-import com.google.analytics.tracking.android.EasyTracker;
-
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.BadNewsDialogAdapter;
 import it.localhost.trafficdroid.adapter.item.BadNewsItem.OnBadNewsItemClickListener;
@@ -16,19 +8,28 @@ import it.localhost.trafficdroid.adapter.item.ZoneItem.OnZoneItemChildClickListe
 import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
-import it.localhost.trafficdroid.fragment.MainListener;
 import it.localhost.trafficdroid.fragment.MessageDialogFragment;
 import it.localhost.trafficdroid.fragment.QuizDialogFragment;
-import it.localhost.trafficdroid.fragment.VideoListener;
 import it.localhost.trafficdroid.fragment.WebviewDialogFragment;
 import it.localhost.trafficdroid.service.TdListener;
 import it.localhost.trafficdroid.service.TdService;
+import it.localhost.trafficdroid.tabFragment.BolloFragment;
+import it.localhost.trafficdroid.tabFragment.MainFragment;
+import it.localhost.trafficdroid.tabFragment.PatenteFragment;
+import it.localhost.trafficdroid.tabFragment.PedaggioFragment;
+import it.localhost.trafficdroid.tabFragment.PreferencesFragment;
+import it.localhost.trafficdroid.tabFragment.VideoFragment;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Locale;
+
 import android.app.ActionBar;
-import android.app.Dialog;
 import android.app.ActionBar.Tab;
+import android.app.Dialog;
 import android.app.NotificationManager;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -36,7 +37,11 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.widget.ListView;
 
-public class MainActivity extends AbstractActivity implements OnZoneItemChildClickListener, OnBadNewsItemClickListener,OnGraphItemClickListener { // NO_UCD
+import com.commonsware.cwac.wakeful.WakefulIntentService;
+import com.google.analytics.tracking.android.EasyTracker;
+
+public class MainActivity extends AbstractActivity implements OnZoneItemChildClickListener, OnBadNewsItemClickListener, OnGraphItemClickListener { // NO_UCD
+	private static final String ALCOL_URL = "http://voti.kataweb.it/etilometro/index.php";
 	private static final String autostrade = "http://mobile.autostrade.it/autostrade-mobile/popupTelecamera.do?tlc=";
 	private static final String cavspa = "http://www.cavspa.it/webcam/temp-imgs/camsbig/";
 	private static final String edidomus = "http://telecamere.edidomus.it/vp2/vpimage.aspx?camid=";
@@ -66,12 +71,28 @@ public class MainActivity extends AbstractActivity implements OnZoneItemChildCli
 		bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		Tab tab = bar.newTab();
 		tab.setText("Main");
-		tab.setTabListener(new MainListener());
+		tab.setTabListener(new MainFragment());
 		bar.addTab(tab);
 		Tab tab2 = bar.newTab();
 		tab2.setText("Video");
-		tab2.setTabListener(new VideoListener());
+		tab2.setTabListener(new VideoFragment());
 		bar.addTab(tab2);
+		Tab tab3 = bar.newTab();
+		tab3.setText("Pedaggio");
+		tab3.setTabListener(new PedaggioFragment());
+		bar.addTab(tab3);
+		Tab tab4 = bar.newTab();
+		tab4.setText("Patente");
+		tab4.setTabListener(new PatenteFragment());
+		bar.addTab(tab4);
+		Tab tab5 = bar.newTab();
+		tab5.setText("Bollo");
+		tab5.setTabListener(new BolloFragment());
+		bar.addTab(tab5);
+		Tab tab6 = bar.newTab();
+		tab6.setText("settings");
+		tab6.setTabListener(new PreferencesFragment());
+		bar.addTab(tab6);
 	}
 
 	@Override
@@ -99,24 +120,24 @@ public class MainActivity extends AbstractActivity implements OnZoneItemChildCli
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-			case R.id.menuQuiz:
-				new QuizDialogFragment().show(getFragmentManager(), getString(R.string.patenteQuiz));
-				return true;
-			case R.id.menuRefresh:
-				if (!Utility.getPrefString(this, R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
-					new TdListener().sendWakefulWork(this);
-				return true;
-			case R.id.menuSettings:
-				startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
-				return true;
-			case R.id.menuAdFree:
-				launchPurchaseFlow(SKU_AD_FREE);
-				return true;
-			case R.id.menuInterstitialFree:
-				launchPurchaseFlow(SKU_INTERSTITIAL_FREE);
-				return true;
-			default:
-				return super.onOptionsItemSelected(item);
+		case R.id.menuAlcol:
+			new WebviewDialogFragment().show(getFragmentManager(), ALCOL_URL, null);
+			return true;
+		case R.id.menuQuiz:
+			new QuizDialogFragment().show(getFragmentManager(), getString(R.string.patenteQuiz));
+			return true;
+		case R.id.menuRefresh:
+			if (!Utility.getPrefString(this, R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
+				new TdListener().sendWakefulWork(this);
+			return true;
+		case R.id.menuAdFree:
+			launchPurchaseFlow(SKU_AD_FREE);
+			return true;
+		case R.id.menuInterstitialFree:
+			launchPurchaseFlow(SKU_INTERSTITIAL_FREE);
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
 		}
 	}
 
