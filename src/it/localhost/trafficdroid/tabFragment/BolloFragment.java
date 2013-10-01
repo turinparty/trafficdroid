@@ -1,10 +1,8 @@
 package it.localhost.trafficdroid.tabFragment;
 
-import com.google.ads.AdRequest;
-import com.google.ads.InterstitialAd;
-
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.AbstractActivity;
+import it.localhost.trafficdroid.common.AutoFocusTextWatcher;
 import it.localhost.trafficdroid.common.TdAdListener;
 import it.localhost.trafficdroid.fragment.WebviewDialogFragment;
 import android.app.ActionBar.Tab;
@@ -19,6 +17,9 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.google.ads.AdRequest;
+import com.google.ads.InterstitialAd;
+
 public class BolloFragment extends Fragment implements TabListener {
 	private static final String bolloUrl = "https://servizi.aci.it/Bollonet/calcolo.do?LinguaSelezionata=ita&CodiceServizio=2&TipoVeicolo=";
 	private static final String param1 = "&RegioneResidenza=";
@@ -32,9 +33,11 @@ public class BolloFragment extends Fragment implements TabListener {
 		targaA = (EditText) v.findViewById(R.id.targaA);
 		targaB = (EditText) v.findViewById(R.id.targaB);
 		targaC = (EditText) v.findViewById(R.id.targaC);
+		new AutoFocusTextWatcher(targaA, 2);
+		new AutoFocusTextWatcher(targaB, 3);
+		new AutoFocusTextWatcher(targaC, 2);
 		tipoVeicolo = (Spinner) v.findViewById(R.id.tipoVeicolo);
 		regioneResidenza = (Spinner) v.findViewById(R.id.regioneResidenza);
-		//setTitle(R.string.bollo);
 		getActivity().setProgressBarIndeterminateVisibility(false);
 		v.findViewById(R.id.ok).setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {

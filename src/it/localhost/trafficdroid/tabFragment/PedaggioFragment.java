@@ -33,7 +33,6 @@ public class PedaggioFragment extends Fragment implements TabListener {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.pedaggio, null);
 		result = (TextView) v.findViewById(R.id.result);
-		//setTitle(R.string.pedaggio);
 		getActivity().setProgressBarIndeterminateVisibility(false);
 		final AutoCompleteTextView moneyFrom = (AutoCompleteTextView) v.findViewById(R.id.moneyFrom);
 		final AutoCompleteTextView moneyTo = (AutoCompleteTextView) v.findViewById(R.id.moneyTo);

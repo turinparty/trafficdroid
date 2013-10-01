@@ -29,7 +29,10 @@ import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Dialog;
 import android.app.NotificationManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -57,6 +60,8 @@ public class MainActivity extends AbstractActivity implements OnZoneItemChildCli
 	private static final char camAutofiori = 'F';
 	private static final char camAutobspd = 'B';
 	private static final char camNone = 'H';
+	private IntentFilter intentFilter;
+	private BroadcastReceiver receiver;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -67,30 +72,34 @@ public class MainActivity extends AbstractActivity implements OnZoneItemChildCli
 		// android.os.StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setProgressBarIndeterminateVisibility(false);
+		receiver = new UpdateReceiver();
+		intentFilter = new IntentFilter();
+		intentFilter.addAction(TdService.beginUpdate);
+		intentFilter.addAction(TdService.endUpdate);
 		ActionBar bar = getActionBar();
 		bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		Tab tab = bar.newTab();
-		tab.setText("Main");
+		tab.setText(R.string.app_name);
 		tab.setTabListener(new MainFragment());
 		bar.addTab(tab);
 		Tab tab2 = bar.newTab();
-		tab2.setText("Video");
+		tab2.setText(R.string.anasTv);
 		tab2.setTabListener(new VideoFragment());
 		bar.addTab(tab2);
 		Tab tab3 = bar.newTab();
-		tab3.setText("Pedaggio");
+		tab3.setText(R.string.pedaggio);
 		tab3.setTabListener(new PedaggioFragment());
 		bar.addTab(tab3);
 		Tab tab4 = bar.newTab();
-		tab4.setText("Patente");
+		tab4.setText(R.string.patente);
 		tab4.setTabListener(new PatenteFragment());
 		bar.addTab(tab4);
 		Tab tab5 = bar.newTab();
-		tab5.setText("Bollo");
+		tab5.setText(R.string.bollo);
 		tab5.setTabListener(new BolloFragment());
 		bar.addTab(tab5);
 		Tab tab6 = bar.newTab();
-		tab6.setText("settings");
+		tab6.setText(R.string.settings);
 		tab6.setTabListener(new PreferencesFragment());
 		bar.addTab(tab6);
 	}
@@ -98,8 +107,15 @@ public class MainActivity extends AbstractActivity implements OnZoneItemChildCli
 	@Override
 	public void onResume() {
 		super.onResume();
+		registerReceiver(receiver, intentFilter);
 		WakefulIntentService.scheduleAlarms(new TdListener(), this, false);
 		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(TdService.notificationId);
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		unregisterReceiver(receiver);
 	}
 
 	@Override
@@ -120,24 +136,24 @@ public class MainActivity extends AbstractActivity implements OnZoneItemChildCli
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.menuAlcol:
-			new WebviewDialogFragment().show(getFragmentManager(), ALCOL_URL, null);
-			return true;
-		case R.id.menuQuiz:
-			new QuizDialogFragment().show(getFragmentManager(), getString(R.string.patenteQuiz));
-			return true;
-		case R.id.menuRefresh:
-			if (!Utility.getPrefString(this, R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
-				new TdListener().sendWakefulWork(this);
-			return true;
-		case R.id.menuAdFree:
-			launchPurchaseFlow(SKU_AD_FREE);
-			return true;
-		case R.id.menuInterstitialFree:
-			launchPurchaseFlow(SKU_INTERSTITIAL_FREE);
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
+			case R.id.menuAlcol:
+				new WebviewDialogFragment().show(getFragmentManager(), ALCOL_URL, null);
+				return true;
+			case R.id.menuQuiz:
+				new QuizDialogFragment().show(getFragmentManager(), getString(R.string.patenteQuiz));
+				return true;
+			case R.id.menuRefresh:
+				if (!Utility.getPrefString(this, R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
+					new TdListener().sendWakefulWork(this);
+				return true;
+			case R.id.menuAdFree:
+				launchPurchaseFlow(SKU_AD_FREE);
+				return true;
+			case R.id.menuInterstitialFree:
+				launchPurchaseFlow(SKU_INTERSTITIAL_FREE);
+				return true;
+			default:
+				return super.onOptionsItemSelected(item);
 		}
 	}
 
@@ -186,5 +202,14 @@ public class MainActivity extends AbstractActivity implements OnZoneItemChildCli
 	public void onGraphItemClick(String graph) {
 		EasyTracker.getTracker().sendEvent(AbstractActivity.EVENT_CAT_GRAPH, AbstractActivity.EVENT_ACTION_OPEN, graph, (long) 0);
 		new WebviewDialogFragment().show(getFragmentManager(), firstUrl + graph + secondUrl + new SimpleDateFormat("yyyyMMddHHmm", Locale.getDefault()).format(new Date()), null);
+	}
+
+	private final class UpdateReceiver extends BroadcastReceiver {
+		public void onReceive(Context context, Intent intent) {
+			if (intent.getAction().equals(TdService.beginUpdate))
+				setProgressBarIndeterminateVisibility(true);
+			else if (intent.getAction().equals(TdService.endUpdate))
+				setProgressBarIndeterminateVisibility(false);
+		}
 	}
 }
