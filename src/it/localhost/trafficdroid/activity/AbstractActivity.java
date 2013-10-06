@@ -27,8 +27,6 @@ import com.google.analytics.tracking.android.EasyTracker;
 
 public abstract class AbstractActivity extends Activity { // NO_UCD
 	private static final String IN_APP_BILLING_SERVICE = "com.android.vending.billing.InAppBillingService.BIND";
-	private static final String AD_FREE = "adFree";
-	private static final String INTERSTITIAL_FREE = "interstitialFree";
 	public static final String EVENT_CAT_WEBCAM = "Webcam";
 	public static final String EVENT_CAT_BADNEWS = "BadNews";
 	public static final String EVENT_CAT_IAB = "InAppBilling";
@@ -89,14 +87,6 @@ public abstract class AbstractActivity extends Activity { // NO_UCD
 		}
 	}
 
-	public boolean isAdFree() {
-		return Utility.getPrefBoolean(this, AD_FREE, false);
-	}
-
-	public boolean isInterstitialFree() {
-		return Utility.getPrefBoolean(this, INTERSTITIAL_FREE, false);
-	}
-
 	private class TdServiceConnection implements ServiceConnection {
 		@Override
 		public void onServiceDisconnected(ComponentName name) {
@@ -146,15 +136,14 @@ public abstract class AbstractActivity extends Activity { // NO_UCD
 		@Override
 		protected void onPostExecute(ArrayList<String> result) {
 			super.onPostExecute(result);
-			if (result.contains(SKU_AD_FREE)) {
-				Utility.getEditor(AbstractActivity.this).putBoolean(AD_FREE, true).commit();
-				findViewById(R.id.ad).setVisibility(View.GONE);
-				invalidateOptionsMenu();
-			}
-			if (result.contains(SKU_INTERSTITIAL_FREE))
-				Utility.getEditor(AbstractActivity.this).putBoolean(INTERSTITIAL_FREE, true).commit();
-			if (!result.contains(SKU_QUIZ_FREE) && AbstractActivity.this instanceof MainActivity && !Utility.getPrefString(AbstractActivity.this, R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(getString(R.string.providerTrafficDefault)))
+			Utility.setAdFree(AbstractActivity.this, result.contains(SKU_AD_FREE) ? true : false);
+			Utility.setInterstitialFree(AbstractActivity.this, result.contains(SKU_INTERSTITIAL_FREE) ? true : false);
+			View ad = findViewById(R.id.ad);
+			if (ad != null)
+				ad.setVisibility(result.contains(SKU_AD_FREE) ? View.GONE : View.VISIBLE);
+			if (!result.contains(SKU_QUIZ_FREE) && !Utility.getProviderTraffic(AbstractActivity.this).equals(getString(R.string.providerTrafficDefault)))
 				new QuizDialogFragment().show(getFragmentManager(), getString(R.string.patenteQuiz));
+			invalidateOptionsMenu();
 		}
 	}
 }

@@ -14,9 +14,8 @@ public class TdListener implements AlarmListener {
 	@Override
 	public void scheduleAlarms(AlarmManager mgr, PendingIntent pi, Context ctxt) {
 		mgr.cancel(pi);
-		if (Utility.getPrefBoolean(ctxt, R.string.chiaroveggenzaEnablerKey, R.string.chiaroveggenzaEnablerDefault) && !Utility.getPrefString(ctxt, R.string.providerTrafficKey, R.string.providerTrafficDefault).equals(ctxt.getString(R.string.providerTrafficDefault)))
-		{
-			int notificationTimeValue = Integer.parseInt(Utility.getPrefString(ctxt, R.string.chiaroveggenzaTimeKey, R.string.chiaroveggenzaTimeDefault));
+		if (Utility.isChiaroveggenzaEnabler(ctxt) && !Utility.getProviderTraffic(ctxt).equals(ctxt.getString(R.string.providerTrafficDefault))) {
+			int notificationTimeValue = Integer.parseInt(Utility.getChiaroveggenzaTime(ctxt));
 			mgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + notificationTimeValue, notificationTimeValue, pi);
 		}
 	}

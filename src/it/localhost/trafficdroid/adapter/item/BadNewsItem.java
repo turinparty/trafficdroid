@@ -1,8 +1,12 @@
 package it.localhost.trafficdroid.adapter.item;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.activity.AbstractActivity;
 import it.localhost.trafficdroid.dto.StreetDTO;
-import android.content.Context;
+import it.localhost.trafficdroid.fragment.BadnewsDialogFragment;
+import android.app.Fragment;
 import android.view.View;
 import android.widget.TextView;
 
@@ -10,8 +14,8 @@ public class BadNewsItem extends AbstractItem {
 	static final String badNewsLabel = "Bad News: ";
 	private StreetDTO streetDTO;
 
-	public BadNewsItem(Context context, StreetDTO streetDTO) {
-		super(context);
+	public BadNewsItem(Fragment fragment, StreetDTO streetDTO) {
+		super(fragment);
 		this.streetDTO = streetDTO;
 	}
 
@@ -20,7 +24,7 @@ public class BadNewsItem extends AbstractItem {
 	}
 
 	public View inflateView() {
-		View view = inflater.inflate(R.layout.main_item_badnews, null, false);
+		View view = View.inflate(fragment.getActivity(), R.layout.main_item_badnews, null);
 		view.setTag(R.id.streetDirLeft, view.findViewById(R.id.streetDirLeft));
 		view.setTag(R.id.streetDirRight, view.findViewById(R.id.streetDirRight));
 		view.setTag(R.id.badNews, view.findViewById(R.id.badNews));
@@ -40,10 +44,9 @@ public class BadNewsItem extends AbstractItem {
 	}
 
 	public void onClick() {
-		((OnBadNewsItemClickListener) context).onBadNewsItemClick(streetDTO);
-	}
-
-	public interface OnBadNewsItemClickListener {
-		public void onBadNewsItemClick(StreetDTO streetDTO);
+		if (streetDTO.getBadNews().size() != 0) {
+			EasyTracker.getTracker().sendEvent(AbstractActivity.EVENT_CAT_BADNEWS, AbstractActivity.EVENT_ACTION_OPEN, streetDTO.getName(), (long) 0);
+			new BadnewsDialogFragment().show(fragment.getFragmentManager(), streetDTO);
+		}
 	}
 }

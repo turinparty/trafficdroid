@@ -2,15 +2,15 @@ package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.dto.StreetDTO;
-import android.content.Context;
+import android.app.Fragment;
 import android.view.View;
 import android.widget.TextView;
 
 public class StreetItem extends AbstractItem {
 	private StreetDTO streetDTO;
 
-	public StreetItem(Context context, StreetDTO streetDTO) {
-		super(context);
+	public StreetItem(Fragment fragment, StreetDTO streetDTO) {
+		super(fragment);
 		this.streetDTO = streetDTO;
 	}
 
@@ -21,7 +21,7 @@ public class StreetItem extends AbstractItem {
 
 	@Override
 	public View inflateView() {
-		View view = inflater.inflate(android.R.layout.simple_expandable_list_item_2, null, false);
+		View view = View.inflate(fragment.getActivity(), android.R.layout.simple_expandable_list_item_2, null);
 		view.setTag(R.id.text1, view.findViewById(android.R.id.text1));
 		view.setTag(R.id.text2, view.findViewById(android.R.id.text2));
 		return view;

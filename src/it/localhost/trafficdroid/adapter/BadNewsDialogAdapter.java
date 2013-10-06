@@ -9,7 +9,7 @@ import it.localhost.trafficdroid.dto.StreetDTO;
 
 import java.util.ArrayList;
 
-import android.content.Context;
+import android.app.Fragment;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -17,13 +17,13 @@ import android.widget.ArrayAdapter;
 public class BadNewsDialogAdapter extends ArrayAdapter<BadNewsDTO> {
 	private ArrayList<AbstractItem> items;
 
-	public BadNewsDialogAdapter(Context context, StreetDTO street, boolean isAdFree) {
-		super(context, 0);
+	public BadNewsDialogAdapter(Fragment fragment, StreetDTO street, boolean isAdFree) {
+		super(fragment.getActivity(), 0);
 		items = new ArrayList<AbstractItem>();
 		if (!isAdFree)
-			items.add(new BannerDialogItem(context, R.layout.iab_mrect));
+			items.add(new BannerDialogItem(fragment, R.layout.iab_mrect));
 		for (BadNewsDTO badNews : street.getBadNews())
-			items.add(new BadNewsDialogItem(context, badNews));
+			items.add(new BadNewsDialogItem(fragment, badNews));
 	}
 
 	@Override

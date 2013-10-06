@@ -14,36 +14,36 @@ import it.localhost.trafficdroid.dto.ZoneDTO;
 
 import java.util.ArrayList;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 
 public class MainAdapter extends BaseExpandableListAdapter {
-	public static final String expanded = "Expanded";
 	private ArrayList<AbstractItem> groupItems;
 	private ArrayList<ArrayList<AbstractItem>> childItems;
 	private Context context;
 
-	public MainAdapter(Context context, MainDTO mainDTO, boolean isAdFree) {
-		this.context = context;
+	public MainAdapter(Fragment fragment, MainDTO mainDTO, boolean isAdFree) {
+		this.context = fragment.getActivity();
 		groupItems = new ArrayList<AbstractItem>();
 		childItems = new ArrayList<ArrayList<AbstractItem>>();
 		for (StreetDTO street : mainDTO.getStreets()) {
-			groupItems.add(new StreetItem(context, street));
+			groupItems.add(new StreetItem(fragment, street));
 			ArrayList<AbstractItem> childItems = new ArrayList<AbstractItem>();
 			if (street.getGraph().length() != 0)
-				childItems.add(new GraphItem(context, street));
-			childItems.add(new BadNewsItem(context, street));
+				childItems.add(new GraphItem(fragment, street));
+			childItems.add(new BadNewsItem(fragment, street));
 			for (ZoneDTO zone : street.getZones())
-				childItems.add(new ZoneItem(context, zone));
+				childItems.add(new ZoneItem(fragment, zone));
 			this.childItems.add(childItems);
 		}
 		for (int i = 0; i < childItems.size(); i++) {
 			int size = childItems.get(i).size();
 			for (int j = 0; j < size; j++)
 				if (Math.random() < 0.05 && !isAdFree) {
-					childItems.get(i).add(j++, new BannerDialogItem(context, R.layout.smart_banner));
+					childItems.get(i).add(j++, new BannerDialogItem(fragment, R.layout.smart_banner));
 					size++;
 				}
 		}
@@ -110,12 +110,12 @@ public class MainAdapter extends BaseExpandableListAdapter {
 	@Override
 	public void onGroupCollapsed(int groupPosition) {
 		super.onGroupCollapsed(groupPosition);
-		Utility.getEditor(context).putBoolean(expanded + groupPosition, false).commit();
+		Utility.setExpanded(context, groupPosition, false);
 	}
 
 	@Override
 	public void onGroupExpanded(int groupPosition) {
 		super.onGroupExpanded(groupPosition);
-		Utility.getEditor(context).putBoolean(expanded + groupPosition, true).commit();
+		Utility.setExpanded(context, groupPosition, true);
 	}
 }

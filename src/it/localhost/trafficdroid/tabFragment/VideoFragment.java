@@ -1,22 +1,22 @@
 package it.localhost.trafficdroid.tabFragment;
 
-import com.google.ads.AdRequest;
-import com.google.ads.InterstitialAd;
-
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.activity.AbstractActivity;
 import it.localhost.trafficdroid.common.TdAdListener;
+import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dao.AnasTvService;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.MediaController;
 import android.widget.VideoView;
+
+import com.google.ads.AdRequest;
+import com.google.ads.InterstitialAd;
 
 public class VideoFragment extends Fragment implements TabListener {
 	private static final String MP4 = ".mp4";
@@ -30,14 +30,18 @@ public class VideoFragment extends Fragment implements TabListener {
 		mediaController.setAnchorView(videoView);
 		videoView.setMediaController(mediaController);
 		new AnasNewsAsyncTask().execute();
-		if (!((AbstractActivity) getActivity()).isInterstitialFree()) {
+		if (!Utility.isInterstitialFree(getActivity())) {
 			InterstitialAd interstitial = new InterstitialAd(getActivity(), getString(R.string.adUnitId));
 			interstitial.setAdListener(new TdAdListener());
-			AdRequest adRequest = new AdRequest();
-			adRequest.addTestDevice(getString(R.string.testDevices));
-			interstitial.loadAd(adRequest);
+			interstitial.loadAd(new AdRequest());
 		}
 		return videoView;
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		videoView.start();
 	}
 
 	@Override

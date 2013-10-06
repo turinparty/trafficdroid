@@ -1,15 +1,26 @@
 package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.activity.AbstractActivity;
 import it.localhost.trafficdroid.dto.StreetDTO;
-import android.content.Context;
+import it.localhost.trafficdroid.fragment.WebviewDialogFragment;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import android.app.Fragment;
 import android.view.View;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 public class GraphItem extends AbstractItem {
+	private static final String firstUrl = "http://vai-cdn.stradeanas.it/Appscripts/sinotraffic.php?city=";
+	private static final String secondUrl = "&ts=";
 	private StreetDTO streetDTO;
 
-	public GraphItem(Context context, StreetDTO streetDTO) {
-		super(context);
+	public GraphItem(Fragment fragment, StreetDTO streetDTO) {
+		super(fragment);
 		this.streetDTO = streetDTO;
 	}
 
@@ -20,8 +31,7 @@ public class GraphItem extends AbstractItem {
 
 	@Override
 	public View inflateView() {
-		View view = inflater.inflate(R.layout.main_item_graph, null, false);
-		return view;
+		return View.inflate(fragment.getActivity(), R.layout.main_item_graph, null);
 	}
 
 	@Override
@@ -30,10 +40,7 @@ public class GraphItem extends AbstractItem {
 
 	@Override
 	public void onClick() {
-		((OnGraphItemClickListener) context).onGraphItemClick(streetDTO.getGraph());
-	}
-
-	public interface OnGraphItemClickListener {
-		public void onGraphItemClick(String graph);
+		EasyTracker.getTracker().sendEvent(AbstractActivity.EVENT_CAT_GRAPH, AbstractActivity.EVENT_ACTION_OPEN, streetDTO.getGraph(), (long) 0);
+		new WebviewDialogFragment().show(fragment.getFragmentManager(), firstUrl + streetDTO.getGraph() + secondUrl + new SimpleDateFormat("yyyyMMddHHmm", Locale.getDefault()).format(new Date()), null);
 	}
 }

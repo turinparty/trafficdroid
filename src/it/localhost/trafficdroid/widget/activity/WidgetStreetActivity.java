@@ -37,7 +37,7 @@ public class WidgetStreetActivity extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		int mAppWidgetId = getIntent().getExtras().getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
-		Utility.getEditor(this).putInt(WidgetStreetProvider.WIDGET_STREET_STREET + mAppWidgetId, dto.getStreets().get(position).getId()).commit();
+		Utility.setWidgetStreetStreet(this, mAppWidgetId, dto.getStreets().get(position).getId());
 		WidgetStreetProvider.updateAppWidget(this, AppWidgetManager.getInstance(this), mAppWidgetId);
 		setResult(RESULT_OK, getIntent());
 		finish();

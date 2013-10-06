@@ -15,8 +15,6 @@ import android.text.format.DateFormat;
 import android.widget.RemoteViews;
 
 public class WidgetStreetProvider extends AppWidgetProvider {
-	public static final String WIDGET_STREET_STREET = "widgetStreetStreet";
-
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 		for (int i = 0; i < appWidgetIds.length; i++)
@@ -28,7 +26,7 @@ public class WidgetStreetProvider extends AppWidgetProvider {
 		views.setOnClickPendingIntent(R.id.widget, PendingIntent.getActivity(context, 0, new Intent(context, MainActivity.class), 0));
 		try {
 			MainDTO dto = PersistanceService.retrieve(context);
-			StreetDTO street = dto.getStreet(Utility.getPrefInt(context, WIDGET_STREET_STREET + mAppWidgetId, 0));
+			StreetDTO street = dto.getStreet(Utility.getWidgetStreetStreet(context, mAppWidgetId));
 			if (street != null) {
 				views.setTextViewText(R.id.zoneName, DateFormat.getTimeFormat(context).format(dto.getTrafficTime()) + " " + street.getName());
 				views.setTextViewText(R.id.zoneSpeedLeft, Short.toString(street.getSpeedLeft()));

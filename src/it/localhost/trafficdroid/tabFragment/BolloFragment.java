@@ -1,9 +1,9 @@
 package it.localhost.trafficdroid.tabFragment;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.activity.AbstractActivity;
 import it.localhost.trafficdroid.common.AutoFocusTextWatcher;
 import it.localhost.trafficdroid.common.TdAdListener;
+import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.fragment.WebviewDialogFragment;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
@@ -47,12 +47,10 @@ public class BolloFragment extends Fragment implements TabListener {
 				new WebviewDialogFragment().show(getFragmentManager(), bolloUrl + tipo + param1 + regione + param2 + targa, null);
 			}
 		});
-		if (!((AbstractActivity) getActivity()).isInterstitialFree()) {
+		if (!Utility.isInterstitialFree(getActivity())) {
 			InterstitialAd interstitial = new InterstitialAd(getActivity(), getString(R.string.adUnitId));
 			interstitial.setAdListener(new TdAdListener());
-			AdRequest adRequest = new AdRequest();
-			adRequest.addTestDevice(getString(R.string.testDevices));
-			interstitial.loadAd(adRequest);
+			interstitial.loadAd(new AdRequest());
 		}
 		return v;
 	}

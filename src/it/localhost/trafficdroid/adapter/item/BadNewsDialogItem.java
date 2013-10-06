@@ -5,7 +5,7 @@ import it.localhost.trafficdroid.dto.BadNewsDTO;
 
 import java.text.DateFormat;
 
-import android.content.Context;
+import android.app.Fragment;
 import android.view.View;
 import android.widget.TextView;
 
@@ -42,8 +42,8 @@ public class BadNewsDialogItem extends AbstractItem {
 	private static DateFormat sdfBnFormat;
 	private BadNewsDTO badNews;
 
-	public BadNewsDialogItem(Context context, BadNewsDTO badNews) {
-		super(context);
+	public BadNewsDialogItem(Fragment fragment, BadNewsDTO badNews) {
+		super(fragment);
 		this.badNews = badNews;
 		sdfBnFormat = DateFormat.getTimeInstance(DateFormat.SHORT);
 	}
@@ -55,7 +55,7 @@ public class BadNewsDialogItem extends AbstractItem {
 
 	@Override
 	public View inflateView() {
-		View view = inflater.inflate(R.layout.dialog_item_badnews, null);
+		View view = View.inflate(fragment.getActivity(), R.layout.dialog_item_badnews, null);
 		view.setTag(R.id.badNewsTitle, view.findViewById(R.id.badNewsTitle));
 		view.setTag(R.id.badNewsDate, view.findViewById(R.id.badNewsDate));
 		view.setTag(R.id.badNewsDescription, view.findViewById(R.id.badNewsDescription));

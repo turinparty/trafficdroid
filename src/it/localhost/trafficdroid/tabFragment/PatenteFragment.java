@@ -1,10 +1,6 @@
 package it.localhost.trafficdroid.tabFragment;
 
-import com.google.ads.AdRequest;
-import com.google.ads.InterstitialAd;
-
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.activity.AbstractActivity;
 import it.localhost.trafficdroid.common.TdAdListener;
 import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dao.PatenteService;
@@ -16,7 +12,6 @@ import android.app.ActionBar.TabListener;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
-import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,10 +21,11 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.ads.AdRequest;
+import com.google.ads.InterstitialAd;
+
 public class PatenteFragment extends Fragment implements TabListener {
 	private static final String BLANK = "";
-	private static final String PATENTE_PWD = "PatentePwd";
-	private static final String PATENTE_USR = "PatenteUsr";
 	private TextView patenteSaldo, patenteNumero, patenteScadenza;
 
 	@Override
@@ -41,28 +37,24 @@ public class PatenteFragment extends Fragment implements TabListener {
 		patenteSaldo = (TextView) v.findViewById(R.id.patenteSaldo);
 		patenteNumero = (TextView) v.findViewById(R.id.patenteNumero);
 		patenteScadenza = (TextView) v.findViewById(R.id.patenteScadenza);
-		usrEdit.setText(Utility.getPrefString(getActivity(), PATENTE_USR, BLANK));
-		pwdEdit.setText(Utility.getPrefString(getActivity(), PATENTE_PWD, BLANK));
+		usrEdit.setText(Utility.getPatenteUsr(getActivity()));
+		pwdEdit.setText(Utility.getPatentePwd(getActivity()));
 		v.findViewById(R.id.ok).setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				String usr = usrEdit.getText().toString();
 				String pwd = pwdEdit.getText().toString();
-				Editor edit = Utility.getEditor(getActivity());
-				edit.putString(PATENTE_USR, usr);
-				edit.putString(PATENTE_PWD, pwd);
-				edit.commit();
+				Utility.setPatenteUsr(getActivity(), usr);
+				Utility.setPatentePwd(getActivity(), pwd);
 				if (!usr.equals(BLANK) && !pwd.equals(BLANK))
 					new PatenteAsyncTask().execute(usr, pwd);
 				else
 					new MessageDialogFragment().show(getFragmentManager(), getString(R.string.error), getString(R.string.wrongData), false);
 			}
 		});
-		if (!((AbstractActivity) getActivity()).isInterstitialFree()) {
+		if (!Utility.isInterstitialFree(getActivity())) {
 			InterstitialAd interstitial = new InterstitialAd(getActivity(), getString(R.string.adUnitId));
 			interstitial.setAdListener(new TdAdListener());
-			AdRequest adRequest = new AdRequest();
-			adRequest.addTestDevice(getString(R.string.testDevices));
-			interstitial.loadAd(adRequest);
+			interstitial.loadAd(new AdRequest());
 		}
 		return v;
 	}

@@ -16,9 +16,6 @@ import android.text.format.DateFormat;
 import android.widget.RemoteViews;
 
 public class WidgetZoneProvider extends AppWidgetProvider {
-	public static final String WIDGET_ZONE_STREET = "widgetZoneStreet";
-	public static final String WIDGET_ZONE_ZONE = "widgetZoneZone";
-
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 		for (int i = 0; i < appWidgetIds.length; i++)
@@ -30,9 +27,9 @@ public class WidgetZoneProvider extends AppWidgetProvider {
 		views.setOnClickPendingIntent(R.id.widget, PendingIntent.getActivity(context, 0, new Intent(context, MainActivity.class), 0));
 		try {
 			MainDTO dto = PersistanceService.retrieve(context);
-			StreetDTO street = dto.getStreet(Utility.getPrefInt(context, WIDGET_ZONE_STREET + mAppWidgetId, 0));
+			StreetDTO street = dto.getStreet(Utility.getWidgetZoneStreet(context, mAppWidgetId));
 			if (street != null) {
-				ZoneDTO zone = street.getZone(Utility.getPrefInt(context, WIDGET_ZONE_ZONE + mAppWidgetId, 0));
+				ZoneDTO zone = street.getZone(Utility.getWidgetZoneZone(context, mAppWidgetId));
 				if (zone != null) {
 					views.setTextViewText(R.id.streetDirLeft, street.getDirectionLeft());
 					views.setTextViewText(R.id.streetDirRight, street.getDirectionRight());

@@ -14,7 +14,6 @@ import java.util.Map;
 
 import android.app.ExpandableListActivity;
 import android.appwidget.AppWidgetManager;
-import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListView;
@@ -53,10 +52,8 @@ public class WidgetZoneActivity extends ExpandableListActivity {
 	@Override
 	public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 		int mAppWidgetId = getIntent().getExtras().getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
-		Editor edit = Utility.getEditor(this);
-		edit.putInt(WidgetZoneProvider.WIDGET_ZONE_STREET + mAppWidgetId, dto.getStreets().get(groupPosition).getId());
-		edit.putInt(WidgetZoneProvider.WIDGET_ZONE_ZONE + mAppWidgetId, dto.getStreets().get(groupPosition).getZones().get(childPosition).getId());
-		edit.commit();
+		Utility.setWidgetZoneStreet(this, mAppWidgetId, dto.getStreets().get(groupPosition).getId());
+		Utility.setWidgetZoneZone(this, mAppWidgetId, dto.getStreets().get(groupPosition).getZones().get(childPosition).getId());
 		WidgetZoneProvider.updateAppWidget(this, AppWidgetManager.getInstance(this), mAppWidgetId);
 		setResult(RESULT_OK, getIntent());
 		finish();

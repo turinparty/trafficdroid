@@ -11,7 +11,6 @@ import it.localhost.trafficdroid.dto.BadNewsDTO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
-import it.localhost.trafficdroid.exception.GenericException;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -35,7 +34,6 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences.Editor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
@@ -86,7 +84,6 @@ public class TdService extends WakefulIntentService { // NO_UCD
 	@Override
 	public void doWakefulWork(Intent arg0) {
 		sendBroadcast(beginUpdateIntent);
-		Editor edit = Utility.getEditor(this);
 		MainDTO currDTO = getMainDTO();
 		MainDTO pastDTO;
 		try {
@@ -101,35 +98,34 @@ public class TdService extends WakefulIntentService { // NO_UCD
 				configureDTO(currDTO, pastDTO);
 				setupNotification(currDTO.getCongestedZones());
 			} catch (Exception e) {
-				edit.putBoolean(GenericException.exceptionCheck, true);
-				edit.putString(GenericException.exceptionMsg, e.getMessage());
+				Utility.setExCheck(this, true);
+				Utility.setExMsg(this, e.getMessage());
 			}
 			try {
-				if (Utility.getPrefBoolean(this, R.string.badnewsEnablerKey, R.string.badnewsEnablerDefault))
+				if (Utility.isBadnewsEnabler(this))
 					parseBadnews(currDTO);
 			} catch (Exception e) {
-				edit.putBoolean(GenericException.exceptionCheck, true);
-				edit.putString(GenericException.exceptionMsg, e.getMessage());
+				Utility.setExCheck(this, true);
+				Utility.setExMsg(this, e.getMessage());
 			}
 			try {
 				currDTO.setTrafficTime(new Date());
 				PersistanceService.store(this, currDTO);
 			} catch (Exception e) {
-				edit.putBoolean(GenericException.exceptionCheck, true);
-				edit.putString(GenericException.exceptionMsg, e.getMessage());
+				Utility.setExCheck(this, true);
+				Utility.setExMsg(this, e.getMessage());
 			}
 		} else {
-			edit.putBoolean(GenericException.exceptionCheck, true);
-			edit.putString(GenericException.exceptionMsg, disconnectedMessage);
+			Utility.setExCheck(this, true);
+			Utility.setExMsg(this, disconnectedMessage);
 		}
-		edit.commit();
 		sendBroadcast(endUpdateIntent);
 	}
 
 	private MainDTO getMainDTO() {
 		MainDTO mainDto = new MainDTO();
 		mainDto.setVersionCode(Utility.getVersionCode(this));
-		mainDto.setCongestionThreshold(Byte.parseByte(Utility.getPrefString(this, R.string.notificationSpeedKey, R.string.notificationSpeedDefault)));
+		mainDto.setCongestionThreshold(Byte.parseByte(Utility.getNotificationSpeed(this)));
 		int[] streetsId = getResources().getIntArray(R.array.streetId);
 		String[] streetsName = getResources().getStringArray(R.array.streetName);
 		String[] streetsTag = getResources().getStringArray(R.array.streetTag);
@@ -138,15 +134,15 @@ public class TdService extends WakefulIntentService { // NO_UCD
 		int[] autoveloxStreet = getResources().getIntArray(R.array.autoveloxStreet);
 		int[] autoveloxFrom = getResources().getIntArray(R.array.autoveloxFrom);
 		int[] autoveloxTo = getResources().getIntArray(R.array.autoveloxTo);
-		boolean allStreets = Utility.getPrefBoolean(this, R.string.allStreetsKey, R.string.allStreetsDefault);
+		boolean allStreets = Utility.isAllStreets(this);
 		for (int i = 0; i < streetsId.length; i++) {
 			int[] zonesId = getResources().getIntArray(ListZoneResId.getInstance().get((streetsId[i])));
 			StreetDTO street = new StreetDTO(streetsId[i], zonesId);
-			boolean streetEnabled = Utility.getPrefBoolean(this, Integer.toString(street.getId()), false);
+			boolean streetEnabled = Utility.isEnabled(this, Integer.toString(street.getId()));
 			String[] zonesWebcam = getResources().getStringArray(ListZoneResWebcam.getInstance().get((streetsId[i])));
 			String[] zonesName = getResources().getStringArray(ListZoneResName.getInstance().get(streetsId[i]));
 			for (int j = 0; j < zonesId.length; j++)
-				if (allStreets || streetEnabled || Utility.getPrefBoolean(this, Integer.toString(zonesId[j]), false)) {
+				if (allStreets || streetEnabled || Utility.isEnabled(this, Integer.toString(zonesId[j]))) {
 					ZoneDTO zone = new ZoneDTO(zonesId[j], zonesName[j], zonesWebcam[j]);
 					for (int k = 0; k < autoveloxStreet.length; k++) {
 						if (autoveloxStreet[k] == streetsId[i] && zonesId[j] >= autoveloxFrom[k] && zonesId[j] < autoveloxTo[k])
@@ -192,7 +188,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 		for (StreetDTO street : dto.getStreets())
 			try {
 				params.set(4, new BasicNameValuePair(roaKey, Integer.toString(street.getId())));
-				HttpPost post = new HttpPost(traffic + Utility.getPrefString(this, R.string.providerTrafficKey, R.string.providerTrafficDefault) + path);
+				HttpPost post = new HttpPost(traffic + Utility.getProviderTraffic(this) + path);
 				post.setEntity(new UrlEncodedFormEntity(params));
 				NodeList segments = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new GZIPInputStream(new DefaultHttpClient().execute(post).getEntity().getContent())).getDocumentElement().getLastChild().getFirstChild().getChildNodes();
 				for (int i = 0; i < segments.getLength(); i++) {
@@ -290,7 +286,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 					if (pastStreet != null) {
 						ZoneDTO pastZone = pastStreet.getZone(currZone.getId());
 						if (pastZone != null) {
-							int trendSpeed = Integer.parseInt(Utility.getPrefString(this, R.string.trendSpeedKey, R.string.trendSpeedDefault));
+							int trendSpeed = Integer.parseInt(Utility.getTrendSpeed(this));
 							if (currZone.getCatLeft() == 0 || pastZone.getCatLeft() == 0)
 								currZone.setTrendLeft(0);
 							else if (currZone.getSpeedLeft() - pastZone.getSpeedLeft() >= trendSpeed)
@@ -330,7 +326,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 			if (pastDTO != null) {
 				StreetDTO pastStreet = pastDTO.getStreet(currStreet.getId());
 				if (pastStreet != null) {
-					int trendSpeed = Integer.parseInt(Utility.getPrefString(this, R.string.trendSpeedKey, R.string.trendSpeedDefault));
+					int trendSpeed = Integer.parseInt(Utility.getTrendSpeed(this));
 					if (currStreet.getSpeedLeft() == 0 || pastStreet.getSpeedLeft() == 0)
 						currStreet.setTrendLeft(0);
 					else if (currStreet.getSpeedLeft() - pastStreet.getSpeedLeft() >= trendSpeed)

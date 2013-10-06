@@ -1,12 +1,9 @@
 package it.localhost.trafficdroid.tabFragment;
 
-import com.google.ads.AdRequest;
-import com.google.ads.InterstitialAd;
-
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.activity.AbstractActivity;
 import it.localhost.trafficdroid.common.ListExit;
 import it.localhost.trafficdroid.common.TdAdListener;
+import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dao.PedaggioService;
 import it.localhost.trafficdroid.dto.BaseDTO;
 import it.localhost.trafficdroid.dto.PedaggioDTO;
@@ -25,6 +22,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
+
+import com.google.ads.AdRequest;
+import com.google.ads.InterstitialAd;
 
 public class PedaggioFragment extends Fragment implements TabListener {
 	private TextView result;
@@ -49,12 +49,10 @@ public class PedaggioFragment extends Fragment implements TabListener {
 					new MessageDialogFragment().show(getFragmentManager(), getString(R.string.error), getString(R.string.wrongData), false);
 			}
 		});
-		if (!((AbstractActivity) getActivity()).isInterstitialFree()) {
+		if (!Utility.isInterstitialFree(getActivity())) {
 			InterstitialAd interstitial = new InterstitialAd(getActivity(), getString(R.string.adUnitId));
 			interstitial.setAdListener(new TdAdListener());
-			AdRequest adRequest = new AdRequest();
-			adRequest.addTestDevice(getString(R.string.testDevices));
-			interstitial.loadAd(adRequest);
+			interstitial.loadAd(new AdRequest());
 		}
 		return v;
 	}

@@ -1,11 +1,8 @@
 package it.localhost.trafficdroid.fragment;
 
-import com.google.ads.AdRequest;
-import com.google.ads.InterstitialAd;
-
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.activity.AbstractActivity;
 import it.localhost.trafficdroid.common.TdAdListener;
+import it.localhost.trafficdroid.common.Utility;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -15,6 +12,9 @@ import android.os.Bundle;
 import android.view.WindowManager.LayoutParams;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import com.google.ads.AdRequest;
+import com.google.ads.InterstitialAd;
 
 public class WebviewDialogFragment extends DialogFragment {
 	private static final String AUTOSTRADE_IT = "autostrade.it";
@@ -28,7 +28,6 @@ public class WebviewDialogFragment extends DialogFragment {
 		webView.setWebViewClient(new WebViewClient());
 		webView.getSettings().setJavaScriptEnabled(true);
 		webView.getSettings().setLoadWithOverviewMode(true);
-		webView.getSettings().setBuiltInZoomControls(true);
 		webView.getSettings().setUseWideViewPort(true);
 		String url = getArguments().getString(TAG_URL);
 		String data = getArguments().getString(TAG_DATA);
@@ -47,12 +46,10 @@ public class WebviewDialogFragment extends DialogFragment {
 		} else if (data != null)
 			webView.loadData(data, "text/html", null);
 		builder.setView(webView);
-		if (!((AbstractActivity) getActivity()).isInterstitialFree()) {
+		if (!Utility.isInterstitialFree(getActivity())) {
 			InterstitialAd interstitial = new InterstitialAd(getActivity(), getString(R.string.adUnitId));
 			interstitial.setAdListener(new TdAdListener());
-			AdRequest adRequest = new AdRequest();
-			adRequest.addTestDevice(getString(R.string.testDevices));
-			interstitial.loadAd(adRequest);
+			interstitial.loadAd(new AdRequest());
 		}
 		Dialog d = builder.create();
 		d.getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
