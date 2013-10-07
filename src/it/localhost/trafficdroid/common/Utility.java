@@ -99,7 +99,7 @@ public class Utility {
 		return getPrefBoolean(context, R.string.berserkKey, R.string.berserkDefault);
 	}
 
-	public static boolean isChiaroveggenzaEnabler(Context context) {
+	public static boolean isChiaroveggenza(Context context) {
 		return getPrefBoolean(context, R.string.chiaroveggenzaEnablerKey, R.string.chiaroveggenzaEnablerDefault);
 	}
 
