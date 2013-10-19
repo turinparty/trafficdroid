@@ -19,6 +19,9 @@ import android.widget.Spinner;
 
 import com.google.ads.AdRequest;
 import com.google.ads.InterstitialAd;
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.Fields;
+import com.google.analytics.tracking.android.MapBuilder;
 
 public class BolloFragment extends Fragment implements TabListener {
 	private static final String bolloUrl = "https://servizi.aci.it/Bollonet/calcolo.do?LinguaSelezionata=ita&CodiceServizio=2&TipoVeicolo=";
@@ -52,6 +55,7 @@ public class BolloFragment extends Fragment implements TabListener {
 			interstitial.setAdListener(new TdAdListener());
 			interstitial.loadAd(new AdRequest());
 		}
+		EasyTracker.getInstance(getActivity()).send(MapBuilder.createAppView().set(Fields.SCREEN_NAME, BolloFragment.class.getSimpleName()).build());
 		return v;
 	}
 

@@ -1,5 +1,9 @@
 package it.localhost.trafficdroid.tabFragment;
 
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.Fields;
+import com.google.analytics.tracking.android.MapBuilder;
+
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.MainAdapter;
 import it.localhost.trafficdroid.adapter.item.AbstractItem;
@@ -47,6 +51,7 @@ public class MainFragment extends Fragment implements TabListener {
 			new SetupDialogFragment().show(getFragmentManager(), SetupDialogFragment.class.getSimpleName());
 		} else if (Utility.isBerserkKey(getActivity()))
 			tdListener.sendWakefulWork(getActivity());
+		EasyTracker.getInstance(getActivity()).send(MapBuilder.createAppView().set(Fields.SCREEN_NAME, MainFragment.class.getSimpleName()).build());
 		return v;
 	}
 

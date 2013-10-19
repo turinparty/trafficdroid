@@ -29,6 +29,7 @@ public class WebviewDialogFragment extends DialogFragment {
 		webView.getSettings().setJavaScriptEnabled(true);
 		webView.getSettings().setLoadWithOverviewMode(true);
 		webView.getSettings().setUseWideViewPort(true);
+		webView.getSettings().setBuiltInZoomControls(true);
 		String url = getArguments().getString(TAG_URL);
 		String data = getArguments().getString(TAG_DATA);
 		if (url != null) {

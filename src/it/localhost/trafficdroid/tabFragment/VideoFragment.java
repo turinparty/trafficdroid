@@ -17,6 +17,9 @@ import android.widget.VideoView;
 
 import com.google.ads.AdRequest;
 import com.google.ads.InterstitialAd;
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.Fields;
+import com.google.analytics.tracking.android.MapBuilder;
 
 public class VideoFragment extends Fragment implements TabListener {
 	private static final String MP4 = ".mp4";
@@ -35,6 +38,7 @@ public class VideoFragment extends Fragment implements TabListener {
 			interstitial.setAdListener(new TdAdListener());
 			interstitial.loadAd(new AdRequest());
 		}
+		EasyTracker.getInstance(getActivity()).send(MapBuilder.createAppView().set(Fields.SCREEN_NAME, VideoFragment.class.getSimpleName()).build());
 		return videoView;
 	}
 

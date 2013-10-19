@@ -1,15 +1,16 @@
 package it.localhost.trafficdroid.adapter.item;
 
-import com.google.analytics.tracking.android.EasyTracker;
-
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.activity.AbstractActivity;
+import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.fragment.BadnewsDialogFragment;
 import android.app.Fragment;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.MapBuilder;
 
 public class BadNewsItem extends AbstractItem {
 	static final String badNewsLabel = "Bad News: ";
@@ -46,7 +47,7 @@ public class BadNewsItem extends AbstractItem {
 
 	public void onClick() {
 		if (streetDTO.getBadNews().size() != 0) {
-			EasyTracker.getTracker().sendEvent(AbstractActivity.EVENT_CAT_BADNEWS, AbstractActivity.EVENT_ACTION_OPEN, streetDTO.getName(), (long) 0);
+			EasyTracker.getInstance(fragment.getActivity()).send(MapBuilder.createEvent(MainActivity.EVENT_CAT_BADNEWS, MainActivity.EVENT_ACTION_OPEN, streetDTO.getName(), (long) 0).build());
 			new BadnewsDialogFragment().show(fragment.getFragmentManager(), streetDTO);
 		}
 	}

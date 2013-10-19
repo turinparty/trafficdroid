@@ -25,6 +25,9 @@ import android.widget.TextView;
 
 import com.google.ads.AdRequest;
 import com.google.ads.InterstitialAd;
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.Fields;
+import com.google.analytics.tracking.android.MapBuilder;
 
 public class PedaggioFragment extends Fragment implements TabListener {
 	private TextView result;
@@ -54,6 +57,7 @@ public class PedaggioFragment extends Fragment implements TabListener {
 			interstitial.setAdListener(new TdAdListener());
 			interstitial.loadAd(new AdRequest());
 		}
+		EasyTracker.getInstance(getActivity()).send(MapBuilder.createAppView().set(Fields.SCREEN_NAME, PedaggioFragment.class.getSimpleName()).build());
 		return v;
 	}
 

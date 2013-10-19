@@ -1,5 +1,9 @@
 package it.localhost.trafficdroid.tabFragment;
 
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.Fields;
+import com.google.analytics.tracking.android.MapBuilder;
+
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.ListZoneResId;
 import it.localhost.trafficdroid.common.ListZoneResName;
@@ -53,6 +57,7 @@ public class PreferencesFragment extends PreferenceFragment implements TabListen
 				setZonesCategory(streetScreen, streetId[i]);
 			}
 		}
+		EasyTracker.getInstance(getActivity()).send(MapBuilder.createAppView().set(Fields.SCREEN_NAME, PreferencesFragment.class.getSimpleName()).build());
 	}
 
 	@Override

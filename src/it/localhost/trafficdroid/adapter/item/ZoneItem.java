@@ -1,19 +1,21 @@
 package it.localhost.trafficdroid.adapter.item;
 
-import java.util.GregorianCalendar;
-
-import com.google.analytics.tracking.android.EasyTracker;
-
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.activity.AbstractActivity;
+import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.dto.ZoneDTO;
 import it.localhost.trafficdroid.fragment.MessageDialogFragment;
 import it.localhost.trafficdroid.fragment.WebviewDialogFragment;
+
+import java.util.GregorianCalendar;
+
 import android.app.Fragment;
 import android.graphics.Typeface;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.MapBuilder;
 
 public class ZoneItem extends AbstractItem {
 	private static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
@@ -109,26 +111,26 @@ public class ZoneItem extends AbstractItem {
 	public void onClick() {
 		String webcam = zoneDTO.getWebcam();
 		if (webcam.charAt(0) == camNone) {
-			EasyTracker.getTracker().sendEvent(AbstractActivity.EVENT_CAT_WEBCAM, AbstractActivity.EVENT_ACTION_NONE, webcam, (long) 0);
+			EasyTracker.getInstance(fragment.getActivity()).send(MapBuilder.createEvent(MainActivity.EVENT_CAT_WEBCAM, MainActivity.EVENT_ACTION_NONE, webcam, (long) 0).build());
 			new MessageDialogFragment().show(fragment.getFragmentManager(), fragment.getString(R.string.info), fragment.getString(R.string.webcamNone), false);
 		} else if (webcam.charAt(0) == camAutostrade) {
-			EasyTracker.getTracker().sendEvent(AbstractActivity.EVENT_CAT_WEBCAM, AbstractActivity.EVENT_ACTION_OPEN, webcam, (long) 0);
+			EasyTracker.getInstance(fragment.getActivity()).send(MapBuilder.createEvent(MainActivity.EVENT_CAT_WEBCAM, MainActivity.EVENT_ACTION_OPEN, webcam, (long) 0).build());
 			int id = Integer.parseInt(webcam.substring(1)) + 6280 * (date);
 			new WebviewDialogFragment().show(fragment.getFragmentManager(), autostrade + id, null);
 		} else if (webcam.charAt(0) == camCavspa) {
-			EasyTracker.getTracker().sendEvent(AbstractActivity.EVENT_CAT_WEBCAM, AbstractActivity.EVENT_ACTION_OPEN, webcam, (long) 0);
+			EasyTracker.getInstance(fragment.getActivity()).send(MapBuilder.createEvent(MainActivity.EVENT_CAT_WEBCAM, MainActivity.EVENT_ACTION_OPEN, webcam, (long) 0).build());
 			new WebviewDialogFragment().show(fragment.getFragmentManager(), cavspa + webcam.substring(1) + jpg, null);
 		} else if (webcam.charAt(0) == camEdidomus) {
-			EasyTracker.getTracker().sendEvent(AbstractActivity.EVENT_CAT_WEBCAM, AbstractActivity.EVENT_ACTION_OPEN, webcam, (long) 0);
+			EasyTracker.getInstance(fragment.getActivity()).send(MapBuilder.createEvent(MainActivity.EVENT_CAT_WEBCAM, MainActivity.EVENT_ACTION_OPEN, webcam, (long) 0).build());
 			new WebviewDialogFragment().show(fragment.getFragmentManager(), edidomus + webcam.substring(1), null);
 		} else if (webcam.charAt(0) == camAutofiori) {
-			EasyTracker.getTracker().sendEvent(AbstractActivity.EVENT_CAT_WEBCAM, AbstractActivity.EVENT_ACTION_OPEN, webcam, (long) 0);
+			EasyTracker.getInstance(fragment.getActivity()).send(MapBuilder.createEvent(MainActivity.EVENT_CAT_WEBCAM, MainActivity.EVENT_ACTION_OPEN, webcam, (long) 0).build());
 			new WebviewDialogFragment().show(fragment.getFragmentManager(), autofiori + webcam.substring(1), null);
 		} else if (webcam.charAt(0) == camAutobspd) {
-			EasyTracker.getTracker().sendEvent(AbstractActivity.EVENT_CAT_WEBCAM, AbstractActivity.EVENT_ACTION_OPEN, webcam, (long) 0);
+			EasyTracker.getInstance(fragment.getActivity()).send(MapBuilder.createEvent(MainActivity.EVENT_CAT_WEBCAM, MainActivity.EVENT_ACTION_OPEN, webcam, (long) 0).build());
 			new WebviewDialogFragment().show(fragment.getFragmentManager(), autobspd + webcam.substring(1) + jpg, null);
 		} else {
-			EasyTracker.getTracker().sendEvent(AbstractActivity.EVENT_CAT_WEBCAM, AbstractActivity.EVENT_ACTION_REQUEST, webcam, (long) 0);
+			EasyTracker.getInstance(fragment.getActivity()).send(MapBuilder.createEvent(MainActivity.EVENT_CAT_WEBCAM, MainActivity.EVENT_ACTION_REQUEST, webcam, (long) 0).build());
 			new MessageDialogFragment().show(fragment.getFragmentManager(), fragment.getString(R.string.info), fragment.getString(R.string.webcamAdd), false);
 		}
 	}

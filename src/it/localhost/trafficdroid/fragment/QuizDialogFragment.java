@@ -1,7 +1,7 @@
 package it.localhost.trafficdroid.fragment;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.activity.AbstractActivity;
+import it.localhost.trafficdroid.activity.MainActivity;
 
 import java.util.Random;
 
@@ -43,7 +43,7 @@ public class QuizDialogFragment extends DialogFragment {
 	private final class OnSkipListener implements OnClickListener {
 		@Override
 		public void onClick(DialogInterface arg0, int arg1) {
-			((AbstractActivity) getActivity()).launchPurchaseFlow(AbstractActivity.SKU_QUIZ_FREE);
+			((MainActivity) getActivity()).launchPurchaseFlow(MainActivity.SKU_QUIZ_FREE);
 		}
 	}
 
