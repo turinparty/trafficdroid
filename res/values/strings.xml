@@ -2,7 +2,6 @@
 <resources>
 
     <string name="adUnitId">ca-app-pub-4235011035409184/4547377745</string>
-    <string name="testDevice">3E3BA1580C4C0748C1645065665BC000</string>
     <string name="widgetZoneName">Trafficdroid - Tratta stradale</string>
     <string name="widgetStreetName">Trafficdroid - Strada intera</string>
     <string name="app_name">TrafficDroid</string>
@@ -35,7 +34,6 @@
     <string name="webcamNone">Non esistono Webcam associabili a questa tratta. Se non è vero segnalalo sul sito.</string>
     <string name="settings">Impostazioni</string>
     <string name="refresh">Aggiorna</string>
-    <string name="removePref">Strada preferita</string>
     <string name="badConf">TrafficDroid ha bisogno di un provider per il traffico, vuoi inserire questa informazione ora o preferisci visualizzare maggiori informazioni?</string>
     <string name="selectStreet">Seleziona l\'intera strada</string>
     <string name="sniper">Seleziona le singole zone</string>

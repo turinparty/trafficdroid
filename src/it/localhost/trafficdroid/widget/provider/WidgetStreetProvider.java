@@ -31,8 +31,8 @@ public class WidgetStreetProvider extends AppWidgetProvider {
 				views.setTextViewText(R.id.zoneName, DateFormat.getTimeFormat(context).format(dto.getTrafficTime()) + " " + street.getName());
 				views.setTextViewText(R.id.zoneSpeedLeft, Short.toString(street.getSpeedLeft()));
 				views.setTextViewText(R.id.zoneSpeedRight, Short.toString(street.getSpeedRight()));
-			//	views.setTextViewText(R.id.streetDirLeft, street.getDirectionLeft());
-			//	views.setTextViewText(R.id.streetDirRight, street.getDirectionRight());
+				views.setImageViewResource(R.id.streetDirLeft, street.getDirectionLeft());
+				views.setImageViewResource(R.id.streetDirRight, street.getDirectionRight());
 				views.setImageViewResource(R.id.trendLeft, street.getTrendLeft());
 				views.setImageViewResource(R.id.trendRight, street.getTrendRight());
 			}
