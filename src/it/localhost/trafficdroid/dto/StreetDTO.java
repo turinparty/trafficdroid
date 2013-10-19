@@ -12,7 +12,7 @@ public class StreetDTO implements Serializable {
 	private int id;
 	private LinkedHashMap<Integer, ZoneDTO> zones;
 	private ArrayList<BadNewsDTO> badNews;
-	private String[] directions;
+	private int[] directions;
 	private ArrayList<Integer> allZonesId;
 	private short[] speed;
 	private int[] trend;
@@ -22,7 +22,7 @@ public class StreetDTO implements Serializable {
 		this.allZonesId = new ArrayList<Integer>();
 		zones = new LinkedHashMap<Integer, ZoneDTO>();
 		badNews = new ArrayList<BadNewsDTO>();
-		directions = new String[2];
+		directions = new int[2];
 		speed = new short[2];
 		trend = new int[2];
 		for (int i : allZonesId)
@@ -77,19 +77,19 @@ public class StreetDTO implements Serializable {
 		zones.put(zone.getId(), zone);
 	}
 
-	public String getDirectionLeft() {
+	public int getDirectionLeft() {
 		return directions[0];
 	}
 
-	public String getDirectionRight() {
+	public int getDirectionRight() {
 		return directions[1];
 	}
 
-	public void setDirectionLeft(String direction) {
+	public void setDirectionLeft(int direction) {
 		this.directions[0] = direction;
 	}
 
-	public void setDirectionRight(String direction) {
+	public void setDirectionRight(int direction) {
 		this.directions[1] = direction;
 	}
 

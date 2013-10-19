@@ -8,6 +8,7 @@ import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.fragment.BadnewsDialogFragment;
 import android.app.Fragment;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class BadNewsItem extends AbstractItem {
@@ -33,8 +34,8 @@ public class BadNewsItem extends AbstractItem {
 
 	public void fillView(View view) {
 		view.setTag(R.id.zoneType, getType());
-		((TextView) view.getTag(R.id.streetDirLeft)).setText(streetDTO.getDirectionLeft());
-		((TextView) view.getTag(R.id.streetDirRight)).setText(streetDTO.getDirectionRight());
+		((ImageView) view.getTag(R.id.streetDirLeft)).setImageResource(streetDTO.getDirectionLeft());
+		((ImageView) view.getTag(R.id.streetDirRight)).setImageResource(streetDTO.getDirectionRight());
 		TextView badNews = (TextView) view.getTag(R.id.badNews);
 		if (streetDTO.getBadNews().size() != 0) {
 			badNews.setText(badNewsLabel + streetDTO.getBadNews().size());

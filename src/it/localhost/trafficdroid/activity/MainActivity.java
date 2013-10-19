@@ -13,7 +13,6 @@ import it.localhost.trafficdroid.tabFragment.PedaggioFragment;
 import it.localhost.trafficdroid.tabFragment.PreferencesFragment;
 import it.localhost.trafficdroid.tabFragment.VideoFragment;
 import android.app.ActionBar;
-import android.app.ActionBar.Tab;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -28,44 +27,23 @@ import com.commonsware.cwac.wakeful.WakefulIntentService;
 
 public class MainActivity extends AbstractActivity { // NO_UCD
 	private static final String ALCOL_URL = "http://voti.kataweb.it/etilometro/index.php";
-
 	private BroadcastReceiver receiver;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// android.os.StrictMode.setThreadPolicy(new
-		// android.os.StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
-		// android.os.StrictMode.setVmPolicy(new
-		// android.os.StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
+		android.os.StrictMode.setThreadPolicy(new android.os.StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
+		android.os.StrictMode.setVmPolicy(new android.os.StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setProgressBarIndeterminateVisibility(false);
 		ActionBar bar = getActionBar();
 		bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		Tab tab = bar.newTab();
-		tab.setText(R.string.app_name);
-		tab.setTabListener(new MainFragment());
-		bar.addTab(tab);
-		Tab tab2 = bar.newTab();
-		tab2.setText(R.string.anasTv);
-		tab2.setTabListener(new VideoFragment());
-		bar.addTab(tab2);
-		Tab tab3 = bar.newTab();
-		tab3.setText(R.string.pedaggio);
-		tab3.setTabListener(new PedaggioFragment());
-		bar.addTab(tab3);
-		Tab tab4 = bar.newTab();
-		tab4.setText(R.string.patente);
-		tab4.setTabListener(new PatenteFragment());
-		bar.addTab(tab4);
-		Tab tab5 = bar.newTab();
-		tab5.setText(R.string.bollo);
-		tab5.setTabListener(new BolloFragment());
-		bar.addTab(tab5);
-		Tab tab6 = bar.newTab();
-		tab6.setText(R.string.settings);
-		tab6.setTabListener(new PreferencesFragment());
-		bar.addTab(tab6);
+		bar.addTab(bar.newTab().setText(R.string.app_name).setTabListener(new MainFragment()));
+		bar.addTab(bar.newTab().setText(R.string.anasTv).setTabListener(new VideoFragment()));
+		bar.addTab(bar.newTab().setText(R.string.pedaggio).setTabListener(new PedaggioFragment()));
+		bar.addTab(bar.newTab().setText(R.string.patente).setTabListener(new PatenteFragment()));
+		bar.addTab(bar.newTab().setText(R.string.bollo).setTabListener(new BolloFragment()));
+		bar.addTab(bar.newTab().setText(R.string.settings).setTabListener(new PreferencesFragment()));
 	}
 
 	@Override

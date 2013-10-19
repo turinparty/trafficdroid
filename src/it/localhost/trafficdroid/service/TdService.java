@@ -62,12 +62,6 @@ public class TdService extends WakefulIntentService { // NO_UCD
 	private static final String S = "S";
 	private static final String O = "O";
 	private static final String I = "I";
-	private static final String EXT = "Ext";
-	private static final String INT = "Int";
-	private static final String OVEST = "Ovest";
-	private static final String EST = "Est";
-	private static final String SUD = "Sud";
-	private static final String NORD = "Nord";
 	private static final String NEWLINE = "\n";
 	private static final String SPACE = " ";
 	private static final String DC_DATE = "dc:date";
@@ -157,20 +151,20 @@ public class TdService extends WakefulIntentService { // NO_UCD
 				street.setTag(streetsTag[i]);
 				street.setGraph(graphTag[i]);
 				if (streetsDir[i].equals(N)) {
-					street.setDirectionLeft(NORD);
-					street.setDirectionRight(SUD);
+					street.setDirectionLeft(R.drawable.ic_north);
+					street.setDirectionRight(R.drawable.ic_south);
 				} else if (streetsDir[i].equals(E)) {
-					street.setDirectionLeft(EST);
-					street.setDirectionRight(OVEST);
+					street.setDirectionLeft(R.drawable.ic_east);
+					street.setDirectionRight(R.drawable.ic_west);
 				} else if (streetsDir[i].equals(S)) {
-					street.setDirectionLeft(SUD);
-					street.setDirectionRight(NORD);
+					street.setDirectionLeft(R.drawable.ic_south);
+					street.setDirectionRight(R.drawable.ic_north);
 				} else if (streetsDir[i].equals(O)) {
-					street.setDirectionLeft(OVEST);
-					street.setDirectionRight(EST);
+					street.setDirectionLeft(R.drawable.ic_west);
+					street.setDirectionRight(R.drawable.ic_east);
 				} else if (streetsDir[i].equals(I)) {
-					street.setDirectionLeft(INT);
-					street.setDirectionRight(EXT);
+					street.setDirectionLeft(R.drawable.ic_action_rotate_right);
+					street.setDirectionRight(R.drawable.ic_action_rotate_left);
 				}
 				mainDto.putStreet(street);
 			}

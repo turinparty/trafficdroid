@@ -31,8 +31,8 @@ public class WidgetZoneProvider extends AppWidgetProvider {
 			if (street != null) {
 				ZoneDTO zone = street.getZone(Utility.getWidgetZoneZone(context, mAppWidgetId));
 				if (zone != null) {
-					views.setTextViewText(R.id.streetDirLeft, street.getDirectionLeft());
-					views.setTextViewText(R.id.streetDirRight, street.getDirectionRight());
+				//	views.setTextViewText(R.id.streetDirLeft, street.getDirectionLeft());
+				//	views.setTextViewText(R.id.streetDirRight, street.getDirectionRight());
 					views.setTextViewText(R.id.zoneName, DateFormat.getTimeFormat(context).format(dto.getTrafficTime()) + " " + zone.getName());
 					views.setTextViewText(R.id.zoneSpeedLeft, Short.toString(zone.getSpeedLeft()));
 					views.setTextViewText(R.id.zoneSpeedRight, Short.toString(zone.getSpeedRight()));

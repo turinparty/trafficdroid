@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="adUnitId">a14d8f6a3c4c2f3</string>
+    <string name="adUnitId">ca-app-pub-4235011035409184/4547377745</string>
+    <string name="testDevice">3E3BA1580C4C0748C1645065665BC000</string>
     <string name="widgetZoneName">Trafficdroid - Tratta stradale</string>
     <string name="widgetStreetName">Trafficdroid - Strada intera</string>
     <string name="app_name">TrafficDroid</string>
