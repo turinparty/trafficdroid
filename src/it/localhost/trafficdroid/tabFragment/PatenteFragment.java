@@ -1,7 +1,7 @@
 package it.localhost.trafficdroid.tabFragment;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.common.TdAdListener;
+import it.localhost.trafficdroid.common.InterstitialAd;
 import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dao.PatenteService;
 import it.localhost.trafficdroid.dto.BaseDTO;
@@ -21,8 +21,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.ads.AdRequest;
-import com.google.ads.InterstitialAd;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.Fields;
 import com.google.analytics.tracking.android.MapBuilder;
@@ -33,6 +31,7 @@ public class PatenteFragment extends Fragment implements TabListener {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		new InterstitialAd(getActivity());
 		View v = inflater.inflate(R.layout.patente, null);
 		getActivity().setProgressBarIndeterminateVisibility(false);
 		final EditText usrEdit = (EditText) v.findViewById(R.id.patenteUsr);
@@ -54,11 +53,6 @@ public class PatenteFragment extends Fragment implements TabListener {
 					new MessageDialogFragment().show(getFragmentManager(), getString(R.string.error), getString(R.string.wrongData), false);
 			}
 		});
-		if (!Utility.isInterstitialFree(getActivity())) {
-			InterstitialAd interstitial = new InterstitialAd(getActivity(), getString(R.string.adUnitId));
-			interstitial.setAdListener(new TdAdListener());
-			interstitial.loadAd(new AdRequest());
-		}
 		EasyTracker.getInstance(getActivity()).send(MapBuilder.createAppView().set(Fields.SCREEN_NAME, PatenteFragment.class.getSimpleName()).build());
 		return v;
 	}

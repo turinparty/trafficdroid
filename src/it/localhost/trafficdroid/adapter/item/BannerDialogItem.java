@@ -7,23 +7,14 @@ public class BannerDialogItem extends AbstractItem {
 	private int layout;
 
 	public BannerDialogItem(Fragment fragment, int layout) {
-		super(fragment);
+		super(fragment, layout);
 		this.layout = layout;
 	}
 
-	public int getType() {
-		return itemTypes[2];
-	}
-
 	public View inflateView() {
-		View v = View.inflate(fragment.getActivity(), layout, null);
-		System.err.println(v);
-		return v;
+		return View.inflate(fragment.getActivity(), layout, null);
 	}
 
 	public void fillView(View view) {
-	}
-
-	public void onClick() {
 	}
 }

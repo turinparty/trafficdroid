@@ -10,13 +10,8 @@ public class StreetItem extends AbstractItem {
 	private StreetDTO streetDTO;
 
 	public StreetItem(Fragment fragment, StreetDTO streetDTO) {
-		super(fragment);
+		super(fragment, streetDTO);
 		this.streetDTO = streetDTO;
-	}
-
-	@Override
-	public int getType() {
-		return itemTypes[3];
 	}
 
 	@Override
@@ -39,9 +34,5 @@ public class StreetItem extends AbstractItem {
 		} else {
 			streetText2.setVisibility(View.INVISIBLE);
 		}
-	}
-
-	@Override
-	public void onClick() {
 	}
 }

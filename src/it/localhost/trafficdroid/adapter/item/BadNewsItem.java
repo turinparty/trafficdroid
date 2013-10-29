@@ -1,28 +1,19 @@
 package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.dto.StreetDTO;
-import it.localhost.trafficdroid.fragment.BadnewsDialogFragment;
 import android.app.Fragment;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.google.analytics.tracking.android.EasyTracker;
-import com.google.analytics.tracking.android.MapBuilder;
 
 public class BadNewsItem extends AbstractItem {
 	static final String badNewsLabel = "Bad News: ";
 	private StreetDTO streetDTO;
 
 	public BadNewsItem(Fragment fragment, StreetDTO streetDTO) {
-		super(fragment);
+		super(fragment, streetDTO);
 		this.streetDTO = streetDTO;
-	}
-
-	public int getType() {
-		return itemTypes[1];
 	}
 
 	public View inflateView() {
@@ -34,7 +25,6 @@ public class BadNewsItem extends AbstractItem {
 	}
 
 	public void fillView(View view) {
-		view.setTag(R.id.zoneType, getType());
 		((ImageView) view.getTag(R.id.streetDirLeft)).setImageResource(streetDTO.getDirectionLeft());
 		((ImageView) view.getTag(R.id.streetDirRight)).setImageResource(streetDTO.getDirectionRight());
 		TextView badNews = (TextView) view.getTag(R.id.badNews);
@@ -43,12 +33,5 @@ public class BadNewsItem extends AbstractItem {
 			badNews.setVisibility(View.VISIBLE);
 		} else
 			badNews.setVisibility(View.INVISIBLE);
-	}
-
-	public void onClick() {
-		if (streetDTO.getBadNews().size() != 0) {
-			EasyTracker.getInstance(fragment.getActivity()).send(MapBuilder.createEvent(MainActivity.EVENT_CAT_BADNEWS, MainActivity.EVENT_ACTION_OPEN, streetDTO.getName(), (long) 0).build());
-			new BadnewsDialogFragment().show(fragment.getFragmentManager(), streetDTO);
-		}
 	}
 }

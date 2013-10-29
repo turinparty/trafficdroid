@@ -1,110 +1,99 @@
 package it.localhost.trafficdroid.adapter;
 
-import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.item.AbstractItem;
-import it.localhost.trafficdroid.adapter.item.BadNewsItem;
-import it.localhost.trafficdroid.adapter.item.BannerDialogItem;
-import it.localhost.trafficdroid.adapter.item.GraphItem;
-import it.localhost.trafficdroid.adapter.item.StreetItem;
-import it.localhost.trafficdroid.adapter.item.ZoneItem;
 import it.localhost.trafficdroid.common.Utility;
-import it.localhost.trafficdroid.dto.MainDTO;
-import it.localhost.trafficdroid.dto.StreetDTO;
-import it.localhost.trafficdroid.dto.ZoneDTO;
 
 import java.util.ArrayList;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 
-public class MainAdapter extends BaseExpandableListAdapter {
+public class HeterogeneousExpandableListAdapter extends BaseExpandableListAdapter {
 	private ArrayList<AbstractItem> groupItems;
 	private ArrayList<ArrayList<AbstractItem>> childItems;
 	private Context context;
+	private ArrayList<Integer> types;
 
-	public MainAdapter(Fragment fragment, MainDTO mainDTO, boolean isAdFree) {
-		this.context = fragment.getActivity();
-		groupItems = new ArrayList<AbstractItem>();
-		childItems = new ArrayList<ArrayList<AbstractItem>>();
-		for (StreetDTO street : mainDTO.getStreets()) {
-			groupItems.add(new StreetItem(fragment, street));
-			ArrayList<AbstractItem> childItems = new ArrayList<AbstractItem>();
-			if (street.getGraph().length() != 0)
-				childItems.add(new GraphItem(fragment, street));
-			childItems.add(new BadNewsItem(fragment, street));
-			for (ZoneDTO zone : street.getZones())
-				childItems.add(new ZoneItem(fragment, zone));
-			this.childItems.add(childItems);
-		}
-		for (int i = 0; i < childItems.size(); i++) {
-			int size = childItems.get(i).size();
-			for (int j = 0; j < size; j++)
-				if (Math.random() < 0.05 && !isAdFree) {
-					childItems.get(i).add(j++, new BannerDialogItem(fragment, R.layout.smart_banner));
-					size++;
-				}
-		}
+	public HeterogeneousExpandableListAdapter(Context context, ArrayList<AbstractItem> groupItems, ArrayList<ArrayList<AbstractItem>> childItems) {
+		this.context = context;
+		this.groupItems = groupItems;
+		this.childItems = childItems;
+		types = new ArrayList<Integer>();
+		for (AbstractItem abstractItem : groupItems)
+			types.add(abstractItem.getClass().hashCode());
+		for (ArrayList<AbstractItem> childData : childItems)
+			for (AbstractItem abstractItem : childData)
+				types.add(abstractItem.getClass().hashCode());
 	}
 
+	@Override
 	public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-		AbstractItem rowModel = groupItems.get(groupPosition);
+		AbstractItem rowModel = getGroup(groupPosition);
 		if (convertView == null)
 			convertView = rowModel.inflateView();
 		rowModel.fillView(convertView);
 		return convertView;
 	}
 
+	@Override
 	public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-		AbstractItem rowModel = childItems.get(groupPosition).get(childPosition);
+		AbstractItem rowModel = getChild(groupPosition, childPosition);
 		if (convertView == null)
 			convertView = rowModel.inflateView();
 		rowModel.fillView(convertView);
 		return convertView;
 	}
 
-	public Object getGroup(int groupPosition) {
+	@Override
+	public AbstractItem getGroup(int groupPosition) {
 		return groupItems.get(groupPosition);
 	}
 
-	public Object getChild(int groupPosition, int childPosition) {
+	@Override
+	public AbstractItem getChild(int groupPosition, int childPosition) {
 		return childItems.get(groupPosition).get(childPosition);
 	}
 
+	@Override
 	public int getGroupCount() {
 		return groupItems.size();
 	}
 
+	@Override
 	public int getChildrenCount(int groupPosition) {
 		return childItems.get(groupPosition).size();
 	}
 
+	@Override
 	public long getGroupId(int groupPosition) {
 		return groupPosition;
 	}
 
+	@Override
 	public long getChildId(int groupPosition, int childPosition) {
 		return childPosition;
 	}
 
+	@Override
 	public boolean isChildSelectable(int groupPosition, int childPosition) {
 		return true;
 	}
 
+	@Override
 	public boolean hasStableIds() {
 		return true;
 	}
 
 	@Override
 	public int getChildType(int groupPosition, int childPosition) {
-		return childItems.get(groupPosition).get(childPosition).getType();
+		return types.indexOf(getChild(groupPosition, childPosition).getClass().hashCode());
 	}
 
 	@Override
 	public int getChildTypeCount() {
-		return AbstractItem.itemTypes.length;
+		return types.size();
 	}
 
 	@Override

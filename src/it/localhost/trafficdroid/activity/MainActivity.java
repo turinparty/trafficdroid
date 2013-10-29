@@ -3,7 +3,6 @@ package it.localhost.trafficdroid.activity;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.fragment.QuizDialogFragment;
-import it.localhost.trafficdroid.fragment.WebviewDialogFragment;
 import it.localhost.trafficdroid.service.TdListener;
 import it.localhost.trafficdroid.service.TdService;
 import it.localhost.trafficdroid.tabFragment.BolloFragment;
@@ -12,6 +11,7 @@ import it.localhost.trafficdroid.tabFragment.PatenteFragment;
 import it.localhost.trafficdroid.tabFragment.PedaggioFragment;
 import it.localhost.trafficdroid.tabFragment.PreferencesFragment;
 import it.localhost.trafficdroid.tabFragment.VideoFragment;
+import it.localhost.trafficdroid.tabFragment.WebviewFragment;
 
 import java.security.KeyFactory;
 import java.security.Signature;
@@ -44,8 +44,8 @@ import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.MapBuilder;
 
 public class MainActivity extends Activity { // NO_UCD
-	private static final String ALCOL_URL = "http://voti.kataweb.it/etilometro/index.php";
-	private static final String IN_APP_BILLING_SERVICE = "com.android.vending.billing.InAppBillingService.BIND";
+	private static final String INAPPB_PKG = "com.android.vending";
+	private static final String INAPPB_ACT = INAPPB_PKG + "billing.InAppBillingService.BIND";
 	public static final String EVENT_CAT_WEBCAM = "Webcam";
 	public static final String EVENT_CAT_BADNEWS = "BadNews";
 	public static final String EVENT_CAT_IAB = "InAppBilling";
@@ -79,7 +79,7 @@ public class MainActivity extends Activity { // NO_UCD
 		// android.os.StrictMode.setVmPolicy(new
 		// android.os.StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
 		serviceConnection = new TdServiceConnection();
-		bindService(new Intent(IN_APP_BILLING_SERVICE), serviceConnection, Context.BIND_AUTO_CREATE);
+		bindService(new Intent(INAPPB_ACT).setPackage(INAPPB_PKG), serviceConnection, Context.BIND_AUTO_CREATE);
 		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
 		setProgressBarIndeterminateVisibility(false);
 		ActionBar bar = getActionBar();
@@ -87,8 +87,9 @@ public class MainActivity extends Activity { // NO_UCD
 		bar.addTab(bar.newTab().setText(R.string.app_name).setTabListener(new MainFragment()));
 		bar.addTab(bar.newTab().setText(R.string.anasTv).setTabListener(new VideoFragment()));
 		bar.addTab(bar.newTab().setText(R.string.pedaggio).setTabListener(new PedaggioFragment()));
-		bar.addTab(bar.newTab().setText(R.string.patente).setTabListener(new PatenteFragment()));
 		bar.addTab(bar.newTab().setText(R.string.bollo).setTabListener(new BolloFragment()));
+		bar.addTab(bar.newTab().setText(R.string.patente).setTabListener(new PatenteFragment()));
+		bar.addTab(bar.newTab().setText(R.string.alcol).setTabListener(WebviewFragment.newInstance(WebviewFragment.ALCOL_URL)));
 		bar.addTab(bar.newTab().setText(R.string.settings).setTabListener(new PreferencesFragment()));
 	}
 
@@ -154,9 +155,6 @@ public class MainActivity extends Activity { // NO_UCD
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-			case R.id.menuAlcol:
-				new WebviewDialogFragment().show(getFragmentManager(), ALCOL_URL, null);
-				return true;
 			case R.id.menuQuiz:
 				new QuizDialogFragment().show(getFragmentManager(), getString(R.string.patenteQuiz));
 				return true;

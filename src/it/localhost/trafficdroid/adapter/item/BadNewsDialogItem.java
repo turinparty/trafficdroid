@@ -43,14 +43,9 @@ public class BadNewsDialogItem extends AbstractItem {
 	private BadNewsDTO badNews;
 
 	public BadNewsDialogItem(Fragment fragment, BadNewsDTO badNews) {
-		super(fragment);
+		super(fragment, badNews);
 		this.badNews = badNews;
 		sdfBnFormat = DateFormat.getTimeInstance(DateFormat.SHORT);
-	}
-
-	@Override
-	public int getType() {
-		return itemTypes[0];
 	}
 
 	@Override
@@ -124,9 +119,5 @@ public class BadNewsDialogItem extends AbstractItem {
 		else
 			drawable = android.R.drawable.ic_dialog_alert;
 		badNewsDate.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, drawable);
-	}
-
-	@Override
-	public void onClick() {
 	}
 }

@@ -1,8 +1,7 @@
 package it.localhost.trafficdroid.tabFragment;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.common.TdAdListener;
-import it.localhost.trafficdroid.common.Utility;
+import it.localhost.trafficdroid.common.InterstitialAd;
 import it.localhost.trafficdroid.dao.AnasTvService;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
@@ -15,8 +14,6 @@ import android.view.ViewGroup;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-import com.google.ads.AdRequest;
-import com.google.ads.InterstitialAd;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.Fields;
 import com.google.analytics.tracking.android.MapBuilder;
@@ -28,16 +25,12 @@ public class VideoFragment extends Fragment implements TabListener {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		new InterstitialAd(getActivity());
 		videoView = (VideoView) inflater.inflate(R.layout.video, null);
 		MediaController mediaController = new MediaController(getActivity());
 		mediaController.setAnchorView(videoView);
 		videoView.setMediaController(mediaController);
 		new AnasNewsAsyncTask().execute();
-		if (!Utility.isInterstitialFree(getActivity())) {
-			InterstitialAd interstitial = new InterstitialAd(getActivity(), getString(R.string.adUnitId));
-			interstitial.setAdListener(new TdAdListener());
-			interstitial.loadAd(new AdRequest());
-		}
 		EasyTracker.getInstance(getActivity()).send(MapBuilder.createAppView().set(Fields.SCREEN_NAME, VideoFragment.class.getSimpleName()).build());
 		return videoView;
 	}
