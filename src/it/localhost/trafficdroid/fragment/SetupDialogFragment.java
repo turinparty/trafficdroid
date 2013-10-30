@@ -19,7 +19,7 @@ public class SetupDialogFragment extends DialogFragment {
 		builder.setPositiveButton(R.string.setProvider, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				getActivity().getActionBar().setSelectedNavigationItem(5);
+				getActivity().getActionBar().setSelectedNavigationItem(6);
 			}
 		});
 		builder.setNegativeButton(R.string.betterInfo, new OnClickListener() {

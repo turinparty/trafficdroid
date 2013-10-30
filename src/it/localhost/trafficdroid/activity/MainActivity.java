@@ -45,7 +45,7 @@ import com.google.analytics.tracking.android.MapBuilder;
 
 public class MainActivity extends Activity { // NO_UCD
 	private static final String INAPPB_PKG = "com.android.vending";
-	private static final String INAPPB_ACT = INAPPB_PKG + "billing.InAppBillingService.BIND";
+	private static final String INAPPB_ACT = INAPPB_PKG + ".billing.InAppBillingService.BIND";
 	public static final String EVENT_CAT_WEBCAM = "Webcam";
 	public static final String EVENT_CAT_BADNEWS = "BadNews";
 	public static final String EVENT_CAT_IAB = "InAppBilling";
