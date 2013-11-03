@@ -183,7 +183,7 @@ public class MainActivity extends Activity { // NO_UCD
 			if (!Utility.isAdFree(this))
 				adView.loadAd(new AdRequest.Builder().build());
 			else
-				findViewById(R.id.adView).setVisibility(View.GONE);
+				adView.setVisibility(View.GONE);
 		}
 		if (!Utility.isInterstitialFree(this)) {
 			interstitial = new InterstitialAd(this);
@@ -211,7 +211,7 @@ public class MainActivity extends Activity { // NO_UCD
 		try {
 			Bundle buyIntentBundle = inAppBillingService.getBuyIntent(3, getPackageName(), sku, ITEM_TYPE_INAPP, "");
 			if (buyIntentBundle.getInt(RESPONSE_CODE) == 0)
-				startIntentSenderForResult(((PendingIntent) buyIntentBundle.getParcelable(RESPONSE_BUY_INTENT)).getIntentSender(), 101010, new Intent(), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0));
+				startIntentSenderForResult(((PendingIntent) buyIntentBundle.getParcelable(RESPONSE_BUY_INTENT)).getIntentSender(), 0, new Intent(), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -226,8 +226,7 @@ public class MainActivity extends Activity { // NO_UCD
 		public void onServiceConnected(ComponentName name, IBinder service) {
 			inAppBillingService = IInAppBillingService.Stub.asInterface(service);
 			try {
-				int response = inAppBillingService.isBillingSupported(3, getPackageName(), ITEM_TYPE_INAPP);
-				if (response == 0)
+				if (inAppBillingService.isBillingSupported(3, getPackageName(), ITEM_TYPE_INAPP) == 0)
 					new RetrievePurchasesService().execute();
 			} catch (RemoteException e) {
 				e.printStackTrace();
