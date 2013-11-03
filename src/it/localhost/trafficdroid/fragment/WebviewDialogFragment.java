@@ -1,7 +1,7 @@
 package it.localhost.trafficdroid.fragment;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.common.InterstitialAd;
+import it.localhost.trafficdroid.activity.MainActivity;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -19,7 +19,6 @@ public class WebviewDialogFragment extends DialogFragment {
 
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
-		new InterstitialAd(getActivity());
 		Builder builder = new Builder(getActivity());
 		WebView webView = (WebView) View.inflate(getActivity(), R.layout.webview, null);
 		webView.getSettings().setJavaScriptEnabled(true);
@@ -45,6 +44,7 @@ public class WebviewDialogFragment extends DialogFragment {
 		builder.setView(webView);
 		Dialog d = builder.create();
 		d.getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+		((MainActivity) getActivity()).loadAd(webView);
 		return d;
 	}
 

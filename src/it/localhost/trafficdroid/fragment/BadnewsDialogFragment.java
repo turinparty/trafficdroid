@@ -4,7 +4,7 @@ import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.HeterogeneousArrayAdapter;
 import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.adapter.item.BadNewsDialogItem;
-import it.localhost.trafficdroid.adapter.item.BannerDialogItem;
+import it.localhost.trafficdroid.adapter.item.AdViewItem;
 import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dto.BadNewsDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
@@ -29,7 +29,7 @@ public class BadnewsDialogFragment extends DialogFragment {
 		ListView listview = (ListView) ListView.inflate(getActivity(), R.layout.dialog_badnews, null);
 		ArrayList<AbstractItem> items = new ArrayList<AbstractItem>();
 		if (!Utility.isAdFree(getActivity()))
-			items.add(new BannerDialogItem(this, R.layout.iab_mrect));
+			items.add(new AdViewItem(this, R.layout.adview_medium_rectangle));
 		for (BadNewsDTO badNews : street.getBadNews())
 			items.add(new BadNewsDialogItem(this, badNews));
 		listview.setAdapter(new HeterogeneousArrayAdapter(getActivity(), items));

@@ -1,7 +1,7 @@
 package it.localhost.trafficdroid.tabFragment;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.common.InterstitialAd;
+import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.dao.AnasTvService;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
@@ -25,13 +25,13 @@ public class VideoFragment extends Fragment implements TabListener {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		new InterstitialAd(getActivity());
 		videoView = (VideoView) inflater.inflate(R.layout.video, null);
 		MediaController mediaController = new MediaController(getActivity());
 		mediaController.setAnchorView(videoView);
 		videoView.setMediaController(mediaController);
 		new AnasNewsAsyncTask().execute();
 		EasyTracker.getInstance(getActivity()).send(MapBuilder.createAppView().set(Fields.SCREEN_NAME, VideoFragment.class.getSimpleName()).build());
+		((MainActivity) getActivity()).loadAd(videoView);
 		return videoView;
 	}
 

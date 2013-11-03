@@ -1,7 +1,7 @@
 package it.localhost.trafficdroid.tabFragment;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.common.InterstitialAd;
+import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dao.PatenteService;
 import it.localhost.trafficdroid.dto.BaseDTO;
@@ -31,7 +31,6 @@ public class PatenteFragment extends Fragment implements TabListener {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		new InterstitialAd(getActivity());
 		View v = inflater.inflate(R.layout.patente, null);
 		getActivity().setProgressBarIndeterminateVisibility(false);
 		final EditText usrEdit = (EditText) v.findViewById(R.id.patenteUsr);
@@ -54,6 +53,7 @@ public class PatenteFragment extends Fragment implements TabListener {
 			}
 		});
 		EasyTracker.getInstance(getActivity()).send(MapBuilder.createAppView().set(Fields.SCREEN_NAME, PatenteFragment.class.getSimpleName()).build());
+		((MainActivity) getActivity()).loadAd(v);
 		return v;
 	}
 

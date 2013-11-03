@@ -27,7 +27,7 @@
 			android:imeOptions="actionDone"
 			android:inputType="text" />
 
-		<include layout="@layout/iab_mrect" />
+		<include layout="@layout/adview_medium_rectangle" />
 
 		<LinearLayout
 			android:layout_width="match_parent"

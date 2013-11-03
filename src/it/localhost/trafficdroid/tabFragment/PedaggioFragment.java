@@ -1,8 +1,8 @@
 package it.localhost.trafficdroid.tabFragment;
 
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.ListExit;
-import it.localhost.trafficdroid.common.InterstitialAd;
 import it.localhost.trafficdroid.dao.PedaggioService;
 import it.localhost.trafficdroid.dto.BaseDTO;
 import it.localhost.trafficdroid.dto.PedaggioDTO;
@@ -31,7 +31,6 @@ public class PedaggioFragment extends Fragment implements TabListener {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		new InterstitialAd(getActivity());
 		View v = inflater.inflate(R.layout.pedaggio, null);
 		result = (TextView) v.findViewById(R.id.result);
 		getActivity().setProgressBarIndeterminateVisibility(false);
@@ -51,6 +50,7 @@ public class PedaggioFragment extends Fragment implements TabListener {
 			}
 		});
 		EasyTracker.getInstance(getActivity()).send(MapBuilder.createAppView().set(Fields.SCREEN_NAME, PedaggioFragment.class.getSimpleName()).build());
+		((MainActivity) getActivity()).loadAd(v);
 		return v;
 	}
 

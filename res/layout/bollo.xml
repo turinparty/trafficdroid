@@ -64,7 +64,7 @@
 				android:inputType="textCapCharacters|textNoSuggestions" />
 		</LinearLayout>
 
-		<include layout="@layout/iab_mrect" />
+		<include layout="@layout/adview_medium_rectangle" />
 
 		<Button
 			android:id="@+id/ok"

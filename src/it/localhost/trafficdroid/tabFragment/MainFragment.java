@@ -5,8 +5,8 @@ import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.adapter.HeterogeneousExpandableListAdapter;
 import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.adapter.item.AbstractItem.OnAbstractItemClickListener;
+import it.localhost.trafficdroid.adapter.item.AdViewItem;
 import it.localhost.trafficdroid.adapter.item.BadNewsItem;
-import it.localhost.trafficdroid.adapter.item.BannerDialogItem;
 import it.localhost.trafficdroid.adapter.item.GraphItem;
 import it.localhost.trafficdroid.adapter.item.StreetItem;
 import it.localhost.trafficdroid.adapter.item.ZoneItem;
@@ -86,6 +86,7 @@ public class MainFragment extends Fragment implements TabListener, OnAbstractIte
 		} else if (Utility.isBerserkKey(getActivity()))
 			tdListener.sendWakefulWork(getActivity());
 		EasyTracker.getInstance(getActivity()).send(MapBuilder.createAppView().set(Fields.SCREEN_NAME, MainFragment.class.getSimpleName()).build());
+		((MainActivity) getActivity()).loadAd(v);
 		return v;
 	}
 
@@ -190,7 +191,7 @@ public class MainFragment extends Fragment implements TabListener, OnAbstractIte
 					int size = childItems.get(i).size();
 					for (int j = 0; j < size; j++)
 						if (Math.random() < 0.05 && !Utility.isAdFree(getActivity())) {
-							childItems.get(i).add(j++, new BannerDialogItem(MainFragment.this, R.layout.smart_banner));
+							childItems.get(i).add(j++, new AdViewItem(MainFragment.this, R.layout.adview_smart_banner));
 							size++;
 						}
 				}

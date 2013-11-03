@@ -1,8 +1,8 @@
 package it.localhost.trafficdroid.tabFragment;
 
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.AutoFocusTextWatcher;
-import it.localhost.trafficdroid.common.InterstitialAd;
 import it.localhost.trafficdroid.fragment.WebviewDialogFragment;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
@@ -29,7 +29,6 @@ public class BolloFragment extends Fragment implements TabListener {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		new InterstitialAd(getActivity());
 		View v = inflater.inflate(R.layout.bollo, null);
 		targaA = (EditText) v.findViewById(R.id.targaA);
 		targaB = (EditText) v.findViewById(R.id.targaB);
@@ -49,6 +48,7 @@ public class BolloFragment extends Fragment implements TabListener {
 			}
 		});
 		EasyTracker.getInstance(getActivity()).send(MapBuilder.createAppView().set(Fields.SCREEN_NAME, BolloFragment.class.getSimpleName()).build());
+		((MainActivity) getActivity()).loadAd(v);
 		return v;
 	}
 

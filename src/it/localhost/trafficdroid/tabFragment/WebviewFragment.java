@@ -1,7 +1,7 @@
 package it.localhost.trafficdroid.tabFragment;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.common.InterstitialAd;
+import it.localhost.trafficdroid.activity.MainActivity;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
 import android.app.Fragment;
@@ -26,11 +26,11 @@ public class WebviewFragment extends Fragment implements TabListener {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		new InterstitialAd(getActivity());
 		WebView webView = (WebView) View.inflate(getActivity(), R.layout.webview, null);
 		webView.getSettings().setJavaScriptEnabled(true);
 		webView.getSettings().setBuiltInZoomControls(true);
 		webView.loadUrl(getArguments().getString(URL_KEY));
+		((MainActivity) getActivity()).loadAd(webView);
 		return webView;
 	}
 
