@@ -42,9 +42,6 @@ import com.android.vending.billing.IInAppBillingService;
 import com.commonsware.cwac.wakeful.WakefulIntentService;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.MapBuilder;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
 
 public class MainActivity extends Activity { // NO_UCD
 	private static final String INAPPB_PKG = "com.android.vending";
@@ -73,7 +70,6 @@ public class MainActivity extends Activity { // NO_UCD
 	private IInAppBillingService inAppBillingService;
 	private ServiceConnection serviceConnection;
 	private BroadcastReceiver receiver;
-	private InterstitialAd interstitial;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -159,9 +155,6 @@ public class MainActivity extends Activity { // NO_UCD
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.menuQuiz:
-			new QuizDialogFragment().show(getFragmentManager(), getString(R.string.patenteQuiz));
-			return true;
 		case R.id.menuRefresh:
 			if (!Utility.getProviderTraffic(this).equals(getString(R.string.providerTrafficDefault)))
 				new TdListener().sendWakefulWork(this);
@@ -175,26 +168,6 @@ public class MainActivity extends Activity { // NO_UCD
 		default:
 			return super.onOptionsItemSelected(item);
 		}
-	}
-
-	public void loadAd(View v) {
-		AdView adView = (AdView) v.findViewById(R.id.adView);
-		if (adView != null) {
-			if (!Utility.isAdFree(this))
-				adView.loadAd(new AdRequest.Builder().build());
-			else
-				adView.setVisibility(View.GONE);
-		}
-		if (!Utility.isInterstitialFree(this)) {
-			interstitial = new InterstitialAd(this);
-			interstitial.setAdUnitId(getString(R.string.adUnitId));
-			interstitial.loadAd(new AdRequest.Builder().build());
-		}
-	}
-
-	public void displayInterstitial() {
-		if (interstitial.isLoaded())
-			interstitial.show();
 	}
 
 	private final class UpdateReceiver extends BroadcastReceiver {

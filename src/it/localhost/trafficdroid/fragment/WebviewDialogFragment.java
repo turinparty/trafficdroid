@@ -1,7 +1,7 @@
 package it.localhost.trafficdroid.fragment;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.activity.MainActivity;
+import it.localhost.trafficdroid.common.AdManager;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager.LayoutParams;
 import android.webkit.WebView;
+
+import com.google.android.gms.ads.AdView;
 
 public class WebviewDialogFragment extends DialogFragment {
 	private static final String AUTOSTRADE_IT = "autostrade.it";
@@ -44,7 +46,7 @@ public class WebviewDialogFragment extends DialogFragment {
 		builder.setView(webView);
 		Dialog d = builder.create();
 		d.getWindow().setLayout(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-		((MainActivity) getActivity()).loadAd(webView);
+		new AdManager().load(getActivity(), ((AdView) webView.findViewById(R.id.adView)), true);
 		return d;
 	}
 

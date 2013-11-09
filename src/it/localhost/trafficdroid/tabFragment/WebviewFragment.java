@@ -1,7 +1,7 @@
 package it.localhost.trafficdroid.tabFragment;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.activity.MainActivity;
+import it.localhost.trafficdroid.common.AdManager;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
 import android.app.Fragment;
@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+
+import com.google.android.gms.ads.AdView;
 
 public class WebviewFragment extends Fragment implements TabListener {
 	public static final String ALCOL_URL = "http://voti.kataweb.it/etilometro/index.php";
@@ -30,7 +32,7 @@ public class WebviewFragment extends Fragment implements TabListener {
 		webView.getSettings().setJavaScriptEnabled(true);
 		webView.getSettings().setBuiltInZoomControls(true);
 		webView.loadUrl(getArguments().getString(URL_KEY));
-		((MainActivity) getActivity()).loadAd(webView);
+		new AdManager().load(getActivity(), ((AdView) webView.findViewById(R.id.adView)), true);
 		return webView;
 	}
 

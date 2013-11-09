@@ -10,6 +10,7 @@ import it.localhost.trafficdroid.adapter.item.BadNewsItem;
 import it.localhost.trafficdroid.adapter.item.GraphItem;
 import it.localhost.trafficdroid.adapter.item.StreetItem;
 import it.localhost.trafficdroid.adapter.item.ZoneItem;
+import it.localhost.trafficdroid.common.AdManager;
 import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dao.PersistanceService;
 import it.localhost.trafficdroid.dto.MainDTO;
@@ -49,6 +50,7 @@ import android.widget.ExpandableListView.OnChildClickListener;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.Fields;
 import com.google.analytics.tracking.android.MapBuilder;
+import com.google.android.gms.ads.AdView;
 
 public class MainFragment extends Fragment implements TabListener, OnAbstractItemClickListener {
 	private static final String firstUrl = "http://vai-cdn.stradeanas.it/Appscripts/sinotraffic.php?city=";
@@ -86,7 +88,7 @@ public class MainFragment extends Fragment implements TabListener, OnAbstractIte
 		} else if (Utility.isBerserkKey(getActivity()))
 			tdListener.sendWakefulWork(getActivity());
 		EasyTracker.getInstance(getActivity()).send(MapBuilder.createAppView().set(Fields.SCREEN_NAME, MainFragment.class.getSimpleName()).build());
-		((MainActivity) getActivity()).loadAd(v);
+		new AdManager().load(getActivity(), ((AdView) v.findViewById(R.id.adView)), false);
 		return v;
 	}
 

@@ -19,13 +19,17 @@ public class PedaggioService extends AsyncTask<String, Void, BaseDTO> {
 	@Override
 	protected BaseDTO doInBackground(String... args) {
 		try {
-			String s = new Scanner(new URL(url + args[0] + arg + args[1]).openStream()).useDelimiter(delimiter).next();
+			BaseDTO out;
+			Scanner sc = new Scanner(new URL(url + args[0] + arg + args[1]).openStream());
+			String s = sc.useDelimiter(delimiter).next();
 			int start = s.indexOf(spanAperto);
 			if (start != -1) {
 				start = start + spanAperto.length();
-				return new PedaggioDTO(true, s.substring(start, s.indexOf(and, start)).trim());
+				out = new PedaggioDTO(true, s.substring(start, s.indexOf(and, start)).trim());
 			} else
-				return new BaseDTO(false, badParams);
+				out = new BaseDTO(false, badParams);
+			sc.close();
+			return out;
 		} catch (Exception e) {
 			return new BaseDTO(false, e.getMessage());
 		}

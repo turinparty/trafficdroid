@@ -34,7 +34,8 @@ public class MuoviRomaService extends AsyncTask<String, Void, BaseDTO> {
 	protected BaseDTO doInBackground(String... args) {
 		try {
 			ArrayList<String[]> out = new ArrayList<String[]>();
-			String data = new Scanner(new URL(URL).openStream()).useDelimiter(FILE).next().replace(SPAN_CLASS_I, BLANK).replace(SPAN_OPEN, BLANK).replace(SPAN_CLOSE, BLANK);
+			Scanner s = new Scanner(new URL(URL).openStream());
+			String data = s.useDelimiter(FILE).next().replace(SPAN_CLASS_I, BLANK).replace(SPAN_OPEN, BLANK).replace(SPAN_CLOSE, BLANK);
 			int start = data.indexOf(START);
 			int end = data.indexOf(END, start);
 			Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new InputSource(new StringReader(A_OPEN + data.substring(start, end) + A_CLOSE)));
@@ -45,6 +46,7 @@ public class MuoviRomaService extends AsyncTask<String, Void, BaseDTO> {
 				else if (nl.item(i).getNodeName().equals(P))
 					out.get(out.size() - 1)[1] = nl.item(i).getTextContent().trim();
 			}
+			s.close();
 			return new MuoviRomaDTO(true, out);
 		} catch (Exception e) {
 			e.printStackTrace();
