@@ -7,7 +7,7 @@ import android.view.View;
 
 public abstract class AbstractItem {
 	protected Fragment fragment;
-	private Serializable extra;
+	protected Serializable extra;
 
 	public abstract View inflateView();
 
