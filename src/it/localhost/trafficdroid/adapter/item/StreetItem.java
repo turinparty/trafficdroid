@@ -2,28 +2,27 @@ package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.dto.StreetDTO;
-import android.app.Fragment;
+import localhost.widget.HeterogeneousItem;
+import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 
-public class StreetItem extends AbstractItem {
-	private StreetDTO streetDTO;
-
-	public StreetItem(Fragment fragment, StreetDTO streetDTO) {
-		super(fragment, streetDTO);
-		this.streetDTO = streetDTO;
+public class StreetItem extends HeterogeneousItem {
+	public StreetItem(Context context, StreetDTO extra) {
+		super(context, extra);
 	}
 
 	@Override
-	public View inflateView() {
-		View view = View.inflate(fragment.getActivity(), android.R.layout.simple_expandable_list_item_2, null);
+	public View inflate() {
+		View view = View.inflate(context, android.R.layout.simple_expandable_list_item_2, null);
 		view.setTag(R.id.text1, view.findViewById(android.R.id.text1));
 		view.setTag(R.id.text2, view.findViewById(android.R.id.text2));
 		return view;
 	}
 
 	@Override
-	public void fillView(View view) {
+	public void fill(View view) {
+		StreetDTO streetDTO = (StreetDTO) extra;
 		view.setTag(R.id.itemKey, streetDTO.getId());
 		view.setTag(R.id.itemName, streetDTO.getName());
 		((TextView) view.getTag(R.id.text1)).setText(streetDTO.getTag() + " " + streetDTO.getName());

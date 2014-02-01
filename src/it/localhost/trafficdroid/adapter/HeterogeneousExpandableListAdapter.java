@@ -1,58 +1,58 @@
 package it.localhost.trafficdroid.adapter;
 
-import it.localhost.trafficdroid.adapter.item.AbstractItem;
 import it.localhost.trafficdroid.common.Utility;
 
 import java.util.ArrayList;
 
+import localhost.widget.HeterogeneousItem;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 
 public class HeterogeneousExpandableListAdapter extends BaseExpandableListAdapter {
-	private ArrayList<AbstractItem> groupItems;
-	private ArrayList<ArrayList<AbstractItem>> childItems;
+	private ArrayList<HeterogeneousItem> groupItems;
+	private ArrayList<ArrayList<HeterogeneousItem>> childItems;
 	private Context context;
 	private ArrayList<Integer> types;
 
-	public HeterogeneousExpandableListAdapter(Context context, ArrayList<AbstractItem> groupItems, ArrayList<ArrayList<AbstractItem>> childItems) {
+	public HeterogeneousExpandableListAdapter(Context context, ArrayList<HeterogeneousItem> groupItems, ArrayList<ArrayList<HeterogeneousItem>> childItems) {
 		this.context = context;
 		this.groupItems = groupItems;
 		this.childItems = childItems;
 		types = new ArrayList<Integer>();
-		for (AbstractItem abstractItem : groupItems)
+		for (HeterogeneousItem abstractItem : groupItems)
 			types.add(abstractItem.getClass().hashCode());
-		for (ArrayList<AbstractItem> childData : childItems)
-			for (AbstractItem abstractItem : childData)
+		for (ArrayList<HeterogeneousItem> childData : childItems)
+			for (HeterogeneousItem abstractItem : childData)
 				types.add(abstractItem.getClass().hashCode());
 	}
 
 	@Override
 	public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-		AbstractItem rowModel = getGroup(groupPosition);
+		HeterogeneousItem rowModel = getGroup(groupPosition);
 		if (convertView == null)
-			convertView = rowModel.inflateView();
-		rowModel.fillView(convertView);
+			convertView = rowModel.inflate();
+		rowModel.fill(convertView);
 		return convertView;
 	}
 
 	@Override
 	public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-		AbstractItem rowModel = getChild(groupPosition, childPosition);
+		HeterogeneousItem rowModel = getChild(groupPosition, childPosition);
 		if (convertView == null)
-			convertView = rowModel.inflateView();
-		rowModel.fillView(convertView);
+			convertView = rowModel.inflate();
+		rowModel.fill(convertView);
 		return convertView;
 	}
 
 	@Override
-	public AbstractItem getGroup(int groupPosition) {
+	public HeterogeneousItem getGroup(int groupPosition) {
 		return groupItems.get(groupPosition);
 	}
 
 	@Override
-	public AbstractItem getChild(int groupPosition, int childPosition) {
+	public HeterogeneousItem getChild(int groupPosition, int childPosition) {
 		return childItems.get(groupPosition).get(childPosition);
 	}
 

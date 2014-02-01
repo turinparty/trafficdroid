@@ -1,20 +1,24 @@
 package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
-import android.app.Fragment;
+
+import java.io.Serializable;
+
+import localhost.widget.HeterogeneousItem;
+import android.content.Context;
 import android.view.View;
 
-public class GraphItem extends AbstractItem {
-	public GraphItem(Fragment fragment, String graph) {
-		super(fragment, graph);
+public class GraphItem extends HeterogeneousItem {
+	public GraphItem(Context context, Serializable extra) {
+		super(context, extra);
 	}
 
 	@Override
-	public View inflateView() {
-		return View.inflate(fragment.getActivity(), R.layout.main_item_graph, null);
+	public View inflate() {
+		return View.inflate(context, R.layout.main_item_graph, null);
 	}
 
 	@Override
-	public void fillView(View view) {
+	public void fill(View view) {
 	}
 }

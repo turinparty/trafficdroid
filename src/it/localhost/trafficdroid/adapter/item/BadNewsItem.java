@@ -2,29 +2,31 @@ package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.dto.StreetDTO;
-import android.app.Fragment;
+import localhost.widget.HeterogeneousItem;
+import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class BadNewsItem extends AbstractItem {
+public class BadNewsItem extends HeterogeneousItem {
 	static final String badNewsLabel = "Bad News: ";
-	private StreetDTO streetDTO;
 
-	public BadNewsItem(Fragment fragment, StreetDTO streetDTO) {
-		super(fragment, streetDTO);
-		this.streetDTO = streetDTO;
+	public BadNewsItem(Context context, StreetDTO extra) {
+		super(context, extra);
 	}
 
-	public View inflateView() {
-		View view = View.inflate(fragment.getActivity(), R.layout.main_item_badnews, null);
+	@Override
+	public View inflate() {
+		View view = View.inflate(context, R.layout.main_item_badnews, null);
 		view.setTag(R.id.streetDirLeft, view.findViewById(R.id.streetDirLeft));
 		view.setTag(R.id.streetDirRight, view.findViewById(R.id.streetDirRight));
 		view.setTag(R.id.badNews, view.findViewById(R.id.badNews));
 		return view;
 	}
 
-	public void fillView(View view) {
+	@Override
+	public void fill(View view) {
+		StreetDTO streetDTO = (StreetDTO) extra;
 		((ImageView) view.getTag(R.id.streetDirLeft)).setImageResource(streetDTO.getDirectionLeft());
 		((ImageView) view.getTag(R.id.streetDirRight)).setImageResource(streetDTO.getDirectionRight());
 		TextView badNews = (TextView) view.getTag(R.id.badNews);

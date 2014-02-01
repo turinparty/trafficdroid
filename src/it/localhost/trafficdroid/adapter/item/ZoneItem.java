@@ -2,25 +2,25 @@ package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.dto.ZoneDTO;
-import android.app.Fragment;
+import localhost.widget.HeterogeneousItem;
+import android.content.Context;
 import android.graphics.Typeface;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ZoneItem extends AbstractItem {
+public class ZoneItem extends HeterogeneousItem {
 	private static final int[] colorCat = new int[] { 0xffffffff, 0xffff0000, 0xffff0000, 0xffff8000, 0xffffff00, 0xff47ffff, 0xff00ff00 };
 	private static final String noDataSpeed = "-";
 	private static final char camNone = 'H';
-	private ZoneDTO zoneDTO;
 
-	public ZoneItem(Fragment fragment, ZoneDTO zoneDTO) {
-		super(fragment, zoneDTO);
-		this.zoneDTO = zoneDTO;
+	public ZoneItem(Context context, ZoneDTO extra) {
+		super(context, extra);
 	}
 
-	public View inflateView() {
-		View view = View.inflate(fragment.getActivity(), R.layout.main_item_zone, null);
+	@Override
+	public View inflate() {
+		View view = View.inflate(context, R.layout.main_item_zone, null);
 		view.setTag(R.id.zoneName, view.findViewById(R.id.zoneName));
 		view.setTag(R.id.zoneSpeedLeft, view.findViewById(R.id.zoneSpeedLeft));
 		view.setTag(R.id.zoneSpeedRight, view.findViewById(R.id.zoneSpeedRight));
@@ -32,7 +32,9 @@ public class ZoneItem extends AbstractItem {
 		return view;
 	}
 
-	public void fillView(View view) {
+	@Override
+	public void fill(View view) {
+		ZoneDTO zoneDTO = (ZoneDTO) extra;
 		view.setTag(R.id.itemKey, zoneDTO.getId());
 		view.setTag(R.id.itemName, zoneDTO.getName());
 		TextView zoneNameText = (TextView) view.getTag(R.id.zoneName);

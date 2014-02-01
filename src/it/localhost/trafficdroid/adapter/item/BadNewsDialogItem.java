@@ -5,11 +5,12 @@ import it.localhost.trafficdroid.dto.BadNewsDTO;
 
 import java.text.DateFormat;
 
-import android.app.Fragment;
+import localhost.widget.HeterogeneousItem;
+import android.content.Context;
 import android.view.View;
 import android.widget.TextView;
 
-public class BadNewsDialogItem extends AbstractItem {
+public class BadNewsDialogItem extends HeterogeneousItem {
 	private static final String bn_acc = "incidente";
 	private static final String bn_anh = "animali";
 	private static final String bn_bkd = "veicolo fermo";
@@ -40,17 +41,15 @@ public class BadNewsDialogItem extends AbstractItem {
 	private static final String bn_win = "vento";
 	private static final String bn_cls = "carburante chius";
 	private static DateFormat sdfBnFormat;
-	private BadNewsDTO badNews;
 
-	public BadNewsDialogItem(Fragment fragment, BadNewsDTO badNews) {
-		super(fragment, badNews);
-		this.badNews = badNews;
+	public BadNewsDialogItem(Context context, BadNewsDTO extra) {
+		super(context, extra);
 		sdfBnFormat = DateFormat.getTimeInstance(DateFormat.SHORT);
 	}
 
 	@Override
-	public View inflateView() {
-		View view = View.inflate(fragment.getActivity(), R.layout.dialog_item_badnews, null);
+	public View inflate() {
+		View view = View.inflate(context, R.layout.dialog_item_badnews, null);
 		view.setTag(R.id.badNewsTitle, view.findViewById(R.id.badNewsTitle));
 		view.setTag(R.id.badNewsDate, view.findViewById(R.id.badNewsDate));
 		view.setTag(R.id.badNewsDescription, view.findViewById(R.id.badNewsDescription));
@@ -58,7 +57,8 @@ public class BadNewsDialogItem extends AbstractItem {
 	}
 
 	@Override
-	public void fillView(View view) {
+	public void fill(View view) {
+		BadNewsDTO badNews = (BadNewsDTO) extra;
 		((TextView) view.getTag(R.id.badNewsTitle)).setText(badNews.getTitle());
 		((TextView) view.getTag(R.id.badNewsDescription)).setText(badNews.getDescription());
 		TextView badNewsDate = (TextView) view.getTag(R.id.badNewsDate);
