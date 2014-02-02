@@ -7,16 +7,15 @@ import java.util.LinkedHashMap;
 
 public class MainDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private static final String separator = "; ";
 	private LinkedHashMap<Integer, StreetDTO> streets;
 	private Date trafficTime;
-	private StringBuilder congestedZones;
+	private ArrayList<String> congestedZones;
 	private byte congestionThreshold;
 	private int versionCode;
 
 	public MainDTO() {
 		streets = new LinkedHashMap<Integer, StreetDTO>();
-		congestedZones = new StringBuilder();
+		congestedZones = new ArrayList<String>();
 	}
 
 	public Date getTrafficTime() {
@@ -39,16 +38,12 @@ public class MainDTO implements Serializable {
 		return streets.get(key);
 	}
 
-	public String getCongestedZones() {
-		if (congestedZones.length() > 0)
-			return congestedZones.substring(0, congestedZones.length() - 2);
-		else
-			return null;
+	public ArrayList<String> getCongestedZones() {
+		return congestedZones;
 	}
 
 	public void addCongestedZone(String zone) {
-		congestedZones.append(zone);
-		congestedZones.append(separator);
+		congestedZones.add(zone);
 	}
 
 	public byte getCongestionThreshold() {

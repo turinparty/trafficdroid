@@ -3,8 +3,6 @@ package it.localhost.trafficdroid.activity;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.fragment.QuizDialogFragment;
-import it.localhost.trafficdroid.service.TdListener;
-import it.localhost.trafficdroid.service.TdService;
 import it.localhost.trafficdroid.tabFragment.BolloFragment;
 import it.localhost.trafficdroid.tabFragment.MainFragment;
 import it.localhost.trafficdroid.tabFragment.PatenteFragment;
@@ -20,7 +18,6 @@ import java.util.ArrayList;
 
 import android.app.ActionBar;
 import android.app.Activity;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -39,7 +36,6 @@ import android.view.View;
 import android.view.Window;
 
 import com.android.vending.billing.IInAppBillingService;
-import com.commonsware.cwac.wakeful.WakefulIntentService;
 import com.google.analytics.tracking.android.EasyTracker;
 import com.google.analytics.tracking.android.MapBuilder;
 
@@ -70,6 +66,7 @@ public class MainActivity extends Activity { // NO_UCD
 	private IInAppBillingService inAppBillingService;
 	private ServiceConnection serviceConnection;
 	private BroadcastReceiver receiver;
+	private IntentFilter intentFilter;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -91,6 +88,10 @@ public class MainActivity extends Activity { // NO_UCD
 		bar.addTab(bar.newTab().setText(R.string.patente).setTabListener(new PatenteFragment()));
 		bar.addTab(bar.newTab().setText(R.string.alcol).setTabListener(WebviewFragment.newInstance(WebviewFragment.ALCOL_URL)));
 		bar.addTab(bar.newTab().setText(R.string.settings).setTabListener(new PreferencesFragment()));
+		intentFilter = new IntentFilter();
+		intentFilter.addAction(getString(R.string.BEGIN_UPDATE));
+		intentFilter.addAction(getString(R.string.END_UPDATE));
+		receiver = new UpdateReceiver();
 	}
 
 	@Override
@@ -100,15 +101,9 @@ public class MainActivity extends Activity { // NO_UCD
 	}
 
 	@Override
-	public void onResume() {
+	protected void onResume() {
 		super.onResume();
-		IntentFilter intentFilter = new IntentFilter();
-		intentFilter.addAction(TdService.beginUpdate);
-		intentFilter.addAction(TdService.endUpdate);
-		receiver = new UpdateReceiver();
 		registerReceiver(receiver, intentFilter);
-		WakefulIntentService.scheduleAlarms(new TdListener(), this, false);
-		((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(TdService.notificationId);
 	}
 
 	@Override
@@ -120,7 +115,7 @@ public class MainActivity extends Activity { // NO_UCD
 	@Override
 	public void onStop() {
 		super.onStop();
-		EasyTracker.getInstance(this).activityStop(this); // Add this method.
+		EasyTracker.getInstance(this).activityStop(this);
 	}
 
 	@Override
@@ -157,7 +152,7 @@ public class MainActivity extends Activity { // NO_UCD
 		switch (item.getItemId()) {
 		case R.id.menuRefresh:
 			if (!Utility.getProviderTraffic(this).equals(getString(R.string.providerTrafficDefault)))
-				new TdListener().sendWakefulWork(this);
+				sendBroadcast(new Intent(getString(R.string.RUN_UPDATE)));
 			return true;
 		case R.id.menuAdFree:
 			launchPurchaseFlow(SKU_AD_FREE);
@@ -172,9 +167,9 @@ public class MainActivity extends Activity { // NO_UCD
 
 	private final class UpdateReceiver extends BroadcastReceiver {
 		public void onReceive(Context context, Intent intent) {
-			if (intent.getAction().equals(TdService.beginUpdate))
+			if (intent.getAction().equals(getString(R.string.BEGIN_UPDATE)))
 				setProgressBarIndeterminateVisibility(true);
-			else if (intent.getAction().equals(TdService.endUpdate))
+			else if (intent.getAction().equals(getString(R.string.END_UPDATE)))
 				setProgressBarIndeterminateVisibility(false);
 		}
 	}

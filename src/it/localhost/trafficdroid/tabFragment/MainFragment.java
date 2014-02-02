@@ -18,8 +18,6 @@ import it.localhost.trafficdroid.fragment.BadnewsDialogFragment;
 import it.localhost.trafficdroid.fragment.MessageDialogFragment;
 import it.localhost.trafficdroid.fragment.SetupDialogFragment;
 import it.localhost.trafficdroid.fragment.WebviewDialogFragment;
-import it.localhost.trafficdroid.service.TdListener;
-import it.localhost.trafficdroid.service.TdService;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
@@ -69,7 +67,6 @@ public class MainFragment extends Fragment implements TabListener {
 	private static final char camAutobspd = 'B';
 	private static final char camNone = 'H';
 	private ExpandableListView listView;
-	private TdListener tdListener;
 	private BroadcastReceiver receiver;
 
 	@Override
@@ -82,11 +79,10 @@ public class MainFragment extends Fragment implements TabListener {
 				return true;
 			}
 		});
-		tdListener = new TdListener();
 		if (Utility.getProviderTraffic(getActivity()).equals(getString(R.string.providerTrafficDefault))) {
 			new SetupDialogFragment().show(getFragmentManager(), SetupDialogFragment.class.getSimpleName());
 		} else if (Utility.isBerserkKey(getActivity()))
-			tdListener.sendWakefulWork(getActivity());
+			getActivity().sendBroadcast(new Intent(getString(R.string.RUN_UPDATE)));
 		EasyTracker.getInstance(getActivity()).send(MapBuilder.createAppView().set(Fields.SCREEN_NAME, MainFragment.class.getSimpleName()).build());
 		new AdManager().load(getActivity(), ((AdView) v.findViewById(R.id.adView)), false);
 		return v;
@@ -96,7 +92,7 @@ public class MainFragment extends Fragment implements TabListener {
 	public void onResume() {
 		super.onResume();
 		receiver = new UpdateReceiver();
-		getActivity().registerReceiver(receiver, new IntentFilter(TdService.endUpdate));
+		getActivity().registerReceiver(receiver, new IntentFilter(getString(R.string.END_UPDATE)));
 		new RefreshTask().execute();
 	}
 

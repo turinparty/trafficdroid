@@ -50,15 +50,11 @@
 			</intent-filter>
 		</activity>
 
-		<receiver android:name="com.commonsware.cwac.wakeful.AlarmReceiver" >
+		<receiver android:name=".service.TdWakefulReceiver" >
 			<intent-filter>
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
-				<action android:name="android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE" />
+				<action android:name="it.localhost.trafficdroid.RUN_UPDATE" />
 			</intent-filter>
-
-			<meta-data
-				android:name="com.commonsware.cwac.wakeful"
-				android:resource="@xml/wakeful" />
 		</receiver>
 		<receiver
 			android:name=".widget.provider.WidgetZoneProvider"

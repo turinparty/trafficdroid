@@ -28,22 +28,18 @@ import org.apache.http.message.BasicNameValuePair;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
+import android.app.IntentService;
 import android.app.Notification;
-import android.app.Notification.Builder;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.content.WakefulBroadcastReceiver;
 
-import com.commonsware.cwac.wakeful.WakefulIntentService;
-
-public class TdService extends WakefulIntentService { // NO_UCD
-	public static final String beginUpdate = "it.localhost.trafficdroid.BEGIN_UPDATE";
-	public static final String endUpdate = "it.localhost.trafficdroid.END_UPDATE";
-	private static final Intent beginUpdateIntent = new Intent(beginUpdate);
-	private static final Intent endUpdateIntent = new Intent(endUpdate);
+public class TdService extends IntentService { // NO_UCD
 	private static final String disconnectedMessage = "Connessione di rete inesistente";
 	public static final int notificationId = 1;
 	private static final String path = "/engine/traffic_server.php";
@@ -76,8 +72,8 @@ public class TdService extends WakefulIntentService { // NO_UCD
 	}
 
 	@Override
-	public void doWakefulWork(Intent arg0) {
-		sendBroadcast(beginUpdateIntent);
+	protected void onHandleIntent(Intent intent) {
+		sendBroadcast(new Intent(getString(R.string.BEGIN_UPDATE)));
 		MainDTO currDTO = getMainDTO();
 		MainDTO pastDTO;
 		try {
@@ -113,7 +109,8 @@ public class TdService extends WakefulIntentService { // NO_UCD
 			Utility.setExCheck(this, true);
 			Utility.setExMsg(this, disconnectedMessage);
 		}
-		sendBroadcast(endUpdateIntent);
+		sendBroadcast(new Intent(getString(R.string.END_UPDATE)));
+		WakefulBroadcastReceiver.completeWakefulIntent(intent);
 	}
 
 	private MainDTO getMainDTO() {
@@ -267,13 +264,7 @@ public class TdService extends WakefulIntentService { // NO_UCD
 					currZone.setCatRight((byte) 5);
 				else
 					currZone.setCatRight((byte) 6);
-				boolean congestionLeft = currZone.getCatLeft() > 0 && currZone.getCatLeft() <= currDTO.getCongestionThreshold();
-				boolean congestionRight = currZone.getCatRight() > 0 && currZone.getCatRight() <= currDTO.getCongestionThreshold();
-				if (congestionLeft && congestionRight)
-					currDTO.addCongestedZone(currZone.getName());
-				else if (congestionLeft)
-					currDTO.addCongestedZone(currZone.getName());
-				else if (congestionRight)
+				if (currZone.getCatLeft() > 0 && currZone.getCatLeft() <= currDTO.getCongestionThreshold() || currZone.getCatRight() > 0 && currZone.getCatRight() <= currDTO.getCongestionThreshold())
 					currDTO.addCongestedZone(currZone.getName());
 				if (pastDTO != null) {
 					StreetDTO pastStreet = pastDTO.getStreet(currStreet.getId());
@@ -342,20 +333,21 @@ public class TdService extends WakefulIntentService { // NO_UCD
 		}
 	}
 
-	private void setupNotification(String congestedZones) {
-		if (congestedZones != null) {
-			Builder bui = new Builder(this);
-			bui.setDefaults(Notification.DEFAULT_ALL);
+	private void setupNotification(ArrayList<String> congestedZones) {
+		if (!congestedZones.isEmpty()) {
+			NotificationCompat.InboxStyle inboxStyle = new NotificationCompat.InboxStyle();
+			String title = getString(R.string.notificationTitle, congestedZones.size());
+			inboxStyle.setBigContentTitle(title);
+			for (String string : congestedZones)
+				inboxStyle.addLine(string);
+			NotificationCompat.Builder bui = new NotificationCompat.Builder(this);
 			bui.setSmallIcon(R.drawable.ic_stat_notify_trafficdroid);
-			bui.setTicker(congestedZones);
-			bui.setContentTitle(getString(R.string.notificationTitle));
-			bui.setContentText(congestedZones);
-			Intent intent = new Intent(this, MainActivity.class);
-			intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-			bui.setContentIntent(PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT));
-			((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(TdService.notificationId, bui.getNotification());
-		} else {
+			bui.setContentTitle(title);
+			bui.setDefaults(Notification.DEFAULT_ALL);
+			bui.setStyle(inboxStyle);
+			bui.setContentIntent(PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), PendingIntent.FLAG_UPDATE_CURRENT));
+			((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(TdService.notificationId, bui.build());
+		} else
 			((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(TdService.notificationId);
-		}
 	}
 }
