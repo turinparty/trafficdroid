@@ -9,8 +9,8 @@ import it.localhost.trafficdroid.dto.StreetDTO;
 
 import java.util.ArrayList;
 
-import localhost.widget.HeterogeneousArrayAdapter;
-import localhost.widget.HeterogeneousItem;
+import localhost.toolkit.widget.HeterogeneousArrayAdapter;
+import localhost.toolkit.widget.HeterogeneousItem;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.app.DialogFragment;

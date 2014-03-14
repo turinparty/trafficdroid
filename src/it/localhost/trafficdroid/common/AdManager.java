@@ -1,5 +1,7 @@
 package it.localhost.trafficdroid.common;
 
+import java.util.Random;
+
 import it.localhost.trafficdroid.R;
 import android.content.Context;
 import android.view.View;
@@ -17,7 +19,7 @@ public class AdManager {
 			else
 				adView.setVisibility(View.GONE);
 		}
-		if (interstitialAd && !Utility.isInterstitialFree(context)) {
+		if (interstitialAd && !Utility.isInterstitialFree(context) && new Random().nextInt(5) == 0) {
 			InterstitialAd interstitial = new InterstitialAd(context);
 			interstitial.setAdUnitId(context.getString(R.string.adUnitId));
 			interstitial.setAdListener(new MyAdListener(interstitial));

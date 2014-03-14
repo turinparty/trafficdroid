@@ -5,7 +5,7 @@ import it.localhost.trafficdroid.dto.BadNewsDTO;
 
 import java.text.DateFormat;
 
-import localhost.widget.HeterogeneousItem;
+import localhost.toolkit.widget.HeterogeneousItem;
 import android.content.Context;
 import android.view.View;
 import android.widget.TextView;

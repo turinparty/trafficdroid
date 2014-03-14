@@ -26,8 +26,8 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-import localhost.widget.HeterogeneousItem;
-import localhost.widget.HeterogeneousItem.OnHeterogeneousItemClickListener;
+import localhost.toolkit.widget.HeterogeneousItem;
+import localhost.toolkit.widget.HeterogeneousItem.OnHeterogeneousItemClickListener;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
 import android.app.Fragment;
@@ -75,7 +75,7 @@ public class MainFragment extends Fragment implements TabListener {
 		listView = (ExpandableListView) v.findViewById(R.id.mainTable);
 		listView.setOnChildClickListener(new OnChildClickListener() {
 			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-				((HeterogeneousItem) parent.getExpandableListAdapter().getChild(groupPosition, childPosition)).onItemClick();
+				((HeterogeneousItem) parent.getExpandableListAdapter().getChild(groupPosition, childPosition)).onItemClick(childPosition);
 				return true;
 			}
 		});
@@ -182,7 +182,7 @@ public class MainFragment extends Fragment implements TabListener {
 
 	private class OnZoneItemClickListener implements OnHeterogeneousItemClickListener {
 		@Override
-		public boolean onHeterogeneousItemClick(Serializable extra) {
+		public boolean onHeterogeneousItemClick(int position, Serializable extra) {
 			String webcam = ((ZoneDTO) extra).getWebcam();
 			if (webcam.charAt(0) == camNone) {
 				EasyTracker.getInstance(getActivity()).send(MapBuilder.createEvent(MainActivity.EVENT_CAT_WEBCAM, MainActivity.EVENT_ACTION_NONE, webcam, (long) 0).build());
@@ -213,7 +213,7 @@ public class MainFragment extends Fragment implements TabListener {
 
 	private class OnBadNewsItemClickListener implements OnHeterogeneousItemClickListener {
 		@Override
-		public boolean onHeterogeneousItemClick(Serializable extra) {
+		public boolean onHeterogeneousItemClick(int position, Serializable extra) {
 			StreetDTO street = (StreetDTO) extra;
 			if (street.getBadNews().size() != 0) {
 				EasyTracker.getInstance(getActivity()).send(MapBuilder.createEvent(MainActivity.EVENT_CAT_BADNEWS, MainActivity.EVENT_ACTION_OPEN, street.getName(), (long) 0).build());
@@ -225,7 +225,7 @@ public class MainFragment extends Fragment implements TabListener {
 
 	private class OnGraphItemClickListener implements OnHeterogeneousItemClickListener {
 		@Override
-		public boolean onHeterogeneousItemClick(Serializable extra) {
+		public boolean onHeterogeneousItemClick(int position, Serializable extra) {
 			String graph = (String) extra;
 			EasyTracker.getInstance(getActivity()).send(MapBuilder.createEvent(MainActivity.EVENT_CAT_GRAPH, MainActivity.EVENT_ACTION_OPEN, graph, (long) 0).build());
 			new WebviewDialogFragment().show(getFragmentManager(), firstUrl + graph + secondUrl + new SimpleDateFormat("yyyyMMddHHmm", Locale.getDefault()).format(new Date()), null);

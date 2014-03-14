@@ -4,7 +4,7 @@ import it.localhost.trafficdroid.R;
 
 import java.io.Serializable;
 
-import localhost.widget.HeterogeneousItem;
+import localhost.toolkit.widget.HeterogeneousItem;
 import android.content.Context;
 import android.view.View;
 

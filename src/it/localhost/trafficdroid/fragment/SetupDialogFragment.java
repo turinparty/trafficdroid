@@ -6,6 +6,8 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 public class SetupDialogFragment extends DialogFragment {
@@ -25,7 +27,7 @@ public class SetupDialogFragment extends DialogFragment {
 		builder.setNegativeButton(R.string.betterInfo, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface arg0, int arg1) {
-				new WebviewDialogFragment().show(getFragmentManager(), APP_URL, null);
+				startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(APP_URL)));
 			}
 		});
 		setCancelable(false);

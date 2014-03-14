@@ -2,7 +2,7 @@ package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.dto.ZoneDTO;
-import localhost.widget.HeterogeneousItem;
+import localhost.toolkit.widget.HeterogeneousItem;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.view.View;

@@ -4,7 +4,7 @@ import it.localhost.trafficdroid.common.Utility;
 
 import java.util.ArrayList;
 
-import localhost.widget.HeterogeneousItem;
+import localhost.toolkit.widget.HeterogeneousItem;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;

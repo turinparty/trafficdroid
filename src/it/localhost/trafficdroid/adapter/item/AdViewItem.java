@@ -1,7 +1,7 @@
 package it.localhost.trafficdroid.adapter.item;
 
 import it.localhost.trafficdroid.R;
-import localhost.widget.HeterogeneousItem;
+import localhost.toolkit.widget.HeterogeneousItem;
 import android.content.Context;
 import android.view.View;
 
