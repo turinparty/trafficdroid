@@ -36,8 +36,9 @@ import android.view.View;
 import android.view.Window;
 
 import com.android.vending.billing.IInAppBillingService;
-import com.google.analytics.tracking.android.EasyTracker;
-import com.google.analytics.tracking.android.MapBuilder;
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 public class MainActivity extends Activity { // NO_UCD
 	private static final String INAPPB_PKG = "com.android.vending";
@@ -67,6 +68,7 @@ public class MainActivity extends Activity { // NO_UCD
 	private ServiceConnection serviceConnection;
 	private BroadcastReceiver receiver;
 	private IntentFilter intentFilter;
+	private Tracker tracker;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -92,12 +94,7 @@ public class MainActivity extends Activity { // NO_UCD
 		intentFilter.addAction(getString(R.string.BEGIN_UPDATE));
 		intentFilter.addAction(getString(R.string.END_UPDATE));
 		receiver = new UpdateReceiver();
-	}
-
-	@Override
-	public void onStart() {
-		super.onStart();
-		EasyTracker.getInstance(this).activityStart(this);
+		tracker = GoogleAnalytics.getInstance(this).newTracker(R.xml.analytics);
 	}
 
 	@Override
@@ -110,12 +107,6 @@ public class MainActivity extends Activity { // NO_UCD
 	public void onPause() {
 		super.onPause();
 		unregisterReceiver(receiver);
-	}
-
-	@Override
-	public void onStop() {
-		super.onStop();
-		EasyTracker.getInstance(this).activityStop(this);
 	}
 
 	@Override
@@ -150,19 +141,28 @@ public class MainActivity extends Activity { // NO_UCD
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.menuRefresh:
-			if (!Utility.getProviderTraffic(this).equals(getString(R.string.providerTrafficDefault)))
-				sendBroadcast(new Intent(getString(R.string.RUN_UPDATE)));
-			return true;
-		case R.id.menuAdFree:
-			launchPurchaseFlow(SKU_AD_FREE);
-			return true;
-		case R.id.menuInterstitialFree:
-			launchPurchaseFlow(SKU_INTERSTITIAL_FREE);
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
+			case R.id.menuRefresh:
+				if (!Utility.getProviderTraffic(this).equals(getString(R.string.providerTrafficDefault)))
+					sendBroadcast(new Intent(getString(R.string.RUN_UPDATE)));
+				return true;
+			case R.id.menuAdFree:
+				launchPurchaseFlow(SKU_AD_FREE);
+				return true;
+			case R.id.menuInterstitialFree:
+				launchPurchaseFlow(SKU_INTERSTITIAL_FREE);
+				return true;
+			default:
+				return super.onOptionsItemSelected(item);
 		}
+	}
+
+	public void sendScreenName(String screenName) {
+		tracker.setScreenName(screenName);
+		tracker.send(new HitBuilders.AppViewBuilder().build());
+	}
+
+	public void sendEvent(String category, String action, String label) {
+		tracker.send(new HitBuilders.EventBuilder(category, action).setLabel(label).build());
 	}
 
 	private final class UpdateReceiver extends BroadcastReceiver {
@@ -175,7 +175,7 @@ public class MainActivity extends Activity { // NO_UCD
 	}
 
 	public void launchPurchaseFlow(String sku) {
-		EasyTracker.getInstance(this).send(MapBuilder.createEvent(EVENT_CAT_IAB, EVENT_ACTION_LAUNCHPURCHASEFLOW, sku, (long) 0).build());
+		sendEvent(EVENT_CAT_IAB, EVENT_ACTION_LAUNCHPURCHASEFLOW, sku);
 		try {
 			Bundle buyIntentBundle = inAppBillingService.getBuyIntent(3, getPackageName(), sku, ITEM_TYPE_INAPP, "");
 			if (buyIntentBundle.getInt(RESPONSE_CODE) == 0)

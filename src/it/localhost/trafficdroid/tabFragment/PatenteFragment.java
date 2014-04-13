@@ -1,6 +1,7 @@
 package it.localhost.trafficdroid.tabFragment;
 
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.AdManager;
 import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dao.PatenteService;
@@ -21,9 +22,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.analytics.tracking.android.EasyTracker;
-import com.google.analytics.tracking.android.Fields;
-import com.google.analytics.tracking.android.MapBuilder;
 import com.google.android.gms.ads.AdView;
 
 public class PatenteFragment extends Fragment implements TabListener {
@@ -53,7 +51,7 @@ public class PatenteFragment extends Fragment implements TabListener {
 					new MessageDialogFragment().show(getFragmentManager(), getString(R.string.error), getString(R.string.wrongData), false);
 			}
 		});
-		EasyTracker.getInstance(getActivity()).send(MapBuilder.createAppView().set(Fields.SCREEN_NAME, PatenteFragment.class.getSimpleName()).build());
+		((MainActivity) getActivity()).sendScreenName(PatenteFragment.class.getSimpleName());
 		new AdManager().load(getActivity(), ((AdView) v.findViewById(R.id.adView)), true);
 		return v;
 	}
