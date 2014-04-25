@@ -94,7 +94,6 @@ public class MainActivity extends Activity { // NO_UCD
 		intentFilter.addAction(getString(R.string.BEGIN_UPDATE));
 		intentFilter.addAction(getString(R.string.END_UPDATE));
 		receiver = new UpdateReceiver();
-		tracker = GoogleAnalytics.getInstance(this).newTracker(R.xml.analytics);
 	}
 
 	@Override
@@ -156,13 +155,19 @@ public class MainActivity extends Activity { // NO_UCD
 		}
 	}
 
+	private Tracker getTracker() {
+		if (tracker == null)
+			tracker = GoogleAnalytics.getInstance(this).newTracker(R.xml.analytics);
+		return tracker;
+	}
+
 	public void sendScreenName(String screenName) {
-		tracker.setScreenName(screenName);
-		tracker.send(new HitBuilders.AppViewBuilder().build());
+		getTracker().setScreenName(screenName);
+		getTracker().send(new HitBuilders.AppViewBuilder().build());
 	}
 
 	public void sendEvent(String category, String action, String label) {
-		tracker.send(new HitBuilders.EventBuilder(category, action).setLabel(label).build());
+		getTracker().send(new HitBuilders.EventBuilder(category, action).setLabel(label).build());
 	}
 
 	private final class UpdateReceiver extends BroadcastReceiver {
