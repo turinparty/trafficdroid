@@ -40,6 +40,7 @@ public class BadNewsDialogItem extends HeterogeneousItem {
 	private static final String bn_vfr = "veicolo in fiamme";
 	private static final String bn_win = "vento";
 	private static final String bn_cls = "carburante chius";
+	private static final String bn_ecr = "manifestazione";
 	private static DateFormat sdfBnFormat;
 
 	public BadNewsDialogItem(Context context, BadNewsDTO extra) {
@@ -116,6 +117,8 @@ public class BadNewsDialogItem extends HeterogeneousItem {
 			drawable = R.drawable.bn_cls;
 		else if (badNews.getTitle().contains(bn_res))
 			drawable = R.drawable.bn_res;
+		else if (badNews.getTitle().contains(bn_ecr))
+			drawable = R.drawable.bn_ecr;
 		else
 			drawable = android.R.drawable.ic_dialog_alert;
 		badNewsDate.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, drawable);
