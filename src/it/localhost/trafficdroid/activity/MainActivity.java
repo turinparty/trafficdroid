@@ -33,7 +33,6 @@ import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 
 import com.android.vending.billing.IInAppBillingService;
 import com.google.android.gms.analytics.GoogleAnalytics;
@@ -46,7 +45,6 @@ public class MainActivity extends Activity { // NO_UCD
 	public static final String EVENT_CAT_WEBCAM = "Webcam";
 	public static final String EVENT_CAT_BADNEWS = "BadNews";
 	public static final String EVENT_CAT_IAB = "InAppBilling";
-	public static final String EVENT_CAT_GRAPH = "Graph";
 	public static final String EVENT_ACTION_REQUEST = "Request";
 	public static final String EVENT_ACTION_OPEN = "Open";
 	public static final String EVENT_ACTION_NONE = "None";
@@ -69,18 +67,15 @@ public class MainActivity extends Activity { // NO_UCD
 	private BroadcastReceiver receiver;
 	private IntentFilter intentFilter;
 	private Tracker tracker;
+	private boolean progress;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// android.os.StrictMode.setThreadPolicy(new
-		// android.os.StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
-		// android.os.StrictMode.setVmPolicy(new
-		// android.os.StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
+		android.os.StrictMode.setThreadPolicy(new android.os.StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
+		android.os.StrictMode.setVmPolicy(new android.os.StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
 		serviceConnection = new TdServiceConnection();
 		bindService(new Intent(INAPPB_ACT).setPackage(INAPPB_PKG), serviceConnection, Context.BIND_AUTO_CREATE);
-		requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-		setProgressBarIndeterminateVisibility(false);
 		ActionBar bar = getActionBar();
 		bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		bar.addTab(bar.newTab().setText(R.string.app_name).setTabListener(new MainFragment()));
@@ -122,6 +117,7 @@ public class MainActivity extends Activity { // NO_UCD
 
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
+		menu.findItem(R.id.menuRefresh).setVisible(!progress);
 		if (Utility.isAdFree(this))
 			menu.removeItem(R.id.menuAdFree);
 		if (Utility.isInterstitialFree(this))
@@ -172,10 +168,14 @@ public class MainActivity extends Activity { // NO_UCD
 
 	private final class UpdateReceiver extends BroadcastReceiver {
 		public void onReceive(Context context, Intent intent) {
-			if (intent.getAction().equals(getString(R.string.BEGIN_UPDATE)))
-				setProgressBarIndeterminateVisibility(true);
-			else if (intent.getAction().equals(getString(R.string.END_UPDATE)))
-				setProgressBarIndeterminateVisibility(false);
+			if (intent.getAction().equals(getString(R.string.BEGIN_UPDATE))) {
+				getActionBar().setSubtitle(R.string.update);
+				progress = true;
+			} else if (intent.getAction().equals(getString(R.string.END_UPDATE))) {
+				progress = false;
+				getActionBar().setSubtitle(null);
+			}
+			invalidateOptionsMenu();
 		}
 	}
 

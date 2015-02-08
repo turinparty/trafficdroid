@@ -28,7 +28,7 @@ public class WebviewFragment extends Fragment implements TabListener {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		WebView webView = (WebView) View.inflate(getActivity(), R.layout.webview, null);
+		WebView webView = (WebView) inflater.inflate(R.layout.webview, container, false);
 		webView.getSettings().setJavaScriptEnabled(true);
 		webView.getSettings().setBuiltInZoomControls(true);
 		webView.loadUrl(getArguments().getString(URL_KEY));

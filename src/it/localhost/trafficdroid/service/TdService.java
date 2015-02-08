@@ -120,7 +120,6 @@ public class TdService extends IntentService { // NO_UCD
 		int[] streetsId = getResources().getIntArray(R.array.streetId);
 		String[] streetsName = getResources().getStringArray(R.array.streetName);
 		String[] streetsTag = getResources().getStringArray(R.array.streetTag);
-		String[] graphTag = getResources().getStringArray(R.array.graphTag);
 		String[] streetsDir = getResources().getStringArray(R.array.streetDir);
 		int[] autoveloxStreet = getResources().getIntArray(R.array.autoveloxStreet);
 		int[] autoveloxFrom = getResources().getIntArray(R.array.autoveloxFrom);
@@ -146,7 +145,6 @@ public class TdService extends IntentService { // NO_UCD
 			if (street.getZonesSize() > 0) {
 				street.setName(streetsName[i]);
 				street.setTag(streetsTag[i]);
-				street.setGraph(graphTag[i]);
 				if (streetsDir[i].equals(N)) {
 					street.setDirectionLeft(R.drawable.ic_north);
 					street.setDirectionRight(R.drawable.ic_south);
@@ -160,8 +158,8 @@ public class TdService extends IntentService { // NO_UCD
 					street.setDirectionLeft(R.drawable.ic_west);
 					street.setDirectionRight(R.drawable.ic_east);
 				} else if (streetsDir[i].equals(I)) {
-					street.setDirectionLeft(R.drawable.ic_action_rotate_right);
-					street.setDirectionRight(R.drawable.ic_action_rotate_left);
+					street.setDirectionLeft(R.drawable.ic_rotate_right_white_48dp);
+					street.setDirectionRight(R.drawable.ic_rotate_left_white_48dp);
 				}
 				mainDto.putStreet(street);
 			}
@@ -275,17 +273,17 @@ public class TdService extends IntentService { // NO_UCD
 							if (currZone.getCatLeft() == 0 || pastZone.getCatLeft() == 0)
 								currZone.setTrendLeft(0);
 							else if (currZone.getSpeedLeft() - pastZone.getSpeedLeft() >= trendSpeed)
-								currZone.setTrendLeft(R.drawable.speed_up);
+								currZone.setTrendLeft(R.drawable.ic_add_white_24dp);
 							else if (pastZone.getSpeedLeft() - currZone.getSpeedLeft() >= trendSpeed)
-								currZone.setTrendLeft(R.drawable.speed_down);
+								currZone.setTrendLeft(R.drawable.ic_remove_white_24dp);
 							else
 								currZone.setTrendLeft(0);
 							if (currZone.getCatRight() == 0 || pastZone.getCatRight() == 0)
 								currZone.setTrendRight(0);
 							else if (currZone.getSpeedRight() - pastZone.getSpeedRight() >= trendSpeed)
-								currZone.setTrendRight(R.drawable.speed_up);
+								currZone.setTrendRight(R.drawable.ic_add_white_24dp);
 							else if (pastZone.getSpeedRight() - currZone.getSpeedRight() >= trendSpeed)
-								currZone.setTrendRight(R.drawable.speed_down);
+								currZone.setTrendRight(R.drawable.ic_remove_white_24dp);
 							else
 								currZone.setTrendRight(0);
 						}
@@ -315,17 +313,17 @@ public class TdService extends IntentService { // NO_UCD
 					if (currStreet.getSpeedLeft() == 0 || pastStreet.getSpeedLeft() == 0)
 						currStreet.setTrendLeft(0);
 					else if (currStreet.getSpeedLeft() - pastStreet.getSpeedLeft() >= trendSpeed)
-						currStreet.setTrendLeft(R.drawable.speed_up);
+						currStreet.setTrendLeft(R.drawable.ic_add_white_24dp);
 					else if (pastStreet.getSpeedLeft() - currStreet.getSpeedLeft() >= trendSpeed)
-						currStreet.setTrendLeft(R.drawable.speed_down);
+						currStreet.setTrendLeft(R.drawable.ic_remove_white_24dp);
 					else
 						currStreet.setTrendLeft(0);
 					if (currStreet.getSpeedRight() == 0 || pastStreet.getSpeedRight() == 0)
 						currStreet.setTrendRight(0);
 					else if (currStreet.getSpeedRight() - pastStreet.getSpeedRight() >= trendSpeed)
-						currStreet.setTrendRight(R.drawable.speed_up);
+						currStreet.setTrendRight(R.drawable.ic_add_white_24dp);
 					else if (pastStreet.getSpeedRight() - currStreet.getSpeedRight() >= trendSpeed)
-						currStreet.setTrendRight(R.drawable.speed_down);
+						currStreet.setTrendRight(R.drawable.ic_remove_white_24dp);
 					else
 						currStreet.setTrendRight(0);
 				}

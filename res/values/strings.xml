@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
 	<string name="adUnitId">ca-app-pub-4235011035409184/4547377745</string>
 	<string name="widgetZoneName">Trafficdroid - Tratta stradale</string>
 	<string name="widgetStreetName">Trafficdroid - Strada intera</string>
@@ -10,9 +9,9 @@
 	<string name="falseAns">Falso</string>
 	<string name="skip">Skip</string>
 	<string name="retry">Sbagliato, prova ancora…</string>
-	<string name="ok">OK</string>
-	<string name="setProvider">Imposta Provider</string>
-	<string name="betterInfo">Maggiori Informazioni</string>
+	<string name="update">Aggiornamento…</string>
+	<string name="setup">Imposta</string>
+	<string name="info">Informazioni</string>
 	<string name="patenteProvider">www.ilportaledellautomobilista.it</string>
 	<string name="targaA">AB</string>
 	<string name="targaB">123</string>
@@ -29,7 +28,6 @@
 	<string name="adFreeButton">Rimuovi i banner in page</string>
 	<string name="interstitialFreeButton">Rimuovi i banner in fullscreen</string>
 	<string name="warning">Attenzione</string>
-	<string name="info">Informazione</string>
 	<string name="webcamAdd">Questa Webcam non è ancora mappata, aiutaci a mapparla. Sul sito trovi tutte le informazioni. Richiesta di mappatura inoltrata.</string>
 	<string name="webcamNone">Non esistono Webcam associabili a questa tratta. Se non è vero segnalalo sul sito.</string>
 	<string name="settings">Impostazioni</string>
@@ -88,5 +86,4 @@
 	<string name="RUN_UPDATE">it.localhost.trafficdroid.RUN_UPDATE</string>
 	<string name="BEGIN_UPDATE">it.localhost.trafficdroid.BEGIN_UPDATE</string>
 	<string name="END_UPDATE">it.localhost.trafficdroid.END_UPDATE</string>
-
 </resources>

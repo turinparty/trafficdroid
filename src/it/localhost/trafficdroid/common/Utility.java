@@ -17,7 +17,6 @@ public class Utility {
 	private static final String WIDGET_STREET_STREET = "widgetStreetStreet";
 	private static final String WIDGET_ZONE_STREET = "widgetZoneStreet";
 	private static final String WIDGET_ZONE_ZONE = "widgetZoneZone";
-	private static final String expanded = "Expanded";
 
 	public static boolean isAdFree(Context context) {
 		return getPrefBoolean(context, AD_FREE, false);
@@ -109,14 +108,6 @@ public class Utility {
 
 	public static boolean isAllStreets(Context context) {
 		return getPrefBoolean(context, R.string.allStreetsKey, R.string.allStreetsDefault);
-	}
-
-	public static boolean isExpanded(Context context, int i) {
-		return getPrefBoolean(context, expanded + i, false);
-	}
-
-	public static void setExpanded(Context context, int i, boolean value) {
-		getEditor(context).putBoolean(expanded + i, value).commit();
 	}
 
 	public static boolean isExCheck(Context context) {

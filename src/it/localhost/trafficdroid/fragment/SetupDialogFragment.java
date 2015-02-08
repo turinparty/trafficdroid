@@ -18,13 +18,13 @@ public class SetupDialogFragment extends DialogFragment {
 		Builder builder = new Builder(getActivity());
 		builder.setTitle(R.string.warning);
 		builder.setMessage(R.string.badConf);
-		builder.setPositiveButton(R.string.setProvider, new OnClickListener() {
+		builder.setPositiveButton(R.string.setup, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				getActivity().getActionBar().setSelectedNavigationItem(6);
 			}
 		});
-		builder.setNegativeButton(R.string.betterInfo, new OnClickListener() {
+		builder.setNegativeButton(R.string.info, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface arg0, int arg1) {
 				startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(APP_URL)));

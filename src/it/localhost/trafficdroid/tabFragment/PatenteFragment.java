@@ -30,7 +30,7 @@ public class PatenteFragment extends Fragment implements TabListener {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.patente, null);
+		View v = inflater.inflate(R.layout.patente, container, false);
 		getActivity().setProgressBarIndeterminateVisibility(false);
 		final EditText usrEdit = (EditText) v.findViewById(R.id.patenteUsr);
 		final EditText pwdEdit = (EditText) v.findViewById(R.id.patentePwd);

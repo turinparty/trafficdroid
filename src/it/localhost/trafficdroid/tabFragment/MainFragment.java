@@ -2,10 +2,8 @@ package it.localhost.trafficdroid.tabFragment;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
-import it.localhost.trafficdroid.adapter.HeterogeneousExpandableListAdapter;
 import it.localhost.trafficdroid.adapter.item.AdViewItem;
 import it.localhost.trafficdroid.adapter.item.BadNewsItem;
-import it.localhost.trafficdroid.adapter.item.GraphItem;
 import it.localhost.trafficdroid.adapter.item.StreetItem;
 import it.localhost.trafficdroid.adapter.item.ZoneItem;
 import it.localhost.trafficdroid.common.AdManager;
@@ -20,12 +18,10 @@ import it.localhost.trafficdroid.fragment.SetupDialogFragment;
 import it.localhost.trafficdroid.fragment.WebviewDialogFragment;
 
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.Locale;
 
+import localhost.toolkit.widget.HeterogeneousExpandableListAdapter;
 import localhost.toolkit.widget.HeterogeneousItem;
 import localhost.toolkit.widget.HeterogeneousItem.OnHeterogeneousItemClickListener;
 import android.app.ActionBar.Tab;
@@ -48,8 +44,6 @@ import android.widget.ExpandableListView.OnChildClickListener;
 import com.google.android.gms.ads.AdView;
 
 public class MainFragment extends Fragment implements TabListener {
-	private static final String firstUrl = "http://vai-cdn.stradeanas.it/Appscripts/sinotraffic.php?city=";
-	private static final String secondUrl = "&ts=";
 	private static final String autostrade = "http://mobile.autostrade.it/autostrade-mobile/popupTelecamera.do?tlc=";
 	private static final String cavspa = "http://www.cavspa.it/webcam/temp-imgs/camsbig/";
 	private static final String edidomus = "http://telecamere.edidomus.it/vp2/vpimage.aspx?camid=";
@@ -68,7 +62,7 @@ public class MainFragment extends Fragment implements TabListener {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.main, null);
+		View v = inflater.inflate(R.layout.main, container, false);
 		listView = (ExpandableListView) v.findViewById(R.id.mainTable);
 		listView.setOnChildClickListener(new OnChildClickListener() {
 			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
@@ -76,10 +70,11 @@ public class MainFragment extends Fragment implements TabListener {
 				return true;
 			}
 		});
-		if (Utility.getProviderTraffic(getActivity()).equals(getString(R.string.providerTrafficDefault))) {
+		if (Utility.getProviderTraffic(getActivity()).equals(getString(R.string.providerTrafficDefault)))
 			new SetupDialogFragment().show(getFragmentManager(), SetupDialogFragment.class.getSimpleName());
-		} else if (Utility.isBerserkKey(getActivity()))
+		else if (Utility.isBerserkKey(getActivity())) {
 			getActivity().sendBroadcast(new Intent(getString(R.string.RUN_UPDATE)));
+		}
 		((MainActivity) getActivity()).sendScreenName(MainFragment.class.getSimpleName());
 		new AdManager().load(getActivity(), ((AdView) v.findViewById(R.id.adView)), false);
 		return v;
@@ -125,20 +120,14 @@ public class MainFragment extends Fragment implements TabListener {
 		@Override
 		protected void onPostExecute(MainDTO mainDTO) {
 			if (mainDTO != null && mainDTO.getTrafficTime() != null) {
-				getActivity().getActionBar().setSubtitle(DateFormat.getTimeFormat(getActivity()).format(mainDTO.getTrafficTime()));
+				getActivity().setTitle(DateFormat.getTimeFormat(getActivity()).format(mainDTO.getTrafficTime()));
 				ArrayList<HeterogeneousItem> groupItems = new ArrayList<HeterogeneousItem>();
 				ArrayList<ArrayList<HeterogeneousItem>> childItems = new ArrayList<ArrayList<HeterogeneousItem>>();
-				OnGraphItemClickListener onGraphItemClickListener = new OnGraphItemClickListener();
 				OnBadNewsItemClickListener onBadNewsItemClickListener = new OnBadNewsItemClickListener();
 				OnZoneItemClickListener onZoneItemClickListener = new OnZoneItemClickListener();
 				for (StreetDTO street : mainDTO.getStreets()) {
 					groupItems.add(new StreetItem(getActivity(), street));
 					ArrayList<HeterogeneousItem> childData = new ArrayList<HeterogeneousItem>();
-					if (street.getGraph().length() != 0) {
-						GraphItem graphItem = new GraphItem(getActivity(), street.getGraph());
-						graphItem.setOnHeterogeneousItemClickListener(onGraphItemClickListener);
-						childData.add(graphItem);
-					}
 					BadNewsItem badNewsItem = new BadNewsItem(getActivity(), street);
 					badNewsItem.setOnHeterogeneousItemClickListener(onBadNewsItemClickListener);
 					childData.add(badNewsItem);
@@ -157,12 +146,9 @@ public class MainFragment extends Fragment implements TabListener {
 							size++;
 						}
 				}
-				listView.setAdapter(new HeterogeneousExpandableListAdapter(getActivity(), groupItems, childItems));
+				listView.setAdapter(new HeterogeneousExpandableListAdapter(groupItems, childItems));
 				for (int i = 0; i < listView.getExpandableListAdapter().getGroupCount(); i++)
-					if (Utility.isExpanded(getActivity(), i))
-						listView.expandGroup(i);
-					else
-						listView.collapseGroup(i);
+					listView.expandGroup(i);
 			}
 			if (Utility.isExCheck(getActivity())) {
 				new MessageDialogFragment().show(getFragmentManager(), getString(R.string.error), Utility.getExMsg(getActivity()), false);
@@ -216,16 +202,6 @@ public class MainFragment extends Fragment implements TabListener {
 				((MainActivity) getActivity()).sendEvent(MainActivity.EVENT_CAT_BADNEWS, MainActivity.EVENT_ACTION_OPEN, street.getName());
 				new BadnewsDialogFragment().show(getFragmentManager(), street);
 			}
-			return true;
-		}
-	}
-
-	private class OnGraphItemClickListener implements OnHeterogeneousItemClickListener {
-		@Override
-		public boolean onHeterogeneousItemClick(int position, Serializable extra) {
-			String graph = (String) extra;
-			((MainActivity) getActivity()).sendEvent(MainActivity.EVENT_CAT_GRAPH, MainActivity.EVENT_ACTION_OPEN, graph);
-			new WebviewDialogFragment().show(getFragmentManager(), firstUrl + graph + secondUrl + new SimpleDateFormat("yyyyMMddHHmm", Locale.getDefault()).format(new Date()), null);
 			return true;
 		}
 	}

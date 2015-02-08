@@ -28,7 +28,7 @@ public class BolloFragment extends Fragment implements TabListener {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.bollo, null);
+		View v = inflater.inflate(R.layout.bollo, container, false);
 		targaA = (EditText) v.findViewById(R.id.targaA);
 		targaB = (EditText) v.findViewById(R.id.targaB);
 		targaC = (EditText) v.findViewById(R.id.targaC);

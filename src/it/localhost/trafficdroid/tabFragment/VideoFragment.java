@@ -24,7 +24,7 @@ public class VideoFragment extends Fragment implements TabListener {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		v = (VideoView) inflater.inflate(R.layout.video, null);
+		v = (VideoView) inflater.inflate(R.layout.video, container, false);
 		MediaController mediaController = new MediaController(getActivity());
 		mediaController.setAnchorView(v);
 		v.setMediaController(mediaController);
