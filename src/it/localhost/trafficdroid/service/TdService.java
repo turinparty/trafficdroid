@@ -39,6 +39,7 @@ import android.net.NetworkInfo;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.WakefulBroadcastReceiver;
 
+
 public class TdService extends IntentService { // NO_UCD
 	private static final String disconnectedMessage = "Connessione di rete inesistente";
 	public static final int notificationId = 1;

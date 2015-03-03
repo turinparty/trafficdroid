@@ -1,12 +1,9 @@
-package it.localhost.trafficdroid.tabFragment;
+package it.localhost.trafficdroid.fragment;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.ListZoneResId;
 import it.localhost.trafficdroid.common.ListZoneResName;
-import android.app.ActionBar.Tab;
-import android.app.ActionBar.TabListener;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.PreferenceCategory;
@@ -14,7 +11,7 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 
-public class PreferencesFragment extends PreferenceFragment implements TabListener { // NO_UCD
+public class PreferencesFragment extends PreferenceFragment { // NO_UCD
 	private static final String autovelox = "Autovelox";
 	public static final String autoveloxNone = "0";
 	private int[] autoveloxStreet;
@@ -55,19 +52,6 @@ public class PreferencesFragment extends PreferenceFragment implements TabListen
 			}
 		}
 		((MainActivity) getActivity()).sendScreenName(PreferencesFragment.class.getSimpleName());
-	}
-
-	@Override
-	public void onTabReselected(Tab tab, FragmentTransaction ft) {
-	}
-
-	@Override
-	public void onTabSelected(Tab tab, FragmentTransaction ft) {
-		ft.replace(android.R.id.content, this);
-	}
-
-	@Override
-	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 	}
 
 	private PreferenceScreen addStreetScreen(PreferenceCategory streetsCategory, int streetId, String streetName) {

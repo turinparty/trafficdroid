@@ -4,7 +4,7 @@
 	android:versionCode="156"
 	android:versionName="2.0.10 The White Rabbit" >
 	<uses-sdk
-		android:minSdkVersion="13"
+		android:minSdkVersion="14"
 		android:targetSdkVersion="21" />
 	<supports-screens
 		android:largeScreens="true"

@@ -1,4 +1,4 @@
-package it.localhost.trafficdroid.tabFragment;
+package it.localhost.trafficdroid.fragment;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
@@ -12,10 +12,9 @@ import it.localhost.trafficdroid.dao.PersistanceService;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
-import it.localhost.trafficdroid.fragment.BadnewsDialogFragment;
-import it.localhost.trafficdroid.fragment.MessageDialogFragment;
-import it.localhost.trafficdroid.fragment.SetupDialogFragment;
-import it.localhost.trafficdroid.fragment.WebviewDialogFragment;
+import it.localhost.trafficdroid.fragment.dialog.BadnewsDialogFragment;
+import it.localhost.trafficdroid.fragment.dialog.MessageDialogFragment;
+import it.localhost.trafficdroid.fragment.dialog.WebviewDialogFragment;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -24,10 +23,7 @@ import java.util.GregorianCalendar;
 import localhost.toolkit.widget.HeterogeneousExpandableListAdapter;
 import localhost.toolkit.widget.HeterogeneousItem;
 import localhost.toolkit.widget.HeterogeneousItem.OnHeterogeneousItemClickListener;
-import android.app.ActionBar.Tab;
-import android.app.ActionBar.TabListener;
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -43,7 +39,7 @@ import android.widget.ExpandableListView.OnChildClickListener;
 
 import com.google.android.gms.ads.AdView;
 
-public class MainFragment extends Fragment implements TabListener {
+public class MainFragment extends Fragment {
 	private static final String autostrade = "http://mobile.autostrade.it/autostrade-mobile/popupTelecamera.do?tlc=";
 	private static final String cavspa = "http://www.cavspa.it/webcam/temp-imgs/camsbig/";
 	private static final String edidomus = "http://telecamere.edidomus.it/vp2/vpimage.aspx?camid=";
@@ -70,11 +66,8 @@ public class MainFragment extends Fragment implements TabListener {
 				return true;
 			}
 		});
-		if (Utility.getProviderTraffic(getActivity()).equals(getString(R.string.providerTrafficDefault)))
-			new SetupDialogFragment().show(getFragmentManager(), SetupDialogFragment.class.getSimpleName());
-		else if (Utility.isBerserkKey(getActivity())) {
+		if (Utility.isBerserkKey(getActivity()))
 			getActivity().sendBroadcast(new Intent(getString(R.string.RUN_UPDATE)));
-		}
 		((MainActivity) getActivity()).sendScreenName(MainFragment.class.getSimpleName());
 		new AdManager().load(getActivity(), ((AdView) v.findViewById(R.id.adView)), false);
 		return v;
@@ -92,19 +85,6 @@ public class MainFragment extends Fragment implements TabListener {
 	public void onPause() {
 		super.onPause();
 		getActivity().unregisterReceiver(receiver);
-	}
-
-	@Override
-	public void onTabReselected(Tab tab, FragmentTransaction ft) {
-	}
-
-	@Override
-	public void onTabSelected(Tab tab, FragmentTransaction ft) {
-		ft.replace(android.R.id.content, new MainFragment());
-	}
-
-	@Override
-	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 	}
 
 	private class RefreshTask extends AsyncTask<Void, Void, MainDTO> {

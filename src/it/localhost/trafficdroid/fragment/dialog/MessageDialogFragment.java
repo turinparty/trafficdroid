@@ -1,4 +1,4 @@
-package it.localhost.trafficdroid.fragment;
+package it.localhost.trafficdroid.fragment.dialog;
 
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
@@ -7,6 +7,7 @@ import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
+
 
 public class MessageDialogFragment extends DialogFragment {
 	private static final String KEY_TITLE = "KEY_TITLE";

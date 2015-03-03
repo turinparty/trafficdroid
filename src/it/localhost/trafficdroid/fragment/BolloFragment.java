@@ -1,14 +1,11 @@
-package it.localhost.trafficdroid.tabFragment;
+package it.localhost.trafficdroid.fragment;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.AdManager;
 import it.localhost.trafficdroid.common.AutoFocusTextWatcher;
-import it.localhost.trafficdroid.fragment.WebviewDialogFragment;
-import android.app.ActionBar.Tab;
-import android.app.ActionBar.TabListener;
+import it.localhost.trafficdroid.fragment.dialog.WebviewDialogFragment;
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +16,7 @@ import android.widget.Spinner;
 
 import com.google.android.gms.ads.AdView;
 
-public class BolloFragment extends Fragment implements TabListener {
+public class BolloFragment extends Fragment {
 	private static final String bolloUrl = "https://servizi.aci.it/Bollonet/calcolo.do?LinguaSelezionata=ita&CodiceServizio=2&TipoVeicolo=";
 	private static final String param1 = "&RegioneResidenza=";
 	private static final String param2 = "&Targa=";
@@ -49,18 +46,5 @@ public class BolloFragment extends Fragment implements TabListener {
 		((MainActivity) getActivity()).sendScreenName(BolloFragment.class.getSimpleName());
 		new AdManager().load(getActivity(), ((AdView) v.findViewById(R.id.adView)), true);
 		return v;
-	}
-
-	@Override
-	public void onTabReselected(Tab tab, FragmentTransaction ft) {
-	}
-
-	@Override
-	public void onTabSelected(Tab tab, FragmentTransaction ft) {
-		ft.replace(android.R.id.content, this);
-	}
-
-	@Override
-	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 	}
 }

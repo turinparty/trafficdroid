@@ -1,4 +1,4 @@
-package it.localhost.trafficdroid.tabFragment;
+package it.localhost.trafficdroid.fragment;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
@@ -7,11 +7,8 @@ import it.localhost.trafficdroid.common.ListExit;
 import it.localhost.trafficdroid.dao.PedaggioService;
 import it.localhost.trafficdroid.dto.BaseDTO;
 import it.localhost.trafficdroid.dto.PedaggioDTO;
-import it.localhost.trafficdroid.fragment.MessageDialogFragment;
-import android.app.ActionBar.Tab;
-import android.app.ActionBar.TabListener;
+import it.localhost.trafficdroid.fragment.dialog.MessageDialogFragment;
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -25,7 +22,7 @@ import android.widget.TextView;
 
 import com.google.android.gms.ads.AdView;
 
-public class PedaggioFragment extends Fragment implements TabListener {
+public class PedaggioFragment extends Fragment {
 	private TextView result;
 
 	@Override
@@ -51,19 +48,6 @@ public class PedaggioFragment extends Fragment implements TabListener {
 		((MainActivity) getActivity()).sendScreenName(PedaggioFragment.class.getSimpleName());
 		new AdManager().load(getActivity(), ((AdView) v.findViewById(R.id.adView)), true);
 		return v;
-	}
-
-	@Override
-	public void onTabReselected(Tab tab, FragmentTransaction ft) {
-	}
-
-	@Override
-	public void onTabSelected(Tab tab, FragmentTransaction ft) {
-		ft.replace(android.R.id.content, this);
-	}
-
-	@Override
-	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 	}
 
 	private class PedaggioAsyncTask extends PedaggioService {

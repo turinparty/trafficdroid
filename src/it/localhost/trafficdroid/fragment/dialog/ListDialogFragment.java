@@ -1,4 +1,4 @@
-package it.localhost.trafficdroid.fragment;
+package it.localhost.trafficdroid.fragment.dialog;
 
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;

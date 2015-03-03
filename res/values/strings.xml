@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string-array name="planets_array">
+		<item>@string/app_name</item>
+		<item>@string/anasTv</item>
+		<item>@string/pedaggio</item>
+		<item>@string/bollo</item>
+		<item>@string/patente</item>
+		<item>@string/alcol</item>
+		<item>@string/settings</item>
+	</string-array>
 	<string name="adUnitId">ca-app-pub-4235011035409184/4547377745</string>
 	<string name="widgetZoneName">Trafficdroid - Tratta stradale</string>
 	<string name="widgetStreetName">Trafficdroid - Strada intera</string>

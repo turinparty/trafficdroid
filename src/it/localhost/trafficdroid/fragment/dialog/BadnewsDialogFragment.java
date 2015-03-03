@@ -1,4 +1,4 @@
-package it.localhost.trafficdroid.fragment;
+package it.localhost.trafficdroid.fragment.dialog;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.adapter.item.AdViewItem;

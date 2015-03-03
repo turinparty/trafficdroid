@@ -2,22 +2,23 @@ package it.localhost.trafficdroid.activity;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.Utility;
-import it.localhost.trafficdroid.fragment.QuizDialogFragment;
-import it.localhost.trafficdroid.tabFragment.BolloFragment;
-import it.localhost.trafficdroid.tabFragment.MainFragment;
-import it.localhost.trafficdroid.tabFragment.PatenteFragment;
-import it.localhost.trafficdroid.tabFragment.PedaggioFragment;
-import it.localhost.trafficdroid.tabFragment.PreferencesFragment;
-import it.localhost.trafficdroid.tabFragment.VideoFragment;
-import it.localhost.trafficdroid.tabFragment.WebviewFragment;
+import it.localhost.trafficdroid.fragment.BolloFragment;
+import it.localhost.trafficdroid.fragment.MainFragment;
+import it.localhost.trafficdroid.fragment.PatenteFragment;
+import it.localhost.trafficdroid.fragment.PedaggioFragment;
+import it.localhost.trafficdroid.fragment.PreferencesFragment;
+import it.localhost.trafficdroid.fragment.VideoFragment;
+import it.localhost.trafficdroid.fragment.WebviewFragment;
+import it.localhost.trafficdroid.fragment.dialog.QuizDialogFragment;
+import it.localhost.trafficdroid.fragment.dialog.SetupDialogFragment;
 
 import java.security.KeyFactory;
 import java.security.Signature;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.ArrayList;
 
-import android.app.ActionBar;
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -29,10 +30,14 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.support.v4.widget.DrawerLayout;
 import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.android.vending.billing.IInAppBillingService;
 import com.google.android.gms.analytics.GoogleAnalytics;
@@ -68,27 +73,31 @@ public class MainActivity extends Activity { // NO_UCD
 	private IntentFilter intentFilter;
 	private Tracker tracker;
 	private boolean progress;
+	private DrawerLayout mDrawerLayout;
+	private ListView mDrawerList;
+	private Fragment f = null;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		android.os.StrictMode.setThreadPolicy(new android.os.StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
-		android.os.StrictMode.setVmPolicy(new android.os.StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
+		// android.os.StrictMode.setThreadPolicy(new android.os.StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
+		// android.os.StrictMode.setVmPolicy(new android.os.StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
+		setContentView(R.layout.drawer);
+		String[] mPlanetTitles = getResources().getStringArray(R.array.planets_array);
+		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+		mDrawerLayout.setDrawerListener(new MyDrawerListener());
+		mDrawerList = (ListView) findViewById(R.id.left_drawer);
+		mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, mPlanetTitles));
+		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+		getFragmentManager().beginTransaction().replace(R.id.content_frame, new MainFragment()).commit();
 		serviceConnection = new TdServiceConnection();
 		bindService(new Intent(INAPPB_ACT).setPackage(INAPPB_PKG), serviceConnection, Context.BIND_AUTO_CREATE);
-		ActionBar bar = getActionBar();
-		bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		bar.addTab(bar.newTab().setText(R.string.app_name).setTabListener(new MainFragment()));
-		bar.addTab(bar.newTab().setText(R.string.anasTv).setTabListener(new VideoFragment()));
-		bar.addTab(bar.newTab().setText(R.string.pedaggio).setTabListener(new PedaggioFragment()));
-		bar.addTab(bar.newTab().setText(R.string.bollo).setTabListener(new BolloFragment()));
-		bar.addTab(bar.newTab().setText(R.string.patente).setTabListener(new PatenteFragment()));
-		bar.addTab(bar.newTab().setText(R.string.alcol).setTabListener(WebviewFragment.newInstance(WebviewFragment.ALCOL_URL)));
-		bar.addTab(bar.newTab().setText(R.string.settings).setTabListener(new PreferencesFragment()));
 		intentFilter = new IntentFilter();
 		intentFilter.addAction(getString(R.string.BEGIN_UPDATE));
 		intentFilter.addAction(getString(R.string.END_UPDATE));
 		receiver = new UpdateReceiver();
+		if (Utility.getProviderTraffic(this).equals(getString(R.string.providerTrafficDefault)))
+			new SetupDialogFragment().show(getFragmentManager(), SetupDialogFragment.class.getSimpleName());
 	}
 
 	@Override
@@ -126,14 +135,6 @@ public class MainActivity extends Activity { // NO_UCD
 	}
 
 	@Override
-	public void onBackPressed() {
-		if (getActionBar().getSelectedNavigationIndex() == 0)
-			super.onBackPressed();
-		else
-			getActionBar().setSelectedNavigationItem(0);
-	}
-
-	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.menuRefresh:
@@ -149,6 +150,10 @@ public class MainActivity extends Activity { // NO_UCD
 			default:
 				return super.onOptionsItemSelected(item);
 		}
+	}
+
+	public void goPreferences() {
+		getFragmentManager().beginTransaction().replace(R.id.content_frame, new PreferencesFragment()).commit();
 	}
 
 	private Tracker getTracker() {
@@ -187,6 +192,47 @@ public class MainActivity extends Activity { // NO_UCD
 				startIntentSenderForResult(((PendingIntent) buyIntentBundle.getParcelable(RESPONSE_BUY_INTENT)).getIntentSender(), 0, new Intent(), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0));
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+	}
+
+	private class MyDrawerListener extends DrawerLayout.SimpleDrawerListener {
+		@Override
+		public void onDrawerClosed(View drawerView) {
+			super.onDrawerClosed(drawerView);
+			if (f != null) {
+				getFragmentManager().beginTransaction().replace(R.id.content_frame, f).commit();
+				f = null;
+			}
+		}
+	}
+
+	private class DrawerItemClickListener implements ListView.OnItemClickListener {
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+			mDrawerLayout.closeDrawer(mDrawerList);
+			switch (position) {
+				case 0:
+					f = new MainFragment();
+					break;
+				case 1:
+					f = new VideoFragment();
+					break;
+				case 2:
+					f = new PedaggioFragment();
+					break;
+				case 3:
+					f = new BolloFragment();
+					break;
+				case 4:
+					f = new PatenteFragment();
+					break;
+				case 5:
+					f = WebviewFragment.newInstance(WebviewFragment.ALCOL_URL);
+					break;
+				default:
+					f = new PreferencesFragment();
+					break;
+			}
 		}
 	}
 

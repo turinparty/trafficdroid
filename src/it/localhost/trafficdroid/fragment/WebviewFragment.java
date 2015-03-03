@@ -1,11 +1,8 @@
-package it.localhost.trafficdroid.tabFragment;
+package it.localhost.trafficdroid.fragment;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.common.AdManager;
-import android.app.ActionBar.Tab;
-import android.app.ActionBar.TabListener;
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +11,7 @@ import android.webkit.WebView;
 
 import com.google.android.gms.ads.AdView;
 
-public class WebviewFragment extends Fragment implements TabListener {
+public class WebviewFragment extends Fragment {
 	public static final String ALCOL_URL = "http://voti.kataweb.it/etilometro/index.php";
 	private static final String URL_KEY = "URL_KEY";
 
@@ -34,18 +31,5 @@ public class WebviewFragment extends Fragment implements TabListener {
 		webView.loadUrl(getArguments().getString(URL_KEY));
 		new AdManager().load(getActivity(), ((AdView) webView.findViewById(R.id.adView)), true);
 		return webView;
-	}
-
-	@Override
-	public void onTabReselected(Tab tab, FragmentTransaction ft) {
-	}
-
-	@Override
-	public void onTabSelected(Tab tab, FragmentTransaction ft) {
-		ft.replace(android.R.id.content, this);
-	}
-
-	@Override
-	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 	}
 }

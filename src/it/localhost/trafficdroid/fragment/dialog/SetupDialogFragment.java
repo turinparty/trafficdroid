@@ -1,6 +1,7 @@
-package it.localhost.trafficdroid.fragment;
+package it.localhost.trafficdroid.fragment.dialog;
 
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.activity.MainActivity;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -21,7 +22,7 @@ public class SetupDialogFragment extends DialogFragment {
 		builder.setPositiveButton(R.string.setup, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				getActivity().getActionBar().setSelectedNavigationItem(6);
+				((MainActivity) getActivity()).goPreferences();
 			}
 		});
 		builder.setNegativeButton(R.string.info, new OnClickListener() {
