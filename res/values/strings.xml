@@ -95,4 +95,6 @@
 	<string name="RUN_UPDATE">it.localhost.trafficdroid.RUN_UPDATE</string>
 	<string name="BEGIN_UPDATE">it.localhost.trafficdroid.BEGIN_UPDATE</string>
 	<string name="END_UPDATE">it.localhost.trafficdroid.END_UPDATE</string>
+	<string name="open_menu">Apri menu</string>
+	<string name="close_menu">Chiudi menu</string>
 </resources>

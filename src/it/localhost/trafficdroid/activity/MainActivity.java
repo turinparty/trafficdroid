@@ -26,10 +26,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Base64;
 import android.view.Menu;
@@ -74,8 +76,9 @@ public class MainActivity extends Activity { // NO_UCD
 	private Tracker tracker;
 	private boolean progress;
 	private DrawerLayout mDrawerLayout;
+	private ActionBarDrawerToggle mDrawerToggle;
 	private ListView mDrawerList;
-	private Fragment f = null;
+	private Fragment f;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -83,10 +86,21 @@ public class MainActivity extends Activity { // NO_UCD
 		// android.os.StrictMode.setThreadPolicy(new android.os.StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
 		// android.os.StrictMode.setVmPolicy(new android.os.StrictMode.VmPolicy.Builder().detectAll().penaltyLog().build());
 		setContentView(R.layout.drawer);
-		String[] mPlanetTitles = getResources().getStringArray(R.array.planets_array);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-		mDrawerLayout.setDrawerListener(new MyDrawerListener());
+		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.drawable.navdrawer, R.string.open_menu, R.string.close_menu) {
+			@Override
+			public void onDrawerClosed(View drawerView) {
+				super.onDrawerClosed(drawerView);
+				if (f != null) {
+					getFragmentManager().beginTransaction().replace(R.id.content_frame, f).commit();
+					f = null;
+				}
+			}
+		};
+		mDrawerLayout.setDrawerListener(mDrawerToggle);
 		mDrawerList = (ListView) findViewById(R.id.left_drawer);
+		String[] mPlanetTitles = getResources().getStringArray(R.array.planets_array);
 		mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, mPlanetTitles));
 		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 		getFragmentManager().beginTransaction().replace(R.id.content_frame, new MainFragment()).commit();
@@ -96,8 +110,21 @@ public class MainActivity extends Activity { // NO_UCD
 		intentFilter.addAction(getString(R.string.BEGIN_UPDATE));
 		intentFilter.addAction(getString(R.string.END_UPDATE));
 		receiver = new UpdateReceiver();
-		if (Utility.getProviderTraffic(this).equals(getString(R.string.providerTrafficDefault)))
+		if (Utility.getProviderTraffic(this).equals(getString(R.string.providerTrafficDefault))) {
 			new SetupDialogFragment().show(getFragmentManager(), SetupDialogFragment.class.getSimpleName());
+		}
+	}
+
+	@Override
+	protected void onPostCreate(Bundle savedInstanceState) {
+		super.onPostCreate(savedInstanceState);
+		mDrawerToggle.syncState();
+	}
+
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
+		mDrawerToggle.onConfigurationChanged(newConfig);
 	}
 
 	@Override
@@ -127,28 +154,35 @@ public class MainActivity extends Activity { // NO_UCD
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
 		menu.findItem(R.id.menuRefresh).setVisible(!progress);
-		if (Utility.isAdFree(this))
+		if (Utility.isAdFree(this)) {
 			menu.removeItem(R.id.menuAdFree);
-		if (Utility.isInterstitialFree(this))
+		}
+		if (Utility.isInterstitialFree(this)) {
 			menu.removeItem(R.id.menuInterstitialFree);
+		}
 		return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-			case R.id.menuRefresh:
-				if (!Utility.getProviderTraffic(this).equals(getString(R.string.providerTrafficDefault)))
-					sendBroadcast(new Intent(getString(R.string.RUN_UPDATE)));
-				return true;
-			case R.id.menuAdFree:
-				launchPurchaseFlow(SKU_AD_FREE);
-				return true;
-			case R.id.menuInterstitialFree:
-				launchPurchaseFlow(SKU_INTERSTITIAL_FREE);
-				return true;
-			default:
-				return super.onOptionsItemSelected(item);
+		if (mDrawerToggle.onOptionsItemSelected(item)) {
+			return true;
+		} else {
+			switch (item.getItemId()) {
+				case R.id.menuRefresh:
+					if (!Utility.getProviderTraffic(this).equals(getString(R.string.providerTrafficDefault))) {
+						sendBroadcast(new Intent(getString(R.string.RUN_UPDATE)));
+					}
+					return true;
+				case R.id.menuAdFree:
+					launchPurchaseFlow(SKU_AD_FREE);
+					return true;
+				case R.id.menuInterstitialFree:
+					launchPurchaseFlow(SKU_INTERSTITIAL_FREE);
+					return true;
+				default:
+					return super.onOptionsItemSelected(item);
+			}
 		}
 	}
 
@@ -157,8 +191,9 @@ public class MainActivity extends Activity { // NO_UCD
 	}
 
 	private Tracker getTracker() {
-		if (tracker == null)
+		if (tracker == null) {
 			tracker = GoogleAnalytics.getInstance(this).newTracker(R.xml.analytics);
+		}
 		return tracker;
 	}
 
@@ -172,6 +207,7 @@ public class MainActivity extends Activity { // NO_UCD
 	}
 
 	private final class UpdateReceiver extends BroadcastReceiver {
+		@Override
 		public void onReceive(Context context, Intent intent) {
 			if (intent.getAction().equals(getString(R.string.BEGIN_UPDATE))) {
 				getActionBar().setSubtitle(R.string.update);
@@ -188,21 +224,11 @@ public class MainActivity extends Activity { // NO_UCD
 		sendEvent(EVENT_CAT_IAB, EVENT_ACTION_LAUNCHPURCHASEFLOW, sku);
 		try {
 			Bundle buyIntentBundle = inAppBillingService.getBuyIntent(3, getPackageName(), sku, ITEM_TYPE_INAPP, "");
-			if (buyIntentBundle.getInt(RESPONSE_CODE) == 0)
+			if (buyIntentBundle.getInt(RESPONSE_CODE) == 0) {
 				startIntentSenderForResult(((PendingIntent) buyIntentBundle.getParcelable(RESPONSE_BUY_INTENT)).getIntentSender(), 0, new Intent(), Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0));
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-	}
-
-	private class MyDrawerListener extends DrawerLayout.SimpleDrawerListener {
-		@Override
-		public void onDrawerClosed(View drawerView) {
-			super.onDrawerClosed(drawerView);
-			if (f != null) {
-				getFragmentManager().beginTransaction().replace(R.id.content_frame, f).commit();
-				f = null;
-			}
 		}
 	}
 
@@ -245,8 +271,9 @@ public class MainActivity extends Activity { // NO_UCD
 		public void onServiceConnected(ComponentName name, IBinder service) {
 			inAppBillingService = IInAppBillingService.Stub.asInterface(service);
 			try {
-				if (inAppBillingService.isBillingSupported(3, getPackageName(), ITEM_TYPE_INAPP) == 0)
+				if (inAppBillingService.isBillingSupported(3, getPackageName(), ITEM_TYPE_INAPP) == 0) {
 					new RetrievePurchasesService().execute();
+				}
 			} catch (RemoteException e) {
 				e.printStackTrace();
 			}
@@ -269,8 +296,9 @@ public class MainActivity extends Activity { // NO_UCD
 						ArrayList<String> signatureList = ownedItems.getStringArrayList(RESPONSE_INAPP_DATA_SIGNATURE_LIST);
 						for (int i = 0; i < skuList.size(); ++i) {
 							sig.update(purchaseDataList.get(i).getBytes());
-							if (sig.verify(Base64.decode(signatureList.get(i), Base64.DEFAULT)))
+							if (sig.verify(Base64.decode(signatureList.get(i), Base64.DEFAULT))) {
 								out.add(skuList.get(i));
+							}
 						}
 					}
 					continueToken = ownedItems.getString(RESPONSE_INAPP_CONTINUATION_TOKEN);
@@ -287,10 +315,12 @@ public class MainActivity extends Activity { // NO_UCD
 			Utility.setAdFree(MainActivity.this, result.contains(SKU_AD_FREE) ? true : false);
 			Utility.setInterstitialFree(MainActivity.this, result.contains(SKU_INTERSTITIAL_FREE) ? true : false);
 			View ad = findViewById(R.id.adView);
-			if (ad != null)
+			if (ad != null) {
 				ad.setVisibility(result.contains(SKU_AD_FREE) ? View.GONE : View.VISIBLE);
-			if (!result.contains(SKU_QUIZ_FREE) && !Utility.getProviderTraffic(MainActivity.this).equals(getString(R.string.providerTrafficDefault)))
+			}
+			if (!result.contains(SKU_QUIZ_FREE) && !Utility.getProviderTraffic(MainActivity.this).equals(getString(R.string.providerTrafficDefault))) {
 				new QuizDialogFragment().show(getFragmentManager(), getString(R.string.patenteQuiz));
+			}
 			invalidateOptionsMenu();
 		}
 	}
