@@ -100,7 +100,7 @@ public class MainFragment extends Fragment {
 		@Override
 		protected void onPostExecute(MainDTO mainDTO) {
 			if (mainDTO != null && mainDTO.getTrafficTime() != null) {
-				getActivity().setTitle(DateFormat.getTimeFormat(getActivity()).format(mainDTO.getTrafficTime()));
+				getActivity().getActionBar().setSubtitle(DateFormat.getTimeFormat(getActivity()).format(mainDTO.getTrafficTime()));
 				ArrayList<HeterogeneousItem> groupItems = new ArrayList<HeterogeneousItem>();
 				ArrayList<ArrayList<HeterogeneousItem>> childItems = new ArrayList<ArrayList<HeterogeneousItem>>();
 				OnBadNewsItemClickListener onBadNewsItemClickListener = new OnBadNewsItemClickListener();

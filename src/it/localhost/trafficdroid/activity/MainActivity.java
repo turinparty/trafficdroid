@@ -18,7 +18,7 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.ArrayList;
 
 import android.app.Activity;
-import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -78,7 +78,7 @@ public class MainActivity extends Activity { // NO_UCD
 	private DrawerLayout mDrawerLayout;
 	private ActionBarDrawerToggle mDrawerToggle;
 	private ListView mDrawerList;
-	private Fragment f;
+	private String[] drawerList;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -88,21 +88,12 @@ public class MainActivity extends Activity { // NO_UCD
 		setContentView(R.layout.drawer);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open_menu, R.string.close_menu) {
-			@Override
-			public void onDrawerClosed(View drawerView) {
-				super.onDrawerClosed(drawerView);
-				if (f != null) {
-					getFragmentManager().beginTransaction().replace(R.id.content_frame, f).commit();
-					f = null;
-				}
-			}
-		};
-		mDrawerLayout.setDrawerListener(mDrawerToggle);
 		mDrawerList = (ListView) findViewById(R.id.left_drawer);
-		mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, getResources().getStringArray(R.array.drawerList)));
+		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open_menu, R.string.close_menu);
+		mDrawerLayout.setDrawerListener(mDrawerToggle);
+		drawerList = getResources().getStringArray(R.array.drawerList);
+		mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, drawerList));
 		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-		getFragmentManager().beginTransaction().replace(R.id.content_frame, new MainFragment()).commit();
 		serviceConnection = new TdServiceConnection();
 		bindService(new Intent(INAPPB_ACT).setPackage(INAPPB_PKG), serviceConnection, Context.BIND_AUTO_CREATE);
 		intentFilter = new IntentFilter();
@@ -111,6 +102,7 @@ public class MainActivity extends Activity { // NO_UCD
 		receiver = new UpdateReceiver();
 		if (Utility.getProviderTraffic(this).equals(getString(R.string.providerTrafficDefault)))
 			new SetupDialogFragment().show(getFragmentManager(), SetupDialogFragment.class.getSimpleName());
+		selectItem(0, false);
 	}
 
 	@Override
@@ -182,10 +174,6 @@ public class MainActivity extends Activity { // NO_UCD
 		}
 	}
 
-	public void goPreferences() {
-		getFragmentManager().beginTransaction().replace(R.id.content_frame, new PreferencesFragment()).commit();
-	}
-
 	private Tracker getTracker() {
 		if (tracker == null)
 			tracker = GoogleAnalytics.getInstance(this).newTracker(R.xml.analytics);
@@ -226,33 +214,43 @@ public class MainActivity extends Activity { // NO_UCD
 		}
 	}
 
+	public void selectItem(int position, boolean addToBackStack) {
+		mDrawerList.setItemChecked(position, true);
+		getActionBar().setTitle(drawerList[position]);
+		FragmentTransaction ft = getFragmentManager().beginTransaction();
+		switch (position) {
+			case 0:
+				ft.replace(R.id.content_frame, new MainFragment());
+				break;
+			case 1:
+				ft.replace(R.id.content_frame, new VideoFragment());
+				break;
+			case 2:
+				ft.replace(R.id.content_frame, new PedaggioFragment());
+				break;
+			case 3:
+				ft.replace(R.id.content_frame, new BolloFragment());
+				break;
+			case 4:
+				ft.replace(R.id.content_frame, new PatenteFragment());
+				break;
+			case 5:
+				ft.replace(R.id.content_frame, WebviewFragment.newInstance(WebviewFragment.ALCOL_URL));
+				break;
+			case 6:
+				ft.replace(R.id.content_frame, new PreferencesFragment());
+				break;
+		}
+		if (addToBackStack)
+			ft.addToBackStack("");
+		ft.commit();
+	}
+
 	private class DrawerItemClickListener implements ListView.OnItemClickListener {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 			mDrawerLayout.closeDrawer(mDrawerList);
-			switch (position) {
-				case 0:
-					f = new MainFragment();
-					break;
-				case 1:
-					f = new VideoFragment();
-					break;
-				case 2:
-					f = new PedaggioFragment();
-					break;
-				case 3:
-					f = new BolloFragment();
-					break;
-				case 4:
-					f = new PatenteFragment();
-					break;
-				case 5:
-					f = WebviewFragment.newInstance(WebviewFragment.ALCOL_URL);
-					break;
-				default:
-					f = new PreferencesFragment();
-					break;
-			}
+			selectItem(position, true);
 		}
 	}
 
