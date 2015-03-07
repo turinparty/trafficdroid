@@ -1,11 +1,11 @@
 package it.localhost.trafficdroid.fragment.dialog;
 
 import it.localhost.trafficdroid.R;
-import it.localhost.trafficdroid.adapter.item.AdViewItem;
-import it.localhost.trafficdroid.adapter.item.BadNewsDialogItem;
 import it.localhost.trafficdroid.common.Utility;
 import it.localhost.trafficdroid.dto.BadNewsDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
+import it.localhost.trafficdroid.ethereogeneousItem.AdViewItem;
+import it.localhost.trafficdroid.ethereogeneousItem.BadNewsDialogItem;
 
 import java.util.ArrayList;
 

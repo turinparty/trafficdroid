@@ -6,7 +6,6 @@ import it.localhost.trafficdroid.common.ListZoneResId;
 import it.localhost.trafficdroid.common.ListZoneResName;
 import it.localhost.trafficdroid.common.ListZoneResWebcam;
 import it.localhost.trafficdroid.common.Utility;
-import it.localhost.trafficdroid.dao.PersistanceService;
 import it.localhost.trafficdroid.dto.BadNewsDTO;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;

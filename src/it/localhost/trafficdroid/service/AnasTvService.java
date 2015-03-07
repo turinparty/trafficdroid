@@ -1,4 +1,4 @@
-package it.localhost.trafficdroid.dao;
+package it.localhost.trafficdroid.service;
 
 import java.net.URL;
 import java.util.ArrayList;

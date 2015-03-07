@@ -3,7 +3,7 @@ package it.localhost.trafficdroid.fragment;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.AdManager;
-import it.localhost.trafficdroid.dao.AnasTvService;
+import it.localhost.trafficdroid.service.AnasTvService;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;

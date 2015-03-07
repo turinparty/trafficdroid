@@ -2,19 +2,19 @@ package it.localhost.trafficdroid.fragment;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
-import it.localhost.trafficdroid.adapter.item.AdViewItem;
-import it.localhost.trafficdroid.adapter.item.BadNewsItem;
-import it.localhost.trafficdroid.adapter.item.StreetItem;
-import it.localhost.trafficdroid.adapter.item.ZoneItem;
 import it.localhost.trafficdroid.common.AdManager;
 import it.localhost.trafficdroid.common.Utility;
-import it.localhost.trafficdroid.dao.PersistanceService;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
 import it.localhost.trafficdroid.dto.ZoneDTO;
+import it.localhost.trafficdroid.ethereogeneousItem.AdViewItem;
+import it.localhost.trafficdroid.ethereogeneousItem.BadNewsItem;
+import it.localhost.trafficdroid.ethereogeneousItem.StreetItem;
+import it.localhost.trafficdroid.ethereogeneousItem.ZoneItem;
 import it.localhost.trafficdroid.fragment.dialog.BadnewsDialogFragment;
 import it.localhost.trafficdroid.fragment.dialog.MessageDialogFragment;
 import it.localhost.trafficdroid.fragment.dialog.WebviewDialogFragment;
+import it.localhost.trafficdroid.service.PersistanceService;
 
 import java.io.Serializable;
 import java.util.ArrayList;

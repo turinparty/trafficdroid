@@ -4,10 +4,10 @@ import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.AdManager;
 import it.localhost.trafficdroid.common.Utility;
-import it.localhost.trafficdroid.dao.PatenteService;
 import it.localhost.trafficdroid.dto.BaseDTO;
 import it.localhost.trafficdroid.dto.PatenteDTO;
 import it.localhost.trafficdroid.fragment.dialog.MessageDialogFragment;
+import it.localhost.trafficdroid.service.PatenteService;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -24,16 +24,18 @@ import com.google.android.gms.ads.AdView;
 public class PatenteFragment extends Fragment {
 	private static final String BLANK = "";
 	private TextView patenteSaldo, patenteNumero, patenteScadenza;
+	private View progress, result;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.patente, container, false);
-		getActivity().setProgressBarIndeterminateVisibility(false);
 		final EditText usrEdit = (EditText) v.findViewById(R.id.patenteUsr);
 		final EditText pwdEdit = (EditText) v.findViewById(R.id.patentePwd);
 		patenteSaldo = (TextView) v.findViewById(R.id.patenteSaldo);
 		patenteNumero = (TextView) v.findViewById(R.id.patenteNumero);
 		patenteScadenza = (TextView) v.findViewById(R.id.patenteScadenza);
+		progress = v.findViewById(R.id.progress);
+		result = v.findViewById(R.id.result);
 		usrEdit.setText(Utility.getPatenteUsr(getActivity()));
 		pwdEdit.setText(Utility.getPatentePwd(getActivity()));
 		v.findViewById(R.id.ok).setOnClickListener(new OnClickListener() {
@@ -56,14 +58,15 @@ public class PatenteFragment extends Fragment {
 	private class PatenteAsyncTask extends PatenteService {
 		@Override
 		protected void onPreExecute() {
-			getActivity().setProgressBarIndeterminateVisibility(true);
-			InputMethodManager im = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-			im.hideSoftInputFromWindow(getActivity().getWindow().getDecorView().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+			progress.setVisibility(View.VISIBLE);
+			result.setVisibility(View.GONE);
+			((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(getActivity().getWindow().getDecorView().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 		}
 
 		@Override
 		protected void onPostExecute(BaseDTO abstractResult) {
-			getActivity().setProgressBarIndeterminateVisibility(false);
+			progress.setVisibility(View.GONE);
+			result.setVisibility(View.VISIBLE);
 			if (abstractResult.isSuccess()) {
 				PatenteDTO patente = (PatenteDTO) abstractResult;
 				patenteSaldo.setText(patente.getSaldo());

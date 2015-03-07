@@ -1,4 +1,4 @@
-package it.localhost.trafficdroid.adapter.item;
+package it.localhost.trafficdroid.ethereogeneousItem;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.dto.ZoneDTO;

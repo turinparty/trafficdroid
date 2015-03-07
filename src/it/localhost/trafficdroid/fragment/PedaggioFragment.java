@@ -4,10 +4,10 @@ import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.AdManager;
 import it.localhost.trafficdroid.common.ListExit;
-import it.localhost.trafficdroid.dao.PedaggioService;
 import it.localhost.trafficdroid.dto.BaseDTO;
 import it.localhost.trafficdroid.dto.PedaggioDTO;
 import it.localhost.trafficdroid.fragment.dialog.MessageDialogFragment;
+import it.localhost.trafficdroid.service.PedaggioService;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -24,12 +24,13 @@ import com.google.android.gms.ads.AdView;
 
 public class PedaggioFragment extends Fragment {
 	private TextView result;
+	private View progress;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.pedaggio, container, false);
 		result = (TextView) v.findViewById(R.id.result);
-		getActivity().setProgressBarIndeterminateVisibility(false);
+		progress = v.findViewById(R.id.progress);
 		final AutoCompleteTextView moneyFrom = (AutoCompleteTextView) v.findViewById(R.id.moneyFrom);
 		final AutoCompleteTextView moneyTo = (AutoCompleteTextView) v.findViewById(R.id.moneyTo);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_dropdown_item_1line, ListExit.getInstance().getKeys());
@@ -53,13 +54,15 @@ public class PedaggioFragment extends Fragment {
 	private class PedaggioAsyncTask extends PedaggioService {
 		@Override
 		protected void onPreExecute() {
-			getActivity().setProgressBarIndeterminateVisibility(true);
+			progress.setVisibility(View.VISIBLE);
+			result.setVisibility(View.GONE);
 			((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(getActivity().getWindow().getDecorView().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 		}
 
 		@Override
 		protected void onPostExecute(BaseDTO dto) {
-			getActivity().setProgressBarIndeterminateVisibility(false);
+			progress.setVisibility(View.GONE);
+			result.setVisibility(View.VISIBLE);
 			if (dto.isSuccess())
 				result.setText("€ " + ((PedaggioDTO) dto).getPedaggio());
 			else

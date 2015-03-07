@@ -1,4 +1,4 @@
-package it.localhost.trafficdroid.dao;
+package it.localhost.trafficdroid.service;
 
 import it.localhost.trafficdroid.dto.BaseDTO;
 import it.localhost.trafficdroid.dto.PatenteDTO;

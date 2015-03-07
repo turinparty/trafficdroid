@@ -34,7 +34,6 @@ public class BolloFragment extends Fragment {
 		new AutoFocusTextWatcher(targaC, 2);
 		tipoVeicolo = (Spinner) v.findViewById(R.id.tipoVeicolo);
 		regioneResidenza = (Spinner) v.findViewById(R.id.regioneResidenza);
-		getActivity().setProgressBarIndeterminateVisibility(false);
 		v.findViewById(R.id.ok).setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				String targa = targaA.getText().toString() + targaB.getText().toString() + targaC.getText().toString();

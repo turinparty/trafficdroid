@@ -1,4 +1,4 @@
-package it.localhost.trafficdroid.adapter.item;
+package it.localhost.trafficdroid.ethereogeneousItem;
 
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.dto.BadNewsDTO;
@@ -51,17 +51,17 @@ public class BadNewsDialogItem extends HeterogeneousItem {
 	@Override
 	public View inflate() {
 		View view = View.inflate(context, R.layout.dialog_item_badnews, null);
-		view.setTag(R.id.badNewsTitle, view.findViewById(R.id.badNewsTitle));
+		view.setTag(R.id.text1, view.findViewById(android.R.id.text1));
 		view.setTag(R.id.badNewsDate, view.findViewById(R.id.badNewsDate));
-		view.setTag(R.id.badNewsDescription, view.findViewById(R.id.badNewsDescription));
+		view.setTag(R.id.text2, view.findViewById(android.R.id.text2));
 		return view;
 	}
 
 	@Override
 	public void fill(View view) {
 		BadNewsDTO badNews = (BadNewsDTO) extra;
-		((TextView) view.getTag(R.id.badNewsTitle)).setText(badNews.getTitle());
-		((TextView) view.getTag(R.id.badNewsDescription)).setText(badNews.getDescription());
+		((TextView) view.getTag(R.id.text1)).setText(badNews.getTitle());
+		((TextView) view.getTag(R.id.text2)).setText(badNews.getDescription());
 		TextView badNewsDate = (TextView) view.getTag(R.id.badNewsDate);
 		badNewsDate.setText(sdfBnFormat.format(badNews.getDate()));
 		int drawable;

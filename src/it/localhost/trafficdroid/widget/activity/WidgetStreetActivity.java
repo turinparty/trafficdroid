@@ -1,9 +1,9 @@
 package it.localhost.trafficdroid.widget.activity;
 
 import it.localhost.trafficdroid.common.Utility;
-import it.localhost.trafficdroid.dao.PersistanceService;
 import it.localhost.trafficdroid.dto.MainDTO;
 import it.localhost.trafficdroid.dto.StreetDTO;
+import it.localhost.trafficdroid.service.PersistanceService;
 import it.localhost.trafficdroid.widget.provider.WidgetStreetProvider;
 
 import java.util.ArrayList;
