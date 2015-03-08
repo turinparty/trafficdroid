@@ -27,9 +27,9 @@
 <item>A791</item> <!-- D08 km. 2,5 Gallarate Ovest entrata NEW -->
 <item>A598</item> <!-- D08 km. 8,1 Besnate itinere sud NEW -->
 <item>A597</item> <!-- D08 km. 8,1 Vergiate itinere nord NEW -->
-		<item>A14679</item> <!-- A08 km. 12,1 Diram. Gallarate Gattico Vergiate (Va) -->
+<item>A1255</item> <!-- D08 km. 12,1 Diram. Gallarate Gattico Vergiate (Va) -->
 <item>A509</item> <!-- D08 km. 16,9 Castelletto T. itinere ovest NEW -->
-		<item>A11421</item> <!-- A26 km. 157,9 A26/D8 itinere nord -->
+<item>A2554</item> <!-- D08 km. 20,3 D 08 Km.20,3 itinere Ovest -->
 	</string-array>
 
 </resources>

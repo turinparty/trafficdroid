@@ -212,7 +212,7 @@
 
 	<string-array name="z126Webcam">
 <item>A1970</item> <!-- A01 km. 000,0 Ads S.Donato-Sv. Poasco NEW -->
-		<item>A9970</item> <!-- A01 km. -0,6 All. Tang. Est -->
+<item>A402</item> <!-- A01 km. 001,7 PMV S.Giuliano Itinere Sud -->
 <item>A1895</item> <!-- A01 km. 001,9 PMV S.Giuliano Itinere Nord NEW -->
 <item>A1971</item> <!-- A01 km. 003,8 All. Tang. Ovest NEW -->
 <item>A403</item> <!-- A01 km. 006,0 PMV Melegnano Itinere Sud NEW -->
@@ -220,32 +220,32 @@
 <item>A411</item> <!-- A01 km. 006,8 PMV Melegnano Itinere Nord NEW -->
 <item>A22</item> <!-- A01 km 9,9 Barriera Milano Sud NEW -->
 <item>A1972</item> <!-- A01 km. 015,3 Ads S. Zenone Sud NEW -->
-		<item>A22398</item> <!-- A01 km. 22,3 Lodi -->
+<item>A26</item> <!-- A01 km. 22,3 Lodi NEW -->
 <item>A413</item> <!-- A01 km. 038,9 PMV Casalpusterlengo Nord NEW -->
 <item>A1986</item> <!-- A01 km. 043,6 Ads Somaglia NEW -->
-		<item>A19960</item> <!-- A01 km. 52,3 PMV Piacenza Nord Itinere Nord -->
+<item>A414</item> <!-- A01 km. 52,3 PMV Piacenza Nord Itinere Nord NEW -->
 <item>A27</item> <!-- A01 Km. 54,5 Ponte Po NEW -->
 <item>A28</item> <!-- A01 km. 58,2 Piacenza Sud NEW -->
 <item>A2022</item> <!-- A01 km. 065,6 Itinere NEW -->
-		<item>A19998</item> <!-- A01 km. 71,4 PMV Fiorenzuola Itinere Sud -->
+<item>A408</item> <!-- A01 km. 71,4 PMV Fiorenzuola Itinere Sud NEW -->
 <item>A1024</item> <!-- A01 km. 089,2 PMV Fidenza Iti.Sud NEW -->
-		<item>A22430</item> <!-- A01 km. 102,0 All. A1/A15 -->
-		<item>A66338</item> <!-- A01 km. 110,8 Parma -->
+<item>A21</item> <!-- A01 Km. 102,0 All. A1/A15 itinere sud -->
+<item>A29</item> <!-- A01 km. 110,8 Parma NEW -->
 <item>A2082</item> <!-- A01 km. 114,6 Ads S.Martino NEW -->
 <item>A2654</item> <!-- A01 km. 125,9 Campegine itinere nord NEW -->
 <item>A366</item> <!-- A01 km. 139,0 Reggio Emilia itinere nord NEW -->
 <item>A64</item> <!-- A01 km. 155,0 A1/A22 itinere Nord NEW -->
 <item>A65</item> <!-- A01 km. 156,0 Secchia itinere nord NEW -->
 <item>A368</item> <!-- A01 km. 157,0 Modena Nord itinere sud NEW -->
-		<item>A18786</item> <!-- A01 km. 170,8 Modena Sud itinere sud -->
+<item>A601</item> <!-- A01 km. 170,8 Modena Sud itinere sud NEW -->
 <item>A55</item> <!-- A01 km. 189,0 A1/A14 itinere nord NEW -->
 <item>A66</item> <!-- A01 km. 195,0 itinere nord NEW -->
 <item>A67</item> <!-- A01 km. 199,0 Cantagallo itinere sud NEW -->
-		<item>A22235</item> <!-- A01 km. 207,0 Sasso Marconi itinere -->
+<item>A918</item> <!-- A01 km. 207,0 Sasso Marconi Vecchia -->
 <item>A380</item> <!-- A01 km. 223,2 Rioveggio itinere nord NEW -->
 <item>A83</item> <!-- A01 km. 237,0 Crocette itinere sud NEW -->
 <item>A187</item> <!-- A01 km. 242,0 Roncobilaccio NEW -->
-		<item>A21418</item> <!-- A01 km. 254,0 Casarsa itinere nord -->
+<item>A183</item> <!-- A01 km. 250,0 Massa itinere nord -->
 <item>A84</item> <!-- A01 km. 255,0 Aglio itinere sud NEW -->
 <item>A379</item> <!-- A01 km. 262,3 Barberino itinere nord NEW -->
 <item>A385</item> <!-- A01 km. 277,0 Calenzano itinere sud NEW -->
@@ -253,13 +253,13 @@
 <item>A382</item> <!-- A01 km. 280,6 Firenze Nord itinere nord NEW -->
 		<item>H14381</item>
 <item>A86</item> <!-- A01 km. 280,0 All. A1/A11 NEW -->
-		<item>A10496</item> <!-- A01 km. 288,0 Scandicci nord -->
-		<item>A9480</item> <!-- A01 km. 295,0 Galleria Lastrone itinere sud -->
-		<item>A22122</item> <!-- A01 km. 301,3 Firenze Sud itinere nord -->
+<item>A1922</item> <!-- A01 km. 288,0 Scandicci itinere nord -->
+<item>A1880</item> <!-- A01 km. 296,0 itinere sud -->
+<item>A387</item> <!-- A01 km. 302,1 Firenze Sud itinere nord -->
 <item>A72</item> <!-- A01 km. 307,0 Chianti itinere sud NEW -->
 <item>A388</item> <!-- A01 km. 319,2 Incisa itinere sud NEW -->
 <item>A73</item> <!-- A01 km. 318,0 Arno a Incisa itinere nord NEW -->
-		<item>A12814</item> <!-- A01 km. 324,0 itinere sud -->
+<item>A388</item> <!-- A01 km. 319,2 Incisa itinere sud -->
 <item>A315</item> <!-- A01 km. 337,1 Valdarno itinere nord NEW -->
 <item>A316</item> <!-- A01 km. 357,8 Arezzo itinere sud NEW -->
 <item>A2024</item> <!-- A01 km. 361,9 itinere sud NEW -->
@@ -274,7 +274,7 @@
 <item>A460</item> <!-- A01 km. 467,1 Tevere itinere nord NEW -->
 <item>A1034</item> <!-- A01 km. 478,4 Attigliano itinere sud NEW -->
 <item>A1033</item> <!-- A01 km. 483,7 Attigliano itinere nord NEW -->
-		<item>A21927</item> <!-- A01 Km. 492,0 Orte itinere sud -->
+<item>A446</item> <!-- A01 km. 489,9 Orte itnere sud -->
 <item>A102</item> <!-- A01 km. 500,0 Magliano itinere nord NEW -->
 <item>A104</item> <!-- A01 km. 509,0 Flaminia itinere nord NEW -->
 <item>A105</item> <!-- A01 km. 516,0 Soratte itinere nord NEW -->
@@ -287,8 +287,8 @@
 <item>A123</item> <!-- A01 km. 593,0 Colleferro itinere sud NEW -->
 <item>A451</item> <!-- A01 km. 602,9 Anagni itinere sud NEW -->
 <item>A1239</item> <!-- A01 km. 611,0 La Macchia itinere Nord NEW -->
-		<item>A21781</item> <!-- A01 km. 615,0 itinere sud -->
-		<item>A21840</item> <!-- A01 km. 624,0 Frosinone itinere sud -->
+<item>A452</item> <!-- A01 km. 622,5 Frosinone itinere sud -->
+<item>A115</item> <!-- A01 km. 624,0 Frosinone itinere nord -->
 <item>A2127</item> <!-- A01 km. 644,9 Ceprano itinere nord NEW -->
 <item>A1891</item> <!-- A01 km. 661,7 Pontecorvo itinere nord NEW -->
 <item>A514</item> <!-- A01 km. 668,5 Cassino itinere sud NEW -->

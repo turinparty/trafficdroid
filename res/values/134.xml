@@ -283,14 +283,14 @@
 		<item>H1310</item>
 		<item>H14225</item>
 		<item>H14226</item>
-		<item>H14265</item>
-		<item>A8003</item> <!-- A04 km. 124,0 Inizio Competenza -->
+<item>A268</item> <!-- A04 km. 125,0 Bivio Fiorenza -->
+<item>A582</item> <!-- A04 km. 125,0 V.le Certosa Itinere Nord -->
 <item>A171</item> <!-- A04 km. 126,0 Fiorenza itinere ovest NEW -->
-		<item>A19836</item> <!-- A04 km. 128,5 Cormano itinere est -->
+<item>A434</item> <!-- A04 km. 128,5 PMV DT Dir. Ovest -->
 <item>A435</item> <!-- A04 km. 131,0 Cormano itinere ovest NEW -->
-		<item>A21482</item> <!-- A04 km. 133,8 Lambro itinere est -->
+<item>A172</item> <!-- A04 km. 133,8 Lambro itinere Ovest -->
+<item>A33</item> <!-- A04 km. 136,5 svincolo Sesto S. Giovanni itinere ovest NEW -->
 <item>A436</item> <!-- A04 km. 137,1 Sesto S.Giovanni itinere ovest NEW -->
-		<item>H1317</item>
 <item>A37</item> <!-- A04 km. 138,3 Barr. Milano est NEW -->
 <item>A437</item> <!-- A04 km. 140,0 Monza itinere ovest NEW -->
 <item>A421</item> <!-- A04 km. 142,1 Tangenziale Milano Est itinere est NEW -->

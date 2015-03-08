@@ -43,7 +43,7 @@
 	</integer-array>
 
 	<string-array name="z169Webcam">
-		<item>A20502</item> <!-- A27 km. 0,1 Allac. A57 itinere sud -->
+<item>A327</item> <!-- A27 km. 0,1 Inizio Competenza itinere sud -->
 <item>A322</item> <!-- A27 km. 2,5 Mogliano Veneto itinere nord NEW -->
 		<item>A17555</item> <!-- A27 km. 5,1 st. Venezia Nord uscite -->
 		<item>H14264</item>

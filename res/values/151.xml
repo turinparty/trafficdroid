@@ -188,7 +188,7 @@
 <item>A53</item> <!-- A14 km. 1,0 Casalecchio itinere nord NEW -->
 <item>A336</item> <!-- A14 km. 3,0 Borgo Panigale itinere sud NEW -->
 <item>A59</item> <!-- A14 km. 4,8 Borgo Panigale itiner sud NEW -->
-		<item>A22203</item> <!-- A14 km. 9 Bivio A14-Raccordo Casalecchio itinere sud -->
+<item>A57</item> <!-- A14 km. 9 HD Bivio A14-Racc. Casalecchio it.sud -->
 <item>A2035</item> <!-- A14 km. 012,6 Itinere Sud NEW -->
 <item>A621</item> <!-- A14 km. 16 Bologna Fiera itinere nord NEW -->
 <item>A2039</item> <!-- A14 km. 20,5 SH40 Sud NEW -->
@@ -196,29 +196,29 @@
 <item>A913</item> <!-- A14 km. 39,4 Castel S. Pietro itinere nord NEW -->
 <item>A51</item> <!-- A14 km. 50,0 Imola itinere sud NEW -->
 <item>A552</item> <!-- A14 km. 59,0 All. Ravenna itinere nord NEW -->
-		<item>A22252</item> <!-- A14 km. 56,0 Solarolo-Imola A-14 -->
+<item>A49</item> <!-- A14 km. 56,0 Solarolo-Imola iti. Sud -->
 <item>A919</item> <!-- A14 km. 63,0 Faenza itinere sud NEW -->
 <item>A342</item> <!-- A14 km. 80,0 Forli itinere sud NEW -->
 <item>A2124</item> <!-- A14 km. 89,5 Bevano Est itinere sud NEW -->
 <item>A344</item> <!-- A14 km. 92,6 Cesena Nord itinere sud NEW -->
 <item>A909</item> <!-- A14 km. 98,2 Cesena itinere sud NEW -->
-		<item>A9228</item> <!-- A14 km. 111,3 Rubicone Nord itinere nord -->
+<item>A2123</item> <!-- A14 km. 111,3 Area di servizio Rubicone itinere nord -->
 <item>A54</item> <!-- A14 km. 117,0 Rimini Nord itinere sud NEW -->
-		<item>A22177</item> <!-- A14 km. 127,0 Rimini Sud itinere nord -->
+<item>A61</item> <!-- A14 km. 127,0 Rimini Sud itinere Sud -->
 <item>A914</item> <!-- A14 km. 129,0 Rimini Sud itinere nord NEW -->
-		<item>A22133</item> <!-- A14 km. 135,0 Riccione itinere nord -->
+<item>A911</item> <!-- A14 km. 134,2 Riccione itinere sud -->
 <item>A349</item> <!-- A14 km. 143,0 Cattolica itinere sud NEW -->
 <item>A295</item> <!-- A14 km. 155,0 Pesaro itinere sud NEW -->
 <item>A138</item> <!-- A14 km. 162,0 Colombaraccia itinere sud NEW -->
 <item>A297</item> <!-- A14 km. 169,2 Fano itinere sud NEW -->
 <item>A1233</item> <!-- A14 km. 176,2 Fano itinere nord NEW -->
 <item>A1245</item> <!-- A14 km. 182,7 Marotta itinere sud NEW -->
-		<item>A14737</item> <!-- A14 km. 198,2 Senigallia itinere nord -->
+<item>A298</item> <!-- A14 km. 189,0 Senigallia itinere sud -->
 <item>A141</item> <!-- A14 km. 223,0 Galleria Sappanico itinere nord NEW -->
 <item>A301</item> <!-- A14 km. 224,6 Ancona Nord itinere nord NEW -->
 <item>A901</item> <!-- A14 km. 227,8 Ancona Sud itinere sud NEW -->
 <item>A1268</item> <!-- A14 km. 240,2 Loreto itinere sud NEW -->
-		<item>A20659</item> <!-- A14 km. 247,5 Loreto itinere nord -->
+<item>A303</item> <!-- A14 km. 248,4 Loreto itinere nord -->
 <item>A2059</item> <!-- A14 km. 259,0 itinere nord NEW -->
 <item>A905</item> <!-- A14 km. 263,8 Civitanova itinere nord NEW -->
 <item>A142</item> <!-- A14 km. 278,0 Gall. Porto S. Giorgio itinere sud NEW -->
@@ -239,7 +239,7 @@
 <item>A1278</item> <!-- A14 km. 390,1 Pescara Sud itinere sud NEW -->
 <item>A1269</item> <!-- A14 km. 402,3 itinere sud NEW -->
 <item>A1270</item> <!-- A14 km. 405,4 Ortona itinere nord NEW -->
-		<item>A19083</item> <!-- A14 km. 411,7 Lanciano itinere sud -->
+<item>A554</item> <!-- A14 km. 411,7 Lanciano itinere sud NEW -->
 <item>A1280</item> <!-- A14 km. 425,1 Val di Sangro itinere nord NEW -->
 <item>A2018</item> <!-- A14 km. 428,0 Sangro itinere sud NEW -->
 <item>A1279</item> <!-- A14 km. 434,4 Vasto Nord itinere sud NEW -->
@@ -250,12 +250,12 @@
 <item>A2020</item> <!-- A14 km. 493,5 Torre Fantine itinere nord NEW -->
 <item>A1843</item> <!-- A14 km. 508,0 Poggio Imperiale itinere nord NEW -->
 <item>A1532</item> <!-- A14 km. 525,0 San Severo itinere sud NEW -->
-		<item>A10718</item> <!-- A14 km. 529,0 San Severo itinere nord -->
+<item>A1532</item> <!-- A14 km. 525,0 San Severo itinere sud -->
 <item>A560</item> <!-- A14 km. 542,1 PMV Gargano itinere sud NEW -->
 <item>A1549</item> <!-- A14 km. 580,0 Saline itinere sud NEW -->
 <item>A2555</item> <!-- A14 km. 592,4 itinere nord NEW -->
 <item>A2372</item> <!-- A14 km. 599,5 San Ferdinando itinere sud NEW -->
-		<item>A9906</item> <!-- A14 km. 603,3 San Ferdinando itinere sud -->
+		<item>H1690</item>
 <item>A2446</item> <!-- A14 km. 608,810 itinere sud NEW -->
 <item>A563</item> <!-- A14 km. 611,1 Canosa itinere nord NEW -->
 		<item>H1690</item>
@@ -265,7 +265,7 @@
 <item>A1883</item> <!-- A14 km. 654,0 Molfetta itinere nord NEW -->
 <item>A567</item> <!-- A14 km. 664,0 Bitonto itinere nord NEW -->
 		<item>H1696</item>
-		<item>A10729</item> <!-- A14 km. 668,2 Bari nord itinere sud -->
+<item>A567</item> <!-- A14 km. 664,0 Bitonto itinere nord -->
 <item>A2164</item> <!-- A14 km. 676,7 itinere sud NEW -->
 		<item>A18995</item> <!-- A14 km. 701,5 Acquaviva itinere nord -->
 		<item>A6535</item> <!-- A14 km. 703,5 Benzo itinere nord -->

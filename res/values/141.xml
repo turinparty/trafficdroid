@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Torino - Savona -->
 <resources>
-
 	<string-array name="z141Name">
 		<item>Allacciamento Diramazione Per Moncalieri</item>
 		<item>Allacciamento Tangenziale Sud Di Torino</item>
@@ -26,7 +25,6 @@
 		<item>Altare</item>
 		<item>Savona-Zinola-Vado-Allacciamento A10 Ge-Ventimiglia</item>
 	</string-array>
-
 	<integer-array name="z141Id">
 		<item>1415</item>
 		<item>1416</item>
@@ -51,30 +49,28 @@
 		<item>1435</item>
 		<item>1437</item>
 	</integer-array>
-
 	<string-array name="z141Webcam">
-		<item>A7175</item> <!-- A06 Km. 2,7 La Rotta itinere nord -->
-		<item>A7143</item> <!-- A06 Km. 5,6 Pelabue itinere nord -->
-		<item>A7169</item> <!-- A06 Km. 10,9 Rio Cocchi itinere sud -->
+		<item>H1415</item>
+		<item>H1416</item>
+		<item>H1417</item>
 		<item>H1418</item>
-		<item>A17889</item> <!-- A06 Km. 12,5 Carmagnola itinere sud -->
-		<item>A12870</item> <!-- A06 Km. 30,0 Rio Colore itinere sud -->
-		<item>A10284</item> <!-- A06 Km. 33,5 Marene itinere sud -->
-		<item>A7149</item> <!-- A06 Km. 47,7 Rio Ghidone itinere sud -->
-		<item>A17864</item> <!-- A06 Km. 48,5 Fossano itinere sud -->
-		<item>A17858</item> <!-- A06 Km. 49,7 Fossano itinere nord -->
-		<item>A15992</item> <!-- A06 Km. 57,8 Carru itinere nord -->
-		<item>A17852</item> <!-- A06 Km. 61,5 Mondovi itinere sud -->
-		<item>A7137</item> <!-- A06 Km. Km. 62,5 Mondovi -->
-		<item>A17845</item> <!-- A06 Km. 64,2 Mondovi itinere nord -->
-		<item>A9179</item> <!-- A06 Km. 71,3 Niella Tanaro itinere sud -->
-		<item>A17838</item> <!-- A06 Km. 80,2 Ceva itinere sud -->
-		<item>A11011</item> <!-- A06 Km. 83,9 Priero itinere sud -->
-		<item>A17794</item> <!-- A06 Km. 101,2 Millesimo itinere nord -->
-		<item>A11086</item> <!-- A06 Km. 103.3 Ca Lidora itinere sud -->
-		<item>A17777</item> <!-- A06 Km. 108,7 Altare itinere sud -->
-		<item>A17770</item> <!-- A06 Km. 110,5 Altare itinere nord -->
-		<item>A7194</item> <!-- A06 Km. 118,0 By-pass 118 -->
+		<item>H1419</item>
+		<item>H1420</item>
+		<item>H1421</item>
+		<item>H1422</item>
+		<item>H1423</item>
+		<item>H14184</item>
+		<item>H1424</item>
+		<item>H1425</item>
+		<item>H1426</item>
+		<item>H1427</item>
+		<item>H1428</item>
+		<item>H1429</item>
+		<item>H1430</item>
+		<item>H1432</item>
+		<item>H1433</item>
+		<item>H1434</item>
+		<item>H1435</item>
+		<item>H1437</item>
 	</string-array>
-
 </resources>

@@ -76,7 +76,7 @@
 <item>A468</item> <!-- A12 km. 11,2 GE-Nervi itinere est NEW -->
 <item>A11</item> <!-- A12 km. 23,0 Recco itinere ovest NEW -->
 <item>A14</item> <!-- A12 km. 28,0 Rapallo itinere ovest NEW -->
-		<item>A19547</item> <!-- A12 km. 39,000 Chiavari itinere Est -->
+<item>A480</item> <!-- A12 km. 39,0 Chiavari itinere Est -->
 <item>A1051</item> <!-- A12 km. 39,9 Lavagna itinere est NEW -->
 <item>A496</item> <!-- A12 km. 52,1 Sestri TR1/Salt itinere ovest NEW -->
 		<item>H1565</item>
@@ -96,12 +96,12 @@
 		<item>H1579</item>
 		<item>H1580</item>
 		<item>H1581</item>
-		<item>A21249</item> <!-- A12 km. 170,2 Livorno -->
+<item>A209</item> <!-- A12 km. 170,1 Livorno -->
 <item>A208</item> <!-- A12 km. 177,8 Collesalvetti NEW -->
-		<item>H1584</item>
-		<item>H1585</item>
-		<item>H1586</item>
-		<item>H1588</item>
+<item>A205</item> <!-- A12 km. 188,1 Rimazzano Nord -->
+<item>A251</item> <!-- A12 km. 200,1 A.D.S. Fine -->
+<item>A1900</item> <!-- A12 km. 206,0 Rosignano entrate -->
+<item>A1901</item> <!-- A12 km. 206,0 Rosignano uscite -->
 	</string-array>
 
 </resources>

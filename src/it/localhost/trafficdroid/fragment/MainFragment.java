@@ -39,7 +39,6 @@ import android.widget.ExpandableListView.OnChildClickListener;
 import com.google.android.gms.ads.AdView;
 
 public class MainFragment extends Fragment {
-	// private static final String autostrade = "http://mobile.autostrade.it/autostrade-mobile/popupTelecamera.do?tlc=";
 	private static final String autostradeDESKURL = "http://www.autostrade.it/autostrade-gis/popupTelecameran.do?tlc=";
 	private static final String cavspa = "http://www.cavspa.it/webcam/temp-imgs/camsbig/";
 	private static final String edidomus = "http://telecamere.edidomus.it/vp2/vpimage.aspx?camid=";

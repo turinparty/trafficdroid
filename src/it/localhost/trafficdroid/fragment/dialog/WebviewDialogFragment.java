@@ -6,7 +6,6 @@ import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.FragmentManager;
-import android.graphics.Point;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager.LayoutParams;
@@ -15,7 +14,6 @@ import android.webkit.WebView;
 import com.google.android.gms.ads.AdView;
 
 public class WebviewDialogFragment extends DialogFragment {
-	private static final String AUTOSTRADE_IT = "autostrade.it";
 	public static final String TAG_URL = "url";
 	public static final String TAG_DATA = "data";
 
@@ -24,22 +22,9 @@ public class WebviewDialogFragment extends DialogFragment {
 		Builder builder = new Builder(getActivity());
 		WebView webView = (WebView) View.inflate(getActivity(), R.layout.webview, null);
 		webView.getSettings().setJavaScriptEnabled(true);
-		webView.getSettings().setLoadWithOverviewMode(true);
-		webView.getSettings().setUseWideViewPort(true);
-		webView.getSettings().setBuiltInZoomControls(true);
 		String url = getArguments().getString(TAG_URL);
 		String data = getArguments().getString(TAG_DATA);
 		if (url != null) {
-			if (url.length() > 26 && url.substring(14, 27).equals(AUTOSTRADE_IT)) {
-				Point size = new Point();
-				getActivity().getWindowManager().getDefaultDisplay().getSize(size);
-				if (size.x > 768)
-					url = url + "&ua=Mozilla/5.0%20(iPad;%20U;%20CPU%20iPhone%20OS%203_2%20like%20Mac%20OS%20X;%20en-us)%20AppleWebKit/531.21.10";
-				else if (size.x > 320)
-					url = url + "&ua=Android%201.1";
-				else
-					url = url + "&ua=NokiaE51";
-			}
 			webView.loadUrl(url);
 		} else if (data != null)
 			webView.loadData(data, "text/html", null);

@@ -18,9 +18,9 @@
 
 	<string-array name="z195Webcam">
 <item>A500</item> <!-- D26 km. 1,4 D26/A26 itinere ovest NEW -->
+<item>A2385</item> <!-- D26 km. 8,0 Novi Ligure itinere est -->
 		<item>-1</item>
 		<item>-1</item>
-		<item>A10051</item> <!-- D26 km. 16,9 D26/A7 itinere est -->
 	</string-array>
 
 </resources>

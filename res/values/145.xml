@@ -87,19 +87,19 @@
 	</integer-array>
 
 	<string-array name="z145Webcam">
-		<item>A22505</item> <!-- A10 Km. 0,0 Polcevera itinere est -->
-		<item>A19592</item> <!-- A10 Km. 3,1 Ge Aerop. itinere est -->
-		<item>A11308</item> <!-- A10 Km. 5,3 Pegli itinere ovest -->
-		<item>A7017</item> <!-- A10 Km. 10,1 Ge-Voltri itinere ovest -->
-		<item>A22523</item> <!-- A10 Bivio A26S/A10E itinere est -->
+<item>A472</item> <!-- A10 km. 1,15 GE-Aereop. itinere ovest -->
+<item>A473</item> <!-- A10 km. 3,1 Ge Aerop. itinere est -->
+<item>A1792</item> <!-- A10 km. 5,3 Pegli itinere ovest -->
+<item>A484</item> <!-- A10 km. 9,4 GE-Pegli itinere est -->
+<item>A2469</item> <!-- A10 km. 14,0 A10/A26 itinere est -->
 <item>A485</item> <!-- A10 km. 19,4 Arenzano itinere ovest NEW -->
 <item>A1</item> <!-- A10 km. 20,0 Arenzano itinere est NEW -->
 <item>A487</item> <!-- A10 km. 24,6 Varazze itinere ovest NEW -->
-		<item>A19495</item> <!-- A10 Km. 28.8 Varazze itinere est -->
-		<item>A11302</item> <!-- A10 Km. 31,7 Celle Ligure itinere ovest -->
-		<item>A22485</item> <!-- A10 Km. 37,0 Albisola itinere ovest -->
+<item>A4</item> <!-- A10 km. 27,5 Varazze itinere ovest -->
+<item>A1793</item> <!-- A10 km. 31,7 Celle Ligure itinere ovest -->
+<item>A12</item> <!-- A10 km. 37,0 Albisola itinere ovest -->
 <item>A490</item> <!-- A10 km. 38,7 Albisola itinere est NEW -->
-		<item>A15948</item> <!-- A10 Km. 42,8 Savona itinere ovest -->
+<item>A1053</item> <!-- A10 km. 42,8 Savona itinere ovest -->
 		<item>Fa10a6</item>
 		<item>Fsavona</item>
 		<item>H1515</item>
