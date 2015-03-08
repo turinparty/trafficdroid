@@ -99,10 +99,12 @@ public class MainActivity extends Activity { // NO_UCD
 		intentFilter = new IntentFilter();
 		intentFilter.addAction(getString(R.string.BEGIN_UPDATE));
 		intentFilter.addAction(getString(R.string.END_UPDATE));
+		tracker = GoogleAnalytics.getInstance(this).newTracker(R.xml.analytics);
+		tracker.enableAdvertisingIdCollection(true);
 		receiver = new UpdateReceiver();
 		if (Utility.getProviderTraffic(this).equals(getString(R.string.providerTrafficDefault)))
 			new SetupDialogFragment().show(getFragmentManager(), SetupDialogFragment.class.getSimpleName());
-		selectItem(0, false);
+		replaceFragment(0, false);
 	}
 
 	@Override
@@ -174,19 +176,8 @@ public class MainActivity extends Activity { // NO_UCD
 		}
 	}
 
-	private Tracker getTracker() {
-		if (tracker == null)
-			tracker = GoogleAnalytics.getInstance(this).newTracker(R.xml.analytics);
-		return tracker;
-	}
-
-	public void sendScreenName(String screenName) {
-		getTracker().setScreenName(screenName);
-		getTracker().send(new HitBuilders.AppViewBuilder().build());
-	}
-
 	public void sendEvent(String category, String action, String label) {
-		getTracker().send(new HitBuilders.EventBuilder(category, action).setLabel(label).build());
+		tracker.send(new HitBuilders.EventBuilder(category, action).setLabel(label).build());
 	}
 
 	private final class UpdateReceiver extends BroadcastReceiver {
@@ -214,9 +205,7 @@ public class MainActivity extends Activity { // NO_UCD
 		}
 	}
 
-	public void selectItem(int position, boolean addToBackStack) {
-		mDrawerList.setItemChecked(position, true);
-		getActionBar().setTitle(drawerList[position]);
+	public void replaceFragment(int position, boolean addToBackStack) {
 		FragmentTransaction ft = getFragmentManager().beginTransaction();
 		switch (position) {
 			case 0:
@@ -246,11 +235,18 @@ public class MainActivity extends Activity { // NO_UCD
 		ft.commit();
 	}
 
+	public void setScreenName(int position) {
+		tracker.setScreenName(drawerList[position]);
+		tracker.send(new HitBuilders.AppViewBuilder().build());
+		mDrawerList.setItemChecked(position, true);
+		getActionBar().setTitle(drawerList[position]);
+	}
+
 	private class DrawerItemClickListener implements ListView.OnItemClickListener {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 			mDrawerLayout.closeDrawer(mDrawerList);
-			selectItem(position, true);
+			replaceFragment(position, true);
 		}
 	}
 

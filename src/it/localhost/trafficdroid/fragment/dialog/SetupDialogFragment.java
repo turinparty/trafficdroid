@@ -22,7 +22,7 @@ public class SetupDialogFragment extends DialogFragment {
 		builder.setPositiveButton(R.string.setup, new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				((MainActivity) getActivity()).selectItem(6, true);
+				((MainActivity) getActivity()).replaceFragment(6, true);
 			}
 		});
 		builder.setNegativeButton(R.string.info, new OnClickListener() {

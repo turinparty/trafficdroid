@@ -51,7 +51,7 @@ public class PreferencesFragment extends PreferenceFragment { // NO_UCD
 				setZonesCategory(streetScreen, streetId[i]);
 			}
 		}
-		((MainActivity) getActivity()).sendScreenName(PreferencesFragment.class.getSimpleName());
+		((MainActivity) getActivity()).setScreenName(6);
 	}
 
 	private PreferenceScreen addStreetScreen(PreferenceCategory streetsCategory, int streetId, String streetName) {

@@ -26,7 +26,7 @@ public class VideoFragment extends Fragment {
 		mediaController.setAnchorView(v);
 		v.setMediaController(mediaController);
 		new AnasNewsAsyncTask().execute();
-		((MainActivity) getActivity()).sendScreenName(VideoFragment.class.getSimpleName());
+		((MainActivity) getActivity()).setScreenName(1);
 		new AdManager().load(getActivity(), ((AdView) v.findViewById(R.id.adView)), true);
 		return v;
 	}

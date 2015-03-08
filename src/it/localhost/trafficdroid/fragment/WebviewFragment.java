@@ -1,6 +1,7 @@
 package it.localhost.trafficdroid.fragment;
 
 import it.localhost.trafficdroid.R;
+import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.AdManager;
 import android.app.Fragment;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ public class WebviewFragment extends Fragment {
 		webView.getSettings().setJavaScriptEnabled(true);
 		webView.getSettings().setBuiltInZoomControls(true);
 		webView.loadUrl(getArguments().getString(URL_KEY));
+		((MainActivity) getActivity()).setScreenName(5);
 		new AdManager().load(getActivity(), ((AdView) webView.findViewById(R.id.adView)), true);
 		return webView;
 	}

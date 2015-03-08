@@ -6,8 +6,8 @@ import it.localhost.trafficdroid.common.AdManager;
 import it.localhost.trafficdroid.common.ListExit;
 import it.localhost.trafficdroid.dto.BaseDTO;
 import it.localhost.trafficdroid.dto.PedaggioDTO;
-import it.localhost.trafficdroid.fragment.dialog.MessageDialogFragment;
 import it.localhost.trafficdroid.service.PedaggioService;
+import localhost.toolkit.app.MessageDialogFragment;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -46,7 +46,7 @@ public class PedaggioFragment extends Fragment {
 					new MessageDialogFragment().show(getFragmentManager(), getString(R.string.error), getString(R.string.wrongData), false);
 			}
 		});
-		((MainActivity) getActivity()).sendScreenName(PedaggioFragment.class.getSimpleName());
+		((MainActivity) getActivity()).setScreenName(2);
 		new AdManager().load(getActivity(), ((AdView) v.findViewById(R.id.adView)), true);
 		return v;
 	}

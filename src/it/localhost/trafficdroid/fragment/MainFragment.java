@@ -12,7 +12,6 @@ import it.localhost.trafficdroid.ethereogeneousItem.BadNewsItem;
 import it.localhost.trafficdroid.ethereogeneousItem.StreetItem;
 import it.localhost.trafficdroid.ethereogeneousItem.ZoneItem;
 import it.localhost.trafficdroid.fragment.dialog.BadnewsDialogFragment;
-import it.localhost.trafficdroid.fragment.dialog.MessageDialogFragment;
 import it.localhost.trafficdroid.fragment.dialog.WebviewDialogFragment;
 import it.localhost.trafficdroid.service.PersistanceService;
 
@@ -20,6 +19,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
+import localhost.toolkit.app.MessageDialogFragment;
 import localhost.toolkit.widget.HeterogeneousExpandableListAdapter;
 import localhost.toolkit.widget.HeterogeneousItem;
 import localhost.toolkit.widget.HeterogeneousItem.OnHeterogeneousItemClickListener;
@@ -68,7 +68,7 @@ public class MainFragment extends Fragment {
 		});
 		if (Utility.isBerserkKey(getActivity()))
 			getActivity().sendBroadcast(new Intent(getString(R.string.RUN_UPDATE)));
-		((MainActivity) getActivity()).sendScreenName(MainFragment.class.getSimpleName());
+		((MainActivity) getActivity()).setScreenName(0);
 		new AdManager().load(getActivity(), ((AdView) v.findViewById(R.id.adView)), false);
 		return v;
 	}

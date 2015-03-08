@@ -42,7 +42,7 @@ public class BolloFragment extends Fragment {
 				new WebviewDialogFragment().show(getFragmentManager(), bolloUrl + tipo + param1 + regione + param2 + targa, null);
 			}
 		});
-		((MainActivity) getActivity()).sendScreenName(BolloFragment.class.getSimpleName());
+		((MainActivity) getActivity()).setScreenName(3);
 		new AdManager().load(getActivity(), ((AdView) v.findViewById(R.id.adView)), true);
 		return v;
 	}
