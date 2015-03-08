@@ -17,7 +17,6 @@ import it.localhost.trafficdroid.service.PersistanceService;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 
 import localhost.toolkit.app.MessageDialogFragment;
 import localhost.toolkit.widget.HeterogeneousExpandableListAdapter;
@@ -40,13 +39,13 @@ import android.widget.ExpandableListView.OnChildClickListener;
 import com.google.android.gms.ads.AdView;
 
 public class MainFragment extends Fragment {
-	private static final String autostrade = "http://mobile.autostrade.it/autostrade-mobile/popupTelecamera.do?tlc=";
+	// private static final String autostrade = "http://mobile.autostrade.it/autostrade-mobile/popupTelecamera.do?tlc=";
+	private static final String autostradeDESKURL = "http://www.autostrade.it/autostrade-gis/popupTelecameran.do?tlc=";
 	private static final String cavspa = "http://www.cavspa.it/webcam/temp-imgs/camsbig/";
 	private static final String edidomus = "http://telecamere.edidomus.it/vp2/vpimage.aspx?camid=";
 	private static final String autofiori = "http://www.autofiori.it/cgi-bin/cgiwebcam.exe?site=";
 	private static final String autobspd = "http://www.autobspd.it/images/telecamereAutobspd/";
 	private static final String jpg = ".jpg";
-	private static final int date = new GregorianCalendar().get(GregorianCalendar.DATE);
 	private static final char camAutostrade = 'A';
 	private static final char camCavspa = 'C';
 	private static final char camEdidomus = 'E';
@@ -152,8 +151,7 @@ public class MainFragment extends Fragment {
 				new MessageDialogFragment().show(getFragmentManager(), getString(R.string.info), getString(R.string.webcamNone), false);
 			} else if (webcam.charAt(0) == camAutostrade) {
 				((MainActivity) getActivity()).sendEvent(MainActivity.EVENT_CAT_WEBCAM, MainActivity.EVENT_ACTION_OPEN, webcam);
-				int id = Integer.parseInt(webcam.substring(1)) + 6280 * (date);
-				new WebviewDialogFragment().show(getFragmentManager(), autostrade + id, null);
+				new WebviewDialogFragment().show(getFragmentManager(), autostradeDESKURL + webcam.substring(1), null);
 			} else if (webcam.charAt(0) == camCavspa) {
 				((MainActivity) getActivity()).sendEvent(MainActivity.EVENT_CAT_WEBCAM, MainActivity.EVENT_ACTION_OPEN, webcam);
 				new WebviewDialogFragment().show(getFragmentManager(), cavspa + webcam.substring(1) + jpg, null);
