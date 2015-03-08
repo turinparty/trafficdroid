@@ -44,17 +44,17 @@
 
 	<string-array name="z169Webcam">
 		<item>A20502</item> <!-- A27 km. 0,1 Allac. A57 itinere sud -->
-		<item>A20540</item> <!-- A27 km. 2,5 Mogliano Veneto itinere nord -->
+<item>A322</item> <!-- A27 km. 2,5 Mogliano Veneto itinere nord NEW -->
 		<item>A17555</item> <!-- A27 km. 5,1 st. Venezia Nord uscite -->
 		<item>H14264</item>
-		<item>A19182</item> <!-- A27 km. 10,2 Treviso Sud itinere nord -->
-		<item>A6276</item> <!-- A27 km. 21,5 Treviso Nord itinere nord -->
+<item>A538</item> <!-- A27 km. 10,2 Treviso Sud itinere nord NEW -->
+<item>A2593</item> <!-- A27 km. 21,5 Treviso Nord itinere nord NEW -->
 		<item>H1967</item>
-		<item>A10653</item> <!-- A27 km. 40,0 Conegliano itinere nord -->
-		<item>A17430</item> <!-- A27 km. 41,2 Svinc. Conegliano lato VE -->
-		<item>A10636</item> <!-- A27 km. 51,0 Vittorio V. Sud itinere nord -->
-		<item>A14566</item> <!-- A27 km. 58,4 Vittorio V. Nord itinere nord -->
-		<item>A10642</item> <!-- A27 km. 62,0 Fadalto itinere nord -->
+<item>A1896</item> <!-- A27 km. 40,0 Conegliano itinere nord NEW -->
+<item>A817</item> <!-- A27 km. 41,2 Svinc. Conegliano lato VE NEW -->
+<item>A1899</item> <!-- A27 km. 51,0 Vittorio V. Sud itinere nord NEW -->
+<item>A1273</item> <!-- A27 km. 58,4 Vittorio V. Nord itinere nord NEW -->
+<item>A1898</item> <!-- A27 km. 62,0 Fadalto itinere nord NEW -->
 		<item>H1973</item>
 		<item>H1974</item>
 		<item>H1975</item>

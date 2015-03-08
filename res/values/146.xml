@@ -51,11 +51,11 @@
 	<string-array name="z146Webcam">
 		<item>H1537</item>
 		<item>H1538</item>
-		<item>A11195</item> <!-- A11 km. 00,0 Peretola itinere ovest -->
+<item>A1810</item> <!-- A11 km. 00,0 Peretola itinere ovest NEW -->
 		<item>H1540</item>
 		<item>H1541</item>
-		<item>A22027</item> <!-- A11 km. 02,0 Osmannoro itinere ovest -->
-		<item>A21997</item> <!-- A11 km. 07,0 Prato Est itinere est -->
+<item>A85</item> <!-- A11 km. 02,0 Osmannoro itinere ovest NEW -->
+<item>A90</item> <!-- A11 km. 07,0 Prato Est itinere est NEW -->
 		<item>A21959</item> <!-- A11 km. 17,0 Prato Ovest itinere ovest -->
 		<item>A21965</item> <!-- A11 km. 28 Pistoia itinere ovest -->
 		<item>A5939</item> <!-- A11 km. 36,1 Serravalle itinere ovest -->

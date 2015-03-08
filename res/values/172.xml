@@ -33,18 +33,18 @@
 	</integer-array>
 
 	<string-array name="z172Webcam">
-		<item>A19233</item> <!-- A30 km. 1,3 All. A30-A01 itinere nord -->
+<item>A530</item> <!-- A30 km. 1,3 All. A30-A01 itinere nord NEW -->
 		<item>H2015</item>
-		<item>A19219</item> <!-- A30 km. 17,2 Nola itinere sud -->
+<item>A532</item> <!-- A30 km. 17,2 Nola itinere sud NEW -->
 		<item>A19226</item> <!-- A30 km. 22,1 All. A30-A16 itinere nord -->
 		<item>A14341</item> <!-- A30 km. 29,3 Palma Campania itinere sud -->
-		<item>A6058</item> <!-- A30 km. 32,08 Palma Campania itinere nord -->
-		<item>A6064</item> <!-- A30 km. 38,3 Sarno itinere nord -->
-		<item>A13072</item> <!-- A30 km. 41,0 Nocera Pagani itinere nord -->
-		<item>A6328</item> <!-- A30 km. 42,785 Castel S. Giorgio itinere sud -->
-		<item>A21764</item> <!-- A30 km. 49,7 Barriera Salerno -->
-		<item>A19213</item> <!-- A30 km. 53,7 Mercato S.Severino itinere nord -->
-		<item>A9147</item> <!-- A30 km. 55,0 itinere nord -->
+<item>A2628</item> <!-- A30 km. 32,08 Palma Campania itinere nord NEW -->
+<item>A2627</item> <!-- A30 km. 38,3 Sarno itinere nord NEW -->
+<item>A1511</item> <!-- A30 km. 41,0 Nocera Pagani itinere nord NEW -->
+<item>A2585</item> <!-- A30 km. 42,785 Castel S. Giorgio itinere sud NEW -->
+<item>A127</item> <!-- A30 km. 49,7 Barriera Salerno NEW -->
+<item>A533</item> <!-- A30 km. 53,7 Mercato S.Severino itinere nord NEW -->
+<item>A2136</item> <!-- A30 km. 55,0 itinere nord NEW -->
 	</string-array>
 
 </resources>

@@ -53,15 +53,15 @@
 		<item>H1724</item>
 		<item>A5222</item> <!-- A16 km. 9,55 Pomigliano itinere ovest -->
 		<item>H1726</item>
-		<item>A19271</item> <!-- A16 km. 14,7 All. A16-A30 itinere est -->
+<item>A524</item> <!-- A16 km. 14,7 All. A16-A30 itinere est NEW -->
 		<item>A19264</item> <!-- A16 km. 20,2 Baiano itinere ovest -->
-		<item>A159841</item> <!-- A16 km. 33,6 itinere ovest -->
-		<item>A21744</item> <!-- A16 km. 36,4 Monteforte itinere ovest -->
-		<item>A6873</item> <!-- A16 km. 40,0 Avellino itinere est -->
-		<item>A19251</item> <!-- A16 km. 69,9 Benevento itinere ovest -->
-		<item>A9065</item> <!-- A16 km. 77,3 Mirabella itinere ovest -->
-		<item>A14334</item> <!-- A16 km. 80,6 Grottaminarda itinere est -->
-		<item>A21751</item> <!-- A16 km. 102,2 itinere est -->
+<item>A2140</item> <!-- A16 km. 33,6 itinere ovest NEW -->
+<item>A130</item> <!-- A16 km. 36,4 Monteforte itinere ovest NEW -->
+<item>A2498</item> <!-- A16 km. 40,0 Avellino itinere est NEW -->
+<item>A527</item> <!-- A16 km. 69,9 Benevento itinere ovest NEW -->
+<item>A2149</item> <!-- A16 km. 77,3 Mirabella itinere ovest NEW -->
+<item>A1310</item> <!-- A16 km. 80,6 Grottaminarda itinere est NEW -->
+<item>A129</item> <!-- A16 km. 102,2 itinere est NEW -->
 		<item>H1736</item>
 		<item>H1737</item>
 		<item>H1738</item>

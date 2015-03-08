@@ -92,13 +92,13 @@
 		<item>A11308</item> <!-- A10 Km. 5,3 Pegli itinere ovest -->
 		<item>A7017</item> <!-- A10 Km. 10,1 Ge-Voltri itinere ovest -->
 		<item>A22523</item> <!-- A10 Bivio A26S/A10E itinere est -->
-		<item>A19516</item> <!-- A10 km. 19,4 Arenzano itinere ovest -->
-		<item>A22556</item> <!-- A10 km. 20,0 Arenzano itinere est -->
-		<item>A19503</item> <!-- A10 km. 24,6 Varazze itinere ovest -->
+<item>A485</item> <!-- A10 km. 19,4 Arenzano itinere ovest NEW -->
+<item>A1</item> <!-- A10 km. 20,0 Arenzano itinere est NEW -->
+<item>A487</item> <!-- A10 km. 24,6 Varazze itinere ovest NEW -->
 		<item>A19495</item> <!-- A10 Km. 28.8 Varazze itinere est -->
 		<item>A11302</item> <!-- A10 Km. 31,7 Celle Ligure itinere ovest -->
 		<item>A22485</item> <!-- A10 Km. 37,0 Albisola itinere ovest -->
-		<item>A19484</item> <!-- A10 km. 38,7 Albisola itinere est -->
+<item>A490</item> <!-- A10 km. 38,7 Albisola itinere est NEW -->
 		<item>A15948</item> <!-- A10 Km. 42,8 Savona itinere ovest -->
 		<item>Fa10a6</item>
 		<item>Fsavona</item>

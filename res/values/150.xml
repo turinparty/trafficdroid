@@ -47,15 +47,15 @@
 	</integer-array>
 
 	<string-array name="z150Webcam">
-		<item>A20362</item> <!-- A13 km. 0,5 Arcoveggio itinere nord -->
-		<item>A20356</item> <!-- A13 km. 1,5 Arcoveggio itinere sud -->
-		<item>A16211</item> <!-- A13 km. 9,4 Interporto itinere sud -->
-		<item>A5253</item> <!-- A13 km. 11,5 Bentivoglio Ovest itinere sud -->
-		<item>A20351</item> <!-- A13 km. 20,0 Altedo itinere nord -->
-		<item>A16206</item> <!-- A13 km. 34,6 Ferrara Sud itinere sud -->
-		<item>A20324</item> <!-- A13 km. 42,0 Ferrara Nord itinere sud -->
-		<item>A16180</item> <!-- A13 km. 45,6 Occhiobello itinere nord -->
-		<item>A20318</item> <!-- A13 km. 50,0 Occhiobello itinere sud -->
+<item>A350</item> <!-- A13 km. 0,5 Arcoveggio itinere nord NEW -->
+<item>A351</item> <!-- A13 km. 1,5 Arcoveggio itinere sud NEW -->
+<item>A1011</item> <!-- A13 km. 9,4 Interporto itinere sud NEW -->
+<item>A2756</item> <!-- A13 km. 11,5 Bentivoglio Ovest itinere sud NEW -->
+<item>A352</item> <!-- A13 km. 20,0 Altedo itinere nord NEW -->
+<item>A1012</item> <!-- A13 km. 34,6 Ferrara Sud itinere sud NEW -->
+<item>A356</item> <!-- A13 km. 42,0 Ferrara Nord itinere sud NEW -->
+<item>A1016</item> <!-- A13 km. 45,6 Occhiobello itinere nord NEW -->
+<item>A357</item> <!-- A13 km. 50,0 Occhiobello itinere sud NEW -->
 		<item>A20313</item> <!-- A13 km. 69,0 Rovigo itinere nord -->
 		<item>A11319</item> <!-- A13 km. 71,0 Rovigo itinere sud -->
 		<item>A20307</item> <!-- A13 km. 73,0 Boara itinere nord -->

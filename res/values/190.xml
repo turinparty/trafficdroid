@@ -24,12 +24,12 @@
 
 	<string-array name="z190Webcam">
 		<item>A21826</item> <!-- D18 km. 04,0 Roma Nord (DT) -->
-		<item>A21938</item> <!-- D18 km. 5,0 Feronia itinere sud -->
+<item>A99</item> <!-- D18 km. 5,0 Feronia itinere sud NEW -->
 		<item>A5912</item> <!-- D18 km. 09,52 CAST. DI PORTO -->
 		<item>A8129</item> <!-- D18 Km. 09,9 Castelnuovo di Porto -->
 		<item>A21813</item> <!-- D18 km. 17,8 Settebagni Itinere sud -->
 		<item>A19684</item> <!-- D18 km. 22,5 Settebagni Itinere Nord -->
-		<item>A21808</item> <!-- D18 km. 23,0 GRA Nord -->
+<item>A120</item> <!-- D18 km. 23,0 GRA Nord NEW -->
 	</string-array>
 
 </resources>

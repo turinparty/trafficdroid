@@ -85,17 +85,17 @@
 		<item>H1451</item>
 		<item>A19207</item> <!-- A07 km. 68,8 All.A7 A26 W itinere sud -->
 		<item>H1453</item>
-		<item>A19533</item> <!-- A07 km. 87,7 Vignole Borbera itinere sud -->
-		<item>A22480</item> <!-- A07 km. 88,0 Vignole itinere nord -->
-		<item>A19527</item> <!-- A07 km. 89,9 Vignole Borbera itinere nord -->
-		<item>A15941</item> <!-- A07 km. 99,2 Isola del Cantone itinere sud -->
-		<item>A15935</item> <!-- A07 km. 104,8 Isola del Cantone itinere nord -->
-		<item>A4758</item> <!-- A07 km. 111,0 Stazione Busalla itinere Sud -->
-		<item>A19540</item> <!-- A07 km. 114,1 Busalla itinere nord -->
-		<item>A10057</item> <!-- A07 km. 120,8 Castagna itinere nord -->
-		<item>A19560</item> <!-- A07 km. 125,0 GE-Bolzaneto itinere sud -->
-		<item>A7224</item> <!-- A07 km. 128,9 All. A7-A12 itinere sud -->
-		<item>A11314</item> <!-- A07 km. 130,0 All.A7/A10 itinere sud -->
+<item>A482</item> <!-- A07 km. 87,7 Vignole Borbera itinere sud NEW -->
+<item>A13</item> <!-- A07 km. 88,0 Vignole itinere nord NEW -->
+<item>A483</item> <!-- A07 km. 89,9 Vignole Borbera itinere nord NEW -->
+<item>A1054</item> <!-- A07 km. 99,2 Isola del Cantone itinere sud NEW -->
+<item>A1055</item> <!-- A07 km. 104,8 Isola del Cantone itinere nord NEW -->
+<item>A2835</item> <!-- A07 km. 111,0 Stazione Busalla itinere Sud NEW -->
+<item>A481</item> <!-- A07 km. 114,1 Busalla itinere nord NEW -->
+<item>A1991</item> <!-- A07 km. 120,8 Castagna itinere nord NEW -->
+<item>A478</item> <!-- A07 km. 125,0 GE-Bolzaneto itinere sud NEW -->
+<item>A2442</item> <!-- A07 km. 128,9 All. A7-A12 itinere sud NEW -->
+<item>A1791</item> <!-- A07 km. 130,0 All.A7/A10 itinere sud NEW -->
 		<item>A7515</item> <!-- A07 km. 133,6 GE-Ovest itinere nord -->
 		<item>H1466</item>
 		<item>H1467</item>

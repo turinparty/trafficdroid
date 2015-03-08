@@ -285,25 +285,25 @@
 		<item>H14226</item>
 		<item>H14265</item>
 		<item>A8003</item> <!-- A04 km. 124,0 Inizio Competenza -->
-		<item>A21488</item> <!-- A04 km. 126,0 Fiorenza itinere ovest -->
+<item>A171</item> <!-- A04 km. 126,0 Fiorenza itinere ovest NEW -->
 		<item>A19836</item> <!-- A04 km. 128,5 Cormano itinere est -->
-		<item>A19830</item> <!-- A04 km. 131,0 Cormano itinere ovest -->
+<item>A435</item> <!-- A04 km. 131,0 Cormano itinere ovest NEW -->
 		<item>A21482</item> <!-- A04 km. 133,8 Lambro itinere est -->
-		<item>A19824</item> <!-- A04 km. 137,1 Sesto S.Giovanni itinere ovest -->
+<item>A436</item> <!-- A04 km. 137,1 Sesto S.Giovanni itinere ovest NEW -->
 		<item>H1317</item>
-		<item>A22328</item> <!-- A04 km. 138,3 Barr. Milano est -->
-		<item>A19816</item> <!-- A04 km. 140,0 Monza itinere ovest -->
-		<item>A19917</item> <!-- A04 km. 142,1 Tangenziale Milano Est itinere est -->
-		<item>A21474</item> <!-- A04 km. 147 Agrate itinere ovest -->
-		<item>A19912</item> <!-- A04 km. 149,3 Cavenago itinere est -->
-		<item>A21467</item> <!-- A04 km. 151,6 Cavenago itinere ovest -->
-		<item>A19809</item> <!-- A04 km. 158,1 Trezzo itinere ovest -->
-		<item>A19803</item> <!-- A04 km. 161,6 Capriate itinere ovest -->
-		<item>A22279</item> <!-- A04 km. 162,2 Ponte Brembo itinere ovest -->
-		<item>A19798</item> <!-- A04 km. 168,8 Dalmine itinere ovest -->
-		<item>A22311</item> <!-- A04 km. 172,6 Bergamo itinere ovest -->
-		<item>A21461</item> <!-- A04 km. 180,2 Seriate itinere ovest -->
-		<item>A19874</item> <!-- A04 km. 187,2 Grumello itinere est -->
+<item>A37</item> <!-- A04 km. 138,3 Barr. Milano est NEW -->
+<item>A437</item> <!-- A04 km. 140,0 Monza itinere ovest NEW -->
+<item>A421</item> <!-- A04 km. 142,1 Tangenziale Milano Est itinere est NEW -->
+<item>A173</item> <!-- A04 km. 147 Agrate itinere ovest NEW -->
+<item>A422</item> <!-- A04 km. 149,3 Cavenago itinere est NEW -->
+<item>A174</item> <!-- A04 km. 151,6 Cavenago itinere ovest NEW -->
+<item>A438</item> <!-- A04 km. 158,1 Trezzo itinere ovest NEW -->
+<item>A439</item> <!-- A04 km. 161,6 Capriate itinere ovest NEW -->
+<item>A45</item> <!-- A04 km. 162,2 Ponte Brembo itinere ovest NEW -->
+<item>A440</item> <!-- A04 km. 168,8 Dalmine itinere ovest NEW -->
+<item>A40</item> <!-- A04 km. 172,6 Bergamo itinere ovest NEW -->
+<item>A175</item> <!-- A04 km. 180,2 Seriate itinere ovest NEW -->
+<item>A428</item> <!-- A04 km. 187,2 Grumello itinere est NEW -->
 		<item>A19868</item> <!-- A04 km. 190,5 Ponte Oglio itinere est -->
 		<item>A19861</item> <!-- A04 km. 192,4 Palazzolo itinere est -->
 		<item>H1333</item>

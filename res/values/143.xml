@@ -51,20 +51,20 @@
 	</integer-array>
 
 	<string-array name="z143Webcam">
-		<item>A20877</item> <!-- A04 km. 125,0 Bivio Fiorenza -->
+<item>A268</item> <!-- A04 km. 125,0 Bivio Fiorenza NEW -->
 		<item>A14862</item> <!-- A08 km. 2,2 Milano Fiera itinere nord -->
-		<item>A22296</item> <!-- A08 km. 5,6 Milano Nord itinere nord -->
+<item>A42</item> <!-- A08 km. 5,6 Milano Nord itinere nord NEW -->
 		<item>A18861</item> <!-- A08 km. 7,0 Villoresi itinere sud -->
 		<item>H1471</item>
-		<item>A22341</item> <!-- A08 km. 7,6 Villoresi itinere sud -->
-		<item>A18899</item> <!-- A08 km. 8,9 A08/A09 itinere nord -->
-		<item>A14723</item> <!-- A08 km. 11,0 A09/A08 itinere nord -->
+<item>A35</item> <!-- A08 km. 7,6 Villoresi itinere sud NEW -->
+<item>A583</item> <!-- A08 km. 8,9 A08/A09 itinere nord NEW -->
+<item>A1248</item> <!-- A08 km. 11,0 A09/A08 itinere nord NEW -->
 		<item>A18817</item> <!-- A08 km. 12,2 Origgio itinere sud -->
-		<item>A18893</item> <!-- A08 km. 13,5 Legnano itinere nord -->
-		<item>A18875</item> <!-- A08 km. 25,6 Busto Arsizio itinere sud -->
-		<item>A14787</item> <!-- A08 km. 24,5 Svincolo Busto Arsizio -->
-		<item>A11346</item> <!-- A08 km. 27,2 itinere nord -->
-		<item>A17593</item> <!-- D08 km. 2,5 Gallarate Ovest entrata -->
+<item>A584</item> <!-- A08 km. 13,5 Legnano itinere nord NEW -->
+<item>A587</item> <!-- A08 km. 25,6 Busto Arsizio itinere sud NEW -->
+<item>A1238</item> <!-- A08 km. 24,5 Svincolo Busto Arsizio NEW -->
+<item>A1786</item> <!-- A08 km. 27,2 itinere nord NEW -->
+<item>A791</item> <!-- D08 km. 2,5 Gallarate Ovest entrata NEW -->
 		<item>A18888</item> <!-- A08 km. 30,2 A8/A26 itinere nord -->
 		<item>A18882</item> <!-- A08 km. 35,1 Cavaria itinere sud -->
 		<item>A11332</item> <!-- A08 km. 34,7 Solbiate itinere nord -->
