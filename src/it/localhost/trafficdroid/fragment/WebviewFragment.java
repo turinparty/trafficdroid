@@ -28,7 +28,6 @@ public class WebviewFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		WebView webView = (WebView) inflater.inflate(R.layout.webview, container, false);
 		webView.getSettings().setJavaScriptEnabled(true);
-		webView.getSettings().setBuiltInZoomControls(true);
 		webView.loadUrl(getArguments().getString(URL_KEY));
 		((MainActivity) getActivity()).setScreenName(5);
 		new AdManager().load(getActivity(), ((AdView) webView.findViewById(R.id.adView)), true);

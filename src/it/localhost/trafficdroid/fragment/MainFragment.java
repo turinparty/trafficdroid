@@ -44,12 +44,14 @@ public class MainFragment extends Fragment {
 	private static final String edidomus = "http://telecamere.edidomus.it/vp2/vpimage.aspx?camid=";
 	private static final String autofiori = "http://www.autofiori.it/cgi-bin/cgiwebcam.exe?site=";
 	private static final String autobspd = "http://www.autobspd.it/images/telecamereAutobspd/";
+	private static final String brennero = "http://www.autobrennero.it/WebCamImg/km";
 	private static final String jpg = ".jpg";
 	private static final char camAutostrade = 'A';
 	private static final char camCavspa = 'C';
 	private static final char camEdidomus = 'E';
 	private static final char camAutofiori = 'F';
 	private static final char camAutobspd = 'B';
+	private static final char camBRENNERO = 'R';
 	private static final char camNone = 'H';
 	private ExpandableListView listView;
 	private BroadcastReceiver receiver;
@@ -163,6 +165,9 @@ public class MainFragment extends Fragment {
 			} else if (webcam.charAt(0) == camAutobspd) {
 				((MainActivity) getActivity()).sendEvent(MainActivity.EVENT_CAT_WEBCAM, MainActivity.EVENT_ACTION_OPEN, webcam);
 				new WebviewDialogFragment().show(getFragmentManager(), autobspd + webcam.substring(1) + jpg, null);
+			} else if (webcam.charAt(0) == camBRENNERO) {
+				((MainActivity) getActivity()).sendEvent(MainActivity.EVENT_CAT_WEBCAM, MainActivity.EVENT_ACTION_OPEN, webcam);
+				new WebviewDialogFragment().show(getFragmentManager(), brennero + webcam.substring(1) + jpg, null);
 			} else {
 				((MainActivity) getActivity()).sendEvent(MainActivity.EVENT_CAT_WEBCAM, MainActivity.EVENT_ACTION_REQUEST, webcam);
 				new MessageDialogFragment().show(getFragmentManager(), getString(R.string.info), getString(R.string.webcamAdd), false);

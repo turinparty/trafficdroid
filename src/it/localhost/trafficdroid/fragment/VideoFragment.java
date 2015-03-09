@@ -3,8 +3,14 @@ package it.localhost.trafficdroid.fragment;
 import it.localhost.trafficdroid.R;
 import it.localhost.trafficdroid.activity.MainActivity;
 import it.localhost.trafficdroid.common.AdManager;
-import it.localhost.trafficdroid.service.AnasTvService;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import android.app.Fragment;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +21,8 @@ import android.widget.VideoView;
 import com.google.android.gms.ads.AdView;
 
 public class VideoFragment extends Fragment {
-	private static final String MP4 = ".mp4";
-	private static final String URL = "http://www.stradeanas.tv/video/news/";
+	private static final String PATH = "http://www.stradeanas.tv/video/news/%s_italia.mp4";
+	private static final String PATTERN = "dd_MM_y";
 	private VideoView v;
 
 	@Override
@@ -25,18 +31,17 @@ public class VideoFragment extends Fragment {
 		MediaController mediaController = new MediaController(getActivity());
 		mediaController.setAnchorView(v);
 		v.setMediaController(mediaController);
-		new AnasNewsAsyncTask().execute();
+		v.setVideoPath(String.format(PATH, new SimpleDateFormat(PATTERN, Locale.getDefault()).format(new Date())));
+		v.start();
+		getActivity().getActionBar().setSubtitle(R.string.update);
+		v.setOnPreparedListener(new OnPreparedListener() {
+			@Override
+			public void onPrepared(MediaPlayer mp) {
+				getActivity().getActionBar().setSubtitle(null);
+			}
+		});
 		((MainActivity) getActivity()).setScreenName(1);
 		new AdManager().load(getActivity(), ((AdView) v.findViewById(R.id.adView)), true);
 		return v;
-	}
-
-	private class AnasNewsAsyncTask extends AnasTvService {
-		@Override
-		protected void onPostExecute(final String[] result) {
-			super.onPostExecute(result);
-			if (result.length > 0)
-				v.setVideoPath(URL + result[0] + MP4);
-		}
 	}
 }
